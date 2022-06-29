@@ -1,0 +1,34 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Elements/Checkbox/Intro" />
+
+<db-headline variant="1">&lt;db-checkbox&gt;</db-headline>
+
+The `<db-checkbox></db-checkbox>` represents a two-state control that represents the element's checkedness state. If the element's checkedness state is true, the control represents a positive selection, and if it is false, a negative selection.
+
+Most of attributes are used in the same way as with a native checkbox. You can try out on <a href="/story/db-checkbox--live-demo">Checkbox Live Demo</a> Page.
+
+<Canvas>
+<db-checkbox label="Checkbox" name="checkbox-name"></db-checkbox>
+</Canvas>
+
+<db-headline variant="2">disabled</db-headline>
+
+Make checkbox look inactive by adding the disabled boolean attribute to any &lt;db-checkbox&gt; element.
+
+<Canvas>
+<db-checkbox label="Checkbox" name="checkbox-name" disabled></db-checkbox>
+</Canvas>
+
+<db-headline variant="2">indeterminate</db-headline>
+
+Make checkbox look like in an indeterminate state by adding the 'indeterminate' boolean attribute to any &lt;db-checkbox&gt; element.
+
+<Canvas>
+<db-checkbox label="Checkbox" name="checkbox-name" indeterminate="true"></db-checkbox>
+</Canvas>
+
+Alternatively, one can directly call `<db-checkbox>.setIndeterminate(boolean)` on the web component to set the state indeterminate state of the checkbox via JavaScript.
+
+<Readme />

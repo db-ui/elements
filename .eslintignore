@@ -1,0 +1,15 @@
+cypress
+scripts
+**/dist
+**/build
+**/public
+**/e2e
+**/test
+**/coverage
+**/db-ui-elements-angular
+**/db-ui-elements-react
+**/db-ui-elements-vue
+**/db-ui-elements-stencil/www
+**/db-ui-elements-stencil/loader
+**/jestGlobalMocks.ts
+

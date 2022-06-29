@@ -1,0 +1,76 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Elements/Select/Intro" />
+
+<db-headline variant="1">&lt;db-select&gt;</db-headline>
+
+The `<db-select></db-select>` element represents a control for selecting amongst a set of options. Most of attributes are used in the same way as with a native select. You can try out on <a href="/story/db-select--live-demo">Select Playground</a> Page.
+
+<Canvas>
+<db-select label="Semitransparent" name="select-name-semitransparent">
+  <option selected>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</db-select>
+<db-select label="White" name="select-name" variant="white">
+  <option selected>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</db-select>
+<db-select label="Solid" name="select-name-solid" variant="solid">
+  <option selected>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</db-select>
+<db-select label="Outline" name="select-name-outline" variant="outline">
+  <option selected>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</db-select>
+</Canvas>
+
+<db-headline variant="2">disabled</db-headline>
+
+Make select look inactive by adding the disabled boolean attribute to any &lt;select&gt; element.
+
+<Canvas>
+<db-select label="Selectbox" name="select-name" disabled>
+  <option selected>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</db-select>
+</Canvas>
+
+<db-headline variant="2">multiple</db-headline>
+
+If the multiple attribute is present, then the select element represents a control for selecting zero or more options from the list of options. If the attribute is absent, then the select element represents a control for selecting a single option from the list of options.
+
+<Canvas>
+<db-select label="Selectbox" name="select-name" multiple>
+  <option selected>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</db-select>
+</Canvas>
+
+<db-headline variant="2">select with &lt;optgroup&gt;</db-headline>
+
+The HTML &lt;optgroup&gt; element creates a grouping of options within a select element.
+
+<Canvas>
+<db-select label="Selectbox" name="select-name">
+  <optgroup label="Group 1">
+    <option selected>Option 1.1</option>
+    <option>Option 1.2</option>
+    <option>Option 1.3</option>
+  </optgroup>
+  <optgroup label="Group 1">
+    <option selected>Option 2.1</option>
+    <option>Option 2.2</option>
+    <option>Option 2.3</option>
+  </optgroup>
+</db-select>
+</Canvas>
+
+<Readme />

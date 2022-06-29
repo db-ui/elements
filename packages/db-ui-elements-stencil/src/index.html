@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+  </head>
+
+  <body>
+    <db-button variant="primary"
+      >db-button (Autonomous custom element)</db-button
+    >
+    <button is="elm-button" data-variant="primary">
+      button (Customized built-in element)
+    </button>
+
+    <script type="module" src="/build/db-ui-elements.esm.js"></script>
+    <script nomodule src="/build/db-ui-elements.js"></script>
+  </body>
+</html>

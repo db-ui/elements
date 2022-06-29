@@ -1,0 +1,62 @@
+{
+  "name": "@db-ui/v-elements",
+  "sideEffects": false,
+  "version": "0.0.0",
+  "description": "Vue specific wrapper for @db-ui/elements",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/db-ui/elements.git",
+    "directory": "db-ui-elements-vue"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "scripts": {
+    "stencil:workaround": "node ../../scripts/vue-helper.js",
+    "pretest": "npm run stencil:workaround",
+    "prebuild": "npm run stencil:workaround",
+    "test": "jest",
+    "build": "npm run clean && npm run compile",
+    "clean": "rimraf dist",
+    "compile": "npm run tsc",
+    "tsc": "tsc -p .",
+    "lint": "echo \"Warning: no lint specified\" && exit 0",
+    "prerelease": "npm run validate && np prerelease --yolo --any-branch --tag next",
+    "validate": "npm i && npm run lint && npm run test && npm run build"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "@types/jest": "27.4.1",
+    "@vue/test-utils": "2.0.0-rc.18",
+    "jest": "27.5.1",
+    "np": "7.6.1",
+    "rimraf": "2.7.1",
+    "rollup": "1.32.1",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "vue": "3.2.31"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "node_modules",
+      "dist"
+    ],
+    "globals": {
+      "ts-jest": {
+        "diagnostics": {
+          "warnOnly": true
+        }
+      }
+    }
+  }
+}

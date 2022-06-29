@@ -1,0 +1,62 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+import { mockDataLanguages } from './../../db-link/stories/mockData.ts';
+
+<Meta title="Components/Language Switcher/Intro" />
+
+<db-headline variant="1">&lt;db-language-switcher&gt;</db-headline>
+
+The `<db-language-switcher></db-language-switcher>` element represents list with languages.
+
+There are two options to use &lt;db-language-switcher&gt;:
+
+<db-headline>Language Switcher with &lt;db-link&gt;</db-headline>
+
+<Canvas>
+  <db-language-switcher aria-selected-index="1">
+    <db-link title="English language" href="#">
+      EN
+    </db-link>
+    <db-link title="Deutsche Sprache" href="#">
+      DE
+    </db-link>
+  </db-language-switcher>
+</Canvas>
+
+<db-headline>Language Switcher with custom li wrapper</db-headline>
+
+<i>
+  <strong>
+    Maybe you need this option to use framework specific listeners.
+  </strong>
+</i>
+
+<Canvas>
+  <db-language-switcher aria-selected-index="1">
+    <li>
+      <db-link href="#">EN</db-link>
+    </li>
+    <li>
+      <a href="#">DE</a>
+    </li>
+  </db-language-switcher>
+</Canvas>
+
+<db-headline>Linklist with data</db-headline>
+
+<Canvas>
+  <db-language-switcher aria-selected-index="1" data={mockDataLanguages()} />
+</Canvas>
+
+The data should be an object passed in with `JSON.stringify()`
+
+```typescript
+export type DbLinkType = {
+  href: string;
+  title: string;
+  label: string;
+};
+```
+
+<Readme />

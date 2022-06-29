@@ -1,0 +1,49 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+import { mockDataWebsites } from './../../db-link/stories/mockData.ts';
+
+<Meta title="Components/Linklist/Intro" />
+
+A link list component, to be setup out of link components.
+
+There are 3 options to use &lt;db-linklist&gt;:
+
+<db-headline>Linklist with &lt;db-link&gt;</db-headline>
+
+<Canvas>
+  <db-linklist>
+    <db-link href="https://www.bahn.de/">www.bahn.de</db-link>
+    <db-link href="https://www.dbsystel.de/">www.dbsystel.de</db-link>
+  </db-linklist>
+</Canvas>
+
+<db-headline>Linklist with custom li wrapper</db-headline>
+
+<Canvas>
+  <db-linklist>
+    <li>
+      <a href="https://www.bahn.de/">www.bahn.de</a>
+    </li>
+    <li>
+      <a href="https://www.dbsystel.de/">www.dbsystel.de</a>
+    </li>
+  </db-linklist>
+</Canvas>
+
+<db-headline>Linklist with data</db-headline>
+
+<Canvas>
+  <db-linklist data={mockDataWebsites()} />
+</Canvas>
+
+The data should be an object passed in with `JSON.stringify()`
+
+```typescript
+export type DbLinkType = {
+  href: string;
+  label: string;
+};
+```
+
+<Readme />

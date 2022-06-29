@@ -1,0 +1,38 @@
+{
+  "name": "react-showcase",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "/react-showcase",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@db-ui/react-elements": "file:./../../packages/db-ui-elements-react/",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "5.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "echo 🤷‍♂️",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

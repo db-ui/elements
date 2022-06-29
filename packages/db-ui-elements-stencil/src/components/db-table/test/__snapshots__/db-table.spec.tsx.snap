@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`db-table renders with no data provided 1`] = `
+<db-table a="" align="" bodyalign="" bodyverticalalign="" border="" caption","rowtitles":["norma","fredy","janie","lurline","janis","keaton"],"columns":{"abigale":[["account","spotless"],["account","bruised"],["account","apprehensive"],["account","closed"],["account","joyous"]],"laurine":[[null,"overlooked"],[null,"red"],[null,"amusing"]],"soledad":[["account","cooperative"],["account","realistic"],["account","vigilant"],["account","darling"],["account","devoted"],["account","nice"],["account","cultured"],["account","far-flung"],["account","likely"]],"paul":[["account","motionless"],["account","mean"],["account","unrealistic"],["account","trustworthy"],["account","frightened"]],"jalen":[[null,"rowdy"],[null,"swift"],[null,"fantastic"],[null,"stimulating"],[null,"pristine"],[null,"black"],[null,"meaty"]],"maribel":[[null,"sturdy"],[null,"revolving"],[null,"excitable"],[null,"tired"],[null,"handmade"],[null,"relieved"],[null,"troubled"],[null,"messy"],[null,"other"],[null,"personal"],[null,"dry"]]}}="" density="" fontsize="1rem" sticky="" stripes="" tabledata="{&quot;caption&quot;:&quot;Just" verticalalign="">
+  <div>
+    <table class="cmp-table" style="--table---fontSize: 1rem;">
+      <caption>
+        No valid table data provided
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">
+            Error parsing data
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row-0">
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</db-table>
+`;

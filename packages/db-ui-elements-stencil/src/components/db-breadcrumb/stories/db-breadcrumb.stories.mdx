@@ -1,0 +1,65 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+import { mockData } from './../../db-link/stories/mockData.ts';
+
+<Meta title="Components/Breadcrumb/Intro" />
+
+<db-headline variant="1">&lt;db-breadcrumb&gt;</db-headline>
+
+There are 3 options to use &lt;db-breadcrumb&gt;:
+
+<db-headline>Breadcrumb with &lt;db-link&gt;</db-headline>
+
+<Canvas>
+  <db-breadcrumb aria-label="Breadcrumb">
+    <db-link href="#">Startseite</db-link>
+    <db-link href="#">Page XYZ</db-link>
+    <db-link href="#" current="location">
+      Page ZYS
+    </db-link>
+  </db-breadcrumb>
+</Canvas>
+
+<db-headline>Breadcrumb with li tag wrappers</db-headline>
+
+<Canvas>
+  <db-breadcrumb aria-label="Breadcrumb">
+    <li>
+      <db-link href="#">Startseite</db-link>
+    </li>
+    <li>
+      <a title="This could be a framework-specific tag like <Nav> as well"
+        href="#">
+        Page XYZ
+      </a>
+    </li>
+    <li>
+      <a
+        title="This could be a framework-specific tag like <Nav>"
+        aria-current="location"
+        href="#"
+      >
+        Page ZYS
+      </a>
+    </li>
+  </db-breadcrumb>
+</Canvas>
+
+<db-headline>Breadcrumb with data</db-headline>
+
+<Canvas>
+  <db-breadcrumb data={mockData()} />
+</Canvas>
+
+
+The data should be an object passed in with JSON.stringify()
+
+```typescript
+export type DbLinkType = {
+  href: string;
+  label: string;
+};
+```
+
+<Readme />

@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`db-pagination renders a pagination with custom events 1`] = `
+<db-pagination ariaid="stable" arialabel="Pagination" count="3" currentpage="1" pages="9" textnext="Next" textprevious="Previous" titlenext="Goto next page" titlepagination="Page Number" titleprevious="Goto previous page">
+  <nav aria-labelledby="stable" class="cmp-pagination" role="navigation">
+    <h2 class="elm-headline" id="stable">
+      Pagination
+    </h2>
+    <ol>
+      <li>
+        <button aria-current="page" aria-disabled="true" class="elm-link" data-rel="prev" tabindex="-1" title="Page Number 1" type="button">
+          1
+        </button>
+      </li>
+      <li>
+        <button aria-current="page" aria-disabled="true" class="elm-link" title="Page Number 1" type="button">
+          1
+        </button>
+      </li>
+      <li>
+        <button class="elm-link" title="Page Number 2" type="button">
+          2
+        </button>
+      </li>
+      <li>
+        <button class="elm-link" title="Page Number 3" type="button">
+          3
+        </button>
+      </li>
+      <li>
+        <button class="elm-link" title="Page Number 4" type="button">
+          4
+        </button>
+      </li>
+      <li>
+        <button class="elm-link" title="Page Number 5" type="button">
+          5
+        </button>
+      </li>
+      <li>
+        …
+      </li>
+      <li>
+        <button class="elm-link" title="Page Number 9" type="button">
+          9
+        </button>
+      </li>
+      <li>
+        <button class="elm-link" data-rel="next" tabindex="-1" title="Goto next page 2" type="button">
+          2
+        </button>
+      </li>
+    </ol>
+  </nav>
+</db-pagination>
+`;
+
+exports[`db-pagination renders a pagination with slots 1`] = `
+<db-pagination ariaid="stable" arialabel="Pagination" count="2" currentpage="1" ellipsisend="" ellipsisstart="" pages="2" textnext="Next" textprevious="Previous" titlenext="Goto next page" titlepagination="Page Number" titleprevious="Goto previous page">
+  <nav aria-labelledby="stable" class="cmp-pagination" role="navigation">
+    <h2 class="elm-headline" id="stable">
+      Pagination
+    </h2>
+    <ol>
+      <li>
+        <a class="elm-link" href="#" rel="prev" tabindex="-1" title="first page">
+          1
+        </a>
+      </li>
+      <li>
+        <a class="elm-link" href="#" title="first page">
+          1
+        </a>
+      </li>
+      <li>
+        …
+      </li>
+      <li>
+        <a class="elm-link" href="#" title="third page">
+          3
+        </a>
+      </li>
+      <li>
+        <a class="elm-link" data-currentpage href="#" title="fourth page">
+          4
+        </a>
+      </li>
+      <li>
+        <a class="elm-link" href="#" title="fifth page">
+          5
+        </a>
+      </li>
+      <li>
+        …
+      </li>
+      <li>
+        <a class="elm-link" href="#" title="ninth page">
+          9
+        </a>
+      </li>
+      <li>
+        <a class="elm-link" href="#" rel="next" title="ninth page">
+          9
+        </a>
+      </li>
+    </ol>
+  </nav>
+</db-pagination>
+`;

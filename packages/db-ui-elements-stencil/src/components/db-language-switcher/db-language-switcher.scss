@@ -1,0 +1,11 @@
+@import '../general';
+@import 'language-switcher';
+
+:host {
+  @extend html;
+  @extend body;
+}
+
+a {
+  @extend .elm-link;
+}

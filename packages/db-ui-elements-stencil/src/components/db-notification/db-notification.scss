@@ -1,0 +1,10 @@
+@import 'db-ui-core.general';
+@import 'notification';
+
+*[slot='prenotification'] {
+  padding-right: 10px;
+}
+
+*[slot='postnotification'] {
+  float: right;
+}

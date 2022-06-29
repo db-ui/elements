@@ -1,0 +1,420 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+import mockData, {fullColumnMockData, rowMockData, brokenMockData} from './mockData.ts'
+
+
+<Meta title="Components/Table/Intro" />
+
+<db-headline variant="1">&lt;db-table&gt;</db-headline>
+
+The `<db-table></db-table>` element enables the presentation of tabular data in a preformatted table.
+The data fed into the table via the `tabledata` attribute needs to adhere to
+a the schema below (either rows or columns data needs to be present, never both).
+
+The content of a single cell in the table, is represented via a tuple. The first
+value represents an icon (see [DB UI Core icon overview](https://db-ui.github.io/core/?p=viewall-base-icons)
+for all valid values) and can also be `null` if no icon should be displayed. The
+second value is the actual content of the cell.
+
+```typescript
+type cell = [string | null, string]
+```
+
+This is the shape of the data that is passed as `tabledata` attribute.
+Mind that the object needs to be passed stringified if set as an attribute.
+
+```typescript
+type tabledata = {
+  caption: string;
+  headers: string[];
+  rowTitles?: string[];
+  rowTitle?: string;
+  columns?: {
+    [id: string]: cell[];
+  };
+  rows?: object[];
+};
+
+```
+
+To keep the structure of `tabledata` simple the strings in the `headers` array need to be identical to the `keys` in the columns object.
+The structure of `tabledata` will be validated, passing too many or too few data will cause an error to be logged on the console and the table will be filled with an error message.
+
+When setting `tabledata` as attribute or property it must be stringified first.
+
+<db-headline> Simple table:</db-headline>
+
+<Canvas>
+<db-table tabledata={fullColumnMockData()}></db-table>
+{/*
+This is an example of the shape tabledata needs to have:
+---
+const fullColumnMockExampleData = {
+  "caption": "Quasi omnis esse eos optio commodi.",
+  "headers": ["Norris", "Claudine", "Teresa", "Nikolas", "Coralie", "Edgardo"],
+  "rowTitle": "I'm a row title",
+  "rowTitles": ["Martin", "Otho"],
+  "columns": {
+    "Claudine": [
+      [null, "faithful"],
+      [null, "strict"],
+      [null, "noisy"]
+    ],
+    "Teresa": [
+      ["account", "nautical"],
+      ["account", "insecure"]
+    ],
+  }
+}
+---
+*/}
+</Canvas>
+
+
+
+
+<db-headline>Columnar data (with table alignment)</db-headline>
+<Canvas>
+<db-table
+  align="center"
+  verticalalign="middle"
+  bodyalign="right"
+  bodyverticalalign="bottom"
+  tabledata={mockData()}>
+</db-table>
+{/*
+This is an example of the shape tabledata needs to have:
+---
+const mockExampleData = {
+  "caption": "Quas quis necessitatibus.",
+  "headers": [ "Cara", "Jenifer", "Herminia" ],
+  "columns": {
+    "Cara": [
+      [ "account", "untidy" ],
+      [ "account", "subdued" ] ],
+    "Jenifer": [
+      [ null, "monumental" ],
+      [ null, "creamy" ],
+      [ null, "strident" ],
+    ],
+    "Herminia": [
+      [ null, "black" ],
+      [ null, "distant" ]
+    ]
+  }
+}
+---
+*/}
+</Canvas>
+
+<db-headline>Row data</db-headline>
+<Canvas>
+<db-table
+  tabledata={rowMockData()}>
+</db-table>
+{/*
+This is an example of the shape tabledata needs to have:
+---
+const rowMockExampleData = {
+  "caption": "Voluptatem dolor neque harum.",
+  "headers": [
+    "Elinore",
+    "Hayden",
+    "Meredith",
+  ],
+  "rowTitle": "I'm a row title",
+  "rowTitles": [
+    "Eliezer",
+    "Arthur",
+    "Cristal",
+  ],
+  "rows": [
+    {
+      "Elinore": [ null, "bland" ],
+      "Hayden": [ "account", "sparkling" ],
+      "Meredith": [ null, "unacceptable" ]
+    },
+    {
+      "Hayden": [ null, "understated" ],
+      "Meredith": [ null, "yummy" ],
+      "Erin": [ "account", "clumsy" ],
+      "Ansel": [ null, "filthy" ]
+    },
+    {
+      "Genoveva": [ "close", "kooky" ],
+      "Bessie": [ null, "foolish" ]
+    }
+  ]
+}
+---
+*/}
+</Canvas>
+
+<db-headline>Table with "around" border:</db-headline>
+
+<Canvas>
+<db-table
+  border="around"
+  tabledata={fullColumnMockData()}>
+</db-table>
+{/*
+This is an example of the shape tabledata needs to have:
+---
+const fullColumnMockExampleData = {
+  "caption": "Officia impedit eaque deserunt eius laboriosam nulla.",
+  "headers": [
+    "Aaron",
+    "Edythe",
+    "Ozella"
+  ],
+  "rowTitle": "I'm a row title",
+  "rowTitles": [
+    "Dorcas",
+    "Hollie",
+    "Clyde"
+  ],
+  "columns": {
+    "Aaron": [
+      [ "account", "harmful" ],
+      [ "account", "young" ]
+    ],
+    "Edythe": [
+      [ null, "idiotic" ],
+      [ null, "doting" ],
+      [ null, "capital" ]
+    ],
+    "Ozella": [
+      [ "account", "honest" ],
+      [ "account", "strident" ]
+    ],
+    "Friedrich": [
+      [ "account", "edible" ],
+      [ "account", "those" ],
+      [ "account", "lumpy" ]
+    ],
+    "Johnathan": [
+      [ null, "tempting" ],
+      [ null, "detailed" ]
+    ],
+    "Nola": [
+      [ null, "immense" ],
+      [ null, "truthful" ],
+      [ null, "nice" ],
+      [ null, "far" ]
+    ]
+  }
+}
+---
+*/}
+</Canvas>
+
+<db-headline>Table with "horizontal" border:</db-headline>
+
+<Canvas>
+<db-table
+  border="horizontal"
+  tabledata={mockData()}>
+</db-table>
+{/*
+This is an example of the shape tabledata needs to have:
+---
+const mockExampleData = {
+  "caption": "Quas quis necessitatibus.",
+  "headers": [ "Cara", "Jenifer", "Herminia" ],
+  "columns": {
+    "Cara": [
+      [ "account", "untidy" ],
+      [ "account", "subdued" ] ],
+    "Jenifer": [
+      [ null, "monumental" ],
+      [ null, "creamy" ],
+      [ null, "strident" ],
+    ],
+    "Herminia": [
+      [ null, "black" ],
+      [ null, "distant" ]
+    ]
+  }
+}
+---
+*/}
+</Canvas>
+
+<db-headline>Table with "small" density:</db-headline>
+
+<Canvas>
+<db-table
+  density="small"
+  tabledata={fullColumnMockData()}>
+</db-table>
+{/*
+This is an example of the shape tabledata needs to have:
+---
+const fullColumnMockExampleData = {
+  "caption": "Quasi omnis esse eos optio commodi.",
+  "headers": ["Norris", "Claudine", "Teresa", "Nikolas", "Coralie", "Edgardo"],
+  "rowTitle": "I'm a row title",
+  "rowTitles": ["Martin", "Otho"],
+  "columns": {
+    "Claudine": [
+      [null, "faithful"],
+      [null, "strict"],
+      [null, "noisy"]
+    ],
+    "Teresa": [
+      ["account", "nautical"],
+      ["account", "insecure"]
+    ],
+  }
+}
+---
+*/}
+</Canvas>
+
+<db-headline>Table with "large" density:</db-headline>
+
+<Canvas>
+<db-table
+  density="large"
+  tabledata={mockData()}>
+</db-table>
+{/*
+This is an example of the shape tabledata needs to have:
+---
+const mockExampleData = {
+  "caption": "Quas quis necessitatibus.",
+  "headers": [ "Cara", "Jenifer", "Herminia" ],
+  "columns": {
+    "Cara": [
+      [ "account", "untidy" ],
+      [ "account", "subdued" ] ],
+    "Jenifer": [
+      [ null, "monumental" ],
+      [ null, "creamy" ],
+      [ null, "strident" ],
+    ],
+    "Herminia": [
+      [ null, "black" ],
+      [ null, "distant" ]
+    ]
+  }
+}
+---
+*/}
+</Canvas>
+
+<db-headline>Table with `fontsize` set to "0.5rem":</db-headline>
+
+<Canvas>
+<db-table
+  fontsize="0.5rem"
+  tabledata={mockData()}>
+</db-table>
+{/*
+This is an example of the shape tabledata needs to have:
+---
+const mockExampleData = {
+  "caption": "Quas quis necessitatibus.",
+  "headers": [ "Cara", "Jenifer", "Herminia" ],
+  "columns": {
+    "Cara": [
+      [ "account", "untidy" ],
+      [ "account", "subdued" ] ],
+    "Jenifer": [
+      [ null, "monumental" ],
+      [ null, "creamy" ],
+      [ null, "strident" ],
+    ],
+    "Herminia": [
+      [ null, "black" ],
+      [ null, "distant" ]
+    ]
+  }
+}
+---
+*/}
+</Canvas>
+
+<db-headline> Table with `stripes` set to "zebra":</db-headline>
+
+<Canvas>
+<db-table
+  stripes="zebra"
+  tabledata={fullColumnMockData()}>
+</db-table>
+{/*
+This is an example of the shape tabledata needs to have:
+---
+const fullColumnMockExampleData = {
+  "caption": "Quasi omnis esse eos optio commodi.",
+  "headers": ["Norris", "Claudine", "Teresa", "Nikolas", "Coralie", "Edgardo"],
+  "rowTitle": "I'm a row title",
+  "rowTitles": ["Martin", "Otho"],
+  "columns": {
+    "Claudine": [
+      [null, "faithful"],
+      [null, "strict"],
+      [null, "noisy"]
+    ],
+    "Teresa": [
+      ["account", "nautical"],
+      ["account", "insecure"]
+    ],
+  }
+}
+---
+*/}
+</Canvas>
+
+<db-headline> Table with `sticky` set to "header":</db-headline>
+
+<Canvas>
+<db-table
+  sticky="header"
+  tabledata={mockData()}>
+</db-table>
+{/*
+This is an example of the shape tabledata needs to have:
+---
+const mockExampleData = {
+  "caption": "Quas quis necessitatibus.",
+  "headers": [ "Cara", "Jenifer", "Herminia" ],
+  "columns": {
+    "Cara": [
+      [ "account", "untidy" ],
+      [ "account", "subdued" ] ],
+    "Jenifer": [
+      [ null, "monumental" ],
+      [ null, "creamy" ],
+      [ null, "strident" ],
+    ],
+    "Herminia": [
+      [ null, "black" ],
+      [ null, "distant" ]
+    ]
+  }
+}
+---
+*/}
+</Canvas>
+
+
+<db-headline>Invalid Data</db-headline>
+Table which was passed invalid `tabledata` (the data of `brokenMockData` below is a broken data structure - string in headers array does not match key name in columns object):
+
+```
+const brokenMockData = JSON.stringify({
+  caption: 'Broken Table',
+  headers: ['I am not present in columns'],
+  columns: {
+    'something is rotten': ['in the state of Denmark']
+  }
+});
+```
+
+<Canvas>
+<db-table
+  density="large"
+  tabledata={brokenMockData}>
+</db-table>
+</Canvas>

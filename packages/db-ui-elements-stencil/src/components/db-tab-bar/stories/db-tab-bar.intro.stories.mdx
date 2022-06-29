@@ -1,0 +1,28 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Components/Tab Bar/Intro" />
+
+<db-headline variant="1">&lt;db-tab-bar&gt;</db-headline>
+
+The `<db-tab-bar></db-tab-bar>` element represents a list of tabs showing different content.
+
+<db-headline>Tabbar</db-headline>
+
+<Canvas>
+  <db-tab-bar>
+    <db-tab label="Tab 1" name="tab-bar" active>
+      <p>Content 1</p>
+    </db-tab>
+    <db-tab label="Tab 2" name="tab-bar">
+      <p>Content 2</p>
+      <db-button>Button</db-button>
+    </db-tab>
+    <db-tab label="Tab 3" name="tab-bar">
+      <p>Content 3</p>
+      <db-checkbox label="Checkbox"></db-checkbox>
+    </db-tab>
+  </db-tab-bar>
+</Canvas>
+
+<Readme />

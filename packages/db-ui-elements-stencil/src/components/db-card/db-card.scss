@@ -1,0 +1,11 @@
+@import 'db-ui-core.general';
+@import 'card';
+
+:host {
+  @extend html;
+  @extend body;
+}
+
+.cmp-card {
+  display: flex;
+}

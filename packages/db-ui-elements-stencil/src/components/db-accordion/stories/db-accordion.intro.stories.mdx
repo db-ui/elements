@@ -1,0 +1,38 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Components/Accordion/Intro" />
+
+<db-headline variant="1">&lt;db-accordion&gt;</db-headline>
+
+<db-headline>Default Accordion</db-headline>
+
+<Canvas>
+  <db-accordion summary="I'm the summary">
+    <p>I'm the content</p>
+  </db-accordion>
+</Canvas>
+
+<db-headline>Accordion High Emphasis</db-headline>
+
+<Canvas>
+  <db-accordion emphasis summary="I'm the summary">
+    <p>I'm the content</p>
+  </db-accordion>
+</Canvas>
+
+<db-headline>Accordion Sizes</db-headline>
+
+<Canvas>
+  <db-accordion size="small" summary="I'm the summary">
+    <p>I'm the content</p>
+  </db-accordion>
+  <db-accordion size="regular" summary="I'm the summary">
+    <p>I'm the content</p>
+  </db-accordion>
+  <db-accordion size="large" summary="I'm the summary">
+    <p>I'm the content</p>
+  </db-accordion>
+</Canvas>
+
+<Readme />

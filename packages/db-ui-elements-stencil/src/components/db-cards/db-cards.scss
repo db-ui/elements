@@ -1,0 +1,7 @@
+@import 'db-ui-core.general';
+@import 'cards';
+
+:host {
+  @extend html;
+  @extend body;
+}

@@ -1,0 +1,11 @@
+@import 'db-ui-core.general';
+
+:host {
+  @extend html;
+  @extend body;
+}
+
+// Set the general link color inheritance
+a {
+  color: inherit;
+}

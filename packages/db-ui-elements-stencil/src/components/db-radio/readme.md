@@ -1,0 +1,45 @@
+# API Docs
+
+## Style Dependencies
+
+Add the following styles to your application, if like to use a special theme. If the base dependencies are already added for another component, don't do again.
+
+- replace {path} with your path to copied css 
+- replace {theme} with one of [enterprise,fernverkehr]
+
+```css
+// required base dependencies
+@import url({path}/themes/{theme}/css/00-base/colors/colors.vars.css);
+@import url({path}/themes/{theme}/css/00-base/type/fonts.css);
+
+// component style
+@import url({path}/themes/{theme}/css/01-elements/radio/radio.vars.css);
+```
+
+<!-- Auto Generated Below -->
+
+
+## Properties
+
+| Property             | Attribute   | Description                                                                                                                                                                                                                                                   | Type      | Default                               |
+| -------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------------- |
+| `autofocus`          | `autofocus` | The autofocus content attribute allows the author to indicate that a control is to be focused as soon as the page is loaded, allowing the user to just start typing without having to manually focus the main control.                                        | `boolean` | `undefined`                           |
+| `checked`            | `checked`   | The checked content attribute is a boolean attribute that gives the default checkedness of the input element.                                                                                                                                                 | `boolean` | `undefined`                           |
+| `disabled`           | `disabled`  | The disabled attribute can be set to keep a user from clicking on the input.                                                                                                                                                                                  | `boolean` | `undefined`                           |
+| `input_id`           | `input_id`  | The input_id of a labelable form-related element in the same document as the label element. The first element in the document with an id matching the value of the for attribute is the labeled control for this label element, if it is a labelable element. | `string`  | `'radio-' + Math.random().toString()` |
+| `label` _(required)_ | `label`     | The label attribute specifies the caption of the input.                                                                                                                                                                                                       | `string`  | `undefined`                           |
+| `name` _(required)_  | `name`      | The name content attribute gives the name of the form control, as used in form submission and in the form element's elements object. If the attribute is specified, its value must not be the empty string.                                                   | `string`  | `undefined`                           |
+| `required`           | `required`  | The required attribute is a boolean attribute. When specified, the element is required.                                                                                                                                                                       | `boolean` | `undefined`                           |
+| `value`              | `value`     | The value content attribute gives the default value of the input element.                                                                                                                                                                                     | `string`  | `undefined`                           |
+
+
+## Events
+
+| Event      | Description                      | Type               |
+| ---------- | -------------------------------- | ------------------ |
+| `dbChange` | Mapping for default change Event | `CustomEvent<any>` |
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

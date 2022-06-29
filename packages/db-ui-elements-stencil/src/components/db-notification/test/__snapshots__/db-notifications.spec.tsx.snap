@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`db-notifications renders a hovering notification 1`] = `
+<db-notifications arialive="polite" variant="hovering">
+  <!---->
+  <section aria-live="polite" data-variant="hovering">
+    <db-notification type="success">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </db-notification>
+  </section>
+</db-notifications>
+`;
+
+exports[`db-notifications renders a notification with icon to the left 1`] = `
+<db-notifications arialive="polite" variant="alert">
+  <!---->
+  <section aria-live="polite" data-variant="alert">
+    <db-notification>
+      <db-icon icon="account" slot="prenotification" variant="20-outline">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit
+      </db-icon>
+    </db-notification>
+  </section>
+</db-notifications>
+`;
+
+exports[`db-notifications renders a plain notification 1`] = `
+<db-notifications arialive="polite" variant="hovering">
+  <!---->
+  <section aria-live="polite" data-variant="hovering">
+    <db-notification>
+      regular: Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </db-notification>
+  </section>
+</db-notifications>
+`;
+
+exports[`db-notifications renders a success notification 1`] = `
+<db-notifications arialive="polite" variant="alert">
+  <!---->
+  <section aria-live="polite" data-variant="alert">
+    <db-notification type="success">
+      success: Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </db-notification>
+  </section>
+</db-notifications>
+`;
+
+exports[`db-notifications renders a warning notification 1`] = `
+<db-notifications arialive="polite" variant="alert">
+  <!---->
+  <section aria-live="polite" data-variant="alert">
+    <db-notification type="warning">
+      warning: Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </db-notification>
+  </section>
+</db-notifications>
+`;
+
+exports[`db-notifications renders an error notification 1`] = `
+<db-notifications arialive="polite" variant="alert">
+  <!---->
+  <section aria-live="polite" data-variant="alert">
+    <db-notification type="error">
+      error: Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </db-notification>
+  </section>
+</db-notifications>
+`;
+
+exports[`db-notifications renders an informative notification 1`] = `
+<db-notifications arialive="polite" variant="alert">
+  <!---->
+  <section aria-live="polite" data-variant="alert">
+    <db-notification type="informative">
+      informative: Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </db-notification>
+  </section>
+</db-notifications>
+`;
+
+exports[`db-notifications renders several notifications simultaneously 1`] = `
+<db-notifications arialive="polite" variant="alert">
+  <!---->
+  <section aria-live="polite" data-variant="alert">
+    <db-notification>
+      regular: Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </db-notification>
+    <db-notification type="informative">
+      informative: Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </db-notification>
+    <db-notification type="error">
+      error: Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </db-notification>
+    <db-notification type="success">
+      success: Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </db-notification>
+    <db-notification type="warning">
+      warning: Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </db-notification>
+  </section>
+</db-notifications>
+`;

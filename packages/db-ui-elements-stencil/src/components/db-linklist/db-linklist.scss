@@ -1,0 +1,10 @@
+@import '../general';
+@import 'link-list';
+
+:host {
+  display: block;
+}
+
+a {
+  @extend .elm-link;
+}

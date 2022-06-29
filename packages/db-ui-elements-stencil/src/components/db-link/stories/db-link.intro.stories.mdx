@@ -1,0 +1,51 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Elements/Link/Intro" />
+
+<db-headline variant="1">&lt;db-link&gt;</db-headline>
+
+The `<db-link></db-link>` element represents a control. With its href attribute, it creates a hyperlink to web pages, files, email addresses, locations in the same page, or anything else a URL can address. Most of attributes are used in the same way as with a native link. You can try out on <a href="/story/db-link--live-demo">Link Live Demo</a> Page.
+
+<Canvas>
+  <db-link href="#">Link</db-link>
+</Canvas>
+
+<db-headline variant="2">icon</db-headline>
+
+Icons can be used in link to help give their functionality more clarity at a glance. Define an icon by it's identifier (like e.g. download, compare to [DB UI Icons](https://db-ui.github.io/core/patterns/base-icons/index.html)).
+
+<Canvas>
+  <db-link href="#" icon="alarm">
+    Link
+  </db-link>
+</Canvas>
+
+<db-headline variant="2">target</db-headline>
+
+The target attribute specifies the browsing context and gives different visual expressions to the link.
+
+<p>
+  <b>
+    <i>"_self"</i>
+  </b>
+  is used as default and navigates to a page off your applaciation without
+  changing the window or tab.
+  <br />
+  <b>
+    <i>"_blank"</i>
+  </b>
+  is used to navigate to external contents by leaving your application to a new
+  tab.
+</p>
+
+<Canvas>
+  <db-link href="#" target="_self">
+    internal
+  </db-link>
+  <db-link href="#" target="_blank">
+    external
+  </db-link>
+</Canvas>
+
+<Readme />

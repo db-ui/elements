@@ -1,0 +1,50 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Areas/Header/Intro" />
+
+A header component.
+
+<p>Only with brand</p>
+
+<Canvas>
+  <db-header>
+    <db-brand>DB-UI Elements</db-brand>
+  </db-header>
+</Canvas>
+
+<p>With navigation</p>
+
+<Canvas>
+  <db-header>
+    <db-brand>DB-UI Elements</db-brand>
+    <db-mainnavigation>
+      <db-link href="#" rel="index" current="page">
+        Startseite
+      </db-link>
+      <db-link href="#" rel="offers">
+        Aufträge
+      </db-link>
+    </db-mainnavigation>
+  </db-header>
+</Canvas>
+
+<p>With meta navigation</p>
+
+<Canvas>
+  <db-header>
+    <db-brand>DB-UI Elements</db-brand>
+    <db-meta>
+      <db-metanavigation>
+        <db-link icon="settings" href="#">
+          Einstellungen
+        </db-link>
+        <db-link icon="chat" icononly href="#">
+          Nachrichten
+        </db-link>
+      </db-metanavigation>
+    </db-meta>
+  </db-header>
+</Canvas>
+
+<Readme />

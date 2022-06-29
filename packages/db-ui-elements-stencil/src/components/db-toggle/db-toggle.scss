@@ -1,0 +1,9 @@
+@import '../general';
+@import 'toggle';
+
+:host {
+  display: block;
+}
+.elm-toggle::before {
+  box-sizing: inherit;
+}

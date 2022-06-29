@@ -1,0 +1,12 @@
+@import '../general';
+@import 'button';
+@import '@db-ui/core/sources/_patterns/00-base/icons/icons.helpers';
+
+:host[disabled] {
+  pointer-events: none;
+}
+
+// Enabling to hide text next to the icon
+button.is-icon-text-replace {
+  @include is-icon-text-replace();
+}

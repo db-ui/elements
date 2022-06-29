@@ -1,0 +1,6 @@
+@import 'db-ui-core.general';
+@import 'icons';
+
+[data-icon]::before {
+  --icon-margin-right: 0;
+}

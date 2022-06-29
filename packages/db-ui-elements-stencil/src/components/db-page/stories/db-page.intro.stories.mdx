@@ -1,0 +1,42 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+import mockData from './../../db-table/stories/mockData.ts';
+
+import { styled } from '@storybook/theming';
+
+import "./page.css";
+
+export const StyledCanvas = styled.div`
+  .docs-story {
+    .rea-page {
+      min-height: 400px;
+      max-height: 400px;
+    }
+  }
+`;
+
+<Meta title="Areas/Page/Intro" />
+
+<db-headline variant="1">&lt;db-page&gt;</db-headline>
+
+A page component to wrap main between header and footer.
+
+The header and footer stick to the top/bottom and the main content will increase the remaining size
+
+<StyledCanvas>
+
+<Canvas>
+  <db-page>
+    <db-header slot="header">
+      <db-brand>DB-UI Elements</db-brand>
+    </db-header>
+    <div>
+      <db-table sticky="header" tabledata={mockData()}></db-table>
+    </div>
+    <db-footer slot="footer" with-copyright has-border />
+  </db-page>
+</Canvas>
+
+</StyledCanvas>
+<Readme />

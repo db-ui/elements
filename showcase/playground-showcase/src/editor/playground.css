@@ -1,0 +1,28 @@
+.ace_editor div {
+  color: inherit;
+  font-family: inherit;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px;
+}
+
+.grid-split-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: calc(100vh - 80px);
+}
+
+.grid-split-left {
+  border: solid;
+  grid-column: 1;
+  height: calc(100vh - 80px);
+}
+
+.grid-split-right {
+  border: solid;
+  grid-column: 2;
+  height: calc(100vh - 80px);
+}

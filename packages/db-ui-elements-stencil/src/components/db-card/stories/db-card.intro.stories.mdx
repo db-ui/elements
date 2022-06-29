@@ -1,0 +1,58 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+import { styled } from '@storybook/theming';
+
+export const StyledCard = styled.div`
+  & db-card {
+    max-width: 400px;
+    display: block;
+  }
+`;
+
+<Meta title="Components/Card/Intro" />
+
+<h1>&lt;db-card&gt;</h1>
+
+The `<db-card></db-card>` element represents a card with a title and a paragraph.
+
+<StyledCard>
+
+<h3>Card with title and content</h3>
+
+<Canvas>
+  <db-card header="Headline 1" content="Content 1"></db-card>
+</Canvas>
+
+<h3>Card with title, content and illustration</h3>
+
+<Canvas>
+  <db-card
+    header="Headline 2"
+    content="Content 2"
+    illustration="christmas"
+  ></db-card>
+</Canvas>
+
+<h3>Card with custom slot and custom image</h3>
+
+<Canvas>
+  <db-card image="./images/db_logo.svg" alt="">
+    <h1>Urlaub macht man mit der Bahn!</h1>
+    <p>Zum Beispiel im <strong>Allgäu</strong>.</p>
+  </db-card>
+</Canvas>
+
+<h3>Card variant title</h3>
+
+<Canvas>
+  <db-card
+    title="Headline 3"
+    content="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+    illustration="christmas"
+    variant="title"
+  ></db-card>
+</Canvas>
+
+</StyledCard>
+
+<Readme />
