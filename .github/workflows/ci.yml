@@ -1,0 +1,38 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - '*'
+      - '!main'
+
+jobs:
+  test:
+    name: TBD
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+
+      - name: 👩‍🍳 Everything but the kitchen sink
+        run: |
+          npm run build
+          node scripts/build angular,react,vue,playground,reactwind withShowcase
+          npm run build:storybook
+
+      - name: 🛗 Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: storybook-page
+          path: public

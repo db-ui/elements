@@ -17,3 +17,52 @@ This especially relates to (but doesn't exclude further Deutsche Bahn brand asse
 ## License
 
 This project is licensed under [Apache-2.0](LICENSE), Copyright 2022 by DB Systel GmbH.
+
+## CI STEPS (DELETE ME)
+### build-stencil-default
+- npm ci
+- cd packages/db-ui-elements-stencil
+- npm run build
+### build-stencil-enterprise
+- npm ci
+- node scripts/theme-helper.js packages/db-ui-elements-stencil enterprise
+- cd packages/db-ui-elements-stencil
+- npm run build enterprise
+### build-stencil-storybook
+- npm ci
+- cd packages/db-ui-elements-stencil
+- npm run build enterprise
+### test-stencil
+- npm ci
+- npm run test
+### validate-stencil
+- npm ci
+- cd packages/db-ui-elements-stencil
+- npm run lint
+
+### angular-showcase
+- npm ci
+- cd packages/db-ui-elements-stencil
+- npm run build enterprise
+- cd ../..
+- node scripts/build angular withShowcase
+### react-showcase
+- npm ci
+- cd packages/db-ui-elements-stencil
+- npm run build enterprise
+- cd ../..
+- node scripts/build react withShowcase
+
+### all-showcases
+- npm ci
+- npm run build
+<!-- - cd packages/db-ui-elements-stencil -->
+<!-- - npm run build enterprise -->
+<!-- - cd ../.. -->
+- node scripts/build angular,react,vue,playground,reactwind withShowcase
+- npm run build:storybook
+- node scripts/review-page-helper.js vue /db-ui-elements/vue-showcase
+- node scripts/review-page-helper.js react /db-ui-elements/react-showcase
+- node scripts/review-page-helper.js angular /db-ui-elements/angular-showcase
+- node scripts/review-page-helper.js reactwind /db-ui-elements/reactwind-showcase
+- node scripts/review-page-helper.js playground /db-ui-elements/playground-showcase
