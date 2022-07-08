@@ -198,5 +198,8 @@ export const config: Config = {
         `${getSassPath()}/node_modules/`
       ]
     })
-  ]
+  ],
+  extras: {
+    experimentalImportInjection: true
+  }
 };
