@@ -1,7 +1,7 @@
 {
   "name": "@db-ui/elements",
   "version": "0.0.0",
-  "description": "DB UI Elements - Web Components Library der Deutschen Bahn",
+  "description": "Web Components Library by Deutsche Bahn, part of DB UX Design System",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.js",
   "es2015": "./dist/esm/index.js",
