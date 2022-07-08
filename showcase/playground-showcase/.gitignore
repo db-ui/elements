@@ -22,3 +22,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+public/fonts
+public/images
+public/js
+!public/images/db_logo.svg
+public/db-ui-core.css
+public/db-ui-core.vars.css
+public/grapes.css
+public/db-page.css
+src/grapesjs/css/db-page.css

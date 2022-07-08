@@ -35,11 +35,7 @@ const CreateMarkup = (input: string) => {
 
 const DangerComponent = ({ markup }: any) => {
   return (
-    <div
-      id="app"
-      className="preview"
-      dangerouslySetInnerHTML={CreateMarkup(markup)}
-    />
+    <div className="preview" dangerouslySetInnerHTML={CreateMarkup(markup)} />
   );
 };
 

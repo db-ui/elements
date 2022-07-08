@@ -5,6 +5,7 @@ import App from './App';
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import SplitEditor from './editor';
 import Playground from './playground';
+import Grapes from './grapesjs/grapes';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.render(
           }
           element={<App />}
         >
+          <Route path="dnd" element={<Grapes />} />
           <Route path="editor" element={<SplitEditor />} />
           <Route path="" element={<Playground />} />
         </Route>

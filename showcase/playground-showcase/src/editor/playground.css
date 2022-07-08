@@ -26,3 +26,7 @@
   grid-column: 2;
   height: calc(100vh - 80px);
 }
+
+.preview {
+  height: 100%;
+}
