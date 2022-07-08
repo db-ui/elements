@@ -7,8 +7,8 @@ const replace = require('replace-in-file');
 
 try {
   const illustrations = fs
-    .readdirSync('./node_modules/@db-ui/core/dist/images/icons/illustration')
-    .map((ill) => ill.replace('ic-db-il_puls_', '').replace('.svg', ''));
+    .readdirSync('./node_modules/@db-ui/core/dist/icons/illustration')
+    .map((ill) => ill.replace('db_ic_il_', '').replace('.svg', ''));
 
   replace({
     files:

@@ -139,7 +139,7 @@ export class DbCard {
               aria-hidden="true"
             >
               <use
-                href={`${this.uiCoreIllustrationPath}/ic-db-il_puls_${this.illustration}.svg#${this.illustration}`}
+                href={`${this.uiCoreIllustrationPath}/db_ic_il_${this.illustration}.svg#icon`}
               />
             </svg>
           )}
