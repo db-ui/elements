@@ -4,7 +4,7 @@
 
 const fs = require('fs');
 
-const excludeComponents = ['development', 'general.scss'];
+const excludeComponents = ['development', 'general.scss', '.DS_Store'];
 
 try {
   const stencilComponents = fs.readdirSync(
