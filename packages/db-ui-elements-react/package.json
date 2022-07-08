@@ -15,11 +15,12 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "npm run clean && npm run compile",
+    "build": "npm run clean && npm run tsc",
+    "build:prod": "npm run clean && npm run tsc:prod",
     "watch": "npm run tsc --watch",
     "clean": "rimraf dist",
-    "compile": "npm run tsc",
-    "tsc": "tsc -p .",
+    "tsc": "tsc -p . ",
+    "tsc:prod": "tsc -p . --sourceMap false",
     "lint": "echo \"Warning: no lint specified\" && exit 0",
     "prerelease": "npm run validate && np prerelease --yolo --any-branch --tag next",
     "validate": "npm i && npm run lint && npm run test && npm run build"

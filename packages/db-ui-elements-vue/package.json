@@ -18,10 +18,11 @@
     "pretest": "npm run stencil:workaround",
     "prebuild": "npm run stencil:workaround",
     "test": "jest",
-    "build": "npm run clean && npm run compile",
+    "build": "npm run clean && npm run tsc",
+    "build:prod": "npm run clean && npm run tsc:prod",
     "clean": "rimraf dist",
-    "compile": "npm run tsc",
     "tsc": "tsc -p .",
+    "tsc:prod": "tsc -p . --sourceMap false",
     "lint": "echo \"Warning: no lint specified\" && exit 0",
     "prerelease": "npm run validate && np prerelease --yolo --any-branch --tag next",
     "validate": "npm i && npm run lint && npm run test && npm run build"
