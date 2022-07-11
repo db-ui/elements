@@ -12,9 +12,42 @@ Regarding BREAKING CHANGES in between, please have a look into [the migration gu
 
 ## [Unreleased]
 
+## [0.14.3] - 2022-07-06
+
+### Fixed
+
+- Correctly displaying the icons within buttons
+
+## [0.14.2] - 2022-06-15
+
 ### Added
 
+#### Package consumption
+
+- `LICENSE` files to all packages
+
+#### DEV
+
 - Playground: Visual page builder
+
+### Changed
+
+#### Package consumption
+
+- further aspects regarding DB trademarks
+
+#### DEV
+
+- DB UI Core update; a.o. icons path and filenames have changed
+
+### Fixed
+
+#### Package consumption
+
+- Output target for **Vue / Vite consumption**
+- Replaced remaining SCSS functions (font calculation e.g. `to-rem`) in CSS files by updating DB UI Core
+- Added missing `"license"` field to `package.json` by Vue packages
+- Issue with generated sourcemaps for React & Vue output-targets
 
 ## [0.13.0] - 2022-04-22
 
