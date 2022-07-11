@@ -33,14 +33,23 @@ Make buttons look inactive by adding the disabled boolean attribute to any `<db-
   <db-button variant="primary" disabled>Primary</db-button><db-button variant="secondary-solid" disabled>Secondary Solid</db-button><db-button variant="secondary-outline" disabled>Secondary Outline</db-button>
 </Canvas>
 
-<db-headline variant="2">icon, iconafter and icononly</db-headline>
+<db-headline variant="2">icon Position</db-headline>
 
-Icons can be used in buttons to help give their functionality more clarity at a glance. Define an icon by it's identifier (like e.g. download, compare to [DB UI Icons](https://db-ui.github.io/core/patterns/base-icons/index.html)).
+You could set the icons position – either before or after the text – by using the `icon` or `iconafter` attributes and defining an icon by it's identifier (like e.g. download, compare to [DB UI Icons](https://db-ui.github.io/core/patterns/base-icons/index.html)).
 
 <Canvas>
-  <db-button variant="primary" icon="download">Primary</db-button><db-button  variant="primary" iconafter="download">Primary</db-button><db-button variant="primary" icon="download" icononly>Button</db-button>
-  <db-button variant="secondary-solid" icon="download">Secondary</db-button><db-button variant="secondary-solid" iconafter="download">Secondary</db-button><db-button variant="secondary-solid" icon="download" icononly>Button</db-button>
-  <db-button variant="secondary-outline" icon="download">Secondary Outline</db-button><db-button variant="secondary-outline" iconafter="download">Secondary Outline</db-button><db-button variant="secondary-outline" icon="download" icononly>Button</db-button>
+  <db-button variant="primary" icon="download">Primary</db-button><db-button variant="primary" iconafter="download">Primary</db-button>
+  <db-button variant="secondary-solid" icon="download">Secondary</db-button><db-button variant="secondary-solid" iconafter="download">Secondary</db-button>
+  <db-button variant="secondary-outline" icon="download">Secondary Outline</db-button> <db-button variant="secondary-outline" iconafter="download">Secondary Outline</db-button>
 </Canvas>
+
+<db-headline variant="2">icononly (only use with care)</db-headline>
+
+If you'd only like to display the icon without any text, you could set the attribute `icononly` on the button component. But please keep in mind that a visual text ensures clarity on the subject of this button as well enables use cases like controlling the page by voice (accessibility).
+
+<Canvas>
+  <db-button variant="primary" icon="download" icononly>Button</db-button><db-button variant="secondary-solid" icon="download" icononly>Button</db-button><db-button variant="secondary-outline" icon="download" icononly>Button</db-button>
+</Canvas>
+
 
 <Readme />
