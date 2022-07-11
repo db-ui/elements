@@ -38,31 +38,3 @@ export const LiveDemo = ({ icon, variant }) => {
     ${icon ? 'icon=' + icon : ''}
     ${variant ? 'variant=' + variant : ''}></db-icon>`;
 };
-
-/*
-<h2>av</h2>
-
-<h2>communication</h2>
-
-<h2>covid-19</h2>
-
-<h2>facilities</h2>
-
-<h2>feature</h2>
-
-<h2>food</h2>
-
-<h2>journey</h2>
-
-<h2>maps</h2>
-
-<h2>navigation</h2>
-
-<h2>notification</h2>
-
-<h2>seat</h2>
-
-<h2>ticket</h2>
-
-<h2>transportation</h2>
-*/
