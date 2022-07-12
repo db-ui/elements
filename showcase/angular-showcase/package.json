@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href /angular-showcase/ --deploy-url /angular-showcase/",
+    "build": "ng build --base-href './'",
     "test": "jest",
     "lint": "ng lint",
     "e2e": "ng e2e"
