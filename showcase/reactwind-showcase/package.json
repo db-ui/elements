@@ -2,7 +2,7 @@
   "name": "reactwind-showcase",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/reactwind-showcase",
+  "homepage": ".",
   "license": "Apache-2.0",
   "dependencies": {
     "@db-ui/base": "file:./../../node_modules/@db-ui/base/",

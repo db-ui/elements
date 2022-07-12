@@ -2,7 +2,7 @@
   "name": "playground-showcase",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/playground-showcase",
+  "homepage": ".",
   "dependencies": {
     "@db-ui/react-elements": "file:./../../packages/db-ui-elements-react/",
     "ace-builds": "^1.4.14",
