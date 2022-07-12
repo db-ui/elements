@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: GitHub Pages
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
       - '!main'
 
 jobs:
-  test:
-    name: TBD
+  deploy:
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
       - name: 🛑 Cancel Previous Runs
@@ -25,7 +25,7 @@ jobs:
       - name: 📥 Download deps
         uses: bahmutov/npm-install@v1
 
-      - name: 👩‍🍳 Everything but the kitchen sink
+      - name: 👩‍🍳 Bake everything (StoryBook, Playground & Showcases)
         run: |
           npm run build
           node scripts/build angular,react,vue,playground,reactwind withShowcase
@@ -36,3 +36,10 @@ jobs:
         with:
           name: storybook-page
           path: public
+
+      # - name: 📖 Deploy to GH-Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   if: ${{ github.ref == 'refs/heads/main' }}
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./public
