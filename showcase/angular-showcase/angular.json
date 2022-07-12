@@ -24,7 +24,8 @@
               "src/styles.css",
               "node_modules/@db-ui/core/dist/css/enterprise/db-ui-core.vars.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "deployUrl": "/elements/"
           },
           "configurations": {
             "production": {
