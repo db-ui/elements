@@ -46,10 +46,10 @@ export const Grapes = () => {
       fromElement: true,
       canvas: {
         styles: [
-          '/playground-showcase/db-ui-core.css',
-          '/playground-showcase/db-ui-core.vars.css',
-          '/playground-showcase/grapes.css',
-          '/playground-showcase/db-page.css'
+          './playground-showcase/db-ui-core.css',
+          './playground-showcase/db-ui-core.vars.css',
+          './playground-showcase/grapes.css',
+          './playground-showcase/db-page.css'
         ]
       },
       plugins: ['gjs-preset-webpage'],

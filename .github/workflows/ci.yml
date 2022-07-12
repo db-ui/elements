@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    name: Tests
+    name: Unit/Snapshot Tests
     runs-on: ubuntu-latest
     steps:
       - name: 🛑 Cancel Previous Runs
