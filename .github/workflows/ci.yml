@@ -1,4 +1,4 @@
-name: E2E
+name: CI
 
 on:
   push:
@@ -7,7 +7,29 @@ on:
       - '!main'
 
 jobs:
-  deploy:
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+
+      - name: 🔬 Run unit/snapshot tests
+        run: |
+          npm test
+
+  cypress:
     name: Cypress E2E Tests
     runs-on: ubuntu-latest
     steps:
@@ -56,3 +78,41 @@ jobs:
         with:
           name: cypress-videos
           path: e2e/cypress/videos
+
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: [test, cypress]
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+
+      - name: 👩‍🍳 Bake everything (StoryBook, Playground & Showcases)
+        run: |
+          npm run build
+          node scripts/build angular,react,vue,playground,reactwind withShowcase
+          npm run build:storybook
+
+      - name: 🛗 Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: storybook-page
+          path: public
+
+      # - name: 📖 Deploy to GH-Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   if: ${{ github.ref == 'refs/heads/main' }}
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./public

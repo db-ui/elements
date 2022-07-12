@@ -27,18 +27,12 @@ db-notification {
     <p>Link list:</p>
     <DbLinklist>
       <li>
-        <DbLink
-          href="https://github.com/db-ui/elements/"
-          target="_blank"
-        >
+        <DbLink href="https://db-ui.github.io/elements/" target="_blank">
           DB UI Elements components documentation
         </DbLink>
       </li>
       <li>
-        <DbLink
-          href="https://github.com/db-ui/core/"
-          target="_blank"
-        >
+        <DbLink href="https://db-ui.github.io/elements/" target="_blank">
           DB UI Core components documentation
         </DbLink>
       </li>
