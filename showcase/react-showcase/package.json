@@ -2,7 +2,7 @@
   "name": "react-showcase",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/react-showcase",
+  "homepage": ".",
   "license": "Apache-2.0",
   "dependencies": {
     "@db-ui/react-elements": "file:./../../packages/db-ui-elements-react/",
