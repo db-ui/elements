@@ -74,9 +74,7 @@ export const Grapes = () => {
       <div id="app" className="grapes-container">
         <DbPage>
           <DbHeader slot="header">
-            <DbBrand src="/playground-showcase/images/db_logo.svg">
-              DB-UI Elements
-            </DbBrand>
+            <DbBrand src="./images/db_logo.svg">DB-UI Elements</DbBrand>
           </DbHeader>
           <div>
             <h1>Playground</h1>
