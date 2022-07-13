@@ -46,8 +46,8 @@ export const Grapes = () => {
       fromElement: true,
       canvas: {
         styles: [
-          './db-ui-core.css',
-          './db-ui-core.vars.css',
+          './enterprise/db-ui-core.css',
+          './enterprise/db-ui-core.vars.css',
           './grapes.css',
           './db-page.css'
         ]

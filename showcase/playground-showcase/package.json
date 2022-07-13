@@ -20,7 +20,7 @@
   "scripts": {
     "copy:ui-core": "cpr ../../node_modules/@db-ui/core/dist/fonts ./public/fonts -o && cpr ../../node_modules/@db-ui/core/dist/images ./public/images -o && cpr ../../node_modules/@db-ui/core/dist/js ./public/js -o",
     "css:db-page": "sass  --style=compressed --no-source-map --load-path=node_modules  ../../packages/db-ui-elements-stencil/src/components/db-page/db-page.scss:./public/db-page.css && cpr ./public/db-page.css ./src/grapesjs/css/db-page.css -o",
-    "copy:css": "cpr ../../node_modules/@db-ui/core/dist/css/enterprise/db-ui-core.css ./public/db-ui-core.css -o && cpr ../../node_modules/@db-ui/core/dist/css/enterprise/db-ui-core.vars.css ./public/db-ui-core.vars.css -o && cpr ./src/grapesjs/css/grapes.css ./public/grapes.css -o",
+    "copy:css": "cpr ../../node_modules/@db-ui/core/dist/css/enterprise/db-ui-core.css ./public/enterprise/db-ui-core.css -o && cpr ../../node_modules/@db-ui/core/dist/css/enterprise/db-ui-core.vars.css ./public/enterprise/db-ui-core.vars.css -o && cpr ./src/grapesjs/css/grapes.css ./public/grapes.css -o",
     "prestart": "npm run css:db-page && npm run copy:css && npm run copy:ui-core",
     "prebuild": "npm run prestart",
     "start": "react-scripts start",
