@@ -1,0 +1,34 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Elements/Toggle/Intro" />
+
+<db-headline variant="1">&lt;db-toggle&gt;</db-headline>
+
+<db-headline>The toggle component without a text. </db-headline>
+
+<Canvas>
+  <db-toggle></db-toggle>
+</Canvas>
+
+<db-headline>The toggle component with text. </db-headline>
+
+<Canvas>
+  <db-toggle htmlid="meineId1" disabled>
+    Disabled toggle
+  </db-toggle>
+</Canvas>
+
+<Canvas>
+  <db-toggle htmlid="meineId2" checked>
+    Pre checked toggle
+  </db-toggle>
+</Canvas>
+
+<Canvas>
+  <db-toggle htmlid="meineId3" checked disabled>
+    Pre checked disabled toggle
+  </db-toggle>
+</Canvas>
+
+<Readme />

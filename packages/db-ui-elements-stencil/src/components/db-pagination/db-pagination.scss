@@ -1,0 +1,32 @@
+@import 'db-ui-core.general';
+@import 'pagination';
+@import 'link';
+
+:host {
+  @extend html;
+  @extend body;
+}
+
+// TODO: Maybe move the following to DB UI Core, as we might need to enable buttons in general
+.cmp-pagination {
+  button {
+    border: none;
+    font-size: 0.875rem;
+    background-color: inherit;
+    cursor: pointer;
+  }
+
+  .elm-link {
+    &[data-rel='prev'] {
+      @include icon(glyph(chevron-left), $partial: true);
+      @include is-icon-text-replace();
+    }
+    &[data-rel='next'] {
+      @include icon(glyph(chevron-right), $partial: true);
+      @include is-icon-text-replace();
+    }
+  }
+}
+.elm-link[aria-disabled='true'][aria-current='page'] {
+  opacity: 1;
+}

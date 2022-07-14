@@ -1,0 +1,172 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+import { mockData, mockDataSub } from './mockData.ts';
+
+import { styled } from '@storybook/theming';
+
+export const StyledCanvas = styled.div`
+  .docs-story {
+    & > div:first-child {
+      min-height: 300px;
+    }
+  }
+`;
+
+<Meta title="Components/Main Navigation/Intro" />
+
+<StyledCanvas>
+
+<db-headline variant="1">&lt;db-mainnavigation&gt;</db-headline>
+
+The `<db-mainnavigation></db-mainnavigation>` element represents the main navigation of your app shown inside the header.
+
+There are 3 options to use &lt;db-mainnavigation&gt;:
+
+<db-headline>Mainnavigation with &lt;db-link&gt;</db-headline>
+
+<db-headline variant="4">Without submenu</db-headline>
+
+<Canvas>
+  <db-mainnavigation>
+    <db-link href="#" rel="index" current="page">
+      Startseite
+    </db-link>
+    <db-link href="#" rel="offers">
+      Aufträge
+    </db-link>
+  </db-mainnavigation>
+</Canvas>
+
+<db-headline variant="4">With submenu items</db-headline>
+
+<Canvas>
+  <db-mainnavigation>
+    <db-link href="#" current="page">
+      Startseite
+      <db-link href="#">
+        Sub 1
+        <db-link href="#">Sub 1 Sub 1</db-link>
+        <db-link href="#">Sub 1 Sub 2</db-link>
+      </db-link>
+      <db-link href="#">
+        Sub 2
+        <db-link href="#">Sub 2 Sub 1</db-link>
+        <db-link href="#">Sub2 Sub 2</db-link>
+      </db-link>
+    </db-link>
+    <db-link href="#" rel="offers">
+      Aufträge
+    </db-link>
+  </db-mainnavigation>
+</Canvas>
+
+<db-headline>Mainnavigation with li tag wrappers</db-headline>
+
+<i>
+  <strong>
+    Maybe you need this option to use framework specific listeners.
+  </strong>
+</i>
+
+<db-headline variant="4">Without submenu</db-headline>
+
+<Canvas>
+  <db-mainnavigation>
+    <li>
+      <db-link href="#" current="page">
+        Startseite
+      </db-link>
+    </li>
+    <li>
+      <db-link href="#">
+        Aufträge
+      </db-link>
+    </li>
+    <li>
+      {/* You could as well use a general hyperlink HTML tag */}
+      <a href="#">News</a>
+    </li>
+  </db-mainnavigation>
+</Canvas>
+
+<db-headline variant="4">With submenu items</db-headline>
+
+<Canvas>
+  <db-mainnavigation>
+    <li>
+      <a href="#" aria-current="page">
+        Startseite
+      </a>
+      <ul>
+        <li>
+          <db-link href="#">
+            Subul 01
+          </db-link>
+          <ul>
+            <li>
+              <db-link href="#">
+                Sub 01 Sub 01
+              </db-link>
+            </li>
+            <li>
+              <db-link href="#">
+                Sub 01 Sub 02
+              </db-link>
+            </li>
+            <li>
+              <db-link href="#">
+                Sub 01 Sub 03
+              </db-link>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <db-link href="#">
+        Aufträge
+      </db-link>
+      <ul>
+        <li>
+          <db-link href="#">
+            Subul 02
+          </db-link>
+        </li>
+      </ul>
+    </li>
+    <li>
+      {/* You could as well use a general hyperlink HTML tag */}
+      <a href="#">News</a>
+    </li>
+  </db-mainnavigation>
+</Canvas>
+
+<db-headline>Mainnavigation with Data</db-headline>
+
+<db-headline variant="4">Without submenu</db-headline>
+
+<Canvas>
+  <db-mainnavigation data={mockData()} />
+</Canvas>
+
+<db-headline variant="4">With submenu items</db-headline>
+
+<Canvas>
+  <db-mainnavigation data={mockDataSub()} />
+</Canvas>
+
+The data should be an object passed in with JSON.stringify()
+
+```typescript
+export type DbMainnavigationDataType = {
+  link: string; // Link to navigate
+  label: string; // Visible text to user
+  current?: boolean; // Marked as current selected
+  children?: DbMainnavigationDataType[]; // Submenu, sublinks
+};
+
+```
+
+</StyledCanvas>
+
+<Readme />

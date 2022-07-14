@@ -1,0 +1,52 @@
+{
+  "name": "playground-showcase",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "dependencies": {
+    "@db-ui/react-elements": "file:./../../packages/db-ui-elements-react/",
+    "ace-builds": "^1.4.14",
+    "cpr": "^3.0.1",
+    "dompurify": "^2.3.6",
+    "grapesjs": "^0.18.3",
+    "grapesjs-preset-webpage": "^0.1.11",
+    "react-ace": "^9.5.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "5.0.0",
+    "sass": "^1.50.0"
+  },
+  "scripts": {
+    "copy:ui-core": "cpr ../../node_modules/@db-ui/core/dist/fonts ./public/fonts -o && cpr ../../node_modules/@db-ui/core/dist/images ./public/images -o && cpr ../../node_modules/@db-ui/core/dist/js ./public/js -o",
+    "css:db-page": "sass  --style=compressed --no-source-map --load-path=node_modules  ../../packages/db-ui-elements-stencil/src/components/db-page/db-page.scss:./public/db-page.css && cpr ./public/db-page.css ./src/grapesjs/css/db-page.css -o",
+    "copy:css": "cpr ../../node_modules/@db-ui/core/dist/css/enterprise/db-ui-core.css ./public/enterprise/db-ui-core.css -o && cpr ../../node_modules/@db-ui/core/dist/css/enterprise/db-ui-core.vars.css ./public/enterprise/db-ui-core.vars.css -o && cpr ./src/grapesjs/css/grapes.css ./public/grapes.css -o",
+    "prestart": "npm run css:db-page && npm run copy:css && npm run copy:ui-core",
+    "prebuild": "npm run prestart",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/dompurify": "^2.3.3"
+  }
+}

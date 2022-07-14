@@ -1,0 +1,99 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+import { mockDataIcon } from './../../db-link/stories/mockData.ts';
+
+<Meta title="Components/Sidenavi/Intro" />
+
+<db-headline variant="1">&lt;db-sidenavi&gt;</db-headline>
+
+The `<db-sidenavi></db-sidenavi>` element represents a side navigation e.g. for mobile view.
+
+There are 3 options to use &lt;db-sidenavi&gt;:
+
+<db-headline>Sidenavi with &lt;db-link&gt;</db-headline>
+
+<Canvas>
+  <db-sidenavi>
+    <db-link rel="index" href="#" aria-current="page">
+      Startseite
+    </db-link>
+    <db-link rel="documents" href="#">
+      Dokumente
+    </db-link>
+    <db-link icon="settings" href="#">
+      Einstellungen
+    </db-link>
+    <db-link icon="chat" href="#">
+      Nachrichten
+    </db-link>
+    <db-link rel="calendar" href="#">
+      Kalender
+    </db-link>
+    <db-link rel="help" href="#">
+      Frage &amp; Hilfe
+    </db-link>
+  </db-sidenavi>
+</Canvas>
+
+<db-headline>Sidenavi with wrappers</db-headline>
+
+Use [&lt;li&gt; (**l**ist **i**tem)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li) as a wrapper tag around each element.
+
+<i>
+  <strong>
+    Maybe you need this option to use framework specific listeners.
+  </strong>
+</i>
+
+<Canvas>
+  <db-sidenavi>
+    <li>
+      <a rel="index" href="#" aria-current="page">
+        Startseite
+      </a>
+    </li>
+    <li>
+      <a rel="documents" href="#">
+        Dokumente
+      </a>
+    </li>
+    <li>
+      <a rel="calendar" href="#">
+        Kalender
+      </a>
+    </li>
+    <li>
+      <a rel="help" href="#">
+        Frage &amp; Hilfe
+      </a>
+    </li>
+  </db-sidenavi>
+</Canvas>
+
+<db-headline>sidenavi with data</db-headline>
+
+<Canvas>
+  <db-sidenavi data={mockDataIcon()} />
+</Canvas>
+
+The data should be an object passed in with JSON.stringify()
+
+```typescript
+export type DbLinkType = {
+  href: string;
+  label: string;
+  icon?: string;
+  target?: '_blank' | '_self' | '_parent' | '_top';
+  ariaCurrent?:
+    | 'page'
+    | 'step'
+    | 'location'
+    | 'date'
+    | 'time'
+    | 'true'
+    | 'false';
+};
+```
+
+<Readme />

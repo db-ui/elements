@@ -1,0 +1,6 @@
+@import '../general';
+@import 'breadcrumb';
+
+li :where(button, a) {
+  @extend .elm-link;
+}

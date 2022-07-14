@@ -1,0 +1,25 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Elements/Radio/Intro" />
+
+<db-headline variant="1">&lt;db-radio&gt;</db-headline>
+
+The `<db-radio></db-radio>` represents a control that, when used in conjunction with other input elements, forms a radio button group in which only one control can have its checkedness state set to true. If the element's checkedness state is true, the control represents the selected control in the group, and if it is false, it indicates a control in the group that is not selected.
+
+Most of attributes are used in the same way as with a native radio. You can try out on <a href="/story/db-radio--live-demo">Radio Live Demo</a> Page.
+
+<Canvas>
+  <db-radio label="Radio-01" name="radio-name" value="radio-01"></db-radio>
+  <db-radio label="Radio-02" name="radio-name" value="radio-02"></db-radio>
+</Canvas>
+
+<db-headline variant="2">disabled</db-headline>
+
+Make radios look inactive by adding the disabled boolean attribute to any &lt;db-radio&gt; element.
+
+<Canvas>
+  <db-radio label="Radio" name="radio-name" disabled></db-radio>
+</Canvas>
+
+<Readme />

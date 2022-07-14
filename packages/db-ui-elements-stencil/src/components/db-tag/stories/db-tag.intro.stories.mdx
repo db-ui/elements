@@ -1,0 +1,38 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Elements/Tag/Intro" />
+
+<db-headline variant="1">&lt;db-tag&gt;</db-headline>
+
+<db-headline>Tag with variants</db-headline>
+
+The default `<db-tag></db-tag>` without any values will render a black tag you can change the color with some predefined variants.
+
+<Canvas>
+  <db-tag>default</db-tag>
+  <db-tag variant="informative">informative</db-tag>
+  <db-tag variant="success">success</db-tag>
+  <db-tag variant="poi-essen-trinken">poi-essen-trinken</db-tag>
+  <db-tag variant="poi-einkaufen">poi-einkaufen</db-tag>
+  <db-tag variant="track">track</db-tag>
+</Canvas>
+
+<db-headline>Small Tags</db-headline>
+
+<Canvas>
+  <db-tag>Regular sized (Default)</db-tag>
+  <db-tag small>Small</db-tag>
+</Canvas>
+
+<db-headline>Icon Tags</db-headline>
+
+<Canvas>
+  <db-tag icon="account">icon</db-tag>
+  <db-tag iconafter="account">iconafter</db-tag>
+  <db-tag icon="account" iconafter="account">
+    icon + iconafter
+  </db-tag>
+</Canvas>
+
+<Readme />

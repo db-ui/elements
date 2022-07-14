@@ -1,0 +1,62 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Elements/Chip/Intro" />
+
+<db-headline variant="1">&lt;db-chip&gt;</db-headline>
+
+<db-headline>Filter Chips</db-headline>
+
+<Canvas>
+  <db-chip datatype="filter">default</db-chip>
+  <db-chip datatype="filter" variant="informative">
+    informative
+  </db-chip>
+  <db-chip datatype="filter" variant="success">
+    success
+  </db-chip>
+  <db-chip datatype="filter" variant="poi-essen-trinken">
+    poi-essen-trinken
+  </db-chip>
+  <db-chip datatype="filter" variant="poi-einkaufen">
+    poi-einkaufen
+  </db-chip>
+  <db-chip datatype="filter" variant="track">
+    track
+  </db-chip>
+</Canvas>
+
+<db-headline>Selection Chips</db-headline>
+
+<Canvas>
+  <db-chip>default</db-chip>
+  <db-chip variant="informative">informative</db-chip>
+  <db-chip variant="success">success</db-chip>
+  <db-chip variant="poi-essen-trinken">poi-essen-trinken</db-chip>
+  <db-chip variant="poi-einkaufen">poi-einkaufen</db-chip>
+  <db-chip variant="track">track</db-chip>
+</Canvas>
+
+<db-headline>Chips with icons</db-headline>
+
+<Canvas>
+  <db-chip datatype="filter" icon="account">icon</db-chip>
+  <db-chip datatype="filter" iconafter="account">iconafter</db-chip>
+  <db-chip datatype="filter" icon="account" iconafter="account">
+    icon + iconafter
+  </db-chip>
+</Canvas>
+
+<db-headline>Chips disabled</db-headline>
+
+<Canvas>
+  <db-chip datatype="filter">default</db-chip>
+  <db-chip datatype="filter" variant="informative" disabled>
+    informative
+  </db-chip>
+  <db-chip datatype="filter" variant="success">
+    success
+  </db-chip>
+</Canvas>
+
+<Readme />

@@ -1,0 +1,6 @@
+@import '../general';
+@import 'mainnavigation';
+
+a {
+  @extend .elm-link;
+}

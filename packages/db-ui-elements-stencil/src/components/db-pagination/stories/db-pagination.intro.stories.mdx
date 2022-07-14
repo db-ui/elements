@@ -1,0 +1,120 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Components/Pagination/Intro" />
+
+<db-headline variant="1"> &lt;db-pagination&gt;</db-headline>
+
+The `<db-pagination></db-pagination>` element represents a pagination navigation
+element which lets the user select a certain page number.
+
+There are two kinds how one can consume this component.
+
+If anchor elements are passed into the `<db-pagination>` they will be used as
+is. The first element is assumed to be the beginning of the collection of pages
+in the pagination.
+The same is true for the last element but it is assumed that it is your very
+last page.
+If ellipses are needed one can activate them via the attributes 
+`ellipsisstart="true"` and `ellipsisend="true"`.
+
+Caveat: Previous and next arrows will always jump from the second/penultimate
+element to the first/last element passed as children.
+
+The second kind how this component can be consumed is without children but with
+a custom event. When a certain page is selected, `<db-pagination>` emits a custom `dbChange`
+event whose `event .detail.target.innerText` value can be read from your
+framework of choice or via plain Javascript.
+
+<db-headline variant="2"> Pagination</db-headline>
+
+<db-headline> With children provided via slot (with ellipsis) </db-headline>
+
+<Canvas>
+  <db-pagination ellipsisstart="true" ellipsisend="true">
+    <a href="#" title="first page">
+      1
+    </a>
+    <a href="#" title="third page">
+      3
+    </a>
+    <a href="#" data-currentpage title="fourth page">
+      4
+    </a>
+    <a href="#" title="fifth page">
+      5
+    </a>
+    <a href="#" title="ninth page">
+      9
+    </a>
+  </db-pagination>
+</Canvas>
+
+<db-headline>With children provided via slot (no ellipsis).</db-headline>
+
+<Canvas>
+  <db-pagination>
+    <a href="#" title="first page">
+      1
+    </a>
+    <a href="#" title="second page">
+      2
+    </a>
+    <a href="#" data-currentpage title="third page">
+      3
+    </a>
+    <a href="#" title="fourth page">
+      4
+    </a>
+    <a href="#" title="fifth page">
+      5
+    </a>
+  </db-pagination>
+</Canvas>
+
+<db-headline>No ellipsis because we are on the first page (with custom event)</db-headline>
+
+<Canvas>
+  <db-pagination currentpage="1" pages="9" count="3"></db-pagination>
+</Canvas>
+
+<db-headline>No ellipsis because we are on the second page (with custom event)</db-headline>
+
+<Canvas>
+  <db-pagination currentpage="2" pages="9" count="3"></db-pagination>
+</Canvas>
+
+<db-headline>Ellipsis on both ends because we are far from the beginning and the end (full configuration of component attributes and custom event).</db-headline>
+
+<Canvas>
+<db-pagination
+    currentpage="4"
+    pages="9"
+    count="3"
+    titleprevious="Titel nächstes"
+    titlenext="Titel vorher"
+    titlepagination="Seitennummer"
+    textprevious="Vorher"
+    textnext="Nächstes"
+  ></db-pagination>
+</Canvas>
+
+<db-headline>No ellipsis at the end because we are on the second to last page (with custom event).</db-headline>
+
+<Canvas>
+  <db-pagination currentpage="8" pages="9" count="3"></db-pagination>
+</Canvas>
+
+<db-headline>Last page, no ellipsis at the end but in the front (with custom event).</db-headline>
+
+<Canvas>
+  <db-pagination currentpage="9" pages="9" count="3"></db-pagination>
+</Canvas>
+
+<db-headline>No ellipsis at both ends because we there are too few pages (with custom event).</db-headline>
+
+<Canvas>
+  <db-pagination currentpage="2" pages="3" count="3"></db-pagination>
+</Canvas>
+
+<Readme />

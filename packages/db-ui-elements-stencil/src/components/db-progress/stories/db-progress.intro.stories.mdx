@@ -1,0 +1,34 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Elements/Progress/Intro" />
+
+<db-headline variant="1">&lt;db-progress&gt;</db-headline>
+
+
+
+<db-headline variant="2">The default `<db-progress></db-progress>` with value and max.</db-headline>
+<Canvas>
+  <db-progress value="60" max="100"></db-progress>
+</Canvas>
+
+
+<db-headline>As circle</db-headline>
+
+<Canvas>
+  <db-progress value="60" max="100" circle="true"></db-progress>
+</Canvas>
+
+<db-headline>Indeterminate</db-headline>
+
+<Canvas>
+  <db-progress indeterminate="true"></db-progress>
+</Canvas>
+
+<db-headline>Different percentage sign</db-headline>
+
+<Canvas>
+  <db-progress value="60" max="100" percentagesign=" ❤️"></db-progress>
+</Canvas>
+
+<Readme />

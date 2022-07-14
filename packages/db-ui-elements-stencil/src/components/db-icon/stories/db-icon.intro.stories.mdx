@@ -1,0 +1,37 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+
+import Readme from './../readme.md';
+
+<Meta title="Elements/Icon/Intro" />
+
+<db-headline variant="1">&lt;db-icon&gt;</db-headline>
+
+The `<db-icon></db-icon>` is based on the design language of Deutsche Bahn. You can try out on <a href="/story/db-icon--live-demo">Icon Live Demo</a> Page.
+
+<Canvas>
+  <db-icon icon="account"></db-icon>
+</Canvas>
+
+<db-headline variant="2">icon</db-headline>
+
+The icon attribute is to select the icon. To see all Icons visit <a href="https://db-ui.github.io/core/?p=viewall-base-icons" target="_blank">DB UI Core icons overview</a> page.
+
+<Canvas>
+  <db-icon icon="account"></db-icon>
+  <db-icon icon="edit"></db-icon>
+  <db-icon icon="zoom-out"></db-icon>
+</Canvas>
+
+<db-headline variant="2">variant</db-headline>
+
+The variant attribute specifies the size and style of an icon.
+
+<Canvas>
+  <db-icon icon="account" variant="20-outline"></db-icon>
+  <db-icon icon="account" variant="24-outline"></db-icon>
+  <db-icon icon="account" variant="32-outline"></db-icon>
+  <db-icon icon="account" variant="48-outline"></db-icon>
+  <db-icon icon="account" variant="64-outline"></db-icon>
+</Canvas>
+
+<Readme />

@@ -1,0 +1,37 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Components/Cards/Intro" />
+
+<h1>&lt;db-cards&gt;</h1>
+
+The `<db-cards></db-cards>` element represents a grid layout for cards.
+
+<h3>Cards</h3>
+
+<Canvas>
+  <db-cards>
+    <db-card
+      header="Title 1"
+      content="Content 1"
+      illustration="christmas"
+    ></db-card>
+    <db-card
+      header="Title 2"
+      content="Content 2"
+      illustration="whats-schmutzig"
+    ></db-card>
+    <db-card
+      header="Title 3"
+      content="Content 3"
+      illustration="kiosk"
+    ></db-card>
+    <db-card
+      header="Title 4"
+      content="Content 4"
+      illustration="gaming"
+    ></db-card>
+  </db-cards>
+</Canvas>
+
+<Readme />

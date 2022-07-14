@@ -1,0 +1,57 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Elements/Button/Intro" />
+
+<db-headline variant="1">&lt;db-button&gt;</db-headline>
+
+The `<db-button></db-button>` element represents a clickable button, used to submit forms or anywhere in a document for accessible, standard button functionality. Most of attributes are used in the same way as with a native button. You can try out on <a href="/story/db-button--live-demo">Button Live Demo</a> Page.
+
+<Canvas>
+  <db-button>Button</db-button>
+</Canvas>
+
+<db-headline variant="2">variant</db-headline>
+
+The variant attribute specifies a visual expression of button.
+
+<Canvas>
+  <db-button variant="brand-primary">Brand Primary</db-button><db-button variant="primary">Primary</db-button><db-button variant="secondary-solid">Secondary solid</db-button><db-button variant="secondary-outline">Secondary Outline</db-button><db-button variant="tertiary-plain">Tertiary plain</db-button>
+</Canvas>
+
+<db-headline variant="2">sizes</db-headline>
+
+There are three different sizes of buttons to choose from: small, regular (default), large
+
+<Canvas>
+  <db-button variant="primary" size="small">Primary small</db-button><db-button variant="primary">Primary</db-button><db-button variant="primary" size="large">Primary large</db-button>
+</Canvas>
+
+<db-headline variant="2">disabled</db-headline>
+
+Make buttons look inactive by adding the disabled boolean attribute to any `<db-button>` element.
+
+<Canvas>
+  <db-button variant="primary" disabled>Primary</db-button><db-button variant="secondary-solid" disabled>Secondary Solid</db-button><db-button variant="secondary-outline" disabled>Secondary Outline</db-button>
+</Canvas>
+
+<db-headline variant="2">icon Position</db-headline>
+
+You could set the icons position – either before or after the text – by using either the `icon` or `iconafter` attributes and defining an icon by it's identifier (like e.g. download, compare to [DB UI Icons](https://db-ui.github.io/core/patterns/base-icons/index.html)).
+
+<Canvas>
+  <db-button variant="primary" icon="download">Primary</db-button><db-button variant="primary" iconafter="download">Primary</db-button>
+  <db-button variant="secondary-solid" icon="download">Secondary solid</db-button><db-button variant="secondary-solid" iconafter="download">Secondary solid</db-button>
+  <db-button variant="secondary-outline" icon="download">Secondary Outline</db-button> <db-button variant="secondary-outline" iconafter="download">Secondary Outline</db-button>
+</Canvas>
+
+<db-headline variant="2">icononly (only use with care)</db-headline>
+
+If you'd only like to display the icon without any text, you could set the attribute `icononly` on the button component. But please keep in mind that a visual text ensures clarity on the subject of this button as well enables use cases like controlling the page by voice (accessibility).
+
+<Canvas>
+  <db-button variant="primary" icon="download" icononly>Button</db-button><db-button variant="secondary-solid" icon="download" icononly>Button</db-button><db-button variant="secondary-outline" icon="download" icononly>Button</db-button>
+</Canvas>
+
+
+<Readme />

@@ -1,0 +1,54 @@
+{
+  "name": "@db-ui/react-elements",
+  "sideEffects": false,
+  "version": "0.0.0",
+  "description": "React specific wrapper for @db-ui/elements",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/db-ui/elements.git",
+    "directory": "db-ui-elements-react"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "npm run clean && npm run tsc",
+    "build:prod": "npm run clean && npm run tsc:prod",
+    "watch": "npm run tsc --watch",
+    "clean": "rimraf dist",
+    "tsc": "tsc -p . ",
+    "tsc:prod": "tsc -p . --sourceMap false",
+    "lint": "echo \"Warning: no lint specified\" && exit 0",
+    "prerelease": "npm run validate && np prerelease --yolo --any-branch --tag next",
+    "validate": "npm i && npm run lint && npm run test && npm run build"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "@types/react-dom": "17.0.11",
+    "jest": "27.5.1",
+    "np": "7.6.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "rimraf": "2.7.1",
+    "rollup": "1.32.1",
+    "rollup-plugin-node-resolve": "5.2.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "node_modules",
+      "dist"
+    ]
+  }
+}

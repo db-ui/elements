@@ -1,0 +1,67 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+import { mockData } from './../../db-link/stories/mockData.ts';
+
+<Meta title="Components/Meta Navigation/Intro" />
+
+<db-headline variant="1">&lt;db-metanavigation&gt;</db-headline>
+
+The `<db-metanavigation></db-metanavigation>` element represents a meta navigation inside the header or footer component.
+
+There are three options to use &lt;db-metanavigation&gt;:
+
+<db-headline>Metanavigation with &lt;db-link&gt;</db-headline>
+
+<Canvas>
+  <db-metanavigation>
+    <db-link icon="settings" href="#">
+      Einstellungen
+    </db-link>
+    <db-link icon="chat" icononly href="#">
+      Nachrichten
+    </db-link>
+  </db-metanavigation>
+</Canvas>
+
+<db-headline>Metanavigation with other custom elements</db-headline>
+
+Use [&lt;li&gt; (**l**ist **i**tem)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li) as a wrapper tag around each element.
+
+<i>
+  <strong>
+    Maybe you need this option to use framework specific listeners.
+  </strong>
+</i>
+
+<Canvas>
+  <db-metanavigation>
+    <li>
+      <a href="#" title="Title text" rel="configuration">
+        Einstellungen
+      </a>
+    </li>
+    <li>
+      <a href="#" title="Title text" rel="messages">
+        Nachrichten
+      </a>
+    </li>
+  </db-metanavigation>
+</Canvas>
+
+<db-headline>Metanavigation with data</db-headline>
+
+<Canvas>
+  <db-metanavigation data={mockData()} />
+</Canvas>
+
+The data should be an object passed in with `JSON.stringify()`
+
+```typescript
+export type DbLinkType = {
+  href: string;
+  label: string;
+};
+```
+
+<Readme />

@@ -1,0 +1,49 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+<Meta title="Components/Brand/Intro" />
+
+<db-headline variant="1">&lt;db-brand&gt;</db-headline>
+
+The `<db-brand></db-brand>` element represents the Deutsche Bahn logo inside the header area.
+
+<p>Only Logo</p>
+
+<Canvas>
+  <db-brand></db-brand>
+</Canvas>
+
+<p>Logo and site name</p>
+
+<Canvas>
+  <db-brand>My awesome App</db-brand>
+</Canvas>
+
+<p>Other Hover Title</p>
+
+<Canvas>
+  <db-brand title="The first-ever hovercraft race took place in 1960.">
+    Hover over the logo
+  </db-brand>
+</Canvas>
+
+<p>Made site name clickable</p>
+
+<Canvas>
+  <db-brand site-name-link>Click me</db-brand>
+</Canvas>
+
+<p>All Params</p>
+
+<Canvas>
+  <db-brand
+    alt="Custom Hover"
+    rel="home"
+    title="I'm J. Edgar Hoover"
+    site-name-link
+  >
+    My awesome App
+  </db-brand>
+</Canvas>
+
+<Readme />

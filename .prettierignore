@@ -1,0 +1,12 @@
+www
+dist
+*.mdx
+*.md
+*.d.ts
+package-lock.json
+node_modules
+build
+*.svg
+
+# This file is changed by the stencil compiler
+src/components.d.ts

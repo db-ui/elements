@@ -1,0 +1,6 @@
+@import '../general';
+@import 'checkbox';
+
+:host[disabled] {
+  pointer-events: none;
+}

@@ -1,0 +1,84 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import Readme from './../readme.md';
+
+import { mockData } from './../../db-link/stories/mockData.ts';
+
+import { styled } from '@storybook/theming';
+
+export const StyledCanvas = styled.div`
+  .docs-story {
+    & > div:first-child {
+      min-height: 300px;
+    }
+  }
+`;
+
+<Meta title="Components/Dropdown/Intro" />
+
+<StyledCanvas>
+
+<db-headline variant="1">&lt;db-dropdown&gt;</db-headline>
+
+The `<db-dropdown></db-dropdown>` element represents a dropdown.
+
+There are two options to use &lt;db-dropdown&gt;:
+
+<db-headline variant="2">dropdown with &lt;db-link&gt;</db-headline>
+
+<Canvas>
+  <db-dropdown opposite>
+    <db-link href="#">Einstellungen</db-link>
+    <db-link href="#">Nachrichten</db-link>
+  </db-dropdown>
+</Canvas>
+
+<db-headline variant="2">dropdown with wrappers</db-headline>
+
+Use [&lt;li&gt; (**l**ist **i**tem)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li) as a wrapper tag around each element.
+
+Only `<button>` and `<a>` HTML tags work as items content.
+
+<i>
+  <strong>
+    Maybe you need this option to use framework specific listeners.
+  </strong>
+</i>
+
+
+
+<db-headline>dropdown with custom db-button</db-headline>
+
+<Canvas>
+  <db-dropdown opposite>
+    <li>
+      <db-button title="Title text">
+        Modify
+      </db-button>
+    </li>
+    <li>
+      <db-button title="Title text">
+        Delete
+      </db-button>
+    </li>
+  </db-dropdown>
+</Canvas>
+
+<db-headline>dropdown with data</db-headline>
+
+<Canvas>
+  <db-dropdown opposite data={mockData()} />
+</Canvas>
+
+
+The data should be an object passed in with JSON.stringify()
+
+```typescript
+export type DbLinkType = {
+  href: string;
+  label: string;
+};
+```
+
+</StyledCanvas>
+
+<Readme />

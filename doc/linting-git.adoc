@@ -1,0 +1,3 @@
+*Status of this document: in progress*
+
+link:https://www.npmjs.com/commitlint[commitlint] (in combination with link:https://www.npmjs.com/husky[husky] for git workflow integration) is the de-facto community standard for linting git commit messages. We're using the standard stack here as described within our link:../conventions.adoc#user-content-git-commits-conventions[conventions] documentation.

@@ -1,0 +1,78 @@
+import { Component, Element, h, Prop } from '@stencil/core';
+import { DbLinkType } from '../db-link/db-link-type';
+import { getDefaultLinkData, parseData } from '../../utils/utils';
+
+@Component({
+  tag: 'db-overflow-menu',
+  styleUrl: 'db-overflow-menu.scss'
+})
+export class DbOverflowMenu {
+  /**
+   * The data attribute can be used to generate overflow-menu by data.
+   */
+  @Prop({ reflect: true }) data?: string;
+
+  /**
+   * The opposite attribute, changes the behaviour: overflow-menu -> right.
+   */
+  @Prop({ reflect: true }) opposite: boolean;
+
+  /**
+   * The summary attribute, shows a text for accessibility.
+   */
+  @Prop({ reflect: true }) summary: string = '';
+
+  private compData: DbLinkType[];
+
+  private hasItemsWrapper: boolean;
+
+  get children(): Element[] {
+    return this._children;
+  }
+
+  set children(value: Element[]) {
+    this._children = value;
+  }
+  private _children: Element[];
+
+  @Element() host: HTMLDbOverflowMenuElement;
+
+  componentWillLoad() {
+    if (this.data) {
+      this.compData = parseData(this.data);
+    } else {
+      this._children = Array.from(this.host.children);
+      if (this.children.find((child) => child.tagName.toLowerCase() === 'li')) {
+        this.hasItemsWrapper = true;
+      } else {
+        this.host.innerHTML = '';
+      }
+    }
+  }
+
+  render() {
+    return (
+      <details
+        class="cmp-overflow-menu"
+        data-horizontal-position={this.opposite && 'opposite'}
+      >
+        <summary>{this.summary}</summary>
+        {this.compData && (
+          <menu type="toolbar" innerHTML={getDefaultLinkData(this.compData)} />
+        )}
+        {!this.compData && (
+          <menu type="toolbar">
+            {!this.hasItemsWrapper &&
+              this._children.map((child, index) => (
+                <li
+                  key={`cmp-overflow-menu-${index}`}
+                  innerHTML={child.outerHTML}
+                />
+              ))}
+            {this.hasItemsWrapper && <slot />}
+          </menu>
+        )}
+      </details>
+    );
+  }
+}
