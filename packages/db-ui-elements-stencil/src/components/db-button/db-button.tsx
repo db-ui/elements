@@ -90,6 +90,11 @@ export class DbButton {
     | 'tertiary-plain'
     | 'brand-primary';
 
+  /**
+   * The size attribute specifies the button size out of three sizes.
+   */
+  @Prop({ reflect: true }) size?: 'small' | 'regular' | 'large';
+
   render() {
     return (
       <button
@@ -107,10 +112,13 @@ export class DbButton {
         title={this.tooltip}
         type={this.type}
         value={this.value}
+        data-size={this.size}
       >
         {this.icon ? <db-icon icon={this.icon} /> : null}
         <slot />
-        {this.iconafter ? <db-icon icon={this.iconafter} /> : null}
+        {this.iconafter ? (
+          <db-icon icon={this.iconafter} class="iconafter" />
+        ) : null}
       </button>
     );
   }
