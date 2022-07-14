@@ -10,3 +10,14 @@
 button.is-icon-text-replace {
   @include is-icon-text-replace();
 }
+
+db-icon {
+  .is-icon-text-replace & {
+    --icon-margin-after: 0;
+  }
+
+  &.iconafter {
+    --icon-margin-after: 0;
+    margin-inline-start: 0.375rem;
+  }
+}
