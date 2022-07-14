@@ -35,11 +35,11 @@
   },
   "devDependencies": {
     "@stencil/angular-output-target": "0.4.0",
-    "@stencil/core": "2.16.1",
+    "@stencil/core": "2.17.0",
     "@stencil/eslint-plugin": "0.4.0",
     "@stencil/react-output-target": "0.3.1",
     "@stencil/sass": "1.5.2",
-    "@stencil/vue-output-target": "0.6.0",
+    "@stencil/vue-output-target": "0.6.1",
     "@types/jest": "27.4.1",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
@@ -48,7 +48,7 @@
     "yargs": "17.4.0"
   },
   "dependencies": {
-    "@db-ui/core": "^2.0.0-45",
+    "@db-ui/core": "^2.0.0-46",
     "@faker-js/faker": "^6.0.0",
     "nanoid": "^3.3.2"
   },

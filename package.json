@@ -25,21 +25,21 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@babel/preset-env": "^7.16.11",
     "@babel/core": "7.17.5",
+    "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@commitlint/cli": "16.2.1",
     "@commitlint/config-conventional": "16.2.1",
     "@cypress/code-coverage": "^3.9.12",
-    "@storybook/addon-actions": "6.4.19",
-    "@storybook/addon-controls": "6.4.19",
-    "@storybook/addon-docs": "6.4.19",
-    "@storybook/addon-essentials": "6.4.19",
-    "@storybook/addon-links": "6.4.19",
-    "@storybook/html": "6.4.19",
-    "@storybook/react": "6.4.19",
-    "@storybook/web-components": "6.4.19",
+    "@storybook/addon-actions": "6.5.9",
+    "@storybook/addon-controls": "6.5.9",
+    "@storybook/addon-docs": "6.5.9",
+    "@storybook/addon-essentials": "6.5.9",
+    "@storybook/addon-links": "6.5.9",
+    "@storybook/html": "6.5.9",
+    "@storybook/react": "6.5.9",
+    "@storybook/web-components": "6.5.9",
     "@types/estree": "0.0.51",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
@@ -51,7 +51,7 @@
     "eslint": "8.9.0",
     "eslint-config-prettier": "8.4.0",
     "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-storybook": "0.5.7",
+    "eslint-plugin-storybook": "0.5.13",
     "eslint-plugin-vue": "^8.5.0",
     "husky": "7.0.4",
     "iframe-resizer": "4.3.2",
@@ -77,5 +77,8 @@
   "homepage": "https://db-ui.github.io/elements/",
   "engines": {
     "npm": "^8.1.0"
+  },
+  "overrides": {
+    "file-system-cache": "1.0.5"
   }
 }
