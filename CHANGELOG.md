@@ -12,9 +12,25 @@ Regarding BREAKING CHANGES in between, please have a look into [the migration gu
 
 ## [Unreleased]
 
+## [0.14.4] - 2022-07-12
+
+### Changed
+
+#### DEV
+
+- updated `storybook`, `stencil` & DB UI Core dependencies
+
+### Fixed
+
+#### Package consumption
+
+- Correctly displaying the icons within buttons
+
 ## [0.14.3] - 2022-07-06
 
 ### Fixed
+
+#### Package consumption
 
 - Correctly displaying the icons within buttons
 
