@@ -1,1 +1,0 @@
-let r=(r=21)=>{let t="",e=crypto.getRandomValues(new Uint8Array(r));for(;r--;){let n=63&e[r];t+=n<36?n.toString(36):n<62?(n-26).toString(36).toUpperCase():n<63?"_":"-"}return t};export{r as n}
