@@ -18,5 +18,8 @@ module.exports = {
   babel: async (options) => ({
     ...options,
     plugins: ['istanbul']
-  })
+  }),
+  core: {
+    builder: 'webpack5'
+  }
 };
