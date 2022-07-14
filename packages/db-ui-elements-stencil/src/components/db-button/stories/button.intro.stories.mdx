@@ -15,14 +15,16 @@ The `<db-button></db-button>` element represents a clickable button, used to sub
 
 The variant attribute specifies a visual expression of button.
 
-<p>
-  <b><i>Primary Buttons</i></b> are used as default and in the majority of cases.
-  <br/><b><i>Secondary Buttons</i></b> are used in conjunction with primary buttons to indicate that the button is of lower priority.
-  <br/><b><i>Secondary Outline Buttons</i></b> Buttons on a coloured background should revert to the colourless theme and not use the interaction colours for buttons.
-</p>
+<Canvas>
+  <db-button variant="brand-primary">Brand Primary</db-button><db-button variant="primary">Primary</db-button><db-button variant="secondary-solid">Secondary solid</db-button><db-button variant="secondary-outline">Secondary Outline</db-button><db-button variant="tertiary-plain">Tertiary plain</db-button>
+</Canvas>
+
+<db-headline variant="2">sizes</db-headline>
+
+There are three different sizes of buttons to choose from: small, regular (default), large
 
 <Canvas>
-  <db-button variant="primary">Primary</db-button><db-button variant="secondary-solid">Secondary</db-button><db-button variant="secondary-outline">Secondary Outline</db-button>
+  <db-button variant="primary" size="small">Primary small</db-button><db-button variant="primary">Primary</db-button><db-button variant="primary" size="large">Primary large</db-button>
 </Canvas>
 
 <db-headline variant="2">disabled</db-headline>
@@ -35,11 +37,11 @@ Make buttons look inactive by adding the disabled boolean attribute to any `<db-
 
 <db-headline variant="2">icon Position</db-headline>
 
-You could set the icons position – either before or after the text – by using the `icon` or `iconafter` attributes and defining an icon by it's identifier (like e.g. download, compare to [DB UI Icons](https://db-ui.github.io/core/patterns/base-icons/index.html)).
+You could set the icons position – either before or after the text – by using either the `icon` or `iconafter` attributes and defining an icon by it's identifier (like e.g. download, compare to [DB UI Icons](https://db-ui.github.io/core/patterns/base-icons/index.html)).
 
 <Canvas>
   <db-button variant="primary" icon="download">Primary</db-button><db-button variant="primary" iconafter="download">Primary</db-button>
-  <db-button variant="secondary-solid" icon="download">Secondary</db-button><db-button variant="secondary-solid" iconafter="download">Secondary</db-button>
+  <db-button variant="secondary-solid" icon="download">Secondary solid</db-button><db-button variant="secondary-solid" iconafter="download">Secondary solid</db-button>
   <db-button variant="secondary-outline" icon="download">Secondary Outline</db-button> <db-button variant="secondary-outline" iconafter="download">Secondary Outline</db-button>
 </Canvas>
 

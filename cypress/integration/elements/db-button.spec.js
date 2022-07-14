@@ -12,41 +12,71 @@ context('db-button', () => {
   it('Button variants exists', function () {
     cy.get(selector)
       .eq(1)
+      .contains('Brand Primary')
+      .click()
+      .invoke('attr', 'data-variant')
+      .should('eq', 'brand-primary');
+
+    cy.get(selector)
+      .eq(2)
       .contains('Primary')
       .click()
       .invoke('attr', 'data-variant')
       .should('eq', 'primary');
 
     cy.get(selector)
-      .eq(2)
-      .contains('Secondary')
+      .eq(3)
+      .contains('Secondary solid')
       .click()
       .invoke('attr', 'data-variant')
       .should('eq', 'secondary-solid');
 
     cy.get(selector)
-      .eq(3)
+      .eq(4)
       .contains('Secondary Outline')
       .click()
       .invoke('attr', 'data-variant')
       .should('eq', 'secondary-outline');
+
+    cy.get(selector)
+      .eq(5)
+      .contains('Tertiary plain')
+      .click()
+      .invoke('attr', 'data-variant')
+      .should('eq', 'tertiary-plain');
   });
 
-  it('Button variants are disabeled', function () {
+  it('Button variants should get displayed in different sizes', function () {
     cy.get(selector)
-      .eq(4)
+      .eq(6)
+      .contains('Primary small')
+      .invoke('attr', 'data-size')
+      .should('eq', 'small');
+
+    cy.get(selector).eq(7).contains('Primary');
+
+    cy.get(selector)
+      .eq(8)
+      .contains('Primary large')
+      .invoke('attr', 'data-size')
+      .should('eq', 'large');
+  });
+
+  it('Button variants are disabled', function () {
+    cy.get(selector)
+      .eq(9)
       .should('be.disabled')
       .invoke('attr', 'data-variant')
       .should('eq', 'primary');
 
     cy.get(selector)
-      .eq(5)
+      .eq(10)
       .should('be.disabled')
       .invoke('attr', 'data-variant')
       .should('eq', 'secondary-solid');
 
     cy.get(selector)
-      .eq(6)
+      .eq(11)
       .should('be.disabled')
       .invoke('attr', 'data-variant')
       .should('eq', 'secondary-outline');
