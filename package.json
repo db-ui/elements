@@ -53,6 +53,7 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-storybook": "0.5.13",
     "eslint-plugin-vue": "^8.5.0",
+    "file-system-cache": "1.0.5",
     "husky": "7.0.4",
     "iframe-resizer": "4.3.2",
     "jest-config": "27.5.1",
@@ -77,8 +78,5 @@
   "homepage": "https://db-ui.github.io/elements/",
   "engines": {
     "npm": "^8.1.0"
-  },
-  "overrides": {
-    "file-system-cache": "1.0.5"
   }
 }
