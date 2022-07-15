@@ -48,7 +48,7 @@
     "yargs": "17.4.0"
   },
   "dependencies": {
-    "@db-ui/core": "^2.0.0-46",
+    "@db-ui/core": "^2.0.0-47",
     "@faker-js/faker": "^6.0.0",
     "nanoid": "^3.3.2"
   },
