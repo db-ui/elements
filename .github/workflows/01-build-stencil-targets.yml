@@ -12,7 +12,7 @@ jobs:
       matrix:
         targets: [ngx-elements, react-elements, v-elements]
     steps:
-      - name: ⬇️ Checkout repo
+      - name: ⬇ Checkout repo
         uses: actions/checkout@v3
 
       - name: 🔄 Init Cache
@@ -37,13 +37,13 @@ jobs:
           fi
         id: path
 
-      - name: ⬆️Upload Stencil Local
+      - name: ⬆ Upload Stencil Local
         uses: actions/upload-artifact@v3
         with:
           name: stencil-local-${{ steps.path.outputs.framework }}
           path: packages/db-ui-elements-stencil
 
-      - name: ⬆️ Upload Output Target ${{ steps.path.outputs.framework }}
+      - name: ⬆ Upload Output Target ${{ steps.path.outputs.framework }}
         uses: actions/upload-artifact@v3
         with:
           name: output-target-${{ steps.path.outputs.framework }}
