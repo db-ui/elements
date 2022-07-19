@@ -4,11 +4,11 @@ inputs:
   nodeModulesPath:
     description: 'Path for node_modules'
     required: false
-    default: './node_modules'
+    default: '**/node_modules'
   packageLockPath:
     description: 'Path for package-lock.json'
     required: false
-    default: './package-lock.json'
+    default: '**/package-lock.json'
 runs:
   using: 'composite'
   steps:

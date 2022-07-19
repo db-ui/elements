@@ -10,6 +10,10 @@ jobs:
     uses: ./.github/workflows/01-test.yml
     needs: [init]
 
+  validate:
+    uses: ./.github/workflows/01-validate.yml
+    needs: [init]
+
   build:
     uses: ./.github/workflows/01-build.yml
     needs: [init]
@@ -20,9 +24,8 @@ jobs:
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
-    needs: [test, cypress]
+    needs: [validate, test, cypress]
 
   publish:
-    if: contains( github.ref, 'main')
     uses: ./.github/workflows/03-npm-publish.yml
-    needs: [test, cypress]
+    needs: [validate, test, cypress]
