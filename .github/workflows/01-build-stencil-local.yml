@@ -17,7 +17,7 @@ jobs:
       - name: 🔨 Build Stencil Local
         run: npm run build.local --workspace=@db-ui/elements
 
-      - name: ⬆️Upload Stencil Local
+      - name: ⬆️ Upload Stencil Local
         uses: actions/upload-artifact@v3
         with:
           name: stencil-local
