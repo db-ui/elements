@@ -10,7 +10,7 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: ⬇️Download build
+    - name: ⬇️ Download build
       uses: actions/download-artifact@v3
       with:
         name: ${{ inputs.name }}
