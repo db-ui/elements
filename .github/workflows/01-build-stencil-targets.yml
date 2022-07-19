@@ -18,11 +18,8 @@ jobs:
       - name: 🔄 Init Cache
         uses: ./.github/actions/npm-cache
 
-      - name: ⬇️ Download build
-        uses: actions/download-artifact@v3
-        with:
-          name: stencil-local
-          path: packages/db-ui-elements-stencil
+      - name: 🔨 Build Stencil Local
+        run: npm run build.local --workspace=@db-ui/elements
 
       - name: 🔨 Build Output Targets
         run: npm run build --workspace=@db-ui/${{ matrix.targets }}
@@ -39,6 +36,12 @@ jobs:
             echo '::set-output name=framework::vue'
           fi
         id: path
+
+      - name: ⬆️Upload Stencil Local
+        uses: actions/upload-artifact@v3
+        with:
+          name: stencil-local-${{ steps.path.outputs.framework }}
+          path: packages/db-ui-elements-stencil
 
       - name: ⬆️ Upload Output Target ${{ steps.path.outputs.framework }}
         uses: actions/upload-artifact@v3
