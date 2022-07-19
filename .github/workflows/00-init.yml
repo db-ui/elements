@@ -20,3 +20,5 @@ jobs:
       - name: 📥 Download deps default-npm-cache
         if: steps.npm-cache.outputs.cache-hit != 'true'
         uses: bahmutov/npm-install@v1
+        with:
+          install-command: npm ci --ignore-scripts
