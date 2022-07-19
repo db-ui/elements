@@ -1,0 +1,28 @@
+name: 'Download Tar Artifact'
+description: 'Downloads an artifact and unzips it'
+inputs:
+  name:
+    description: 'Name for artifact'
+    required: true
+  path:
+    description: 'Path for unzip'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: ⬇️Download build
+      uses: actions/download-artifact@v3
+      with:
+        name: ${{ inputs.name }}
+        path: download.tar.gz
+
+    - name: 📁 Create path folder
+      run: |
+        if [ ! -d ${{ inputs.path }}  ]; then
+           mkdir ${{ inputs.path }}
+        fi
+      shell: bash
+
+    - name: 📦 Unpack Tar
+      run: tar -zxf download.tar.gz -C ${{ inputs.path }} --strip-components 1
+      shell: bash

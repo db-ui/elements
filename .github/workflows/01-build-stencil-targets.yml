@@ -1,0 +1,47 @@
+name: Build Stencil Targets
+
+on:
+  workflow_call:
+
+jobs:
+  build-stencil-targets:
+    name: Build Stencil Targets
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        targets: [ngx-elements, react-elements, v-elements]
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🔄 Init Cache
+        uses: ./.github/actions/npm-cache
+
+      - name: ⬇️Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: stencil-local
+          path: packages/db-ui-elements-stencil
+
+      - name: 🔨 Build Output Targets
+        run: npm run build --workspace=@db-ui/${{ matrix.targets }}
+
+      - name: ↔ Get path for target
+        run: |
+          if echo ${{ matrix.targets }} | grep -c "ngx-elements"
+          then
+            echo '::set-output name=framework::angular'
+          elif echo ${{ matrix.targets }} | grep -c "react-elements"
+          then
+            echo '::set-output name=framework::react'
+          else
+            echo '::set-output name=framework::vue'
+          fi
+        id: path
+
+      - name: ⬆️Upload Output Target ${{ steps.path.outputs.framework }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-target-${{ steps.path.outputs.framework }}
+          path: packages/db-ui-elements-${{ steps.path.outputs.framework }}

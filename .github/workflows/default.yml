@@ -14,6 +14,14 @@ jobs:
     uses: ./.github/workflows/01-validate.yml
     needs: [init]
 
+  build-stencil-local:
+    uses: ./.github/workflows/01-build-stencil-local.yml
+    needs: [init]
+
+  build-stencil-targets:
+    uses: ./.github/workflows/01-build-stencil-targets.yml
+    needs: [build-stencil-local]
+
   build:
     uses: ./.github/workflows/01-build.yml
     needs: [init]
