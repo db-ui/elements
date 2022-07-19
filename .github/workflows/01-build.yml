@@ -23,7 +23,7 @@ jobs:
         run: tar -czf build.tar.gz out
         shell: bash
 
-      - name: ⬆️Upload build
+      - name: ⬆️ Upload build
         uses: actions/upload-artifact@v3
         with:
           name: build
