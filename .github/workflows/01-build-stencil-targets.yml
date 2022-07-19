@@ -18,7 +18,7 @@ jobs:
       - name: 🔄 Init Cache
         uses: ./.github/actions/npm-cache
 
-      - name: ⬇️Download build
+      - name: ⬇️ Download build
         uses: actions/download-artifact@v3
         with:
           name: stencil-local
@@ -40,7 +40,7 @@ jobs:
           fi
         id: path
 
-      - name: ⬆️Upload Output Target ${{ steps.path.outputs.framework }}
+      - name: ⬆️ Upload Output Target ${{ steps.path.outputs.framework }}
         uses: actions/upload-artifact@v3
         with:
           name: output-target-${{ steps.path.outputs.framework }}
