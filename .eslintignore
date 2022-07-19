@@ -6,6 +6,7 @@ scripts
 **/e2e
 **/test
 **/coverage
+**/showcase
 **/db-ui-elements-angular
 **/db-ui-elements-react
 **/db-ui-elements-vue
