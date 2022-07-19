@@ -8,6 +8,7 @@ public/
 !showcase/reactwind-showcase/public/
 !showcase/vue-showcase/public/
 packages/db-ui-elements-stencil/custom-elements.json
+out/
 
 .nyc_output
 

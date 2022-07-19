@@ -6,6 +6,10 @@ on:
 jobs:
   cypress:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [areas, components, elements, showcases]
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
@@ -27,6 +31,8 @@ jobs:
           wait-on: 'http://localhost:8080'
           wait-on-timeout: 120
           config: pageLoadTimeout=100000,baseUrl=http://localhost:8080
+          browser: chrome
+          spec: cypress/integration/${{ matrix.containers }}/*.js
 
       - name: 🛗 Upload Artifacts
         uses: actions/upload-artifact@v2

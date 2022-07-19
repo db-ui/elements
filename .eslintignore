@@ -1,6 +1,7 @@
 cypress
 scripts
 **/dist
+**/out
 **/build
 **/public
 **/e2e
