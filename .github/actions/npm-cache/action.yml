@@ -1,0 +1,21 @@
+name: 'NPM Cache Action'
+description: 'Initialize NPM Cache'
+inputs:
+  nodeModulesPath:
+    description: 'Path for node_modules'
+    required: false
+    default: './node_modules'
+  packageLockPath:
+    description: 'Path for package-lock.json'
+    required: false
+    default: './package-lock.json'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/cache@v3
+      id: 'npm-cache' # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+      with:
+        path: ${{ inputs.nodeModulesPath }}
+        key: ${{ runner.os }}-node-${{ hashFiles(inputs.packageLockPath) }}
+        restore-keys: |
+          ${{ runner.os }}-node-
