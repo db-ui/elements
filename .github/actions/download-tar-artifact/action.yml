@@ -20,7 +20,7 @@ runs:
         if [ ! -d ${{ inputs.path }}  ]; then
            mkdir ${{ inputs.path }}
           fi
-        export path="${inputs.path}"
+        export path="${{ inputs.path }}"
         export res="${path//[^/]}"
         export amount=$(echo ${#res})
         if [ $amount -eq "0"]; then
