@@ -22,7 +22,7 @@ runs:
         fi
         export amount=1
         export path="${{ inputs.path }}"
-        if [[ "path" == *\/* ]] || [[ "path" == *\\* ]]
+        if [[ "$path" == *\/* ]] || [[ "$path" == *\\* ]]
         then
           export slashes=$(grep -o "/" <<<"$path" | wc -l)
           export amount=$((amount + slashes))
