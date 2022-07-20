@@ -30,3 +30,15 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+
+      - name: 🖨️ Print gh-pages url
+        run: |
+          export BRANCH=${GITHUB_REF#refs/heads/}
+          if echo ${BRANCH} | grep -c "main"
+          then
+            export URL=https://dbsystel.github.io/cicd-playground
+          else
+            export URL=https://dbsystel.github.io/cicd-playground/review/${BRANCH}
+          fi
+          echo "URL: $URL"
+          echo "### GH-Pages URL :rocket: <br> <br> $URL" >> $GITHUB_STEP_SUMMARY

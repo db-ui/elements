@@ -11,6 +11,9 @@ jobs:
       fail-fast: false
       matrix:
         targets: [ngx-elements, react-elements, v-elements]
+        # TODO: Use theme if we want to deploy different themes (at the moment local===enterprise===default)
+        #        themes: [local, enterprise]
+        themes: [local]
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
@@ -18,10 +21,10 @@ jobs:
       - name: 🔄 Init Cache
         uses: ./.github/actions/npm-cache
 
-      - name: 🔨 Build Stencil Local
-        run: npm run build.local --workspace=@db-ui/elements
+      - name: 🔨 Build Stencil ${{ matrix.themes }}
+        run: npm run build.${{ matrix.themes }} --workspace=@db-ui/elements
 
-      - name: 🔨 Build Output Targets
+      - name: 🔨 Build Output Targets ${{ matrix.themes }}
         run: npm run build --workspace=@db-ui/${{ matrix.targets }}
 
       - name: ↔ Get path for target
@@ -37,14 +40,14 @@ jobs:
           fi
         id: path
 
-      - name: ⬆ Upload Stencil Local
+      - name: ⬆ Upload Stencil ${{ matrix.themes }}
         uses: ./.github/actions/upload-tar-artifact
         with:
-          name: stencil-local-${{ steps.path.outputs.framework }}
+          name: stencil-${{ matrix.themes }}-${{ steps.path.outputs.framework }}
           path: packages/db-ui-elements-stencil
 
       - name: ⬆ Upload Output Target ${{ steps.path.outputs.framework }}
         uses: ./.github/actions/upload-tar-artifact
         with:
-          name: output-target-${{ steps.path.outputs.framework }}
+          name: output-target-${{ matrix.themes }}-${{ steps.path.outputs.framework }}
           path: packages/db-ui-elements-${{ steps.path.outputs.framework }}
