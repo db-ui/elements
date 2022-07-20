@@ -2,6 +2,9 @@ export default {
   title: 'Elements/Input',
   id: 'db-input',
   component: 'db-input',
+  parameters: {
+    viewMode: 'docs'
+  },
   argTypes: {
     ariainvalid: {
       control: {

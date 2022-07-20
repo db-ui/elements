@@ -6,6 +6,14 @@ export default {
   title: 'Elements/Button',
   id: 'db-button',
   component: 'db-button',
+  parameters: {
+    // TODO: If we want to show canvas and docs
+    /* previewTabs: {
+      'storybook/docs/panel': { hidden: true },
+      canvas: { hidden: true }
+    },*/
+    viewMode: 'docs'
+  },
   argTypes: {
     text: {
       control: 'text',

@@ -6,10 +6,12 @@ defineCustomElements();
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   layout: 'centered',
-  controls: {
-    expanded: true,
-    hideNoControlsWarning: true
+  controls: { expanded: true, hideNoControlsWarning: true },
+  previewTabs: {
+    'storybook/docs/panel': { hidden: true },
+    canvas: { hidden: true }
   },
+  viewMode: 'story',
   options: {
     storySort: {
       method: 'alphabetical',

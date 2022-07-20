@@ -2,6 +2,9 @@ export default {
   title: 'Elements/Checkbox',
   id: 'db-checkbox',
   component: 'db-checkbox',
+  parameters: {
+    viewMode: 'docs'
+  },
   argTypes: {
     autofocus: {
       control: 'boolean'
