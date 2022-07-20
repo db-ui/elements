@@ -51,7 +51,13 @@ jobs:
           path: showcase/vue-showcase/dist
 
       - name: 🔨 Build Storybook
-        run: npm run build:storybook
+        run: |
+          mv showcase/angular-showcase/dist/angular-showcase packages/db-ui-elements-stencil/www/angular-showcase
+          mv showcase/playground-showcase/dist/playground-showcase packages/db-ui-elements-stencil/www/playground-showcase
+          mv showcase/react-showcase/dist/react-showcase packages/db-ui-elements-stencil/www/react-showcase
+          mv showcase/reactwind-showcase/dist/reactwind-showcase packages/db-ui-elements-stencil/www/reactwind-showcase
+          mv showcase/vue-showcase/dist/vue-showcase packages/db-ui-elements-stencil/www/vue-showcase
+          npm run build:storybook
 
       - name: ⬆ Upload build
         uses: ./.github/actions/upload-tar-artifact

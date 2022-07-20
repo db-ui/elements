@@ -55,7 +55,7 @@ jobs:
           cd showcase/${{ matrix.showcases }}-showcase
           npm i
           npm run build
-          npx --yes cpr showcase/${{ matrix.showcases }}-showcase/dist/${{ matrix.showcases }}-showcase/index.html showcase/${{ matrix.showcases }}-showcase/dist/${{ matrix.showcases }}-showcase/404.html
+          cp showcase/${{ matrix.showcases }}-showcase/dist/${{ matrix.showcases }}-showcase/index.html showcase/${{ matrix.showcases }}-showcase/dist/${{ matrix.showcases }}-showcase/404.html
 
       - name: ⬆ Upload Showcase ${{ matrix.showcases }} dist folder
         uses: ./.github/actions/upload-tar-artifact
