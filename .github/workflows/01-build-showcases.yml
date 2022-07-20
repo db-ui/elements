@@ -55,6 +55,8 @@ jobs:
           cd showcase/${{ matrix.showcases }}-showcase
           npm i
           npm run build
+          ls showcase/${{ matrix.showcases }}-showcase/dist
+          ls showcase/${{ matrix.showcases }}-showcase/dist/${{ matrix.showcases }}-showcase
           cp showcase/${{ matrix.showcases }}-showcase/dist/${{ matrix.showcases }}-showcase/index.html showcase/${{ matrix.showcases }}-showcase/dist/${{ matrix.showcases }}-showcase/404.html
 
       - name: ⬆ Upload Showcase ${{ matrix.showcases }} dist folder
