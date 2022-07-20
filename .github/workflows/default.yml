@@ -18,6 +18,14 @@ jobs:
     uses: ./.github/workflows/01-build-stencil-targets.yml
     needs: [init]
 
+  build-showcases:
+    uses: ./.github/workflows/01-build-showcases.yml
+    needs: [build-stencil-targets]
+
+  build-storybook:
+    uses: ./.github/workflows/01-build-storybook.yml
+    needs: [build-showcases]
+
   build:
     uses: ./.github/workflows/01-build.yml
     needs: [init]

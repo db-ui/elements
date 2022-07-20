@@ -1,0 +1,60 @@
+name: Build Storybook
+
+on:
+  workflow_call:
+
+jobs:
+  build-storybook:
+    name: Build Storybook
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🔄 Init Cache
+        uses: ./.github/actions/npm-cache
+
+      - name: ⬇ Download Stencil ${{ steps.download-params.outputs.theme }}
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: stencil-${{ steps.download-params.outputs.theme }}-${{ steps.download-params.outputs.framework }}
+          path: packages/db-ui-elements-stencil
+
+      - name: ⬇ Download Showcase angular dist folder
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: showcase-angular
+          path: showcase/angular-showcase/dist
+
+      - name: ⬇ Download Showcase playground dist folder
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: showcase-playground
+          path: showcase/playground-showcase/dist
+
+      - name: ⬇ Download Showcase react dist folder
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: showcase-react
+          path: showcase/react-showcase/dist
+
+      - name: ⬇ Download Showcase reactwind dist folder
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: showcase-reactwind
+          path: showcase/reactwind-showcase/dist
+
+      - name: ⬇ Download Showcase vue dist folder
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: showcase-vue
+          path: showcase/vue-showcase/dist
+
+      - name: 🔨 Build Storybook
+        run: npm run build:storybook
+
+      - name: ⬆ Upload build
+        uses: ./.github/actions/upload-tar-artifact
+        with:
+          name: build-storybook
+          path: out

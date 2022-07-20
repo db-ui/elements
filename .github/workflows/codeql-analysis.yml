@@ -31,8 +31,11 @@ jobs:
         with:
           languages: ${{ matrix.language }}
 
-      - name: 🔄 Init Cache
-        uses: ./.github/actions/npm-cache
+      - name: 📥 Download deps default-npm-cache
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        uses: bahmutov/npm-install@v1
+        with:
+          install-command: npm ci --ignore-scripts
 
       - name: 👩‍🍳 Bake everything (StoryBook, Playground & Showcases)
         run: |

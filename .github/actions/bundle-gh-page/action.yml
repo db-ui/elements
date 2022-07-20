@@ -43,6 +43,9 @@ runs:
           if [ ! -d ./public/review ]; then
             mkdir ./public/review
           fi
+          if [ -d ./public/review/${{ steps.extract_branch.outputs.branch }} ]; then
+            rm -rf  ./public/review/${{ steps.extract_branch.outputs.branch }}
+          fi
           mv ./out ./public/review/${{ steps.extract_branch.outputs.branch }}
         fi
       shell: bash
