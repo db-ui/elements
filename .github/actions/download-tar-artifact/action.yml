@@ -19,12 +19,13 @@ runs:
       run: |
         if [ ! -d ${{ inputs.path }}  ]; then
            mkdir ${{ inputs.path }}
-          fi
+        fi
+        export amount=1
         export path="${{ inputs.path }}"
-        export res="${path//[^/]}"
-        export amount=$(echo ${#res})
-        if [ $amount -eq "0"]; then
-           export amount=1
+        if [[ "path" == *\/* ]] || [[ "path" == *\\* ]]
+        then
+          export slashes=$(grep -o "/" <<<"$path" | wc -l)
+          export amount=$((amount + slashes))
         fi
         echo "##[set-output name=amount;]$(echo ${amount})"
       shell: bash
