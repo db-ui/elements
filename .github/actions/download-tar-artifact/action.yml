@@ -15,13 +15,20 @@ runs:
       with:
         name: ${{ inputs.name }}
 
-    - name: 📁 Create path folder
+    - name: 📁 Manage path folder
       run: |
         if [ ! -d ${{ inputs.path }}  ]; then
            mkdir ${{ inputs.path }}
+          fi
+        export res="${inputs.path//[^/]}"
+        export amount=$(echo ${#res})
+        if [ $amount -eq "0"]; then
+           export amount=1
         fi
+        echo "##[set-output name=amount;]$(echo ${amount})"
       shell: bash
+      id: manage-path-folder
 
     - name: 📦 Unpack Tar
-      run: tar -zxf ${{ inputs.name }} -C ${{ inputs.path }} --strip-components 1
+      run: tar -zxf ${{ inputs.name }} -C ${{ inputs.path }} --strip-components ${{ steps.manage-path-folder.outputs.amount }}
       shell: bash
