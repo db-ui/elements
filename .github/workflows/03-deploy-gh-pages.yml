@@ -16,7 +16,7 @@ jobs:
       - name: 🔄 Init Cache
         uses: ./.github/actions/npm-cache
 
-      - name: ⬇️Download build
+      - name: ⬇ Download build
         uses: ./.github/actions/download-tar-artifact
         with:
           name: build

@@ -38,13 +38,13 @@ jobs:
         id: path
 
       - name: ⬆ Upload Stencil Local
-        uses: actions/upload-artifact@v3
+        uses: ./.github/actions/upload-tar-artifact
         with:
           name: stencil-local-${{ steps.path.outputs.framework }}
           path: packages/db-ui-elements-stencil
 
       - name: ⬆ Upload Output Target ${{ steps.path.outputs.framework }}
-        uses: actions/upload-artifact@v3
+        uses: ./.github/actions/upload-tar-artifact
         with:
           name: output-target-${{ steps.path.outputs.framework }}
           path: packages/db-ui-elements-${{ steps.path.outputs.framework }}
