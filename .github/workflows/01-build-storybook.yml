@@ -63,5 +63,5 @@ jobs:
       - name: ⬆ Upload build
         uses: ./.github/actions/upload-tar-artifact
         with:
-          name: build-storybook
+          name: build
           path: out

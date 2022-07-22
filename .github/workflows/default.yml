@@ -14,6 +14,11 @@ jobs:
     uses: ./.github/workflows/01-validate.yml
     needs: [init]
 
+  # local build all, is not required for gh-actions we split it to multiple jobs
+  #  build-all:
+  #    uses: ./.github/workflows/01-build-all.yml
+  #    needs: [init]
+
   build-stencil-targets:
     uses: ./.github/workflows/01-build-stencil-targets.yml
     needs: [init]
@@ -26,13 +31,9 @@ jobs:
     uses: ./.github/workflows/01-build-storybook.yml
     needs: [build-showcases]
 
-  build:
-    uses: ./.github/workflows/01-build.yml
-    needs: [init]
-
   cypress:
     uses: ./.github/workflows/02-cypress.yml
-    needs: [build]
+    needs: [build-storybook]
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
