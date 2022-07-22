@@ -34,18 +34,25 @@ jobs:
           browser: chrome
           spec: cypress/integration/${{ matrix.containers }}/*.js
 
+      - name: 💾 Save summary as file
+        shell: bash
+        run: |
+          echo $GITHUB_STEP_SUMMARY >> ${{ matrix.containers }}-summary
+          rm $GITHUB_STEP_SUMMARY
+
+      - name: ⬆ Upload summary for ${{ matrix.containers }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.containers }}-summary
+          path: ${{ matrix.containers }}-summary
+
       - name: 🛗 Upload Artifacts
-        uses: actions/upload-artifact@v2
-        # after the test run completes
-        # store videos and any screenshots
-        # NOTE: screenshots will be generated only if an E2E test failed
-        # thus we store screenshots only on failures
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-screenshots
           path: e2e/cypress/screenshots
-      - uses: actions/upload-artifact@v2
-        # Test run video was always captured, so this action uses "always()" condition
+      - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: cypress-videos

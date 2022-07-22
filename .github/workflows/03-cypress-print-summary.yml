@@ -1,0 +1,50 @@
+name: Print Cypress Summary
+
+on:
+  workflow_call:
+
+jobs:
+  print-cypress-summary:
+    name: Print Cypress Summary
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⬇ Download summary for areas
+        uses: actions/download-artifact@v3
+        with:
+          name: areas-summary
+          path: areas-summary
+
+      - name: ⬇ Download summary for components
+        uses: actions/download-artifact@v3
+        with:
+          name: components-summary
+          path: components-summary
+
+      - name: ⬇ Download summary for elements
+        uses: actions/download-artifact@v3
+        with:
+          name: elements-summary
+          path: elements-summary
+
+      - name: ⬇ Download summary for showcases
+        uses: actions/download-artifact@v3
+        with:
+          name: showcases-summary
+          path: showcases-summary
+
+      - name: 🖨️ Print cypress summary
+        run: |
+          echo "<h2>Cypress Results</h2>" > $GITHUB_STEP_SUMMARY
+
+          CONTAINERS=('areas' 'components' 'elements' 'showcases')
+          for container in "${CONTAINERS[@]}"
+          do
+            fileName=${container}-summary
+            sed -i "s/<h2>Cypress Results</h2>/<h1>$fileName</h1>/g" ${fileName}
+            cat "${fileName}" >> $GITHUB_STEP_SUMMARY
+          done
+
+          echo $GITHUB_STEP_SUMMARY

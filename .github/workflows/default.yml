@@ -35,6 +35,10 @@ jobs:
     uses: ./.github/workflows/02-cypress.yml
     needs: [build-storybook]
 
+  print-cypress-summary:
+    uses: ./.github/workflows/03-cypress-print-summary.yml
+    needs: [cypress]
+
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
     needs: [validate, test, cypress]
