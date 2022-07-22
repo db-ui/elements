@@ -2,6 +2,7 @@ import { Component, h, Host, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'github-version-switcher',
+  styleUrl: 'github-version-switcher.scss',
   shadow: true
 })
 export class GithubVersionSwitcher {
@@ -22,20 +23,32 @@ export class GithubVersionSwitcher {
 
   @State() branches = [];
   @State() currentBranch = this.defaultBranch;
+  @State() cleanOwner;
+  @State() cleanRepo;
+
+  private stripString = (value: string): string => {
+    return value.replace(/[^a-zA-Z0-9-]/g, '');
+  };
 
   componentWillLoad() {
-    fetch(`https://api.github.com/repos/${this.owner}/${this.repo}/branches`)
+    const cOwner = this.stripString(this.owner);
+    this.cleanOwner = cOwner;
+    const cRepo = this.stripString(this.repo);
+    this.cleanRepo = cRepo;
+    fetch(`https://api.github.com/repos/${cOwner}/${cRepo}/branches`)
       .then((response) => response.json())
       .then((data) => {
-        this.branches = data
-          .map((branch) => branch.name)
-          .filter((branch) => branch !== 'gh-pages');
-        const currentUrl = window.location.href;
-        const foundBranch = this.branches.find((branch) =>
-          currentUrl.includes(branch)
-        );
-        if (foundBranch) {
-          this.currentBranch = foundBranch;
+        if (data) {
+          this.branches = data
+            .map((branch) => branch.name)
+            .filter((branch) => branch !== 'gh-pages');
+          const currentUrl = window.location.href;
+          const foundBranch = this.branches.find((branch) =>
+            currentUrl.includes(branch)
+          );
+          if (foundBranch) {
+            this.currentBranch = foundBranch;
+          }
         }
       });
   }
@@ -43,9 +56,12 @@ export class GithubVersionSwitcher {
   // eslint-disable-next-line @stencil/own-methods-must-be-private
   handleChange(branch: string, localOwner: string, localRepo: string) {
     if (localOwner && localRepo) {
+      const currentUrl = top.location.href;
+      const urlPaths = currentUrl.split('?');
+      const lastPath = urlPaths[urlPaths.length - 1];
       top.location = `https://${localOwner}.github.io/${localRepo}${
         this.defaultBranch === branch ? '' : `/review/${branch}`
-      }/index.html`;
+      }/?${lastPath}`;
     }
   }
 
@@ -54,10 +70,15 @@ export class GithubVersionSwitcher {
       <Host>
         {this.branches?.length > 0 && (
           <db-select
+            class="gh-version-switcher"
             label="Version"
             name="Theme"
             onDbChange={(event) =>
-              this.handleChange(event.target.value, this.owner, this.repo)
+              this.handleChange(
+                event.target.value,
+                this.cleanOwner,
+                this.cleanRepo
+              )
             }
           >
             {this.branches.map((branch: string, index: number) => (
