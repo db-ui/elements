@@ -47,7 +47,8 @@ runs:
           if [ -d ./temp/review ]; then
             mv ./temp/review ./public
           fi
-        elif [ ! -d ${{ inputs.tag }}];
+        elif [ ! -d ${{ inputs.tag }} ];
+        then
           if [ ! -d ./public/version ]; then
             mkdir ./public/version
           fi
