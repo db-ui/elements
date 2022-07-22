@@ -24,7 +24,6 @@ jobs:
           path: out
 
       - name: 🧪 Cypress run
-        # Install NPM dependencies and run all Cypress tests
         uses: cypress-io/github-action@v4
         with:
           start: npx http-server@14.1.1 out
@@ -38,6 +37,7 @@ jobs:
         shell: bash
         run: |
           echo $GITHUB_STEP_SUMMARY >> ${{ matrix.containers }}-summary
+          echo "" > $GITHUB_STEP_SUMMARY
           rm $GITHUB_STEP_SUMMARY
 
       - name: ⬆ Upload summary for ${{ matrix.containers }}

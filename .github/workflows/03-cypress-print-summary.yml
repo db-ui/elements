@@ -43,7 +43,8 @@ jobs:
           for container in "${CONTAINERS[@]}"
           do
             fileName=${container}-summary
-            sed -i "s/<h2>Cypress Results</h2>/<h1>$fileName</h1>/g" ${fileName}
+            sed "s/Cypress Results/$fileName/g" ${fileName}
+            sed "s/h2/h3/g" ${fileName}
             cat "${fileName}" >> $GITHUB_STEP_SUMMARY
           done
 
