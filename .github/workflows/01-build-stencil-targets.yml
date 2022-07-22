@@ -1,0 +1,53 @@
+name: Build Stencil Targets
+
+on:
+  workflow_call:
+
+jobs:
+  build-stencil-targets:
+    name: Build Stencil Targets
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        targets: [ngx-elements, react-elements, v-elements]
+        # TODO: Use theme if we want to deploy different themes (at the moment local===enterprise===default)
+        #        themes: [local, enterprise]
+        themes: [local]
+    steps:
+      - name: ⬇ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🔄 Init Cache
+        uses: ./.github/actions/npm-cache
+
+      - name: 🔨 Build Stencil ${{ matrix.themes }}
+        run: npm run build.${{ matrix.themes }} --workspace=@db-ui/elements
+
+      - name: 🔨 Build Output Targets ${{ matrix.themes }}
+        run: npm run build --workspace=@db-ui/${{ matrix.targets }}
+
+      - name: ↔ Get path for target
+        run: |
+          if echo ${{ matrix.targets }} | grep -c "ngx-elements"
+          then
+            echo '::set-output name=framework::angular'
+          elif echo ${{ matrix.targets }} | grep -c "react-elements"
+          then
+            echo '::set-output name=framework::react'
+          else
+            echo '::set-output name=framework::vue'
+          fi
+        id: path
+
+      - name: ⬆ Upload Stencil ${{ matrix.themes }}
+        uses: ./.github/actions/upload-tar-artifact
+        with:
+          name: stencil-${{ matrix.themes }}-${{ steps.path.outputs.framework }}
+          path: packages/db-ui-elements-stencil
+
+      - name: ⬆ Upload Output Target ${{ steps.path.outputs.framework }}
+        uses: ./.github/actions/upload-tar-artifact
+        with:
+          name: output-target-${{ matrix.themes }}-${{ steps.path.outputs.framework }}
+          path: packages/db-ui-elements-${{ steps.path.outputs.framework }}

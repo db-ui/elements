@@ -1,0 +1,67 @@
+name: Build Storybook
+
+on:
+  workflow_call:
+
+jobs:
+  build-storybook:
+    name: Build Storybook
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🔄 Init Cache
+        uses: ./.github/actions/npm-cache
+
+      - name: ⬇ Download Stencil local
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          # It doesn't matter which framework we download for stencil
+          name: stencil-local-angular
+          path: packages/db-ui-elements-stencil
+
+      - name: ⬇ Download Showcase angular dist folder
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: showcase-angular
+          path: showcase/angular-showcase/dist
+
+      - name: ⬇ Download Showcase playground dist folder
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: showcase-playground
+          path: showcase/playground-showcase/dist
+
+      - name: ⬇ Download Showcase react dist folder
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: showcase-react
+          path: showcase/react-showcase/dist
+
+      - name: ⬇ Download Showcase reactwind dist folder
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: showcase-reactwind
+          path: showcase/reactwind-showcase/dist
+
+      - name: ⬇ Download Showcase vue dist folder
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: showcase-vue
+          path: showcase/vue-showcase/dist
+
+      - name: 🔨 Build Storybook
+        run: |
+          mv showcase/angular-showcase/dist/angular-showcase packages/db-ui-elements-stencil/www/angular-showcase
+          mv showcase/playground-showcase/dist/playground-showcase packages/db-ui-elements-stencil/www/playground-showcase
+          mv showcase/react-showcase/dist/react-showcase packages/db-ui-elements-stencil/www/react-showcase
+          mv showcase/reactwind-showcase/dist/reactwind-showcase packages/db-ui-elements-stencil/www/reactwind-showcase
+          mv showcase/vue-showcase/dist/vue-showcase packages/db-ui-elements-stencil/www/vue-showcase
+          npm run build:storybook
+
+      - name: ⬆ Upload build
+        uses: ./.github/actions/upload-tar-artifact
+        with:
+          name: build
+          path: out
