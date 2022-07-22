@@ -9,11 +9,15 @@ inputs:
     description: 'Path for package-lock.json'
     required: false
     default: '**/package-lock.json'
+outputs:
+  cache-hit:
+    description: 'A boolean value to indicate an exact match was found for the primary key'
+    value: ${{ steps.cache.outputs.cache-hit }}
 runs:
   using: 'composite'
   steps:
     - uses: actions/cache@v3
-      id: 'npm-cache' # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+      id: 'cache'
       with:
         path: ${{ inputs.nodeModulesPath }}
         key: ${{ runner.os }}-node-${{ hashFiles(inputs.packageLockPath) }}

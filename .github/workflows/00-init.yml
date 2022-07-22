@@ -14,6 +14,10 @@ jobs:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
 
+      - name: 🔄 Init Cache
+        uses: ./.github/actions/npm-cache
+        id: 'npm-cache' # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
+
       - name: 📥 Download deps default-npm-cache
         if: steps.npm-cache.outputs.cache-hit != 'true'
         uses: bahmutov/npm-install@v1
