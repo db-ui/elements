@@ -1,6 +1,5 @@
 name: 'Pull Request Labeler'
-on:
-  - pull_request_target
+on: [pull_request]
 
 jobs:
   triage:
@@ -12,3 +11,4 @@ jobs:
       - uses: actions/labeler@v4
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          sync-labels: true
