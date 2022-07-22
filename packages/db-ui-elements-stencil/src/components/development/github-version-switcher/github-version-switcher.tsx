@@ -21,7 +21,7 @@ export class GithubVersionSwitcher {
    */
   @Prop({ reflect: false }) defaultBranch: string = 'main';
 
-  @State() branches = [];
+  @State() groups = [];
   @State() currentBranch = this.defaultBranch;
   @State() cleanOwner;
   @State() cleanRepo;
@@ -39,11 +39,34 @@ export class GithubVersionSwitcher {
       .then((response) => response.json())
       .then((data) => {
         if (data) {
-          this.branches = data
+          const branchNames = data
             .map((branch) => branch.name)
-            .filter((branch) => branch !== 'gh-pages');
+            .filter(
+              (branch) =>
+                branch !== 'gh-pages' && !branch.includes('dependabot')
+            );
+          const tmpGroups = [
+            { name: 'Versions', branches: [] },
+            { name: 'Features', branches: [] },
+            { name: 'Bugfixes', branches: [] }
+          ];
+          branchNames.forEach((branch) => {
+            if (branch.startsWith('feat') || branch.startsWith('feature')) {
+              tmpGroups[1].branches.push(branch);
+            } else if (
+              branch.startsWith('fix') ||
+              branch.startsWith('bugfix')
+            ) {
+              tmpGroups[2].branches.push(branch);
+            } else {
+              tmpGroups[0].branches.push(branch);
+            }
+          });
+          // eslint-disable-next-line no-console
+          console.log(tmpGroups);
+          this.groups = tmpGroups;
           const currentUrl = window.location.href;
-          const foundBranch = this.branches.find((branch) =>
+          const foundBranch = branchNames.find((branch) =>
             currentUrl.includes(branch)
           );
           if (foundBranch) {
@@ -68,7 +91,7 @@ export class GithubVersionSwitcher {
   render() {
     return (
       <Host>
-        {this.branches?.length > 0 && (
+        {this.groups?.length > 0 && (
           <db-select
             class="gh-version-switcher"
             label="Version"
@@ -81,15 +104,21 @@ export class GithubVersionSwitcher {
               )
             }
           >
-            {this.branches.map((branch: string, index: number) => (
-              <option
-                key={`${branch}-${index}`}
-                value={branch}
-                selected={this.currentBranch === branch}
-              >
-                {branch}
-              </option>
-            ))}
+            {this.groups
+              .filter((group: any) => group.branches?.length > 0)
+              .map((group: any) => (
+                <optgroup key={group.name} label={group.name}>
+                  {group.branches.map((branch: string, index: number) => (
+                    <option
+                      key={`${group.name}-${branch}-${index}`}
+                      value={branch}
+                      selected={this.currentBranch === branch}
+                    >
+                      {branch}
+                    </option>
+                  ))}
+                </optgroup>
+              ))}
           </db-select>
         )}
       </Host>

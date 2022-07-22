@@ -14,8 +14,10 @@ jobs:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
 
-      - name: 🔄 Init Cache
-        uses: ./.github/actions/npm-cache
+      - name: 📥 Download deps default-npm-cache
+        uses: bahmutov/npm-install@v1
+        with:
+          install-command: npm ci --ignore-scripts
 
       - name: 📥 Get gh-pages tar
         run: wget -q https://github.com/db-ui/elements/tarball/gh-pages
