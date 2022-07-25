@@ -9,68 +9,29 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'daily'
-    ignore:
-      - dependency-name: '*'
-        update-types: ['version-update:semver-major']
-  - package-ecosystem: 'npm'
-    directory: '/showcase/angular-showcase'
-    schedule:
-      interval: 'daily'
-    ignore:
-      - dependency-name: '*'
-        update-types: ['version-update:semver-major']
-  - package-ecosystem: 'npm'
-    directory: '/showcase/playground-showcase'
-    schedule:
-      interval: 'daily'
-    ignore:
-      - dependency-name: '*'
-        update-types: ['version-update:semver-major']
-  - package-ecosystem: 'npm'
-    directory: '/showcase/react-showcase'
-    schedule:
-      interval: 'daily'
-    ignore:
-      - dependency-name: '*'
-        update-types: ['version-update:semver-major']
-  - package-ecosystem: 'npm'
-    directory: '/showcase/reactwind-showcase'
-    schedule:
-      interval: 'daily'
-    ignore:
-      - dependency-name: '*'
-        update-types: ['version-update:semver-major']
-  - package-ecosystem: 'npm'
-    directory: '/showcase/vue-showcase'
-    schedule:
-      interval: 'daily'
-    ignore:
-      - dependency-name: '*'
-        update-types: ['version-update:semver-major']
+      interval: 'weekly'
 
-  # Monthly: Check also major updates
-  - package-ecosystem: 'npm'
-    directory: '/'
-    schedule:
-      interval: 'monthly'
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-showcase'
     schedule:
-      interval: 'monthly'
+      interval: 'weekly'
+
   - package-ecosystem: 'npm'
     directory: '/showcase/playground-showcase'
     schedule:
-      interval: 'monthly'
+      interval: 'weekly'
+
   - package-ecosystem: 'npm'
     directory: '/showcase/react-showcase'
     schedule:
-      interval: 'monthly'
+      interval: 'weekly'
+
   - package-ecosystem: 'npm'
     directory: '/showcase/reactwind-showcase'
     schedule:
-      interval: 'monthly'
+      interval: 'weekly'
+
   - package-ecosystem: 'npm'
     directory: '/showcase/vue-showcase'
     schedule:
-      interval: 'monthly'
+      interval: 'weekly'
