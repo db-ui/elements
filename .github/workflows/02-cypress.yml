@@ -41,7 +41,7 @@ jobs:
           rm $GITHUB_STEP_SUMMARY
 
       - name: ⬆ Upload summary for ${{ matrix.containers }}
-        uses: actions/upload-artifact@v3
+        uses: ./.github/actions/upload-tar-artifact
         with:
           name: ${{ matrix.containers }}-summary
           path: ${{ matrix.containers }}-summary

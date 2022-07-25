@@ -12,25 +12,25 @@ jobs:
         uses: actions/checkout@v3
 
       - name: ⬇ Download summary for areas
-        uses: actions/download-artifact@v3
+        uses: ./.github/actions/download-tar-artifact
         with:
           name: areas-summary
           path: areas-summary
 
       - name: ⬇ Download summary for components
-        uses: actions/download-artifact@v3
+        uses: ./.github/actions/download-tar-artifact
         with:
           name: components-summary
           path: components-summary
 
       - name: ⬇ Download summary for elements
-        uses: actions/download-artifact@v3
+        uses: ./.github/actions/download-tar-artifact
         with:
           name: elements-summary
           path: elements-summary
 
       - name: ⬇ Download summary for showcases
-        uses: actions/download-artifact@v3
+        uses: ./.github/actions/download-tar-artifact
         with:
           name: showcases-summary
           path: showcases-summary
