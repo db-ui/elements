@@ -35,7 +35,7 @@
     "codelyzer": "6.0.2",
     "injection-js": "2.4.0",
     "jest": "27.5.1",
-    "jest-preset-angular": "10.1.0",
+    "jest-preset-angular": "11.1.2",
     "protractor": "7.0.0",
     "ts-node": "8.10.2",
     "tslint": "6.1.3",
