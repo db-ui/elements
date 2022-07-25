@@ -37,8 +37,10 @@ jobs:
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
+    if: ${{ github.actor != 'dependabot[bot]' }}
     needs: [validate, test, cypress]
 
   publish:
     uses: ./.github/workflows/03-npm-publish.yml
+    if: ${{ github.actor != 'dependabot[bot]' }}
     needs: [validate, test, cypress]
