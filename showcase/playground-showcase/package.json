@@ -5,7 +5,7 @@
   "homepage": ".",
   "dependencies": {
     "@db-ui/react-elements": "file:./../../packages/db-ui-elements-react/",
-    "ace-builds": "^1.4.14",
+    "ace-builds": "^1.8.1",
     "cpr": "^3.0.1",
     "dompurify": "^2.3.6",
     "grapesjs": "^0.18.3",
