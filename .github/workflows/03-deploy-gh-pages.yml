@@ -36,9 +36,9 @@ jobs:
           export BRANCH=${GITHUB_REF#refs/heads/}
           if echo ${BRANCH} | grep -c "main"
           then
-            export URL=https://dbsystel.github.io/cicd-playground
+            export URL=https://db-ui.github.io/elements
           else
-            export URL=https://dbsystel.github.io/cicd-playground/review/${BRANCH}
+            export URL=https://db-ui.github.io/elements/review/${BRANCH}
           fi
           echo "URL: $URL"
           echo "### GH-Pages URL :rocket: <br> <br> $URL" >> $GITHUB_STEP_SUMMARY
