@@ -35,7 +35,7 @@ jobs:
           spec: cypress/integration/${{ matrix.containers }}/*.js
 
       - name: 🛗 Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         # after the test run completes
         # store videos and any screenshots
         # NOTE: screenshots will be generated only if an E2E test failed
@@ -44,7 +44,7 @@ jobs:
         with:
           name: cypress-screenshots
           path: e2e/cypress/screenshots
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         # Test run video was always captured, so this action uses "always()" condition
         if: always()
         with:
