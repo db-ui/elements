@@ -1,1 +1,0 @@
-let r=(r=21)=>crypto.getRandomValues(new Uint8Array(r)).reduce(((r,t)=>r+((t&=63)<36?t.toString(36):t<62?(t-26).toString(36).toUpperCase():t>62?"-":"_")),"");export{r as n}
