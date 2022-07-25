@@ -55,7 +55,7 @@
     "eslint-config-prettier": "8.4.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-storybook": "0.5.13",
-    "eslint-plugin-vue": "^8.5.0",
+    "eslint-plugin-vue": "^9.3.0",
     "file-system-cache": "1.0.5",
     "husky": "7.0.4",
     "iframe-resizer": "4.3.2",
