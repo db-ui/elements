@@ -1,0 +1,51 @@
+name: 'Bundle GitHub Page'
+description: 'This action bundles the current gh-page branch with the out folder'
+runs:
+  using: 'composite'
+  steps:
+    - name: ↔ Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+    - name: ➕ Create temp or public dir
+      run: |
+        echo "Create dir for branch: ${{ steps.extract_branch.outputs.branch }}"
+        if echo ${{ steps.extract_branch.outputs.branch }} | grep -c "main"
+        then
+          mkdir temp
+          echo "Created 'temp' dir"
+        else
+          mkdir public
+          echo "Created 'public' dir"
+        fi
+      shell: bash
+    - name: 📥 Get gh-pages tar
+      run: wget -q https://github.com/db-ui/elements/tarball/gh-pages
+      shell: bash
+    - name: 📦 Unpack Tar
+      run: |
+        if echo ${{ steps.extract_branch.outputs.branch }} | grep -c "main"
+        then
+          tar -zxf gh-pages -C temp --strip-components 1
+        else
+          tar -zxf gh-pages -C public --strip-components 1
+        fi
+      shell: bash
+    - name: 📁 Move ./out folder to public
+      run: |
+        if echo ${{ steps.extract_branch.outputs.branch }} | grep -c "main"
+        then
+          mv ./out ./public
+          if [ -d ./temp/review ]; then
+            mv ./temp/review ./public
+          fi
+        else
+          if [ ! -d ./public/review ]; then
+            mkdir ./public/review
+          fi
+          if [ -d ./public/review/${{ steps.extract_branch.outputs.branch }} ]; then
+            rm -rf  ./public/review/${{ steps.extract_branch.outputs.branch }}
+          fi
+          mv ./out ./public/review/${{ steps.extract_branch.outputs.branch }}
+        fi
+      shell: bash
