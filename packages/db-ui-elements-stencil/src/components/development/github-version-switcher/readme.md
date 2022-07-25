@@ -7,11 +7,10 @@
 
 ## Properties
 
-| Property        | Attribute        | Description                            | Type     | Default     |
-| --------------- | ---------------- | -------------------------------------- | -------- | ----------- |
-| `defaultBranch` | `default-branch` | Provides the defaultBranch of the repo | `string` | `'main'`    |
-| `owner`         | `owner`          | Provides the owner of the repo         | `string` | `undefined` |
-| `repo`          | `repo`           | Provides the name of the repo          | `string` | `undefined` |
+| Property | Attribute | Description                    | Type     | Default     |
+| -------- | --------- | ------------------------------ | -------- | ----------- |
+| `owner`  | `owner`   | Provides the owner of the repo | `string` | `undefined` |
+| `repo`   | `repo`    | Provides the name of the repo  | `string` | `undefined` |
 
 
 ## Dependencies

@@ -6,6 +6,14 @@ import { Component, h, Host, Prop, State } from '@stencil/core';
   shadow: true
 })
 export class GithubVersionSwitcher {
+  private _defaultBranch = 'latest';
+  get defaultBranch(): string {
+    return this._defaultBranch;
+  }
+
+  set defaultBranch(value: string) {
+    this._defaultBranch = value;
+  }
   /**
    * Provides the owner of the repo
    */
@@ -16,13 +24,13 @@ export class GithubVersionSwitcher {
    */
   @Prop({ reflect: false }) repo: string;
 
-  /**
-   * Provides the defaultBranch of the repo
-   */
-  @Prop({ reflect: false }) defaultBranch: string = 'main';
-
-  @State() branches = [];
-  @State() currentBranch = this.defaultBranch;
+  @State() groups = [
+    { name: 'Versions', branches: [] },
+    { name: 'Features', branches: [] },
+    { name: 'Bugfixes', branches: [] },
+    { name: 'Other', branches: [] }
+  ];
+  @State() currentBranch = this._defaultBranch;
   @State() cleanOwner;
   @State() cleanRepo;
 
@@ -30,27 +38,60 @@ export class GithubVersionSwitcher {
     return value.replace(/[^a-zA-Z0-9-]/g, '');
   };
 
-  componentWillLoad() {
+  private fetchFromGitHubApi = async (url: string) => {
+    const response = await fetch(url);
+    return await response.json();
+  };
+
+  private setCurrentBranch = (branchNames: string[]) => {
+    const currentUrl = window.location.href;
+    const foundBranch = branchNames.find((branch) =>
+      currentUrl.includes(branch)
+    );
+    if (foundBranch) {
+      this.currentBranch = foundBranch;
+    }
+  };
+
+  private setBranches = (data: any[]) => {
+    const branchNames = data
+      .map((branch) => branch.name)
+      .filter(
+        (branch) => branch !== 'gh-pages' && !branch.includes('dependabot')
+      );
+    branchNames.forEach((branch) => {
+      if (branch.startsWith('feat') || branch.startsWith('feature')) {
+        this.groups[1].branches.push(branch);
+      } else if (branch.startsWith('fix') || branch.startsWith('bugfix')) {
+        this.groups[2].branches.push(branch);
+      } else {
+        this.groups[3].branches.push(branch);
+      }
+    });
+    this.setCurrentBranch(branchNames);
+  };
+
+  private setTags = (data: any[]) => {
+    const tagNames = data.map((tag) => tag.name);
+    tagNames.forEach((tag: string) => {
+      this.groups[0].branches.push(tag);
+    });
+    this.setCurrentBranch(tagNames);
+  };
+
+  async componentWillLoad() {
     const cOwner = this.stripString(this.owner);
     this.cleanOwner = cOwner;
     const cRepo = this.stripString(this.repo);
     this.cleanRepo = cRepo;
-    fetch(`https://api.github.com/repos/${cOwner}/${cRepo}/branches`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data) {
-          this.branches = data
-            .map((branch) => branch.name)
-            .filter((branch) => branch !== 'gh-pages');
-          const currentUrl = window.location.href;
-          const foundBranch = this.branches.find((branch) =>
-            currentUrl.includes(branch)
-          );
-          if (foundBranch) {
-            this.currentBranch = foundBranch;
-          }
-        }
-      });
+    const branchesData = await this.fetchFromGitHubApi(
+      `https://api.github.com/repos/${cOwner}/${cRepo}/branches`
+    );
+    this.setBranches(branchesData);
+    const tagsData = await this.fetchFromGitHubApi(
+      `https://api.github.com/repos/${cOwner}/${cRepo}/tags`
+    );
+    this.setTags(tagsData);
   }
 
   // eslint-disable-next-line @stencil/own-methods-must-be-private
@@ -59,8 +100,11 @@ export class GithubVersionSwitcher {
       const currentUrl = top.location.href;
       const urlPaths = currentUrl.split('?');
       const lastPath = urlPaths[urlPaths.length - 1];
+      const isTag = branch.split('.').length === 3 && branch.startsWith('v');
       top.location = `https://${localOwner}.github.io/${localRepo}${
-        this.defaultBranch === branch ? '' : `/review/${branch}`
+        this._defaultBranch === branch
+          ? ''
+          : `${isTag ? '/version' : '/review'}/${branch}`
       }/?${lastPath}`;
     }
   }
@@ -68,7 +112,7 @@ export class GithubVersionSwitcher {
   render() {
     return (
       <Host>
-        {this.branches?.length > 0 && (
+        {this.groups?.length > 0 && (
           <db-select
             class="gh-version-switcher"
             label="Version"
@@ -81,15 +125,27 @@ export class GithubVersionSwitcher {
               )
             }
           >
-            {this.branches.map((branch: string, index: number) => (
-              <option
-                key={`${branch}-${index}`}
-                value={branch}
-                selected={this.currentBranch === branch}
-              >
-                {branch}
-              </option>
-            ))}
+            <option
+              value={this._defaultBranch}
+              selected={this.currentBranch === this._defaultBranch}
+            >
+              {this._defaultBranch}
+            </option>
+            {this.groups
+              .filter((group: any) => group.branches?.length > 0)
+              .map((group: any) => (
+                <optgroup key={group.name} label={group.name}>
+                  {group.branches.map((branch: string, index: number) => (
+                    <option
+                      key={`${group.name}-${branch}-${index}`}
+                      value={branch}
+                      selected={this.currentBranch === branch}
+                    >
+                      {branch}
+                    </option>
+                  ))}
+                </optgroup>
+              ))}
           </db-select>
         )}
       </Host>

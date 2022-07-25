@@ -4,34 +4,43 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily'
+    pull-request-branch-name:
+      separator: '-'
 
   # Daily: Check minor and patch updates
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
       interval: 'weekly'
-
+    pull-request-branch-name:
+      separator: '-'
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-showcase'
     schedule:
       interval: 'weekly'
-
+    pull-request-branch-name:
+      separator: '-'
   - package-ecosystem: 'npm'
     directory: '/showcase/playground-showcase'
     schedule:
       interval: 'weekly'
-
+    pull-request-branch-name:
+      separator: '-'
   - package-ecosystem: 'npm'
     directory: '/showcase/react-showcase'
     schedule:
       interval: 'weekly'
-
+    pull-request-branch-name:
+      separator: '-'
   - package-ecosystem: 'npm'
     directory: '/showcase/reactwind-showcase'
     schedule:
       interval: 'weekly'
-
+    pull-request-branch-name:
+      separator: '-'
   - package-ecosystem: 'npm'
     directory: '/showcase/vue-showcase'
     schedule:
       interval: 'weekly'
+    pull-request-branch-name:
+      separator: '-'
