@@ -1,0 +1,44 @@
+# Add 'repo' label to any root file changes
+repo:
+  - '*'
+
+# Add 'cicd' label to any file changes inside .github dir
+cicd:
+  - .github/*
+  - .github/**/*
+
+# Add 'stencil' label to any file changes for stencil
+stencil:
+  - packages/db-ui-elements-stencil/**
+
+# Add 'angular' label to any file changes for angular-build-target
+angular:
+  - packages/db-ui-elements-angular/**
+
+# Add 'react' label to any file changes for angular-build-target
+react:
+  - packages/db-ui-elements-react/**
+
+# Add 'vue' label to any file changes for angular-build-target
+vue:
+  - packages/db-ui-elements-vue/**
+
+# Add 'angular-showcase' label to any file changes for angular-showcase
+angular-showcase:
+  - showcase/angular-showcase/**
+
+# Add 'playground-showcase' label to any file changes for playground-showcase
+playground-showcase:
+  - showcase/playground-showcase/**
+
+# Add 'react-showcase' label to any file changes for react-showcase
+react-showcase:
+  - showcase/react-showcase/**
+
+# Add 'reactwind-showcase' label to any file changes for reactwind-showcase
+reactwind-showcase:
+  - showcase/reactwind-showcase/**
+
+# Add 'vue-showcase' label to any file changes for vue-showcase
+vue-showcase:
+  - showcase/vue-showcase/**
