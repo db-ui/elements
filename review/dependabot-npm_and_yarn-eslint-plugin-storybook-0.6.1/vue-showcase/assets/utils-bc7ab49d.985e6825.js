@@ -1,2 +1,0 @@
-const a=r=>r?r.map(e=>`<li><db-link href="${e.href}" target="${e.target}">${e.label}</db-link></li>`).join(`
-`):"",t=(r,e)=>{r.children&&Array.from(r.children).forEach(n=>{n.tagName.toLowerCase()==="db-link"&&n.setAttribute("icon-variant",e),n.children&&t(n,e)})},f=r=>{try{if(typeof r=="string")return JSON.parse(r);if(typeof r=="object"||r instanceof Array)return r}catch{return!1}};export{t as a,a as g,f as p};
