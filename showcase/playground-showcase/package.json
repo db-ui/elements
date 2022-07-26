@@ -7,7 +7,7 @@
     "@db-ui/react-elements": "file:./../../packages/db-ui-elements-react/",
     "ace-builds": "^1.4.14",
     "cpr": "^3.0.1",
-    "dompurify": "^2.3.6",
+    "dompurify": "^2.3.10",
     "grapesjs": "^0.19.5",
     "grapesjs-preset-webpage": "^0.1.11",
     "react-ace": "^10.1.0",
