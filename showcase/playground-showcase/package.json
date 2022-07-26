@@ -10,7 +10,7 @@
     "dompurify": "^2.3.6",
     "grapesjs": "^0.18.3",
     "grapesjs-preset-webpage": "^0.1.11",
-    "react-ace": "^9.5.0",
+    "react-ace": "^10.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-router-dom": "^6.2.2",
