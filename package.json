@@ -54,7 +54,7 @@
     "eslint": "8.9.0",
     "eslint-config-prettier": "8.4.0",
     "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-storybook": "0.5.13",
+    "eslint-plugin-storybook": "0.6.1",
     "eslint-plugin-vue": "^8.5.0",
     "file-system-cache": "1.0.5",
     "husky": "7.0.4",
@@ -72,7 +72,7 @@
     "xml": "1.0.1"
   },
   "validate-branch-name": {
-    "pattern": "^((fix|feat|bugfix|feature)\\-[a-zA-Z0-9\\-]+)$",
+    "pattern": "((dependabot-)|^((fix|feat|bugfix|feature)\\-[a-zA-Z0-9\\-]+)$)",
     "errorMsg": "There is something wrong with your branch name. You should rename your branch to a valid name and try again. See the Pattern below."
   },
   "repository": {
