@@ -6,6 +6,9 @@ export default {
   title: 'Elements/Link',
   id: 'db-link',
   component: 'db-link',
+  parameters: {
+    viewMode: 'docs'
+  },
   argTypes: {
     text: {
       control: 'text',

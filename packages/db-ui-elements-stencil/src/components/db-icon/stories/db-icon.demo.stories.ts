@@ -4,6 +4,9 @@ export default {
   title: 'Elements/Icon',
   id: 'db-icon',
   component: 'db-icon',
+  parameters: {
+    viewMode: 'docs'
+  },
   argTypes: {
     icon: {
       control: {

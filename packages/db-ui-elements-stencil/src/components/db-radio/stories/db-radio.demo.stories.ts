@@ -2,6 +2,9 @@ export default {
   title: 'Elements/Radio',
   id: 'db-radio',
   component: 'db-radio',
+  parameters: {
+    viewMode: 'docs'
+  },
   argTypes: {
     autofocus: {
       control: 'boolean'

@@ -2,6 +2,9 @@ export default {
   title: 'Elements/Select',
   id: 'db-select',
   component: 'db-select',
+  parameters: {
+    viewMode: 'docs'
+  },
   argTypes: {
     ariainvalid: {
       control: {

@@ -3,7 +3,14 @@ module.exports = {
     '../packages/db-ui-elements-stencil/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'
   ],
   addons: [
-    '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        backgrounds: false,
+        measure: false,
+        outline: false
+      }
+    },
     {
       name: '@storybook/addon-docs',
       options: { transcludeMarkdown: true }
