@@ -1,10 +1,10 @@
-## Update as Application Developer
+# Update as Application Developer
 
-### Purpose
+## Purpose
 
 You are an Application Developer and you want to update DB UI Elements in your own application.
 
-### Update
+## Update
 
 If you like to update DB UI Elements use:
 
@@ -17,6 +17,6 @@ Please have a look at the [CHANGELOG.md](https://github.com/db-ui/elements/-/blo
 DB UI Elements follows the [semantic version](https://semver.org/lang/de/) logic.
 You can add a **^** before the version in package.json in order to get minor and fixes releases on **npm update**.
 
-### Documentation
+## Documentation
 
 Please find our Architectural Decision Records within the [adr subfolder](https://github.com/db-ui/elements/-/tree/main/doc/adr).

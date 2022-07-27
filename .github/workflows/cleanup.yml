@@ -1,3 +1,4 @@
+---
 name: Cleans all preview pages for gh-pages
 
 on:
