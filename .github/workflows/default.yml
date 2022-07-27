@@ -1,4 +1,4 @@
-name: Test and deploy to GitHub Pages
+name: Default On-Push
 
 on: [push]
 

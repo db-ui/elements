@@ -1,0 +1,25 @@
+name: Default On-Pull-Request
+
+on:
+  pull_request:
+    branches: ['main']
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  dependabot:
+    uses: ./.github/workflows/99-auto-merge.yml
+
+  codeql:
+    uses: ./.github/workflows/99-codeql-analysis.yml
+
+  dependency-review:
+    uses: ./.github/workflows/99-dependency-review.yml
+
+  labeler:
+    uses: ./.github/workflows/99-labeler.yml
+
+  linter:
+    uses: ./.github/workflows/99-linter.yml
