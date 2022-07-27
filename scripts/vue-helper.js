@@ -4,15 +4,14 @@
  */
 
 const replace = require('replace-in-file');
-const fs = require('fs');
 
 const vModelFix = {
   files: './src/vue-component-lib/utils.ts',
   from:
-    'vnode.el.addEventListener(eventName.toLowerCase(), (e: Event) => {\n' +
+    'vnode.el!.addEventListener(eventName.toLowerCase(), (e: Event) => {\n' +
     '            modelPropValue = (e?.target as any)[modelProp];',
   to:
-    ' vnode.el.addEventListener(eventName, (e: any) => {\n' +
+    ' vnode.el!.addEventListener(eventName, (e: any) => {\n' +
     '            if (\n' +
     '              e?.detail?.target?.checked &&\n' +
     '              e?.target?.textContent?.length > 0\n' +
@@ -26,16 +25,18 @@ const vModelFix = {
     '            }'
 };
 
-const modelValueFix = {
-  files: './src/vue-component-lib/utils.ts',
-  from: 'modelValue: string | boolean',
-  to: 'modelValue?: string | boolean'
-};
-
 const run = async () => {
   try {
-    await replace(vModelFix);
-    await replace(modelValueFix);
+    const modelFix = await replace(vModelFix);
+    modelFix.forEach((changes) => {
+      if (!changes.hasChanged) {
+        console.warn(
+          'vue-helper: Workaround should have changed the file! ' +
+            'Maybe there is a new version for vue-output-target which made this workaround obsolete?'
+        );
+        process.exit(1);
+      }
+    });
   } catch (error) {
     console.error('Error occurred:', error);
   }

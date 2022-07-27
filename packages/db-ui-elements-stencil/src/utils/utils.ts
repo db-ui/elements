@@ -1,18 +1,26 @@
 import { DbLinkType } from '../components/db-link/db-link-type';
 
-export function format(first: string, middle: string, last: string): string {
-  return (
-    (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '')
+export const format = (first: string, middle: string, last: string): string =>
+  (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
+
+export const uuid = () => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+    (
+      c ^
+      (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+    ).toString(16)
   );
-}
+};
 
 /**
  *
  * @param doc calculates all css custom properties in root: scope
  * @return list of keys
  */
-export function calcCustomProperties(doc: Document) {
-  return [].slice
+export const calcCustomProperties = (doc: Document) =>
+  [].slice
     .call(doc.styleSheets)
     .map((styleSheet) => [].slice.call(styleSheet.cssRules))
     .flat()
@@ -20,14 +28,13 @@ export function calcCustomProperties(doc: Document) {
     .map((cssStyleRule) => cssStyleRule.style)
     .map((cssStyleDeclaration) => [].slice.call(cssStyleDeclaration))
     .flat();
-}
 
 /**
  * @return - Promise with all css custom properties in the root: scope,
  * that is resoved when document load is complete
  */
-export async function listCustomProperties() {
-  return domReady().then(
+export const listCustomProperties = async () =>
+  domReady().then(
     (doc: Document) => {
       return calcCustomProperties(doc);
     },
@@ -36,7 +43,6 @@ export async function listCustomProperties() {
       console.error(err);
     }
   );
-}
 
 /**
  * @return: Promisse, that resolve when document load is complete
@@ -67,16 +73,6 @@ export const addElmLinkToElement = (child: Element) => {
       child.setAttribute('class', `${currentClass} elm-link`);
     }
   }
-};
-
-/**
- * Adds the class "elm-link" to all children which are not db-link
- * @param host the stencil host element
- */
-export const addElmLinkToHostChildren = (host: Element) => {
-  Array.from(host.children).forEach((child) => {
-    addElmLinkToElement(child);
-  });
 };
 
 export const getDefaultLinkData = (compData: DbLinkType[]) => {
