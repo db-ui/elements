@@ -1,6 +1,5 @@
 import { Component, Host, h, Prop } from '@stencil/core';
-import { nanoid } from 'nanoid';
-
+import { uuid } from '../../utils/utils';
 @Component({
   tag: 'db-tab',
   styleUrl: 'db-tab.scss'
@@ -24,7 +23,7 @@ export class DbTab {
   private readonly id: string;
 
   constructor() {
-    this.id = nanoid();
+    this.id = uuid();
   }
 
   render() {

@@ -7,7 +7,7 @@ import {
   Prop,
   Watch
 } from '@stencil/core';
-import { nanoid } from 'nanoid';
+import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-pagination',
@@ -88,7 +88,7 @@ export class DbPagination {
   /**
    * Optional id for the caption aria label - otherwise random id will be set
    */
-  @Prop({ reflect: false }) ariaid: string = 'db-' + nanoid();
+  @Prop({ reflect: false }) ariaid: string = 'db-' + uuid();
 
   /**
    * Mapping for default change Event
