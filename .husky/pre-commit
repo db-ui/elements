@@ -7,6 +7,5 @@ node ./scripts/angular-module-component-check.js
 npm run lint:eslint
 npm run lint:stylelint
 npm run lint:markdownlint
-npm run lint:jscpd
 npx validate-branch-name
 
