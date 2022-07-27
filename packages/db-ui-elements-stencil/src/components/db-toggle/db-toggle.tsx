@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, Event } from '@stencil/core';
-import { nanoid } from 'nanoid';
+import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-toggle',
@@ -9,7 +9,7 @@ export class DbToggle {
   /**
    * Optional id for the label - otherwise random id will be set
    */
-  @Prop({ reflect: false }) htmlid: string = 'db-' + nanoid();
+  @Prop({ reflect: false }) htmlid: string = 'db-' + uuid();
   /**
    * Disabled property
    */
