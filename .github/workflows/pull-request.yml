@@ -23,6 +23,3 @@ jobs:
 
   labeler:
     uses: ./.github/workflows/99-labeler.yml
-
-  linter:
-    uses: ./.github/workflows/99-linter.yml

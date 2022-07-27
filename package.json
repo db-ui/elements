@@ -18,12 +18,10 @@
     "cypress:full": "node scripts/build angular,playground,react,reactwind,vue withShowcase && concurrently  \"npm run cypress:watch\" \"npm run start:storybook\"",
     "release": "np",
     "release:feature": "np prerelease --any-branch",
+    "lint:jscpd": "jscpd --pattern **/*.{ts,tsx,js,jsx}",
     "lint:markdownlint": "markdownlint -c .markdown-lint.yml **/*.md",
     "lint:stylelint": "stylelint **/*.scss",
     "lint:eslint": "eslint . --ext .ts,.js --ignore-path .gitignore  --ignore-path .eslintignore && npm run lint --workspace=@db-ui/elements",
-    "lint:super-linter:windows": "npm run lint:super-linter -- -v \"%cd%\":/tmp/lint github/super-linter",
-    "lint:super-linter:other": "npm run lint:super-linter -- -v $(pwd):/tmp/lint github/super-linter",
-    "lint:super-linter": "docker run -e RUN_LOCAL=true -e USE_FIND_ALGORITHM=true -e LINTER_RULES_PATH=/ -e IGNORE_GITIGNORED_FILES=true",
     "generate": "npm run generate --workspace=@db-ui/elements"
   },
   "workspaces": [
@@ -65,6 +63,7 @@
     "husky": "7.0.4",
     "iframe-resizer": "4.3.2",
     "jest-config": "27.5.1",
+    "jscpd": "^3.4.5",
     "markdownlint-cli": "^0.32.1",
     "node-mv": "^0.1.3",
     "np": "7.6.1",
