@@ -1,3 +1,4 @@
+---
 name: 'Download Tar Artifact'
 description: 'Downloads an artifact and unzips it'
 inputs:

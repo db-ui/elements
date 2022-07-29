@@ -8,9 +8,9 @@
 
 ## Entscheidung und Begründung
 
-Zur Verringerung des Seiteneffektpotentials (Erhöhung der Wartbarkeit) und aus Performance-technischen Gründen sollten Komponenten nach Variante A mit shadow:true deklariert werden. 
+Zur Verringerung des Seiteneffektpotentials (Erhöhung der Wartbarkeit) und aus Performance-technischen Gründen sollten Komponenten nach Variante A mit shadow:true deklariert werden.
 
-Ausnahme bilden Komponenten, welche native HTML Elemente nachstellen. Komponenten, wie Buttons, Checkboxen oder Inputfelder müssen nach Variante B mit scoped:true deklariert werden, um das native Verhalten des zugehörigen HTML Elements abbilden zu können. 
+Ausnahme bilden Komponenten, welche native HTML Elemente nachstellen. Komponenten, wie Buttons, Checkboxen oder Inputfelder müssen nach Variante B mit scoped:true deklariert werden, um das native Verhalten des zugehörigen HTML Elements abbilden zu können.
 
 ## Problembeschreibung und Kontext
 
@@ -22,7 +22,9 @@ Ist als Default eingestellt. Komponenten ohne ViewEncapsulation haben keinen ein
 
 ### ViewEncapsulation mit shadowDom (shadow:true)
 
-Bei Shadow DOM handelt es sich um eine Unterform des standardmäßigen Document Object Models (DOM) und eine der vier elementaren Säulen der 2012 vom W3C-Konsortium standardisierten Web Components. Ein ShadowDOM Komponente wird von gängigen Browsern wie ein gewöhnliches DOM automatisch aus dem HTML-Code generiert, gilt aber nicht für das gesamte Webprojekt. Zudem grenzen Shadow DOMs die enthaltenen Elemente von jeglichen Design- und Strukturierungsvorgaben ab, die projektübergreifend gelten – wie etwa bestimmte CSS-Anweisungen. Vereinfacht gesagt sind Shadow DOMs also eigenständige Code-Kapseln innerhalb eines gewöhnlichen DOMs, die einen eigenen Gültigkeitsbereich besitzen.
+Bei Shadow DOM handelt es sich um eine Unterform des standardmäßigen Document Object Models (DOM) und eine der vier elementaren Säulen der 2012 vom W3C-Konsortium standardisierten Web Components. Ein ShadowDOM Komponente wird von gängigen Browsern wie ein gewöhnliches DOM automatisch aus dem HTML-Code generiert, gilt aber nicht für das gesamte Webprojekt.
+
+Zudem grenzen Shadow DOMs die enthaltenen Elemente von jeglichen Design- und Strukturierungsvorgaben ab, die projektübergreifend gelten – wie etwa bestimmte CSS-Anweisungen. Vereinfacht gesagt sind Shadow DOMs also eigenständige Code-Kapseln innerhalb eines gewöhnlichen DOMs, die einen eigenen Gültigkeitsbereich besitzen.
 
 ### ViewEncapsulation mit scoped (scoped:true)
 
@@ -92,7 +94,7 @@ Shadow DOM ist eine im Browser integrierte API, die die DOM-Kapselung und die St
 
 #### Buildtime
 
-- einfache Konfiguration durch shadow: true 
+- einfache Konfiguration durch shadow: true
 
 #### Bewertung
 

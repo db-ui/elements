@@ -1,3 +1,4 @@
+---
 name: 'Bundle GitHub Page'
 description: 'This action bundles the current gh-page branch with the out folder'
 inputs:

@@ -4,7 +4,7 @@
 
 Add the following styles to your application, if like to use a special theme. If the base dependencies are already added for another component, don't do again.
 
-- replace {path} with your path to copied css 
+- replace {path} with your path to copied css
 - replace {theme} with one of [enterprise,fernverkehr]
 
 ```css

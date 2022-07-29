@@ -11,7 +11,7 @@ Maybe there is a good reason for you, why you don't use a framework. Maybe you a
 [Read the "How to Start" documentation](https://github.com/db-ui/elements/-/blob/main/doc/howto-start.md).
 
 
-###  Integrate web components in your app
+### Integrate web components in your app
 
 After installation is done, you have to integrate DB UI Elements into your application.
 
@@ -37,7 +37,7 @@ There are two steps you need to get the styles in your application. First copy a
 For your copy use the folder below and copy it in your assets folder:
 
 
-```
+```json
 {
 src: 'node_modules/@db-ui/core/dist/fonts',
 dest: 'fonts'
@@ -66,7 +66,7 @@ dest: 'static/css/db-ui-core.vars.css'
 
 and for your import use the vars file:
 
-```
+```html
 <link href="static/css/db-ui-core.vars.css" rel="stylesheet" />
 ```
 
@@ -76,7 +76,7 @@ Events and event handlers are an important link between HTML and JavaScript. A c
 
 Use **this.value** to process the expected value.
 
-```
+```html
 <db-select label="Change Theme:" name="Theme" onchange="your_function(this.value)">
 ```
 

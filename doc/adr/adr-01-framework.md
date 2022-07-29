@@ -12,16 +12,16 @@ Wir werden Web Components für die UI Library erstellen.
 Es geht darum, dies möglichst effizient zu tun.
 Folgende Optionen haben wir uns angeschaut:
 
-- StencilJS (https://stenciljs.com/)
+- StencilJS (<https://stenciljs.com/>)
 - Vanila JS
-- Polymer (https://www.polymer-project.org/)
-- lit-element (https://lit-element.polymer-project.org)
+- Polymer (<https://www.polymer-project.org/>)
+- lit-element (<https://lit-element.polymer-project.org>)
 
 Web Links
 
-- https://medium.com/@thangman22/stencil-js-vs-lit-element-vs-vanilla-vs-shadow-dom-vs-vue-js-5d2ade971183
-- https://github.com/shprink/web-components-todo
-- https://wc-todo.firebaseapp.com/
+- <https://medium.com/@thangman22/stencil-js-vs-lit-element-vs-vanilla-vs-shadow-dom-vs-vue-js-5d2ade971183>
+- <https://github.com/shprink/web-components-todo>
+- <https://wc-todo.firebaseapp.com/>
 
 ## Entscheidung
 
