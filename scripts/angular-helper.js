@@ -66,21 +66,24 @@ const directive = {
   to: '@Directive({selector:"extend"})'
 };
 
-const containsOverride = (path) => {
-  return fs.readFileSync(path).toString().includes('override');
+const shouldOverride = (path) => {
+  return (
+    fs.existsSync(path) &&
+    !fs.readFileSync(path).toString().includes('override')
+  );
 };
 
 const run = async () => {
   try {
-    if (!containsOverride('./projects/lib/src/boolean-value-accessor.ts')) {
+    if (shouldOverride('./projects/lib/src/boolean-value-accessor.ts')) {
       await replace(writeValue);
       await replace(eventDetail);
     }
-    if (!containsOverride('./projects/lib/src/text-value-accessor.ts')) {
+    if (shouldOverride('./projects/lib/src/text-value-accessor.ts')) {
       await replace(textAccessorHostListener);
       await replace(textAccessorImport);
     }
-    if (!containsOverride('./projects/lib/src/number-value-accessor.ts')) {
+    if (shouldOverride('./projects/lib/src/number-value-accessor.ts')) {
       await replace(registerOnChange);
     }
     await replace(directive);

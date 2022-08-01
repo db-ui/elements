@@ -26,6 +26,19 @@
 | `dbChange` | Mapping for default change Event | `CustomEvent<any>` |
 
 
+## Dependencies
+
+### Used by
+
+- [github-version-switcher](../development/github-version-switcher)
+
+### Graph
+```mermaid
+graph TD;
+  github-version-switcher --> db-select
+  style db-select fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

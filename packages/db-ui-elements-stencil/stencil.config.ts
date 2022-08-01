@@ -117,6 +117,10 @@ export const config: Config = {
       type: 'www',
       copy: [
         {
+          src: `./assets`,
+          dest: 'assets'
+        },
+        {
           src: `${getWWWPath()}/node_modules/@db-ui/core/dist/fonts`,
           dest: 'fonts'
         },

@@ -11,44 +11,44 @@
 ### Technische Eigenschaften
 * Größe des Bundles pro Element
 * Explizites Interface: Methoden, Parameter, Events, Style
-* In JavaScript keine Seiteneffekte außerhalb der Komponente 
+* In JavaScript keine Seiteneffekte außerhalb der Komponente
 * Einzeln testbar
 * i18n
 * Accessibility
 
-### Style 
+### Style
 * Style für Themes muss von außen der Komponenten kommen
 * Sonst soll das Style von außen gekappselt sein
 
-sonst ein Subset von https://github.com/webcomponents/gold-standard/wiki
+sonst ein Subset von <https://github.com/webcomponents/gold-standard/wiki>
 
 
 ## Anforderungen aus Entwicklerperspektive (Konsument der DB UI Elements)
-*  Grundlagen
-    *  Zentral versioniert
-    *  Changelog
-    *  Release Notes
-    *  Installationsanleitung
-    *  Anwendungsprinzipien
-*  Einfache Konsumierbarkeit
-    *  Standarisierter Komponentenaufruf (living standard)
-    *  Intuitive Anwendung
-        *  Sprechende & einheitliche Attributnamen
-        *  Einheitliche Referenzierung
-        *  Trennung Semantik von Styling (relevanten Tags) / keine Styling relevanten Kompositionen, sondern lediglich logische
-        *  Als Leitmotiv sollten stets bestehende HTML Tag Implementierungen herangezogen werden, da diese eine etablierte und adaptierbare Handhabung bedingen.
-    *  Einfacher Installationsprozess
-*  Enkapsuliertes Styling
-    *  wg. Vererbung
-*  Standard-Kompatibilität
-    *  Bei Wrapping nativer Elemente sollten diese nach außen wie nach innen dem Standard folgen in Bezug auf Funktionalität und die APIs
-    *  Living Standards
-*  Möglichst Framework agnostisch
-*  Komponenten sind gekapselt ohne Auswirkung nach außen
+* Grundlagen
+  * Zentral versioniert
+  * Changelog
+  * Release Notes
+  * Installationsanleitung
+  * Anwendungsprinzipien
+* Einfache Konsumierbarkeit
+  * Standarisierter Komponentenaufruf (living standard)
+  * Intuitive Anwendung
+    * Sprechende & einheitliche Attributnamen
+    * Einheitliche Referenzierung
+    * Trennung Semantik von Styling (relevanten Tags) / keine Styling relevanten Kompositionen, sondern lediglich logische
+    * Als Leitmotiv sollten stets bestehende HTML Tag Implementierungen herangezogen werden, da diese eine etablierte und adaptierbare Handhabung bedingen.
+  * Einfacher Installationsprozess
+* Enkapsuliertes Styling
+  * wg. Vererbung
+* Standard-Kompatibilität
+  * Bei Wrapping nativer Elemente sollten diese nach außen wie nach innen dem Standard folgen in Bezug auf Funktionalität und die APIs
+  * Living Standards
+* Möglichst Framework agnostisch
+* Komponenten sind gekapselt ohne Auswirkung nach außen
 
 
 Anforderungen aus verschiedenen Domänen
-*  Unterstützung backendseitiger template-/data-binding Projekte (Java, PHP, Node.js)
-*  Unterschiedliches Theming verschiedener Geschäftsbereiche
-*  Governance (Fremdentwicklung & Konzeption mit Designern)
-*  CSS statt SCSS verwenden
+* Unterstützung backendseitiger template-/data-binding Projekte (Java, PHP, Node.js)
+* Unterschiedliches Theming verschiedener Geschäftsbereiche
+* Governance (Fremdentwicklung & Konzeption mit Designern)
+* CSS statt SCSS verwenden

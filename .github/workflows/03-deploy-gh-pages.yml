@@ -1,0 +1,45 @@
+---
+name: Deploy to gh-pages
+
+on:
+  workflow_call:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - name: ⬇ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🔄 Init Cache
+        uses: ./.github/actions/npm-cache
+
+      - name: ⬇ Download build
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: build
+          path: out
+
+      - name: ➕ Bundle current gh-pages
+        uses: ./.github/actions/bundle-gh-page
+
+      - name: 🥅 Deploy to GH-Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+
+      - name: 🖨️ Print gh-pages url
+        run: |
+          export BRANCH=${GITHUB_REF#refs/heads/}
+          if echo ${BRANCH} | grep -c "main"
+          then
+            export URL=https://db-ui.github.io/elements
+          else
+            export URL=https://db-ui.github.io/elements/review/${BRANCH}
+          fi
+          echo "URL: $URL"
+          echo "### GH-Pages URL :rocket: <br> <br> $URL" >> $GITHUB_STEP_SUMMARY

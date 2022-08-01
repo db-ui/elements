@@ -1,0 +1,65 @@
+---
+name: Build Showcases
+
+on:
+  workflow_call:
+
+jobs:
+  build-showcases:
+    name: Build Showcases
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        showcases: [angular, playground, react, reactwind, vue]
+    steps:
+      - name: ⬇ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🔄 Init Cache
+        uses: ./.github/actions/npm-cache
+
+      - name: ↔ Get download params for showcase
+        run: |
+          if echo ${{ matrix.showcases }} | grep -c "angular"
+          then
+            echo '::set-output name=framework::angular'
+          elif echo ${{ matrix.showcases }} | grep -c "playground"
+          then
+            echo '::set-output name=framework::react'
+          elif echo ${{ matrix.showcases }} | grep -c "react"
+          then
+            echo '::set-output name=framework::react'
+          elif echo ${{ matrix.showcases }} | grep -c "reactwind"
+          then
+            echo '::set-output name=framework::react'
+          else
+            echo '::set-output name=framework::vue'
+          fi
+          echo '::set-output name=theme::local'
+        id: download-params
+
+      - name: ⬇ Download Stencil ${{ steps.download-params.outputs.theme }}
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: stencil-${{ steps.download-params.outputs.theme }}-${{ steps.download-params.outputs.framework }}
+          path: packages/db-ui-elements-stencil
+
+      - name: ⬇ Download Output Target ${{ steps.download-params.outputs.framework }}
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: output-target-${{ steps.download-params.outputs.theme }}-${{ steps.download-params.outputs.framework }}
+          path: packages/db-ui-elements-${{ steps.download-params.outputs.framework }}
+
+      - name: 🔨 Build Showcase ${{ matrix.showcases }}
+        run: |
+          cd showcase/${{ matrix.showcases }}-showcase
+          npm i
+          npm run build
+          cp dist/${{ matrix.showcases }}-showcase/index.html dist/${{ matrix.showcases }}-showcase/404.html
+
+      - name: ⬆ Upload Showcase ${{ matrix.showcases }} dist folder
+        uses: ./.github/actions/upload-tar-artifact
+        with:
+          name: showcase-${{ matrix.showcases }}
+          path: showcase/${{ matrix.showcases }}-showcase/dist
