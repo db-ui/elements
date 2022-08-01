@@ -1,5 +1,5 @@
 import { Component, h, Host, Prop } from '@stencil/core';
-import { nanoid } from 'nanoid';
+import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-image',
@@ -48,7 +48,7 @@ export class DbImage {
   /**
    * Optional id for the caption aria label - otherwise random id will be set
    */
-  @Prop({ reflect: false }) ariaid: string = 'db-' + nanoid();
+  @Prop({ reflect: false }) ariaid: string = 'db-' + uuid();
 
   private getBasicImage() {
     return (

@@ -13,14 +13,14 @@ Im Moment haben wir keinen Bedarf für komplexe Komponenten in Pattern Lab
 und somit können wir mit den Nachteilen gut leben.
 
 Soll sich der Bedarf Richtung konplexerer Komponenten für Pattern Lab ändern,
-müssen wir diese Entscheidung nochmal betrachten. 
+müssen wir diese Entscheidung nochmal betrachten.
 
 ## Problembeschreibung und Kontext
 
 Neben den DB-UI Elements Komponenten, die als Lib consumiert werden sollen, gibt es Bedarf
 für Komponenten um das Pattern Lab (Storybook) zu erweitern.
 
-Nutzt man für Pattern Lab Komponenten Stencil, dann werden diese auch im npm-Paket 
+Nutzt man für Pattern Lab Komponenten Stencil, dann werden diese auch im npm-Paket
 mitveröffentlicht, so dass die Consumenten unnötig ihre Apps größer machen müssen.
 
 ## Rahmenbedingungen und Entscheidungskriterien
@@ -38,14 +38,14 @@ Einfach
 
 Verständlich
 * Ausnahmen zum Vorgehen der Frameworks müssen gut dokumentiert sein
-* Keine bzw. nur die nötigste Logik in Storybook Dateien 
+* Keine bzw. nur die nötigste Logik in Storybook Dateien
 
 
 ## Alternativen
 
 ### A - zwei Konfigurationen
 
-In der /tsconfig.json kann man Ordner aus der Build excludieren. 
+In der /tsconfig.json kann man Ordner aus der Build excludieren.
 Die Komponenten dort werden dann nicht verarbeitet und landen somit nicht im *dist*
 
 ```javascript
@@ -56,11 +56,11 @@ Die Komponenten dort werden dann nicht verarbeitet und landen somit nicht im *di
 ```
 
 Damit die Pattern Lab Komponenten in Storybook benutzt werden können, müssen diese allerdings gebaut werden.
-Ansatz hier ist zwei Konfigurationen: eine für Pattern Lab und eine für *npm publish* 
+Ansatz hier ist zwei Konfigurationen: eine für Pattern Lab und eine für *npm publish*
 
 #### Bewertung
 
-Im Moment die einzige Möglichkeit in Stencil die Komponenten aus *dist* zu entfernen. 
+Im Moment die einzige Möglichkeit in Stencil die Komponenten aus *dist* zu entfernen.
 Der Nachteil ist die höhere Komplexität in der CI/CD Pipeline in der wir heute am wenigsten Know How haben.
 
 ### B - Bundles
@@ -74,14 +74,14 @@ In der */stencil.config.ts* ist es möglich mehrere Komponenten in ein Bundle zu
   ],
 ```
 
-Man würde alle Pattern Lab Komponenten in ein Bundle platzieren und somit die Vermischung zwischen 
-Pattern Lab und DB-UI Komponenten reduzieren. 
+Man würde alle Pattern Lab Komponenten in ein Bundle platzieren und somit die Vermischung zwischen
+Pattern Lab und DB-UI Komponenten reduzieren.
 
 #### Bewertung
 
 Problem: in */dist/db-ui-elements/de-ui-elements.esm.js* werden alle Module referenziert.
-Somit würden die Consumenten, die *{ defineCustomElements } from '../dist/esm/loader'* nutzen 
-auch Pattern Lab Komponenten in ihrer App definieren. 
+Somit würden die Consumenten, die *{ defineCustomElements } from '../dist/esm/loader'* nutzen
+auch Pattern Lab Komponenten in ihrer App definieren.
 
 ### C - Anderes Templating Mechanismus
 
@@ -122,14 +122,14 @@ export const ColorsList = (args) => {
 
 #### Bewertung
 
-* MDX ist verbreitet  https://mdxjs.com/
+* MDX ist verbreitet  <https://mdxjs.com/>
 * MDX setzt die Kenntnis von React und MD voraus
 * VS Code unterstützt kein Intellisence für MDX
 * MDX muss um React Code erweitert werden um asynchrone Features (z.B. Änderung der Themes) zu nutzen.  
 
 ### E - Eigenes Repo für Pattern Lab/Styleguide
 
-Pattern Lab und die dazu gehörigen Komponenten aus DB-UI Elements rausnehmen und in ein eigenes Repository 
+Pattern Lab und die dazu gehörigen Komponenten aus DB-UI Elements rausnehmen und in ein eigenes Repository
 umziehen. Dort DB-UI Elements importieren.
 Auch ein Monorepo Ansatz ist denkbar
 

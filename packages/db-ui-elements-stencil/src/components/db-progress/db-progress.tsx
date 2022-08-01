@@ -1,5 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
-import { nanoid } from 'nanoid';
+import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-progress',
@@ -21,7 +21,7 @@ export class DbProgress {
    * Optional id - otherwise random id will be provided
    */
 
-  @Prop({ reflect: false }) htmlid: string = 'db-' + nanoid();
+  @Prop({ reflect: false }) htmlid: string = 'db-' + uuid();
   /**
    * The percentage sign - default %.
    */

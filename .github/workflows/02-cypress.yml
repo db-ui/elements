@@ -1,3 +1,4 @@
+---
 name: Run Cypress on repo
 
 on:

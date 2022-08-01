@@ -21,12 +21,14 @@
       @include icon(glyph(chevron-left), $partial: true);
       @include is-icon-text-replace();
     }
+
     &[data-rel='next'] {
       @include icon(glyph(chevron-right), $partial: true);
       @include is-icon-text-replace();
     }
   }
 }
+
 .elm-link[aria-disabled='true'][aria-current='page'] {
   opacity: 1;
 }

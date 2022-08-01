@@ -9,7 +9,7 @@ These ressources we used to learn and get inspired for DB UI Elements
 
 ## Stencil
 
-- https://github.com/mappmechanic/awesome-stenciljs#component-libraries - Great Overview
+- <https://github.com/mappmechanic/awesome-stenciljs#component-libraries> - Great Overview
   for stencil Products
 
 ## Storybook
@@ -30,9 +30,9 @@ These ressources we used to learn and get inspired for DB UI Elements
 
 - [Extensive overview on Design Systems](https://designsystemsrepo.com/design-systems/)
 - [Extensive collection of Design Systems searchable by element](https://www.uiguideline.com/)
-- https://www.duetds.com/ - (Stencil)
-- https://github.com/telekom/scale - (Stencil)
-- https://github.com/BlazeSoftware/atoms - (Stencil)
+- <https://www.duetds.com/> - (Stencil)
+- <https://github.com/telekom/scale> - (Stencil)
+- <https://github.com/BlazeSoftware/atoms> - (Stencil)
 
 ### Blaze
 

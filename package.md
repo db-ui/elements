@@ -1,9 +1,8 @@
-
-## scripts
+# scripts
 
 * *prepare*: enforcing CI/CD, linting and formatting via Git with [`husky`](https://www.npmjs.com/package/husky)
 * *storybook*: starts storybook in a local web server
-* *build:storybook*: build storybook, see https://storybook.js.org/docs/react/api/cli-options
+* *build:storybook*: build storybook, see <https://storybook.js.org/docs/react/api/cli-options>
 * *release*: runs [`np`](https://www.npmjs.com/package/np) to support the release process
 * *start*: starts both a `stencil` build watcher as well as the *storybook* script
 

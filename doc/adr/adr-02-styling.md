@@ -34,7 +34,9 @@ In DB UI Elements gibt es drei Wirkungsbereiche für CSS:
 
 - gilt für die Komponente und soll global gesetzt werden.
 
-Mit der unter dem Sammelbegriff "Web Components" eingeführte Technologie "Shadow DOM" lassen sich sowohl reguläre Elemente als auch Custom Elements um einen eingebetteten, abgetrennten DOM erweitern; dieser dient der Abgrenzung von Styles und JavaScript, was dazu führt, dass globale CSS Definitionen und JavaScript Selektionen in der Komponente nicht wirken. Stand heute werden nur CSS-Variablen durch den Shadow DOM durchgelassen. Das Vererben weiterer CSS Deklarationen in den Shadow DOM lässt sich durch weitere CSS Deklarationen verhindern (`:host{all:initial}`).
+Mit der unter dem Sammelbegriff "Web Components" eingeführte Technologie "Shadow DOM" lassen sich sowohl reguläre Elemente als auch Custom Elements um einen eingebetteten, abgetrennten DOM erweitern; dieser dient der Abgrenzung von Styles und JavaScript, was dazu führt, dass globale CSS Definitionen und JavaScript Selektionen in der Komponente nicht wirken.
+
+Stand heute werden nur CSS-Variablen durch den Shadow DOM durchgelassen. Das Vererben weiterer CSS Deklarationen in den Shadow DOM lässt sich durch weitere CSS Deklarationen verhindern (`:host{all:initial}`).
 
 Die Herausforderung ist, zu definieren, wie die einzelnen Wirkungsbereiche von CSS technisch umgesetzt werden sollen.
 

@@ -4,7 +4,7 @@
 
 Add the following styles to your application.
 
-- replace {path} with your path to copied css 
+- replace {path} with your path to copied css
 - replace {theme} with one of [enterprise,fernverkehr]
 
 ```css
@@ -40,11 +40,11 @@ Add the following styles to your application.
 
 ### Used by
 
- - [db-button](../db-button)
- - [db-chip](../db-chip)
- - [db-link](../db-link)
- - [db-table](../db-table)
- - [db-tag](../db-tag)
+- [db-button](../db-button)
+- [db-chip](../db-chip)
+- [db-link](../db-link)
+- [db-table](../db-table)
+- [db-tag](../db-tag)
 
 ### Graph
 ```mermaid
