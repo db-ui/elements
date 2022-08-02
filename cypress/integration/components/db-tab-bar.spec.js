@@ -3,6 +3,10 @@ context('db-tab-bar', () => {
     cy.visit('/iframe.html?id=components-tab-bar-intro--page&viewMode=story');
   });
 
+  it('db-tab-bar - snapshot', () => {
+    cy.snap('db-tab-bar');
+  });
+
   it('tab-bar is clickable', function () {
     cy.get('section')
       .eq(0)

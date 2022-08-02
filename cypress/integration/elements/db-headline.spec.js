@@ -2,7 +2,9 @@ context('db-headline', () => {
   beforeEach(() => {
     cy.visit('/iframe.html?id=elements-headline-intro--page&viewMode=story');
   });
-
+  it('db-headline - snapshot', () => {
+    cy.snap('db-headline');
+  });
   it('Headline contains correct size', function () {
     cy.get('db-headline').eq(1).contains('h1', 'Headline 1');
     cy.get('db-headline').eq(2).contains('h2', 'Headline 2');

@@ -3,6 +3,9 @@ context('db-tag', () => {
     cy.visit('/iframe.html?id=elements-tag-intro--page&viewMode=story');
   });
 
+  it('db-tag - snapshot', () => {
+    cy.snap('db-tag', 0.18);
+  });
   it('tags should have the right colors', function () {
     const mostTags = [1, 2, 3, 4, 5];
     const tagsColors = [

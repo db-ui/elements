@@ -7,5 +7,10 @@
   },
   "experimentalStudio": true,
   "viewportWidth": 1920,
-  "viewportHeight": 1200
+  "viewportHeight": 1200,
+  "screenshotsFolder": "./cypress/snapshots/actual",
+  "trashAssetsBeforeRuns": true,
+  "env": {
+    "ALWAYS_GENERATE_DIFF": false
+  }
 }

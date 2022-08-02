@@ -3,6 +3,9 @@ context('db-link', () => {
     cy.visit('/iframe.html?id=elements-link-intro--page&viewMode=story');
   });
 
+  it('db-link - snapshot', () => {
+    cy.snap('db-link', 0.17);
+  });
   it('Links contains anchors and correct targets', function () {
     cy.get('db-link > a').eq(0).contains('Link');
     cy.get('db-link > a').eq(1).contains('Link');

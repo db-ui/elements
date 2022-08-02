@@ -5,6 +5,10 @@ context('db-mainnavigation', () => {
     );
   });
 
+  it('db-mainnavigation - snapshot', () => {
+    cy.snap('db-mainnavigation');
+  });
+
   it('mainnavigation contains links', function () {
     cy.get('db-mainnavigation')
       .eq(0)

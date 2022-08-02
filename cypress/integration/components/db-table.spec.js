@@ -3,6 +3,10 @@ context('db-table', () => {
     cy.visit('/iframe.html?id=components-table-intro--page&viewMode=story');
   });
 
+  it('db-table - snapshot', () => {
+    cy.snap('db-table', 0.17);
+  });
+
   it('Renders tables with column tabledata', function () {
     cy.get('db-table > div > table > caption').eq(0).should('exist');
     cy.get('db-table > div > table > thead > tr')
