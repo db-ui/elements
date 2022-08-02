@@ -46,7 +46,7 @@
     "@storybook/web-components": "6.5.9",
     "@types/estree": "1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
-    "@typescript-eslint/parser": "^5.17.0",
+    "@typescript-eslint/parser": "^5.32.0",
     "axios": "^0.27.2",
     "babel-loader": "8.2.3",
     "babel-plugin-istanbul": "^6.1.1",
@@ -78,7 +78,7 @@
     "xml": "1.0.1"
   },
   "validate-branch-name": {
-    "pattern": "((dependabot-)|^((fix|feat|bugfix|feature|test|chore)\\-[a-zA-Z0-9\\-]+)$)",
+    "pattern": "((dependabot-)|^((fix|feat|bugfix|feature|test|chore|refactor)\\-[a-zA-Z0-9\\-]+)$)",
     "errorMsg": "There is something wrong with your branch name. You should rename your branch to a valid name and try again. See the Pattern below."
   },
   "repository": {
