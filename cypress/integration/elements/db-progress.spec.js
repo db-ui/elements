@@ -3,6 +3,9 @@ context('db-progress', () => {
     cy.visit('/iframe.html?id=elements-progress-intro--page&viewMode=story');
   });
 
+  it('db-progress - snapshot', () => {
+    cy.snap('db-progress');
+  });
   it('Progress should exist and be configurable', function () {
     const simpleProgress = [0, 1];
     simpleProgress.forEach((num) => {

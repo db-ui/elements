@@ -5,6 +5,10 @@ context('db-breadcrumb', () => {
     );
   });
 
+  it('db-breadcrumb - snapshot', () => {
+    cy.snap('db-breadcrumb');
+  });
+
   it('breadcrumb contains links', function () {
     cy.get('db-breadcrumb')
       .eq(0)

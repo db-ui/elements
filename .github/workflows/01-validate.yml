@@ -17,7 +17,7 @@ jobs:
 
       - name: 🔬 Validate repo
         run: |
-          node ./scripts/cypress-component-check.js
+          node ./scripts/cypress/component-check.js
           node ./scripts/angular-module-component-check.js
           npm run lint:eslint
           npm run lint:stylelint

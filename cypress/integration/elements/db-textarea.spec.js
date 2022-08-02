@@ -3,6 +3,9 @@ context('db-textarea', () => {
     cy.visit('/iframe.html?id=elements-textarea-intro--page&viewMode=story');
   });
 
+  it('db-textarea - snapshot', () => {
+    cy.snap('db-textarea');
+  });
   it('textarea should be writable', function () {
     cy.get('db-textarea > textarea')
       .eq(0)

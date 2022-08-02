@@ -2,6 +2,9 @@ context('db-accordion', () => {
   beforeEach(() => {
     cy.visit('/iframe.html?id=components-accordion-intro--page&viewMode=story');
   });
+  it('db-accordion - snapshot', () => {
+    cy.snap('db-accordion');
+  });
 
   it('accordion exists', function () {
     cy.get('db-accordion')

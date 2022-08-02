@@ -5,6 +5,10 @@ context('db-pagination', () => {
     );
   });
 
+  it('db-pagination - snapshot', () => {
+    cy.snap('db-pagination', 0.2);
+  });
+
   it('Pagination with slot displays correctly on pages', function () {
     cy.get('db-pagination > nav > ol').eq(0).find('li > a').should('exist');
     cy.get('db-pagination > nav > ol')

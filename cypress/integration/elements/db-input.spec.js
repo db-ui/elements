@@ -3,6 +3,9 @@ context('db-input', () => {
     cy.visit('/iframe.html?id=elements-input-intro--page&viewMode=story');
   });
 
+  it('db-input - snapshot', () => {
+    cy.snap('db-input');
+  });
   it('Input can be typed into', function () {
     cy.get('db-input')
       .eq(0)

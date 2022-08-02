@@ -3,6 +3,9 @@ context('db-image', () => {
     cy.visit('/iframe.html?id=elements-image-intro--page&viewMode=story');
   });
 
+  it('db-image - snapshot', () => {
+    cy.snap('db-image', 0.2);
+  });
   it('images should have the right class and alt text', function () {
     const imagesclassic = [0, 1, 2];
     const imagesadvanced = [0, 1, 2, 3];

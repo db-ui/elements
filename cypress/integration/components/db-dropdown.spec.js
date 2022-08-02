@@ -3,6 +3,10 @@ context('db-dropdown', () => {
     cy.visit('/iframe.html?id=components-dropdown-intro--page&viewMode=story');
   });
 
+  it('db-dropdown - snapshot', () => {
+    cy.snap('db-dropdown');
+  });
+
   it('dropdown contains links', function () {
     cy.get('db-dropdown')
       .eq(0)

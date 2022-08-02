@@ -3,6 +3,10 @@ context('db-linklist', () => {
     cy.visit('/iframe.html?id=components-linklist-intro--page&viewMode=story');
   });
 
+  it('db-linklist - snapshot', () => {
+    cy.snap('db-linklist');
+  });
+
   it('Linklist contains links', function () {
     cy.get('db-linklist > ul > li')
       .eq(0)

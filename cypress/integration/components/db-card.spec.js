@@ -3,6 +3,10 @@ context('db-card', () => {
     cy.visit('/iframe.html?id=components-card-intro--page&viewMode=story');
   });
 
+  it('db-card - snapshot', () => {
+    cy.snap('db-card');
+  });
+
   it('card contains title', function () {
     cy.get('db-card')
       .eq(0)

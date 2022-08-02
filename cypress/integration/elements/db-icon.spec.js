@@ -3,6 +3,9 @@ context('db-icon', () => {
     cy.visit('/iframe.html?id=elements-icon-intro--page&viewMode=story');
   });
 
+  it('db-icon - snapshot', () => {
+    cy.snap('db-icon');
+  });
   it('Icons exists in the shadow 👻', function () {
     Array.from(Array(8)).forEach((num, idx) => {
       cy.get('db-icon')
