@@ -78,7 +78,7 @@
     "xml": "1.0.1"
   },
   "validate-branch-name": {
-    "pattern": "((dependabot-)|^((fix|feat|bugfix|feature|test|chore)\\-[a-zA-Z0-9\\-]+)$)",
+    "pattern": "((dependabot-)|^((fix|feat|bugfix|feature|test|chore|refactor)\\-[a-zA-Z0-9\\-]+)$)",
     "errorMsg": "There is something wrong with your branch name. You should rename your branch to a valid name and try again. See the Pattern below."
   },
   "repository": {
