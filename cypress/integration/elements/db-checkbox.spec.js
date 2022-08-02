@@ -2,7 +2,9 @@ context('db-checkbox', () => {
   beforeEach(() => {
     cy.visit('/iframe.html?id=elements-checkbox-intro--page&viewMode=story');
   });
-
+  it('db-checkbox - snapshot', () => {
+    cy.snap('db-checkbox', 0.16);
+  });
   const selector = 'db-checkbox > input';
   it('Checkbox exists and can be un-/checked', function () {
     cy.get(selector).first().check().should('be.checked');

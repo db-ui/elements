@@ -30,7 +30,7 @@
 
 ### Used by
 
-- [github-version-switcher](../development/github-version-switcher)
+ - [github-version-switcher](../development/github-version-switcher)
 
 ### Graph
 ```mermaid

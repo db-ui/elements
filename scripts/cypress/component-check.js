@@ -5,12 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const excludeComponents = [
-  'development',
-  'db-page',
-  'general.scss',
-  '.DS_Store'
-];
+const excludeComponents = ['development', 'db-page', 'general.scss'];
 
 const getAllFiles = (dirPath, arrayOfFiles) => {
   let files = fs.readdirSync(dirPath);

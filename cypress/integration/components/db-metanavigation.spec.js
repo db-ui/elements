@@ -5,6 +5,10 @@ context('db-metanavigation', () => {
     );
   });
 
+  it('db-metanavigation - snapshot', () => {
+    cy.snap('db-metanavigation');
+  });
+
   it('metanavigation contains links', function () {
     cy.get('db-metanavigation')
       .eq(0)

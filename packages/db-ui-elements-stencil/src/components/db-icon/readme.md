@@ -40,11 +40,11 @@ Add the following styles to your application.
 
 ### Used by
 
-- [db-button](../db-button)
-- [db-chip](../db-chip)
-- [db-link](../db-link)
-- [db-table](../db-table)
-- [db-tag](../db-tag)
+ - [db-button](../db-button)
+ - [db-chip](../db-chip)
+ - [db-link](../db-link)
+ - [db-table](../db-table)
+ - [db-tag](../db-tag)
 
 ### Graph
 ```mermaid

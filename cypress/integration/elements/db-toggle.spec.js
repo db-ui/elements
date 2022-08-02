@@ -3,6 +3,9 @@ context('db-toggle', () => {
     cy.visit('/iframe.html?id=elements-toggle-intro--page&viewMode=story');
   });
 
+  it('db-toggle - snapshot', () => {
+    cy.snap('db-toggle');
+  });
   it('Toggle can be toggeled', function () {
     cy.get('db-toggle> input')
       .eq(0)

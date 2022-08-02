@@ -3,6 +3,10 @@ context('db-brand', () => {
     cy.visit('/iframe.html?id=components-brand-intro--page&viewMode=story');
   });
 
+  it('db-brand - snapshot', () => {
+    cy.snap('db-brand');
+  });
+
   it('Brand exists', function () {
     cy.get('db-brand')
       .eq(0)

@@ -3,6 +3,10 @@ context('db-footer', () => {
     cy.visit('/iframe.html?id=areas-footer-intro--page&viewMode=story');
   });
 
+  it('db-footer - snapshot', () => {
+    cy.snap('db-footer');
+  });
+
   const selector = 'db-footer > footer';
   it('Standard footer exists', function () {
     cy.get(selector).eq(0).should('have.class', 'has-border');

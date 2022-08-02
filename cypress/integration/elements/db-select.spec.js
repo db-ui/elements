@@ -3,6 +3,9 @@ context('db-select', () => {
     cy.visit('/iframe.html?id=elements-select-intro--page&viewMode=story');
   });
 
+  it('db-select - snapshot', () => {
+    cy.snap('db-select');
+  });
   it('selects should have be selectable', function () {
     cy.get('db-select > select > option')
       .eq(0)

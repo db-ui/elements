@@ -38,6 +38,8 @@ packages/db-ui-poc-react/.env
 cypress/videos/*
 cypress/screenshots/*
 cypress/results/*
+cypress/snapshots/actual
+cypress/snapshots/diff
 
 
 coverage/
