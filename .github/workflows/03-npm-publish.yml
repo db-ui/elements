@@ -26,7 +26,7 @@ jobs:
         uses: ./.github/actions/download-tar-artifact
         with:
           # It doesn't matter which framework we download for stencil
-          name: stencil-local-angular
+          name: output-target-local-react
           path: packages/db-ui-elements-react
 
       - name: Publish experimental Packages to NPM
