@@ -8,6 +8,21 @@ jobs:
   publish:
     name: Publish
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          - {
+              WORKSPACE: 'elements',
+              PACKAGEPATH: 'db-ui-elements-stencil',
+              PACKAGENAME: 'stencil-local-angular'
+            }
+          - {
+              WORKSPACE: 'react-elements',
+              PACKAGEPATH: 'db-ui-elements-react',
+              PACKAGENAME: 'output-target-local-react'
+            }
+    env: ${{ matrix.env }}
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
@@ -19,15 +34,15 @@ jobs:
         uses: ./.github/actions/download-tar-artifact
         with:
           # It doesn't matter which framework we download for stencil
-          name: stencil-local-angular
-          path: packages/db-ui-elements-stencil
+          name: ${{ env.PACKAGENAME}}
+          path: packages/${{ env.PACKAGEPATH}}
 
-      - name: ⬇ Download React output target local
-        uses: ./.github/actions/download-tar-artifact
-        with:
-          # It doesn't matter which framework we download for stencil
-          name: output-target-local-react
-          path: packages/db-ui-elements-react
+      # - name: ⬇ Download React output target local
+      #   uses: ./.github/actions/download-tar-artifact
+      #   with:
+      #     # It doesn't matter which framework we download for stencil
+      #     name: output-target-local-react
+      #     path: packages/db-ui-elements-react
 
       - name: Publish experimental Packages to NPM
         run: |
@@ -36,11 +51,11 @@ jobs:
           SEMVER_VERSION=0.0.1-exp
           echo "Semver experimental version $SEMVER_VERSION-$GITHUB_SHA_SHORT"
 
-          npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/elements
-          npm publish --dry-run --workspace=@db-ui/elements
+          npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/${{ env.WORKSPACE }}
+          npm publish --dry-run --workspace=@db-ui/${{ env.WORKSPACE }}
 
-          npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/react-elements
-          npm publish --dry-run --workspace=@db-ui/react-elements
+          # npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/react-elements
+          # npm publish --dry-run --workspace=@db-ui/react-elements
 
       # - name: 📰 Publish to NPM (dry run)
       #   run: npm publish --dry-run
