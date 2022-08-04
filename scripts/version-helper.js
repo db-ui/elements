@@ -1,27 +1,12 @@
 /*
  * This script is just for the GitHub Actions.
- * It will take the version from root package.json
- * and copy it to all libraries before npm publish.
+ * It will create a version number for stable releases from the input
  */
 
-const fs = require('fs');
-
-const run = () => {
-  const directory = process.argv[2];
-  if (!directory) {
-    console.error('directory is missing');
-    process.exit(1);
-  }
-
-  const rawdata = fs.readFileSync('package.json');
-  const packageJson = JSON.parse(rawdata);
-  const version = packageJson.version;
-  const path = `${directory}/package.json`;
-  let libraryVersionFile = fs.readFileSync(path);
-  const changeVersionFile = libraryVersionFile
-    .toString()
-    .replace('0.0.0', version);
-  fs.writeFileSync(path, changeVersionFile, 'utf8');
-};
-
-run();
+import { argv } from 'process';
+const [, , version] = argv;
+const [semver, prerelease] = version.split('-');
+if (prerelease) {
+  throw new Error('This seems to be a prerelease - will not publish');
+}
+console.log(version);

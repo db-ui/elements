@@ -53,5 +53,5 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.TEST_TOKEN }}
 
-      - name: 📰 Publish next version to NPM (dry run)
+      - name: 📰 Publish latest version to NPM (dry run)
         uses: ./.github/actions/publish-latest-to-registry
