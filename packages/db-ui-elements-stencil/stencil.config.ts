@@ -145,6 +145,10 @@ export const config: Config = {
         {
           src: '../../../node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js',
           dest: 'static/js/iframeresizer.contentwindow.min.js'
+        },
+        {
+          src: `./images`,
+          dest: 'images'
         }
       ],
       serviceWorker: null // disable service workers
