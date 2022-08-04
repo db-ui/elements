@@ -57,7 +57,7 @@ jobs:
           echo "registry=https://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
           cat .npmrc
-          echo "$MY_SECRET"
+          echo "my secret: $MY_SECRET"
         env:
           NPM_TOKEN: ${{ secrets.TEST_TOKEN }}
           MY_SECRET: ${{ inputs.secret_input }}
