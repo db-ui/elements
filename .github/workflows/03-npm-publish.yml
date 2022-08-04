@@ -5,28 +5,6 @@ on:
   workflow_call:
 
 env:
-  workspaces:
-    - {
-        DBUI_WORKSPACE: 'elements',
-        DBUI_PACKAGEPATH: 'db-ui-elements-stencil',
-        # It doesn't matter which framework we download for stencil
-        DBUI_ARTIFACTNAME: 'stencil-local-angular'
-      }
-    - {
-        DBUI_WORKSPACE: 'ngx-elements',
-        DBUI_PACKAGEPATH: 'db-ui-elements-angular',
-        DBUI_ARTIFACTNAME: 'output-target-local-angular'
-      }
-    - {
-        DBUI_WORKSPACE: 'react-elements',
-        DBUI_PACKAGEPATH: 'db-ui-elements-react',
-        DBUI_ARTIFACTNAME: 'output-target-local-react'
-      }
-    - {
-        DBUI_WORKSPACE: 'v-elements',
-        DBUI_PACKAGEPATH: 'db-ui-elements-vue',
-        DBUI_ARTIFACTNAME: 'output-target-local-vue'
-      }
 
 jobs:
   publish:
@@ -35,8 +13,30 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        env: ${{ env.workspaces }}
-    env: ${{ matrix.env }}
+        env:
+          - {
+              DBUI_WORKSPACE: 'elements',
+              DBUI_PACKAGEPATH: 'db-ui-elements-stencil',
+              # It doesn't matter which framework we download for stencil
+              DBUI_ARTIFACTNAME: 'stencil-local-angular',
+              DBUI_NPM_AUTH_TOKEN: ${{ secrets.TEST_TOKEN }}
+            }
+          - {
+              DBUI_WORKSPACE: 'ngx-elements',
+              DBUI_PACKAGEPATH: 'db-ui-elements-angular',
+              DBUI_ARTIFACTNAME: 'output-target-local-angular'
+            }
+          - {
+              DBUI_WORKSPACE: 'react-elements',
+              DBUI_PACKAGEPATH: 'db-ui-elements-react',
+              DBUI_ARTIFACTNAME: 'output-target-local-react'
+            }
+          - {
+              DBUI_WORKSPACE: 'v-elements',
+              DBUI_PACKAGEPATH: 'db-ui-elements-vue',
+              DBUI_ARTIFACTNAME: 'output-target-local-vue'
+            }
+    env: ${{ matrix.env }}      
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
@@ -49,6 +49,16 @@ jobs:
         with:
           name: ${{ env.DBUI_ARTIFACTNAME}}
           path: packages/${{ env.DBUI_PACKAGEPATH}}
+
+      - name: Authenticate with Registry
+        run: |
+          npm logout
+          touch .npmrc
+          echo "registry=https://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$TEST_TOKEN" >> .npmrc
+          cat .npmrc
+        env:
+          NPM_TOKEN: ${{ DBUI_NPM_AUTH_TOKEN }}
 
       - name: 📰 Publish to NPM (dry run)
         run: |
