@@ -16,7 +16,7 @@ jobs:
               DBUI_WORKSPACE: 'elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-stencil',
               DBUI_ARTIFACTNAME: 'stencil-local-angular',
-              DBUI_NPM_AUTH_TOKEN: '${{ secrets.TEST_TOKEN }}'
+              MY_SECRET: '${{ inputs.secret_input }}'
             }
           - {
               DBUI_WORKSPACE: 'ngx-elements',
@@ -52,10 +52,10 @@ jobs:
           npm logout
           touch .npmrc
           echo "registry=https://registry.npmjs.org/" >> .npmrc
-          echo "//registry.npmjs.org/:_authToken=$TEST_TOKEN" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
           cat .npmrc
         env:
-          NPM_TOKEN: ${{ DBUI_NPM_AUTH_TOKEN }}
+          NPM_TOKEN: ${{ env.MY_SECRET }}
 
       - name: 📰 Publish to NPM (dry run)
         run: |
