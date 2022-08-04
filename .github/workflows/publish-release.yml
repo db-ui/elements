@@ -4,7 +4,7 @@ name: Test and publish to registries after new tag
 on:
   push:
     branches:
-      - npm-and-github-package-publishing
+      - feat-npm-and-github-package-publishing
 
 jobs:
   init:
