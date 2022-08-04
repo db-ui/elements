@@ -17,13 +17,13 @@ context('db-select', () => {
 
     cy.get('db-select > select').eq(4).should('be.disabled');
 
-    cy.get('db-select > select')
-      .eq(5)
-      .invoke('attr', 'multiple')
-      .should('exist');
+    // cy.get('db-select > select')
+    //   .eq(5)
+    //   .invoke('attr', 'multiple')
+    //   .should('exist');
 
     cy.get('db-select > select')
-      .eq(6)
+      .eq(5)
       .find('optgroup')
       .eq(0)
       .find('option')
@@ -34,7 +34,7 @@ context('db-select', () => {
       .next()
       .should('have.text', 'Option 1.3');
     cy.get('db-select > select')
-      .eq(6)
+      .eq(5)
       .find('optgroup')
       .eq(1)
       .find('option')
