@@ -8,31 +8,6 @@ jobs:
   publish:
     name: Publish to NPM
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        env:
-          - {
-              DBUI_WORKSPACE: 'elements',
-              DBUI_PACKAGEPATH: 'db-ui-elements-stencil',
-              DBUI_ARTIFACTNAME: 'stencil-local-angular'
-            }
-          - {
-              DBUI_WORKSPACE: 'ngx-elements',
-              DBUI_PACKAGEPATH: 'db-ui-elements-angular',
-              DBUI_ARTIFACTNAME: 'output-target-local-angular'
-            }
-          - {
-              DBUI_WORKSPACE: 'react-elements',
-              DBUI_PACKAGEPATH: 'db-ui-elements-react',
-              DBUI_ARTIFACTNAME: 'output-target-local-react'
-            }
-          - {
-              DBUI_WORKSPACE: 'v-elements',
-              DBUI_PACKAGEPATH: 'db-ui-elements-vue',
-              DBUI_ARTIFACTNAME: 'output-target-local-vue'
-            }
-    env: ${{ matrix.env }}
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
@@ -43,7 +18,6 @@ jobs:
       - name: ⬇ Download local package build artifacts
         uses: ./.github/actions/download-tar-artifact
         with:
-          # It doesn't matter which framework we download for stencil
           name: ${{ env.DBUI_ARTIFACTNAME}}
           path: packages/${{ env.DBUI_PACKAGEPATH}}
 
