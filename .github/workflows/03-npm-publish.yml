@@ -4,8 +4,6 @@ name: Publish NPM Package
 on:
   workflow_call:
 
-env:
-
 jobs:
   publish:
     name: Publish to NPM
