@@ -54,11 +54,12 @@ jobs:
           NPM_TOKEN: ${{ secrets.TEST_TOKEN }}
 
       - name: 📰 Publish to NPM (dry run)
-        run: |
-          GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-7)
-          # SEMVER_VERSION=$(npx find-versions-cli ${{ github.event.release.tag_name }})
-          SEMVER_VERSION=0.0.1-exp
-          echo "Semver experimental version $SEMVER_VERSION-$GITHUB_SHA_SHORT"
+        uses: ./.github/actions/publish-to-registry
+        # run: |
+        #   GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-7)
+        #   # SEMVER_VERSION=$(npx find-versions-cli ${{ github.event.release.tag_name }})
+        #   SEMVER_VERSION=0.0.1-exp
+        #   echo "Semver experimental version $SEMVER_VERSION-$GITHUB_SHA_SHORT"
 
-          npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
-          npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+        #   npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+        #   npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}

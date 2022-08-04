@@ -13,4 +13,5 @@ runs:
         touch .npmrc
         echo "registry=https:${{ inputs.registry }}" >> .npmrc
         echo "${{ inputs.registry }}:_authToken=$NPM_TOKEN" >> .npmrc
+        echo "registry=https:${{ inputs.registry }}"
       shell: bash
