@@ -1,26 +1,36 @@
 ---
-name: Publish NPM Repo
+name: Publish NPM Package
 
 on:
   workflow_call:
 
 jobs:
   publish:
-    name: Publish
+    name: Publish to NPM
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         env:
           - {
-              WORKSPACE: 'elements',
-              PACKAGEPATH: 'db-ui-elements-stencil',
-              PACKAGENAME: 'stencil-local-angular'
+              DBUI_WORKSPACE: 'elements',
+              DBUI_PACKAGEPATH: 'db-ui-elements-stencil',
+              DBUI_ARTIFACTNAME: 'stencil-local-angular'
             }
           - {
-              WORKSPACE: 'react-elements',
-              PACKAGEPATH: 'db-ui-elements-react',
-              PACKAGENAME: 'output-target-local-react'
+              DBUI_WORKSPACE: 'ngx-elements',
+              DBUI_PACKAGEPATH: 'db-ui-elements-angular',
+              DBUI_ARTIFACTNAME: 'output-target-local-angular'
+            }
+          - {
+              DBUI_WORKSPACE: 'react-elements',
+              DBUI_PACKAGEPATH: 'db-ui-elements-react',
+              DBUI_NAME: 'output-target-local-react'
+            }
+          - {
+              DBUI_WORKSPACE: 'v-elements',
+              DBUI_PACKAGEPATH: 'db-ui-elements-vue',
+              DBUI_ARTIFACTNAME: 'output-target-local-vue'
             }
     env: ${{ matrix.env }}
     steps:
@@ -30,32 +40,19 @@ jobs:
       - name: 🔄 Init Cache
         uses: ./.github/actions/npm-cache
 
-      - name: ⬇ Download Stencil local
+      - name: ⬇ Download local package build artifacts
         uses: ./.github/actions/download-tar-artifact
         with:
           # It doesn't matter which framework we download for stencil
-          name: ${{ env.PACKAGENAME}}
-          path: packages/${{ env.PACKAGEPATH}}
+          name: ${{ env.DBUI_ARTIFACTNAME}}
+          path: packages/${{ env.DBUI_PACKAGEPATH}}
 
-      # - name: ⬇ Download React output target local
-      #   uses: ./.github/actions/download-tar-artifact
-      #   with:
-      #     # It doesn't matter which framework we download for stencil
-      #     name: output-target-local-react
-      #     path: packages/db-ui-elements-react
-
-      - name: Publish experimental Packages to NPM
+      - name: 📰 Publish to NPM (dry run)
         run: |
           GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-7)
           # SEMVER_VERSION=$(npx find-versions-cli ${{ github.event.release.tag_name }})
           SEMVER_VERSION=0.0.1-exp
           echo "Semver experimental version $SEMVER_VERSION-$GITHUB_SHA_SHORT"
 
-          npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/${{ env.WORKSPACE }}
-          npm publish --dry-run --workspace=@db-ui/${{ env.WORKSPACE }}
-
-          # npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/react-elements
-          # npm publish --dry-run --workspace=@db-ui/react-elements
-
-      # - name: 📰 Publish to NPM (dry run)
-      #   run: npm publish --dry-run
+          npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+          npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
