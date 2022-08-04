@@ -3,7 +3,7 @@
  * It will create a version number for stable releases from the input
  */
 
-import { argv } from 'process';
+const { argv } = require('process');
 const [, , version] = argv;
 const [semver, prerelease] = version.split('-');
 if (prerelease) {
