@@ -47,3 +47,5 @@ jobs:
     if: ${{ github.actor != 'dependabot[bot]' }}
     # needs: [validate, test, cypress]
     needs: [build-stencil-targets, validate, test]
+    secrets:
+      secret_input: ${{ secrets.TEST_TOKEN }}
