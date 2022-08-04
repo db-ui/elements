@@ -55,6 +55,8 @@ jobs:
           cat .npmrc
         env:
           NPM_TOKEN: ${{ secrets.secret_input }}
+        secrets:
+          secret_input: ${{ secrets.TEST_TOKEN }}
 
       - name: 📰 Publish to NPM (dry run)
         run: |
