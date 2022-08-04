@@ -1,6 +1,6 @@
 ---
-name: Publish to Registry
-description: 'Publish package to registry'
+name: Publish next version to Registry
+description: 'Publish next package to registry'
 runs:
   using: 'composite'
   steps:

@@ -1,12 +1,12 @@
 ---
-name: Publish NPM Package
+name: Publish next NPM Packages
 
 on:
   workflow_call:
 
 jobs:
   publish:
-    name: Publish to NPM
+    name: Publish next package versions to NPM
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -53,13 +53,5 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.TEST_TOKEN }}
 
-      - name: 📰 Publish to NPM (dry run)
-        uses: ./.github/actions/publish-to-registry
-        # run: |
-        #   GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-7)
-        #   # SEMVER_VERSION=$(npx find-versions-cli ${{ github.event.release.tag_name }})
-        #   SEMVER_VERSION=0.0.1-exp
-        #   echo "Semver experimental version $SEMVER_VERSION-$GITHUB_SHA_SHORT"
-
-        #   npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
-        #   npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+      - name: 📰 Publish next version to NPM (dry run)
+        uses: ./.github/actions/publish-next-to-registry

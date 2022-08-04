@@ -1,0 +1,23 @@
+---
+name: Publish latest version to Registry
+description: 'Publish latest package to registry'
+runs:
+  using: 'composite'
+  steps:
+    - name: Set the Env
+      run: |
+        # SEMVER_VERSION=$(npx find-versions-cli ${{ github.event.release.tag_name }})
+        SEMVER_VERSION=0.0.2
+        VALID_SEMVER_VERSION=$(node scripts/version-helper.js $SEMVER_VERSION)
+        echo "Semver stable version unclean $SEMVER_VERSION"
+        echo "Semver stable version valid $VALID_SEMVER_VERSION"
+        echo "VALID_SEMVER_VERSION=$(echo $VALID_SEMVER_VERSION)" >> $GITHUB_ENV
+      shell: bash
+
+    - name: Publish latest to registry
+      run: |
+        echo "version is:"
+        echo ${{env.VALID_SEMVER_VERSION }}
+        npm version --no-git-tag-version ${{ env.VALID_SEMVER_VERSION }} --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+        npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+      shell: bash
