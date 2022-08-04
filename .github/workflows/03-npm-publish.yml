@@ -16,7 +16,7 @@ jobs:
               DBUI_WORKSPACE: 'elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-stencil',
               DBUI_ARTIFACTNAME: 'stencil-local-angular',
-              MY_SECRET: '${{ inputs.secret_input }}'
+              MY_SECRET: '${{ secrets.secret_input }}'
             }
           - {
               DBUI_WORKSPACE: 'ngx-elements',
