@@ -1,0 +1,48 @@
+---
+name: Test and publish to registries after new tag
+
+on:
+  push:
+    branches:
+      - npm-and-github-package-publishing
+
+jobs:
+  init:
+    uses: ./.github/workflows/00-init.yml
+
+  scan-secrets:
+    uses: ./.github/workflows/00-scan-secrets.yml
+
+  test:
+    uses: ./.github/workflows/01-test.yml
+    needs: [init]
+
+  validate:
+    uses: ./.github/workflows/01-validate.yml
+    needs: [init]
+
+  build-stencil-targets:
+    uses: ./.github/workflows/01-build-stencil-targets.yml
+    needs: [init]
+
+  build-showcases:
+    uses: ./.github/workflows/01-build-showcases.yml
+    needs: [build-stencil-targets]
+
+  build-storybook:
+    uses: ./.github/workflows/01-build-storybook.yml
+    needs: [build-showcases]
+
+  cypress:
+    uses: ./.github/workflows/02-cypress.yml
+    needs: [build-storybook]
+
+  # release:
+  #   uses: ./.github/workflows/03-gh-release.yml
+  #   if: ${{ github.actor != 'dependabot[bot]' }}
+  #   needs: [validate, test, cypress]
+
+  publishpackages:
+    uses: ./.github/workflows/03-npm-publish.yml
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    needs: [validate, test, cypress]

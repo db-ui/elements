@@ -15,5 +15,32 @@ jobs:
       - name: 🔄 Init Cache
         uses: ./.github/actions/npm-cache
 
-      - name: 📰 Publish to NPM (dry run)
-        run: npm publish --dry-run
+      - name: ⬇ Download Stencil local
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          # It doesn't matter which framework we download for stencil
+          name: stencil-local-angular
+          path: packages/db-ui-elements-stencil
+
+      - name: ⬇ Download React output target local
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          # It doesn't matter which framework we download for stencil
+          name: stencil-local-angular
+          path: packages/db-ui-elements-react
+
+      - name: Publish experimental Packages to NPM
+        run: |
+          GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-7)
+          # SEMVER_VERSION=$(npx find-versions-cli ${{ github.event.release.tag_name }})
+          SEMVER_VERSION=0.0.1-exp
+          echo "Semver experimental version $SEMVER_VERSION-$GITHUB_SHA_SHORT"
+
+          npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/elements
+          npm publish --dry-run --workspace=@db-ui/elements
+
+          npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/react-elements
+          npm publish --dry-run --workspace=@db-ui/react-elements
+
+      # - name: 📰 Publish to NPM (dry run)
+      #   run: npm publish --dry-run
