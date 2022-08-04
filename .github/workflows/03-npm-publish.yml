@@ -4,11 +4,6 @@ name: Publish NPM Package
 on:
   workflow_call:
 
-inputs:
-  secret_input:
-    description: '...'
-    required: true
-
 jobs:
   publish:
     name: Publish to NPM
@@ -52,15 +47,11 @@ jobs:
           path: packages/${{ env.DBUI_PACKAGEPATH}}
 
       - name: Authenticate with Registry
-        run: |
-          touch .npmrc
-          echo "registry=https://registry.npmjs.org/" >> .npmrc
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
-          cat .npmrc
-          echo "my secret: $MY_SECRET"
+        uses: ./.github/actions/auth-with-registry
+        with:
+          registry: '//registry.npmjs.org/'
         env:
           NPM_TOKEN: ${{ secrets.TEST_TOKEN }}
-          MY_SECRET: ${{ inputs.secret_input }}
 
       - name: 📰 Publish to NPM (dry run)
         run: |
