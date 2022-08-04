@@ -25,7 +25,7 @@ jobs:
           - {
               DBUI_WORKSPACE: 'react-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-react',
-              DBUI_NAME: 'output-target-local-react'
+              DBUI_ARTIFACTNAME: 'output-target-local-react'
             }
           - {
               DBUI_WORKSPACE: 'v-elements',
