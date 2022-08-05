@@ -26,7 +26,9 @@ jobs:
         run: npm run build.${{ matrix.themes }} --workspace=@db-ui/elements
 
       - name: 🔨 Build Output Targets ${{ matrix.themes }}
-        run: npm run build --workspace=@db-ui/${{ matrix.targets }}
+        run: |
+          cat ./packages/db-ui-elements-stencil/package.json
+          npm run build --workspace=@db-ui/${{ matrix.targets }}
 
       - name: ↔ Get path for target
         run: |
