@@ -26,10 +26,10 @@ jobs:
         if: ${{ matrix.themes == 'enterprise' }}
         run: |
           echo "gonna rename here"
-          node scripts/theme-helper.js packages/db-ui-elements-stencil ${{ matrix.themes }
-          node scripts/theme-helper.js packages/db-ui-elements-angular ${{ matrix.themes }
-          node scripts/theme-helper.js packages/db-ui-elements-react ${{ matrix.themes }
-          node scripts/theme-helper.js packages/db-ui-elements-vue ${{ matrix.themes }
+          node scripts/theme-helper.js packages/db-ui-elements-stencil ${{ matrix.themes }}
+          node scripts/theme-helper.js packages/db-ui-elements-angular ${{ matrix.themes }}
+          node scripts/theme-helper.js packages/db-ui-elements-react ${{ matrix.themes }}
+          node scripts/theme-helper.js packages/db-ui-elements-vue ${{ matrix.themes }}
           # npm run build.${{ matrix.themes }} --workspace=@db-ui/elements-${{ matrix.themes }}
           cat ./packages/db-ui-elements-stencil/package.json
           npm run build.enterprise --workspace=@db-ui/elements-enterprise
