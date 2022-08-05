@@ -23,7 +23,7 @@ jobs:
         uses: ./.github/actions/npm-cache
 
       - name: Rename packages
-        if: matrix.themes == "enterprise"
+        if: matrix.themes == enterprise
         run: echo "gonna rename here"
 
       - name: 🔨 Build Stencil ${{ matrix.themes }}
