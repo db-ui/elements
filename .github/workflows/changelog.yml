@@ -1,0 +1,25 @@
+name: Publish Changelog
+
+on:
+  workflow_call:
+
+jobs:
+  changelog:
+    name: Update Release with Changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Create changelog
+        run: |
+          echo 'CHANGELOG_TEXT<<EOF' >> $GITHUB_ENV
+          npx conventional-changelog-cli -h -p angular -r 0 >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            console.log("CHANGELOG TEXT:", process.env.CHANGELOG_TEXT)

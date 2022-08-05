@@ -87,3 +87,11 @@ jobs:
       github.event.release.prerelease == false
     # needs: [validate, test, cypress]
     needs: [build-stencil-targets, validate, test]
+
+  changelognext:
+    uses: ./.github/workflows/changelog.yml
+    needs: [publishnpmnext, publishgithubnext]
+
+  changeloglatest:
+    uses: ./.github/workflows/changelog.yml
+    needs: [publishnpmlatest, publishgithublatest]
