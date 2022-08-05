@@ -14,7 +14,7 @@ jobs:
         targets: [ngx-elements, react-elements, v-elements]
         # TODO: Use theme if we want to deploy different themes (at the moment local===enterprise===default)
         #        themes: [local, enterprise]
-        themes: [local]
+        themes: [local, enterprise]
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
