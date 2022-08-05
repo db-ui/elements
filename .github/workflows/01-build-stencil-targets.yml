@@ -32,12 +32,24 @@ jobs:
           node scripts/theme-helper.js packages/db-ui-elements-vue ${{ matrix.themes }}
           # npm run build.${{ matrix.themes }} --workspace=@db-ui/elements-${{ matrix.themes }}
           cat ./packages/db-ui-elements-stencil/package.json
-          npm run build.enterprise --workspace=@db-ui/elements-enterprise
+          # npm run build.enterprise --workspace=@db-ui/elements-enterprise
 
       - name: 🔨 Build Stencil ${{ matrix.themes }}
+        if: ${{ matrix.themes == 'enterprise' }}
+        run: npm run build.${{ matrix.themes }} --workspace=@db-ui/elements-${{ matrix.themes }}
+
+      - name: 🔨 Build Stencil ${{ matrix.themes }}
+        if: ${{ matrix.themes == 'local' }}
         run: npm run build.${{ matrix.themes }} --workspace=@db-ui/elements
 
       - name: 🔨 Build Output Targets ${{ matrix.themes }}
+        if: ${{ matrix.themes == 'enterprise' }}
+        run: |
+          cat ./packages/db-ui-elements-stencil/package.json
+          npm run build --workspace=@db-ui/${{ matrix.targets }}-${{ matrix.themes }}
+
+      - name: 🔨 Build Output Targets ${{ matrix.themes }}
+        if: ${{ matrix.themes == 'local' }}
         run: |
           cat ./packages/db-ui-elements-stencil/package.json
           npm run build --workspace=@db-ui/${{ matrix.targets }}
