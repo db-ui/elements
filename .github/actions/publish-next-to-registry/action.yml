@@ -12,5 +12,5 @@ runs:
         echo "Semver experimental version $SEMVER_VERSION-$GITHUB_SHA_SHORT"
 
         npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
-        npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+        npm publish --tag next --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
       shell: bash

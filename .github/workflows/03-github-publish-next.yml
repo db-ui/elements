@@ -1,0 +1,59 @@
+---
+name: Publish next GitHub Registry Packages
+
+on:
+  workflow_call:
+
+jobs:
+  publish:
+    name: Publish next package versions to GitHub Packages
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      # As "stencil" package we use the artifact "stencil-local-angular" - others
+      # would work as well this is just the first
+      matrix:
+        env:
+          - {
+              DBUI_WORKSPACE: 'elements',
+              DBUI_PACKAGEPATH: 'db-ui-elements-stencil',
+              DBUI_ARTIFACTNAME: 'stencil-local-angular'
+            }
+          - {
+              DBUI_WORKSPACE: 'ngx-elements',
+              DBUI_PACKAGEPATH: 'db-ui-elements-angular',
+              DBUI_ARTIFACTNAME: 'output-target-local-angular'
+            }
+          - {
+              DBUI_WORKSPACE: 'react-elements',
+              DBUI_PACKAGEPATH: 'db-ui-elements-react',
+              DBUI_ARTIFACTNAME: 'output-target-local-react'
+            }
+          - {
+              DBUI_WORKSPACE: 'v-elements',
+              DBUI_PACKAGEPATH: 'db-ui-elements-vue',
+              DBUI_ARTIFACTNAME: 'output-target-local-vue'
+            }
+    env: ${{ matrix.env }}
+    steps:
+      - name: ⬇ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🔄 Init Cache
+        uses: ./.github/actions/npm-cache
+
+      - name: ⬇ Download local package build artifacts
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: ${{ env.DBUI_ARTIFACTNAME}}
+          path: packages/${{ env.DBUI_PACKAGEPATH}}
+
+      - name: Authenticate with Registry
+        uses: ./.github/actions/auth-with-registry
+        with:
+          registry: '//npm.pkg.github.com/'
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TEST_TOKEN}}
+
+      - name: 📰 Publish next version to GitHub Packages (dry run)
+        uses: ./.github/actions/publish-next-to-registry
