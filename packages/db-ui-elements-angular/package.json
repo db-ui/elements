@@ -37,7 +37,6 @@
     "@angular/platform-browser-dynamic": ">=12.0.0"
   },
   "dependencies": {
-    "@db-ui-elements-enterprise": "1.1.1",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
