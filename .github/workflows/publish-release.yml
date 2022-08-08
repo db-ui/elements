@@ -64,8 +64,6 @@ jobs:
       github.event.release.prerelease == false
     # needs: [validate, test, cypress]
     needs: [build-stencil-targets, validate, test]
-    with:
-      registry: npm-test-bla
 
   publishgithubnext:
     uses: ./.github/workflows/03-github-publish-next.yml
@@ -89,6 +87,8 @@ jobs:
       github.event.release.prerelease == false
     # needs: [validate, test, cypress]
     needs: [build-stencil-targets, validate, test]
+    with:
+      registry: npm-test-bla
 
   changelognext:
     uses: ./.github/workflows/changelog.yml
