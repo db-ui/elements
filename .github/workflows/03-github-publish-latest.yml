@@ -3,11 +3,10 @@ name: Publish latest GitHub Packages
 
 on:
   workflow_call:
-
-inputs:
-  registry:
-    description: 'Name of registry'
-    required: true
+    inputs:
+      registry:
+        description: 'Name of registry'
+        required: true
 
 jobs:
   publish:
