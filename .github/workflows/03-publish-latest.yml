@@ -9,6 +9,11 @@ on:
         required: false
         default: 'verdaccio'
         type: string
+      theme:
+        description: 'Name of theme'
+        required: false
+        default: 'default'
+        type: string
 
 jobs:
   publish:
@@ -40,6 +45,26 @@ jobs:
               DBUI_PACKAGEPATH: 'db-ui-elements-vue',
               DBUI_ARTIFACTNAME: 'output-target-default-vue'
             }
+          - {
+              DBUI_WORKSPACE: 'elements-enterprise',
+              DBUI_PACKAGEPATH: 'db-ui-elements-stencil',
+              DBUI_ARTIFACTNAME: 'stencil-enterprise-angular'
+            }
+          - {
+              DBUI_WORKSPACE: 'ngx-elements-enterprise',
+              DBUI_PACKAGEPATH: 'db-ui-elements-angular',
+              DBUI_ARTIFACTNAME: 'output-target-enterprise-angular'
+            }
+          - {
+              DBUI_WORKSPACE: 'react-elements-enterprise',
+              DBUI_PACKAGEPATH: 'db-ui-elements-react',
+              DBUI_ARTIFACTNAME: 'output-target-enterprise-react'
+            }
+          - {
+              DBUI_WORKSPACE: 'v-elements-enterprise',
+              DBUI_PACKAGEPATH: 'db-ui-elements-vue',
+              DBUI_ARTIFACTNAME: 'output-target-enterprise-vue'
+            }
     env: ${{ matrix.env }}
     steps:
       - name: ⬇ Checkout repo
@@ -55,17 +80,20 @@ jobs:
           path: packages/${{ env.DBUI_PACKAGEPATH}}
 
       - name: 🛠 Forge enterprise packages
+        if: ${{ inputs.theme == 'enterprise' }}
         run: |
           echo "which packages?: ${{ inputs.registry }}"
-          npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.* 
-          npm pkg set 'dependencies.@db-ui-elements-enterprise'='1.1.1' --workspace=@db-ui/ngx-elements
-
-      # - name: 🛠 Forge default packages
-      #   run: |
-      #     echo "which packages?: ${{ inputs.registry }}"
+          echo "TODO: forge enterprise versions..."
       #     npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
       #     npm pkg set 'dependencies.@db-ui-elements-enterprise'='1.1.1' --workspace=@db-ui/ngx-elements
 
+      - name: 🛠 Forge default packages
+        run: |
+          echo "which packages?: ${{ inputs.registry }}"
+          echo "TODO: forge default versions..."
+          npm pkg set 'dependencies.@db-ui-elements'='1.1.1' --workspace=@db-ui/ngx-elements
+          cat packages/db-ui-elements-angular/package.json
+      #     npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
       - name: Authenticate with Registry
         uses: ./.github/actions/auth-with-registry
         with:

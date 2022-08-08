@@ -22,17 +22,17 @@ jobs:
           - {
               DBUI_WORKSPACE: 'ngx-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-angular',
-              DBUI_ARTIFACTNAME: 'output-target-local-angular'
+              DBUI_ARTIFACTNAME: 'output-target-default-angular'
             }
           - {
               DBUI_WORKSPACE: 'react-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-react',
-              DBUI_ARTIFACTNAME: 'output-target-local-react'
+              DBUI_ARTIFACTNAME: 'output-target-default-react'
             }
           - {
               DBUI_WORKSPACE: 'v-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-vue',
-              DBUI_ARTIFACTNAME: 'output-target-local-vue'
+              DBUI_ARTIFACTNAME: 'output-target-default-vue'
             }
     env: ${{ matrix.env }}
     steps:
