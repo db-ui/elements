@@ -96,7 +96,8 @@ jobs:
           echo "which packages?: ${{ inputs.registry }}"
           echo "which verison ?: ${{ env.VALID_SEMVER_VERSION }}"
           npm pkg set 'dependencies.@db-ui/elements'='${{ env.VALID_SEMVER_VERSION }}' --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
-          npm version --no-git-tag-version ${{ env.VALID_SEMVER_VERSION }} --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+          npm pkg set 'version'='${{ env.VALID_SEMVER_VERSION }}' --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+          # npm version --no-git-tag-version ${{ env.VALID_SEMVER_VERSION }} --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
           cat packages/${{ env.DBUI_PACKAGEPATH }}/package.json
 
       - name: Authenticate with NPM Registry
