@@ -6,7 +6,9 @@ on:
     inputs:
       registry:
         description: 'Name of registry'
-        required: true
+        required: false
+        default: 'verdaccio'
+        type: string
 
 jobs:
   publish:
