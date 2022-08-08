@@ -79,7 +79,7 @@ jobs:
   #   needs: [build-stencil-targets, validate, test]
 
   publishlatestpackages:
-    uses: ./.github/workflows/03-github-publish-latest.yml
+    uses: ./.github/workflows/03-publish-latest.yml
     # if: github.event.release.target_commitish == 'test-package-publishing' && github.event.release.prerelease == false
     if: |
       ${{ github.actor != 'dependabot[bot]' }} && 
