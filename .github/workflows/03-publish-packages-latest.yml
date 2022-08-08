@@ -100,7 +100,7 @@ jobs:
           cat packages/${{ env.DBUI_PACKAGEPATH }}/package.json
 
       - name: Authenticate with NPM Registry
-        if: ${{ inputs.registry != 'github' }}
+        if: ${{ inputs.registry == 'npm' }}
         uses: ./.github/actions/auth-with-registry
         with:
           registry: '//npm.pkg.github.com/'
@@ -108,7 +108,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TEST_TOKEN}}
 
       - name: Authenticate with GitHub Registry
-        if: ${{ inputs.registry != 'npm' }}
+        if: ${{ inputs.registry == 'github' }}
         uses: ./.github/actions/auth-with-registry
         with:
           registry: '//npm.pkg.github.com/'
