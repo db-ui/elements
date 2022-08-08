@@ -97,7 +97,7 @@ jobs:
           echo "TODO: forge default versions..."
           npm pkg set 'dependencies.@db-ui-elements'='${{ env.VALID_SEMVER_VERSION }}' --workspace=${{ env.DBUI_WORKSPACE }}
           npm version --no-git-tag-version ${{ env.VALID_SEMVER_VERSION }} --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
-          cat packages/'${{ DBUI_PACKAGEPATH }}'/package.json
+          cat packages/${{ env.DBUI_PACKAGEPATH }}/package.json
 
       - name: Authenticate with NPM Registry
         if: ${{ inputs.registry != 'npm' }}
