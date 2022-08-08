@@ -91,10 +91,10 @@ jobs:
       registry: npm-test-bla
       theme: enterprise
 
-  changelognext:
-    uses: ./.github/workflows/changelog.yml
-    needs: [publishnpmnext, publishgithubnext]
+  # changelognext:
+  #   uses: ./.github/workflows/changelog.yml
+  #   needs: [publishnpmnext, publishgithubnext]
 
-  changeloglatest:
-    uses: ./.github/workflows/changelog.yml
-    needs: [publishnpmlatest, publishgithublatest]
+  # changeloglatest:
+  #   uses: ./.github/workflows/changelog.yml
+  #   needs: [publishnpmlatest, publishgithublatest]
