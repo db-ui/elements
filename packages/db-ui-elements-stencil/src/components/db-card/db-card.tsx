@@ -127,7 +127,7 @@ export class DbCard {
    */
   @Prop({ reflect: true }) variant: 'banner' | 'title' = 'banner';
 
-  illustrationPaths = {
+  private illustrationPaths = {
     account: 'action/db_ic_il_account.svg',
     alarm_clock: 'action/db_ic_il_alarm_clock.svg',
     ar_icon: 'action/db_ic_il_ar_icon.svg',
@@ -270,7 +270,9 @@ export class DbCard {
               aria-hidden="true"
             >
               <use
-                href={`${this.uiCoreIllustrationPath}/db_ic_il_${this.illustration}.svg#icon`}
+                href={`${this.uiCoreIllustrationPath}/${
+                  this.illustrationPaths[this.illustration]
+                }#icon`}
               />
             </svg>
           )}
@@ -278,7 +280,7 @@ export class DbCard {
             <img src={this.image} height="64" width="64" alt={this.alt} />
           )}
           <figcaption>
-            {this.header && <h3>{this.header}</h3>}
+            {this.header && <db-headline>{this.header}</db-headline>}
             {this.content && <p>{this.content}</p>}
             {!this.header && !this.content && <slot />}
           </figcaption>

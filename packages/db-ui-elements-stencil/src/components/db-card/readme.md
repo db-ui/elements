@@ -18,6 +18,19 @@
 | `variant`                | `variant`           | The variant which is banner or title.                                                                                                  | `"banner" \| "title"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `'banner'`               |
 
 
+## Dependencies
+
+### Depends on
+
+- [db-headline](../db-headline)
+
+### Graph
+```mermaid
+graph TD;
+  db-card --> db-headline
+  style db-card fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
