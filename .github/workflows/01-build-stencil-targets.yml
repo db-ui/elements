@@ -45,7 +45,7 @@ jobs:
 
       - name: 🔨 Build Stencil ${{ matrix.themes }}
         # if: ${{ matrix.themes == 'local' }}
-        run: npm run build.${{ matrix.themes }} --workspace=@db-ui/elements
+        run: npm run build.local --workspace=@db-ui/elements
 
       - name: 🔨 Build Output Targets ${{ matrix.themes }}
         # if: ${{ matrix.themes == 'enterprise' }}
