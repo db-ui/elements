@@ -19,11 +19,11 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "build.default": "npm run build",
     "build.enterprise": "npm run build enterprise",
-    "build.local": "npm run build enterprise local",
     "build.watch": "stencil build --watch",
     "build.watch.enterprise": "npm run build.watch enterprise",
-    "build.watch.local": "npm run build.watch enterprise local",
+    "build.watch.local": "npm run build.watch enterprise",
     "lint": "eslint src/**/*{.ts,.tsx}",
     "validate": "pretty-quick --staged && npm run lint",
     "start-stencil": "stencil build --dev --watch --serve",

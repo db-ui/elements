@@ -1,7 +1,7 @@
 {
   "name": "@db-ui/ngx-elements",
   "version": "0.0.0",
-  "description": "Angular specific wrapper for @db-ui/elements",
+  "description": "Angular specific wrapper for @db-ui/elements-enterprise-enterprise-enterprise",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -37,22 +37,23 @@
     "@angular/platform-browser-dynamic": ">=12.0.0"
   },
   "dependencies": {
+    "@db-ui-elements-enterprise": "1.1.1",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "12.2.16",
     "@angular/animations": "~12.2.16",
+    "@angular/cli": "12.2.16",
     "@angular/common": "~12.2.16",
     "@angular/compiler": "~12.2.16",
+    "@angular/compiler-cli": "12.2.16",
     "@angular/core": "~12.2.16",
     "@angular/forms": "~12.2.16",
     "@angular/platform-browser": "~12.2.16",
     "@angular/platform-browser-dynamic": "~12.2.16",
-    "@angular-devkit/build-angular": "12.2.16",
-    "@angular/cli": "12.2.16",
-    "@angular/compiler-cli": "12.2.16",
+    "@rollup/plugin-commonjs": "22.0.1",
     "@rollup/plugin-json": "4.1.0",
     "@rollup/plugin-node-resolve": "13.3.0",
-    "@rollup/plugin-commonjs": "22.0.1",
     "@types/jest": "27.4.1",
     "@types/node": "12.20.46",
     "bs-logger": "0.2.6",
