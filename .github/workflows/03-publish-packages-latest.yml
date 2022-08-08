@@ -77,10 +77,14 @@ jobs:
           name: ${{ env.DBUI_ARTIFACTNAME}}
           path: packages/${{ env.DBUI_PACKAGEPATH}}
 
+      - name: 🏷 Get and Set Package Version on Env
+        uses: ./.github/actions/get-package-version
+
       - name: 🛠 Forge enterprise packages
         if: ${{ inputs.theme == 'enterprise' }}
         run: |
           echo "which packages?: ${{ inputs.registry }}"
+          echo "which verison ?: ${{ env.VALID_SEMVER_VERSION }}"
           echo "TODO: forge enterprise versions..."
       #     npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
       #     npm pkg set 'dependencies.@db-ui-elements-enterprise'='1.1.1' --workspace=@db-ui/ngx-elements
