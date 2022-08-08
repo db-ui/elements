@@ -6,13 +6,11 @@ on:
     inputs:
       registry:
         description: 'Name of registry'
-        required: false
-        default: 'verdaccio'
+        required: true
         type: string
       theme:
         description: 'Name of theme'
-        required: false
-        default: 'default'
+        required: true
         type: string
 
 jobs:
@@ -28,7 +26,7 @@ jobs:
           - {
               DBUI_WORKSPACE: 'elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-stencil',
-              DBUI_ARTIFACTNAME: 'stencil-local-angular'
+              DBUI_ARTIFACTNAME: 'stencil-default-angular'
             }
           - {
               DBUI_WORKSPACE: 'ngx-elements',
@@ -95,12 +93,20 @@ jobs:
           npm pkg set 'dependencies.@db-ui-elements'='1.1.1' --workspace=@db-ui/ngx-elements
           cat packages/db-ui-elements-angular/package.json
       #     npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
-      - name: Authenticate with Registry
+      - name: Authenticate with NPM Registry
+        if: ${{ inputs.registry != 'npm' }}
         uses: ./.github/actions/auth-with-registry
         with:
           registry: '//npm.pkg.github.com/'
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TEST_TOKEN}}
+
+      - name: Authenticate with GitHub Registry
+        if: ${{ inputs.registry != 'github' }}
+        uses: ./.github/actions/auth-with-registry
+        with:
+          registry: '//npm.pkg.github.com/'
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TEST_TOKEN}}
 
       - name: 📰 Publish latest version to GitHub Packages (dry run)
