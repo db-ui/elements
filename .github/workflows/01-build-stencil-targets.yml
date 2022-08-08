@@ -13,7 +13,7 @@ jobs:
       matrix:
         targets: [ngx-elements, react-elements, v-elements]
         # TODO: Use theme if we want to deploy different themes (at the moment local===enterprise===default)
-        #        themes: [local, enterprise]
+        # TODO: replace local with default theme
         themes: [local, enterprise]
     steps:
       - name: ⬇ Checkout repo
@@ -22,37 +22,42 @@ jobs:
       - name: 🔄 Init Cache
         uses: ./.github/actions/npm-cache
 
-      - name: Rename packages
-        if: ${{ matrix.themes == 'enterprise' }}
-        run: |
-          echo "gonna rename here"
-          node scripts/theme-helper.js packages/db-ui-elements-stencil ${{ matrix.themes }}
-          node scripts/theme-helper.js packages/db-ui-elements-angular ${{ matrix.themes }}
-          node scripts/theme-helper.js packages/db-ui-elements-react ${{ matrix.themes }}
-          node scripts/theme-helper.js packages/db-ui-elements-vue ${{ matrix.themes }}
-          # npm run build.${{ matrix.themes }} --workspace=@db-ui/elements-${{ matrix.themes }}
-          cat ./packages/db-ui-elements-stencil/package.json
-          # npm run build.enterprise --workspace=@db-ui/elements-enterprise
+      # - name: Rename packages
+      #   if: ${{ matrix.themes == 'enterprise' }}
+      #   run: |
+      #     echo "gonna rename here"
+      #     npm pkg set 'name'='@db-ui/elements-${{ matrix.themes }}' --workspace=@db-ui/elements
+      #     npm pkg set 'name'='@db-ui/ngx-elements-${{ matrix.themes }}' --workspace=@db-ui/ngx-elements
+      #     npm pkg set 'name'='@db-ui/react-elements-${{ matrix.themes }}' --workspace=@db-ui/react-elements
+      #     npm pkg set 'name'='@db-ui/v-elements-${{ matrix.themes }}' --workspace=@db-ui/v-elements
+
+      #     echo "rename angular specifics"
+      #     npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/db-ui-elements-angular/projects/lib/src/db-ui-elements-module.ts,packages/db-ui-elements-angular/projects/lib/src/components.ts
+
+      #     # npm run build.${{ matrix.themes }} --workspace=@db-ui/elements-${{ matrix.themes }}
+      #     cat ./packages/db-ui-elements-stencil/package.json
+      #     # npm run build.enterprise --workspace=@db-ui/elements-enterprise
+
+      # - name: 🔨 Build Stencil ${{ matrix.themes }}
+      #   if: ${{ matrix.themes == 'enterprise' }}
+      #   run: |
+      #     npm run build.${{ matrix.themes }} --workspace=@db-ui/elements
 
       - name: 🔨 Build Stencil ${{ matrix.themes }}
-        if: ${{ matrix.themes == 'enterprise' }}
-        run: npm run build.${{ matrix.themes }} --workspace=@db-ui/elements-${{ matrix.themes }}
-
-      - name: 🔨 Build Stencil ${{ matrix.themes }}
-        if: ${{ matrix.themes == 'local' }}
+        # if: ${{ matrix.themes == 'local' }}
         run: npm run build.${{ matrix.themes }} --workspace=@db-ui/elements
 
       - name: 🔨 Build Output Targets ${{ matrix.themes }}
-        if: ${{ matrix.themes == 'enterprise' }}
+        # if: ${{ matrix.themes == 'enterprise' }}
         run: |
-          cat ./packages/db-ui-elements-stencil/package.json
-          npm run build --workspace=@db-ui/${{ matrix.targets }}-${{ matrix.themes }}
-
-      - name: 🔨 Build Output Targets ${{ matrix.themes }}
-        if: ${{ matrix.themes == 'local' }}
-        run: |
-          cat ./packages/db-ui-elements-stencil/package.json
           npm run build --workspace=@db-ui/${{ matrix.targets }}
+          cat ./packages/db-ui-elements-stencil/package.json
+
+      # - name: 🔨 Build Output Targets ${{ matrix.themes }}
+      #   if: ${{ matrix.themes == 'local' }}
+      #   run: |
+      #     cat ./packages/db-ui-elements-stencil/package.json
+      #     npm run build --workspace=@db-ui/${{ matrix.targets }}
 
       - name: ↔ Get path for target
         run: |
@@ -67,14 +72,19 @@ jobs:
           fi
         id: path
 
+      - name: Rename packages
+        if: ${{ matrix.themes == 'enterprise' }}
+        run: |
+          echo "rename enterprise packages"
+          npm pkg set 'name'='@db-ui/elements-${{ matrix.themes }}' --workspace=@db-ui/elements
+          npm pkg set 'name'='@db-ui/ngx-elements-${{ matrix.themes }}' --workspace=@db-ui/ngx-elements
+          npm pkg set 'name'='@db-ui/react-elements-${{ matrix.themes }}' --workspace=@db-ui/react-elements
+          npm pkg set 'name'='@db-ui/v-elements-${{ matrix.themes }}' --workspace=@db-ui/v-elements
+          echo "rename angular specifics"
+          npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/db-ui-elements-angular/projects/lib/src/db-ui-elements-module.ts,packages/db-ui-elements-angular/projects/lib/src/components.ts
+
       - name: ⬆ Upload Stencil ${{ matrix.themes }}
         uses: ./.github/actions/upload-tar-artifact
         with:
           name: stencil-${{ matrix.themes }}-${{ steps.path.outputs.framework }}
           path: packages/db-ui-elements-stencil
-
-      - name: ⬆ Upload Output Target ${{ steps.path.outputs.framework }}
-        uses: ./.github/actions/upload-tar-artifact
-        with:
-          name: output-target-${{ matrix.themes }}-${{ steps.path.outputs.framework }}
-          path: packages/db-ui-elements-${{ steps.path.outputs.framework }}
