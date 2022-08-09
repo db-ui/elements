@@ -1,6 +1,6 @@
 # API Docs
 
-## Style Dependencies
+<!-- ## Style Dependencies
 
 Add the following styles to your application.
 
@@ -23,7 +23,7 @@ Add the following styles to your application.
 @import url({path}/themes/{theme}/css/00-base/icons/icons.ticket.css);
 @import url({path}/themes/{theme}/css/00-base/icons/icons.transportation.css);
 @import url({path}/themes/{theme}/css/00-base/icons/missing-icons.css);
-```
+``` -->
 
 <!-- Auto Generated Below -->
 
