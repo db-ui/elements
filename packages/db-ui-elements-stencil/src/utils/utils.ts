@@ -1,4 +1,5 @@
 import { DbLinkType } from '../components/db-link/db-link-type';
+import { HTMLStencilElement } from '@stencil/core/internal';
 
 export const format = (first: string, middle: string, last: string): string =>
   (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
@@ -142,4 +143,67 @@ export const parseData = (item: string | object | unknown) => {
   } catch (error) {
     return false;
   }
+};
+
+/**
+ * Adds a scroll listener to the document to check if there is a scroll.
+ * @param onScrollChange a func with gives direction (0 - initial, 1 - up, 2 - down) and currentPxScrolled (current px scrolled)
+ */
+export const addScrollListener = (
+  onScrollChange: (direction: number, currentPxScrolled: number) => void
+) => {
+  const doc = document.documentElement;
+  const win = window;
+
+  let previousScroll: number = win.scrollY || doc.scrollTop;
+  let currentPxScrolled: number;
+  let direction = 0;
+  let previousDirection = 0;
+
+  const throttle = (func: () => void, time = 100) => {
+    const lastTime = 0;
+    return () => {
+      const now = new Date().getTime();
+      if (now - lastTime >= time) {
+        func();
+        time = now;
+      }
+    };
+  };
+
+  const checkScroll = () => {
+    // Only do this for screen smaller tablet
+    if (win.screen.width < 768) {
+      currentPxScrolled = win.scrollY || doc.scrollTop;
+      if (currentPxScrolled > previousScroll) {
+        //scrolled up
+        direction = 2;
+      } else if (currentPxScrolled < previousScroll) {
+        //scrolled down
+        direction = 1;
+      }
+
+      if (
+        direction !== previousDirection ||
+        previousScroll !== currentPxScrolled
+      ) {
+        onScrollChange(direction, currentPxScrolled);
+      }
+      previousDirection = direction;
+      previousScroll = currentPxScrolled;
+    }
+  };
+
+  window.addEventListener('scroll', throttle(checkScroll));
+};
+
+export const setMobileScroll = (host: HTMLStencilElement) => {
+  host.setAttribute('mobile-scroll', 'true');
+  addScrollListener((direction: number, currentPxScrolled: number) => {
+    if (direction === 2 && currentPxScrolled > 64) {
+      host.setAttribute('scroll-hide', 'true');
+    } else if (direction === 1 && host.hasAttribute('scroll-hide')) {
+      host.removeAttribute('scroll-hide');
+    }
+  });
 };

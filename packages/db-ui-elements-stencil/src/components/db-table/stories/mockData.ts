@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { TableDataType } from '../type';
 
 // function getRandomInt(min, max) {
 //   min = Math.ceil(min);
@@ -30,6 +31,23 @@ export default () => {
       [headers[5]]: getAdjectiveWithIcon(5, false)
     }
   });
+};
+
+export const bigMockData = (): TableDataType => {
+  const headers = [...Array(6).keys()].map(() => faker.name.firstName());
+  const rows = [];
+  for (let i = 0; i < 100; i++) {
+    const row = {};
+    headers.forEach((header) => {
+      row[header] = [undefined, getAdjectiveWithIcon(5, true)];
+    });
+    rows.push(row);
+  }
+  return {
+    caption: faker.lorem.sentence(),
+    headers,
+    rows
+  };
 };
 
 export const fullColumnMockData = () => {

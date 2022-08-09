@@ -4,3 +4,27 @@
 :host {
   display: block;
 }
+
+.mobile-container {
+  height: 64px;
+  border: none;
+  box-shadow: none;
+}
+
+db-header {
+  &[mobile-scroll='true'] header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+
+  header {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s ease, visibility 0s 0.3s linear;
+  }
+
+  &[scroll-hide='true'] header {
+    transform: translate3d(0, -101%, 0);
+    transition: transform 0.3s ease, visibility 0s 0.3s linear;
+  }
+}

@@ -1,9 +1,9 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Element, h, Host, Prop } from '@stencil/core';
+import { setMobileScroll } from '../../utils/utils';
 
 @Component({
   tag: 'db-footer',
-  styleUrl: 'db-footer.scss',
-  scoped: true
+  styleUrl: 'db-footer.scss'
 })
 export class DbFooter {
   /**
@@ -16,16 +16,32 @@ export class DbFooter {
    */
   @Prop({ reflect: false }) copyright?: boolean = false;
 
+  /**
+   * The mobile attribute can be set to add a scrolling behaviour to the footer.
+   */
+  @Prop({ reflect: false }) mobile?: boolean = false;
+
+  @Element() host: HTMLDbFooterElement;
+
+  componentWillLoad() {
+    if (this.mobile) {
+      setMobileScroll(this.host);
+    }
+  }
+
   private getCopyRight(): string {
     return `Copyright ${new Date().getFullYear()} DB Systel`;
   }
 
   render() {
     return (
-      <footer class={`rea-footer ${this.border ? 'has-border' : ''}`}>
-        {this.copyright ? <span>{this.getCopyRight()}</span> : null}
-        <slot />
-      </footer>
+      <Host>
+        {this.mobile && <div class="rea-footer mobile-container" />}
+        <footer class={`rea-footer ${this.border ? 'has-border' : ''}`}>
+          {this.copyright ? <span>{this.getCopyRight()}</span> : null}
+          <slot />
+        </footer>
+      </Host>
     );
   }
 }
