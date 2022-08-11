@@ -23,6 +23,18 @@ jobs:
           echo "prerelease?: ${{ inputs.prerelease }}"
           echo "release?: ${{ inputs.release }}"
 
+      - name: Another TEST
+        if: inputs.prerelease == 'true'
+        run: |
+          echo "another prerelease?: ${{ inputs.prerelease }}"
+          echo "another release?: ${{ inputs.release }}"
+
+      - name: Another TEST 2
+        if: inputs.release == 'true'
+        run: |
+          echo "another 2 prerelease?: ${{ inputs.prerelease }}"
+          echo "another 2 release?: ${{ inputs.release }}"
+
       - name: 🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
 
