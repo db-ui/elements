@@ -3,11 +3,11 @@ name: Publish all Packages to Registries
 
 on:
   workflow_call:
-    # inputs:
-    #   test:
-    #     description: 'test'
-    #     required: true
-    #     type: boolean
+    inputs:
+      test:
+        description: 'test'
+        required: true
+        type: string
 
 jobs:
   publish:
@@ -70,9 +70,9 @@ jobs:
         registries: [npm, github]
     env: ${{ matrix.env }}
     steps:
-      # - name: TEST
-      #   run: |
-      #     echo "which input?: ${{ inputs.test }}"
+      - name: TEST
+        run: |
+          echo "which input?: ${{ inputs.test }}"
 
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
