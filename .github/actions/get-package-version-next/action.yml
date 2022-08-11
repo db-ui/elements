@@ -1,0 +1,15 @@
+---
+name: Get experimental (NEXT) package semver version
+description: 'Get experimental (NEXT) package semver version'
+runs:
+  using: 'composite'
+  steps:
+    - name: Set experimental (NEXT) Package SemVer Version on Env
+      run: |
+        GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-7)
+        # SEMVER_VERSION=$(npx find-versions-cli ${{ github.event.release.tag_name }})
+        SEMVER_VERSION=$(npx find-versions-cli v0.5.5-test123)
+        # SEMVER_VERSION=0.0.1-exp
+        echo "Semver experimental version $SEMVER_VERSION-$GITHUB_SHA_SHORT"
+        echo "VALID_SEMVER_VERSION=$(echo $SEMVER_VERSION-$GITHUB_SHA_SHORT)" >> $GITHUB_ENV
+      shell: bash

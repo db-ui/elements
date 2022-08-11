@@ -1,0 +1,17 @@
+---
+name: Get stable (LATEST) package semver version
+description: 'Get stable (LATEST) package semver version'
+runs:
+  using: 'composite'
+  steps:
+    - name: Set stable (LATEST) Package SemVer Version on Env
+      run: |
+        echo "commitish: ${{ github.event.release.target_commitish }}"
+        # SEMVER_VERSION=$(npx find-versions-cli ${{ github.event.release.tag_name }})
+        SEMVER_VERSION=$(npx find-versions-cli v0.5.5-test123)
+        # SEMVER_VERSION=0.0.2
+        VALID_SEMVER_VERSION=$(node scripts/version-helper.js $SEMVER_VERSION)
+        echo "Semver stable version unclean $SEMVER_VERSION"
+        echo "Semver stable version valid $VALID_SEMVER_VERSION"
+        echo "VALID_SEMVER_VERSION=$(echo $VALID_SEMVER_VERSION)" >> $GITHUB_ENV
+      shell: bash
