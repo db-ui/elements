@@ -65,10 +65,14 @@ jobs:
     # needs: [validate, test, cypress]
     needs: [build-stencil-targets, validate, test]
     with:
-      test: |
+      prerelease: |
         ${{ github.ref == 'refs/heads/feat-npm-and-github-package-publishing' &&
-        github.actor != 'dependabot[bot]' &&
+        github.actor == 'dependabot[bot]' &&
         github.event.release.prerelease == false }}
+      release: |
+        github.actor != 'dependabot[bot]' &&
+        github.event.release.target_commitish == 'feat-npm-and-github-package-publishing' &&
+        github.event.release.prerelease == false
 
   # publishnpmlatestenterprise:
   #   uses: ./.github/workflows/03-publish-packages-latest.yml

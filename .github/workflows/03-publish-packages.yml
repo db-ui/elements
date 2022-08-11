@@ -4,8 +4,12 @@ name: Publish all Packages to Registries
 on:
   workflow_call:
     inputs:
-      test:
-        description: 'test'
+      prerelease:
+        description: 'Is this a Pre-Release?'
+        required: true
+        type: string
+      release:
+        description: 'Is this a Release?'
         required: true
         type: string
 
@@ -72,7 +76,8 @@ jobs:
     steps:
       - name: TEST
         run: |
-          echo "which input?: ${{ inputs.test }}"
+          echo "prerelease?: ${{ inputs.prerelease }}"
+          echo "release?: ${{ inputs.release }}"
 
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
