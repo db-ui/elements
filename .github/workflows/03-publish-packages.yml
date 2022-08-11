@@ -7,11 +7,11 @@ on:
       prerelease:
         description: 'Is this a Pre-Release?'
         required: true
-        type: boolean
+        type: string
       release:
         description: 'Is this a Release?'
         required: true
-        type: boolean
+        type: string
 
 jobs:
   publish:
@@ -92,43 +92,37 @@ jobs:
           path: packages/${{ env.DBUI_PACKAGEPATH}}
 
       - name: 🏷 Get and Set stable (LATEST) Package Version on Env
-        if: ${{ inputs.test  == 'false' }}
-        # if: |
-        #   ${{ github.actor != 'dependabot[bot]' }} &&
-        #   github.event.release.target_commitish == 'main' &&
-        #   startsWith(github.ref, 'refs/tags/v') &&
-        #   github.event.release.prerelease == false
-        # ${{ github.ref == 'refs/heads/feat-npm-and-github-package-publishing' }}
-        # if: |
-        #   ${{ github.ref == 'refs/heads/feat-npm-and-github-package-publishing' &&
-        #   github.actor != 'dependabot[bot]' &&
-        #   github.event.release.prerelease == false }}
+        if: ${{ inputs.release == 'true' }}
         uses: ./.github/actions/get-package-version-latest
 
       - name: 🏷 Get and Set experimental (NEXT) Package Version on Env
-        # if: |
-        #   ${{ github.actor != 'dependabot[bot]' }} &&
-        #   github.event.release.target_commitish != 'main' &&
-        #   startsWith(github.ref, 'refs/tags/v') &&
-        #   github.event.release.prerelease == true
-        if: |
-          github.event.release.target_commitish != 'main' &&
-          ${{ github.actor != 'dependabot[bot]' }}
+        if: ${{ inputs.prerelease == 'true' }}
         uses: ./.github/actions/get-package-version-next
 
-      # - name: 🛠 Forge enterprise packages
-      #   if: ${{ env.DBUI_THEME == 'enterprise' }}
-      #   run: |
-      #     echo "which packages?: ${{ inputs.registry }}"
-      #     echo "which verison ?: ${{ env.VALID_SEMVER_VERSION }}"
-      #     echo "TODO: forge enterprise versions..."
-      #     # npm pkg set 'name'='@db-ui/elements-${{ matrix.themes }}' --workspace=@db-ui/elements
-      #     # npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
-      #     # npm pkg set 'dependencies.@db-ui-elements-enterprise'='1.1.1' --workspace=@db-ui/ngx-elements
+      - name: 🛠 Forge enterprise packages
+        if: ${{ env.DBUI_THEME == 'enterprise' }}
+        #   run: |
+        #     echo "which packages?: ${{ inputs.registry }}"
+        #     echo "which verison ?: ${{ env.VALID_SEMVER_VERSION }}"
+        #     echo "TODO: forge enterprise versions..."
+        #     # npm pkg set 'name'='@db-ui/elements-${{ matrix.themes }}' --workspace=@db-ui/elements
+        #     # npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
+        #     # npm pkg set 'dependencies.@db-ui-elements-enterprise'='1.1.1' --workspace=@db-ui/ngx-elements
+        run: |
+          echo "Forge enterprise versions..."
+          echo "which verison ?: ${{ env.VALID_SEMVER_VERSION }}"
+          # npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
+          # npm pkg set 'dependencies.@db-ui-elements-enterprise'='1.1.1' --workspace=@db-ui/ngx-elements
+          # npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
+          npm version --no-git-tag-version ${{ env.VALID_SEMVER_VERSION }} --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+          npm pkg set 'dependencies.@db-ui/elements'='${{ env.VALID_SEMVER_VERSION }}' --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+          npm pkg set 'name'='@db-ui/elements-${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME}}' --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+          cat packages/${{ env.DBUI_PACKAGEPATH }}/package.json
 
       - name: 🛠 Forge default packages
         if: ${{ env.DBUI_THEME == 'default' }}
         run: |
+          echo "Forge default versions..."
           echo "which verison ?: ${{ env.VALID_SEMVER_VERSION }}"
           npm version --no-git-tag-version ${{ env.VALID_SEMVER_VERSION }} --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
           npm pkg set 'dependencies.@db-ui/elements'='${{ env.VALID_SEMVER_VERSION }}' --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
