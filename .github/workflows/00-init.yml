@@ -34,13 +34,13 @@ jobs:
           fi
 
       - name: Another TEST
-        if: ${{ inputs.prerelease == 'true' }}
+        if: ${{ inputs.prerelease == true }}
         run: |
           echo "another prerelease?: ${{ inputs.prerelease }}"
           echo "another release?: ${{ inputs.release }}"
 
       - name: Another TEST 2
-        if: inputs.release == 'true'
+        if: ${{ inputs.release }} == 'true_
         run: |
           echo "another 2 prerelease?: ${{ inputs.prerelease }}"
           echo "another 2 release?: ${{ inputs.release }}"

@@ -99,6 +99,11 @@ jobs:
           echo "release env is?: ${{ env.DBUI_RELEASE }}"
           echo "workspace is?: ${{ env.DBUI_ARTIFACTNAME }}"
 
+      - name: TEST 2
+        if: ${{ github.ref == 'refs/heads/feat-npm-and-github-package-publishing' && github.actor != 'dependabot[bot]' && github.event.release.prerelease == false }}
+        run: |
+          echo "asdf"
+
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
 
