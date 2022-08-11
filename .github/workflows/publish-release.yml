@@ -61,7 +61,7 @@ jobs:
     needs: [build-stencil-targets, validate, test]
     with:
       test: |
-        ${GITHUB_REF##*/} == 'feat-npm-and-github-package-publishing' &&
+        github.ref == 'refs/heads/feat-npm-and-github-package-publishing' &&
         github.event.release.prerelease == false
 
   # publishnpmlatestenterprise:
