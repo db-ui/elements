@@ -11,9 +11,9 @@ jobs:
     uses: ./.github/workflows/00-init.yml
     with:
       test: |
-        ${{ github.ref == 'refs/heads/feat-npm-and-github-package-publishing' }} &&
-        ${{ github.actor != 'dependabot[bot]'}} &&
-        ${{ github.event.release.prerelease == false }}
+        ${{ github.ref == 'refs/heads/feat-npm-and-github-package-publishing' &&
+        github.actor != 'dependabot[bot]' &&
+        github.event.release.prerelease == false }}
 
   scan-secrets:
     uses: ./.github/workflows/00-scan-secrets.yml
