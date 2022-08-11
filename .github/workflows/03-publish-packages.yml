@@ -87,16 +87,17 @@ jobs:
           path: packages/${{ env.DBUI_PACKAGEPATH}}
 
       - name: 🏷 Get and Set stable (LATEST) Package Version on Env
+        if: ${{ inputs.test  == 'false' }}
         # if: |
         #   ${{ github.actor != 'dependabot[bot]' }} &&
         #   github.event.release.target_commitish == 'main' &&
         #   startsWith(github.ref, 'refs/tags/v') &&
         #   github.event.release.prerelease == false
         # ${{ github.ref == 'refs/heads/feat-npm-and-github-package-publishing' }}
-        if: |
-          ${{ github.actor != 'dependabot[bot]' &&
-          github.event.release.target_commitish == 'main' &&
-          github.event.release.prerelease == false }}
+        # if: |
+        #   ${{ github.ref == 'refs/heads/feat-npm-and-github-package-publishing' &&
+        #   github.actor != 'dependabot[bot]' &&
+        #   github.event.release.prerelease == false }}
         uses: ./.github/actions/get-package-version-latest
 
       - name: 🏷 Get and Set experimental (NEXT) Package Version on Env
