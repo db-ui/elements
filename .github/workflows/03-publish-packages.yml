@@ -111,6 +111,15 @@ jobs:
           name: ${{ env.DBUI_ARTIFACTNAME}}
           path: packages/${{ env.DBUI_PACKAGEPATH}}
 
+      - name: conditinal test
+        run: |
+          if [[ ${{ env.DBUI_PRERELEASE }} == 'true' ]]; then
+            echo "Prerelease is: ${{ env.DBUI_PRERELEASE }}"
+          fi
+          if [[ ${{ env.DBUI_RELEASE }} == 'true' ]]; then
+            echo "Release is: ${{ env.DBUI_RELEASE }}"
+          fi
+
       - name: 🏷 Get and Set stable (LATEST) Package Version on Env
         if: ${{ env.DBUI_RELEASE == true }}
         uses: ./.github/actions/get-package-version-latest
