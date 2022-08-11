@@ -30,7 +30,8 @@ jobs:
             echo "Prerelease (inputs) is: ${{ inputs.prerelease }}"
           fi
           if [[ "${{ env.DBUI_RELEASE }}" == "true" ];
-          then echo "Prerelease (inputs) is: ${{ inputs.release }}"
+          then
+            echo "Prerelease (inputs) is: ${{ inputs.release }}"
           fi
 
       - name: Another TEST
