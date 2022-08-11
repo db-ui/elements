@@ -22,8 +22,6 @@ jobs:
         run: |
           echo "prerelease?: ${{ inputs.prerelease }}"
           echo "release?: ${{ inputs.release }}"
-          echo "env prerelease?: ${{ env.prerelease }}"
-          echo "env release?: ${{ env.release }}"
 
       - name: Another TEST
         if: inputs.prerelease == 'true'
