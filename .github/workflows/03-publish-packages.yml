@@ -1,13 +1,13 @@
 ---
-name: Publish latest GitHub Packages
+name: Publish all Packages to Registries
 
 on:
   workflow_call:
-    inputs:
-      registry:
-        description: 'Name of registry'
-        required: true
-        type: string
+    # inputs:
+    #   registry:
+    #     description: 'Name of registry'
+    #     required: true
+    #     type: string
 
 jobs:
   publish:
@@ -95,16 +95,6 @@ jobs:
       #     # npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
       #     # npm pkg set 'dependencies.@db-ui-elements-enterprise'='1.1.1' --workspace=@db-ui/ngx-elements
 
-      - name: 🛠 TEST NPM
-        if: ${{ matrix.registries == 'npm'}}
-        run: |
-          echo "This is only for NPM registry"
-
-      - name: 🛠 TEST GITHUB
-        if: ${{ matrix.registries == 'github'}}
-        run: |
-          echo "This is only for GITHUB registry"
-
       - name: 🛠 Forge default packages
         if: ${{ inputs.theme != 'enterprise' }}
         run: |
@@ -115,7 +105,7 @@ jobs:
           cat packages/${{ env.DBUI_PACKAGEPATH }}/package.json
 
       - name: Authenticate with NPM Registry
-        if: ${{ inputs.registry == 'npm' }}
+        if: ${{ matrix.registries == 'npm'}}
         uses: ./.github/actions/auth-with-registry
         with:
           registry: '//npm.pkg.github.com/'
@@ -123,12 +113,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TEST_TOKEN}}
 
       - name: Authenticate with GitHub Registry
-        if: ${{ inputs.registry == 'github' }}
         uses: ./.github/actions/auth-with-registry
+        if: ${{ matrix.registries == 'github'}}
         with:
           registry: '//npm.pkg.github.com/'
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TEST_TOKEN}}
 
-      - name: 📰 Publish latest version to GitHub Packages (dry run)
-        uses: ./.github/actions/publish-latest-to-registry
+      - name: 📰 Publish to Package Registry (dry run)
+        uses: ./.github/actions/publish-to-registry
+        env:
+          DBUI_WORKSPACE: ${{ env.DBUI_WORKSPACE }}
