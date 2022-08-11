@@ -3,11 +3,11 @@ name: Publish all Packages to Registries
 
 on:
   workflow_call:
-    # inputs:
-    #   registry:
-    #     description: 'Name of registry'
-    #     required: true
-    #     type: string
+    inputs:
+      test:
+        description: 'test'
+        required: true
+        type: boolean
 
 jobs:
   publish:
@@ -71,6 +71,9 @@ jobs:
     env: ${{ matrix.env }}
     steps:
       - name: ⬇ Checkout repo
+        run: |
+          echo "which input?: ${{ inputs.test}}"
+      - name: ⬇ Checkout repo
         uses: actions/checkout@v3
 
       - name: 🔄 Init Cache
@@ -89,9 +92,9 @@ jobs:
         #   startsWith(github.ref, 'refs/tags/v') &&
         #   github.event.release.prerelease == false
         if: |
-          ${{ github.actor != 'dependabot[bot]' }} &&
-          ${{ github.event.release.target_commitish == 'main' }} &&
-          ${{ github.event.release.prerelease == false }}
+          ${{ github.actor != 'dependabot[bot]' &&
+          github.event.release.target_commitish == 'main' &&
+          github.event.release.prerelease == false }}
         uses: ./.github/actions/get-package-version-latest
 
       - name: 🏷 Get and Set experimental (NEXT) Package Version on Env
