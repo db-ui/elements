@@ -92,11 +92,11 @@ jobs:
           path: packages/${{ env.DBUI_PACKAGEPATH}}
 
       - name: 🏷 Get and Set stable (LATEST) Package Version on Env
-        if: ${{ inputs.release == 'true' }}
+        if: ${{ inputs.release == true }}
         uses: ./.github/actions/get-package-version-latest
 
       - name: 🏷 Get and Set experimental (NEXT) Package Version on Env
-        if: ${{ inputs.prerelease == 'true' }}
+        if: ${{ inputs.prerelease == true }}
         uses: ./.github/actions/get-package-version-next
 
       - name: 🛠 Forge enterprise packages
