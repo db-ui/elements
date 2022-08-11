@@ -71,7 +71,7 @@ jobs:
     with:
       prerelease: |
         ${{ github.ref == 'refs/heads/feat-npm-and-github-package-publishing' &&
-        github.actor == 'dependabot[bot]' &&
+        github.actor != 'dependabot[bot]' &&
         github.event.release.prerelease == false }}
       release: |
         ${{ github.actor != 'dependabot[bot]' &&
