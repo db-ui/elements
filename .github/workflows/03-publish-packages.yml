@@ -28,56 +28,65 @@ jobs:
               DBUI_PACKAGEPATH: 'db-ui-elements-stencil',
               DBUI_ARTIFACTNAME: 'stencil-default-angular',
               DBUI_THEME: 'default',
-              DBUI_TEST: '${{ inputs.release }}'
+              DBUI_RELEASE: '${{ inputs.release }}',
+              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
             }
           - {
               DBUI_WORKSPACE: 'ngx-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-angular',
               DBUI_ARTIFACTNAME: 'output-target-default-angular',
               DBUI_THEME: 'default',
-              DBUI_TEST: '${{ inputs.release }}'
+              DBUI_RELEASE: '${{ inputs.release }}',
+              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
             }
           - {
               DBUI_WORKSPACE: 'react-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-react',
               DBUI_ARTIFACTNAME: 'output-target-default-react',
               DBUI_THEME: 'default',
-              DBUI_TEST: '${{ inputs.release }}'
+              DBUI_TEST: '${{ inputs.release }}',
+              DBUI_RELEASE: '${{ inputs.release }}',
+              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
             }
           - {
               DBUI_WORKSPACE: 'v-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-vue',
               DBUI_ARTIFACTNAME: 'output-target-default-vue',
               DBUI_THEME: 'default',
-              DBUI_TEST: '${{ inputs.release }}'
+              DBUI_RELEASE: '${{ inputs.release }}',
+              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
             }
           - {
               DBUI_WORKSPACE: 'elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-stencil',
               DBUI_ARTIFACTNAME: 'stencil-enterprise-angular',
               DBUI_THEME: 'enterprise',
-              DBUI_TEST: '${{ inputs.prerelease }}'
+              DBUI_RELEASE: '${{ inputs.release }}',
+              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
             }
           - {
               DBUI_WORKSPACE: 'ngx-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-angular',
               DBUI_ARTIFACTNAME: 'output-target-enterprise-angular',
               DBUI_THEME: 'enterprise',
-              DBUI_TEST: '${{ inputs.prerelease }}'
+              DBUI_RELEASE: '${{ inputs.release }}',
+              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
             }
           - {
               DBUI_WORKSPACE: 'react-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-react',
               DBUI_ARTIFACTNAME: 'output-target-enterprise-react',
               DBUI_THEME: 'enterprise',
-              DBUI_TEST: '${{ inputs.prerelease }}'
+              DBUI_RELEASE: '${{ inputs.release }}',
+              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
             }
           - {
               DBUI_WORKSPACE: 'v-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-vue',
               DBUI_ARTIFACTNAME: 'output-target-enterprise-vue',
               DBUI_THEME: 'enterprise',
-              DBUI_TEST: '${{ inputs.prerelease }}'
+              DBUI_RELEASE: '${{ inputs.release }}',
+              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
             }
         registries: [npm, github]
     env: ${{ matrix.env }}
@@ -86,8 +95,9 @@ jobs:
         run: |
           echo "prerelease?: ${{ inputs.prerelease }}"
           echo "release?: ${{ inputs.release }}"
-          echo  "env is?: ${{ env.DBUI_TEST }}"
-          echo  "workspace is?: ${{ env.DBUI_ARTIFACTNAME }}"
+          echo "prerelease env is?: ${{ env.DBUI_PRERELEASE }}"
+          echo "release env is?: ${{ env.DBUI_RELEASE }}"
+          echo "workspace is?: ${{ env.DBUI_ARTIFACTNAME }}"
 
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
@@ -102,12 +112,11 @@ jobs:
           path: packages/${{ env.DBUI_PACKAGEPATH}}
 
       - name: 🏷 Get and Set stable (LATEST) Package Version on Env
-        if: ${{ inputs.release == true }}
+        if: ${{ env.DBUI_RELEASE == "true" }}
         uses: ./.github/actions/get-package-version-latest
 
       - name: 🏷 Get and Set experimental (NEXT) Package Version on Env
-        if: ${{ inputs.prerelease == true }}
-
+        if: ${{ env.DBUI_PRERELEASE == "true" }}
         uses: ./.github/actions/get-package-version-next
 
       - name: 🛠 Forge enterprise packages
