@@ -59,9 +59,9 @@ jobs:
     uses: ./.github/workflows/03-publish-packages.yml
     # needs: [validate, test, cypress]
     needs: [build-stencil-targets, validate, test]
-    with:
-      test: |
-        ${{ github.ref == 'refs/heads/feat-npm-and-github-package-publishing' }}
+    # with:
+    #   test: |
+    #     ${{ github.ref == 'refs/heads/feat-npm-and-github-package-publishing' }}
 
   # publishnpmlatestenterprise:
   #   uses: ./.github/workflows/03-publish-packages-latest.yml
