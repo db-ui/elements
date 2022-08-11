@@ -29,10 +29,6 @@ jobs:
           then
             echo "Prerelease (inputs) is: ${{ inputs.prerelease }}"
           fi
-          if [[ "${{ env.DBUI_RELEASE }}" == "true" ];
-          then
-            echo "Prerelease (inputs) is: ${{ inputs.release }}"
-          fi
 
       - name: Another TEST
         if: ${{ inputs.prerelease == true }}
