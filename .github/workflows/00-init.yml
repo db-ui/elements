@@ -7,11 +7,11 @@ on:
       prerelease:
         description: 'Is this a Pre-Release?'
         required: true
-        type: string
+        type: boolean
       release:
         description: 'Is this a Release?'
         required: true
-        type: string
+        type: boolean
 
 jobs:
   init:
