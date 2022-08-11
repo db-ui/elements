@@ -18,6 +18,6 @@ runs:
       run: |
         echo "version is:"
         echo ${{env.VALID_SEMVER_VERSION }}
-        npm version --no-git-tag-version ${{ env.VALID_SEMVER_VERSION }} --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+        # npm version --no-git-tag-version ${{ env.VALID_SEMVER_VERSION }} --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
         npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
       shell: bash

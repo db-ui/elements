@@ -66,20 +66,19 @@ jobs:
     needs: [build-stencil-targets, validate, test]
     with:
       registry: npm
-      theme: default
 
-  publishnpmlatestenterprise:
-    uses: ./.github/workflows/03-publish-packages-latest.yml
-    # if: github.event.release.target_commitish == 'test-package-publishing' && github.event.release.prerelease == false
-    if: |
-      ${{ github.actor != 'dependabot[bot]' }} &&
-      github.event.release.target_commitish == 'feat-npm-and-github-package-publishing' &&
-      github.event.release.prerelease == false
-    # needs: [validate, test, cypress]
-    needs: [build-stencil-targets, validate, test]
-    with:
-      registry: npm
-      theme: enterprise
+  # publishnpmlatestenterprise:
+  #   uses: ./.github/workflows/03-publish-packages-latest.yml
+  #   # if: github.event.release.target_commitish == 'test-package-publishing' && github.event.release.prerelease == false
+  #   if: |
+  #     ${{ github.actor != 'dependabot[bot]' }} &&
+  #     github.event.release.target_commitish == 'feat-npm-and-github-package-publishing' &&
+  #     github.event.release.prerelease == false
+  #   # needs: [validate, test, cypress]
+  #   needs: [build-stencil-targets, validate, test]
+  #   with:
+  #     registry: npm
+  #     theme: enterprise
 
   # publishgithubnext:
   #   uses: ./.github/workflows/03-github-publish-next.yml
