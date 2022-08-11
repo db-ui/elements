@@ -40,3 +40,4 @@ runs:
         # SEMVER_VERSION=0.0.1-exp
         echo "Semver experimental version $SEMVER_VERSION-$GITHUB_SHA_SHORT"
         echo "VALID_SEMVER_VERSION=$(echo $SEMVER_VERSION-$GITHUB_SHA_SHORT)" >> $GITHUB_ENV
+      shell: bash
