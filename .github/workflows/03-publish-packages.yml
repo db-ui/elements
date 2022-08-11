@@ -132,11 +132,11 @@ jobs:
           fi
 
       - name: 🏷 Get and Set stable (LATEST) Package Version on Env
-        if: ${{ env.DBUI_RELEASE == "true" }}
+        if: ${{ env.DBUI_RELEASE == 'true' }}
         uses: ./.github/actions/get-package-version-latest
 
       - name: 🏷 Get and Set experimental (NEXT) Package Version on Env
-        if: ${{ env.DBUI_PRERELEASE == "true" }}
+        if: ${{ env.DBUI_PRERELEASE == 'true' }}
         uses: ./.github/actions/get-package-version-next
 
       - name: 🛠 Forge enterprise packages
