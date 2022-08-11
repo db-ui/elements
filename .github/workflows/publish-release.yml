@@ -61,7 +61,7 @@ jobs:
     needs: [build-stencil-targets, validate, test]
     with:
       test: |
-        github.ref == 'refs/heads/feat-npm-and-github-package-publishing'
+        ${{ github.ref == 'refs/heads/feat-npm-and-github-package-publishing' }}
 
   # publishnpmlatestenterprise:
   #   uses: ./.github/workflows/03-publish-packages-latest.yml
