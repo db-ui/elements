@@ -113,11 +113,17 @@ jobs:
 
       - name: conditinal test
         run: |
-          if [[ ${{ env.DBUI_PRERELEASE }} == 'true' ]]; then
-            echo "Prerelease is: ${{ env.DBUI_PRERELEASE }}"
+          if [[ ${{ env.DBUI_PRERELEASE }} == true ]]; then
+            echo "Prerelease (env) is: ${{ env.DBUI_PRERELEASE }}"
           fi
-          if [[ ${{ env.DBUI_RELEASE }} == 'true' ]]; then
-            echo "Release is: ${{ env.DBUI_RELEASE }}"
+          if [[ ${{ env.DBUI_RELEASE }} == true ]]; then
+            echo "Release (env) is: ${{ env.DBUI_RELEASE }}"
+          fi
+          if [[ ${{ inputs.prerelease }} == true ]]; then
+            echo "Prerelease (inputs) is: ${{ inputs.prerelease }}"
+          fi
+          if [[ ${{ env.DBUI_RELEASE }} == true ]]; then
+            echo "Prerelease (inputs) is: ${{ inputs.release }}"
           fi
 
       - name: 🏷 Get and Set stable (LATEST) Package Version on Env

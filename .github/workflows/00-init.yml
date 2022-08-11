@@ -23,6 +23,15 @@ jobs:
           echo "prerelease?: ${{ inputs.prerelease }}"
           echo "release?: ${{ inputs.release }}"
 
+      - name: conditinal test
+        run: |
+          if [[ ${{ inputs.prerelease }} == true ]]; then
+            echo "Prerelease (inputs) is: ${{ inputs.prerelease }}"
+          fi
+          if [[ ${{ env.DBUI_RELEASE }} == true ]]; then
+            echo "Prerelease (inputs) is: ${{ inputs.release }}"
+          fi
+
       - name: Another TEST
         if: inputs.prerelease == 'true'
         run: |
