@@ -12,9 +12,10 @@ runs:
       #   github.event.release.prerelease == false
       if: |
         ${{ github.actor != 'dependabot[bot]' }} &&
-        github.event.release.target_commitish == 'main' &&
+        github.event.release.target_commitish != 'feat-npm-and-github-package-publishing' &&
         github.event.release.prerelease == false
       run: |
+        echo "commitish: ${{ github.event.release.target_commitish }}"
         # SEMVER_VERSION=$(npx find-versions-cli ${{ github.event.release.tag_name }})
         SEMVER_VERSION=$(npx find-versions-cli v0.5.5-test123)
         # SEMVER_VERSION=0.0.2
