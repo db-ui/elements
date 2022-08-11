@@ -90,8 +90,8 @@ jobs:
         #   github.event.release.prerelease == false
         if: |
           ${{ github.actor != 'dependabot[bot]' }} &&
-          github.event.release.target_commitish == 'main' &&
-          github.event.release.prerelease == false
+          ${{ github.event.release.target_commitish == 'main' }} &&
+          ${{ github.event.release.prerelease == false }}
         uses: ./.github/actions/get-package-version-latest
 
       - name: 🏷 Get and Set experimental (NEXT) Package Version on Env
