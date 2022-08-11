@@ -25,6 +25,7 @@ runs:
         github.event.release.target_commitish == 'feat-npm-and-github-package-publishing' &&
         github.event.release.prerelease == false
       run: |
+        echo "Will publish LATEST package to registry now"
         npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
       shell: bash
 
@@ -38,5 +39,6 @@ runs:
         github.event.release.target_commitish != 'main' &&
         ${{ github.actor != 'dependabot[bot]' }}
       run: |
+        echo "Will publish NEXT package to registry now"
         npm publish --tag next --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
       shell: bash

@@ -57,11 +57,6 @@ jobs:
 
   publishpackages:
     uses: ./.github/workflows/03-publish-packages.yml
-    # if: github.event.release.target_commitish == 'test-package-publishing' && github.event.release.prerelease == false
-    if: |
-      ${{ github.actor != 'dependabot[bot]' }} &&
-      github.event.release.target_commitish == 'feat-npm-and-github-package-publishing' &&
-      github.event.release.prerelease == false
     # needs: [validate, test, cypress]
     needs: [build-stencil-targets, validate, test]
     # with:

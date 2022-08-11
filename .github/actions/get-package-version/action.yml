@@ -4,12 +4,39 @@ description: 'Get package semver version'
 runs:
   using: 'composite'
   steps:
-    - name: Set Package SemVer Version on Env
+    - name: Set stable (LATEST) Package SemVer Version on Env
+      # if: |
+      #   ${{ github.actor != 'dependabot[bot]' }} &&
+      #   github.event.release.target_commitish == 'main' &&
+      #   startsWith(github.ref, 'refs/tags/v') &&
+      #   github.event.release.prerelease == false
+      if: |
+        ${{ github.actor != 'dependabot[bot]' }} &&
+        github.event.release.target_commitish == 'feat-npm-and-github-package-publishing' &&
+        github.event.release.prerelease == false
       run: |
         # SEMVER_VERSION=$(npx find-versions-cli ${{ github.event.release.tag_name }})
-        SEMVER_VERSION=0.0.2
+        SEMVER_VERSION=$(npx find-versions-cli v0.5.5-test123)
+        # SEMVER_VERSION=0.0.2
         VALID_SEMVER_VERSION=$(node scripts/version-helper.js $SEMVER_VERSION)
         echo "Semver stable version unclean $SEMVER_VERSION"
         echo "Semver stable version valid $VALID_SEMVER_VERSION"
         echo "VALID_SEMVER_VERSION=$(echo $VALID_SEMVER_VERSION)" >> $GITHUB_ENV
       shell: bash
+
+    - name: Set experimental (NEXT) Package SemVer Version on Env
+      # if: |
+      #   ${{ github.actor != 'dependabot[bot]' }} &&
+      #   github.event.release.target_commitish != 'main' &&
+      #   startsWith(github.ref, 'refs/tags/v') &&
+      #   github.event.release.prerelease == true
+      if: |
+        github.event.release.target_commitish != 'main' &&
+        ${{ github.actor != 'dependabot[bot]' }}
+      run: |
+        GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-7)
+        # SEMVER_VERSION=$(npx find-versions-cli ${{ github.event.release.tag_name }})
+        SEMVER_VERSION=$(npx find-versions-cli v0.5.5-test123)
+        # SEMVER_VERSION=0.0.1-exp
+        echo "Semver experimental version $SEMVER_VERSION-$GITHUB_SHA_SHORT"
+        echo "VALID_SEMVER_VERSION=$(echo $SEMVER_VERSION-$GITHUB_SHA_SHORT)" >> $GITHUB_ENV

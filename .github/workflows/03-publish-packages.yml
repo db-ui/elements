@@ -86,7 +86,7 @@ jobs:
         uses: ./.github/actions/get-package-version
 
       # - name: 🛠 Forge enterprise packages
-      #   if: ${{ inputs.theme == 'enterprise' }}
+      #   if: ${{ env.DBUI_THEME == 'enterprise' }}
       #   run: |
       #     echo "which packages?: ${{ inputs.registry }}"
       #     echo "which verison ?: ${{ env.VALID_SEMVER_VERSION }}"
@@ -96,9 +96,8 @@ jobs:
       #     # npm pkg set 'dependencies.@db-ui-elements-enterprise'='1.1.1' --workspace=@db-ui/ngx-elements
 
       - name: 🛠 Forge default packages
-        if: ${{ inputs.theme != 'enterprise' }}
+        if: ${{ env.DBUI_THEME == 'default' }}
         run: |
-          echo "which packages?: ${{ inputs.registry }}"
           echo "which verison ?: ${{ env.VALID_SEMVER_VERSION }}"
           npm version --no-git-tag-version ${{ env.VALID_SEMVER_VERSION }} --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
           npm pkg set 'dependencies.@db-ui/elements'='${{ env.VALID_SEMVER_VERSION }}' --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
@@ -110,7 +109,7 @@ jobs:
         with:
           registry: '//npm.pkg.github.com/'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TEST_TOKEN}}
+          NPM_TOKEN: ${{ secrets.GITHUB_TEST_TOKEN}}
 
       - name: Authenticate with GitHub Registry
         uses: ./.github/actions/auth-with-registry
