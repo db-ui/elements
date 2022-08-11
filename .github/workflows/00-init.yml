@@ -3,12 +3,21 @@ name: Init Workflow
 
 on:
   workflow_call:
+    inputs:
+      test:
+        description: 'test'
+        required: true
+        type: string
 
 jobs:
   init:
     name: Init
     runs-on: ubuntu-latest
     steps:
+      - name: TEST
+        run: |
+          echo "which input?: ${{ inputs.test }}"
+
       - name: 🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
 
