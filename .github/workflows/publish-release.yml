@@ -1,5 +1,5 @@
 ---
-name: Test and publish to package registries after new GitHug release
+name: Test and publish to package registries after new GitHub release
 
 on:
   release:
