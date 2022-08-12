@@ -134,7 +134,9 @@ jobs:
           # ls -lash
           # find ./packages/ -type d -print
           cat ./packages/db-ui-elements-react/dist/components.js
-          npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise ./packages/**/dist/**/*.*
+          npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/db-ui-elements-react/dist/components.js
+          # npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise ./packages/**/dist/**/*.*
+          cat ./packages/db-ui-elements-react/dist/components.js
 
       - name: 🛠 Forge default output target packages dependency
         if: ${{ env.DBUI_THEME == 'default' && env.DBUI_WORKSPACE != 'elements' }}
