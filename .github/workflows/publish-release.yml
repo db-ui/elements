@@ -45,19 +45,6 @@ jobs:
   #   if: ${{ github.actor != 'dependabot[bot]' }}
   #   needs: [validate, test, cypress]
 
-  # publishnpmnext:
-  #   uses: ./.github/workflows/03-npm-publish-next.yml
-  #   # if: |
-  #   #   github.event.release.target_commitish != 'main' &&
-  #   #   startsWith(github.ref, 'refs/tags/v') &&
-  #   #   github.event.release.prerelease == true &&
-  #   #   ${{ github.actor != 'dependabot[bot]' }}
-  #   if: |
-  #     github.event.release.target_commitish != 'main' &&
-  #     ${{ github.actor != 'dependabot[bot]' }}
-  #   # needs: [validate, test, cypress]
-  #   needs: [build-stencil-targets, validate, test]
-
   publishpackages:
     uses: ./.github/workflows/03-publish-packages.yml
     # needs: [validate, test, cypress]
@@ -66,36 +53,6 @@ jobs:
       prerelease: ${{ github.ref == 'refs/heads/feat-npm-and-github-package-publishing' && github.actor != 'dependabot[bot]' && github.event.release.prerelease == false }}
       release: ${{ github.actor != 'dependabot[bot]' && github.event.release.target_commitish == 'feat-npm-and-github-package-publishing' && github.event.release.prerelease == false }}
 
-  # publishnpmlatestenterprise:
-  #   uses: ./.github/workflows/03-publish-packages-latest.yml
-  #   # if: github.event.release.target_commitish == 'test-package-publishing' && github.event.release.prerelease == false
-  #   if: |
-  #     ${{ github.actor != 'dependabot[bot]' }} &&
-  #     github.event.release.target_commitish == 'feat-npm-and-github-package-publishing' &&
-  #     github.event.release.prerelease == false
-  #   # needs: [validate, test, cypress]
-  #   needs: [build-stencil-targets, validate, test]
-  #   with:
-  #     registry: npm
-  #     theme: enterprise
-
-  # publishgithubnext:
-  #   uses: ./.github/workflows/03-github-publish-next.yml
-  #   # if: |
-  #   #   github.event.release.target_commitish != 'main' &&
-  #   #   startsWith(github.ref, 'refs/tags/v') &&
-  #   #   github.event.release.prerelease == true &&
-  #   #   ${{ github.actor != 'dependabot[bot]' }}
-  #   if: |
-  #     github.event.release.target_commitish != 'main' &&
-  #     ${{ github.actor != 'dependabot[bot]' }}
-  #   # needs: [validate, test, cypress]
-  #   needs: [build-stencil-targets, validate, test]
-
-  # changelognext:
-  #   uses: ./.github/workflows/changelog.yml
-  #   needs: [publishnpmnext, publishgithubnext]
-
-  # changeloglatest:
-  #   uses: ./.github/workflows/changelog.yml
-  #   needs: [publishnpmlatest, publishgithublatest]
+  changeloglatest:
+    uses: ./.github/workflows/changelog.yml
+    needs: [publishpackages]
