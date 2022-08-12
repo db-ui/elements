@@ -132,7 +132,7 @@ jobs:
         with:
           registry: '//npm.pkg.github.com/'
         env:
-          NPM_TOKEN: ${{ secrets.GITHUB_TEST_TOKEN}}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Authenticate with GitHub Registry
         uses: ./.github/actions/auth-with-registry
@@ -140,7 +140,7 @@ jobs:
         with:
           registry: '//npm.pkg.github.com/'
         env:
-          NPM_TOKEN: ${{ secrets.GITHUB_TEST_TOKEN}}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📰 Publish stable (LATEST) default Package to Registry (dry run)
         if: ${{ inputs.release == 'true' && env.DBUI_THEME == 'default' }}
