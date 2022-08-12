@@ -222,3 +222,25 @@ jobs:
       #   uses: ./.github/actions/publish-to-registry
       #   env:
       #     DBUI_WORKSPACE: ${{ env.DBUI_WORKSPACE }}
+
+      - name: Pack tarball default
+        if: ${{ env.DBUI_THEME == 'default' }}
+        run: npm pack --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+
+      - name: Pack tarball enterprise
+        if: ${{ env.DBUI_THEME == 'enterprise' }}
+        run: npm pack --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}
+
+      - name: ⬆ Upload Package Artifact ${{ matrix.registries }}-${{ DBUI_ARTIFACTNAME }}
+        if: ${{ env.DBUI_THEME == 'default' }}
+        uses: ./.github/actions/upload-tar-artifact
+        with:
+          name: package-${{ matrix.registries }}-${{ DBUI_ARTIFACTNAME }}
+          path: db-ui-${{ DBUI_WORKSPACE }}-${{ env.VALID_SEMVER_VERSION }}.tgz
+
+      - name: ⬆ Upload Package Artifact ${{ matrix.registries }}-${{ DBUI_ARTIFACTNAME }}
+        if: ${{ env.DBUI_THEME == 'enterprise' }}
+        uses: ./.github/actions/upload-tar-artifact
+        with:
+          name: package-${{ matrix.registries }}-${{ DBUI_ARTIFACTNAME }}
+          path: db-ui-${{ DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}-${{ env.VALID_SEMVER_VERSION }}.tgz
