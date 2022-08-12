@@ -146,17 +146,17 @@ jobs:
         if: ${{ inputs.release == 'true' && env.DBUI_THEME == 'default' }}
         run: npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
 
-      - name: 📰 Publish experimental (NEXT) default Package to Registry
+      - name: 📰 Publish experimental (NEXT) default Package to Registry (dry run)
         if: ${{ inputs.prerelease == 'true' && env.DBUI_THEME == 'default' }}
-        run: npm publish --tag next --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+        run: npm publish --tag next --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
 
       - name: 📰 Publish stable (LATEST) enterprise Package to Registry (dry run)
         if: ${{ inputs.release == 'true' && env.DBUI_THEME == 'enterprise' }}
         run: npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}
 
-      - name: 📰 Publish experimental (NEXT) enterprise Package to Registry
+      - name: 📰 Publish experimental (NEXT) enterprise Package to Registry (dry run)
         if: ${{ inputs.prerelease == 'true' && env.DBUI_THEME == 'enterprise' }}
-        run: npm publish --tag next --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}
+        run: npm publish --tag next --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}
 
       - name: Pack tarball default
         if: ${{ env.DBUI_THEME == 'default' }}
