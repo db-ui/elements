@@ -131,9 +131,10 @@ jobs:
         if: ${{ env.DBUI_THEME == 'enterprise' }}
         run: |
           echo "Forge enterprise string replacement..."
-          ls -lash
-          find ./packages/ -type d -print
-          npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
+          # ls -lash
+          # find ./packages/ -type d -print
+          cat ./packages/db-ui-elements-react/dist/components.js
+          npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise ./packages/**/dist/**/*.*
 
       - name: 🛠 Forge default output target packages dependency
         if: ${{ env.DBUI_THEME == 'default' && env.DBUI_WORKSPACE != 'elements' }}
