@@ -95,7 +95,7 @@ jobs:
         run: |
           echo "prerelease?: ${{ inputs.prerelease }}"
           echo "release?: ${{ inputs.release }}"
-          echo "prerelease env is?: ${{ env.DBUI_PRERELEASE }}"
+          echo "prerelease env is?: ${{ inputs.prerelease }}"
           echo "release env is?: ${{ env.DBUI_RELEASE }}"
           echo "workspace is?: ${{ env.DBUI_ARTIFACTNAME }}"
 
@@ -113,8 +113,8 @@ jobs:
 
       - name: conditinal test
         run: |
-          if [[ ${{ env.DBUI_PRERELEASE }} == true ]]; then
-            echo "Prerelease (env) is: ${{ env.DBUI_PRERELEASE }}"
+          if [[ ${{ inputs.prerelease }} == true ]]; then
+            echo "Prerelease (env) is: ${{ inputs.prerelease }}"
           fi
           if [[ ${{ env.DBUI_RELEASE }} == true ]]; then
             echo "Release (env) is: ${{ env.DBUI_RELEASE }}"
@@ -135,7 +135,7 @@ jobs:
         uses: ./.github/actions/get-package-version-latest
 
       - name: 🏷 Get and Set experimental (NEXT) Package Version on Env
-        if: ${{ env.DBUI_PRERELEASE == 'true' }}
+        if: ${{ inputs.prerelease == 'true' }}
         uses: ./.github/actions/get-package-version-next
 
       - name: 🛠 Forge all packages version numbers
@@ -207,7 +207,7 @@ jobs:
         run: npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
 
       - name: 📰 Publish experimental (NEXT) default Package to Registry (dry run)
-        if: ${{ env.DBUI_PRERELEASE == 'true' && env.DBUI_THEME == 'default' }}
+        if: ${{ inputs.prerelease == 'true' && env.DBUI_THEME == 'default' }}
         run: npm publish --tag next --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
 
       - name: 📰 Publish stable (LATEST) enterprise Package to Registry (dry run)
@@ -215,7 +215,7 @@ jobs:
         run: npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}
 
       - name: 📰 Publish experimental (NEXT) enterprise Package to Registry (dry run)
-        if: ${{ env.DBUI_PRERELEASE == 'true' && env.DBUI_THEME == 'enterprise' }}
+        if: ${{ inputs.prerelease == 'true' && env.DBUI_THEME == 'enterprise' }}
         run: npm publish --tag next --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}
 
       # - name: 📰 Publish to Package Registry (dry run)
@@ -231,16 +231,16 @@ jobs:
         if: ${{ env.DBUI_THEME == 'enterprise' }}
         run: npm pack --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}
 
-      - name: ⬆ Upload Package Artifact ${{ matrix.registries }}-${{ DBUI_ARTIFACTNAME }}
+      - name: ⬆ Upload Package Artifact ${{ matrix.registries }}-${{ env.DBUI_ARTIFACTNAME }}
         if: ${{ env.DBUI_THEME == 'default' }}
         uses: ./.github/actions/upload-tar-artifact
         with:
-          name: package-${{ matrix.registries }}-${{ DBUI_ARTIFACTNAME }}
-          path: db-ui-${{ DBUI_WORKSPACE }}-${{ env.VALID_SEMVER_VERSION }}.tgz
+          name: package-${{ matrix.registries }}-${{ env.DBUI_ARTIFACTNAME }}
+          path: db-ui-${{ env.DBUI_WORKSPACE }}-${{ env.VALID_SEMVER_VERSION }}.tgz
 
-      - name: ⬆ Upload Package Artifact ${{ matrix.registries }}-${{ DBUI_ARTIFACTNAME }}
+      - name: ⬆ Upload Package Artifact ${{ matrix.registries }}-${{ env.DBUI_ARTIFACTNAME }}
         if: ${{ env.DBUI_THEME == 'enterprise' }}
         uses: ./.github/actions/upload-tar-artifact
         with:
           name: package-${{ matrix.registries }}-${{ DBUI_ARTIFACTNAME }}
-          path: db-ui-${{ DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}-${{ env.VALID_SEMVER_VERSION }}.tgz
+          path: db-ui-${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}-${{ env.VALID_SEMVER_VERSION }}.tgz
