@@ -6,11 +6,5 @@ runs:
   steps:
     - name: Publish to registry
       run: |
-        GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-7)
-        # SEMVER_VERSION=$(npx find-versions-cli ${{ github.event.release.tag_name }})
-        SEMVER_VERSION=0.0.1-exp
-        echo "Semver experimental version $SEMVER_VERSION-$GITHUB_SHA_SHORT"
-
-        npm version --no-git-tag-version $SEMVER_VERSION-$GITHUB_SHA_SHORT --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
         npm publish --tag next --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
       shell: bash
