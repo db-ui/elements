@@ -74,14 +74,6 @@ jobs:
         registries: [npm, github]
     env: ${{ matrix.env }}
     steps:
-      # - name: TEST
-      #   run: |
-      #     echo "prerelease?: ${{ inputs.prerelease }}"
-      #     echo "release?: ${{ inputs.release }}"
-      #     echo "prerelease env is?: ${{ inputs.prerelease }}"
-      #     echo "release env is?: ${{ inputs.release }}"
-      #     echo "workspace is?: ${{ env.DBUI_ARTIFACTNAME }}"
-
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
 
@@ -93,25 +85,6 @@ jobs:
         with:
           name: ${{ env.DBUI_ARTIFACTNAME}}
           path: packages/${{ env.DBUI_PACKAGEPATH}}
-
-      # - name: conditinal test
-      #   run: |
-      #     if [[ ${{ inputs.prerelease }} == true ]]; then
-      #       echo "Prerelease (env) is: ${{ inputs.prerelease }}"
-      #     fi
-      #     if [[ ${{ inputs.release }} == true ]]; then
-      #       echo "Release (env) is: ${{ inputs.release }}"
-      #     fi
-      #     if [[ ${{ inputs.prerelease }} == true ]]; then
-      #       echo "Prerelease (inputs) is: ${{ inputs.prerelease }}"
-      #     fi
-      #     if [[ ${{ inputs.release }} == true ]]; then
-      #       echo "Prerelease (inputs) is: ${{ inputs.release }}"
-      #     fi
-
-      # - name: 🛠 List package.json (BEFORE)
-      #   run: |
-      #     cat packages/${{ env.DBUI_PACKAGEPATH }}/package.json
 
       - name: 🏷 Get and Set stable (LATEST) Package Version on Env
         if: ${{ inputs.release == 'true' }}
@@ -153,10 +126,6 @@ jobs:
           echo "Forge enterprise package name..."
           npm pkg set 'name'='@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME}}' --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
 
-      # - name: 🛠 List package.json (AFTER)
-      #   run: |
-      #     cat packages/${{ env.DBUI_PACKAGEPATH }}/package.json
-
       - name: Authenticate with NPM Registry
         if: ${{ matrix.registries == 'npm'}}
         uses: ./.github/actions/auth-with-registry
@@ -188,11 +157,6 @@ jobs:
       - name: 📰 Publish experimental (NEXT) enterprise Package to Registry (dry run)
         if: ${{ inputs.prerelease == 'true' && env.DBUI_THEME == 'enterprise' }}
         run: npm publish --tag next --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}
-
-      # - name: 📰 Publish to Package Registry (dry run)
-      #   uses: ./.github/actions/publish-to-registry
-      #   env:
-      #     DBUI_WORKSPACE: ${{ env.DBUI_WORKSPACE }}
 
       - name: Pack tarball default
         if: ${{ env.DBUI_THEME == 'default' }}
