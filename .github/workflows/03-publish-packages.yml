@@ -129,22 +129,11 @@ jobs:
 
       - name: 🛠 Forge enterprise packages
         if: ${{ env.DBUI_THEME == 'enterprise' }}
-        #   run: |
-        #     echo "which packages?: ${{ inputs.registry }}"
-        #     echo "which verison ?: ${{ env.VALID_SEMVER_VERSION }}"
-        #     echo "TODO: forge enterprise versions..."
-        #     # npm pkg set 'name'='@db-ui/elements-${{ matrix.themes }}' --workspace=@db-ui/elements
-        #     # npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
-        #     # npm pkg set 'dependencies.@db-ui-elements-enterprise'='1.1.1' --workspace=@db-ui/ngx-elements
         run: |
           echo "Forge enterprise string replacement..."
           ls -lash
+          find ./packages/ -type d -print
           npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
-          # npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
-          # npm pkg set 'dependencies.@db-ui-elements-enterprise'='1.1.1' --workspace=@db-ui/ngx-elements
-          # npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/**/dist/**/*.*
-          # npm pkg set 'dependencies.@db-ui/elements'='${{ env.VALID_SEMVER_VERSION }}' --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
-          # npm pkg set 'name'='@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME}}' --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
 
       - name: 🛠 Forge default output target packages dependency
         if: ${{ env.DBUI_THEME == 'default' && env.DBUI_WORKSPACE != 'elements' }}
