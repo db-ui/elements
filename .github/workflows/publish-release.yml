@@ -25,22 +25,22 @@ jobs:
     uses: ./.github/workflows/01-build-stencil-targets.yml
     needs: [init]
 
-  # build-showcases:
-  #   uses: ./.github/workflows/01-build-showcases.yml
-  #   needs: [build-stencil-targets]
+  build-showcases:
+    uses: ./.github/workflows/01-build-showcases.yml
+    needs: [build-stencil-targets]
 
-  # build-storybook:
-  #   uses: ./.github/workflows/01-build-storybook.yml
-  #   needs: [build-showcases]
+  build-storybook:
+    uses: ./.github/workflows/01-build-storybook.yml
+    needs: [build-showcases]
 
-  # cypress:
-  #   uses: ./.github/workflows/02-cypress.yml
-  #   needs: [build-storybook]
+  cypress:
+    uses: ./.github/workflows/02-cypress.yml
+    needs: [build-storybook]
 
-  # release:
-  #   uses: ./.github/workflows/03-gh-release.yml
-  #   if: ${{ github.actor != 'dependabot[bot]' }}
-  #   needs: [validate, test, cypress]
+  release:
+    uses: ./.github/workflows/03-gh-release.yml
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    needs: [validate, test, cypress]
 
   publishpackages:
     uses: ./.github/workflows/03-publish-packages.yml

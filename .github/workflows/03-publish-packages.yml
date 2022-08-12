@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      # As "stencil" package we use the artifact "stencil-local-angular" - others
+      # As "stencil" package we use the artifact "stencil-default-angular" - others
       # would work as well this is just the first
       matrix:
         env:
