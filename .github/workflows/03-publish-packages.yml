@@ -242,5 +242,5 @@ jobs:
         if: ${{ env.DBUI_THEME == 'enterprise' }}
         uses: ./.github/actions/upload-tar-artifact
         with:
-          name: package-${{ matrix.registries }}-${{ DBUI_ARTIFACTNAME }}
+          name: package-${{ matrix.registries }}-${{ env.DBUI_ARTIFACTNAME }}
           path: db-ui-${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}-${{ env.VALID_SEMVER_VERSION }}.tgz
