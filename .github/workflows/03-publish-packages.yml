@@ -27,66 +27,49 @@ jobs:
               DBUI_WORKSPACE: 'elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-stencil',
               DBUI_ARTIFACTNAME: 'stencil-default-angular',
-              DBUI_THEME: 'default',
-              DBUI_RELEASE: '${{ inputs.release }}',
-              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
+              DBUI_THEME: 'default'
             }
           - {
               DBUI_WORKSPACE: 'ngx-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-angular',
               DBUI_ARTIFACTNAME: 'output-target-default-angular',
-              DBUI_THEME: 'default',
-              DBUI_RELEASE: '${{ inputs.release }}',
-              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
+              DBUI_THEME: 'default'
             }
           - {
               DBUI_WORKSPACE: 'react-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-react',
               DBUI_ARTIFACTNAME: 'output-target-default-react',
-              DBUI_THEME: 'default',
-              DBUI_TEST: '${{ inputs.release }}',
-              DBUI_RELEASE: '${{ inputs.release }}',
-              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
+              DBUI_THEME: 'default'
             }
           - {
               DBUI_WORKSPACE: 'v-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-vue',
               DBUI_ARTIFACTNAME: 'output-target-default-vue',
-              DBUI_THEME: 'default',
-              DBUI_RELEASE: '${{ inputs.release }}',
-              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
+              DBUI_THEME: 'default'
             }
           - {
               DBUI_WORKSPACE: 'elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-stencil',
               DBUI_ARTIFACTNAME: 'stencil-enterprise-angular',
-              DBUI_THEME: 'enterprise',
-              DBUI_RELEASE: '${{ inputs.release }}',
-              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
+              DBUI_THEME: 'enterprise'
             }
           - {
               DBUI_WORKSPACE: 'ngx-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-angular',
               DBUI_ARTIFACTNAME: 'output-target-enterprise-angular',
-              DBUI_THEME: 'enterprise',
-              DBUI_RELEASE: '${{ inputs.release }}',
-              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
+              DBUI_THEME: 'enterprise'
             }
           - {
               DBUI_WORKSPACE: 'react-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-react',
               DBUI_ARTIFACTNAME: 'output-target-enterprise-react',
-              DBUI_THEME: 'enterprise',
-              DBUI_RELEASE: '${{ inputs.release }}',
-              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
+              DBUI_THEME: 'enterprise'
             }
           - {
               DBUI_WORKSPACE: 'v-elements',
               DBUI_PACKAGEPATH: 'db-ui-elements-vue',
               DBUI_ARTIFACTNAME: 'output-target-enterprise-vue',
-              DBUI_THEME: 'enterprise',
-              DBUI_RELEASE: '${{ inputs.release }}',
-              DBUI_PRERELEASE: '${{ inputs.prerelease }}'
+              DBUI_THEME: 'enterprise'
             }
         registries: [npm, github]
     env: ${{ matrix.env }}
@@ -96,7 +79,7 @@ jobs:
           echo "prerelease?: ${{ inputs.prerelease }}"
           echo "release?: ${{ inputs.release }}"
           echo "prerelease env is?: ${{ inputs.prerelease }}"
-          echo "release env is?: ${{ env.DBUI_RELEASE }}"
+          echo "release env is?: ${{ inputs.release }}"
           echo "workspace is?: ${{ env.DBUI_ARTIFACTNAME }}"
 
       - name: ⬇ Checkout repo
@@ -116,13 +99,13 @@ jobs:
           if [[ ${{ inputs.prerelease }} == true ]]; then
             echo "Prerelease (env) is: ${{ inputs.prerelease }}"
           fi
-          if [[ ${{ env.DBUI_RELEASE }} == true ]]; then
-            echo "Release (env) is: ${{ env.DBUI_RELEASE }}"
+          if [[ ${{ inputs.release }} == true ]]; then
+            echo "Release (env) is: ${{ inputs.release }}"
           fi
           if [[ ${{ inputs.prerelease }} == true ]]; then
             echo "Prerelease (inputs) is: ${{ inputs.prerelease }}"
           fi
-          if [[ ${{ env.DBUI_RELEASE }} == true ]]; then
+          if [[ ${{ inputs.release }} == true ]]; then
             echo "Prerelease (inputs) is: ${{ inputs.release }}"
           fi
 
@@ -131,7 +114,7 @@ jobs:
           cat packages/${{ env.DBUI_PACKAGEPATH }}/package.json
 
       - name: 🏷 Get and Set stable (LATEST) Package Version on Env
-        if: ${{ env.DBUI_RELEASE == 'true' }}
+        if: ${{ inputs.release == 'true' }}
         uses: ./.github/actions/get-package-version-latest
 
       - name: 🏷 Get and Set experimental (NEXT) Package Version on Env
@@ -203,7 +186,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.GITHUB_TEST_TOKEN}}
 
       - name: 📰 Publish stable (LATEST) default Package to Registry (dry run)
-        if: ${{ env.DBUI_RELEASE == 'true' && env.DBUI_THEME == 'default' }}
+        if: ${{ inputs.release == 'true' && env.DBUI_THEME == 'default' }}
         run: npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
 
       - name: 📰 Publish experimental (NEXT) default Package to Registry (dry run)
@@ -211,7 +194,7 @@ jobs:
         run: npm publish --tag next --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
 
       - name: 📰 Publish stable (LATEST) enterprise Package to Registry (dry run)
-        if: ${{ env.DBUI_RELEASE == 'true' && env.DBUI_THEME == 'enterprise' }}
+        if: ${{ inputs.release == 'true' && env.DBUI_THEME == 'enterprise' }}
         run: npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}
 
       - name: 📰 Publish experimental (NEXT) enterprise Package to Registry (dry run)
