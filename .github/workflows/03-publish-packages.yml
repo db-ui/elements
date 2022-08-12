@@ -136,7 +136,7 @@ jobs:
           cat ./packages/db-ui-elements-react/dist/components.js
           # npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/db-ui-elements-react/dist/components.js
           # npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise ./packages/**/dist/**/*.*
-          npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise packages/"${{ env.DBUI_PACKAGEPATH }}"/dist/**/*.*
+          npx -y replace-in-file @db-ui/elements @db-ui/elements-enterprise "packages/${{ env.DBUI_PACKAGEPATH }}/dist/**/*.*"
           cat ./packages/db-ui-elements-react/dist/components.js
 
       - name: 🛠 Forge default output target packages dependency
