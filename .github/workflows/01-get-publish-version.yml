@@ -35,4 +35,8 @@ jobs:
           chmod +rx ./.github/scripts/package-version.sh
           OUTPUT=$(./.github/scripts/package-version.sh)
           echo "VALID_SEMVER_VERSION=$(echo OUTPUT)" >> $GITHUB_ENV
-          echo "VALID_SEMVER_VERSION saved in environments: ${{ env.VALID_SEMVER_VERSION }}"
+
+      - name: 🌳 Log Valid Version
+        env:
+          VALID_SEMVER_VERSION: ${{ env.VALID_SEMVER_VERSION }}
+        run: echo "$VALID_SEMVER_VERSION"

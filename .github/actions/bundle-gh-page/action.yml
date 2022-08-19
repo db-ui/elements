@@ -8,58 +8,12 @@ runs:
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: extract_branch
-    - name: ➕ Create temp or public dir
-      env:
-        RELEASE: ${{ env.RELEASE }}
-      run: |
-        echo "Create dir for branch: ${{ steps.extract_branch.outputs.branch }}"
-        if [ $RELEASE == "true" ];
-        then
-          mkdir temp
-          echo "Created 'temp' dir"
-        else
-          mkdir public
-          echo "Created 'public' dir"
-        fi
-      shell: bash
-    - name: 📥 Get gh-pages tar
-      run: wget -q https://github.com/db-ui/elements/tarball/gh-pages
-      shell: bash
-    - name: 📦 Unpack Tar
-      env:
-        RELEASE: ${{ env.RELEASE }}
-      run: |
-        if [ $RELEASE == "true" ];
-        then
-          tar -zxf gh-pages -C temp --strip-components 1
-        else
-          tar -zxf gh-pages -C public --strip-components 1
-        fi
-      shell: bash
-    - name: 📁 Move ./out folder to public
+    - name: 🔨 Build page
       env:
         RELEASE: ${{ env.RELEASE }}
         VALID_SEMVER_VERSION: ${{ env.VALID_SEMVER_VERSION }}
+        BRANCH: ${{ steps.extract_branch.outputs.branch }}
       run: |
-        if [ $RELEASE == "true" ];
-        then
-          mv ./out ./public
-          if [ -d ./temp/review ]; then
-            mv ./temp/review ./public
-          fi
-        elif [ ! -d $VALID_SEMVER_VERSION ];
-        then
-          if [ ! -d ./public/version ]; then
-            mkdir ./public/version
-          fi
-          mv ./out ./public/version/$VALID_SEMVER_VERSION
-        else
-          if [ ! -d ./public/review ]; then
-            mkdir ./public/review
-          fi
-          if [ -d ./public/review/${{ steps.extract_branch.outputs.branch }} ]; then
-            rm -rf  ./public/review/${{ steps.extract_branch.outputs.branch }}
-          fi
-          mv ./out ./public/review/${{ steps.extract_branch.outputs.branch }}
-        fi
+        chmod +rx ./.github/scripts/build-gh-page.sh
+        ./.github/scripts/build-gh-page.sh
       shell: bash

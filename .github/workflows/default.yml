@@ -15,11 +15,6 @@ jobs:
   scan-secrets:
     uses: ./.github/workflows/00-scan-secrets.yml
 
-  # TODO: Remove this after testing
-  get-publish-version:
-    uses: ./.github/workflows/01-get-publish-version.yml
-    needs: [init]
-
   test:
     uses: ./.github/workflows/01-test.yml
     needs: [init]

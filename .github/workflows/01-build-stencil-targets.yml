@@ -12,7 +12,6 @@ jobs:
       fail-fast: false
       matrix:
         targets: [ngx-elements, react-elements, v-elements]
-        # TODO: Use theme if we want to deploy different themes (at the moment enterprise===default)
         themes: [default, enterprise]
     steps:
       - name: ⬇ Checkout repo
