@@ -1,14 +1,6 @@
 ---
 name: 'Bundle GitHub Page'
 description: 'This action bundles the current gh-page branch with the out folder'
-inputs:
-  latest:
-    description: 'This has to be true if you want to overwrite latest.'
-    required: false
-    default: 'false'
-  tag:
-    description: 'This has to be a tag like v1.0.0 if you want to push a tag to the /version folder'
-    required: false
 runs:
   using: 'composite'
   steps:
@@ -19,7 +11,7 @@ runs:
     - name: ➕ Create temp or public dir
       run: |
         echo "Create dir for branch: ${{ steps.extract_branch.outputs.branch }}"
-        if [ ${{ inputs.latest }} == "true" ];
+        if [ ${{ env.RELEASE }} == "true" ];
         then
           mkdir temp
           echo "Created 'temp' dir"
@@ -33,7 +25,7 @@ runs:
       shell: bash
     - name: 📦 Unpack Tar
       run: |
-        if [ ${{ inputs.latest }} == "true" ];
+        if [ ${{ env.RELEASE }} == "true" ];
         then
           tar -zxf gh-pages -C temp --strip-components 1
         else
@@ -42,18 +34,18 @@ runs:
       shell: bash
     - name: 📁 Move ./out folder to public
       run: |
-        if [ ${{ inputs.latest }} == "true" ];
+        if [ ${{ env.RELEASE }} == "true" ];
         then
           mv ./out ./public
           if [ -d ./temp/review ]; then
             mv ./temp/review ./public
           fi
-        elif [ ! -d ${{ inputs.tag }} ];
+        elif [ ! -d ${{ env.VALID_SEMVER_VERSION }} ];
         then
           if [ ! -d ./public/version ]; then
             mkdir ./public/version
           fi
-          mv ./out ./public/version/${{ inputs.tag }}
+          mv ./out ./public/version/${{ env.VALID_SEMVER_VERSION }}
         else
           if [ ! -d ./public/review ]; then
             mkdir ./public/review

@@ -43,9 +43,6 @@ jobs:
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
     needs: [validate, test, cypress]
-    with:
-      latest: ${{ env.RELEASE }}
-      tag: ${{ env.VALID_SEMVER_VERSION }}
 
   publishpackages:
     uses: ./.github/workflows/03-publish-packages.yml
