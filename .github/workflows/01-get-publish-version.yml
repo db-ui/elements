@@ -16,7 +16,9 @@ jobs:
         uses: ./.github/actions/npm-cache
 
       - name: 💃🕺 Check if release or prerelease
-        run: ./.github/scripts/get-release.sh
+        run: |
+          chmod +rx ./.github/scripts/get-release.sh
+          ./.github/scripts/get-release.sh
         env:
           GITHUB_REF: ${{ github.ref }}
           GITHUB_ACTOR: ${{ github.actor }}

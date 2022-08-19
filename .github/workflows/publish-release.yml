@@ -42,11 +42,11 @@ jobs:
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
-    needs: [validate, test, cypress]
+    needs: [validate, test, cypress, get-publish-version]
 
   publishpackages:
     uses: ./.github/workflows/03-publish-packages.yml
-    needs: [validate, test, cypress]
+    needs: [validate, test, cypress, get-publish-version]
 
   changeloglatest:
     uses: ./.github/workflows/04-changelog.yml
