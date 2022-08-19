@@ -26,11 +26,11 @@ jobs:
 
       - name: 🏷 Get and Set Package Version on Env
         run: |
-          if ${{ env.RELEASE }}  == 'true'
+          if -n ${{ env.RELEASE }} && ${{ env.RELEASE }} == "true"
           then
             SEMVER_VERSION=$(npx find-versions-cli v0.5.5-test123)
             VALID_SEMVER_VERSION=$(node scripts/version-helper.js $SEMVER_VERSION)
-          elif ${{ env.PRE_RELEASE }}  == 'true'
+          elif -n ${{ env.PRE_RELEASE }} && ${{ env.PRE_RELEASE }} == "true"
           then
             GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-7)
             SEMVER_VERSION=$(npx find-versions-cli v0.5.5-test123)
