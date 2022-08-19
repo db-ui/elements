@@ -15,7 +15,7 @@ jobs:
       - name: 🔄 Init Cache
         uses: ./.github/actions/npm-cache
 
-      - name: 💃🕺 Check if release or prerelease
+      - name: 💃🕺 Set release or prerelease
         run: |
           if ${{ startsWith(github.ref, 'refs/tags/v') }}
           then
@@ -28,14 +28,12 @@ jobs:
               then
                 echo "PRE_RELEASE=true" >> $GITHUB_ENV
               fi
-            else
-              echo "Dependabot has no permission to publish!"
-              exit 1
             fi
-          else
-            echo "Your tag has to start with 'v-'"
-            exit 1
           fi
+
+      - name: 🛑 Exit if release or prerelease is not set
+        if: ${{ env.RELEASE != 'true' ||  env.PRE_RELEASE != 'true' }}
+        run: exit 1
 
       - name: 🏷 Get and Set Package Version on Env
         run: |
@@ -48,10 +46,10 @@ jobs:
             GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-7)
             SEMVER_VERSION=$(npx find-versions-cli v0.5.5-test123)
             VALID_SEMVER_VERSION=$(echo $SEMVER_VERSION-$GITHUB_SHA_SHORT)
-          el
-            echo "Error: nothing found in environment for REALEASE or PRE_RELEASE"
-            exit 1
           fi
           echo "Semver version $VALID_SEMVER_VERSION"
           echo "VALID_SEMVER_VERSION=$(echo $VALID_SEMVER_VERSION)" >> $GITHUB_ENV
-          echo "VALID_SEMVER_VERSION saved in environments: ${{ env.VALID_SEMVER_VERSION }}"
+
+      - name: 🛑 Exit if VALID_SEMVER_VERSION is not set
+        if: ${{ env.VALID_SEMVER_VERSION == "" }}
+        run: exit 1

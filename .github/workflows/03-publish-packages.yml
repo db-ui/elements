@@ -129,7 +129,7 @@ jobs:
         run: |
           if ${{ env.DBUI_THEME == 'default' }}
           then
-            PACKAGE_NAME = $(echo ${{ env.DBUI_WORKSPACE }}
+            PACKAGE_NAME = $(echo ${{ env.DBUI_WORKSPACE }})
           else
             PACKAGE_NAME = $(echo ${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }})
           fi
@@ -139,9 +139,6 @@ jobs:
             npm publish --dry-run --workspace=@db-ui/$PACKAGE_NAME
           else if ${{ env.PRE_RELEASE == 'true' }}
             npm publish --tag next --dry-run --workspace=@db-ui/$PACKAGE_NAME
-          else
-            echo "Cannot find env.RELEASE or env.PRE_RELEASE"
-            exit 1
           fi
 
           echo "Pack tarball"
