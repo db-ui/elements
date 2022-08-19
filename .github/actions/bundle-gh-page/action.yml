@@ -11,7 +11,7 @@ runs:
     - name: ➕ Create temp or public dir
       run: |
         echo "Create dir for branch: ${{ steps.extract_branch.outputs.branch }}"
-        if [ ${{ env.RELEASE == "true" }} ];
+        if [ ${{ env.RELEASE }} == "true" ];
         then
           mkdir temp
           echo "Created 'temp' dir"
@@ -25,7 +25,7 @@ runs:
       shell: bash
     - name: 📦 Unpack Tar
       run: |
-        if [ ${{ env.RELEASE == "true" }} ];
+        if [ ${{ env.RELEASE }}  == "true" ];
         then
           tar -zxf gh-pages -C temp --strip-components 1
         else
@@ -34,13 +34,13 @@ runs:
       shell: bash
     - name: 📁 Move ./out folder to public
       run: |
-        if [ ${{ env.RELEASE == "true" }} ];
+        if [ ${{ env.RELEASE }}  == "true" ];
         then
           mv ./out ./public
           if [ -d ./temp/review ]; then
             mv ./temp/review ./public
           fi
-        elif [ ${{ ! -d env.VALID_SEMVER_VERSION }} ];
+        elif [ ! -d ${{ env.VALID_SEMVER_VERSION }} ];
         then
           if [ ! -d ./public/version ]; then
             mkdir ./public/version
