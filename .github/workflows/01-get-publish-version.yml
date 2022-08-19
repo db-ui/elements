@@ -18,7 +18,8 @@ jobs:
       - name: 💃🕺 Check if release or prerelease
         run: |
           chmod +rx ./.github/scripts/get-release.sh
-          ./.github/scripts/get-release.sh
+          OUTPUT=$(./.github/scripts/get-release.sh)
+          echo "$OUTPUT" >> $GITHUB_ENV
         env:
           GITHUB_REF: ${{ github.ref }}
           GITHUB_ACTOR: ${{ github.actor }}
@@ -27,20 +28,11 @@ jobs:
           GITHUB_PRE_RELEASE: ${{ github.event.release.prerelease }}
 
       - name: 🏷 Get and Set Package Version on Env
+        env:
+          RELEASE: ${{ env.RELEASE }}
+          PRE_RELEASE: ${{ env.PRE_RELEASE }}
         run: |
-          if -n ${{ env.RELEASE }} && ${{ env.RELEASE }} == "true"
-          then
-            SEMVER_VERSION=$(npx find-versions-cli v0.5.5-test123)
-            VALID_SEMVER_VERSION=$(node scripts/version-helper.js $SEMVER_VERSION)
-          elif -n ${{ env.PRE_RELEASE }} && ${{ env.PRE_RELEASE }} == "true"
-          then
-            GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-7)
-            SEMVER_VERSION=$(npx find-versions-cli v0.5.5-test123)
-            VALID_SEMVER_VERSION=$(echo $SEMVER_VERSION-$GITHUB_SHA_SHORT)
-          el
-            echo "::error ::nothing found in environment for REALEASE or PRE_RELEASE"
-            exit 1
-          fi
-          echo "Semver version $VALID_SEMVER_VERSION"
-          echo "VALID_SEMVER_VERSION=$(echo $VALID_SEMVER_VERSION)" >> $GITHUB_ENV
+          chmod +rx ./.github/scripts/package-version.sh
+          OUTPUT=$(./.github/scripts/package-version.sh)
+          echo "VALID_SEMVER_VERSION=$(echo OUTPUT)" >> $GITHUB_ENV
           echo "VALID_SEMVER_VERSION saved in environments: ${{ env.VALID_SEMVER_VERSION }}"

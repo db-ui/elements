@@ -6,10 +6,10 @@ then
   then
     if [[ $GITHUB_COMMITISH == 'main' && $GITHUB_RELEASE == true  ]]
     then
-      echo "RELEASE=true" >> "$GITHUB_ENV"
+      echo "RELEASE=true"
     elif [[ $GITHUB_PRE_RELEASE == true  ]]
     then
-      echo "PRE_RELEASE=true" >> "$GITHUB_ENV"
+      echo "PRE_RELEASE=true"
     fi
    else
      echo "Dependabot has no permission to publish!"
