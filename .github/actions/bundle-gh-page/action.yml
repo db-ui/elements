@@ -9,9 +9,11 @@ runs:
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
       id: extract_branch
     - name: ➕ Create temp or public dir
+      env:
+        RELEASE: ${{ env.RELEASE }}
       run: |
         echo "Create dir for branch: ${{ steps.extract_branch.outputs.branch }}"
-        if [ -n ${{ env.RELEASE }} && ${{ env.RELEASE }} == "true" ];
+        if [ $RELEASE == "true" ];
         then
           mkdir temp
           echo "Created 'temp' dir"
@@ -24,8 +26,10 @@ runs:
       run: wget -q https://github.com/db-ui/elements/tarball/gh-pages
       shell: bash
     - name: 📦 Unpack Tar
+      env:
+        RELEASE: ${{ env.RELEASE }}
       run: |
-        if [ -n ${{ env.RELEASE }} && ${{ env.RELEASE }} == "true" ];
+        if [ $RELEASE == "true" ];
         then
           tar -zxf gh-pages -C temp --strip-components 1
         else
@@ -33,19 +37,22 @@ runs:
         fi
       shell: bash
     - name: 📁 Move ./out folder to public
+      env:
+        RELEASE: ${{ env.RELEASE }}
+        VALID_SEMVER_VERSION: ${{ env.VALID_SEMVER_VERSION }}
       run: |
-        if [ -n ${{ env.RELEASE }} && ${{ env.RELEASE }} == "true" ];
+        if [ $RELEASE == "true" ];
         then
           mv ./out ./public
           if [ -d ./temp/review ]; then
             mv ./temp/review ./public
           fi
-        elif [ ! -d ${{ env.VALID_SEMVER_VERSION }} ];
+        elif [ ! -d $VALID_SEMVER_VERSION ];
         then
           if [ ! -d ./public/version ]; then
             mkdir ./public/version
           fi
-          mv ./out ./public/version/${{ env.VALID_SEMVER_VERSION }}
+          mv ./out ./public/version/$VALID_SEMVER_VERSION
         else
           if [ ! -d ./public/review ]; then
             mkdir ./public/review

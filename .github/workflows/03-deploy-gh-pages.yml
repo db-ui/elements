@@ -33,12 +33,15 @@ jobs:
           publish_dir: ./public
 
       - name: 🖨️ Print gh-pages url
+        env:
+          RELEASE: ${{ env.RELEASE }}
+          VALID_SEMVER_VERSION: ${{ env.VALID_SEMVER_VERSION }}
         run: |
           export BRANCH=${GITHUB_REF#refs/heads/}
-          if [ ${{ env.RELEASE }}  == "true" ]
+          if [ $RELEASE == "true" ]
           then
             export URL=https://db-ui.github.io/elements
-          elif [  ! -d ${{ env.VALID_SEMVER_VERSION }} ];
+          elif [ ! -d $VALID_SEMVER_VERSION ];
           then
             export URL=https://db-ui.github.io/elements/version/${{ inputs.tag }}
           else

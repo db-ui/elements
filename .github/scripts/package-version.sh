@@ -11,7 +11,7 @@ then
   SEMVER_VERSION=$(npx find-versions-cli v0.5.5-test123)
   VALID_SEMVER_VERSION=$(echo "$SEMVER_VERSION"-"$GITHUB_SHA_SHORT")
   echo "$VALID_SEMVER_VERSION"
-el
+else
   echo "nothing found in environment for REALEASE or PRE_RELEASE"
   exit 1
 fi
