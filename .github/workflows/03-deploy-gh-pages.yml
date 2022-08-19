@@ -3,6 +3,15 @@ name: Deploy to gh-pages
 
 on:
   workflow_call:
+    inputs:
+      latest:
+        description: 'This has to be true if you want to overwrite latest.'
+        required: false
+        type: string
+      tag:
+        description: 'This has to be a tag like v1.0.0 if you want to push a tag to the /version folder'
+        required: false
+        type: string
 
 jobs:
   deploy:
@@ -25,6 +34,9 @@ jobs:
 
       - name: ➕ Bundle current gh-pages
         uses: ./.github/actions/bundle-gh-page
+        with:
+          latest: ${{ inputs.latest }}
+          tag: ${{ inputs.tag }}
 
       - name: 🥅 Deploy to GH-Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -35,9 +47,12 @@ jobs:
       - name: 🖨️ Print gh-pages url
         run: |
           export BRANCH=${GITHUB_REF#refs/heads/}
-          if echo ${BRANCH} | grep -c "main"
+          if ${{ inputs.latest }} == "true"
           then
             export URL=https://db-ui.github.io/elements
+          elif [ ! -d ${{ inputs.tag }} ];
+          then
+            export URL=https://db-ui.github.io/elements/version/${{ inputs.tag }}
           else
             export URL=https://db-ui.github.io/elements/review/${BRANCH}
           fi

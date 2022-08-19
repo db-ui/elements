@@ -3,15 +3,6 @@ name: Publish all Packages to Registries
 
 on:
   workflow_call:
-    inputs:
-      prerelease:
-        description: 'Is this a Pre-Release?'
-        required: true
-        type: string
-      release:
-        description: 'Is this a Release?'
-        required: true
-        type: string
 
 jobs:
   publish:
@@ -86,14 +77,6 @@ jobs:
           name: ${{ env.DBUI_ARTIFACTNAME}}
           path: packages/${{ env.DBUI_PACKAGEPATH}}
 
-      - name: 🏷 Get and Set stable (LATEST) Package Version on Env
-        if: ${{ inputs.release == 'true' }}
-        uses: ./.github/actions/get-package-version-latest
-
-      - name: 🏷 Get and Set experimental (NEXT) Package Version on Env
-        if: ${{ inputs.prerelease == 'true' }}
-        uses: ./.github/actions/get-package-version-next
-
       - name: 🛠 Forge all packages version numbers
         run: |
           echo "Forge all packages..."
@@ -126,15 +109,15 @@ jobs:
           echo "Forge enterprise package name..."
           npm pkg set 'name'='@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME}}' --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
 
-      - name: Authenticate with NPM Registry
+      - name: 🔑 Authenticate with NPM Registry
         if: ${{ matrix.registries == 'npm'}}
         uses: ./.github/actions/auth-with-registry
         with:
-          registry: '//npm.pkg.github.com/'
+          registry: '//registry.npmjs.org/'
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Authenticate with GitHub Registry
+      - name: 🔑 Authenticate with GitHub Registry
         uses: ./.github/actions/auth-with-registry
         if: ${{ matrix.registries == 'github'}}
         with:
@@ -142,29 +125,27 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 📰 Publish stable (LATEST) default Package to Registry (dry run)
-        if: ${{ inputs.release == 'true' && env.DBUI_THEME == 'default' }}
-        run: npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+      - name: 📰 Publish Package to Registry (dry run)
+        run: |
+          if ${{ env.DBUI_THEME == 'default' }}
+          then
+            PACKAGE_NAME = $(echo ${{ env.DBUI_WORKSPACE }}
+          else
+            PACKAGE_NAME = $(echo ${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }})
+          fi
 
-      - name: 📰 Publish experimental (NEXT) default Package to Registry (dry run)
-        if: ${{ inputs.prerelease == 'true' && env.DBUI_THEME == 'default' }}
-        run: npm publish --tag next --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
+          if ${{ env.RELEASE == 'true' }}
+          then
+            npm publish --dry-run --workspace=@db-ui/$PACKAGE_NAME
+          else if ${{ env.PRE_RELEASE == 'true' }}
+            npm publish --tag next --dry-run --workspace=@db-ui/$PACKAGE_NAME
+          else
+            echo "Cannot find env.RELEASE or env.PRE_RELEASE"
+            exit 1
+          fi
 
-      - name: 📰 Publish stable (LATEST) enterprise Package to Registry (dry run)
-        if: ${{ inputs.release == 'true' && env.DBUI_THEME == 'enterprise' }}
-        run: npm publish --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}
-
-      - name: 📰 Publish experimental (NEXT) enterprise Package to Registry (dry run)
-        if: ${{ inputs.prerelease == 'true' && env.DBUI_THEME == 'enterprise' }}
-        run: npm publish --tag next --dry-run --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}
-
-      - name: Pack tarball default
-        if: ${{ env.DBUI_THEME == 'default' }}
-        run: npm pack --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}
-
-      - name: Pack tarball enterprise
-        if: ${{ env.DBUI_THEME == 'enterprise' }}
-        run: npm pack --workspace=@db-ui/${{ env.DBUI_WORKSPACE }}-${{ env.DBUI_THEME }}
+          echo "Pack tarball"
+          npm pack --workspace=@db-ui/$PACKAGE_NAME
 
       - name: ⬆ Upload Package Artifact ${{ matrix.registries }}-${{ env.DBUI_ARTIFACTNAME }}
         if: ${{ env.DBUI_THEME == 'default' }}
