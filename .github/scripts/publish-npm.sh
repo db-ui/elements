@@ -35,8 +35,8 @@ npm config set registry https://npm.pkg.github.com
 npm set //npm.pkg.github.com/:_authToken "$GPR_TOKEN"
 npm set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
 
-echo "📰 Publish Package to Registry (dry run)"
 
+echo "📦 Create packages"
 npm pack --workspace=@db-ui/elements"$PACKAGE_ENDING"
 npm pack --workspace=@db-ui/ngx-elements"$PACKAGE_ENDING"
 npm pack --workspace=@db-ui/react-elements"$PACKAGE_ENDING"
@@ -47,6 +47,7 @@ if [[ $PRE_RELEASE == 'true' ]]; then
   NEXT="--tag next"
 fi
 
+echo "📰 Publish Package to Registry (--dry-run $NEXT)"
 npm publish @db-ui/elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --dry-run "$NEXT"
 npm publish @db-ui/ngx-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --dry-run "$NEXT"
 npm publish @db-ui/react-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --dry-run "$NEXT"

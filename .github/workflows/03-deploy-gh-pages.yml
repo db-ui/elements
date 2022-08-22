@@ -36,7 +36,7 @@ jobs:
         shell: bash
         env:
           RELEASE: ${{ inputs.release }}
-          VALID_SEMVER_VERSION: ${{ inputs.version }}
+          PRE_RELEASE: ${{ inputs.preRelease }}
         run: |
           if [[ $RELEASE == "true" || $PRE_RELEASE == "true" ]]
           then
@@ -49,7 +49,7 @@ jobs:
       - name: 🔨 Build page
         env:
           RELEASE: ${{ inputs.release }}
-          VALID_SEMVER_VERSION: ${{ inputs.version }}
+          PRE_RELEASE: ${{ inputs.preRelease }}
           NAME: ${{ steps.extract.outputs.name }}
         run: |
           chmod +rx ./.github/scripts/build-gh-page.sh

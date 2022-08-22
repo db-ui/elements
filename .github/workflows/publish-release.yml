@@ -16,14 +16,6 @@ jobs:
     uses: ./.github/workflows/01-get-publish-version.yml
     needs: [init]
 
-  versionTest:
-    runs-on: ubuntu-latest
-    needs: [get-publish-version]
-    steps:
-      - name: 'Echo Version'
-        run: |
-          echo "Version: ${{ needs.get-publish-version.outputs.version }}"
-
   test:
     uses: ./.github/workflows/01-test.yml
     needs: [init]
