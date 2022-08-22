@@ -1,7 +1,7 @@
 {
   "name": "@db-ui/ngx-elements",
   "version": "0.0.0",
-  "description": "Angular specific wrapper for @db-ui/elements-enterprise-enterprise-enterprise",
+  "description": "Angular specific wrapper for @db-ui/elements",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",

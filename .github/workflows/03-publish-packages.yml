@@ -81,26 +81,26 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GPR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: ⬆ Upload Package Artifact ${{ matrix.themes }}-elements
+      - name: ⬆ Upload Package Artifact elements-${{ matrix.themes }}
         uses: ./.github/actions/upload-tar-artifact
         with:
           name: package-${{ matrix.themes }}-elements
-          path: db-ui-element${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
+          path: db-ui-elements${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
 
-      - name: ⬆ Upload Package Artifact ${{ matrix.themes }}-ngx-elements
+      - name: ⬆ Upload Package Artifact ngx-elements-${{ matrix.themes }}
         uses: ./.github/actions/upload-tar-artifact
         with:
           name: package-${{ matrix.themes }}-ngx-elements
-          path: db-ui-ngx-element${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
+          path: db-ui-ngx-elements${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
 
-      - name: ⬆ Upload Package Artifact ${{ matrix.themes }}-react-elements
+      - name: ⬆ Upload Package Artifact react-elements-${{ matrix.themes }}
         uses: ./.github/actions/upload-tar-artifact
         with:
           name: package-${{ matrix.themes }}-react-elements
-          path: db-ui-react-element${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
+          path: db-ui-react-elements${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
 
-      - name: ⬆ Upload Package Artifact ${{ matrix.themes }}-v-elements
+      - name: ⬆ Upload Package Artifact v-elements-${{ matrix.themes }}
         uses: ./.github/actions/upload-tar-artifact
         with:
           name: package-${{ matrix.themes }}-v-elements
-          path: db-ui-v-element${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
+          path: db-ui-v-elements${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
