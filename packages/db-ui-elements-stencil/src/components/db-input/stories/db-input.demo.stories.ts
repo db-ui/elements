@@ -1,5 +1,5 @@
 export default {
-  title: 'Elements/Input',
+  title: 'Data-Input/Input',
   id: 'db-input',
   component: 'db-input',
   parameters: {

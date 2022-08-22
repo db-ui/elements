@@ -17,14 +17,14 @@ export const parameters = {
       method: 'alphabetical',
       order: [
         'Intro',
-        ['Welcome', 'Getting Started'],
-        'Base',
-        ['Colors', 'Color Preview'],
-        'Elements',
-        'Components',
-        'Areas',
-        'Development',
-        'Other'
+        ['Welcome', 'Getting Started', 'Frameworks', 'Showcases'],
+        'Layout',
+        'Navigation',
+        'Data-Display',
+        'Data-Input',
+        'Feedback',
+        'Utility',
+        'Development'
       ]
     }
   }

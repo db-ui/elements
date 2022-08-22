@@ -1,5 +1,5 @@
 export default {
-  title: 'Elements/Select',
+  title: 'Data-Input/Select',
   id: 'db-select',
   component: 'db-select',
   parameters: {

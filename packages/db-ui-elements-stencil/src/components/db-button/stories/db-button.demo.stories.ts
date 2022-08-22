@@ -3,7 +3,7 @@ import { iconset } from '../../db-icon/iconset.array';
 iconset.unshift('');
 
 export default {
-  title: 'Elements/Button',
+  title: 'Data-Input/Button',
   id: 'db-button',
   component: 'db-button',
   parameters: {

@@ -3,7 +3,7 @@ import { iconset } from '../../db-icon/iconset.array';
 iconset.unshift('');
 
 export default {
-  title: 'Elements/Link',
+  title: 'Navigation/Link',
   id: 'db-link',
   component: 'db-link',
   parameters: {

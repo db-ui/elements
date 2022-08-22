@@ -10,7 +10,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [areas, components, elements, showcases]
+        containers:
+          [
+            00-0-intro,
+            01-0-layout,
+            02-0-navigation,
+            02-1-navigation,
+            03-0-data-display,
+            03-1-data-display,
+            04-0-data-input,
+            04-1-data-input,
+            05-0-feedback,
+            06-0-utility,
+            99-0-showcases,
+            99-1-showcases
+          ]
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
