@@ -29,7 +29,7 @@ if [[ $RELEASE == "true" ]]; then
   if [ -d ./temp/version ]; then
     mv ./temp/version ./public
   fi
-elif [[ ! -d $VALID_SEMVER_VERSION ]]; then
+elif [[ -n $VALID_SEMVER_VERSION ]]; then
   if [[ ! -d ./public/version ]]; then
     mkdir ./public/version
   fi

@@ -3,6 +3,16 @@ name: Publish all Packages to Registries
 
 on:
   workflow_call:
+    inputs:
+      release:
+        required: false
+        type: string
+      preRelease:
+        required: false
+        type: string
+      version:
+        required: true
+        type: string
 
 jobs:
   publish:
@@ -45,14 +55,50 @@ jobs:
           name: output-target-${{ matrix.themes }}-vue
           path: packages/db-ui-elements-vue
 
+      - name: ➡ Get Package theme
+        id: getPkgTheme
+        env:
+          DBUI_THEME: ${{ matrix.themes }}
+        run: |
+          if [[ $DBUI_THEME != 'default' ]]; then
+            echo "::set-output name=pkgTheme::-$DBUI_THEME"
+          else
+            echo "::set-output name=pkgTheme::"
+          fi
+
       - name: 📰 Publish to NPM Registries
         run: |
           chmod +rx ./.github/scripts/publish-npm.sh
           ./.github/scripts/publish-npm.sh
         env:
-          RELEASE: ${{ env.RELEASE }}
-          PRE_RELEASE: ${{ env.PRE_RELEASE }}
-          VALID_SEMVER_VERSION: ${{ env.VALID_SEMVER_VERSION }}
+          RELEASE: ${{ inputs.release }}
+          PRE_RELEASE: ${{ inputs.preRelease }}
+          VALID_SEMVER_VERSION: ${{ inputs.version }}
           DBUI_THEME: ${{ matrix.themes }}
+          PACKAGE_ENDING: ${{ steps.getPkgTheme.outputs.pkgTheme }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GPR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ⬆ Upload Package Artifact ${{ matrix.themes }}-elements
+        uses: ./.github/actions/upload-tar-artifact
+        with:
+          name: package-${{ matrix.themes }}-elements
+          path: db-ui-element${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
+
+      - name: ⬆ Upload Package Artifact ${{ matrix.themes }}-ngx-elements
+        uses: ./.github/actions/upload-tar-artifact
+        with:
+          name: package-${{ matrix.themes }}-ngx-elements
+          path: db-ui-ngx-element${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
+
+      - name: ⬆ Upload Package Artifact ${{ matrix.themes }}-react-elements
+        uses: ./.github/actions/upload-tar-artifact
+        with:
+          name: package-${{ matrix.themes }}-react-elements
+          path: db-ui-react-element${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
+
+      - name: ⬆ Upload Package Artifact ${{ matrix.themes }}-v-elements
+        uses: ./.github/actions/upload-tar-artifact
+        with:
+          name: package-${{ matrix.themes }}-v-elements
+          path: db-ui-v-element${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz

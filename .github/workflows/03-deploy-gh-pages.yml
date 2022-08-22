@@ -3,6 +3,13 @@ name: Deploy to gh-pages
 
 on:
   workflow_call:
+    inputs:
+      release:
+        required: false
+        type: string
+      version:
+        required: false
+        type: string
 
 jobs:
   deploy:
@@ -23,8 +30,19 @@ jobs:
           name: build
           path: out
 
-      - name: ➕ Bundle current gh-pages
-        uses: ./.github/actions/bundle-gh-page
+      - name: ↔ Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
+      - name: 🔨 Build page
+        env:
+          RELEASE: ${{ inputs.release }}
+          VALID_SEMVER_VERSION: ${{ inputs.version }}
+          BRANCH: ${{ steps.extract_branch.outputs.branch }}
+        run: |
+          chmod +rx ./.github/scripts/build-gh-page.sh
+          ./.github/scripts/build-gh-page.sh
 
       - name: 🥅 Deploy to GH-Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -34,16 +52,16 @@ jobs:
 
       - name: 🖨️ Print gh-pages url
         env:
-          RELEASE: ${{ env.RELEASE }}
-          VALID_SEMVER_VERSION: ${{ env.VALID_SEMVER_VERSION }}
+          RELEASE: ${{ inputs.release }}
+          VALID_SEMVER_VERSION: ${{ inputs.version }}
+          BRANCH: ${{ steps.extract_branch.outputs.branch }}
         run: |
-          export BRANCH=${GITHUB_REF#refs/heads/}
           if [ $RELEASE == "true" ]
           then
             export URL=https://db-ui.github.io/elements
-          elif [ ! -d $VALID_SEMVER_VERSION ];
+          elif [ -n $VALID_SEMVER_VERSION ];
           then
-            export URL=https://db-ui.github.io/elements/version/${{ inputs.tag }}
+            export URL=https://db-ui.github.io/elements/version/$VALID_SEMVER_VERSION
           else
             export URL=https://db-ui.github.io/elements/review/${BRANCH}
           fi

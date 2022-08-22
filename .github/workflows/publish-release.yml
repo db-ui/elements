@@ -16,6 +16,14 @@ jobs:
     uses: ./.github/workflows/01-get-publish-version.yml
     needs: [init]
 
+  versionTest:
+    runs-on: ubuntu-latest
+    needs: [get-publish-version]
+    steps:
+      - name: 'Echo Version'
+        run: |
+          echo "Version: ${{ needs.get-publish-version.outputs.version }}"
+
   test:
     uses: ./.github/workflows/01-test.yml
     needs: [init]
@@ -43,10 +51,18 @@ jobs:
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
     needs: [validate, test, cypress, get-publish-version]
+    with:
+      release: ${{ needs.get-publish-version.outputs.release }}
+      version: ${{ needs.get-publish-version.outputs.version }}
 
   publishpackages:
     uses: ./.github/workflows/03-publish-packages.yml
     needs: [validate, test, cypress, get-publish-version]
+    secrets: inherit
+    with:
+      release: ${{ needs.get-publish-version.outputs.release }}
+      preRelease: ${{ needs.get-publish-version.outputs.preRelease }}
+      version: ${{ needs.get-publish-version.outputs.version }}
 
   changeloglatest:
     uses: ./.github/workflows/04-changelog.yml

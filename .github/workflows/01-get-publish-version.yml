@@ -3,11 +3,26 @@ name: Get and save publish version
 
 on:
   workflow_call:
+    # Map the workflow outputs to job outputs
+    outputs:
+      release:
+        description: 'If the current tag is a release'
+        value: ${{ jobs.publish.outputs.release }}
+      preRelease:
+        description: 'If the current tag is a pre-release'
+        value: ${{ jobs.publish.outputs.preRelease }}
+      version:
+        description: 'Which version has the tag'
+        value: ${{ jobs.publish.outputs.version }}
 
 jobs:
   publish:
     name: Get and save publish version
     runs-on: ubuntu-latest
+    outputs:
+      release: ${{ steps.releaseCheck.outputs.release }}
+      preRelease: ${{ steps.releaseCheck.outputs.preRelease }}
+      version: ${{ steps.getVersion.outputs.version }}
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
@@ -16,10 +31,17 @@ jobs:
         uses: ./.github/actions/npm-cache
 
       - name: 💃🕺 Check if release or prerelease
+        id: releaseCheck
         run: |
           chmod +rx ./.github/scripts/get-release.sh
           OUTPUT=$(./.github/scripts/get-release.sh)
-          echo "$OUTPUT" >> $GITHUB_ENV
+          if [[ $OUTPUT == "RELEASE" ]];
+          then
+            echo "::set-output name=release::true"
+          elif [[ $OUTPUT == "PRE_RELEASE" ]];
+          then
+            echo "::set-output name=preRelease::true"
+          fi
         env:
           GITHUB_REF: ${{ github.ref }}
           GITHUB_ACTOR: ${{ github.actor }}
@@ -28,15 +50,16 @@ jobs:
           GITHUB_PRE_RELEASE: ${{ github.event.release.prerelease }}
 
       - name: 🏷 Get and Set Package Version on Env
+        id: getVersion
         env:
-          RELEASE: ${{ env.RELEASE }}
-          PRE_RELEASE: ${{ env.PRE_RELEASE }}
+          RELEASE: ${{ steps.releaseCheck.outputs.release }}
+          PRE_RELEASE: ${{ steps.releaseCheck.outputs.preRelease }}
         run: |
           chmod +rx ./.github/scripts/package-version.sh
           OUTPUT=$(./.github/scripts/package-version.sh)
-          echo "VALID_SEMVER_VERSION=$(echo OUTPUT)" >> $GITHUB_ENV
+          echo "::set-output name=version::$OUTPUT"
 
       - name: 🌳 Log Valid Version
         env:
-          VALID_SEMVER_VERSION: ${{ env.VALID_SEMVER_VERSION }}
+          VALID_SEMVER_VERSION: ${{ steps.getVersion.outputs.version }}
         run: echo "$VALID_SEMVER_VERSION"
