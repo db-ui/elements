@@ -30,7 +30,7 @@
     "@angular-devkit/build-angular": "12.2.18",
     "@angular/cli": "12.2.18",
     "@angular/compiler-cli": "12.2.16",
-    "@types/jest": "28.1.6",
+    "@types/jest": "28.1.7",
     "codelyzer": "6.0.2",
     "injection-js": "2.4.0",
     "jest": "28.1.3",
