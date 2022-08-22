@@ -67,10 +67,10 @@ jobs:
           PRE_RELEASE: ${{ inputs.preRelease }}
           NAME: ${{ steps.extract.outputs.name }}
         run: |
-          if [ $RELEASE == "true" ]
+          if [[ $RELEASE == "true" ]];
           then
             export URL=https://db-ui.github.io/elements
-          elif [ $PRE_RELEASE == "true" ];
+          elif [[ $PRE_RELEASE == "true" ]];
           then
             export URL=https://db-ui.github.io/elements/version/${NAME}
           else

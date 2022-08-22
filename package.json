@@ -23,9 +23,7 @@
     "lint:markdownlint": "markdownlint -c .markdown-lint.yml **/*.md",
     "lint:stylelint": "stylelint **/*.scss",
     "lint:eslint": "eslint . --ext .ts,.js --ignore-path .gitignore  --ignore-path .eslintignore && npm run lint --workspace=@db-ui/elements",
-    "generate": "npm run generate --workspace=@db-ui/elements",
-    "postpublish": "npm run publish-npm",
-    "publish-npm": "npm publish --access public --ignore-scripts --@OWNER:registry='https://registry.npmjs.org'"
+    "generate": "npm run generate --workspace=@db-ui/elements"
   },
   "workspaces": [
     "packages/*"
