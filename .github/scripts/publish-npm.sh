@@ -42,18 +42,23 @@ if [[ $PRE_RELEASE == 'true' ]]; then
 fi
 
 echo "📰 Publish Package to Registry ($NEXT)"
-for REGISTRY in NPM GITHUB;
+for REGISTRY in 'GITHUB' 'NPM'
 do
-  echo "🔑 Authenticate $REGISTRY NPM Registry"
-  if [[ $REGISTRY == 'NPM' ]]; then
-    npm config set registry https://registry.npmjs.org/
-    npm set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
-  elif [[ $REGISTRY == 'GITHUB' ]]; then
+  echo "🔒 Authenticate $REGISTRY NPM Registry"
+  if [[ $REGISTRY == 'GITHUB' ]]; then
     npm config set registry https://npm.pkg.github.com
     npm set //npm.pkg.github.com/:_authToken "$GPR_TOKEN"
+    echo "🔑 Authenticated with GITHUB"
+  elif [[ $REGISTRY == 'NPM' ]]; then
+    npm config set registry https://registry.npmjs.org/
+    npm set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
+    echo "🔑 Authenticated with NPM"
+  else
+    echo "Could not authenticate with $REGISTRY"
+    exit 1
   fi
-  npm publish db-ui-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --quiet "$NEXT"
-  npm publish db-ui-ngx-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --quiet "$NEXT"
-  npm publish db-ui-react-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --quiet "$NEXT"
-  npm publish db-ui-v-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --quiet "$NEXT"
+  npm publish --quiet db-ui-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz "$NEXT"
+  npm publish --quiet db-ui-ngx-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz "$NEXT"
+  npm publish --quiet db-ui-react-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz "$NEXT"
+  npm publish --quiet db-ui-v-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz "$NEXT"
 done
