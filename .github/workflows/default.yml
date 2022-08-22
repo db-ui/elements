@@ -30,7 +30,7 @@ jobs:
 
   build-stencil-targets:
     uses: ./.github/workflows/01-build-stencil-targets.yml
-    needs: [init]
+    needs: [init, test, validate]
 
   build-showcases:
     uses: ./.github/workflows/01-build-showcases.yml
