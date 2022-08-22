@@ -2,9 +2,10 @@ name: Publish Changelog
 
 on:
   workflow_call:
-    version:
-      required: true
-      type: string
+    inputs:
+      version:
+        required: true
+        type: string
 
 jobs:
   changelog:
