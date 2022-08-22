@@ -48,7 +48,7 @@ if [[ $PRE_RELEASE == 'true' ]]; then
 fi
 
 echo "📰 Publish Package to Registry (--dry-run $NEXT)"
-npm publish @db-ui/elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --dry-run "$NEXT"
-npm publish @db-ui/ngx-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --dry-run "$NEXT"
-npm publish @db-ui/react-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --dry-run "$NEXT"
-npm publish @db-ui/v-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --dry-run "$NEXT"
+npm publish db-ui-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --dry-run "$NEXT"
+npm publish db-ui-ngx-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --dry-run "$NEXT"
+npm publish db-ui-react-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --dry-run "$NEXT"
+npm publish db-ui-v-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --dry-run "$NEXT"

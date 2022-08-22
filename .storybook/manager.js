@@ -1,12 +1,10 @@
 import { addons } from '@storybook/addons';
 import { create } from '@storybook/theming/create';
 
-const { version } = require('../package.json');
-
 addons.setConfig({
   theme: create({
     base: 'light',
-    brandTitle: name + 'DB-UI Elements ' + version,
+    brandTitle: name + 'DB-UI Elements',
     // brandImage: '/static/db_logo.svg',
 
     colorSecondary: '#EC0016',
