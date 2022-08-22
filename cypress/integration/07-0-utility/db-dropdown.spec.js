@@ -1,6 +1,6 @@
 context('db-dropdown', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=utility-dropdown-intro--page&viewMode=story');
+    cy.visit('/iframe.html?id=07-utility-dropdown-intro--page&viewMode=story');
   });
 
   it('db-dropdown - snapshot', () => {

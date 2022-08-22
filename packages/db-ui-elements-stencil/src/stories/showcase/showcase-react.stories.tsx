@@ -1,7 +1,7 @@
 import './showcase.css';
 
 export default {
-  title: 'Intro/Showcases',
+  title: '00-Intro/Showcases',
   parameters: {
     layout: 'fullscreen'
   }

@@ -1,6 +1,6 @@
 context('db-link', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=navigation-link-intro--page&viewMode=story');
+    cy.visit('/iframe.html?id=02-navigation-link-intro--page&viewMode=story');
   });
 
   it('db-link - snapshot', () => {

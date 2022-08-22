@@ -1,6 +1,8 @@
 context('db-textarea', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=data-input-textarea-intro--page&viewMode=story');
+    cy.visit(
+      '/iframe.html?id=05-data-input-textarea-intro--page&viewMode=story'
+    );
   });
 
   it('db-textarea - snapshot', () => {

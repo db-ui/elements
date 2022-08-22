@@ -1,6 +1,6 @@
 context('db-icon', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=data-display-icon-intro--page&viewMode=story');
+    cy.visit('/iframe.html?id=04-data-display-icon-intro--page&viewMode=story');
   });
 
   it('db-icon - snapshot', () => {

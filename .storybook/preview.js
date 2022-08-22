@@ -16,15 +16,16 @@ export const parameters = {
     storySort: {
       method: 'alphabetical',
       order: [
-        'Intro',
+        '00-Intro',
         ['Welcome', 'Getting Started', 'Frameworks', 'Showcases'],
-        'Layout',
-        'Navigation',
-        'Data-Display',
-        'Data-Input',
-        'Feedback',
-        'Utility',
-        'Development'
+        '01-Layout',
+        '02-Navigation',
+        '03-Action',
+        '04-Data-Display',
+        '05-Data-Input',
+        '06-Feedback',
+        '07-Utility',
+        '99-Development'
       ]
     }
   }

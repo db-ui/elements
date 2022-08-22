@@ -1,6 +1,6 @@
 context('db-tag', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=data-display-tag-intro--page&viewMode=story');
+    cy.visit('/iframe.html?id=04-data-display-tag-intro--page&viewMode=story');
   });
 
   it('db-tag - snapshot', () => {

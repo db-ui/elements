@@ -16,12 +16,13 @@ jobs:
             01-0-layout,
             02-0-navigation,
             02-1-navigation,
-            03-0-data-display,
-            03-1-data-display,
-            04-0-data-input,
-            04-1-data-input,
-            05-0-feedback,
-            06-0-utility,
+            03-0-action,
+            04-0-data-display,
+            04-1-data-display,
+            05-0-data-input,
+            05-1-data-input,
+            06-0-feedback,
+            07-0-utility,
             99-0-showcases,
             99-1-showcases
           ]
@@ -42,6 +43,7 @@ jobs:
         # Install NPM dependencies and run all Cypress tests
         uses: cypress-io/github-action@v4
         with:
+          install: false
           start: npx http-server@14.1.1 out
           wait-on: 'http://localhost:8080'
           wait-on-timeout: 120

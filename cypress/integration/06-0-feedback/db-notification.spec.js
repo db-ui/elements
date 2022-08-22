@@ -1,7 +1,7 @@
 context('db-notification', () => {
   beforeEach(() => {
     cy.visit(
-      '/iframe.html?id=feedback-notification-intro--page&viewMode=story'
+      '/iframe.html?id=06-feedback-notification-intro--page&viewMode=story'
     );
   });
 

@@ -1,6 +1,8 @@
 context('db-linklist', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=navigation-linklist-intro--page&viewMode=story');
+    cy.visit(
+      '/iframe.html?id=02-navigation-linklist-intro--page&viewMode=story'
+    );
   });
 
   it('db-linklist - snapshot', () => {

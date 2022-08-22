@@ -1,6 +1,6 @@
 context('db-footer', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=navigation-footer-intro--page&viewMode=story');
+    cy.visit('/iframe.html?id=02-navigation-footer-intro--page&viewMode=story');
   });
 
   it('db-footer - snapshot', () => {

@@ -1,7 +1,7 @@
 context('db-overflow-menu', () => {
   beforeEach(() => {
     cy.visit(
-      '/iframe.html?id=utility-overflow-menu-intro--page&viewMode=story'
+      '/iframe.html?id=07-utility-overflow-menu-intro--page&viewMode=story'
     );
   });
 

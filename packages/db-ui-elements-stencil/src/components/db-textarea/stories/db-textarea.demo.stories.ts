@@ -1,5 +1,5 @@
 export default {
-  title: 'Data-Input/Textarea',
+  title: '05-Data-Input/Textarea',
   id: 'db-textarea',
   component: 'db-textarea',
   parameters: {

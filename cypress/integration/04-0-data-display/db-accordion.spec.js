@@ -1,7 +1,7 @@
 context('db-accordion', () => {
   beforeEach(() => {
     cy.visit(
-      '/iframe.html?id=data-display-accordion-intro--page&viewMode=story'
+      '/iframe.html?id=04-data-display-accordion-intro--page&viewMode=story'
     );
   });
   it('db-accordion - snapshot', () => {

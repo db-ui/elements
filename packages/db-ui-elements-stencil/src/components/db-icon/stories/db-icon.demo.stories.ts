@@ -1,7 +1,7 @@
 import { iconset } from '../iconset.array';
 
 export default {
-  title: 'Data-Display/Icon',
+  title: '04-Data-Display/Icon',
   id: 'db-icon',
   component: 'db-icon',
   parameters: {

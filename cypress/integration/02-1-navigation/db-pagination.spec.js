@@ -1,7 +1,7 @@
 context('db-pagination', () => {
   beforeEach(() => {
     cy.visit(
-      '/iframe.html?id=navigation-pagination-intro--page&viewMode=story'
+      '/iframe.html?id=02-navigation-pagination-intro--page&viewMode=story'
     );
   });
 

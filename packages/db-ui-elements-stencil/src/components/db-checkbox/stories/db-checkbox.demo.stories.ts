@@ -1,5 +1,5 @@
 export default {
-  title: 'Data-Input/Checkbox',
+  title: '05-Data-Input/Checkbox',
   id: 'db-checkbox',
   component: 'db-checkbox',
   parameters: {

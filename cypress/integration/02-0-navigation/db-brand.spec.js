@@ -1,6 +1,6 @@
 context('db-brand', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=navigation-brand-intro--page&viewMode=story');
+    cy.visit('/iframe.html?id=02-navigation-brand-intro--page&viewMode=story');
   });
 
   it('db-brand - snapshot', () => {

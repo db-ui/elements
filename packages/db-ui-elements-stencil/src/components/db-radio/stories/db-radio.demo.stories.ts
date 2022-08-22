@@ -1,5 +1,5 @@
 export default {
-  title: 'Data-Input/Radio',
+  title: '05-Data-Input/Radio',
   id: 'db-radio',
   component: 'db-radio',
   parameters: {

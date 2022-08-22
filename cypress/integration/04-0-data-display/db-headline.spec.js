@@ -1,7 +1,7 @@
 context('db-headline', () => {
   beforeEach(() => {
     cy.visit(
-      '/iframe.html?id=data-display-headline-intro--page&viewMode=story'
+      '/iframe.html?id=04-data-display-headline-intro--page&viewMode=story'
     );
   });
   it('db-headline - snapshot', () => {

@@ -1,6 +1,6 @@
 context('db-select', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=data-input-select-intro--page&viewMode=story');
+    cy.visit('/iframe.html?id=05-data-input-select-intro--page&viewMode=story');
   });
 
   it('db-select - snapshot', () => {

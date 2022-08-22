@@ -1,6 +1,8 @@
 context('db-sidenavi', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=navigation-sidenavi-intro--page&viewMode=story');
+    cy.visit(
+      '/iframe.html?id=02-navigation-sidenavi-intro--page&viewMode=story'
+    );
   });
 
   it('db-sidenavi - snapshot', () => {
