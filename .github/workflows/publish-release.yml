@@ -42,14 +42,14 @@ jobs:
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
-    needs: [validate, test, cypress, get-publish-version]
+    needs: [cypress, get-publish-version]
     with:
       release: ${{ needs.get-publish-version.outputs.release }}
       preRelease: ${{ needs.get-publish-version.outputs.preRelease }}
 
   publishpackages:
     uses: ./.github/workflows/03-publish-packages.yml
-    needs: [validate, test, cypress, get-publish-version]
+    needs: [cypress, get-publish-version]
     secrets: inherit
     with:
       release: ${{ needs.get-publish-version.outputs.release }}
@@ -57,5 +57,7 @@ jobs:
       version: ${{ needs.get-publish-version.outputs.version }}
 
   changeloglatest:
-    uses: ./.github/workflows/04-changelog.yml
-    needs: [publishpackages]
+    uses: ./.github/workflows/03-changelog.yml
+    needs: [cypress, get-publish-version]
+    with:
+      version: ${{ needs.get-publish-version.outputs.version }}

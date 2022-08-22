@@ -2,6 +2,9 @@ name: Publish Changelog
 
 on:
   workflow_call:
+    version:
+      required: true
+      type: string
 
 jobs:
   changelog:
@@ -16,7 +19,8 @@ jobs:
       - name: Create changelog
         run: |
           echo 'CHANGELOG_TEXT<<EOF' >> $GITHUB_ENV
-          npx conventional-changelog-cli -h -p angular -r 0 >> $GITHUB_ENV
+          npm version --no-git-tag-version ${{ inputs.version }}
+          npx conventional-changelog-cli -h -p angular -r 1 >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
 
       - uses: actions/github-script@v6
