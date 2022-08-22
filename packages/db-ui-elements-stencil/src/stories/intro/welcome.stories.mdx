@@ -2,11 +2,82 @@ import { Meta } from '@storybook/addon-docs';
 
 <Meta title="Intro/Welcome" />
 
-# Welcome to DB UI Elements
+<db-headline variant="1">Welcome to DB UI Elements</db-headline>
 
-DB UI Elements is a library, that provides style conform UI components for Deutsche Bahn web
-frontends. It's designed to work with any web framework — or even without one.
+DB UI Elements is a library, that provides style conform UI components for Deutsche Bahn web frontends.
 
-[<db-button variant="primary">Getting Started</db-button>](/story/intro-getting-started--page)
+<db-cards>
 
-[<db-button variant="secondary">GitHub Repository</db-button>](https://github.com/db-ui/elements)
+[<db-card
+ header="Getting Started"
+ content="How to install and setup your environment and update db-ui-elements"
+ illustration="home">
+</db-card>](/story/intro-getting-started--page)
+
+[<db-card
+    header="GitHub Repository"
+    content="Contribute to db-ui-elements or leave a comment"
+    illustration="heart">
+</db-card>](https://github.com/db-ui/elements)
+
+</db-cards>
+
+<db-headline>Frameworks</db-headline>
+
+<db-cards>
+
+[<db-card
+ header="Angular"
+ content="How to install db-ui-elements inside your Angular application"
+ image="./assets/angular.svg">
+</db-card>](/story/intro-frameworks-angular--page)
+
+[<db-card
+ header="Pure JavaScript"
+ content="How to install db-ui-elements inside your JavaScript application"
+ image="./assets/javascript.svg">
+</db-card>](/story/intro-frameworks-javascript--page)
+
+[<db-card
+ header="React"
+ content="How to install db-ui-elements inside your React application"
+ image="./assets/react.svg">
+</db-card>](/story/intro-frameworks-react--page)
+
+[<db-card
+ header="Vue"
+ content="How to install db-ui-elements inside your Vue application"
+ image="./assets/vue.svg">
+</db-card>](/story/intro-frameworks-vue--page)
+
+</db-cards>
+
+<db-headline>Showcases</db-headline>
+
+<db-cards>
+
+[<db-card
+ header="Angular NG Build"
+ content="Angular app including db-ui-elements build with 'ng build'"
+ image="./assets/angular-showcase.svg">
+</db-card>](/story/intro-showcases--angular-ng-build)
+
+[<db-card
+ header="React CRA Build"
+ content="React app including db-ui-elements build with 'react-scripts build'"
+ image="./assets/react-showcase.svg">
+</db-card>](/story/intro-showcases--react-cra-build)
+
+[<db-card
+ header="React + Tailwind"
+ content="React app including db-ui-elements and tailwind build with 'react-scripts build'"
+ image="./assets/react-wind-showcase.svg">
+</db-card>](/story/intro-showcases--react-and-tailwind)
+
+[<db-card
+ header="Vue Vite Build"
+ content="Vue app including db-ui-elements build with 'vite build'"
+ image="./assets/vue-showcase.svg">
+</db-card>](/story/intro-showcases--vue-vite-build)
+
+</db-cards>
