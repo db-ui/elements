@@ -6,9 +6,11 @@ on:
     inputs:
       release:
         required: false
+        default: 'false'
         type: string
       preRelease:
         required: false
+        default: 'false'
         type: string
       version:
         required: true

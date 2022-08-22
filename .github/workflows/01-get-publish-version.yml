@@ -49,11 +49,17 @@ jobs:
           GITHUB_RELEASE: ${{ github.event.release.release }}
           GITHUB_PRE_RELEASE: ${{ github.event.release.prerelease }}
 
+      - name: ↔ Extract tag name
+        shell: bash
+        run: echo "##[set-output name=tag;]$(echo ${GITHUB_REF#refs/tags/})"
+        id: extractTag
+
       - name: 🏷 Get and Set Package Version on Env
         id: getVersion
         env:
           RELEASE: ${{ steps.releaseCheck.outputs.release }}
           PRE_RELEASE: ${{ steps.releaseCheck.outputs.preRelease }}
+          TAG: ${{ steps.extractTag.outputs.tag }}
         run: |
           chmod +rx ./.github/scripts/package-version.sh
           OUTPUT=$(./.github/scripts/package-version.sh)

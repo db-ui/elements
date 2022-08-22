@@ -6,9 +6,11 @@ on:
     inputs:
       release:
         required: false
+        default: 'false'
         type: string
-      version:
+      preRelease:
         required: false
+        default: 'false'
         type: string
 
 jobs:
@@ -30,16 +32,25 @@ jobs:
           name: build
           path: out
 
-      - name: ↔ Extract branch name
+      - name: ↔ Extract branch/tag name
         shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
+        env:
+          RELEASE: ${{ inputs.release }}
+          VALID_SEMVER_VERSION: ${{ inputs.version }}
+        run: |
+          if [[ $RELEASE == "true" || $PRE_RELEASE == "true" ]]
+          then
+            echo "##[set-output name=name;]$(echo ${GITHUB_REF#refs/tags/})"
+          else
+            echo "##[set-output name=name;]$(echo ${GITHUB_REF#refs/heads/})"
+          fi
+        id: extract
 
       - name: 🔨 Build page
         env:
           RELEASE: ${{ inputs.release }}
           VALID_SEMVER_VERSION: ${{ inputs.version }}
-          BRANCH: ${{ steps.extract_branch.outputs.branch }}
+          NAME: ${{ steps.extract.outputs.name }}
         run: |
           chmod +rx ./.github/scripts/build-gh-page.sh
           ./.github/scripts/build-gh-page.sh
@@ -53,17 +64,17 @@ jobs:
       - name: 🖨️ Print gh-pages url
         env:
           RELEASE: ${{ inputs.release }}
-          VALID_SEMVER_VERSION: ${{ inputs.version }}
-          BRANCH: ${{ steps.extract_branch.outputs.branch }}
+          PRE_RELEASE: ${{ inputs.preRelease }}
+          NAME: ${{ steps.extract.outputs.name }}
         run: |
           if [ $RELEASE == "true" ]
           then
             export URL=https://db-ui.github.io/elements
-          elif [ -n $VALID_SEMVER_VERSION ];
+          elif [ $PRE_RELEASE == "true" ];
           then
-            export URL=https://db-ui.github.io/elements/version/$VALID_SEMVER_VERSION
+            export URL=https://db-ui.github.io/elements/version/${NAME}
           else
-            export URL=https://db-ui.github.io/elements/review/${BRANCH}
+            export URL=https://db-ui.github.io/elements/review/${NAME}
           fi
           echo "URL: $URL"
           echo "### GH-Pages URL :rocket: <br> <br> $URL" >> $GITHUB_STEP_SUMMARY

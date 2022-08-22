@@ -53,7 +53,7 @@ jobs:
     needs: [validate, test, cypress, get-publish-version]
     with:
       release: ${{ needs.get-publish-version.outputs.release }}
-      version: ${{ needs.get-publish-version.outputs.version }}
+      preRelease: ${{ needs.get-publish-version.outputs.preRelease }}
 
   publishpackages:
     uses: ./.github/workflows/03-publish-packages.yml

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "➕ Create temp or public dir: $BRANCH"
+echo "➕ Create temp or public dir: $NAME"
 if [[ $RELEASE == "true" ]]; then
   mkdir temp
   echo "Created 'temp' dir"
@@ -29,17 +29,17 @@ if [[ $RELEASE == "true" ]]; then
   if [ -d ./temp/version ]; then
     mv ./temp/version ./public
   fi
-elif [[ -n $VALID_SEMVER_VERSION ]]; then
+elif [[ $PRE_RELEASE == "true" ]]; then
   if [[ ! -d ./public/version ]]; then
     mkdir ./public/version
   fi
-  mv ./out ./public/version/"$VALID_SEMVER_VERSION"
+  mv ./out ./public/version/"$NAME"
 else
   if [[ ! -d ./public/review ]]; then
     mkdir ./public/review
   fi
-  if [[ -d ./public/review/"$BRANCH" ]]; then
-    rm -rf ./public/review/"$BRANCH"
+  if [[ -d ./public/review/"$NAME" ]]; then
+    rm -rf ./public/review/"$NAME"
   fi
-  mv ./out ./public/review/"$BRANCH"
+  mv ./out ./public/review/"$NAME"
 fi
