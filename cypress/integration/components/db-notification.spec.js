@@ -5,6 +5,9 @@ context('db-notification', () => {
     );
   });
 
+  it('db-notification - snapshot', () => {
+    cy.snap('db-notification', 0.37);
+  });
   it('Shows a simple notification', function () {
     cy.get('db-notifications')
       .eq(0)

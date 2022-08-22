@@ -1,6 +1,6 @@
 # API Docs
 
-## Style Dependencies
+<!-- ## Style Dependencies
 
 Add the following styles to your application. If you have added the base dependencies already for another component, don't do again.
 
@@ -31,7 +31,7 @@ Add the following styles to your application. If you have added the base depende
 
 // component style
 @import url({path}/themes/{theme}/css/01-elements/link/link.vars.css);
-```
+``` -->
 <!-- Auto Generated Below -->
 
 

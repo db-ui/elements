@@ -5,6 +5,10 @@ context('db-button', () => {
 
   const selector = 'db-button > button';
 
+  it('db-button - snapshot', () => {
+    cy.snap('db-button', 0.2);
+  });
+
   it('Simple Button exists', function () {
     cy.get(selector).eq(0).contains('Button').click();
   });
