@@ -31,34 +31,34 @@ if [[ $DBUI_THEME != 'default' ]]; then
 fi
 
 echo "📦 Create packages"
-npm pack --workspace=@db-ui/elements"$PACKAGE_ENDING"
-npm pack --workspace=@db-ui/ngx-elements"$PACKAGE_ENDING"
-npm pack --workspace=@db-ui/react-elements"$PACKAGE_ENDING"
-npm pack --workspace=@db-ui/v-elements"$PACKAGE_ENDING"
+npm pack --quiet --workspace=@db-ui/elements"$PACKAGE_ENDING"
+npm pack --quiet --workspace=@db-ui/ngx-elements"$PACKAGE_ENDING"
+npm pack --quiet --workspace=@db-ui/react-elements"$PACKAGE_ENDING"
+npm pack --quiet --workspace=@db-ui/v-elements"$PACKAGE_ENDING"
 
-NEXT=""
+TAG="latest"
 if [[ $PRE_RELEASE == 'true' ]]; then
-  NEXT="--tag next"
+  TAG="v${VALID_SEMVER_VERSION::1}-next"
 fi
 
-echo "📰 Publish Package to Registry ($NEXT)"
+echo "📰 Publish Package to Registry with tag: $TAG)"
 for REGISTRY in 'GITHUB' 'NPM'
 do
   echo "🔒 Authenticate $REGISTRY NPM Registry"
   if [[ $REGISTRY == 'GITHUB' ]]; then
-    npm config set registry https://npm.pkg.github.com
+    npm config set @db-ui:registry https://npm.pkg.github.com
     npm set //npm.pkg.github.com/:_authToken "$GPR_TOKEN"
     echo "🔑 Authenticated with GITHUB"
   elif [[ $REGISTRY == 'NPM' ]]; then
-    npm config set registry https://registry.npmjs.org/
+    npm config set @db-ui:registry https://registry.npmjs.org/
     npm set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
     echo "🔑 Authenticated with NPM"
   else
     echo "Could not authenticate with $REGISTRY"
     exit 1
   fi
-  npm publish --quiet db-ui-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz "$NEXT"
-  npm publish --quiet db-ui-ngx-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz "$NEXT"
-  npm publish --quiet db-ui-react-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz "$NEXT"
-  npm publish --quiet db-ui-v-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz "$NEXT"
+  npm publish --tag "$TAG" db-ui-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz
+  npm publish --tag "$TAG" db-ui-ngx-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz
+  npm publish --tag "$TAG" db-ui-react-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz
+  npm publish --tag "$TAG" db-ui-v-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz
 done
