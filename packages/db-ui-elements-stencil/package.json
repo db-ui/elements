@@ -28,7 +28,7 @@
     "validate": "pretty-quick --staged && npm run lint",
     "start-stencil": "stencil build --dev --watch --serve",
     "clean-start": "rm -rf dist loader node_modules www && npm ci && npm run build && npm run start -- --no-manager-cache",
-    "test": "stencil test --spec --coverage --reporters=default --reporters=jest-junit",
+    "test": "stencil test --spec --coverage",
     "test.watch": "stencil test --spec --watchAll",
     "generate": "stencil generate",
     "start": "npm run start-stencil"
