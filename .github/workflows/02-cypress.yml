@@ -45,6 +45,7 @@ jobs:
         with:
           install: false
           start: npx http-server@14.1.1 out
+          command: CYPRESS_CACHE_FOLDER=./tmp/Cypress cypress run
           wait-on: 'http://localhost:8080'
           wait-on-timeout: 120
           config: pageLoadTimeout=100000,baseUrl=http://localhost:8080

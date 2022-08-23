@@ -23,4 +23,4 @@ jobs:
         if: steps.npm-cache.outputs.cache-hit != 'true'
         uses: bahmutov/npm-install@v1
         with:
-          install-command: npm ci --ignore-scripts
+          install-command: CYPRESS_CACHE_FOLDER=./tmp/Cypress npm ci --ignore-scripts
