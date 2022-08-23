@@ -46,7 +46,6 @@ jobs:
           GITHUB_REF: ${{ github.ref }}
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_COMMITISH: ${{ github.event.release.target_commitish }}
-          GITHUB_RELEASE: ${{ github.event.release.release }}
           GITHUB_PRE_RELEASE: ${{ github.event.release.prerelease }}
 
       - name: ↔ Extract tag name
