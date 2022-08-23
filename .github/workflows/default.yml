@@ -16,6 +16,7 @@ jobs:
       - name: 💻 Install dependencies
         uses: cypress-io/github-action@v4
         with:
+          working-directory: e2e
           runTests: false
 
   test:

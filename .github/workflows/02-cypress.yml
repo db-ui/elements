@@ -36,8 +36,8 @@ jobs:
           name: build
           path: out
 
-      - name: 🛫 Start server
-        run: npx http-server@14.1.1 out
+      - name: ➡ Move out in e2e
+        run: mv out e2e
 
       - name: 🧪 Cypress run
         # Install NPM dependencies and run all Cypress tests
@@ -45,6 +45,7 @@ jobs:
         with:
           install: false
           working-directory: e2e
+          start: npx http-server@14.1.1 out
           wait-on: 'http://localhost:8080'
           wait-on-timeout: 120
           config: pageLoadTimeout=100000,baseUrl=http://localhost:8080
