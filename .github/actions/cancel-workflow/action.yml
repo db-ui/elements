@@ -10,3 +10,5 @@ runs:
           -H "Accept: application/vnd.github+json" \
           /repos/db-ui/elements/actions/runs/${{ github.run_id }}/cancel
       shell: bash
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
