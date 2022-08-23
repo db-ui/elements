@@ -1,1 +1,0 @@
-import{r as t,h as o,H as r}from"./p-fe3e10cc.js";const s=class{constructor(o){t(this,o)}render(){return o(r,null,o("slot",null))}};s.style=":host{margin-top:auto;margin-bottom:auto}";export{s as db_meta}
