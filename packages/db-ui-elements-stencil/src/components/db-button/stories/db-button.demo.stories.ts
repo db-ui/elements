@@ -3,9 +3,17 @@ import { iconset } from '../../db-icon/iconset.array';
 iconset.unshift('');
 
 export default {
-  title: 'Elements/Button',
+  title: '03-Action/Button',
   id: 'db-button',
   component: 'db-button',
+  parameters: {
+    // TODO: If we want to show canvas and docs
+    /* previewTabs: {
+      'storybook/docs/panel': { hidden: true },
+      canvas: { hidden: true }
+    },*/
+    viewMode: 'docs'
+  },
   argTypes: {
     text: {
       control: 'text',

@@ -52,3 +52,9 @@ jobs:
         with:
           name: output-target-${{ matrix.themes }}-${{ steps.path.outputs.framework }}
           path: packages/db-ui-elements-${{ steps.path.outputs.framework }}
+
+      - name: 💀 Killing me softly
+        uses: ./.github/actions/cancel-workflow
+        if: failure()
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

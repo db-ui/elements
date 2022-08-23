@@ -15,6 +15,9 @@ jobs:
   scan-secrets:
     uses: ./.github/workflows/00-scan-secrets.yml
 
+  install-cypress:
+    uses: ./.github/workflows/00-install-cypress.yml
+
   test:
     uses: ./.github/workflows/01-test.yml
     needs: [init]
@@ -42,7 +45,7 @@ jobs:
 
   cypress:
     uses: ./.github/workflows/02-cypress.yml
-    needs: [build-storybook]
+    needs: [install-cypress, build-storybook]
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml

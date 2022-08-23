@@ -17,7 +17,7 @@ const copyAllFiles = (dirPath) => {
         if (file.includes('spec.js')) {
           fse.copySync(
             fullPath,
-            './cypress/snapshots/base/All Integration Specs'
+            './e2e/cypress/snapshots/base/All Integration Specs'
           );
         } else {
           copyAllFiles(fullPath);
@@ -28,7 +28,7 @@ const copyAllFiles = (dirPath) => {
 };
 
 try {
-  copyAllFiles('./cypress/snapshots/base');
+  copyAllFiles('./e2e/cypress/snapshots/base');
 } catch (e) {
   console.log(e);
   process.exit(1);

@@ -1,7 +1,10 @@
 export default {
-  title: 'Elements/Input',
+  title: '05-Data-Input/Input',
   id: 'db-input',
   component: 'db-input',
+  parameters: {
+    viewMode: 'docs'
+  },
   argTypes: {
     ariainvalid: {
       control: {

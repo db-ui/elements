@@ -1,7 +1,10 @@
 export default {
-  title: 'Elements/Radio',
+  title: '05-Data-Input/Radio',
   id: 'db-radio',
   component: 'db-radio',
+  parameters: {
+    viewMode: 'docs'
+  },
   argTypes: {
     autofocus: {
       control: 'boolean'
