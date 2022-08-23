@@ -1,0 +1,63 @@
+---
+name: Test and publish to package registries after new GitHub release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  init:
+    uses: ./.github/workflows/00-init.yml
+
+  scan-secrets:
+    uses: ./.github/workflows/00-scan-secrets.yml
+
+  get-publish-version:
+    uses: ./.github/workflows/01-get-publish-version.yml
+    needs: [init]
+
+  test:
+    uses: ./.github/workflows/01-test.yml
+    needs: [init]
+
+  validate:
+    uses: ./.github/workflows/01-validate.yml
+    needs: [init]
+
+  build-stencil-targets:
+    uses: ./.github/workflows/01-build-stencil-targets.yml
+    needs: [init, test, validate]
+
+  build-showcases:
+    uses: ./.github/workflows/01-build-showcases.yml
+    needs: [build-stencil-targets]
+
+  build-storybook:
+    uses: ./.github/workflows/01-build-storybook.yml
+    needs: [build-showcases]
+
+  cypress:
+    uses: ./.github/workflows/02-cypress.yml
+    needs: [build-storybook]
+
+  deploy:
+    uses: ./.github/workflows/03-deploy-gh-pages.yml
+    needs: [cypress, get-publish-version]
+    with:
+      release: ${{ needs.get-publish-version.outputs.release }}
+      preRelease: ${{ needs.get-publish-version.outputs.preRelease }}
+
+  publishpackages:
+    uses: ./.github/workflows/03-publish-packages.yml
+    needs: [cypress, get-publish-version]
+    secrets: inherit
+    with:
+      release: ${{ needs.get-publish-version.outputs.release }}
+      preRelease: ${{ needs.get-publish-version.outputs.preRelease }}
+      version: ${{ needs.get-publish-version.outputs.version }}
+
+  changeloglatest:
+    uses: ./.github/workflows/03-changelog.yml
+    needs: [cypress, get-publish-version]
+    with:
+      version: ${{ needs.get-publish-version.outputs.version }}

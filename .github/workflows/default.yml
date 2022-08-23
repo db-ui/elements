@@ -1,7 +1,12 @@
 ---
 name: Default On-Push
 
-on: [push]
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - '!**'
 
 jobs:
   init:
@@ -28,7 +33,7 @@ jobs:
 
   build-stencil-targets:
     uses: ./.github/workflows/01-build-stencil-targets.yml
-    needs: [init]
+    needs: [init, test, validate]
 
   build-showcases:
     uses: ./.github/workflows/01-build-showcases.yml
@@ -44,10 +49,5 @@ jobs:
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
-    if: ${{ github.actor != 'dependabot[bot]' }}
-    needs: [validate, test, cypress]
-
-  publish:
-    uses: ./.github/workflows/03-npm-publish.yml
     if: ${{ github.actor != 'dependabot[bot]' }}
     needs: [validate, test, cypress]

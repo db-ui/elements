@@ -19,11 +19,11 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "build.default": "npm run build",
     "build.enterprise": "npm run build enterprise",
-    "build.local": "npm run build enterprise local",
     "build.watch": "stencil build --watch",
     "build.watch.enterprise": "npm run build.watch enterprise",
-    "build.watch.local": "npm run build.watch enterprise local",
+    "build.watch.local": "npm run build.watch enterprise",
     "lint": "eslint src/**/*{.ts,.tsx}",
     "validate": "pretty-quick --staged && npm run lint",
     "start-stencil": "stencil build --dev --watch --serve",
@@ -34,7 +34,7 @@
     "start": "npm run start-stencil"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.3.0",
+    "@faker-js/faker": "^7.4.0",
     "@stencil/angular-output-target": "0.4.0",
     "@stencil/core": "2.17.3",
     "@stencil/eslint-plugin": "0.4.0",
@@ -49,7 +49,7 @@
     "yargs": "17.5.1"
   },
   "dependencies": {
-    "@db-ui/core": "^2.0.0-47"
+    "@db-ui/core": "^2.0.0-48"
   },
   "license": "Apache-2.0",
   "publishConfig": {

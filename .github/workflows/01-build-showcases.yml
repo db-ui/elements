@@ -36,7 +36,7 @@ jobs:
           else
             echo '::set-output name=framework::vue'
           fi
-          echo '::set-output name=theme::local'
+          echo '::set-output name=theme::default'
         id: download-params
 
       - name: ⬇ Download Stencil ${{ steps.download-params.outputs.theme }}
