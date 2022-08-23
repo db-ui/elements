@@ -23,7 +23,9 @@
     "lint:markdownlint": "markdownlint -c .markdown-lint.yml **/*.md",
     "lint:stylelint": "stylelint **/*.scss",
     "lint:eslint": "eslint . --ext .ts,.js --ignore-path .gitignore  --ignore-path .eslintignore && npm run lint --workspace=@db-ui/elements",
-    "generate": "npm run generate --workspace=@db-ui/elements"
+    "generate": "npm run generate --workspace=@db-ui/elements",
+    "zeplin-connect": "zeplin connect",
+    "zeplin-connect-dev-mode": "zeplin connect --dev"
   },
   "workspaces": [
     "packages/*"
@@ -49,6 +51,8 @@
     "@types/estree": "1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.34.0",
     "@typescript-eslint/parser": "^5.32.0",
+    "@zeplin/cli": "^2.0.0",
+    "@zeplin/cli-connect-storybook-plugin": "^2.0.0",
     "axios": "^0.27.2",
     "babel-loader": "8.2.3",
     "babel-plugin-istanbul": "^6.1.1",
@@ -74,6 +78,7 @@
     "react-docgen-typescript-loader": "^3.7.2",
     "replace-in-file": "6.3.5",
     "start-server-and-test": "1.14.0",
+    "storybook-zeplin": "^1.7.2",
     "stylelint": "^14.9.1",
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-standard-scss": "^5.0.0",

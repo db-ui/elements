@@ -6,6 +6,10 @@ export default {
   title: 'Elements/Button',
   id: 'db-button',
   component: 'db-button',
+  parameters: {
+    zeplinLink:
+      'zpl://components?stid=63037ab49bdcb913c9228718&coid=6303837ffd6ab7136a5136c6'
+  },
   argTypes: {
     text: {
       control: 'text',

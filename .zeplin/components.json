@@ -1,0 +1,54 @@
+{
+  "plugins": [
+    {
+      "name": "@zeplin/cli-connect-storybook-plugin",
+      "config": {
+        "url": "https://db-ui.github.io/elements/"
+      }
+    }
+  ],
+  "projects": ["627e5bd265d3c367c49ee45a"],
+  "components": [
+    {
+      "path": "src/components/db-button/db-button.tsx",
+      "zeplinIds": ["628df9e5beda31bcefcb4877"],
+      "uxguide": {
+        "urlPath": "de/button"
+      },
+      "storybook": [
+        {
+          "kind": "Components/Button"
+        }
+      ]
+    },
+    {
+      "path": "src/components/db-button/db-button.tsx",
+      "zeplinIds": ["628df9e50d511bbb63f23e55"],
+      "uxguide": {
+        "urlPath": "de/button"
+      }
+    },
+    {
+      "path": "src/components/db-button/db-button.tsx",
+      "zeplinIds": ["628df9e711ca1bbc6a2b6a55"],
+      "uxguide": {
+        "urlPath": "de/button"
+      },
+      "storybook": [
+        {
+          "kind": "Components/Button"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "repository": "db-ui/elements"
+  },
+  "links": [
+    {
+      "name": "Marketingportal",
+      "type": "uxguide",
+      "url": "https://marketingportal.extranet.deutschebahn.com/"
+    }
+  ]
+}
