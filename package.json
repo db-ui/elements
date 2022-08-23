@@ -35,7 +35,6 @@
     "@babel/preset-typescript": "^7.16.7",
     "@commitlint/cli": "16.2.1",
     "@commitlint/config-conventional": "17.0.3",
-    "@cypress/code-coverage": "^3.9.12",
     "@storybook/addon-actions": "6.5.9",
     "@storybook/addon-controls": "6.5.10",
     "@storybook/addon-docs": "6.5.10",
