@@ -63,3 +63,7 @@ jobs:
         with:
           name: showcase-${{ matrix.showcases }}
           path: showcase/${{ matrix.showcases }}-showcase/dist
+
+      - name: 💀 Killing me softly
+        uses: ./.github/actions/cancel-workflow
+        if: failure()

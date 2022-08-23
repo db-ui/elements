@@ -25,3 +25,7 @@ jobs:
         with:
           name: build
           path: out
+
+      - name: 💀 Killing me softly
+        uses: ./.github/actions/cancel-workflow
+        if: failure()

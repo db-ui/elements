@@ -24,3 +24,7 @@ jobs:
         uses: bahmutov/npm-install@v1
         with:
           install-command: npm ci --ignore-scripts
+
+      - name: 💀 Killing me softly
+        uses: ./.github/actions/cancel-workflow
+        if: failure()

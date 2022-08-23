@@ -17,3 +17,7 @@ jobs:
 
       - name: 🔬 Run unit/snapshot tests
         run: npm test
+
+      - name: 💀 Killing me softly
+        uses: ./.github/actions/cancel-workflow
+        if: failure()

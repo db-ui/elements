@@ -69,3 +69,7 @@ jobs:
         with:
           name: cypress-videos
           path: e2e/cypress/videos
+
+      - name: 💀 Killing me softly
+        uses: ./.github/actions/cancel-workflow
+        if: failure()

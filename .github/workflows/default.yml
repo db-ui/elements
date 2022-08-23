@@ -11,13 +11,7 @@ jobs:
     uses: ./.github/workflows/00-scan-secrets.yml
 
   install-cypress:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 💻 Install dependencies
-        uses: cypress-io/github-action@v4
-        with:
-          working-directory: e2e
-          runTests: false
+    uses: ./.github/workflows/00-install-cypress.yml
 
   test:
     uses: ./.github/workflows/01-test.yml
