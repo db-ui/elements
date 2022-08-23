@@ -1,6 +1,6 @@
 {
   "name": "@db-ui/elements-monorepo",
-  "version": "0.14.4",
+  "version": "0.0.0",
   "scripts": {
     "prepare": "cd showcase/react-showcase && npm i && cd ../angular-showcase && npm i && cd ../vue-showcase && npm i && cd ../playground-showcase && npm i && cd ../../ && husky install",
     "start": "concurrently  \"npm run build.watch.enterprise --workspace=@db-ui/elements\" \"npm run start:storybook\"",
@@ -53,6 +53,7 @@
     "babel-loader": "8.2.3",
     "babel-plugin-istanbul": "^6.1.1",
     "concurrently": "7.3.0",
+    "conventional-changelog-cli": "^2.2.2",
     "cpr": "3.0.1",
     "cypress": "9.5.0",
     "cypress-visual-regression": "1.7.0",
@@ -63,6 +64,7 @@
     "eslint-plugin-storybook": "0.6.4",
     "eslint-plugin-vue": "^8.5.0",
     "file-system-cache": "1.0.5",
+    "find-versions-cli": "^4.0.0",
     "husky": "7.0.4",
     "iframe-resizer": "4.3.2",
     "jest-config": "27.5.1",

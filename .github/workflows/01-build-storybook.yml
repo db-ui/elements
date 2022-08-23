@@ -15,11 +15,11 @@ jobs:
       - name: 🔄 Init Cache
         uses: ./.github/actions/npm-cache
 
-      - name: ⬇ Download Stencil local
+      - name: ⬇ Download Stencil default
         uses: ./.github/actions/download-tar-artifact
         with:
           # It doesn't matter which framework we download for stencil
-          name: stencil-local-angular
+          name: stencil-default-angular
           path: packages/db-ui-elements-stencil
 
       - name: ⬇ Download Showcase angular dist folder

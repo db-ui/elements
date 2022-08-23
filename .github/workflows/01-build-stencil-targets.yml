@@ -12,9 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         targets: [ngx-elements, react-elements, v-elements]
-        # TODO: Use theme if we want to deploy different themes (at the moment local===enterprise===default)
-        #        themes: [local, enterprise]
-        themes: [local]
+        themes: [default, enterprise]
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
@@ -26,7 +24,9 @@ jobs:
         run: npm run build.${{ matrix.themes }} --workspace=@db-ui/elements
 
       - name: 🔨 Build Output Targets ${{ matrix.themes }}
-        run: npm run build --workspace=@db-ui/${{ matrix.targets }}
+        run: |
+          npm run build --workspace=@db-ui/${{ matrix.targets }}
+          cat ./packages/db-ui-elements-stencil/package.json
 
       - name: ↔ Get path for target
         run: |
