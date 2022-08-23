@@ -13,6 +13,15 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
+    ignore:
+      - dependency-name: 'ng-packagr'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/cli'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'jest-cli'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'typescript'
+        update-types: ['version-update:semver-major']
     pull-request-branch-name:
       separator: '-'
     # https://github.com/dependabot/dependabot-core/issues/5226#issuecomment-1179434437
@@ -21,6 +30,11 @@ updates:
     directory: '/showcase/angular-showcase'
     schedule:
       interval: 'weekly'
+    ignore:
+      - dependency-name: 'ng-packagr'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/cli'
+        update-types: ['version-update:semver-major']
     pull-request-branch-name:
       separator: '-'
   - package-ecosystem: 'npm'

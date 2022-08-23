@@ -49,7 +49,7 @@
     "yargs": "17.5.1"
   },
   "dependencies": {
-    "@db-ui/core": "^2.0.0-47"
+    "@db-ui/core": "^2.0.0-48"
   },
   "license": "Apache-2.0",
   "publishConfig": {
