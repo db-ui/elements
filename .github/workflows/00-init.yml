@@ -21,6 +21,7 @@ jobs:
 
       - name: 📥 Download deps default-npm-cache
         if: steps.npm-cache.outputs.cache-hit != 'true'
-        uses: bahmutov/npm-install@v1
+        uses: cypress-io/github-action@v2
         with:
-          install-command: CYPRESS_CACHE_FOLDER=./tmp/Cypress npm ci --ignore-scripts
+          install-command: npm ci --ignore-scripts
+          runTests: false
