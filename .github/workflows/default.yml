@@ -10,6 +10,14 @@ jobs:
   scan-secrets:
     uses: ./.github/workflows/00-scan-secrets.yml
 
+  install-cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 💻 Install dependencies
+        uses: cypress-io/github-action@v4
+        with:
+          runTests: false
+
   test:
     uses: ./.github/workflows/01-test.yml
     needs: [init]
@@ -37,7 +45,7 @@ jobs:
 
   cypress:
     uses: ./.github/workflows/02-cypress.yml
-    needs: [build-storybook]
+    needs: [install-cypress, build-storybook]
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml

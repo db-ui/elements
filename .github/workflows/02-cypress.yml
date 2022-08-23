@@ -30,26 +30,26 @@ jobs:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
 
-      - name: 🔄 Init Cache
-        uses: ./.github/actions/npm-cache
-
       - name: ⬇ Download build
         uses: ./.github/actions/download-tar-artifact
         with:
           name: build
           path: out
 
+      - name: 🛫 Start server
+        run: npx http-server@14.1.1 out
+
       - name: 🧪 Cypress run
         # Install NPM dependencies and run all Cypress tests
         uses: cypress-io/github-action@v4
         with:
+          install: false
           working-directory: e2e
-          start: npx http-server@14.1.1 out
           wait-on: 'http://localhost:8080'
           wait-on-timeout: 120
           config: pageLoadTimeout=100000,baseUrl=http://localhost:8080
           browser: chrome
-          spec: e2e/cypress/integration/${{ matrix.containers }}/*.js
+          spec: cypress/integration/${{ matrix.containers }}/*.js
           ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
 
       - name: 🛗 Upload Artifacts
