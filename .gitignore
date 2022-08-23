@@ -35,11 +35,11 @@ UserInterfaceState.xcuserstate
 packages/db-ui-poc-react/.env
 
 # Cypress
-cypress/videos/*
-cypress/screenshots/*
-cypress/results/*
-cypress/snapshots/actual
-cypress/snapshots/diff
+e2e/cypress/videos/*
+e2e/cypress/screenshots/*
+e2e/cypress/results/*
+e2e/cypress/snapshots/actual
+e2e/cypress/snapshots/diff
 
 
 coverage/

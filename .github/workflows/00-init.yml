@@ -20,7 +20,7 @@ jobs:
         id: 'npm-cache' # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
 
       - name: 📥 Download deps default-npm-cache
-        uses: cypress-io/github-action@v2
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        uses: bahmutov/npm-install@v1
         with:
           install-command: npm ci --ignore-scripts
-          runTests: false
