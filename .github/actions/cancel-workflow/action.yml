@@ -1,6 +1,10 @@
 ---
 name: 'Cancel Workflow'
 description: 'Cancel this workflow on failure'
+inputs:
+  token:
+    description: 'A Github PAT'
+    required: true
 runs:
   using: 'composite'
   steps:
@@ -11,4 +15,4 @@ runs:
           /repos/db-ui/elements/actions/runs/${{ github.run_id }}/cancel
       shell: bash
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ inputs.token }}
