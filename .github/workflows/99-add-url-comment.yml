@@ -19,16 +19,20 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number:context.issue.number
-            })
+            });
 
-            const body = `🔭🐙🐈 Test this branch here: https://${context.repo.owner}.github.io/${context.repo.repo}/review/${pr.head.ref}`
+            console.log("context.ref:", context.ref);
+            console.log("context.payload:", context.payload);
+            console.log("pr:", pr);
+
+            const body = `🔭🐙🐈 Test this branch here: https://${context.repo.owner}.github.io/${context.repo.repo}/review/${pr.head.ref}`;
 
             github.rest.pulls.createReviewComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.issue.number,
               body
-            })
+            });
 
       - name: 💀 Killing me softly
         uses: ./.github/actions/cancel-workflow
