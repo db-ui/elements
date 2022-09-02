@@ -18,7 +18,7 @@ jobs:
             const pr = await github.rest.pulls.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number:context.pull_request.number
+              pull_number:context.issue.number
             })
 
             const body = `🔭🐙🐈 Test this branch here: https://${context.repo.owner}.github.io/${context.repo.repo}/review/${pr.head.ref}`
@@ -26,7 +26,7 @@ jobs:
             github.rest.pulls.createReviewComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: context.pull_request.number,
+              pull_number: context.issue.number,
               body
             })
 
