@@ -3,7 +3,7 @@ name: On-Pull-Request opened
 
 on:
   pull_request:
-#    types: [opened]
+    types: [opened]
 
 permissions:
   pull-requests: write
