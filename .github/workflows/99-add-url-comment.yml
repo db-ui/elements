@@ -17,10 +17,10 @@ jobs:
           script: |
             const body = `🔭🐙🐈 Test this branch here: https://${context.repo.owner}.github.io/${context.repo.repo}/review/${context.payload.pull_request.head.ref}`;
 
-            github.rest.pulls.createReviewComment({
+            github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: context.issue.number,
+              issue_number: context.issue.number,
               body
             });
 
