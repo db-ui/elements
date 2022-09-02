@@ -1,5 +1,5 @@
 ---
-name: Deploy to gh-pages
+name: 💬 Add url for gh-page as issue comment to PR
 
 on:
   workflow_call:
@@ -12,25 +12,22 @@ on:
         required: false
         default: 'false'
         type: string
-
+      pr_number:
+        required: true
+        type: string
+      owner:
+        required: true
+        type: string
+      repo:
+        required: true
+        type: string
 jobs:
-  deploy:
-    name: Deploy
+  url:
+    name: 💬 Add url for gh-page as issue comment to PR
     runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
-
-      - name: 🔄 Init Cache
-        uses: ./.github/actions/npm-cache
-
-      - name: ⬇ Download build
-        uses: ./.github/actions/download-tar-artifact
-        with:
-          name: build
-          path: out
 
       - name: ↔ Extract branch/tag name
         shell: bash
@@ -46,22 +43,8 @@ jobs:
           fi
         id: extract
 
-      - name: 🔨 Build page
-        env:
-          RELEASE: ${{ inputs.release }}
-          PRE_RELEASE: ${{ inputs.preRelease }}
-          NAME: ${{ steps.extract.outputs.name }}
-        run: |
-          chmod +rx ./.github/scripts/build-gh-page.sh
-          ./.github/scripts/build-gh-page.sh
-
-      - name: 🥅 Deploy to GH-Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-
-      - name: 🖨️ Print gh-pages url
+      - name: 📡 Get gh-pages url
+        id: url
         env:
           RELEASE: ${{ inputs.release }}
           PRE_RELEASE: ${{ inputs.preRelease }}
@@ -69,8 +52,23 @@ jobs:
         run: |
           chmod +rx ./.github/scripts/get-gh-page-url.sh
           $URL=$(./.github/scripts/get-gh-page-url.sh)
-          echo "URL: $URL"
-          echo "### GH-Pages URL :rocket: <br> <br> $URL" >> $GITHUB_STEP_SUMMARY
+          echo '::set-output name=url::$URL'
+
+      - name: 📡 Add comment
+        uses: actions/github-script@v6
+        env:
+          URL: ${{ steps.url.outputs.url }}
+          PR_NUMBER: ${{ inputs.pr_number }}
+          OWNER: ${{ inputs.owner }}
+          REPO: ${{ inputs.repo }}
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: PR_NUMBER,
+              owner: $OWNER,
+              repo: $REPO,
+              body: '🔭🐙🐈 Test this branch here: $URL'
+            })
 
       - name: 💀 Killing me softly
         uses: ./.github/actions/cancel-workflow

@@ -1,0 +1,28 @@
+---
+name: On-Pull-Request opened
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  init:
+    uses: ./.github/workflows/00-init.yml
+
+  get-publish-version:
+    uses: ./.github/workflows/01-get-publish-version.yml
+    needs: [init]
+
+  add-url-comment:
+    uses: ./.github/workflows/99-add-url-comment.yml
+    needs: [get-publish-version]
+    with:
+      release: ${{ needs.get-publish-version.outputs.release }}
+      preRelease: ${{ needs.get-publish-version.outputs.preRelease }}
+      pr_number: ${{ context.pull_request.number }}
+      owner: ${{ context.repo.owner }}
+      repo: ${{ context.repo.repo }}
