@@ -67,8 +67,15 @@ jobs:
           PRE_RELEASE: ${{ inputs.preRelease }}
           NAME: ${{ steps.extract.outputs.name }}
         run: |
-          chmod +rx ./.github/scripts/get-gh-page-url.sh
-          $URL=$(./.github/scripts/get-gh-page-url.sh)
+          if [[ $RELEASE == "true" ]];
+          then
+            export URL=https://db-ui.github.io/elements
+          elif [[ $PRE_RELEASE == "true" ]];
+          then
+            export URL=https://db-ui.github.io/elements/version/${NAME}
+          else
+            export URL=https://db-ui.github.io/elements/review/${NAME}
+          fi
           echo "URL: $URL"
           echo "### GH-Pages URL :rocket: <br> <br> $URL" >> $GITHUB_STEP_SUMMARY
 
