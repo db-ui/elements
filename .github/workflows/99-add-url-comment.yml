@@ -15,17 +15,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const pr = await github.rest.pulls.get({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number:context.issue.number
-            });
-
-            console.log("context.ref:", context.ref);
-            console.log("context.payload:", context.payload);
-            console.log("pr:", pr);
-
-            const body = `🔭🐙🐈 Test this branch here: https://${context.repo.owner}.github.io/${context.repo.repo}/review/${pr.head.ref}`;
+            const body = `🔭🐙🐈 Test this branch here: https://${context.repo.owner}.github.io/${context.repo.repo}/review/${context.pull_request.head.ref}`;
 
             github.rest.pulls.createReviewComment({
               owner: context.repo.owner,
