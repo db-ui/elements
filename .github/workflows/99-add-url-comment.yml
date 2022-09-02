@@ -12,15 +12,6 @@ on:
         required: false
         default: 'false'
         type: string
-      pr_number:
-        required: true
-        type: string
-      owner:
-        required: true
-        type: string
-      repo:
-        required: true
-        type: string
 jobs:
   url:
     name: 💬 Add url for gh-page as issue comment to PR
@@ -58,15 +49,12 @@ jobs:
         uses: actions/github-script@v6
         env:
           URL: ${{ steps.url.outputs.url }}
-          PR_NUMBER: ${{ inputs.pr_number }}
-          OWNER: ${{ inputs.owner }}
-          REPO: ${{ inputs.repo }}
         with:
           script: |
             github.rest.issues.createComment({
-              issue_number: PR_NUMBER,
-              owner: $OWNER,
-              repo: $REPO,
+              issue_number: context.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               body: '🔭🐙🐈 Test this branch here: $URL'
             })
 

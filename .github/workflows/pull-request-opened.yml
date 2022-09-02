@@ -3,7 +3,7 @@ name: On-Pull-Request opened
 
 on:
   pull_request:
-    types: [opened]
+#    types: [opened]
 
 permissions:
   pull-requests: write
@@ -23,6 +23,3 @@ jobs:
     with:
       release: ${{ needs.get-publish-version.outputs.release }}
       preRelease: ${{ needs.get-publish-version.outputs.preRelease }}
-      pr_number: ${{ context.pull_request.number }}
-      owner: ${{ context.repo.owner }}
-      repo: ${{ context.repo.repo }}
