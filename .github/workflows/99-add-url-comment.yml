@@ -3,15 +3,6 @@ name: 💬 Add url for gh-page as issue comment to PR
 
 on:
   workflow_call:
-    inputs:
-      release:
-        required: false
-        default: 'false'
-        type: string
-      preRelease:
-        required: false
-        default: 'false'
-        type: string
 jobs:
   url:
     name: 💬 Add url for gh-page as issue comment to PR
@@ -20,42 +11,23 @@ jobs:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
 
-      - name: ↔ Extract branch/tag name
-        shell: bash
-        env:
-          RELEASE: ${{ inputs.release }}
-          PRE_RELEASE: ${{ inputs.preRelease }}
-        run: |
-          if [[ $RELEASE == "true" || $PRE_RELEASE == "true" ]]
-          then
-            echo "##[set-output name=name;]$(echo ${GITHUB_REF#refs/tags/})"
-          else
-            echo "##[set-output name=name;]$(echo ${GITHUB_REF#refs/heads/})"
-          fi
-        id: extract
-
-      - name: 📡 Get gh-pages url
-        id: url
-        env:
-          RELEASE: ${{ inputs.release }}
-          PRE_RELEASE: ${{ inputs.preRelease }}
-          NAME: ${{ steps.extract.outputs.name }}
-        run: |
-          chmod +rx ./.github/scripts/get-gh-page-url.sh
-          $URL=$(./.github/scripts/get-gh-page-url.sh)
-          echo '::set-output name=url::$URL'
-
       - name: 📡 Add comment
         uses: actions/github-script@v6
-        env:
-          URL: ${{ steps.url.outputs.url }}
         with:
           script: |
-            github.rest.issues.createComment({
-              issue_number: context.pull_request.number,
+            const pr = await github.rest.pulls.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '🔭🐙🐈 Test this branch here: $URL'
+              pull_number:context.pull_request.number
+            })
+
+            const body = `🔭🐙🐈 Test this branch here: https://${context.repo.owner}.github.io/${context.repo.repo}/review/${pr.head.ref}`
+
+            github.rest.pulls.createReviewComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.pull_request.number,
+              body
             })
 
       - name: 💀 Killing me softly
