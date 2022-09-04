@@ -70,7 +70,7 @@ Go into "inspect" mode in your browser and pick a mobile device. You will see th
 </div>
 ```
 
-As default (mobile) we use a fley layout and for tablet and desktop we use a grid layout.
+As default (mobile) we use a flex layout and for tablet and desktop we use a grid layout.
 
 We can do this with every shirt size `sm` `md` `lg` and for every class like `className="text-cyan-600 md:text-cyan-700 lg:text-cyan-800"`.
 
