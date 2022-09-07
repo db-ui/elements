@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ $NAME == "true" ]]; then
+  echo "Erro: Missing NAME variable"
+  exit 1
+fi
+
 echo "➕ Create temp or public dir: $NAME"
 if [[ $RELEASE == "true" ]]; then
   mkdir temp
@@ -11,7 +16,7 @@ fi
 
 
 echo "📥 Get gh-pages tar"
-wget -q https://github.com/db-ui/elements/tarball/gh-pages
+curl -L https://github.com/db-ui/elements/tarball/gh-pages --output gh-pages
 
 echo "📦 Unpack Tar"
 if [[ $RELEASE == "true" ]]; then
@@ -24,6 +29,7 @@ echo "📁 Bundle public"
 if [[ $RELEASE == "true" ]]; then
   echo "    Move ./out ./public"
   mv ./out ./public
+  cp -R ./public out
   if [ -d ./temp/review ]; then
     echo "    Move ./temp/review ./public"
     mv ./temp/review ./public
@@ -32,7 +38,9 @@ if [[ $RELEASE == "true" ]]; then
     echo "    Move ./temp/version ./public"
     mv ./temp/version ./public
   fi
-elif [[ $PRE_RELEASE == "true" ]]; then
+fi
+
+if [[ $PRE_RELEASE == "true" || $RELEASE == "true" ]]; then
   if [[ ! -d ./public/version ]]; then
     echo "    Make dir ./public/version"
     mkdir ./public/version
