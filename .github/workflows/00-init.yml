@@ -25,6 +25,11 @@ jobs:
         with:
           install-command: npm ci --ignore-scripts
 
+      - name: 💾  Save version in .env
+        id: setVersionToEnv
+        env:
+          VERSION: ${{ steps.extractTag.outputs.tag }}
+
       - name: 💀 Killing me softly
         uses: ./.github/actions/cancel-workflow
         if: failure()
