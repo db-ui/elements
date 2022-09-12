@@ -163,11 +163,7 @@ export class DbPagination {
 
   private navElement(children) {
     return (
-      <nav
-        class="cmp-pagination"
-        role="navigation"
-        aria-labelledby={this.ariaid}
-      >
+      <nav class="cmp-pagination" aria-labelledby={this.ariaid}>
         <h2 class="elm-headline " id={this.ariaid}>
           {this.arialabel.charAt(0).toUpperCase() + this.arialabel.slice(1)}
         </h2>

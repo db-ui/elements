@@ -8,7 +8,7 @@ describe('db-header', () => {
       html: `<db-header></db-header>`
     });
     expect(page.root).toEqualHtml(`
-    <db-header><header class="rea-header" role="banner">
+    <db-header><header class="rea-header">
     </db-header>
     `);
   });

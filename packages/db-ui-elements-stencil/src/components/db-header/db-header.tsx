@@ -7,7 +7,7 @@ import { Component, h } from '@stencil/core';
 export class DbHeader {
   render() {
     return (
-      <header class="rea-header" role="banner">
+      <header class="rea-header">
         <slot />
       </header>
     );

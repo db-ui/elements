@@ -2,7 +2,7 @@
 
 exports[`db-pagination renders a pagination with custom events 1`] = `
 <db-pagination ariaid="stable" arialabel="Pagination" count="3" currentpage="1" pages="9" textnext="Next" textprevious="Previous" titlenext="Goto next page" titlepagination="Page Number" titleprevious="Goto previous page">
-  <nav aria-labelledby="stable" class="cmp-pagination" role="navigation">
+  <nav aria-labelledby="stable" class="cmp-pagination">
     <h2 class="elm-headline" id="stable">
       Pagination
     </h2>
@@ -57,7 +57,7 @@ exports[`db-pagination renders a pagination with custom events 1`] = `
 
 exports[`db-pagination renders a pagination with slots 1`] = `
 <db-pagination ariaid="stable" arialabel="Pagination" count="2" currentpage="1" ellipsisend="" ellipsisstart="" pages="2" textnext="Next" textprevious="Previous" titlenext="Goto next page" titlepagination="Page Number" titleprevious="Goto previous page">
-  <nav aria-labelledby="stable" class="cmp-pagination" role="navigation">
+  <nav aria-labelledby="stable" class="cmp-pagination">
     <h2 class="elm-headline" id="stable">
       Pagination
     </h2>
