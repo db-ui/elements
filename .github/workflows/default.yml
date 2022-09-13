@@ -12,6 +12,10 @@ jobs:
   init:
     uses: ./.github/workflows/00-init.yml
 
+  get-publish-version:
+    uses: ./.github/workflows/01-get-publish-version.yml
+    needs: [init]
+
   scan-secrets:
     uses: ./.github/workflows/00-scan-secrets.yml
 
@@ -20,7 +24,10 @@ jobs:
 
   test:
     uses: ./.github/workflows/01-test.yml
-    needs: [init]
+    # todo change to init
+    needs: [get-publish-version]
+    with:
+      tag: ${{ needs.get-publish-version.outputs.tag }}
 
   validate:
     uses: ./.github/workflows/01-validate.yml

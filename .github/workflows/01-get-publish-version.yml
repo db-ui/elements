@@ -14,6 +14,9 @@ on:
       version:
         description: 'Which version has the tag'
         value: ${{ jobs.publish.outputs.version }}
+      tag:
+        description: 'Latest git tag'
+        value: ${{ jobs.publish.outputs.tag }}
 
 jobs:
   publish:
@@ -23,6 +26,7 @@ jobs:
       release: ${{ steps.releaseCheck.outputs.release }}
       preRelease: ${{ steps.releaseCheck.outputs.preRelease }}
       version: ${{ steps.getVersion.outputs.version }}
+      tag: ${{ steps.extractTag.outputs.tag }}
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
