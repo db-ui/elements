@@ -34,23 +34,23 @@ jobs:
       - name: 🔄 Init Cache
         uses: ./.github/actions/npm-cache
 
-      - name: 💃🕺 Check if release or prerelease
-        id: releaseCheck
-        run: |
-          chmod +rx ./.github/scripts/get-release.sh
-          OUTPUT=$(./.github/scripts/get-release.sh)
-          if [[ $OUTPUT == "RELEASE" ]];
-          then
-            echo "::set-output name=release::true"
-          elif [[ $OUTPUT == "PRE_RELEASE" ]];
-          then
-            echo "::set-output name=preRelease::true"
-          fi
-        env:
-          GITHUB_REF: ${{ github.ref }}
-          GITHUB_ACTOR: ${{ github.actor }}
-          GITHUB_COMMITISH: ${{ github.event.release.target_commitish }}
-          GITHUB_PRE_RELEASE: ${{ github.event.release.prerelease }}
+      # - name: 💃🕺 Check if release or prerelease
+      #   id: releaseCheck
+      #   run: |
+      #     chmod +rx ./.github/scripts/get-release.sh
+      #     OUTPUT=$(./.github/scripts/get-release.sh)
+      #     if [[ $OUTPUT == "RELEASE" ]];
+      #     then
+      #       echo "::set-output name=release::true"
+      #     elif [[ $OUTPUT == "PRE_RELEASE" ]];
+      #     then
+      #       echo "::set-output name=preRelease::true"
+      #     fi
+      #   env:
+      #     GITHUB_REF: ${{ github.ref }}
+      #     GITHUB_ACTOR: ${{ github.actor }}
+      #     GITHUB_COMMITISH: ${{ github.event.release.target_commitish }}
+      #     GITHUB_PRE_RELEASE: ${{ github.event.release.prerelease }}
 
       - name: ↔ Extract tag name
         shell: bash
