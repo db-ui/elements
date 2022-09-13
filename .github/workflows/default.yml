@@ -12,8 +12,8 @@ jobs:
   init:
     uses: ./.github/workflows/00-init.yml
 
-  get-publish-version:
-    uses: ./.github/workflows/01-get-publish-version.yml
+  get-latest-tag:
+    uses: ./.github/workflows/01-get-latest-tag.yml
     needs: [init]
 
   scan-secrets:
@@ -25,9 +25,9 @@ jobs:
   test:
     uses: ./.github/workflows/01-test.yml
     # todo change to init
-    needs: [get-publish-version]
+    needs: [get-latest-tag]
     with:
-      tag: ${{ needs.get-publish-version.outputs.tag }}
+      tag: ${{ needs.get-latest-tag.outputs.tag }}
 
   validate:
     uses: ./.github/workflows/01-validate.yml
@@ -48,7 +48,9 @@ jobs:
 
   build-storybook:
     uses: ./.github/workflows/01-build-storybook.yml
-    needs: [build-showcases]
+    needs: [build-showcases, get-latest-tag]
+    with:
+      tag: ${{ needs.get-latest-tag.outputs.tag }}
 
   cypress:
     uses: ./.github/workflows/02-cypress.yml
