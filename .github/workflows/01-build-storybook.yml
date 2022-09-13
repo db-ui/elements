@@ -57,6 +57,8 @@ jobs:
           path: showcase/vue-showcase/dist
 
       - name: 🔨 Build Storybook
+        env:
+          VERSION: ${{ inputs.tag }}
         run: |
           mv showcase/angular-showcase/dist/angular-showcase packages/db-ui-elements-stencil/www/angular-showcase
           mv showcase/playground-showcase/dist/playground-showcase packages/db-ui-elements-stencil/www/playground-showcase
