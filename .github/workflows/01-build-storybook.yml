@@ -3,6 +3,10 @@ name: Build Storybook
 
 on:
   workflow_call:
+    inputs:
+      tag:
+        required: true
+        type: string
 
 jobs:
   build-storybook:
