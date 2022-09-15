@@ -65,6 +65,8 @@ jobs:
           mv showcase/react-showcase/dist/react-showcase packages/db-ui-elements-stencil/www/react-showcase
           mv showcase/reactwind-showcase/dist/reactwind-showcase packages/db-ui-elements-stencil/www/reactwind-showcase
           mv showcase/vue-showcase/dist/vue-showcase packages/db-ui-elements-stencil/www/vue-showcase
+          touch .env
+          echo VERSION=${{ inputs.tag }} >> .env
           npm run build:storybook
 
       - name: ⬆ Upload build
