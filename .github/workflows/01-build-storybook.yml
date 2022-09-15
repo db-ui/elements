@@ -67,6 +67,8 @@ jobs:
           mv showcase/vue-showcase/dist/vue-showcase packages/db-ui-elements-stencil/www/vue-showcase
           touch .env
           echo VERSION=${{ inputs.tag }} >> .env
+          cat .env
+          ls -la
           npm run build:storybook
 
       - name: ⬆ Upload build
