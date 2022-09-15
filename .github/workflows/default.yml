@@ -24,10 +24,7 @@ jobs:
 
   test:
     uses: ./.github/workflows/01-test.yml
-    # todo change to init
-    needs: [get-latest-tag]
-    with:
-      tag: ${{ needs.get-latest-tag.outputs.tag }}
+    needs: [init]
 
   validate:
     uses: ./.github/workflows/01-validate.yml

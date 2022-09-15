@@ -3,10 +3,6 @@ name: 🔬 Run unit/snapshot tests
 
 on:
   workflow_call:
-    inputs:
-      tag:
-        required: true
-        type: string
 
 jobs:
   test:
@@ -21,14 +17,6 @@ jobs:
 
       - name: 🔬 Run unit/snapshot tests
         run: npm test
-
-      - name: Test tag
-        run: echo ${{ inputs.tag }}
-
-      - name: Test tag in env
-        env:
-          TAGNAME: ${{ inputs.tag }}
-        run: echo "$TAGNAME"
 
       - name: 💀 Killing me softly
         uses: ./.github/actions/cancel-workflow

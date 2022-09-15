@@ -25,11 +25,6 @@ jobs:
         with:
           install-command: npm ci --ignore-scripts
 
-      - name: 💾  Save version in .env
-        run: echo "VERSION=$(echo 1234)" >> $GITHUB_ENV
-      - name: Test
-        run: echo ${{ env.VERSION }}
-
       - name: 💀 Killing me softly
         uses: ./.github/actions/cancel-workflow
         if: failure()
