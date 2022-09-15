@@ -1,28 +1,25 @@
 import { create } from '@storybook/theming/create';
-
-const TEXT = '#131821';
-const GREY = '#FDFDFD';
+import * as DBToken from '@db-ui/base/build/js/tokens.js';
 
 export default create({
   base: 'light',
   brandTitle: 'DB UI Elements ' + process.env.VERSION,
 
-  colorSecondary: '#EC0016',
+  colorSecondary: DBToken.DbColorRed500,
 
   // UI
-  // appBorderColor: GREY,
   appBorderRadius: 4,
-  appBg: GREY,
+  appBg: DBToken.DbColorWhite,
 
   // Typography
   fontBase: '"DB Screen Sans", "Helvetica", "Arial", sans-serif',
   // Text colors
-  textColor: TEXT,
+  textColor: DBToken.DbColorCoolGray800,
   // Toolbar default and active colors
-  barTextColor: TEXT,
+  barTextColor: DBToken.DbColorCoolGray800,
   // Form colors
-  inputBorder: GREY,
-  inputTextColor: TEXT,
+  inputBorder: DBToken.DbColorWarmGray200,
+  inputTextColor: DBToken.DbColorCoolGray800,
   inputBorderRadius: 4,
 
   brandUrl:
