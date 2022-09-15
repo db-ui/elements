@@ -6,7 +6,7 @@ You are an Application Developer and you want to use DB UI Elements in your own 
 
 ## How to install
 
-[Read the "How to Start" documentation](https://github.com/db-ui/elements/-/blob/main/doc/howto-start.md).
+[Read the "How to Start" documentation](https://github.com/db-ui/elements/blob/main/doc/howto-start.md).
 
 
 ### Integrate in your app
