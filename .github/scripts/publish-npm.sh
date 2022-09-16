@@ -38,7 +38,7 @@ npm pack --quiet --workspace=@db-ui/v-elements"$PACKAGE_ENDING"
 
 TAG="latest"
 if [[ $PRE_RELEASE == 'true' ]]; then
-  TAG="v${VALID_SEMVER_VERSION::1}-next"
+  TAG="next"
 fi
 
 echo "📰 Publish Package to Registry with tag: $TAG)"
