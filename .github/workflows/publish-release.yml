@@ -16,10 +16,6 @@ jobs:
     uses: ./.github/workflows/01-get-publish-version.yml
     needs: [init]
 
-  get-latest-tag:
-    uses: ./.github/workflows/01-get-latest-tag.yml
-    needs: [init]
-
   test:
     uses: ./.github/workflows/01-test.yml
     needs: [init]
@@ -38,9 +34,9 @@ jobs:
 
   build-storybook:
     uses: ./.github/workflows/01-build-storybook.yml
-    needs: [build-showcases, get-latest-tag]
+    needs: [build-showcases, get-publish-version]
     with:
-      tag: ${{ needs.get-latest-tag.outputs.tag }}
+      tag: ${{ needs.get-publish-version.outputs.version }}
 
   cypress:
     uses: ./.github/workflows/02-cypress.yml
