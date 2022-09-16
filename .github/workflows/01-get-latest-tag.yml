@@ -1,0 +1,33 @@
+---
+name: Get and save latest tag
+
+on:
+  workflow_call:
+    # Map the workflow outputs to job outputs
+    outputs:
+      tag:
+        description: 'Latest git tag'
+        value: ${{ jobs.publish.outputs.tag }}
+
+jobs:
+  publish:
+    name: Get and save latest tag
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.extractTag.outputs.tag }}
+    steps:
+      - name: ⬇ Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: ↔ Extract tag name
+        shell: bash
+        run: echo "##[set-output name=tag;]$(echo $(git describe --tag --abbrev=0 | cut -c 2-))"
+        id: extractTag
+
+      - name: 💀 Killing me softly
+        uses: ./.github/actions/cancel-workflow
+        if: failure()
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

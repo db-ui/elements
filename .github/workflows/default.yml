@@ -12,6 +12,10 @@ jobs:
   init:
     uses: ./.github/workflows/00-init.yml
 
+  get-latest-tag:
+    uses: ./.github/workflows/01-get-latest-tag.yml
+    needs: [init]
+
   scan-secrets:
     uses: ./.github/workflows/00-scan-secrets.yml
 
@@ -41,7 +45,9 @@ jobs:
 
   build-storybook:
     uses: ./.github/workflows/01-build-storybook.yml
-    needs: [build-showcases]
+    needs: [build-showcases, get-latest-tag]
+    with:
+      tag: ${{ needs.get-latest-tag.outputs.tag }}
 
   cypress:
     uses: ./.github/workflows/02-cypress.yml
