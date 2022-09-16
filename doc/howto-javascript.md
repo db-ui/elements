@@ -8,7 +8,7 @@ Maybe there is a good reason for you, why you don't use a framework. Maybe you a
 
 ## How to install
 
-[Read the "How to Start" documentation](https://github.com/db-ui/elements/-/blob/main/doc/howto-start.md).
+[Read the "How to Start" documentation](https://github.com/db-ui/elements/blob/main/doc/howto-start.md).
 
 
 ### Integrate web components in your app
