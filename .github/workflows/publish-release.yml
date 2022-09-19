@@ -34,7 +34,9 @@ jobs:
 
   build-storybook:
     uses: ./.github/workflows/01-build-storybook.yml
-    needs: [build-showcases]
+    needs: [build-showcases, get-publish-version]
+    with:
+      tag: ${{ needs.get-publish-version.outputs.version }}
 
   cypress:
     uses: ./.github/workflows/02-cypress.yml
