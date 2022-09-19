@@ -55,7 +55,7 @@
     "conventional-changelog-cli": "^2.2.2",
     "cpr": "3.0.1",
     "dotenv": "^16.0.1",
-    "eslint": "8.9.0",
+    "eslint": "8.23.1",
     "eslint-config-prettier": "8.4.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-storybook": "0.6.4",
