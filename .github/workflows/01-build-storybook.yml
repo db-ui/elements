@@ -3,6 +3,11 @@ name: Build Storybook
 
 on:
   workflow_call:
+    inputs:
+      tag:
+        required: true
+        type: string
+        default: '0.0.0'
 
 jobs:
   build-storybook:
@@ -53,12 +58,16 @@ jobs:
           path: showcase/vue-showcase/dist
 
       - name: 🔨 Build Storybook
+        env:
+          VERSION: ${{ inputs.tag }}
         run: |
           mv showcase/angular-showcase/dist/angular-showcase packages/db-ui-elements-stencil/www/angular-showcase
           mv showcase/playground-showcase/dist/playground-showcase packages/db-ui-elements-stencil/www/playground-showcase
           mv showcase/react-showcase/dist/react-showcase packages/db-ui-elements-stencil/www/react-showcase
           mv showcase/reactwind-showcase/dist/reactwind-showcase packages/db-ui-elements-stencil/www/reactwind-showcase
           mv showcase/vue-showcase/dist/vue-showcase packages/db-ui-elements-stencil/www/vue-showcase
+          touch .env
+          echo VERSION=${{ inputs.tag }} >> .env
           npm run build:storybook
 
       - name: ⬆ Upload build
