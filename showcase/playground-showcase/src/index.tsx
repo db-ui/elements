@@ -11,30 +11,12 @@ ReactDOM.render(
   <React.StrictMode>
     <HashRouter>
       <Routes>
-        <Route
-          path={
-            process.env.NODE_ENV === 'development'
-              ? '/playground-showcase'
-              : 'REACT_ROUTER_REPLACE'
-          }
-          element={<App />}
-        >
+        <Route path="/" element={<App />}>
           <Route path="dnd" element={<Grapes />} />
           <Route path="editor" element={<SplitEditor />} />
           <Route path="" element={<Playground />} />
         </Route>
-        <Route
-          path="/*"
-          element={
-            <Navigate
-              to={
-                process.env.NODE_ENV === 'development'
-                  ? '/playground-showcase'
-                  : 'REACT_ROUTER_REPLACE'
-              }
-            />
-          }
-        />
+        <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>,

@@ -13,6 +13,7 @@ export const parameters = {
   },
   viewMode: 'story',
   options: {
+    showToolbar: true,
     storySort: {
       method: 'alphabetical',
       order: [

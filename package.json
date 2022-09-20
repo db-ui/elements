@@ -6,7 +6,7 @@
     "start": "concurrently  \"npm run build.watch.enterprise --workspace=@db-ui/elements\" \"npm run start:storybook\"",
     "start:storybook": "start-storybook -c .storybook -p 6006 --ci",
     "watch:showcase:react": "concurrently  \"npm run build.watch.local --workspace=@db-ui/elements\" \"npm run watch --workspace=@db-ui/react-elements\"",
-    "build": "npm run build.enterprise --workspace=@db-ui/elements",
+    "build": "npm run build --workspace=@db-ui/elements",
     "build:storybook": "build-storybook -c .storybook -o out",
     "build:local:angular": "node scripts/build angular",
     "build:local:react": "node scripts/build react",
