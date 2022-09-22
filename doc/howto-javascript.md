@@ -60,14 +60,14 @@ dest: 'js'
 
 {
 src: `node_modules/@db-ui/core/dist/css/{yourTheme}/db-ui-core.vars.css`,
-dest: 'static/css/db-ui-core.vars.css'
+dest: 'css/db-ui-core.vars.css'
 }
 ```
 
 and for your import use the vars file:
 
 ```html
-<link href="static/css/db-ui-core.vars.css" rel="stylesheet" />
+<link href="css/db-ui-core.vars.css" rel="stylesheet" />
 ```
 
 ### How to use Events
