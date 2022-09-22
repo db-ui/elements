@@ -130,7 +130,7 @@ export const config: Config = {
           src: `${getWWWPath()}/node_modules/@db-ui/core/dist/css${
             getTheme() ? '/' + getTheme() : ''
           }/db-ui-core.vars.css`,
-          dest: (getTheme() ? getTheme() + '/' : '') + 'css/db-ui-core.vars.css'
+          dest: (getTheme() ?? getTheme() + '/') + 'css/db-ui-core.vars.css'
         },
         {
           src: '../../../node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js',
