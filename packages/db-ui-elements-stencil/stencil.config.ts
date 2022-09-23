@@ -130,11 +130,11 @@ export const config: Config = {
           src: `${getWWWPath()}/node_modules/@db-ui/core/dist/css${
             getTheme() ? '/' + getTheme() : ''
           }/db-ui-core.vars.css`,
-          dest: 'static/css/db-ui-core.vars.css'
+          dest: 'css/db-ui-core.vars.css'
         },
         {
           src: '../../../node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js',
-          dest: 'static/js/iframeresizer.contentwindow.min.js'
+          dest: 'js/iframeresizer.contentwindow.min.js'
         }
       ],
       serviceWorker: null // disable service workers
