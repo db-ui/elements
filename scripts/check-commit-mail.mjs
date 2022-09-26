@@ -1,15 +1,19 @@
-require('dotenv').config();
+#!/usr/bin/env node
+import * as ChildProcess from 'node:child_process';
+import * as process from 'node:process';
+import * as dotenv from 'dotenv';
 
-const ChildProcess = require('child_process');
+dotenv.config();
 
 const checkCommitMail = () => {
-  console.log('Check COMMIT_MAIL');
+  console.log(`Check COMMIT_MAIL`);
   if (!process.env.COMMIT_MAIL) {
     console.error(
-      "No COMMIT_MAIL set in .env, please look at the file '.env.template'"
+      `No COMMIT_MAIL set in .env, please look at the file '.env.template'`
     );
     process.exit(1);
   }
+
   const currentMail = ChildProcess.execSync('git config user.email')
     .toString()
     .trim()
