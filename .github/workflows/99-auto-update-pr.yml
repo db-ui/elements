@@ -1,0 +1,43 @@
+---
+name: Auto Update PR
+
+on:
+  workflow_call:
+    inputs:
+      head:
+        required: true
+        type: string
+      base:
+        required: true
+        type: string
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ↔ Create Pull Request
+        uses: actions/github-script@v6
+        id: create-pr
+        with:
+          result-encoding: string
+          script: |
+            const script = require('./.github/scripts/auto-update-pr.js')
+            const head = '${{ inputs.head }}';
+            const base = '${{ inputs.base }}';
+            return await script({github, context}, head, base)
+      - name: 🤖 Enable auto-merge for auto-update
+        run: |
+          if [[ $PR_URL != false ]];
+          then
+            gh pr merge --auto --merge "$PR_URL"
+          fi
+        env:
+          PR_URL: ${{steps.create-pr.outputs.result}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
