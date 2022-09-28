@@ -11,6 +11,7 @@ updates:
   # Daily: Check minor and patch updates
   - package-ecosystem: 'npm'
     directory: '/'
+    open-pull-requests-limit: 0
     schedule:
       interval: 'weekly'
     ignore:
