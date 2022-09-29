@@ -56,7 +56,7 @@
     "eslint-config-prettier": "8.4.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-storybook": "0.6.4",
-    "eslint-plugin-vue": "^8.5.0",
+    "eslint-plugin-vue": "^9.5.1",
     "file-system-cache": "1.0.5",
     "find-versions-cli": "^4.0.0",
     "husky": "8.0.1",
