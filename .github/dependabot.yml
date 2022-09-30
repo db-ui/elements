@@ -13,7 +13,7 @@ updates:
     directory: '/'
     open-pull-requests-limit: 10
     schedule:
-      interval: 'weekly'
+      interval: 'daily'
     ignore:
       - dependency-name: 'ng-packagr'
         update-types: ['version-update:semver-major']
