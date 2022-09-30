@@ -10,7 +10,7 @@ function Playground() {
       <DbButton variant="primary" onClick={() => navigate('dnd')}>
         Drag & Drop Editor
       </DbButton>
-      <DbButton variant="secondary-outline" onClick={() => navigate('editor')}>
+      <DbButton variant="secondary" onClick={() => navigate('editor')}>
         Developer Editor
       </DbButton>
     </div>

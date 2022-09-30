@@ -82,7 +82,7 @@ const SplitEditor = () => {
           </db-select>
         </div>
         <div>
-          <db-button variant="secondary-outline" onClick={() => setMarkup('')}>
+          <db-button variant="secondary" onClick={() => setMarkup('')}>
             Delete Local Storage
           </db-button>
         </div>

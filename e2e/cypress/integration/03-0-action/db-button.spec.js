@@ -16,38 +16,38 @@ context('db-button', () => {
   it('Button variants exists', function () {
     cy.get(selector)
       .eq(1)
-      .contains('Brand Primary')
-      .click()
-      .invoke('attr', 'data-variant')
-      .should('eq', 'brand-primary');
-
-    cy.get(selector)
-      .eq(2)
       .contains('Primary')
       .click()
       .invoke('attr', 'data-variant')
       .should('eq', 'primary');
 
     cy.get(selector)
-      .eq(3)
-      .contains('Secondary solid')
+      .eq(2)
+      .contains('Secondary inverted')
       .click()
       .invoke('attr', 'data-variant')
-      .should('eq', 'secondary-solid');
+      .should('eq', 'secondary-inverted');
+
+    cy.get(selector)
+      .eq(3)
+      .contains('Tertiary')
+      .click()
+      .invoke('attr', 'data-variant')
+      .should('eq', 'tertiary');
 
     cy.get(selector)
       .eq(4)
-      .contains('Secondary Outline')
+      .contains('Secondary')
       .click()
       .invoke('attr', 'data-variant')
-      .should('eq', 'secondary-outline');
+      .should('eq', 'secondary');
 
     cy.get(selector)
       .eq(5)
-      .contains('Tertiary plain')
+      .contains('Ghost')
       .click()
       .invoke('attr', 'data-variant')
-      .should('eq', 'tertiary-plain');
+      .should('eq', 'ghost');
   });
 
   it('Button variants should get displayed in different sizes', function () {
@@ -77,13 +77,13 @@ context('db-button', () => {
       .eq(10)
       .should('be.disabled')
       .invoke('attr', 'data-variant')
-      .should('eq', 'secondary-solid');
+      .should('eq', 'tertiary');
 
     cy.get(selector)
       .eq(11)
       .should('be.disabled')
       .invoke('attr', 'data-variant')
-      .should('eq', 'secondary-outline');
+      .should('eq', 'secondary');
   });
 
   it('Button variants should display icons', function () {

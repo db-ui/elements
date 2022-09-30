@@ -32,9 +32,9 @@ export const DB_BUTTON = {
           name: 'variant', // The name of the attribute/property to use on component
           options: [
             { id: 'primary', name: 'primary' },
-            { id: 'secondary-outline', name: 'secondary-outline' },
-            { id: 'secondary-solid', name: 'secondary-solid' },
-            { id: 'tertiary-plain', name: 'tertiary-plain' },
+            { id: 'secondary', name: 'secondary' },
+            { id: 'tertiary', name: 'tertiary' },
+            { id: 'ghost', name: 'ghost' },
             { id: 'brand-primary', name: 'brand-primary' }
           ]
         },

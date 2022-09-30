@@ -16,7 +16,7 @@ The `<db-button></db-button>` element represents a clickable button, used to sub
 The variant attribute specifies a visual expression of button.
 
 <Canvas>
-  <db-button variant="brand-primary">Brand Primary</db-button><db-button variant="primary">Primary</db-button><db-button variant="secondary-solid">Secondary solid</db-button><db-button variant="secondary-outline">Secondary Outline</db-button><db-button variant="tertiary-plain">Tertiary plain</db-button>
+  <db-button variant="primary">Primary</db-button><db-button variant="primary">Primary</db-button><db-button variant="secondary">Secondary</db-button><db-button variant="secondary-inverted">Secondary inverted</db-button><db-button variant="ghost">Ghost</db-button>
 </Canvas>
 
 <db-headline variant="2">sizes</db-headline>
@@ -32,7 +32,7 @@ There are three different sizes of buttons to choose from: small, regular (defau
 Make buttons look inactive by adding the disabled boolean attribute to any `<db-button>` element.
 
 <Canvas>
-  <db-button variant="primary" disabled>Primary</db-button><db-button variant="secondary-solid" disabled>Secondary Solid</db-button><db-button variant="secondary-outline" disabled>Secondary Outline</db-button>
+  <db-button variant="primary" disabled>Primary</db-button><db-button variant="tertiary" disabled>Tertiary</db-button><db-button variant="secondary" disabled>Secondary</db-button>
 </Canvas>
 
 <db-headline variant="2">icon Position</db-headline>
@@ -41,8 +41,8 @@ You could set the icons position – either before or after the text – by usin
 
 <Canvas>
   <db-button variant="primary" icon="download">Primary</db-button><db-button variant="primary" iconafter="download">Primary</db-button>
-  <db-button variant="secondary-solid" icon="download">Secondary solid</db-button><db-button variant="secondary-solid" iconafter="download">Secondary solid</db-button>
-  <db-button variant="secondary-outline" icon="download">Secondary Outline</db-button> <db-button variant="secondary-outline" iconafter="download">Secondary Outline</db-button>
+  <db-button variant="tertiary" icon="download">Tertiary</db-button><db-button variant="tertiary" iconafter="download">Tertiary</db-button>
+  <db-button variant="secondary" icon="download">Secondary</db-button> <db-button variant="secondary" iconafter="download">Secondary</db-button>
 </Canvas>
 
 <db-headline variant="2">icononly (only use with care)</db-headline>
@@ -50,7 +50,7 @@ You could set the icons position – either before or after the text – by usin
 If you'd only like to display the icon without any text, you could set the attribute `icononly` on the button component. But please keep in mind that a visual text ensures clarity on the subject of this button as well enables use cases like controlling the page by voice (accessibility).
 
 <Canvas>
-  <db-button variant="primary" icon="download" icononly>Button</db-button><db-button variant="secondary-solid" icon="download" icononly>Button</db-button><db-button variant="secondary-outline" icon="download" icononly>Button</db-button>
+  <db-button variant="primary" icon="download" icononly>Button</db-button><db-button variant="tertiary" icon="download" icononly>Button</db-button><db-button variant="secondary" icon="download" icononly>Button</db-button>
 </Canvas>
 
 

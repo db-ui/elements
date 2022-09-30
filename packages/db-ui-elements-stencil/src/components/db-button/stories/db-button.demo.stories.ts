@@ -23,11 +23,11 @@ export default {
     variant: {
       control: {
         options: [
-          'brand-primary',
           'primary',
-          'secondary-outline',
-          'secondary-solid',
-          'tertiary-plain'
+          'secondary',
+          'secondary-inverted',
+          'tertiary',
+          'ghost'
         ],
         type: 'select'
       },

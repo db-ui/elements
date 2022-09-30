@@ -85,10 +85,10 @@ export class DbButton {
    */
   @Prop({ reflect: true }) variant:
     | 'primary'
-    | 'secondary-outline'
-    | 'secondary-solid'
-    | 'tertiary-plain'
-    | 'brand-primary';
+    | 'secondary'
+    | 'secondary-inverted'
+    | 'tertiary'
+    | 'ghost';
 
   /**
    * The size attribute specifies the button size out of three sizes.
