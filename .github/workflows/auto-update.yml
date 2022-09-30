@@ -1,0 +1,16 @@
+---
+name: Schedule Auto Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  auto-update:
+    strategy:
+      matrix:
+        update: [{ head: 'main', base: 'v3' }]
+    uses: ./.github/workflows/99-auto-update-pr.yml
+    with:
+      head: ${{ matrix.update.head }}
+      base: ${{ matrix.update.base }}
