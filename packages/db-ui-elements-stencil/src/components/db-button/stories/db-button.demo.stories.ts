@@ -77,13 +77,6 @@ export default {
       },
       defaultValue: ''
     },
-    iconafter: {
-      control: {
-        options: iconset,
-        type: 'select'
-      },
-      defaultValue: ''
-    },
     icononly: {
       control: 'boolean'
     },
@@ -118,7 +111,6 @@ export const LiveDemo = ({
   formnovalidate,
   formtarget,
   icon,
-  iconafter,
   icononly,
   name,
   text,
@@ -137,7 +129,6 @@ export const LiveDemo = ({
     ${formnovalidate ? 'formnovalidate=' + formnovalidate : ''}
     ${formtarget ? 'formtarget=' + formtarget : ''}
     ${icon ? 'icon=' + icon : ''}
-    ${iconafter ? 'iconafter=' + iconafter : ''}
     ${icononly ? 'icononly=' + icononly : ''}
     ${name ? 'name=' + name : ''}
     type=${type}

@@ -51,11 +51,6 @@ export class DbButton {
   @Prop({ reflect: true }) icon?: string;
 
   /**
-   * Define an icon by it's identifier (like e.g. _download_, compare to [DB UI Icons](https://db-ui.github.io/core/patterns/base-icons/index.html)) to get displayed behind the elements content.
-   */
-  @Prop({ reflect: true }) iconafter?: string;
-
-  /**
    * Define the text next to the icon specified via the icon Property to get hidden.
    */
   @Prop({ reflect: true }) icononly?: boolean;
@@ -93,7 +88,13 @@ export class DbButton {
   /**
    * The size attribute specifies the button size out of three sizes.
    */
-  @Prop({ reflect: true }) size?: 'small' | 'regular' | 'large';
+  @Prop({ reflect: true }) size?:
+    | 'xxsmall'
+    | 'xsmall'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'xlarge';
 
   render() {
     return (
@@ -116,9 +117,6 @@ export class DbButton {
       >
         {this.icon ? <db-icon icon={this.icon} /> : null}
         <slot />
-        {this.iconafter ? (
-          <db-icon icon={this.iconafter} class="iconafter" />
-        ) : null}
       </button>
     );
   }
