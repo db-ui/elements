@@ -101,6 +101,10 @@ export default {
     width: {
       control: 'text',
       defaultValue: ''
+    },
+    state: {
+      control: 'text',
+      defaultValue: ''
     }
   }
 };

@@ -81,6 +81,11 @@ export class DbButton {
   @Prop({ reflect: true }) width?: 'full';
 
   /**
+   * The state attribute provides the possibility to define (currently only) the loading state.
+   */
+  @Prop({ reflect: true }) state?: 'loading';
+
+  /**
    * The variant attribute specifies a visual expression of button.
    */
   @Prop({ reflect: true }) variant:
@@ -120,9 +125,29 @@ export class DbButton {
         value={this.value}
         data-size={this.size}
         data-width={this.width}
+        data-state={this.state}
       >
         {this.icon ? <db-icon icon={this.icon} /> : null}
         <slot />
+        {this.state === 'loading' && (
+          <svg
+            class="elm-loadingindicator"
+            viewBox="0 0 44 44"
+            aria-labelledby="elm-loadingindicator__description"
+            role="img"
+            data-size="xs"
+          >
+            <title id="elm-loadingindicator__description"></title>
+            <circle
+              class="elm-loadingindicator__circle"
+              cx="22"
+              cy="22"
+              r="20"
+              fill="none"
+              stroke-miterlimit="10"
+            ></circle>
+          </svg>
+        )}
       </button>
     );
   }
