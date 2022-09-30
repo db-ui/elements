@@ -76,6 +76,11 @@ export class DbButton {
   @Prop({ reflect: true }) value?: string;
 
   /**
+   * The width attribute provides the possibility to define that the width the buttons should take regarding its context – currently we only support the value "full"
+   */
+  @Prop({ reflect: true }) width?: 'full';
+
+  /**
    * The variant attribute specifies a visual expression of button.
    */
   @Prop({ reflect: true }) variant:
@@ -114,6 +119,7 @@ export class DbButton {
         type={this.type}
         value={this.value}
         data-size={this.size}
+        data-width={this.width}
       >
         {this.icon ? <db-icon icon={this.icon} /> : null}
         <slot />

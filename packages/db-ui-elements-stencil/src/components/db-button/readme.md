@@ -56,6 +56,7 @@ Add the following styles to your application. If you have added the base depende
 | `type`           | `type`           | The type attribute specifies the type of button.                                                                                                                                                   | `"button" \| "reset" \| "submit"`                                           | `'submit'`  |
 | `value`          | `value`          | The value attribute specifies an initial value for the button.                                                                                                                                     | `string`                                                                    | `undefined` |
 | `variant`        | `variant`        | The variant attribute specifies a visual expression of button.                                                                                                                                     | `"ghost" \| "primary" \| "secondary" \| "secondary-inverted" \| "tertiary"` | `undefined` |
+| `width`          | `width`          | The width attribute provides the possibility to define that the width the buttons should take regarding its context – currently we only support the value "full"                                   | `"full"`                                                                    | `undefined` |
 
 
 ## Dependencies

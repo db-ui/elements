@@ -97,6 +97,10 @@ export default {
     value: {
       control: 'text',
       defaultValue: ''
+    },
+    width: {
+      control: 'text',
+      defaultValue: ''
     }
   }
 };
