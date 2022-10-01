@@ -51,7 +51,7 @@
     "concurrently": "7.3.0",
     "conventional-changelog-cli": "^2.2.2",
     "cpr": "3.0.1",
-    "dotenv": "^16.0.1",
+    "dotenv": "^16.0.3",
     "eslint": "8.24.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-react": "^7.31.8",
