@@ -42,7 +42,7 @@
     "@storybook/html": "6.5.12",
     "@storybook/manager-webpack5": "^6.5.10",
     "@storybook/react": "6.5.12",
-    "@storybook/web-components": "6.5.10",
+    "@storybook/web-components": "6.5.12",
     "@types/estree": "1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.34.0",
     "@typescript-eslint/parser": "^5.38.1",
