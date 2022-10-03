@@ -57,6 +57,11 @@ export class DbCheckbox {
   @Prop({ reflect: false }) indeterminate: boolean;
 
   /**
+   * The size attribute specifies the button size out of three sizes.
+   */
+  @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large' = 'medium';
+
+  /**
    * Method that acceps a boolean and sets the indeterminate state of the checkbox accordingly.
    */
   @Method()
@@ -87,6 +92,7 @@ export class DbCheckbox {
           required={this.required}
           value={this.value}
           indeterminate={this.indeterminate}
+          data-size={this.size}
           ref={(el) => (this.checkboxInput = el as HTMLInputElement)}
           onChange={(event) => this.handleChange(event)}
         />
