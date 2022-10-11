@@ -63,5 +63,5 @@ jobs:
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
-    if: ${{ github.actor != 'dependabot[bot]' }}
+    if: ${{ github.actor != 'dependabot[bot]' }} ||  github.owner == 'db-ui'
     needs: [validate, test, cypress]

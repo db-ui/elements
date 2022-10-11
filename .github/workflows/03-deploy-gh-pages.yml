@@ -76,12 +76,8 @@ jobs:
 
       - name: 🥅 Deploy to GH-Pages
         uses: peaceiris/actions-gh-pages@v3
-        env:
-          REPO_NAME: ${{ steps.repo-name.outputs.result }}
-          OWNER_NAME: ${{ steps.owner-name.outputs.result }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          external_repository: $OWNER_NAME/$REPO_NAME
           publish_dir: ./public
 
       - name: 🖨️ Print gh-pages url
