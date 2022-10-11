@@ -42,7 +42,7 @@ jobs:
           then
             echo "##[set-output name=name;]$(echo ${GITHUB_REF#refs/tags/})"
           else
-            echo "##[set-output name=name;]$(echo ${GITHUB_REF#refs/heads/})"
+            echo "##[set-output name=name;]$(echo ${GIT_BRANCH##origin/})"
           fi
         id: extract
 
