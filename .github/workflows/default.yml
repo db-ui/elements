@@ -2,11 +2,11 @@
 name: Default On-Push
 
 on:
-  - pull_request:
-  - push:
-      branches:
-        - 'main'
-        - 'v3'
+  pull_request:
+  push:
+    branches:
+      - 'main'
+      - 'v3'
 
 jobs:
   init:
