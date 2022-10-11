@@ -39,7 +39,6 @@ export class DbBrand {
     return (
       <div class="cmp-brand">
         <a
-          class={`${this.siteNameLink && 'hide-link-style'}`}
           href={this.anchorRef}
           title={this.anchorTitle}
           rel={this.anchorRelation}

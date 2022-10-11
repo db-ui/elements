@@ -3,6 +3,15 @@ name: Deploy to gh-pages
 
 on:
   workflow_call:
+    inputs:
+      release:
+        required: false
+        default: 'false'
+        type: string
+      preRelease:
+        required: false
+        default: 'false'
+        type: string
 
 jobs:
   deploy:
@@ -23,8 +32,28 @@ jobs:
           name: build
           path: out
 
-      - name: ➕ Bundle current gh-pages
-        uses: ./.github/actions/bundle-gh-page
+      - name: ↔ Extract branch/tag name
+        shell: bash
+        env:
+          RELEASE: ${{ inputs.release }}
+          PRE_RELEASE: ${{ inputs.preRelease }}
+        run: |
+          if [[ $RELEASE == "true" || $PRE_RELEASE == "true" ]]
+          then
+            echo "##[set-output name=name;]$(echo ${GITHUB_REF#refs/tags/})"
+          else
+            echo "##[set-output name=name;]$(echo ${GITHUB_REF#refs/heads/})"
+          fi
+        id: extract
+
+      - name: 🔨 Build page
+        env:
+          RELEASE: ${{ inputs.release }}
+          PRE_RELEASE: ${{ inputs.preRelease }}
+          NAME: ${{ steps.extract.outputs.name }}
+        run: |
+          chmod +rx ./.github/scripts/build-gh-page.sh
+          ./.github/scripts/build-gh-page.sh
 
       - name: 🥅 Deploy to GH-Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -33,13 +62,25 @@ jobs:
           publish_dir: ./public
 
       - name: 🖨️ Print gh-pages url
+        env:
+          RELEASE: ${{ inputs.release }}
+          PRE_RELEASE: ${{ inputs.preRelease }}
+          NAME: ${{ steps.extract.outputs.name }}
         run: |
-          export BRANCH=${GITHUB_REF#refs/heads/}
-          if echo ${BRANCH} | grep -c "main"
+          if [[ $RELEASE == "true" ]];
           then
             export URL=https://db-ui.github.io/elements
+          elif [[ $PRE_RELEASE == "true" ]];
+          then
+            export URL=https://db-ui.github.io/elements/version/${NAME}
           else
-            export URL=https://db-ui.github.io/elements/review/${BRANCH}
+            export URL=https://db-ui.github.io/elements/review/${NAME}
           fi
           echo "URL: $URL"
           echo "### GH-Pages URL :rocket: <br> <br> $URL" >> $GITHUB_STEP_SUMMARY
+
+      - name: 💀 Killing me softly
+        uses: ./.github/actions/cancel-workflow
+        if: failure()
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

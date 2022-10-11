@@ -1,0 +1,42 @@
+name: Publish Changelog
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+
+jobs:
+  changelog:
+    name: Update Release with Changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Create changelog
+        run: |
+          echo 'CHANGELOG_TEXT<<EOF' >> $GITHUB_ENV
+          npm version --no-git-tag-version ${{ inputs.version }}
+          npx conventional-changelog-cli -h -p angular -r 1 >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.repos.updateRelease({
+              owner: context.payload.repository.owner.login,
+              repo: context.payload.repository.name,
+              release_id: context.payload.release.id,
+              body: process.env.CHANGELOG_TEXT
+            })
+            console.log("CHANGELOG TEXT:", process.env.CHANGELOG_TEXT)
+
+      - name: 💀 Killing me softly
+        uses: ./.github/actions/cancel-workflow
+        if: failure()
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

@@ -35,6 +35,5 @@
 * *eslint-plugin-react*: introduced by eslint
 * *jest*: introduced by stencil
 * *jest-cli*: introduced by stencil
-* *lit-html*: introduced by storybook
 * *typescript*: in case, if typescipt is not installed globally
 

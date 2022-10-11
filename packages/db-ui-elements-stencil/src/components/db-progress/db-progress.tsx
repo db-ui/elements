@@ -42,7 +42,7 @@ export class DbProgress {
           value={this.value}
           max={this.max}
           id={this.htmlid}
-          {...({ indeterminate: this.indeterminate } as unknown)}
+          {...{ indeterminate: this.indeterminate }}
           style={
             this.circle === true
               ? { ['--progress-conic']: `${this.value}` }

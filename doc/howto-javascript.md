@@ -8,7 +8,7 @@ Maybe there is a good reason for you, why you don't use a framework. Maybe you a
 
 ## How to install
 
-[Read the "How to Start" documentation](https://github.com/db-ui/elements/-/blob/main/doc/howto-start.md).
+[Read the "How to Start" documentation](https://github.com/db-ui/elements/blob/main/doc/howto-start.md).
 
 
 ### Integrate web components in your app
@@ -60,14 +60,14 @@ dest: 'js'
 
 {
 src: `node_modules/@db-ui/core/dist/css/{yourTheme}/db-ui-core.vars.css`,
-dest: 'static/css/db-ui-core.vars.css'
+dest: 'css/db-ui-core.vars.css'
 }
 ```
 
 and for your import use the vars file:
 
 ```html
-<link href="static/css/db-ui-core.vars.css" rel="stylesheet" />
+<link href="css/db-ui-core.vars.css" rel="stylesheet" />
 ```
 
 ### How to use Events

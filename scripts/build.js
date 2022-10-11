@@ -36,7 +36,7 @@ const run = () => {
 
   if (showcases.length > 0) {
     console.log(`Start building showcase/s`);
-    execSync(`npm run build.local --workspace=@db-ui/elements`);
+    execSync(`npm run build --workspace=@db-ui/elements`);
     console.log(`All: Created stencil build`);
 
     for (const showcase of showcases) {

@@ -22,3 +22,9 @@ jobs:
           npm run lint:eslint
           npm run lint:stylelint
           npm run lint:markdownlint
+
+      - name: 💀 Killing me softly
+        uses: ./.github/actions/cancel-workflow
+        if: failure()
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

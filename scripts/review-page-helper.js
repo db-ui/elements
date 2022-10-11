@@ -53,16 +53,6 @@ const run = async () => {
       from: getFrom(framework),
       to: reviewPath
     });
-    if (framework === 'react' || framework === 'playground') {
-      await replace({
-        files: [
-          `./public/${framework}-showcase/*.*`,
-          `./public/${framework}-showcase/**/*.*`
-        ],
-        from: /REACT_ROUTER_REPLACE/g,
-        to: `/${framework}-showcase`
-      });
-    }
   } catch (error) {
     console.error('Error occurred:', error);
     process.exit(1);
