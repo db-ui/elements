@@ -53,6 +53,13 @@ jobs:
     uses: ./.github/workflows/02-cypress.yml
     needs: [install-cypress, build-storybook]
 
+  checks-done:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🎉 Checks done
+        run: echo "🎉 All Cypress tests were successful."
+    needs: [cypress]
+
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
     if: ${{ github.actor != 'dependabot[bot]' }}
