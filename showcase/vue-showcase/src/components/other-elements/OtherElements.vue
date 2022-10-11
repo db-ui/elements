@@ -40,7 +40,7 @@ import {
     <p>DbImage:</p>
     <DbImage
       alt="DB Image alternative text"
-      src="https://db-ui.github.io/elements/static/media/alexander-bagno-iILbjYtkyG0-unsplash.376x253.jpg"
+      src="https://db-ui.github.io/core/samples/images/alexander-bagno-iILbjYtkyG0-unsplash.376x253.jpg"
       :width="376"
       :height="253"
     />

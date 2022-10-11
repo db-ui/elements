@@ -1,10 +1,26 @@
-name: Test and deploy to GitHub Pages
+---
+name: Default On-Push
 
-on: [push]
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - '!**'
 
 jobs:
   init:
     uses: ./.github/workflows/00-init.yml
+
+  get-latest-tag:
+    uses: ./.github/workflows/01-get-latest-tag.yml
+    needs: [init]
+
+  scan-secrets:
+    uses: ./.github/workflows/00-scan-secrets.yml
+
+  install-cypress:
+    uses: ./.github/workflows/00-install-cypress.yml
 
   test:
     uses: ./.github/workflows/01-test.yml
@@ -21,7 +37,7 @@ jobs:
 
   build-stencil-targets:
     uses: ./.github/workflows/01-build-stencil-targets.yml
-    needs: [init]
+    needs: [init, test, validate]
 
   build-showcases:
     uses: ./.github/workflows/01-build-showcases.yml
@@ -29,18 +45,22 @@ jobs:
 
   build-storybook:
     uses: ./.github/workflows/01-build-storybook.yml
-    needs: [build-showcases]
+    needs: [build-showcases, get-latest-tag]
+    with:
+      tag: ${{ needs.get-latest-tag.outputs.tag }}
 
   cypress:
     uses: ./.github/workflows/02-cypress.yml
-    needs: [build-storybook]
+    needs: [install-cypress, build-storybook]
+
+  checks-done:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🎉 Checks done
+        run: echo "🎉 All Cypress tests were successful."
+    needs: [cypress]
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
-    if: ${{ github.actor != 'dependabot[bot]' }}
-    needs: [validate, test, cypress]
-
-  publish:
-    uses: ./.github/workflows/03-npm-publish.yml
     if: ${{ github.actor != 'dependabot[bot]' }}
     needs: [validate, test, cypress]

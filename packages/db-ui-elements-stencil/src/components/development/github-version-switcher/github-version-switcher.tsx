@@ -53,6 +53,7 @@ export class GithubVersionSwitcher {
     }
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private setBranches = (data: any[]) => {
     const branchNames = data
       .map((branch) => branch.name)
@@ -71,6 +72,7 @@ export class GithubVersionSwitcher {
     this.setCurrentBranch(branchNames);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private setTags = (data: any[]) => {
     const tagNames = data.map((tag) => tag.name);
     tagNames.forEach((tag: string) => {
@@ -132,7 +134,9 @@ export class GithubVersionSwitcher {
               {this._defaultBranch}
             </option>
             {this.groups
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               .filter((group: any) => group.branches?.length > 0)
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               .map((group: any) => (
                 <optgroup key={group.name} label={group.name}>
                   {group.branches.map((branch: string, index: number) => (

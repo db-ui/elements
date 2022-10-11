@@ -1,3 +1,4 @@
+---
 name: 🔬 Validate repo
 
 on:
@@ -16,6 +17,14 @@ jobs:
 
       - name: 🔬 Validate repo
         run: |
-          node ./scripts/cypress-component-check.js
+          node ./scripts/cypress/component-check.js
           node ./scripts/angular-module-component-check.js
           npm run lint:eslint
+          npm run lint:stylelint
+          npm run lint:markdownlint
+
+      - name: 💀 Killing me softly
+        uses: ./.github/actions/cancel-workflow
+        if: failure()
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

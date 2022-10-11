@@ -7,9 +7,9 @@ import { Component, h } from '@stencil/core';
 export class DbCards {
   render() {
     return (
-      <ul class="cmp-cards">
+      <div class="cmp-cards">
         <slot />
-      </ul>
+      </div>
     );
   }
 }

@@ -1,3 +1,4 @@
+---
 version: 2
 updates:
   - package-ecosystem: 'github-actions'
@@ -10,14 +11,31 @@ updates:
   # Daily: Check minor and patch updates
   - package-ecosystem: 'npm'
     directory: '/'
+    open-pull-requests-limit: 10
     schedule:
-      interval: 'weekly'
+      interval: 'daily'
+    ignore:
+      - dependency-name: 'ng-packagr'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/cli'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'jest-cli'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'typescript'
+        update-types: ['version-update:semver-major']
     pull-request-branch-name:
       separator: '-'
+    # https://github.com/dependabot/dependabot-core/issues/5226#issuecomment-1179434437
+    versioning-strategy: increase
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-showcase'
     schedule:
       interval: 'weekly'
+    ignore:
+      - dependency-name: 'ng-packagr'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/cli'
+        update-types: ['version-update:semver-major']
     pull-request-branch-name:
       separator: '-'
   - package-ecosystem: 'npm'

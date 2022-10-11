@@ -1,0 +1,35 @@
+<link href="css/db-ui-core.vars.css" rel="stylesheet" />
+<style>
+  nav.sidebar-container {
+    background-color: var(--db-color-cool-gray-100);
+  }
+
+  .sidebar-header > div > a::before {
+    display: block;
+    width: 39px;
+    height: 27px;
+    background-image: url(./images/db_logo.svg);
+    content: '';
+    background-repeat: no-repeat;
+    margin-bottom: 1rem;
+  }
+
+  #storybook-explorer-menu {
+    margin: 0 20px;
+  }
+
+  .sidebar-subheading {
+    letter-spacing: 0.05em !important;
+    color: var(--db-color-cool-gray-800) !important;
+  }
+
+  .sidebar-subheading > button > span {
+    color: var(--db-color-red);
+    border-width: 4px;
+  }
+
+  div[role='main'] {
+    top: 0 !important;
+    height: 100vh !important;
+  }
+</style>

@@ -1,10 +1,10 @@
+---
 name: Cleans all preview pages for gh-pages
 
 on:
   push:
     branches:
       - main
-      - develop
 
 jobs:
   clean:

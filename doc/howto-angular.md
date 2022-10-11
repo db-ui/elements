@@ -6,10 +6,10 @@ You are an Application Developer and you want to use DB UI Elements in your own 
 
 ## How to install
 
-[Read the "How to Start" documentation](https://github.com/db-ui/elements/-/blob/main/doc/howto-start.md).
+[Read the "How to Start" documentation](https://github.com/db-ui/elements/blob/main/doc/howto-start.md).
 
 
-###  Integrate in your app
+### Integrate in your app
 
 1. Import the DB UI Elements Angular library into your `app.modules.ts` file:
 
@@ -76,7 +76,7 @@ Maybe if this doesn't solve your problem, you could try to add ``"preserveSymlin
 
 Inside your ``angular.json`` file you have a "build" step. Under "options" you need to add your style like this:
 
-```
+```json
 "options":{
 ...
  "assets": [

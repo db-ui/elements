@@ -24,7 +24,6 @@
     "tsc": "tsc -p .",
     "tsc:prod": "tsc -p . --sourceMap false",
     "lint": "echo \"Warning: no lint specified\" && exit 0",
-    "prerelease": "npm run validate && np prerelease --yolo --any-branch --tag next",
     "validate": "npm i && npm run lint && npm run test && npm run build"
   },
   "main": "./dist/index.js",
@@ -37,11 +36,10 @@
     "@types/jest": "27.4.1",
     "@vue/test-utils": "2.0.0-rc.18",
     "jest": "27.5.1",
-    "np": "7.6.1",
-    "rimraf": "2.7.1",
-    "rollup": "1.32.1",
+    "rimraf": "3.0.2",
+    "rollup": "2.79.1",
     "rollup-plugin-node-resolve": "5.2.0",
-    "vue": "3.2.37"
+    "vue": "3.2.40"
   },
   "jest": {
     "preset": "ts-jest",

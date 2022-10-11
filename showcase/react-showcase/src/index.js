@@ -14,14 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <HashRouter>
       <Routes>
-        <Route
-          path={
-            process.env.NODE_ENV === 'development'
-              ? '/react-showcase'
-              : 'REACT_ROUTER_REPLACE'
-          }
-          element={<App />}
-        >
+        <Route path="/" element={<App />}>
           <Route path="form" element={<Form />} />
           <Route path="elements" element={<OtherElements />} />
           <Route path="components" element={<OtherComponents />} />
@@ -29,18 +22,7 @@ ReactDOM.render(
           <Route path="navigation" element={<Navigation />} />
           <Route path="" element={<TabBar />} />
         </Route>
-        <Route
-          path="/*"
-          element={
-            <Navigate
-              to={
-                process.env.NODE_ENV === 'development'
-                  ? '/react-showcase'
-                  : 'REACT_ROUTER_REPLACE'
-              }
-            />
-          }
-        />
+        <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>,

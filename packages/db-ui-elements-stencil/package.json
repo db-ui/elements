@@ -19,37 +19,35 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "build.default": "npm run build",
     "build.enterprise": "npm run build enterprise",
-    "build.local": "npm run build enterprise local",
     "build.watch": "stencil build --watch",
     "build.watch.enterprise": "npm run build.watch enterprise",
-    "build.watch.local": "npm run build.watch enterprise local",
+    "build.watch.local": "npm run build.watch enterprise",
     "lint": "eslint src/**/*{.ts,.tsx}",
     "validate": "pretty-quick --staged && npm run lint",
     "start-stencil": "stencil build --dev --watch --serve",
     "clean-start": "rm -rf dist loader node_modules www && npm ci && npm run build && npm run start -- --no-manager-cache",
-    "test": "stencil test --spec --coverage --reporters=default --reporters=jest-junit",
+    "test": "stencil test --spec --coverage",
     "test.watch": "stencil test --spec --watchAll",
     "generate": "stencil generate",
     "start": "npm run start-stencil"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.3.0",
+    "@faker-js/faker": "^7.5.0",
     "@stencil/angular-output-target": "0.4.0",
-    "@stencil/core": "2.17.0",
+    "@stencil/core": "2.18.1",
     "@stencil/eslint-plugin": "0.4.0",
     "@stencil/react-output-target": "0.3.1",
-    "@stencil/sass": "1.5.2",
+    "@stencil/sass": "2.0.0",
     "@stencil/vue-output-target": "0.6.2",
     "@types/jest": "27.4.1",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
-    "jest-junit": "13.0.0",
-    "lit-html": "2.2.7",
-    "yargs": "17.5.1"
+    "jest-junit": "14.0.1"
   },
   "dependencies": {
-    "@db-ui/core": "^2.0.0-47"
+    "@db-ui/core": "^2.0.0-50-26e655c"
   },
   "license": "Apache-2.0",
   "publishConfig": {

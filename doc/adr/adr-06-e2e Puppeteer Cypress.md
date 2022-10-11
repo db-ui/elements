@@ -42,5 +42,5 @@ Bei `stecil generate` sollten e2e Tests nicht ausgewählt werden. Dafür muss ma
 
 ## Links
 
-- https://www.cypress.io/
-- https://github.com/buildkite/docker-puppeteer
+- <https://www.cypress.io/>
+- <https://github.com/buildkite/docker-puppeteer>

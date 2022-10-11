@@ -1,9 +1,12 @@
 import { iconset } from '../iconset.array';
 
 export default {
-  title: 'Elements/Icon',
+  title: '04-Data-Display/Icon',
   id: 'db-icon',
   component: 'db-icon',
+  parameters: {
+    viewMode: 'docs'
+  },
   argTypes: {
     icon: {
       control: {

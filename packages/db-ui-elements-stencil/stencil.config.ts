@@ -58,16 +58,6 @@ const getTheme = () => {
   return process.argv.find((arg) => validThemes.includes(arg)) || '';
 };
 
-const getThemePath = () => {
-  if (process.argv.includes('local')) {
-    return '@db-ui/elements';
-  }
-  if (!getTheme()) {
-    return '@db-ui/elements';
-  }
-  return `@db-ui/elements-${getTheme()}`;
-};
-
 const isNotWatching = (): boolean => {
   return !process.argv.find((arg) => arg.includes('watch'));
 };
@@ -89,18 +79,18 @@ export const config: Config = {
   hashFileNames: isNotWatching(),
   outputTargets: [
     angularOutputTarget({
-      componentCorePackage: getThemePath(),
+      componentCorePackage: '@db-ui/elements',
       directivesProxyFile:
         '../db-ui-elements-angular/projects/lib/src/components.ts',
       valueAccessorConfigs: angularValueAccessorBindings
     }),
     reactOutputTarget({
-      componentCorePackage: getThemePath(),
+      componentCorePackage: '@db-ui/elements',
       proxiesFile: '../db-ui-elements-react/src/components.ts',
       includeDefineCustomElements: true
     }),
     vueOutputTarget({
-      componentCorePackage: getThemePath(),
+      componentCorePackage: '@db-ui/elements',
       proxiesFile: '../db-ui-elements-vue/src/components.ts',
       componentModels: vueComponentModels,
       includeDefineCustomElements: true,
@@ -140,11 +130,11 @@ export const config: Config = {
           src: `${getWWWPath()}/node_modules/@db-ui/core/dist/css${
             getTheme() ? '/' + getTheme() : ''
           }/db-ui-core.vars.css`,
-          dest: 'static/css/db-ui-core.vars.css'
+          dest: 'css/db-ui-core.vars.css'
         },
         {
           src: '../../../node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js',
-          dest: 'static/js/iframeresizer.contentwindow.min.js'
+          dest: 'js/iframeresizer.contentwindow.min.js'
         }
       ],
       serviceWorker: null // disable service workers

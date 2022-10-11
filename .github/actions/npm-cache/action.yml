@@ -1,3 +1,4 @@
+---
 name: 'NPM Cache Action'
 description: 'Initialize NPM Cache'
 inputs:

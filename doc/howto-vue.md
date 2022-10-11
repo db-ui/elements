@@ -6,10 +6,10 @@ You are an Application Developer and you want to use DB UI Elements in your own 
 
 ## How to install
 
-[Read the "How to Start" documentation](https://github.com/db-ui/elements/-/blob/main/doc/howto-start.md).
+[Read the "How to Start" documentation](https://github.com/db-ui/elements/blob/main/doc/howto-start.md).
 
 
-###  Integrate in your app
+### Integrate in your app
 
 
 Import a db-ui-elements component into a vue component (*.vue) like this:
@@ -26,7 +26,7 @@ import {
 | WARNING: Some components require fonts and/or icons to work properly |
 | --- |
  You can import fonts and icons with the provided css file from DB UI Core:
- 
+
 ``import "@db-ui/core/dist/css/db-ui-core.vars.css"``
 
 Import this css before you use components. For example you could import it inside your ``main.ts`` file.
@@ -64,7 +64,7 @@ In order to test the installation just add a component to your ``<template>``:
 
 ### Events
 
-We add `v-model` support which fires on every change. 
+We add `v-model` support which fires on every change.
 But you can use normal `@` events as well.
 
 Both Inputs in this example do the same:

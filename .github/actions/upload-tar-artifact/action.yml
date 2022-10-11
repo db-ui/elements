@@ -1,3 +1,4 @@
+---
 name: 'Upload Tar Artifact'
 description: 'Upload an artifact and zips it as {name}.tar.gz'
 inputs:

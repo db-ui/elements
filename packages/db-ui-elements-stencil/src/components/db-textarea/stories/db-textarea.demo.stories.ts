@@ -1,7 +1,10 @@
 export default {
-  title: 'Elements/Textarea',
+  title: '05-Data-Input/Textarea',
   id: 'db-textarea',
   component: 'db-textarea',
+  parameters: {
+    viewMode: 'docs'
+  },
   argTypes: {
     ariainvalid: {
       control: {

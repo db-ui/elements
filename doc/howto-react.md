@@ -6,10 +6,10 @@ You are an Application Developer and you want to use DB UI Elements in your own 
 
 ## How to install
 
-[Read the "How to Start" documentation](https://github.com/db-ui/elements/-/blob/main/doc/howto-start.md).
+[Read the "How to Start" documentation](https://github.com/db-ui/elements/blob/main/doc/howto-start.md).
 
 
-###  Integrate in your app
+### Integrate in your app
 
 You can use db-ui-element components like default React components.
 Import your component like this:
@@ -21,7 +21,7 @@ import { DbButton } from "@db-ui/react-elements-enterprise";
 | WARNING: Some components require fonts and/or icons to work properly |
 | --- |
  You can import fonts and icons with the provided css file from DB UI Core:
- 
+
 ``import "@db-ui/core/dist/css/db-ui-core.vars.css"``
 
 Import this css before you use components. For example you could import it inside your `App.ts` file.
@@ -29,7 +29,7 @@ Import this css before you use components. For example you could import it insid
 ### Bundle your App
 
 1. Create 3 folders in you public directory:
-````
+````shell
 mkdir public/fonts
 mkdir public/icons
 mkdir public/images 
@@ -38,7 +38,7 @@ mkdir public/js
 
 2. Add a new ``prebuild`` script to your `package.json` like this:
 
-```
+```json
  "prebuild": "npx -y shx cp node_modules/@db-ui/core/dist/fonts/* public/fonts & npx -y shx cp node_modules/@db-ui/core/dist/images/* public/images & npx -y shx cp node_modules/@db-ui/core/dist/js/* public/js & npx -y shx cp node_modules/@db-ui/core/dist/icons/* public/icons",
 ```
 
