@@ -2,9 +2,8 @@
 name: Cleans all preview pages for gh-pages
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   clean:
