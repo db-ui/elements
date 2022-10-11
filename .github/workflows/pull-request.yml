@@ -22,4 +22,5 @@ jobs:
     uses: ./.github/workflows/99-dependency-review.yml
 
   labeler:
+    if: github.owner == db-ui
     uses: ./.github/workflows/99-labeler.yml
