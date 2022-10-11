@@ -10,7 +10,7 @@ describe('db-brand', () => {
     expect(page.root).toEqualHtml(`
       <db-brand alt="Deutsche Bahn Logo" href="#" src="./images/db_logo.svg">
        <div class="cmp-brand">
-         <a class="undefined" href="#">
+         <a href="#">
            <img alt="Deutsche Bahn Logo" class="elm-image is-logo" src="./images/db_logo.svg">
          </a>
          <span class="is-site-name"></span>

@@ -1,5 +1,3 @@
-import { fileURLToPath, URL } from 'url';
-
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
@@ -13,7 +11,7 @@ export default defineConfig({
   resolve: {
     dedupe: ['vue'], // <-- this is required for vite build
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': '/src'
     }
   },
   server: {
