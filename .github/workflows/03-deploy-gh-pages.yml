@@ -17,8 +17,6 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
@@ -51,19 +49,39 @@ jobs:
           fi
         id: extract
 
+      - name: 📛 Get repo name
+        uses: actions/github-script@v6
+        id: repo-name
+        with:
+          result-encoding: string
+          script: return context?.payload?.repository?.name
+
+      - name: 🎩 Get owner name
+        uses: actions/github-script@v6
+        id: owner-name
+        with:
+          result-encoding: string
+          script: return context?.payload?.repository?.owner?.login
+
       - name: 🔨 Build page
         env:
           RELEASE: ${{ inputs.release }}
           PRE_RELEASE: ${{ inputs.preRelease }}
           NAME: ${{ steps.extract.outputs.name }}
+          REPO_NAME: ${{ steps.repo-name.outputs.result }}
+          OWNER_NAME: ${{ steps.owner-name.outputs.result }}
         run: |
           chmod +rx ./.github/scripts/build-gh-page.sh
           ./.github/scripts/build-gh-page.sh
 
       - name: 🥅 Deploy to GH-Pages
         uses: peaceiris/actions-gh-pages@v3
+        env:
+          REPO_NAME: ${{ steps.repo-name.outputs.result }}
+          OWNER_NAME: ${{ steps.owner-name.outputs.result }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          external_repository: $OWNER_NAME/$REPO_NAME
           publish_dir: ./public
 
       - name: 🖨️ Print gh-pages url
@@ -71,15 +89,17 @@ jobs:
           RELEASE: ${{ inputs.release }}
           PRE_RELEASE: ${{ inputs.preRelease }}
           NAME: ${{ steps.extract.outputs.name }}
+          REPO_NAME: ${{ steps.repo-name.outputs.result }}
+          OWNER_NAME: ${{ steps.owner-name.outputs.result }}
         run: |
           if [[ $RELEASE == "true" ]];
           then
-            export URL=https://db-ui.github.io/elements
+            export URL=https://$OWNER_NAME.github.io/$REPO_NAME
           elif [[ $PRE_RELEASE == "true" ]];
           then
-            export URL=https://db-ui.github.io/elements/version/${NAME}
+            export URL=https://$OWNER_NAME.github.io/$REPO_NAME/version/${NAME}
           else
-            export URL=https://db-ui.github.io/elements/review/${NAME}
+            export URL=https://$OWNER_NAME.github.io/$REPO_NAME/review/${NAME}
           fi
           echo "URL: $URL"
           echo "### GH-Pages URL :rocket: <br> <br> $URL" >> $GITHUB_STEP_SUMMARY
