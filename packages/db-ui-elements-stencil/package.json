@@ -44,10 +44,10 @@
     "@types/jest": "27.4.1",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
-    "jest-junit": "13.0.0"
+    "jest-junit": "14.0.1"
   },
   "dependencies": {
-    "@db-ui/core": "^2.0.0-50-26e655c"
+    "@db-ui/core": "^2.0.0-51-fa49860"
   },
   "license": "Apache-2.0",
   "publishConfig": {
