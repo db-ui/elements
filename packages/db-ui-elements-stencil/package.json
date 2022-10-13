@@ -34,7 +34,7 @@
     "start": "npm run start-stencil"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.5.0",
+    "@faker-js/faker": "^7.6.0",
     "@stencil/angular-output-target": "0.4.0",
     "@stencil/core": "2.18.1",
     "@stencil/eslint-plugin": "0.4.0",
@@ -44,10 +44,10 @@
     "@types/jest": "27.4.1",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
-    "jest-junit": "13.0.0"
+    "jest-junit": "14.0.1"
   },
   "dependencies": {
-    "@db-ui/core": "^2.0.0-50-26e655c"
+    "@db-ui/core": "^2.0.0-51-fa49860"
   },
   "license": "Apache-2.0",
   "publishConfig": {
