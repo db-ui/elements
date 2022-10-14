@@ -1,12 +1,12 @@
 ---
-name: Default On-Push
+name: Default Pipeline
 
 on:
+  pull_request:
   push:
     branches:
-      - '**'
-    tags:
-      - '!**'
+      - 'main'
+      - 'v3'
 
 jobs:
   init:
@@ -17,6 +17,7 @@ jobs:
     needs: [init]
 
   scan-secrets:
+    if: github.owner == 'db-ui'
     uses: ./.github/workflows/00-scan-secrets.yml
 
   install-cypress:
@@ -62,5 +63,5 @@ jobs:
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
-    if: ${{ github.actor != 'dependabot[bot]' }}
+    if: ${{ github.actor != 'dependabot[bot]' && github.owner == 'db-ui' }}
     needs: [validate, test, cypress]
