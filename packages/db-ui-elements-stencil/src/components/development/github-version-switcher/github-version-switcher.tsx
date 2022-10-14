@@ -23,12 +23,18 @@ export class GithubVersionSwitcher {
    * Provides the name of the repo
    */
   @Prop({ reflect: false }) repo: string;
-
   @State() groups = [
-    { name: 'Versions', branches: [] },
-    { name: 'Features', branches: [] },
-    { name: 'Bugfixes', branches: [] },
-    { name: 'Other', branches: [] }
+    { prefix: 'v', name: 'Versions', branches: [] },
+    { prefix: 'test', name: 'Tests', branches: [] },
+    { prefix: 'feat', name: 'Features', branches: [] },
+    { prefix: 'fix', name: 'Bugfixes', branches: [] },
+    { prefix: 'chore', name: 'Chore', branches: [] },
+    { prefix: 'docs', name: 'Docs', branches: [] },
+    { prefix: 'refactor', name: 'Refactors', branches: [] },
+    { prefix: 'style', name: 'Styles', branches: [] },
+    { prefix: 'ci', name: 'CI', branches: [] },
+    { prefix: 'perf', name: 'Perf', branches: [] },
+    { prefix: '', name: 'Other', branches: [] }
   ];
   @State() currentBranch = this._defaultBranch;
   @State() cleanOwner;
@@ -61,12 +67,13 @@ export class GithubVersionSwitcher {
         (branch) => branch !== 'gh-pages' && !branch.includes('dependabot')
       );
     branchNames.forEach((branch) => {
-      if (branch.startsWith('feat') || branch.startsWith('feature')) {
-        this.groups[1].branches.push(branch);
-      } else if (branch.startsWith('fix') || branch.startsWith('bugfix')) {
-        this.groups[2].branches.push(branch);
+      const foundGroup = this.groups.find((grp) =>
+        branch.startsWith(grp.prefix)
+      );
+      if (foundGroup) {
+        foundGroup.branches.push(branch);
       } else {
-        this.groups[3].branches.push(branch);
+        this.groups.at(-1).branches.push(branch);
       }
     });
     this.setCurrentBranch(branchNames);
