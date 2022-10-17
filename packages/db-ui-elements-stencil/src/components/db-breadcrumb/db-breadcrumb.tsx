@@ -24,7 +24,7 @@ export class DbBreadcrumb {
   /**
    * an optional [`aria-label`-attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
    */
-  @Prop({ reflect: true }) alabel: string;
+  @Prop({ reflect: true }) arialabel: string;
   private compData: DbLinkType[];
 
   private hasItemsWrapper: boolean;
@@ -55,7 +55,7 @@ export class DbBreadcrumb {
 
   render() {
     return (
-      <nav class="cmp-breadcrumb" aria-label={this.alabel}>
+      <nav class="cmp-breadcrumb" aria-label={this.arialabel}>
         {this.compData && <ol innerHTML={getCompDataHtml(this.compData)} />}
         {!this.compData && (
           <ol>

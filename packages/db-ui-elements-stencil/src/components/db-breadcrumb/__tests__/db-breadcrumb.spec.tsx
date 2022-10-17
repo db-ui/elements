@@ -21,7 +21,7 @@ describe('db-breadcrumb', () => {
     const page = await newSpecPage({
       components: [DbBreadcrumb],
       html: `
-        <db-breadcrumb alabel='Aria-Breadcrumb'>
+        <db-breadcrumb arialabel='Aria-Breadcrumb'>
           <db-link href='http://db.test/link1'>Link 1</db-link>
           <db-link href='//db.test/link2'>Link 2</db-link>
           <db-link href='#link3' aria-current='location'>Link 3</db-link>
@@ -29,7 +29,7 @@ describe('db-breadcrumb', () => {
       `
     });
     expect(page.root).toEqualHtml(`
-      <db-breadcrumb alabel='Aria-Breadcrumb' >
+      <db-breadcrumb arialabel='Aria-Breadcrumb' >
           <nav class='cmp-breadcrumb' aria-label='Aria-Breadcrumb'>
             <ol>
               <li><db-link href='http://db.test/link1'>Link 1</db-link></li>
