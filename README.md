@@ -53,7 +53,7 @@ If you miss a component than [contribute](CONTRIBUTING.md), please.
 
 ## What is next?
 
-[Overview on documentation](doc/readme.md)
+[Overview on documentation](doc/README.md)
 
 ## Framework showcases
 
