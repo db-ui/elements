@@ -22,5 +22,5 @@ jobs:
     uses: ./.github/workflows/99-dependency-review.yml
 
   labeler:
-    if: github.base.ref != 'db-ui:main'
+    if: github.base.ref != 'db-ui:fix-pipeline-fails-on-forks'
     uses: ./.github/workflows/99-labeler.yml
