@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Repo workspace
-        run: echo "The repo workspace is $GITHUB_WORKSPACE"
+        run: echo "The repo workspace is ${ github }"
         
       - name: 🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.11.0
