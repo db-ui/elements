@@ -17,7 +17,7 @@ jobs:
     needs: [init]
 
   scan-secrets:
-    if: github.repository.owner == 'db-ui'
+    if: github.repository == 'db-ui/elements'
     uses: ./.github/workflows/00-scan-secrets.yml
 
   install-cypress:
@@ -63,5 +63,5 @@ jobs:
 
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
-    if: ${{ github.actor != 'dependabot[bot]' && github.repository.owner == 'db-ui' }}
+    if: ${{ github.actor != 'dependabot[bot]' && github.repository == 'db-ui/elements' }}
     needs: [validate, test, cypress]
