@@ -22,5 +22,5 @@ jobs:
     uses: ./.github/workflows/99-dependency-review.yml
 
   labeler:
-    if: github.base.ref.startsWith('db-ui:')
+    if: github.base.ref == 'db-ui:main'
     uses: ./.github/workflows/99-labeler.yml
