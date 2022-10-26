@@ -18,7 +18,7 @@ jobs:
 
   scan-secrets:
     # if: github.repository.owner == 'db-ui'
-    # uses: ./.github/workflows/00-scan-secrets.yml
+    uses: ./.github/workflows/00-scan-secrets.yml
     run: echo "The repository owner is $env:GITHUB_REPOSITORY_OWNER"
 
   install-cypress:
