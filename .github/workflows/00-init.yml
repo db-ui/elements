@@ -9,7 +9,9 @@ jobs:
     name: Init
     runs-on: ubuntu-latest
     steps:
-      - name: Repo workspace
+      - name: Repo workspace  
+        env:
+          OWNER_LOGIN: ${{context.payload.pull_request.head.owner.login}}
         uses: actions/github-script@v6
         with:
           script: |
