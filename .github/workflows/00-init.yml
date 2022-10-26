@@ -9,6 +9,11 @@ jobs:
     name: Init
     runs-on: ubuntu-latest
     steps:
+      - name: Print the GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+        
       - name: Repo workspace  
         env:
           OWNER_LOGIN: ${{context.payload.pull_request.head.owner.login}}
