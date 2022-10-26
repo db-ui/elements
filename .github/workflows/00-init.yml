@@ -9,13 +9,13 @@ jobs:
     name: Init
     runs-on: ubuntu-latest
     env:
-      OWNER_LOGIN: ${{ context.payload.pull_request.head.owner.login }}
+      OWNER_LOGIN: ${{context.payload.pull_request.head.owner.login}}
     steps:
       - name: Repo workspace
         uses: actions/github-script@v6
         with:
           script: |
-            console.log( context.payload.pull_request.head );
+            console.log(context.payload.pull_request.head);
         
       - name: 🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.11.0
