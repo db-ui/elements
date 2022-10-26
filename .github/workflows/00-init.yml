@@ -8,8 +8,6 @@ jobs:
   init:
     name: Init
     runs-on: ubuntu-latest
-    env:
-      OWNER_LOGIN: ${{context.payload.pull_request.head.owner.login}}
     steps:
       - name: Repo workspace
         uses: actions/github-script@v6
