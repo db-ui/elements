@@ -9,8 +9,8 @@ jobs:
     name: Init
     runs-on: ubuntu-latest
     steps:
-      - name: Repo name
-        run: echo "The repo name is $GITHUB_REPOSITORY"
+      - name: Repo workspace
+        run: echo "The repo workspace is $GITHUB_WORKSPACE"
         
       - name: 🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.11.0
