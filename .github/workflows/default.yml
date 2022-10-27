@@ -17,7 +17,7 @@ jobs:
     needs: [init]
 
   scan-secrets:
-    if: github.event.pull_request.head.repo.owner.login == 'db-ui'
+    if: github.event.pull_request.head.repo.owner.login == 'db-ui' || github.event.pull_request == null
     uses: ./.github/workflows/00-scan-secrets.yml
 
   install-cypress:
