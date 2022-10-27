@@ -8,14 +8,7 @@ jobs:
   init:
     name: Init
     runs-on: ubuntu-latest
-    steps:        
-      - name: Pipeline test  
-        if: ${{ github.event.pull_request == null || github.event.pull_request.head.repo.owner.login == 'dbsystel' }}
-        uses: actions/github-script@v6
-        with:
-          script: |
-            console.log("works");
-        
+    steps:
       - name: 🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.11.0
 
