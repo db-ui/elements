@@ -31,7 +31,7 @@
     "@babel/preset-env": "^7.19.4",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
-    "@commitlint/cli": "17.1.2",
+    "@commitlint/cli": "17.2.0",
     "@commitlint/config-conventional": "17.1.0",
     "@storybook/addon-actions": "6.5.13",
     "@storybook/addon-controls": "6.5.13",
