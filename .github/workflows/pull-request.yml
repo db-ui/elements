@@ -22,5 +22,5 @@ jobs:
     uses: ./.github/workflows/99-dependency-review.yml
 
   labeler:
-    if: github.owner == 'db-ui'
+    if: github.event.pull_request.head.repo.owner.login == 'db-ui'
     uses: ./.github/workflows/99-labeler.yml
