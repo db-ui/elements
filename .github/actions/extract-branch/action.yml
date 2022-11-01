@@ -16,7 +16,7 @@ runs:
         script: |
           return (
           context?.payload?.pull_request?.head?.ref ||
-          context?.payload?.ref
+          context?.payload?.ref || ""
           ).replace("refs/heads/","");
 
     - name: 🪑 Set output
