@@ -58,7 +58,7 @@
     "eslint-plugin-vue": "^9.7.0",
     "file-system-cache": "2.0.1",
     "find-versions-cli": "^4.0.0",
-    "husky": "8.0.1",
+    "husky": "8.0.2",
     "iframe-resizer": "4.3.2",
     "jest-config": "29.2.2",
     "markdownlint-cli": "^0.32.2",
