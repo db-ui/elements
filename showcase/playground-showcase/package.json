@@ -15,7 +15,7 @@
     "react-router-dom": "6.4.3"
   },
   "devDependencies": {
-    "@types/dompurify": "^2.3.4",
+    "@types/dompurify": "^2.4.0",
     "cpr": "3.0.1",
     "react-scripts": "5.0.1",
     "sass": "1.56.1"
