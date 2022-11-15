@@ -1,12 +1,12 @@
 ---
-name: Default On-Push
+name: Default Pipeline
 
 on:
+  pull_request:
   push:
     branches:
-      - '**'
-    tags:
-      - '!**'
+      - 'main'
+      - 'v3'
 
 jobs:
   init:
@@ -17,6 +17,7 @@ jobs:
     needs: [init]
 
   scan-secrets:
+    if: github.event.pull_request == null || github.event.pull_request.head.repo.owner.login == 'db-ui'
     uses: ./.github/workflows/00-scan-secrets.yml
 
   install-cypress:
@@ -53,7 +54,14 @@ jobs:
     uses: ./.github/workflows/02-cypress.yml
     needs: [install-cypress, build-storybook]
 
+  checks-done:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🎉 Checks done
+        run: echo "🎉 All Cypress tests were successful."
+    needs: [cypress]
+
   deploy:
     uses: ./.github/workflows/03-deploy-gh-pages.yml
-    if: ${{ github.actor != 'dependabot[bot]' }}
+    if: ${{ github.actor != 'dependabot[bot]' && github.event.pull_request == null || github.event.pull_request.head.repo.owner.login == 'db-ui' }}
     needs: [validate, test, cypress]

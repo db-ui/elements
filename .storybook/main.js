@@ -18,9 +18,11 @@ module.exports = {
     '@storybook/addon-controls'
   ],
   staticDirs: ['../packages/db-ui-elements-stencil/www'],
-  // "Deprecated implicit PostCSS loader" / https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#deprecated-implicit-postcss-loader
   features: {
-    postcss: false
+    // "Deprecated implicit PostCSS loader" / https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#deprecated-implicit-postcss-loader
+    postcss: false,
+    // make storybook composable by building and providing the stories.json file
+    buildStoriesJson: true
   },
   babel: async (options) => ({
     ...options,
