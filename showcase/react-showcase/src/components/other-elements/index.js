@@ -17,6 +17,8 @@ function OtherElements() {
       <DbTag>default</DbTag>
       <DbTag variant="informative">informative</DbTag>
       <DbTag variant="success">success</DbTag>
+      <p>DbLogo:</p>
+      <DbLogo></DbLogo>
       <p>DbChip:</p>
       <DbChip datatype="filter" icon="account">
         default

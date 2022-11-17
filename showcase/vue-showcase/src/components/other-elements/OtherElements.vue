@@ -17,6 +17,8 @@ import {
     <DbProgress :value="60" :max="100" />
     <p>DbTag:</p>
     <DbTag>default</DbTag>
+    <p>DbLogo:</p>
+    <DbLogo></DbLogo>
     <DbTag variant="informative">informative</DbTag>
     <DbTag variant="success">success</DbTag>
     <p>DbChip:</p>

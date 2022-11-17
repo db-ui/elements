@@ -164,6 +164,7 @@ export const config: Config = {
         `${getSassPath()}/node_modules/@db-ui/core/sources/_patterns/01-elements/image/${getTheme()}`,
         `${getSassPath()}/node_modules/@db-ui/core/sources/_patterns/01-elements/input/${getTheme()}`,
         `${getSassPath()}/node_modules/@db-ui/core/sources/_patterns/01-elements/link/${getTheme()}`,
+        `${getSassPath()}/node_modules/@db-ui/core/sources/_patterns/01-elements/logo/${getTheme()}`,
         `${getSassPath()}/node_modules/@db-ui/core/sources/_patterns/01-elements/progress/${getTheme()}`,
         `${getSassPath()}/node_modules/@db-ui/core/sources/_patterns/01-elements/radio/${getTheme()}`,
         `${getSassPath()}/node_modules/@db-ui/core/sources/_patterns/01-elements/select/${getTheme()}`,
