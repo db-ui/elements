@@ -5,6 +5,8 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily'
+      time: '03:00'
+      timezone: 'Europe/Berlin'
     pull-request-branch-name:
       separator: '-'
 
@@ -13,6 +15,8 @@ updates:
     open-pull-requests-limit: 10
     schedule:
       interval: 'daily'
+      time: '03:00'
+      timezone: 'Europe/Berlin'
     ignore:
       - dependency-name: 'ng-packagr'
         update-types: ['version-update:semver-major']
@@ -35,6 +39,8 @@ updates:
     open-pull-requests-limit: 10
     schedule:
       interval: 'daily'
+      time: '03:00'
+      timezone: 'Europe/Berlin'
     ignore:
       - dependency-name: 'ng-packagr'
         update-types: ['version-update:semver-major']
@@ -51,6 +57,8 @@ updates:
     open-pull-requests-limit: 10
     schedule:
       interval: 'daily'
+      time: '03:00'
+      timezone: 'Europe/Berlin'
     ignore:
       - dependency-name: 'react'
         update-types: ['version-update:semver-major']
@@ -63,6 +71,8 @@ updates:
     open-pull-requests-limit: 10
     schedule:
       interval: 'daily'
+      time: '03:00'
+      timezone: 'Europe/Berlin'
     ignore:
       - dependency-name: 'react'
         update-types: ['version-update:semver-major']
@@ -75,6 +85,8 @@ updates:
     open-pull-requests-limit: 10
     schedule:
       interval: 'daily'
+      time: '03:00'
+      timezone: 'Europe/Berlin'
     ignore:
       - dependency-name: 'react'
         update-types: ['version-update:semver-major']
@@ -87,5 +99,7 @@ updates:
     open-pull-requests-limit: 10
     schedule:
       interval: 'daily'
+      time: '03:00'
+      timezone: 'Europe/Berlin'
     pull-request-branch-name:
       separator: '-'
