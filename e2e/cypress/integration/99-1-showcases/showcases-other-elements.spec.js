@@ -14,7 +14,7 @@ context('showcase', () => {
         .should('eq', 'account');
 
       // 2. DbProgress
-      cy.get('db-progress').eq(0).find('output').contains('60%');
+      cy.get('db-progress').eq(0).find('label').contains('60%');
       cy.get('db-progress')
         .eq(0)
         .find('progress')

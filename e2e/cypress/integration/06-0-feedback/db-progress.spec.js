@@ -9,7 +9,7 @@ context('db-progress', () => {
   it('Progress should exist and be configurable', function () {
     const simpleProgress = [0, 1];
     simpleProgress.forEach((num) => {
-      cy.get('db-progress').eq(num).find('output').contains('60%');
+      cy.get('db-progress').eq(num).find('label').contains('60%');
       cy.get('db-progress')
         .eq(num)
         .find('progress')
@@ -23,6 +23,6 @@ context('db-progress', () => {
       .invoke('attr', 'indeterminate')
       .should('exist');
 
-    cy.get('db-progress').eq(3).find('output').contains('60 ❤️');
+    cy.get('db-progress').eq(3).find('label').contains('60 ❤️');
   });
 });
