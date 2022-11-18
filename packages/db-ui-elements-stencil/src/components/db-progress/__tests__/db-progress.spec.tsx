@@ -10,8 +10,10 @@ describe('db-progress', () => {
     expect(page.root).toEqualHtml(`
       <db-progress htmlid="progress-label-01">
         <div class="elm-progress">
-          <progress id="progress-label-01"></progress>
-          <output htmlFor="progress-label-01">%</output>
+          <progress aria-describedby="progress-label-01-label" id="progress-label-01"></progress>
+          <label aria-hidden="true" htmlfor="progress-label-01" id="progress-label-01-label">
+            %
+          </label>
         </div>
       </db-progress>
     `);
