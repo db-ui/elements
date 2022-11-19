@@ -5,6 +5,23 @@
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
 
+## FAQ
+
+### 
+
+- I'm facing problems like the following when using `@db-ui/ngx-elements` with Angular version 14:
+  ```
+  Interface 'HTMLDbBreadcrumbElement' cannot simultaneously extend types 'DbBreadcrumb' and 'HTMLStencilElement'.
+  Named property 'ariaLabel' of types 'DbBreadcrumb' and 'HTMLStencilElement' are not identical
+  ```
+
+  ![Bildschirmfoto 2022-09-15 um 10 31 21](https://user-images.githubusercontent.com/2963522/190355655-429251e6-0048-4c66-aebc-c6e45268768f.png)
+
+  The solution is to set the following option within the `CompileOptions` section within your `TsConfig`, until we provide a central solution:
+  ```JSON
+  "skipLibCheck": true
+  ```
+
 ## Deutsche Bahn brand
 
 As we'd like to perfectly support our users and customers on their digital journey, the usage of Deutsche Bahn brand and trademarks are bound of clear guidelines and restrictions even when being used with the code that we're provide with this product; Deutsche Bahn fully reserves all rights regarding the Deutsche Bahn brand, even though that we're providing the code of DB UI products free to use and release it under the Apache 2.0 license.
