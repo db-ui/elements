@@ -53,7 +53,7 @@
     "dotenv": "^16.0.3",
     "eslint": "8.27.0",
     "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-storybook": "0.6.7",
     "eslint-plugin-vue": "^9.7.0",
     "file-system-cache": "2.0.1",
