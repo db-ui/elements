@@ -8,4 +8,4 @@ Especially the following aspects have changed through the various different rele
 
 === db-breadcrumb
 
-**BREAKING CHANGE**: We needed to change the Breadcrumbs aria-label attribute to arialabel for compatibility reasons.
+**BREAKING CHANGE**: We needed to change the Breadcrumbs `aria-label` attribute to `arialabel` for compatibility reasons.
