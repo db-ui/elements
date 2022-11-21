@@ -7,8 +7,6 @@ updates:
       interval: 'daily'
       time: '03:00'
       timezone: 'Europe/Berlin'
-    reviewers:
-      - 'github-actions'
     pull-request-branch-name:
       separator: '-'
 
@@ -19,8 +17,6 @@ updates:
       interval: 'daily'
       time: '03:00'
       timezone: 'Europe/Berlin'
-    reviewers:
-      - 'github-actions'
     ignore:
       - dependency-name: 'ng-packagr'
         update-types: ['version-update:semver-major']
@@ -45,8 +41,6 @@ updates:
       interval: 'daily'
       time: '03:00'
       timezone: 'Europe/Berlin'
-    reviewers:
-      - 'github-actions'
     ignore:
       - dependency-name: 'ng-packagr'
         update-types: ['version-update:semver-major']
@@ -65,8 +59,6 @@ updates:
       interval: 'daily'
       time: '03:00'
       timezone: 'Europe/Berlin'
-    reviewers:
-      - 'github-actions'
     ignore:
       - dependency-name: 'react'
         update-types: ['version-update:semver-major']
@@ -81,8 +73,6 @@ updates:
       interval: 'daily'
       time: '03:00'
       timezone: 'Europe/Berlin'
-    reviewers:
-      - 'github-actions'
     ignore:
       - dependency-name: 'react'
         update-types: ['version-update:semver-major']
@@ -97,8 +87,6 @@ updates:
       interval: 'daily'
       time: '03:00'
       timezone: 'Europe/Berlin'
-    reviewers:
-      - 'github-actions'
     ignore:
       - dependency-name: 'react'
         update-types: ['version-update:semver-major']
@@ -113,7 +101,5 @@ updates:
       interval: 'daily'
       time: '03:00'
       timezone: 'Europe/Berlin'
-    reviewers:
-      - 'github-actions'
     pull-request-branch-name:
       separator: '-'
