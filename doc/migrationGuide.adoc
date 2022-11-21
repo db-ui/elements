@@ -4,7 +4,7 @@ As with every release you're recommended to do a visual regression testing for y
 
 Especially the following aspects have changed through the various different releases and would need your review and probably adaptions within your code base.
 
-== DB UI Core 0.17.0 Migration Guide
+== DB UI Core 0.16.6 Migration Guide
 
 === db-breadcrumb
 
