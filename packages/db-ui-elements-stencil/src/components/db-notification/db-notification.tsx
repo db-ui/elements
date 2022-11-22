@@ -10,7 +10,7 @@ export class DbNotification {
    * Role will be added to the element containing the alert or status message
    * that will be read aloud by screen readers.
    */
-  @Prop({ reflect: true }) role: 'alert' | 'status' = this.getRole();
+  @Prop({ reflect: true }) variant: 'alert' | 'status' = this.getVariant();
 
   /**
    * The type attribute is used to set the type of the notification, will change
@@ -22,7 +22,7 @@ export class DbNotification {
     | 'success'
     | 'warning';
 
-  private getRole() {
+  private getVariant() {
     return this.type === 'error' || this.type === 'warning'
       ? 'alert'
       : 'status';
@@ -32,7 +32,7 @@ export class DbNotification {
     return (
       <div
         class="cmp-notification"
-        role={this.role}
+        role={this.variant}
         data-type={this.type ? this.type : null}
       >
         <slot name="prenotification"></slot>
