@@ -7,7 +7,7 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class DbNotification {
   /**
-   * Role will be added to the element containing the alert or status message
+   * Variant will be added to the element containing the alert or status message
    * that will be read aloud by screen readers.
    */
   @Prop({ reflect: true }) variant: 'alert' | 'status' = this.getVariant();
