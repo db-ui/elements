@@ -44,7 +44,7 @@
     "@storybook/react": "6.5.13",
     "@storybook/web-components": "6.5.13",
     "@types/estree": "1.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "babel-loader": "9.1.0",
     "concurrently": "7.6.0",
