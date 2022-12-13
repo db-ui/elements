@@ -11,7 +11,7 @@ context('db-sidenavi', () => {
 
   it('sidenavi contains links', function () {
     cy.get('db-sidenavi')
-      .eq(0)
+      .eq(1)
       .find('ol')
       .find('li')
       .eq(0)

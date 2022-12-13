@@ -11,7 +11,7 @@ context('db-language-switcher', () => {
 
   it('language-switcher contains links', function () {
     cy.get('db-language-switcher')
-      .eq(0)
+      .eq(1)
       .find('ul')
       .find('li')
       .eq(0)
