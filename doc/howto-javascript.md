@@ -39,28 +39,28 @@ For your copy use the folder below and copy it in your assets folder:
 
 ```json
 {
-src: 'node_modules/@db-ui/core/dist/fonts',
-dest: 'fonts'
+  src: 'node_modules/@db-ui/core/dist/fonts',
+  dest: 'fonts'
 }
 
 {
-src: 'node_modules/@db-ui/core/dist/icons',
-dest: 'icons'
+  src: 'node_modules/@db-ui/core/dist/icons',
+  dest: 'icons'
 }
 
 {
-src: 'node_modules/@db-ui/core/dist/images',
-dest: 'images'
+  src: 'node_modules/@db-ui/core/dist/images',
+  dest: 'images'
 }
 
 {
-src: 'node_modules/@db-ui/core/dist/js',
-dest: 'js'
+  src: 'node_modules/@db-ui/core/dist/js',
+  dest: 'js'
 }
 
 {
-src: `node_modules/@db-ui/core/dist/css/{yourTheme}/db-ui-core.vars.css`,
-dest: 'css/db-ui-core.vars.css'
+  src: `node_modules/@db-ui/core/dist/css/{yourTheme}/db-ui-core.vars.css`,
+  dest: 'css/db-ui-core.vars.css'
 }
 ```
 
@@ -92,5 +92,6 @@ In order to test the installation just add a component to your html, like in the
 
 See documentation for Angular, React and Vue
 
-- [Angular](https://github.com/db-ui/elements/-/blob/main/doc/howto-angular.md)
-- [React](https://github.com/db-ui/elements/-/blob/main/doc/howto-react.md)
+- [Angular](https://github.com/db-ui/elements/blob/main/doc/howto-angular.md)
+- [React](https://github.com/db-ui/elements/blob/main/doc/howto-vue.md)
+- [Vue](https://github.com/db-ui/elements/blob/main/doc/howto-vue.md)
