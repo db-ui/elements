@@ -16,11 +16,7 @@ You want get DB UI Elements running on your local machine?
 
 -> [How to build](./howto-build.md)
 
-You want understand the big picture?
-
--> [Big Picture](./architecture.md)
-
-You want contribute?
+You want to contribute?
 
 -> [How to contribute](../CONTRIBUTING.md)
 

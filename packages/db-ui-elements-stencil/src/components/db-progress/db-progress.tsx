@@ -48,12 +48,17 @@ export class DbProgress {
               ? { ['--progress-conic']: `${this.value}` }
               : { ['']: '' }
           }
+          aria-describedby={this.htmlid + '-label'}
         />
         {!this.indeterminate && (
-          <output htmlFor={this.htmlid}>
+          <label
+            htmlFor={this.htmlid}
+            id={this.htmlid + '-label'}
+            aria-hidden="true"
+          >
             {this.value}
             {this.percentagesign}
-          </output>
+          </label>
         )}
       </div>
     );
