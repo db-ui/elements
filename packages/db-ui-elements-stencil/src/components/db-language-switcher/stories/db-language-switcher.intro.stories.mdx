@@ -9,20 +9,7 @@ import { mockDataLanguages } from './../../db-link/stories/mockData.ts';
 
 The `<db-language-switcher></db-language-switcher>` element represents list with languages.
 
-There are two options to use &lt;db-language-switcher&gt;:
-
-<db-headline>Language Switcher with &lt;db-link&gt;</db-headline>
-
-<Canvas>
-  <db-language-switcher aria-selected-index="1">
-    <db-link title="English language" href="#">
-      EN
-    </db-link>
-    <db-link title="Deutsche Sprache" href="#">
-      DE
-    </db-link>
-  </db-language-switcher>
-</Canvas>
+There are three options to use &lt;db-language-switcher&gt;:
 
 <db-headline>Language Switcher with custom li wrapper</db-headline>
 
@@ -40,6 +27,25 @@ There are two options to use &lt;db-language-switcher&gt;:
     <li>
       <a href="#">DE</a>
     </li>
+  </db-language-switcher>
+</Canvas>
+
+<db-headline>Language Switcher with &lt;db-link&gt;</db-headline>
+
+<i>
+  <strong>
+    Use with caution, you won't have reactivity on changed HTML after the initial load.
+  </strong>
+</i>
+
+<Canvas>
+  <db-language-switcher aria-selected-index="1">
+    <db-link title="English language" href="#">
+      EN
+    </db-link>
+    <db-link title="Deutsche Sprache" href="#">
+      DE
+    </db-link>
   </db-language-switcher>
 </Canvas>
 

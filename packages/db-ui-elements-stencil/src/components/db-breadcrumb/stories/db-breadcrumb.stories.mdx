@@ -9,19 +9,7 @@ import { mockData } from './../../db-link/stories/mockData.ts';
 
 There are 3 options to use &lt;db-breadcrumb&gt;:
 
-<db-headline>Breadcrumb with &lt;db-link&gt;</db-headline>
-
-<Canvas>
-  <db-breadcrumb aria-label="Breadcrumb">
-    <db-link href="#">Startseite</db-link>
-    <db-link href="#">Page XYZ</db-link>
-    <db-link href="#" current="location">
-      Page ZYS
-    </db-link>
-  </db-breadcrumb>
-</Canvas>
-
-<db-headline>Breadcrumb with li tag wrappers</db-headline>
+<db-headline>Breadcrumb with `li` tag wrappers</db-headline>
 
 <Canvas>
   <db-breadcrumb aria-label="Breadcrumb">
@@ -43,6 +31,24 @@ There are 3 options to use &lt;db-breadcrumb&gt;:
         Page ZYS
       </a>
     </li>
+  </db-breadcrumb>
+</Canvas>
+
+<db-headline>Breadcrumb with &lt;db-link&gt;</db-headline>
+
+<i>
+  <strong>
+    Use with caution, you won't have reactivity on changed HTML after the initial load.
+  </strong>
+</i>
+
+<Canvas>
+  <db-breadcrumb aria-label="Breadcrumb">
+    <db-link href="#">Startseite</db-link>
+    <db-link href="#">Page XYZ</db-link>
+    <db-link href="#" current="location">
+      Page ZYS
+    </db-link>
   </db-breadcrumb>
 </Canvas>
 

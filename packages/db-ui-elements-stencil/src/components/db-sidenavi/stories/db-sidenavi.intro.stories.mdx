@@ -11,31 +11,6 @@ The `<db-sidenavi></db-sidenavi>` element represents a side navigation e.g. for 
 
 There are 3 options to use &lt;db-sidenavi&gt;:
 
-<db-headline>Sidenavi with &lt;db-link&gt;</db-headline>
-
-<Canvas>
-  <db-sidenavi>
-    <db-link rel="index" href="#" aria-current="page">
-      Startseite
-    </db-link>
-    <db-link rel="documents" href="#">
-      Dokumente
-    </db-link>
-    <db-link icon="settings" href="#">
-      Einstellungen
-    </db-link>
-    <db-link icon="chat" href="#">
-      Nachrichten
-    </db-link>
-    <db-link rel="calendar" href="#">
-      Kalender
-    </db-link>
-    <db-link rel="help" href="#">
-      Frage &amp; Hilfe
-    </db-link>
-  </db-sidenavi>
-</Canvas>
-
 <db-headline>Sidenavi with wrappers</db-headline>
 
 Use [&lt;li&gt; (**l**ist **i**tem)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li) as a wrapper tag around each element.
@@ -68,6 +43,37 @@ Use [&lt;li&gt; (**l**ist **i**tem)](https://developer.mozilla.org/en-US/docs/We
         Frage &amp; Hilfe
       </a>
     </li>
+  </db-sidenavi>
+</Canvas>
+
+<db-headline>Sidenavi with &lt;db-link&gt;</db-headline>
+
+<i>
+  <strong>
+    Use with caution, you won't have reactivity on changed HTML after the initial load.
+  </strong>
+</i>
+
+<Canvas>
+  <db-sidenavi>
+    <db-link rel="index" href="#" aria-current="page">
+      Startseite
+    </db-link>
+    <db-link rel="documents" href="#">
+      Dokumente
+    </db-link>
+    <db-link icon="settings" href="#">
+      Einstellungen
+    </db-link>
+    <db-link icon="chat" href="#">
+      Nachrichten
+    </db-link>
+    <db-link rel="calendar" href="#">
+      Kalender
+    </db-link>
+    <db-link rel="help" href="#">
+      Frage &amp; Hilfe
+    </db-link>
   </db-sidenavi>
 </Canvas>
 
