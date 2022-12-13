@@ -11,7 +11,7 @@ context('db-breadcrumb', () => {
 
   it('breadcrumb contains links', function () {
     cy.get('db-breadcrumb')
-      .eq(0)
+      .eq(1)
       .find('nav')
       .find('ol')
       .find('li')

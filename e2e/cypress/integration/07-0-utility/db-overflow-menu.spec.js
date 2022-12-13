@@ -11,7 +11,7 @@ context('db-overflow-menu', () => {
 
   it('overflow-menu contains links', function () {
     cy.get('db-overflow-menu')
-      .eq(0)
+      .eq(1)
       .find('menu')
       .find('li')
       .eq(0)
