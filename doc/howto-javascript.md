@@ -93,5 +93,5 @@ In order to test the installation just add a component to your html, like in the
 See documentation for Angular, React and Vue
 
 - [Angular](https://github.com/db-ui/elements/blob/main/doc/howto-angular.md)
-- [React](https://github.com/db-ui/elements/blob/main/doc/howto-vue.md)
+- [React](https://github.com/db-ui/elements/blob/main/doc/howto-react.md)
 - [Vue](https://github.com/db-ui/elements/blob/main/doc/howto-vue.md)
