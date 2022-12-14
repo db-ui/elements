@@ -20,47 +20,9 @@ export const StyledCanvas = styled.div`
 
 The `<db-mainnavigation></db-mainnavigation>` element represents the main navigation of your app shown inside the header.
 
-There are 3 options to use &lt;db-mainnavigation&gt;:
+There are 3 options to use &lt;db-mainnavigation&gt;; out of the first two, we suggest the first one as it provides you with reactivity (especially [data like e.g. `current`-attributes changes after the initial rendering](https://github.com/db-ui/elements/issues/590)):
 
-<db-headline>Mainnavigation with &lt;db-link&gt;</db-headline>
-
-<db-headline variant="4">Without submenu</db-headline>
-
-<Canvas>
-  <db-mainnavigation>
-    <db-link href="#" rel="index" current="page">
-      Startseite
-    </db-link>
-    <db-link href="#" rel="offers">
-      Aufträge
-    </db-link>
-  </db-mainnavigation>
-</Canvas>
-
-<db-headline variant="4">With submenu items</db-headline>
-
-<Canvas>
-  <db-mainnavigation>
-    <db-link href="#" current="page">
-      Startseite
-      <db-link href="#">
-        Sub 1
-        <db-link href="#">Sub 1 Sub 1</db-link>
-        <db-link href="#">Sub 1 Sub 2</db-link>
-      </db-link>
-      <db-link href="#">
-        Sub 2
-        <db-link href="#">Sub 2 Sub 1</db-link>
-        <db-link href="#">Sub2 Sub 2</db-link>
-      </db-link>
-    </db-link>
-    <db-link href="#" rel="offers">
-      Aufträge
-    </db-link>
-  </db-mainnavigation>
-</Canvas>
-
-<db-headline>Mainnavigation with li tag wrappers</db-headline>
+<db-headline>Mainnavigation with `li` tag wrappers</db-headline>
 
 <i>
   <strong>
@@ -138,6 +100,50 @@ There are 3 options to use &lt;db-mainnavigation&gt;:
       {/* You could as well use a general hyperlink HTML tag */}
       <a href="#">News</a>
     </li>
+  </db-mainnavigation>
+</Canvas>
+
+<db-headline>Mainnavigation with &lt;db-link&gt;</db-headline>
+
+<i>
+  <strong>
+    Use with caution, you won't have reactivity on changed HTML after the initial load.
+  </strong>
+</i>
+
+<db-headline variant="4">Without submenu</db-headline>
+
+<Canvas>
+  <db-mainnavigation>
+    <db-link href="#" rel="index" current="page">
+      Startseite
+    </db-link>
+    <db-link href="#" rel="offers">
+      Aufträge
+    </db-link>
+  </db-mainnavigation>
+</Canvas>
+
+<db-headline variant="4">With submenu items</db-headline>
+
+<Canvas>
+  <db-mainnavigation>
+    <db-link href="#" current="page">
+      Startseite
+      <db-link href="#">
+        Sub 1
+        <db-link href="#">Sub 1 Sub 1</db-link>
+        <db-link href="#">Sub 1 Sub 2</db-link>
+      </db-link>
+      <db-link href="#">
+        Sub 2
+        <db-link href="#">Sub 2 Sub 1</db-link>
+        <db-link href="#">Sub2 Sub 2</db-link>
+      </db-link>
+    </db-link>
+    <db-link href="#" rel="offers">
+      Aufträge
+    </db-link>
   </db-mainnavigation>
 </Canvas>
 

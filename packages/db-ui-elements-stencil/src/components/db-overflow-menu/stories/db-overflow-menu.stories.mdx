@@ -23,15 +23,6 @@ The `<db-overflow-menu></db-overflow-menu>` element represents a overflow menu o
 
 There are 3 options to use &lt;db-overflow-menu&gt;:
 
-<db-headline variant="2">overflow-menu with &lt;db-link&gt;</db-headline>
-
-<Canvas>
-  <db-overflow-menu>
-    <db-link href="#">Einstellungen</db-link>
-    <db-link href="#">Nachrichten</db-link>
-  </db-overflow-menu>
-</Canvas>
-
 <db-headline variant="2">overflow-menu with wrappers</db-headline>
 
 Use [&lt;li&gt; (**l**ist **i**tem)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li) as a wrapper tag around each element.
@@ -44,8 +35,6 @@ Only `<button>` and `<a>` HTML tags work as items content.
   </strong>
 </i>
 
-<db-headline>overflow-menu with custom db-button</db-headline>
-
 <Canvas>
   <db-overflow-menu>
     <li>
@@ -54,6 +43,21 @@ Only `<button>` and `<a>` HTML tags work as items content.
     <li>
       <db-button title="Title text">Delete</db-button>
     </li>
+  </db-overflow-menu>
+</Canvas>
+
+<db-headline variant="2">overflow-menu with &lt;db-link&gt;</db-headline>
+
+<i>
+  <strong>
+    Use with caution, you won't have reactivity on changed HTML after the initial load.
+  </strong>
+</i>
+
+<Canvas>
+  <db-overflow-menu>
+    <db-link href="#">Einstellungen</db-link>
+    <db-link href="#">Nachrichten</db-link>
   </db-overflow-menu>
 </Canvas>
 

@@ -11,19 +11,6 @@ The `<db-metanavigation></db-metanavigation>` element represents a meta navigati
 
 There are three options to use &lt;db-metanavigation&gt;:
 
-<db-headline>Metanavigation with &lt;db-link&gt;</db-headline>
-
-<Canvas>
-  <db-metanavigation>
-    <db-link icon="settings" href="#">
-      Einstellungen
-    </db-link>
-    <db-link icon="chat" icononly href="#">
-      Nachrichten
-    </db-link>
-  </db-metanavigation>
-</Canvas>
-
 <db-headline>Metanavigation with other custom elements</db-headline>
 
 Use [&lt;li&gt; (**l**ist **i**tem)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li) as a wrapper tag around each element.
@@ -46,6 +33,26 @@ Use [&lt;li&gt; (**l**ist **i**tem)](https://developer.mozilla.org/en-US/docs/We
         Nachrichten
       </a>
     </li>
+  </db-metanavigation>
+</Canvas>
+
+
+<db-headline>Metanavigation with &lt;db-link&gt;</db-headline>
+
+<i>
+  <strong>
+    Use with caution, you won't have reactivity on changed HTML after the initial load.
+  </strong>
+</i>
+
+<Canvas>
+  <db-metanavigation>
+    <db-link icon="settings" href="#">
+      Einstellungen
+    </db-link>
+    <db-link icon="chat" icononly href="#">
+      Nachrichten
+    </db-link>
   </db-metanavigation>
 </Canvas>
 

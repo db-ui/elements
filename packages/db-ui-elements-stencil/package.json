@@ -36,15 +36,15 @@
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
     "@stencil/angular-output-target": "0.4.0",
-    "@stencil/core": "2.19.3",
+    "@stencil/core": "2.20.0",
     "@stencil/eslint-plugin": "0.4.0",
     "@stencil/react-output-target": "0.3.1",
-    "@stencil/sass": "2.0.0",
+    "@stencil/sass": "2.0.1",
     "@stencil/vue-output-target": "0.6.2",
     "@types/jest": "27.4.1",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
-    "jest-junit": "14.0.1"
+    "jest-junit": "15.0.0"
   },
   "dependencies": {
     "@db-ui/core": "^2.3.0"
