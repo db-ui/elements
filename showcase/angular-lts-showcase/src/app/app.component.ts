@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { isAreaCurrent, NAVIGATION_ITEMS } from './utils/navigation-item';
 
 @Component({
@@ -8,7 +8,7 @@ import { isAreaCurrent, NAVIGATION_ITEMS } from './utils/navigation-item';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'angular-showcase';
+  title = 'angular-lts-showcase';
   navigationItems = NAVIGATION_ITEMS;
   isAria = isAreaCurrent;
 
@@ -18,10 +18,10 @@ export class AppComponent implements OnInit {
   select: string;
   textarea: string;
 
-  checkboxControl = new FormControl();
-  radioControl = new FormControl();
-  selectControl = new FormControl();
-  textareaControl = new FormControl();
+  checkboxControl = new UntypedFormControl();
+  radioControl = new UntypedFormControl();
+  selectControl = new UntypedFormControl();
+  textareaControl = new UntypedFormControl();
 
   radioButtons = ['radio-01', 'radio-02', 'radio-03'];
 

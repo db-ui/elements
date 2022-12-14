@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -14,10 +14,10 @@ export class FormComponent implements OnInit {
   textarea: string;
   toggle: boolean;
 
-  checkboxControl = new FormControl();
-  radioControl = new FormControl();
-  selectControl = new FormControl();
-  textareaControl = new FormControl();
+  checkboxControl = new UntypedFormControl();
+  radioControl = new UntypedFormControl();
+  selectControl = new UntypedFormControl();
+  textareaControl = new UntypedFormControl();
 
   radioButtons = ['Radio 01', 'Radio 02', 'Radio 03'];
 

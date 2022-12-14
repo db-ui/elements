@@ -31,7 +31,7 @@ jobs:
         uses: ./.github/actions/download-tar-artifact
         with:
           name: showcase-angular
-          path: showcase/angular-showcase/dist
+          path: showcase/angular-lts-showcase/dist
 
       - name: ⬇ Download Showcase playground dist folder
         uses: ./.github/actions/download-tar-artifact
@@ -61,7 +61,7 @@ jobs:
         env:
           VERSION: ${{ inputs.tag }}
         run: |
-          mv showcase/angular-showcase/dist/angular-showcase packages/db-ui-elements-stencil/www/angular-showcase
+          mv showcase/angular-lts-showcase/dist/angular-lts-showcase packages/db-ui-elements-stencil/www/angular-lts-showcase
           mv showcase/playground-showcase/dist/playground-showcase packages/db-ui-elements-stencil/www/playground-showcase
           mv showcase/react-showcase/dist/react-showcase packages/db-ui-elements-stencil/www/react-showcase
           mv showcase/reactwind-showcase/dist/reactwind-showcase packages/db-ui-elements-stencil/www/reactwind-showcase
