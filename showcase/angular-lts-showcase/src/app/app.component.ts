@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { isAreaCurrent, NAVIGATION_ITEMS } from './utils/navigation-item';
 
 @Component({
@@ -18,10 +18,10 @@ export class AppComponent implements OnInit {
   select: string;
   textarea: string;
 
-  checkboxControl = new UntypedFormControl();
-  radioControl = new UntypedFormControl();
-  selectControl = new UntypedFormControl();
-  textareaControl = new UntypedFormControl();
+  checkboxControl = new FormControl<boolean>(false, { nonNullable: false });
+  radioControl = new FormControl<string>('', { nonNullable: true });
+  selectControl = new FormControl<string>('', { nonNullable: false });
+  textareaControl = new FormControl<string>('', { nonNullable: false });
 
   radioButtons = ['radio-01', 'radio-02', 'radio-03'];
 
