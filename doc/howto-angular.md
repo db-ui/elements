@@ -127,6 +127,6 @@ There are 3 ways to use Events in Angular:
 
 ### Example
 
-[Angular Showcase GitHub](https://github.com/db-ui/elements/-/tree/develop/showcase/angular-lts-showcase)
+[Angular LTS Showcase GitHub](https://github.com/db-ui/elements/-/tree/develop/showcase/angular-lts-showcase)
 
-[Angular Showcase App](https://github.com/db-ui/elements/angular-lts-showcase/index.html)
+[Angular LTS Showcase App](https://github.com/db-ui/elements/angular-lts-showcase/index.html)
