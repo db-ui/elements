@@ -12,8 +12,7 @@ module.exports = ({ config }) => {
             require('@babel/preset-env').default
           ]
         }
-      },
-      require.resolve('react-docgen-typescript-loader')
+      }
     ]
   });
 
