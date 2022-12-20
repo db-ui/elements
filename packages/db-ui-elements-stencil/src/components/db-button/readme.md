@@ -1,4 +1,4 @@
-# API Docs
+# db-button
 
 <!-- ## Style Dependencies
 
@@ -33,7 +33,7 @@ Add the following styles to your application. If you have added the base depende
 @import url({path}/themes/{theme}/css/00-base/icons/missing-icons.css);
 ``` -->
 
-<!-- Auto Generated Below -->
+{/* Auto Generated Below */}
 
 
 ## Properties

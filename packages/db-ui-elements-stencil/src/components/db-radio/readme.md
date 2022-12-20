@@ -1,4 +1,4 @@
-# API Docs
+# db-radio
 
 <!-- ## Style Dependencies
 
@@ -16,7 +16,7 @@ Add the following styles to your application, if like to use a special theme. If
 @import url({path}/themes/{theme}/css/01-elements/radio/radio.vars.css);
 ``` -->
 
-<!-- Auto Generated Below -->
+{/* Auto Generated Below */}
 
 
 ## Properties

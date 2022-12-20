@@ -1,4 +1,4 @@
-# API Docs
+# db-input
 
 <!-- ## Style Dependencies
 
@@ -16,7 +16,7 @@ Add the following styles to your application. If you have added the base depende
 @import url({path}/themes/{theme}/css/01-elements/input/input.vars.css);
 ``` -->
 
-<!-- Auto Generated Below -->
+{/* Auto Generated Below */}
 
 
 ## Properties

@@ -1,4 +1,4 @@
-# API Docs
+# db-link
 
 <!-- ## Style Dependencies
 
@@ -32,7 +32,7 @@ Add the following styles to your application. If you have added the base depende
 // component style
 @import url({path}/themes/{theme}/css/01-elements/link/link.vars.css);
 ``` -->
-<!-- Auto Generated Below -->
+{/* Auto Generated Below */}
 
 
 ## Properties

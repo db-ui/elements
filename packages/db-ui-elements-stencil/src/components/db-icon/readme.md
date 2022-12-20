@@ -1,5 +1,3 @@
-# API Docs
-
 <!-- ## Style Dependencies
 
 Add the following styles to your application.
@@ -25,7 +23,9 @@ Add the following styles to your application.
 @import url({path}/themes/{theme}/css/00-base/icons/missing-icons.css);
 ``` -->
 
-<!-- Auto Generated Below -->
+# db-icon
+
+{/* Auto Generated Below */}
 
 
 ## Properties
