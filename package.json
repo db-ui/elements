@@ -41,7 +41,7 @@
     "@storybook/builder-webpack5": "^6.5.14",
     "@storybook/html": "6.5.14",
     "@storybook/manager-webpack5": "^6.5.14",
-    "@storybook/react": "6.5.14",
+    "@storybook/react": "6.5.15",
     "@storybook/web-components": "6.5.14",
     "@types/estree": "1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
