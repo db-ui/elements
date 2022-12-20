@@ -1,6 +1,6 @@
 # db-checkbox
 
-<!-- ## Style Dependencies
+{/* ## Style Dependencies
 
 Add the following styles to your application, if like to use a special theme. If the base dependencies are already added for another component, don't do again.
 
@@ -14,7 +14,8 @@ Add the following styles to your application, if like to use a special theme. If
 
 // component style
 @import url({path}/themes/{theme}/css/01-elements/checkbox/checkbox.vars.css);
-``` -->
+```
+*/}
 
 {/* Auto Generated Below */}
 

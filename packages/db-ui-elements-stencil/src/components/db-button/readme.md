@@ -1,6 +1,6 @@
 # db-button
 
-<!-- ## Style Dependencies
+{/* ## Style Dependencies
 
 Add the following styles to your application. If you have added the base dependencies already for another component, don't do again.
 
@@ -31,7 +31,8 @@ Add the following styles to your application. If you have added the base depende
 @import url({path}/themes/{theme}/css/00-base/icons/icons.ticket.css);
 @import url({path}/themes/{theme}/css/00-base/icons/icons.transportation.css);
 @import url({path}/themes/{theme}/css/00-base/icons/missing-icons.css);
-``` -->
+```
+*/}
 
 {/* Auto Generated Below */}
 
