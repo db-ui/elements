@@ -9,7 +9,7 @@ export class DbToggle {
   /**
    * Optional id for the label - otherwise random id will be set
    */
-  @Prop({ reflect: false }) htmlid: string = 'db-' + uuid();
+  @Prop({ reflect: false }) htmlid: string = 'toggle-' + uuid();
   /**
    * Disabled property
    */

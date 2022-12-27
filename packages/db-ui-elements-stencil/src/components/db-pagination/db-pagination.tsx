@@ -88,7 +88,7 @@ export class DbPagination {
   /**
    * Optional id for the caption aria label - otherwise random id will be set
    */
-  @Prop({ reflect: false }) ariaid: string = 'db-' + uuid();
+  @Prop({ reflect: false }) ariaid: string = 'pagination-' + uuid();
 
   /**
    * Mapping for default change Event
