@@ -45,7 +45,7 @@
     "@storybook/web-components": "6.5.15",
     "@types/estree": "1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
-    "@typescript-eslint/parser": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.1",
     "babel-loader": "9.1.0",
     "concurrently": "7.6.0",
     "conventional-changelog-cli": "^2.2.2",
