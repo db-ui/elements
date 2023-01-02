@@ -41,8 +41,8 @@
     "@stencil/react-output-target": "0.3.1",
     "@stencil/sass": "2.0.1",
     "@stencil/vue-output-target": "0.6.2",
-    "@types/jest": "27.4.1",
-    "jest": "27.5.1",
+    "@types/jest": "29.2.5",
+    "jest": "29.3.1",
     "jest-cli": "27.5.1",
     "jest-junit": "15.0.0"
   },
