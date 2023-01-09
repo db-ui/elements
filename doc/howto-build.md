@@ -22,7 +22,7 @@ Styleguide requires lib to be built.
 npm run generate new-component
 ```
 To see your new component in storybook create a "stories" folder in the new component folder and create a db-test.intro.stories.mdx file with the following content.
-Adapt the file name to your component name and in the file adapt <db-test> as well as in the <Meta> tag the /Test/ part - "Test" is the second part of your new component.
+Adapt the file name to your component name and in the file adapt `<db-test>` as well as in the `<Meta>` tag the /Test/ part - "Test" is the second part of your new component.
 
 ```typescript
 import { Meta, Canvas } from '@storybook/addon-docs';
