@@ -23,5 +23,5 @@ export default create({
   inputBorderRadius: 4,
 
   brandUrl:
-    'https://marketingportal.extranet.deutschebahn.com/de/ui-komponenten'
+    'https://marketingportal.extranet.deutschebahn.com/marketingportal/Design-Anwendungen/DB-UX-Design-System/Design-fuer-Apps-Web/UI-Komponenten'
 });
