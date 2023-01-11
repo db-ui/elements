@@ -47,7 +47,7 @@
     "jest-junit": "15.0.0"
   },
   "dependencies": {
-    "@db-ui/core": "^2.3.0"
+    "@db-ui/core": "^2.4.0"
   },
   "license": "Apache-2.0",
   "publishConfig": {
