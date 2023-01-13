@@ -21,7 +21,8 @@
     "lint:markdownlint": "markdownlint -c .markdown-lint.yml **/*.md",
     "lint:stylelint": "stylelint **/*.scss",
     "lint:eslint": "eslint . --ext .ts,.js --ignore-path .gitignore  --ignore-path .eslintignore && npm run lint --workspace=@db-ui/elements",
-    "generate": "npm run generate --workspace=@db-ui/elements"
+    "generate": "npm run generate --workspace=@db-ui/elements",
+    "clean": "git clean -dfx --exclude=.env"
   },
   "workspaces": [
     "packages/*"
@@ -31,8 +32,8 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
-    "@commitlint/cli": "17.4.1",
-    "@commitlint/config-conventional": "17.4.0",
+    "@commitlint/cli": "17.4.2",
+    "@commitlint/config-conventional": "17.4.2",
     "@storybook/addon-actions": "6.5.15",
     "@storybook/addon-controls": "6.5.15",
     "@storybook/addon-docs": "6.5.15",
@@ -54,8 +55,8 @@
     "eslint": "8.31.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-react": "^7.31.11",
-    "eslint-plugin-storybook": "0.6.8",
-    "eslint-plugin-vue": "^9.8.0",
+    "eslint-plugin-storybook": "0.6.10",
+    "eslint-plugin-vue": "^9.9.0",
     "file-system-cache": "2.0.1",
     "find-versions-cli": "^4.0.0",
     "husky": "8.0.3",
