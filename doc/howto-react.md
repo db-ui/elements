@@ -28,7 +28,7 @@ Import this css before you use components. For example you could import it insid
 
 ### Bundle your App
 
-1. Create 3 folders in you public directory:
+1. Create 4 folders in you public directory:
 ````shell
 mkdir public/fonts
 mkdir public/icons
@@ -46,7 +46,7 @@ mkdir public/js
 
 In order to test the installation just add a component to your functional component, like in the example below:
 
-```html
+```js
 import "@db-ui/core/dist/css/db-ui-core.vars.css"
 import { DbButton } from "@db-ui/react-elements-enterprise";
 
