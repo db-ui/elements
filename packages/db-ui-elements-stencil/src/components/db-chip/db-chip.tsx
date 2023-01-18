@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop } from '@stencil/core';
+import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-chip',
@@ -28,8 +29,7 @@ export class DbChip {
   /**
    * The input_id of a label form-related element in the same document as the label element. The first element in the document with an id matching the value of the for attribute is the labeled control for this label element, if it is a label element.
    */
-  @Prop({ reflect: true }) input_id: string =
-    'chip-' + Math.random().toString();
+  @Prop({ reflect: true }) input_id: string = 'chip-' + uuid();
 
   /**
    *  Name to group multiple chips.
