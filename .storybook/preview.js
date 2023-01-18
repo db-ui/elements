@@ -19,13 +19,14 @@ export const parameters = {
       order: [
         '00-Intro',
         ['Welcome', 'Getting Started', 'Frameworks', 'Showcases'],
-        '01-Layout',
-        '02-Navigation',
-        '03-Action',
-        '04-Data-Display',
-        '05-Data-Input',
-        '06-Feedback',
-        '07-Utility',
+        '02-Layout',
+        '03-Navigation',
+        '04-Action',
+        '05-Data-Display',
+        '06-Data-Input',
+        '07-Feedback',
+        '08-Utility',
+        '20-Legal',
         '99-Development'
       ]
     }
