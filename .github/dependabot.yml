@@ -31,7 +31,7 @@ updates:
       - dependency-name: 'typescript'
         update-types: ['version-update:semver-major']
       - dependency-name: "eslint"
-        update-types: ["version-update:semver-patch"]
+        update-types: ["version-update:semver-major"]
     pull-request-branch-name:
       separator: '-'
     # https://github.com/dependabot/dependabot-core/issues/5226#issuecomment-1179434437
