@@ -77,6 +77,10 @@ This especially relates to (but doesn't exclude further Deutsche Bahn brand asse
 
 Contributions are very welcome, please refer to the [contribution guide](CONTRIBUTING.md).
 
+## Third party acknowledgments – many kudos for that !!!
+
+- [open privacy by opr.vc](https://opr.vc)
+
 ## Code of conduct
 
 We as members, contributors, and leaders pledge to make participation in our
