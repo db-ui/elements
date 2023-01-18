@@ -4,7 +4,7 @@ export const format = (first: string, middle: string, last: string): string =>
   (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
 
 export const uuid = () => {
-  return self?.crypto?.randomUUID() || Math.random().toString();
+  return window.crypto?.randomUUID() || Math.random().toString();
 };
 
 /**
