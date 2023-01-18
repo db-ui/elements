@@ -1,4 +1,4 @@
-/* eslint-disable @stencil/decorators-style */
+/* eslint-disable @stencil-community/decorators-style */
 import { Component, h, Prop } from '@stencil/core';
 
 @Component({
