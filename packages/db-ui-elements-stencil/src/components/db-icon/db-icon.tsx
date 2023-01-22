@@ -20,6 +20,7 @@ export class DbIcon {
     | '32-filled'
     | '48-filled'
     | '64-filled'
+    | '16-outline'
     | '20-outline'
     | '24-outline'
     | '32-outline'
