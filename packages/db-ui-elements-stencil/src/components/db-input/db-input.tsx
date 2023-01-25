@@ -1,4 +1,5 @@
 import { Component, Event, h, Host, Prop } from '@stencil/core';
+import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-input',
@@ -48,8 +49,7 @@ export class DbInput {
   /**
    * The input_id of a labelable form-related element in the same document as the label element. The first element in the document with an id matching the value of the for attribute is the labeled control for this label element, if it is a labelable element.
    */
-  @Prop({ reflect: true }) input_id: string =
-    'input-' + Math.random().toString();
+  @Prop({ reflect: true }) input_id: string = 'input-' + uuid();
 
   /**
    * The label attribute specifies the caption of the input.

@@ -21,7 +21,7 @@ export class DbProgress {
    * Optional id - otherwise random id will be provided
    */
 
-  @Prop({ reflect: false }) htmlid: string = 'db-' + uuid();
+  @Prop({ reflect: false }) htmlid: string = 'progress-' + uuid();
   /**
    * The percentage sign - default %.
    */
