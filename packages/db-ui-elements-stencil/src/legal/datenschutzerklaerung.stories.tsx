@@ -7,7 +7,7 @@ export default {
   }
 };
 
-export const datenschutzerklaerung = () => {
+export const Datenschutzerklaerung = () => {
   return `<div class="iframe-container">
       <iframe src="https://db-ui.github.io/datenschutzerklaerung.html" height="100%" width="100%" />
     </div>`;
