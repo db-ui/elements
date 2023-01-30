@@ -6,13 +6,13 @@
     "project": "./tsconfig.json"
   },
   "extends": [
-    "plugin:@stencil/recommended",
+    "plugin:@stencil-community/recommended",
     "prettier",
     "plugin:storybook/recommended",
     "plugin:react/recommended"
   ],
   "rules": {
-    "@stencil/strict-boolean-conditions": 0,
+    "@stencil-community/strict-boolean-conditions": 0,
     "no-console": "error",
     "react/react-in-jsx-scope": 0,
     "react/jsx-no-bind": 0,

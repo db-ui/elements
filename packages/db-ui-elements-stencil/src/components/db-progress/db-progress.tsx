@@ -25,7 +25,7 @@ export class DbProgress {
   /**
    * The percentage sign - default %.
    */
-  @Prop({ reflect: false }) percentagesign: string = '%';
+  @Prop({ reflect: false }) percentagesign = '%';
   /**
    * As a circle
    */
@@ -33,7 +33,7 @@ export class DbProgress {
   /**
    * Indeterminate
    */
-  @Prop({ reflect: false }) indeterminate: boolean = false;
+  @Prop({ reflect: false }) indeterminate = false;
 
   render() {
     return (
