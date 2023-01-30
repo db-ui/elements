@@ -10,12 +10,12 @@ export class DbSelect {
   /**
    * The ariainvalid attribute is used to indicate that the value entered into an input field does not conform to the format expected by the application.
    */
-  @Prop({ reflect: true }) ariainvalid: boolean = false;
+  @Prop({ reflect: true }) ariainvalid = false;
 
   /**
    * The disabled attribute can be set to keep a user from clicking on the select.
    */
-  @Prop({ reflect: true }) disabled: boolean = false;
+  @Prop({ reflect: true }) disabled = false;
 
   /**
    * The input_id of a labelable form-related element in the same document as the label element. The first element in the document with an id matching the value of the for attribute is the labeled control for this label element, if it is a labelable element.
@@ -30,7 +30,7 @@ export class DbSelect {
   /**
    * If the multiple attribute is present, then the select element represents a control for selecting zero or more options from the list of options. If the attribute is absent, then the select element represents a control for selecting a single option from the list of options.
    */
-  @Prop({ reflect: true }) multiple: boolean = false;
+  @Prop({ reflect: true }) multiple = false;
 
   /**
    * The name attribute gives the name of the form control, as used in form submission and in the form element's elements object. If the attribute is specified, its value must not be the empty string.
@@ -40,7 +40,7 @@ export class DbSelect {
   /**
    * When the required attribute specified, the user will be required to select a value before submitting the form.
    */
-  @Prop({ reflect: true }) required: boolean = false;
+  @Prop({ reflect: true }) required = false;
 
   /**
    * The size attribute gives the number of options to show to the user. The size attribute, if specified, must have a value that is a valid non-negative integer greater than zero. If the multiple attribute is present, then the size attribute's default value is 4. If the multiple attribute is absent, then the size attribute's default value is 1.
