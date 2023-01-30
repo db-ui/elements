@@ -1,4 +1,4 @@
-/* eslint-disable @stencil/decorators-style */
+/* eslint-disable @stencil-community/decorators-style */
 import { Component, h, Prop } from '@stencil/core';
 
 @Component({
@@ -120,7 +120,7 @@ export class DbCard {
    * The illustration-path defines the path to DB UI Core illustrations. If you want to use other/custom images use the image prop instead.
    */
   @Prop({ reflect: true, attribute: 'illustration-path' })
-  uiCoreIllustrationPath: string = './icons/illustrative';
+  uiCoreIllustrationPath = './icons/illustrative';
 
   /**
    * The variant which is banner or title.

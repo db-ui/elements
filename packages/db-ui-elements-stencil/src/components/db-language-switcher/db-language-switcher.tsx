@@ -1,4 +1,4 @@
-/*  eslint-disable @stencil/decorators-style */
+/*  eslint-disable @stencil-community/decorators-style */
 import { Component, Element, Host, h, Prop } from '@stencil/core';
 import { DbLinkType } from '../db-link/db-link-type';
 import { parseData } from '../../utils/utils';
