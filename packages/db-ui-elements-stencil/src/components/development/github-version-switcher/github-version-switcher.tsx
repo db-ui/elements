@@ -103,7 +103,7 @@ export class GithubVersionSwitcher {
     this.setTags(tagsData);
   }
 
-  // eslint-disable-next-line @stencil/own-methods-must-be-private
+  // eslint-disable-next-line @stencil-community/own-methods-must-be-private
   handleChange(branch: string, localOwner: string, localRepo: string) {
     if (localOwner && localRepo) {
       const currentUrl = top.location.href;

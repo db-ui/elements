@@ -18,7 +18,7 @@ export class DbBrand {
   /**
    * The href attribute can be set to reload the current application, in general you would go to the base path of your app.
    */
-  @Prop({ reflect: true, attribute: 'href' }) anchorRef: string = '#';
+  @Prop({ reflect: true, attribute: 'href' }) anchorRef = '#';
 
   /**
    * The title attribute can be set to show a hint while hovering over the brand.
