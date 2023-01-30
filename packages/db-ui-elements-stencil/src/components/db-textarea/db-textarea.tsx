@@ -7,7 +7,7 @@ import { uuid } from '../../utils/utils';
   scoped: true
 })
 export class DbTextarea {
-  @State() valueSize: number = 0;
+  @State() valueSize = 0;
 
   /**
    * The ariainvalid attribute is used to indicate that the value entered into an input field does not conform to the format expected by the application.
