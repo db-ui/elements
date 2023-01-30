@@ -5,14 +5,14 @@
   "homepage": ".",
   "dependencies": {
     "@db-ui/react-elements": "file:./../../packages/db-ui-elements-react/",
-    "ace-builds": "1.14.0",
+    "ace-builds": "1.15.0",
     "dompurify": "2.4.3",
     "grapesjs": "0.20.3",
     "grapesjs-preset-webpage": "1.0.2",
     "react": "17.0.2",
     "react-ace": "10.1.0",
     "react-dom": "17.0.2",
-    "react-router-dom": "6.7.0"
+    "react-router-dom": "6.8.0"
   },
   "devDependencies": {
     "@types/dompurify": "^2.4.0",
