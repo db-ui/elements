@@ -104,7 +104,7 @@ export class DbInput {
   /**
    * The type attribute changes the input type to text, number etc.
    */
-  @Prop({ reflect: true }) type: string = 'text';
+  @Prop({ reflect: true }) type = 'text';
 
   /**
    * The value content attribute gives the default value of the input element.

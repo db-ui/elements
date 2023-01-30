@@ -20,7 +20,7 @@ export class DbOverflowMenu {
   /**
    * The summary attribute, shows a text for accessibility.
    */
-  @Prop({ reflect: true }) summary: string = '';
+  @Prop({ reflect: true }) summary = '';
 
   private compData: DbLinkType[];
 
