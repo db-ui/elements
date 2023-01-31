@@ -34,7 +34,7 @@ export class DbChip {
   /**
    *  Name to group multiple chips.
    */
-  @Prop({ reflect: true }) name: string = 'chips';
+  @Prop({ reflect: true }) name = 'chips';
 
   /**
    * Predefined variants to change background color and font color.
