@@ -67,4 +67,4 @@ Attaching events to DB UI Elements Web Components in React works mostly like you
 
 [React Showcase GitHub](https://github.com/db-ui/elements/tree/main/showcase/react-showcase)
 
-[React Showcase App](https://db-ui.github.io/elements/react-showcase/index.html)
+[React Showcase App](https://db-ui.github.io/elements/react-showcase/)
