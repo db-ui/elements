@@ -97,4 +97,4 @@ Both Inputs in this example do the same:
 
 [Vue Showcase GitHub](https://github.com/db-ui/elements/tree/main/showcase/vue-showcase)
 
-[Vue Showcase App](htthttps://db-ui.github.io/elements/vue-showcase/index.html#/)
+[Vue Showcase App](htthttps://db-ui.github.io/elements/vue-showcase/)
