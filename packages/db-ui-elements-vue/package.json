@@ -39,7 +39,7 @@
     "rimraf": "3.0.2",
     "rollup": "3.12.1",
     "rollup-plugin-node-resolve": "5.2.0",
-    "vue": "3.2.45"
+    "vue": "3.2.47"
   },
   "jest": {
     "preset": "ts-jest",
