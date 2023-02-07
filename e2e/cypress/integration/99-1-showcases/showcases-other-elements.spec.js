@@ -47,6 +47,13 @@ context('showcase', () => {
         .eq(0)
         .contains('DB UI Elements components documentation');
 
+      // 7. DbLogo
+      cy.get('main')
+        .find('db-logo > svg')
+        .eq(0)
+        .should('have.class', 'elm-logo')
+        .invoke('attr', 'aria-hidden')
+        .should('eq', 'true');
       //
     });
   });
