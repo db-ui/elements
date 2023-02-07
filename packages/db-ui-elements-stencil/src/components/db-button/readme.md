@@ -1,37 +1,6 @@
-# API Docs
+# db-button
 
-<!-- ## Style Dependencies
 
-Add the following styles to your application. If you have added the base dependencies already for another component, don't do again.
-
-- replace {path} with your path to copied css
-- replace {theme} with one of [enterprise,fernverkehr]
-
-```css
-// base dependencies (required)
-@import url({path}/themes/{theme}/css/00-base/colors/colors.vars.css);
-@import url({path}/themes/{theme}/css/00-base/type/fonts.css);
-
-// component style (required)
-@import url({path}/themes/{theme}/css/01-elements/buttons/button.vars.css);
-
-// if icons used
-@import url({path}/themes/{theme}/css/00-base/icons/icons.action.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.av.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.communication.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.covid-19.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.facilities.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.feature.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.food.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.journey.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.maps.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.navigation.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.notification.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.seat.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.ticket.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.transportation.css);
-@import url({path}/themes/{theme}/css/00-base/icons/missing-icons.css);
-``` -->
 
 <!-- Auto Generated Below -->
 
