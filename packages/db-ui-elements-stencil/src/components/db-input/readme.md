@@ -1,20 +1,6 @@
-# API Docs
+# db-input
 
-<!-- ## Style Dependencies
 
-Add the following styles to your application. If you have added the base dependencies already for another component, don't do again.
-
-- replace {path} with your path to copied css
-- replace {theme} with one of [enterprise,fernverkehr]
-
-```css
-// required base dependencies
-@import url({path}/themes/{theme}/css/00-base/colors/colors.vars.css);
-@import url({path}/themes/{theme}/css/00-base/type/fonts.css);
-
-// component style
-@import url({path}/themes/{theme}/css/01-elements/input/input.vars.css);
-``` -->
 
 <!-- Auto Generated Below -->
 
