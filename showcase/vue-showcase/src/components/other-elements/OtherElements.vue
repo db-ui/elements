@@ -5,6 +5,7 @@ import {
   DbTag,
   DbImage,
   DbLink,
+  DbLogo,
   DbChip
 } from '@db-ui/v-elements-enterprise/dist/components';
 </script>

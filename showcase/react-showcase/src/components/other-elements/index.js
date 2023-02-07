@@ -2,6 +2,7 @@ import {
   DbIcon,
   DbImage,
   DbLink,
+  DbLogo,
   DbProgress,
   DbTag,
   DbChip
