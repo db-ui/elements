@@ -11,7 +11,7 @@ context('db-metanavigation', () => {
 
   it('metanavigation contains links', function () {
     cy.get('db-metanavigation')
-      .eq(0)
+      .eq(1)
       .find('ul')
       .find('li')
       .eq(0)

@@ -21,11 +21,11 @@ export class DbProgress {
    * Optional id - otherwise random id will be provided
    */
 
-  @Prop({ reflect: false }) htmlid: string = 'db-' + uuid();
+  @Prop({ reflect: false }) htmlid: string = 'progress-' + uuid();
   /**
    * The percentage sign - default %.
    */
-  @Prop({ reflect: false }) percentagesign: string = '%';
+  @Prop({ reflect: false }) percentagesign = '%';
   /**
    * As a circle
    */
@@ -33,7 +33,7 @@ export class DbProgress {
   /**
    * Indeterminate
    */
-  @Prop({ reflect: false }) indeterminate: boolean = false;
+  @Prop({ reflect: false }) indeterminate = false;
 
   render() {
     return (

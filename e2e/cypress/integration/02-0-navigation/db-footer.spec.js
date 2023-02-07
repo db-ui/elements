@@ -11,7 +11,7 @@ context('db-footer', () => {
   it('Standard footer exists', function () {
     cy.get(selector).eq(0).should('have.class', 'has-border');
     cy.get(selector).eq(0);
-    cy.get(`${selector} > span`).contains('Copyright 2022 DB Systel');
+    cy.get(`${selector} > span`).contains('Copyright 2023 DB Systel');
   });
 
   it('Custom footer exists', function () {

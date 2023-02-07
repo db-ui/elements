@@ -5,7 +5,7 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily'
-      time: '03:00'
+      time: '04:00'
       timezone: 'Europe/Berlin'
     pull-request-branch-name:
       separator: '-'
@@ -15,7 +15,7 @@ updates:
     open-pull-requests-limit: 10
     schedule:
       interval: 'daily'
-      time: '03:00'
+      time: '04:00'
       timezone: 'Europe/Berlin'
     ignore:
       - dependency-name: 'ng-packagr'
@@ -28,6 +28,11 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: 'jest-cli'
         update-types: ['version-update:semver-major']
+      # Stencil only supports jest version 27 at the moment
+      - dependency-name: '@types/jest'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'jest'
+        update-types: ['version-update:semver-major']
       - dependency-name: 'typescript'
         update-types: ['version-update:semver-major']
     pull-request-branch-name:
@@ -39,7 +44,7 @@ updates:
     open-pull-requests-limit: 10
     schedule:
       interval: 'daily'
-      time: '03:00'
+      time: '04:00'
       timezone: 'Europe/Berlin'
     ignore:
       - dependency-name: 'ng-packagr'
@@ -57,7 +62,7 @@ updates:
     open-pull-requests-limit: 10
     schedule:
       interval: 'daily'
-      time: '03:00'
+      time: '04:00'
       timezone: 'Europe/Berlin'
     ignore:
       - dependency-name: 'react'
@@ -71,7 +76,7 @@ updates:
     open-pull-requests-limit: 10
     schedule:
       interval: 'daily'
-      time: '03:00'
+      time: '04:00'
       timezone: 'Europe/Berlin'
     ignore:
       - dependency-name: 'react'
@@ -85,7 +90,7 @@ updates:
     open-pull-requests-limit: 10
     schedule:
       interval: 'daily'
-      time: '03:00'
+      time: '04:00'
       timezone: 'Europe/Berlin'
     ignore:
       - dependency-name: 'react'
@@ -99,7 +104,7 @@ updates:
     open-pull-requests-limit: 10
     schedule:
       interval: 'daily'
-      time: '03:00'
+      time: '04:00'
       timezone: 'Europe/Berlin'
     pull-request-branch-name:
       separator: '-'

@@ -21,16 +21,7 @@ export const StyledCanvas = styled.div`
 
 The `<db-dropdown></db-dropdown>` element represents a dropdown.
 
-There are two options to use &lt;db-dropdown&gt;:
-
-<db-headline variant="2">dropdown with &lt;db-link&gt;</db-headline>
-
-<Canvas>
-  <db-dropdown opposite>
-    <db-link href="#">Einstellungen</db-link>
-    <db-link href="#">Nachrichten</db-link>
-  </db-dropdown>
-</Canvas>
+There are three options to use &lt;db-dropdown&gt;:
 
 <db-headline variant="2">dropdown with wrappers</db-headline>
 
@@ -63,7 +54,22 @@ Only `<button>` and `<a>` HTML tags work as items content.
   </db-dropdown>
 </Canvas>
 
-<db-headline>dropdown with data</db-headline>
+<db-headline variant="2">dropdown with &lt;db-link&gt;</db-headline>
+
+<i>
+  <strong>
+    Use with caution, you won't have reactivity on changed HTML after the initial load.
+  </strong>
+</i>
+
+<Canvas>
+  <db-dropdown opposite>
+    <db-link href="#">Einstellungen</db-link>
+    <db-link href="#">Nachrichten</db-link>
+  </db-dropdown>
+</Canvas>
+
+<db-headline variant="2">dropdown with data</db-headline>
 
 <Canvas>
   <db-dropdown opposite data={mockData()} />

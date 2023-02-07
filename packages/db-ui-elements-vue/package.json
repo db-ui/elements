@@ -37,9 +37,9 @@
     "@vue/test-utils": "2.0.0-rc.18",
     "jest": "27.5.1",
     "rimraf": "3.0.2",
-    "rollup": "3.3.0",
+    "rollup": "3.14.0",
     "rollup-plugin-node-resolve": "5.2.0",
-    "vue": "3.2.45"
+    "vue": "3.2.47"
   },
   "jest": {
     "preset": "ts-jest",

@@ -4,8 +4,14 @@ As with every release you're recommended to do a visual regression testing for y
 
 Especially the following aspects have changed through the various different releases and would need your review and probably adaptions within your code base.
 
+== DB UI Core 0.18.0 Migration Guide
+
+=== `db-notification`
+
+**BREAKING CHANGE**: We needed to change the Notification elements `role` attribute to `variant` for compatibility reasons.
+
 == DB UI Core 0.17.0 Migration Guide
 
-=== db-breadcrumb
+=== `db-breadcrumb`
 
 **BREAKING CHANGE**: We needed to change the Breadcrumbs `aria-label` attribute to `arialabel` for compatibility reasons.

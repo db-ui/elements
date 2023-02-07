@@ -34,61 +34,61 @@ export class DbPagination {
    * The currentpage attribute is a obligatory number attribute and indicates which
    * page number is highlighted in the pagination.
    */
-  @Prop({ reflect: true }) currentpage: number = 1;
+  @Prop({ reflect: true }) currentpage = 1;
 
   /**
    * The pages attribute is a obligatory number attribute and indicates how many
    * pages the pagination knows about.
    */
-  @Prop({ reflect: true }) pages: number = 2;
+  @Prop({ reflect: true }) pages = 2;
 
   /**
    * The count attribute is a number attribute and defines the number of pages
    * displayed apart from the first and last page (except if currentpage is the
    * first or last page, then these pages are included in the count).
    */
-  @Prop({ reflect: true }) count: number = 2;
+  @Prop({ reflect: true }) count = 2;
 
   /**
    * The titleprevious attribute is a string attribute and defines the title of
    * the left arrow in the pagination.
    */
-  @Prop({ reflect: true }) titleprevious: string = 'Goto previous page';
+  @Prop({ reflect: true }) titleprevious = 'Goto previous page';
 
   /**
    * The titlenext attribute is a string attribute and defines the title of
    * the right arrow in the pagination.
    */
-  @Prop({ reflect: true }) titlenext: string = 'Goto next page';
+  @Prop({ reflect: true }) titlenext = 'Goto next page';
 
   /**
    * The titlepagination attribute is a string attribute and defines the title of
    * each page number (except first and last) displayed in the pagination.
    */
-  @Prop({ reflect: true }) titlepagination: string = 'Page Number';
+  @Prop({ reflect: true }) titlepagination = 'Page Number';
 
   /**
    * The textprevious attribute is a string attribute and defines the text
    * content of the left arrow in the pagination.
    */
-  @Prop({ reflect: true }) textprevious: string = 'Previous';
+  @Prop({ reflect: true }) textprevious = 'Previous';
 
   /**
    * The textnext attribute is a string attribute and defines the text
    * content of the right arrow in the pagination.
    */
-  @Prop({ reflect: true }) textnext: string = 'Next';
+  @Prop({ reflect: true }) textnext = 'Next';
 
   /**
    * The arialabel attribute is a string attribute and defines the text
    * content of the aria-label in the pagination.
    */
-  @Prop({ reflect: true }) arialabel: string = 'Pagination';
+  @Prop({ reflect: true }) arialabel = 'Pagination';
 
   /**
    * Optional id for the caption aria label - otherwise random id will be set
    */
-  @Prop({ reflect: false }) ariaid: string = 'db-' + uuid();
+  @Prop({ reflect: false }) ariaid: string = 'pagination-' + uuid();
 
   /**
    * Mapping for default change Event

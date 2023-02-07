@@ -204,8 +204,7 @@ export class DbTable {
                     {showRowTitles && <th scope="row">{rowTitles[idx]}</th>}
                     {headers.map((table, index) => {
                       // If no row is provided, return empty cell [null, null]
-                      const [icon, cellText] =
-                        obj[table] !== undefined ? obj?.[table] : [null, null];
+                      const [icon, cellText] = obj[table] ?? [null, null];
                       return (
                         <td key={`cell-${idx}-${index}`}>
                           {icon && <db-icon icon={icon} />}
@@ -221,10 +220,10 @@ export class DbTable {
                 <tr key={`row-${idx}`} class={`row-${num}`}>
                   {showRowTitles && <th scope="row">{rowTitles[idx]}</th>}
                   {headers.map((table, index) => {
-                    const [icon, cellText] =
-                      columns[table][idx] !== undefined
-                        ? columns?.[table]?.[idx]
-                        : [null, null];
+                    const [icon, cellText] = columns[table][idx] ?? [
+                      null,
+                      null
+                    ];
                     return (
                       <td key={`cell-${idx}-${index}`}>
                         {icon && <db-icon icon={icon} />}

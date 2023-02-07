@@ -23,7 +23,7 @@
 
 * *@babel/core*: introduced by storybook
 * *@stencil/core*: stencil framework see ADR1
-* *@stencil/eslint-plugin*: linting rules for stencil
+* *@stencil-community/eslint-plugin*: linting rules for stencil
 * *@storybook/html*: introduced by storybook
 * *@storybook/web-components*: introduced by storybook
 * *@types/jest*: introduced by storybook

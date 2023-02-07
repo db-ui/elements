@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop, State, Event } from '@stencil/core';
+import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-textarea',
@@ -6,7 +7,7 @@ import { Component, Host, h, Prop, State, Event } from '@stencil/core';
   scoped: true
 })
 export class DbTextarea {
-  @State() valueSize: number = 0;
+  @State() valueSize = 0;
 
   /**
    * The ariainvalid attribute is used to indicate that the value entered into an input field does not conform to the format expected by the application.
@@ -50,8 +51,7 @@ export class DbTextarea {
   /**
    * The input_id of a labelable form-related element in the same document as the label element. The first element in the document with an id matching the value of the for attribute is the labeled control for this label element, if it is a labelable element.
    */
-  @Prop({ reflect: true }) input_id: string =
-    'textarea-' + Math.random().toString();
+  @Prop({ reflect: true }) input_id: string = 'textarea-' + uuid();
 
   /**
    * The label attribute specifies the caption of the input.

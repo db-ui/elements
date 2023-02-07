@@ -9,7 +9,7 @@ context('db-dropdown', () => {
 
   it('dropdown contains links', function () {
     cy.get('db-dropdown')
-      .eq(0)
+      .eq(1)
       .find('menu')
       .find('li')
       .eq(0)
