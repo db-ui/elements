@@ -15,6 +15,7 @@ export class DbIcon {
    * The variant attribute specifies the style and size of an icon.
    */
   @Prop() variant:
+    | '16-filled'
     | '20-filled'
     | '24-filled'
     | '32-filled'
