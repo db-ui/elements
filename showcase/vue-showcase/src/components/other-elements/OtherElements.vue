@@ -5,6 +5,7 @@ import {
   DbTag,
   DbImage,
   DbLink,
+  DbLogo,
   DbChip
 } from '@db-ui/v-elements-enterprise/dist/components';
 </script>
@@ -15,6 +16,8 @@ import {
     <DbIcon icon="account" variant="32-outline" />
     <p>DbProgress:</p>
     <DbProgress :value="60" :max="100" />
+    <p>DbLogo:</p>
+    <DbLogo></DbLogo>
     <p>DbTag:</p>
     <DbTag>default</DbTag>
     <DbTag variant="informative">informative</DbTag>
