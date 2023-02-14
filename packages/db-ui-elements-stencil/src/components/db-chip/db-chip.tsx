@@ -37,6 +37,11 @@ export class DbChip {
   @Prop({ reflect: true }) name = 'chips';
 
   /**
+   *  Selected state
+   */
+  @Prop({ reflect: true }) selected? = false;
+
+  /**
    * Predefined variants to change background color and font color.
    */
   @Prop({ reflect: true }) variant:
@@ -66,6 +71,7 @@ export class DbChip {
           data-type={this.datatype}
           disabled={this.disabled}
           name={this.name}
+          checked={this.selected}
         />
         <label
           htmlFor={this.input_id}
