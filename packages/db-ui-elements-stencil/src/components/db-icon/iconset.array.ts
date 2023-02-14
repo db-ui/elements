@@ -21,6 +21,7 @@ export const iconsetAction: string[] = [
   'cloud',
   'cloud-download',
   'cloud-upload',
+  'compass',
   'copy',
   'credit-card',
   'dashboard',
@@ -29,6 +30,7 @@ export const iconsetAction: string[] = [
   'document',
   'done',
   'download',
+  'drag-and-drop',
   'edit',
   'face-neutral',
   'face-sad',
@@ -39,6 +41,8 @@ export const iconsetAction: string[] = [
   'folder-open',
   'generic-card',
   'giftcard',
+  'hearing',
+  'hearing-disabled',
   'heart',
   'help',
   'image',
@@ -67,15 +71,19 @@ export const iconsetAction: string[] = [
   'shopping-basket-disabled',
   'shopping-cart',
   'shopping-cart-disabled',
+  'sort-down',
+  'sort-up',
   'star',
   'swap-horizontal',
   'swap-vertical',
   'thumb-up',
   'thumb-up-down',
+  'translation',
   'undo',
   'upload',
   'visibility',
   'visibility-off',
+  'voucher',
   'website',
   'zoom-in',
   'zoom-out'
@@ -125,7 +133,7 @@ export const iconsetFacilities: string[] = [
   'playground',
   'restricted-mobility-toilet',
   'shower',
-  'shower-man',
+  'shower-men',
   'shower-women',
   'sink',
   'wc',
@@ -148,10 +156,13 @@ export const iconsetFeature: string[] = [
   'medical',
   'night',
   'no-smoking',
+  'person-with-cane',
+  'person-with-rollator',
   'platform',
   'power-outlet',
   'reservation',
-  'standing-room'
+  'standing-room',
+  'support-dog'
 ];
 
 export const iconsetFood: string[] = [
@@ -185,11 +196,11 @@ export const iconsetMaps: string[] = [
   'gps-north',
   'home',
   'map',
-  'map-stop',
   'parking',
   'place',
   'set-position',
   'station',
+  'stop-sign',
   'train-station'
 ];
 
