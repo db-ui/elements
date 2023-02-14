@@ -1,29 +1,6 @@
-# API Docs
+# db-icon
 
-<!-- ## Style Dependencies
 
-Add the following styles to your application.
-
-- replace {path} with your path to copied css
-- replace {theme} with one of [enterprise,fernverkehr]
-
-```css
-@import url({path}/themes/{theme}/css/00-base/icons/icons.action.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.av.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.communication.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.covid-19.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.facilities.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.feature.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.food.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.journey.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.maps.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.navigation.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.notification.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.seat.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.ticket.css);
-@import url({path}/themes/{theme}/css/00-base/icons/icons.transportation.css);
-@import url({path}/themes/{theme}/css/00-base/icons/missing-icons.css);
-``` -->
 
 <!-- Auto Generated Below -->
 

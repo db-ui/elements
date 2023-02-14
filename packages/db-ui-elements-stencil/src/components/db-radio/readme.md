@@ -1,20 +1,6 @@
-# API Docs
+# db-radio
 
-<!-- ## Style Dependencies
 
-Add the following styles to your application, if like to use a special theme. If the base dependencies are already added for another component, don't do again.
-
-- replace {path} with your path to copied css
-- replace {theme} with one of [enterprise,fernverkehr]
-
-```css
-// required base dependencies
-@import url({path}/themes/{theme}/css/00-base/colors/colors.vars.css);
-@import url({path}/themes/{theme}/css/00-base/type/fonts.css);
-
-// component style
-@import url({path}/themes/{theme}/css/01-elements/radio/radio.vars.css);
-``` -->
 
 <!-- Auto Generated Below -->
 
