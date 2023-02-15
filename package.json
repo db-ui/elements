@@ -18,7 +18,7 @@
     "cypress:full": "node scripts/build angular,playground,react,reactwind,vue withShowcase && concurrently  \"npm run cypress:watch\" \"npm run start:storybook\"",
     "cypress:snapshot:base": "npx cypress run --project ./e2e --env type=base --config screenshotsFolder=e2e/cypress/snapshots/base",
     "postcypress:snapshot:base": "rimraf e2e/cypress/snapshots/base/**/*-base-*.png && node ./scripts/cypress/snapshot-helper.js",
-    "lint:markdownlint": "markdownlint -c .markdown-lint.yml **/*.md",
+    "lint:markdownlint": "markdownlint -c .markdown-lint.yml '**/*.md'",
     "lint:stylelint": "stylelint **/*.scss",
     "lint:eslint": "eslint . --ext .ts,.js --ignore-path .gitignore  --ignore-path .eslintignore && npm run lint --workspace=@db-ui/elements",
     "generate": "npm run generate --workspace=@db-ui/elements",
