@@ -77,7 +77,9 @@ This especially relates to (but doesn't exclude further Deutsche Bahn brand asse
 
 Contributions are very welcome, please refer to the [contribution guide](CONTRIBUTING.md).
 
+<!-- markdownlint-disable MD026 -->
 ## Third party acknowledgments – many kudos for that !!!
+<!-- markdownlint-enable MD026 -->
 
 - [open privacy by opr.vc](https://opr.vc)
 
