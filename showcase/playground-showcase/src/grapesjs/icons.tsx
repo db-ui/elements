@@ -23,6 +23,7 @@ export const iconset: string[] = [
   'heart-on',
   'help',
   'info',
+  'intercity-train',
   'legal',
   'log-out',
   'minus',

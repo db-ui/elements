@@ -47,6 +47,7 @@ export const iconsetAction: string[] = [
   'help',
   'image',
   'info',
+  'intercity-train',
   'key',
   'legal',
   'lightbulb',
