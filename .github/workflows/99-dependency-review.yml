@@ -9,6 +9,5 @@ jobs:
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
-
       - name: 🔎 Dependency Review
         uses: actions/dependency-review-action@v3
