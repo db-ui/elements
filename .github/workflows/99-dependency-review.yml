@@ -10,19 +10,5 @@ jobs:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup node equally to our local development version
-        if: steps.npm-cache.outputs.cache-hit != 'true'
-        # pick the Node version to use and install it
-        # https://github.com/actions/setup-node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Display node and npm version
-        if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: |
-          node --version
-          npm --version
-
       - name: 🔎 Dependency Review
         uses: actions/dependency-review-action@v3
