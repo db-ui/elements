@@ -22,10 +22,6 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/cli'
         update-types: ['version-update:semver-major']
-      - dependency-name: '@angular/core'
-        update-types: ['version-update:semver-major']
-      - dependency-name: '@angular/compiler'
-        update-types: ['version-update:semver-major']
       - dependency-name: 'jest-cli'
         update-types: ['version-update:semver-major']
       # Stencil only supports jest version 27 at the moment
@@ -34,6 +30,19 @@ updates:
       - dependency-name: 'jest'
         update-types: ['version-update:semver-major']
       - dependency-name: 'typescript'
+        update-types: ['version-update:semver-major']
+      # Especially as we're using multiple major versions of Angular, we want to update the major version by ourselves
+      - dependency-name: '@angular/core'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/compiler'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/common'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/forms'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/platform-browser-dynamic'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/animations'
         update-types: ['version-update:semver-major']
     pull-request-branch-name:
       separator: '-'
@@ -49,11 +58,18 @@ updates:
     ignore:
       - dependency-name: 'ng-packagr'
         update-types: ['version-update:semver-major']
+      # Especially as we're using multiple major versions of Angular, we want to update the major version by ourselves
       - dependency-name: '@angular/cli'
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/core'
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/compiler'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/common'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/forms'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/platform-browser-dynamic'
         update-types: ['version-update:semver-major']
     pull-request-branch-name:
       separator: '-'
