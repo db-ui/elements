@@ -8,7 +8,7 @@ import {
   DbFooter,
   DbHeadline,
   DbCard
-} from '@db-ui/react-elements/dist/components';
+} from '@db-ui/react-elements';
 
 export default function App() {
   const cards = Array.from(Array(9).keys());
