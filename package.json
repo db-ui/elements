@@ -60,7 +60,7 @@
     "file-system-cache": "2.0.2",
     "find-versions-cli": "^4.0.0",
     "husky": "8.0.3",
-    "iframe-resizer": "4.3.4",
+    "iframe-resizer": "4.3.5",
     "jest-config": "29.4.3",
     "markdownlint-cli": "^0.33.0",
     "node-mv": "^0.1.3",
