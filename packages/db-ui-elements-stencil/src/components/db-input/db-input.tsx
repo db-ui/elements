@@ -82,6 +82,21 @@ export class DbInput {
   @Prop({ reflect: true }) pattern: string;
 
   /**
+   * The step attribute specifies the granularity that the value must obey to on increasing or decreasing by the users selection.
+   */
+  @Prop({ reflect: true }) step: number;
+
+  /**
+   * The min attribute specifies the minimum value that is sufficient for this input.
+   */
+  @Prop({ reflect: true }) min: number;
+
+  /**
+   * The max attribute specifies the maximum value that is sufficient for this input.
+   */
+  @Prop({ reflect: true }) max: number;
+
+  /**
    * The placeholder attribute represents a short hint (a word or short phrase) intended to aid the user with data entry.
    */
   @Prop({ reflect: true }) placeholder: string;
@@ -143,7 +158,9 @@ export class DbInput {
           data-dirname={this.dirname}
           disabled={this.disabled}
           list={this.list}
+          max={this.max}
           maxlength={this.maxlength}
+          min={this.min}
           minlength={this.minlength}
           name={this.name}
           pattern={this.pattern}
@@ -151,6 +168,7 @@ export class DbInput {
           readonly={this.readonly}
           required={this.required}
           size={this.size}
+          step={this.step}
           value={this.value}
           aria-labelledby={this.input_id + '-label'}
           data-variant={this.variant}
