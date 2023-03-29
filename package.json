@@ -48,7 +48,7 @@
     "@typescript-eslint/eslint-plugin": "^5.57.0",
     "@typescript-eslint/parser": "^5.56.0",
     "babel-loader": "9.1.2",
-    "concurrently": "7.6.0",
+    "concurrently": "8.0.1",
     "conventional-changelog-cli": "^2.2.2",
     "cpr": "3.0.1",
     "dotenv": "^16.0.3",
