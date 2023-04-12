@@ -2,7 +2,7 @@
 
 |                |            |     |
 | -------------- | ---------- | --- |
-| **Datum**      | 2023-01-11 |
+| **Datum**      | 2022-01-11 |
 | **Status**     |  entschieden          |
 | **Beteiligte** |  Nicolas Merget          |
 
