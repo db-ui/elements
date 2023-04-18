@@ -13,6 +13,7 @@
 | `variant`           | `variant` | The variant attribute specifies the style and size of an icon. | `"16-filled" \| "16-outline" \| "20-filled" \| "20-outline" \| "24-filled" \| "24-outline" \| "32-filled" \| "32-outline" \| "48-filled" \| "48-outline" \| "64-filled" \| "64-outline"` | `undefined` |
 
 ## CSS Custom Properties
+
 | Property                  | Description                                               |
 | ------------------------- | --------------------------------------------------------- |
 | `--icon-font-size-before` | Overwrite `font-size` by the icon set before the contents |
