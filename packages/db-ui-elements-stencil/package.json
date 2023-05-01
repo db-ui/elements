@@ -39,7 +39,7 @@
     "@stencil/angular-output-target": "0.5.0",
     "@stencil/core": "2.22.2",
     "@stencil/react-output-target": "0.4.0",
-    "@stencil/sass": "2.0.4",
+    "@stencil/sass": "3.0.1",
     "@stencil/vue-output-target": "0.7.0",
     "@types/jest": "27.4.1",
     "jest": "27.5.1",
