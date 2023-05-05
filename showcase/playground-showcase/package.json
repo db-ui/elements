@@ -6,7 +6,7 @@
   "dependencies": {
     "@db-ui/react-elements": "file:./../../packages/db-ui-elements-react/",
     "ace-builds": "1.16.0",
-    "dompurify": "2.4.3",
+    "dompurify": "3.0.2",
     "grapesjs": "0.20.4",
     "grapesjs-preset-webpage": "1.0.2",
     "react": "17.0.2",
@@ -15,7 +15,7 @@
     "react-router-dom": "6.10.0"
   },
   "devDependencies": {
-    "@types/dompurify": "^2.4.0",
+    "@types/dompurify": "^3.0.2",
     "cpr": "3.0.1",
     "react-scripts": "5.0.1",
     "sass": "1.62.1"
