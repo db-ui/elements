@@ -13,13 +13,13 @@ import * as fs from 'fs';
 
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
-    elementSelectors: ['db-input', 'db-textarea', 'db-radio', 'db-pagination'],
+    elementSelectors: ['db-input', 'db-textarea', 'db-pagination'],
     event: 'dbChange',
     targetAttr: 'value',
     type: 'text'
   },
   {
-    elementSelectors: ['db-checkbox', 'db-toggle'],
+    elementSelectors: ['db-checkbox', 'db-toggle', 'db-radio'],
     event: 'dbChange',
     targetAttr: 'checked',
     type: 'boolean'
@@ -34,12 +34,12 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
 
 const vueComponentModels: ComponentModelConfig[] = [
   {
-    elements: ['db-input', 'db-select', 'db-radio', 'db-textarea'],
+    elements: ['db-input', 'db-select', 'db-textarea'],
     event: 'dbChange',
     targetAttr: 'value'
   },
   {
-    elements: ['db-radio', 'db-checkbox', 'db-toggle'],
+    elements: ['db-checkbox', 'db-toggle', 'db-radio'],
     event: 'dbChange',
     targetAttr: 'checked'
   },
