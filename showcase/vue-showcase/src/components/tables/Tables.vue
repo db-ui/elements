@@ -7,7 +7,7 @@ import {
 import { columnExampleData } from '@/mockData';
 import { ref } from 'vue';
 
-const pagination = ref('2');
+const pagination = ref(2);
 const columnExampleDataString = JSON.stringify(columnExampleData);
 </script>
 

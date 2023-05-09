@@ -39,7 +39,7 @@ const vueComponentModels: ComponentModelConfig[] = [
     targetAttr: 'value'
   },
   {
-    elements: ['db-checkbox', 'db-toggle'],
+    elements: ['db-radio', 'db-checkbox', 'db-toggle'],
     event: 'dbChange',
     targetAttr: 'checked'
   },
