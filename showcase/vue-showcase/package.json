@@ -11,7 +11,7 @@
   "dependencies": {
     "@db-ui/v-elements-enterprise": "file:./../../packages/db-ui-elements-vue/",
     "vue": "3.2.47",
-    "vue-router": "4.1.6"
+    "vue-router": "4.2.0"
   },
   "devDependencies": {
     "@types/node": "18.16.3",
