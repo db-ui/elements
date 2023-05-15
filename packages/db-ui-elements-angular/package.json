@@ -55,7 +55,7 @@
     "@angular/compiler-cli": "12.2.16",
     "@rollup/plugin-json": "6.0.0",
     "@rollup/plugin-node-resolve": "15.0.1",
-    "@rollup/plugin-commonjs": "24.1.0",
+    "@rollup/plugin-commonjs": "25.0.0",
     "@types/jest": "27.4.1",
     "@types/node": "18.16.0",
     "bs-logger": "0.2.6",
