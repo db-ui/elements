@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@db-ui/v-elements-enterprise": "file:./../../packages/db-ui-elements-vue/",
-    "vue": "3.2.47",
+    "vue": "3.3.2",
     "vue-router": "4.2.0"
   },
   "devDependencies": {
