@@ -44,7 +44,7 @@
     "@types/jest": "27.4.1",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
-    "jest-junit": "15.0.0"
+    "jest-junit": "16.0.0"
   },
   "dependencies": {
     "@db-ui/core": "^2.9.0"
