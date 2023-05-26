@@ -3,6 +3,8 @@
 :host {
   @extend html;
   @extend body;
+
+  display: inline-block;
 }
 
 // Set the general link color inheritance
