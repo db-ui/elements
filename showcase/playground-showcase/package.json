@@ -8,7 +8,7 @@
     "ace-builds": "1.22.1",
     "dompurify": "3.0.3",
     "grapesjs": "0.20.4",
-    "grapesjs-preset-webpage": "1.0.2",
+    "grapesjs-preset-webpage": "1.0.3",
     "react": "17.0.2",
     "react-ace": "10.1.0",
     "react-dom": "17.0.2",
