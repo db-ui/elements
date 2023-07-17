@@ -28,11 +28,11 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@babel/core": "7.21.8",
+    "@babel/core": "7.22.9",
     "@babel/preset-env": "^7.22.4",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.22.5",
-    "@commitlint/cli": "17.6.1",
+    "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.3",
     "@storybook/addon-actions": "6.5.16",
     "@storybook/addon-controls": "6.5.16",
