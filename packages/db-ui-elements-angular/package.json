@@ -66,7 +66,7 @@
     "jest-preset-angular": "12.2.6",
     "lodash.memoize": "4.1.2",
     "ng-packagr": "12.2.7",
-    "zone.js": "~0.13.0"
+    "zone.js": "~0.13.1"
   },
   "jest": {
     "preset": "jest-preset-angular",
