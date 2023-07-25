@@ -23,7 +23,7 @@
     "@db-ui/core": "file:./../../node_modules/@db-ui/core/",
     "@db-ui/ngx-elements-enterprise": "file:./../../packages/db-ui-elements-angular/",
     "rxjs": "7.8.1",
-    "tslib": "2.6.0",
+    "tslib": "2.6.1",
     "zone.js": "0.11.8"
   },
   "devDependencies": {
