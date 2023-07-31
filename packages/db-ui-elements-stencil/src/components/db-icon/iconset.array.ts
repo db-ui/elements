@@ -315,7 +315,7 @@ export const iconsetTransportation: string[] = [
   // 'train-re',
   // 'train-tram',
   'tram',
-  'underground',
+  // 'underground',
   'walking'
 ];
 
