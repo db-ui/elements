@@ -302,7 +302,7 @@ export const iconsetTransportation: string[] = [
   'railroad-car',
   's-bahn',
   'scooter',
-  'ship',
+  // 'ship',
   'speedboat',
   'sprinter',
   'subway',
