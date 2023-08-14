@@ -33,7 +33,9 @@ export class DbAccordion {
         data-size={this.size}
         open={this.open}
       >
-        <summary>{this.summary}</summary>
+        <summary>
+          {this.summary}
+        </summary>
         <slot />
       </details>
     );
