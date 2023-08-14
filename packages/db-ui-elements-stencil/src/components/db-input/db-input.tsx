@@ -29,7 +29,7 @@ export class DbInput {
   /**
    * The autofocus content attribute allows the author to indicate that a control is to be focused as soon as the page is loaded, allowing the user to just start typing without having to manually focus the main control.
    */
-  @Prop({ reflect: true }) autofocus?: boolean = false;
+  @Prop({ reflect: true }) autofocus = false;
 
   /**
    * The description attribute specifies the description/hint of the input.
@@ -44,7 +44,7 @@ export class DbInput {
   /**
    * The disabled attribute can be set to keep a user from clicking on the input.
    */
-  @Prop({ reflect: true }) disabled?: boolean;
+  @Prop({ reflect: true }) disabled = false;
 
   /**
    * The input_id of a labelable form-related element in the same document as the label element. The first element in the document with an id matching the value of the for attribute is the labeled control for this label element, if it is a labelable element.
