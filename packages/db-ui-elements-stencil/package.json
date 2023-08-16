@@ -44,7 +44,8 @@
     "@types/jest": "27.4.1",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
-    "jest-junit": "16.0.0"
+    "jest-junit": "16.0.0",
+    "puppeteer": "^21.0.3"
   },
   "dependencies": {
     "@db-ui/core": "^2.11.4"
