@@ -27,7 +27,7 @@ jobs:
           name: stencil-default-angular
           path: packages/db-ui-elements-stencil
 
-      - name: ⬇ Download Showcase angular dist folder
+      - name: ⬇ Download Showcase Angular LTS v.14 dist folder
         uses: ./.github/actions/download-tar-artifact
         with:
           name: showcase-angular-lts-14
