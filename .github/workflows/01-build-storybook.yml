@@ -30,7 +30,7 @@ jobs:
       - name: ⬇ Download Showcase angular dist folder
         uses: ./.github/actions/download-tar-artifact
         with:
-          name: showcase-angular
+          name: showcase-angular-lts-14
           path: showcase/angular-lts-14-showcase/dist
 
       - name: ⬇ Download Showcase playground dist folder
