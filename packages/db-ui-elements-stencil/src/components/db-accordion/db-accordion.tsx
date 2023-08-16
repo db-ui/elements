@@ -20,14 +20,22 @@ export class DbAccordion {
    */
   @Prop() summary!: string;
 
+  /**
+   * The emphasis to highlight the summary.
+   */
+  @Prop() open?: boolean;
+
   render() {
     return (
       <details
         class="cmp-accordion"
         data-emphasis={this.emphasis ? 'high' : false}
         data-size={this.size}
+        open={this.open}
       >
-        <summary>{this.summary}</summary>
+        <summary>
+          {this.summary}
+        </summary>
         <slot />
       </details>
     );

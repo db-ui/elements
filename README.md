@@ -77,7 +77,9 @@ This especially relates to (but doesn't exclude further Deutsche Bahn brand asse
 
 Contributions are very welcome, please refer to the [contribution guide](CONTRIBUTING.md).
 
+<!-- markdownlint-disable MD026 -->
 ## Third party acknowledgments – many kudos for that !!!
+<!-- markdownlint-enable MD026 -->
 
 - [open privacy by opr.vc](https://opr.vc)
 
@@ -88,4 +90,4 @@ community a harassment-free experience for everyone – have a look at our [Cont
 
 ## License
 
-This project is licensed under [Apache-2.0](LICENSE), Copyright 2022 by DB Systel GmbH.
+This project is licensed under [Apache-2.0](LICENSE), Copyright 2023 by DB Systel GmbH.

@@ -6,4 +6,9 @@
 
   // Overwriting the referenced SVG icon as this is going to get inlined and the path would be relative to the pages URL instead of the CSS, which would break
   --db-ic-expand-more-20: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAI9JREFUOE/tktENgCAMRB8buImOoJPrCLqJG2guEWOwIETil/1pSNuX61FH5XCVefzA945+4uEMbMAArBHNDTAedfWdYSkUsAWULaiHdcACKCeBGpgi0BDWh1vEPLSgUqE1vbIbTA2pTwmh6k/CnoCqX6F6yzNTmTcx52w8VDNJWI7C4kvPUVgE/YFFdpnNO7s0HhVghjmfAAAAAElFTkSuQmCC');
+
+  // our inner select element needs take the width of the "outer" Web Component tag
+  select {
+    width: 100%;
+  }
 }

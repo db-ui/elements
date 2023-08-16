@@ -74,18 +74,16 @@ export class DbLanguageSwitcher {
         {this.compData && (
           <ul
             class="cmp-language-switcher"
-            role="listbox"
             innerHTML={getCompDataHtml(this.compData, this.ariaSelectedIndex)}
           />
         )}
         {!this.compData && (
-          <ul class="cmp-language-switcher" role="listbox">
+          <ul class="cmp-language-switcher">
             {!this.hasItemsWrapper &&
               this._children.map((child, index) => (
                 <li
                   key={`cmp-language-switcher-item-${index}`}
-                  role="option"
-                  aria-selected={index === this.ariaSelectedIndex}
+                  aria-current={index === this.ariaSelectedIndex}
                   innerHTML={child.outerHTML}
                 />
               ))}

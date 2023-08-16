@@ -1,0 +1,16 @@
+@import '../general';
+@import 'logo';
+
+.elm-logo {
+  rect {
+    fill: transparent;
+    /* stylelint-disable custom-property-pattern */
+    fill: var(--db-logo-backgroundColor, transparent);
+    /* stylelint-enable custom-property-pattern */
+  }
+
+  path {
+    fill: #f01414;
+    fill: var(--db-logo-color, #f01414);
+  }
+}
