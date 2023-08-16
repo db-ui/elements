@@ -49,7 +49,7 @@ updates:
     # https://github.com/dependabot/dependabot-core/issues/5226#issuecomment-1179434437
     versioning-strategy: increase
   - package-ecosystem: 'npm'
-    directory: '/showcase/angular-lts-showcase'
+    directory: '/showcase/angular-lts-14-showcase'
     open-pull-requests-limit: 10
     schedule:
       interval: 'daily'

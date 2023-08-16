@@ -12,7 +12,7 @@ const getFrom = (framework) => {
     return /\/vue-showcase/g;
   }
   if (framework === 'angular') {
-    return /\/angular-lts-showcase/g;
+    return /\/angular-lts-14-showcase/g;
   }
   if (framework === 'reactwind') {
     return /\/reactwind-showcase/g;
@@ -38,11 +38,11 @@ const run = async () => {
     if (framework === 'angular') {
       await replace({
         files: [
-          './public/angular-lts-showcase/index.html',
-          './public/angular-lts-showcase/styles.css'
+          './public/angular-lts-14-showcase/index.html',
+          './public/angular-lts-14-showcase/styles.css'
         ],
         from: /url\(/g,
-        to: 'url(/angular-lts-showcase/'
+        to: 'url(/angular-lts-14-showcase/'
       });
     }
     await replace({
