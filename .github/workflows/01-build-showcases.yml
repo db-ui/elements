@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        showcases: [angular, playground, react, reactwind, vue]
+        showcases: [angular-lts-14, playground, react, reactwind, vue]
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v3
