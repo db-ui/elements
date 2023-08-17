@@ -4,7 +4,7 @@
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.12",
     "cypress": "^12.17.4",
-    "cypress-visual-regression": "2.1.0",
+    "cypress-visual-regression": "3.0.0",
     "http-server": "14.1.1"
   }
 }
