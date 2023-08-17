@@ -17,7 +17,7 @@ jobs:
 
       - name: 👩‍🍳 Bake everything (StoryBook, Playground & Showcases)
         run: |
-          node scripts/build angular,react,vue,playground,reactwind withShowcase
+          node scripts/build angular-lts-14,react,vue,playground,reactwind withShowcase
           npm run build:storybook
 
       - name: ⬆ Upload build

@@ -21,9 +21,9 @@ jobs:
 
       - name: ↔ Get download params for showcase
         run: |
-          if echo ${{ matrix.showcases }} | grep -c "angular"
+          if echo ${{ matrix.showcases }} | grep -c "angular-lts-14"
           then
-            echo '::set-output name=framework::angular'
+            echo '::set-output name=framework::angular-lts-14'
           elif echo ${{ matrix.showcases }} | grep -c "playground"
           then
             echo '::set-output name=framework::react'
