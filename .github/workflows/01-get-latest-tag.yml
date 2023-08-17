@@ -23,7 +23,7 @@ jobs:
 
       - name: ↔ Extract tag name
         shell: bash
-        run: echo "##[set-output name=tag;]$(echo $(git describe --tag --abbrev=0 | cut -c 2-))"
+        run: echo "tag=$(git describe --tag --abbrev=0 | cut -c 2-)" >> $GITHUB_OUTPUT
         id: extractTag
 
       - name: 💀 Killing me softly
