@@ -23,20 +23,20 @@ jobs:
         run: |
           if echo ${{ matrix.showcases }} | grep -c "angular"
           then
-            echo '::set-output name=framework::angular'
+            echo "framework=angular" >> $GITHUB_OUTPUT
           elif echo ${{ matrix.showcases }} | grep -c "playground"
           then
-            echo '::set-output name=framework::react'
+            echo "framework=react" >> $GITHUB_OUTPUT
           elif echo ${{ matrix.showcases }} | grep -c "react"
           then
-            echo '::set-output name=framework::react'
+            echo "framework=react" >> $GITHUB_OUTPUT
           elif echo ${{ matrix.showcases }} | grep -c "reactwind"
           then
-            echo '::set-output name=framework::react'
+            echo "framework=react" >> $GITHUB_OUTPUT
           else
-            echo '::set-output name=framework::vue'
+            echo "framework=vue" >> $GITHUB_OUTPUT
           fi
-          echo '::set-output name=theme::default'
+          echo "theme=default" >> $GITHUB_OUTPUT
         id: download-params
 
       - name: ⬇ Download Stencil ${{ steps.download-params.outputs.theme }}
