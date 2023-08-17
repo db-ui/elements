@@ -1,6 +1,12 @@
 @import '../general';
 @import 'sidenavi';
 
-a {
-  @extend .elm-link;
+.cmp-sidenavi {
+  a {
+    @extend .elm-link;
+  }
+
+  db-icon {
+    margin-right: to-rem(6);
+  }
 }
