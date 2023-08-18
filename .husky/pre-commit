@@ -4,7 +4,7 @@
 echo "### lint staged files ###"
 npx lint-staged
 echo "### npm run lint ###"
-npx concurrently "node ./scripts/check-commit-mail.js" "node ./scripts/cypress/component-check.js" "node ./scripts/angular-module-component-check.js" "npm run lint:eslint" "npm run lint:stylelint" "npm run lint:markdownlint" "npx validate-branch-name"
+npx concurrently "node ./scripts/check-commit-mail.js" "node ./scripts/cypress/component-check.js" "node ./scripts/angular-module-component-check.js" "npm run lint:eslint" "npx validate-branch-name"
 
 
 
