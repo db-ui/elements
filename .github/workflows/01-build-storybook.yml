@@ -30,8 +30,8 @@ jobs:
       - name: ⬇ Download Showcase Angular LTS v.14 dist folder
         uses: ./.github/actions/download-tar-artifact
         with:
-          name: showcase-angular-lts-14
-          path: showcase/angular-lts-14-showcase/dist
+          name: showcase-angular-lts-minus-1
+          path: showcase/angular-lts-minus-1-showcase/dist
 
       - name: ⬇ Download Showcase playground dist folder
         uses: ./.github/actions/download-tar-artifact
@@ -61,7 +61,7 @@ jobs:
         env:
           VERSION: ${{ inputs.tag }}
         run: |
-          mv showcase/angular-lts-14-showcase/dist/angular-lts-14-showcase packages/db-ui-elements-stencil/www/angular-lts-14-showcase
+          mv showcase/angular-lts-minus-1-showcase/dist/angular-lts-minus-1-showcase packages/db-ui-elements-stencil/www/angular-lts-minus-1-showcase
           mv showcase/playground-showcase/dist/playground-showcase packages/db-ui-elements-stencil/www/playground-showcase
           mv showcase/react-showcase/dist/react-showcase packages/db-ui-elements-stencil/www/react-showcase
           mv showcase/reactwind-showcase/dist/reactwind-showcase packages/db-ui-elements-stencil/www/reactwind-showcase

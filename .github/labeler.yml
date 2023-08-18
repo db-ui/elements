@@ -24,9 +24,9 @@ react:
 vue:
   - packages/db-ui-elements-vue/**
 
-# Add 'angular-lts-14-showcase' label to any file changes for angular-lts-14-showcase
-angular-lts-14-showcase:
-  - showcase/angular-lts-14-showcase/**
+# Add 'angular-lts-minus-1-showcase' label to any file changes for angular-lts-minus-1-showcase
+angular-lts-minus-1-showcase:
+  - showcase/angular-lts-minus-1-showcase/**
 
 # Add 'playground-showcase' label to any file changes for playground-showcase
 playground-showcase:

@@ -1,5 +1,5 @@
 {
-  "name": "angular-lts-14-showcase",
+  "name": "angular-lts-minus-1-showcase",
   "version": "0.0.0",
   "license": "Apache-2.0",
   "scripts": {
@@ -48,5 +48,5 @@
       "/dist"
     ]
   },
-  "homepage": "https://github.com/db-ui/elements/-/tree/develop/showcase/angular-lts-14-showcase"
+  "homepage": "https://github.com/db-ui/elements/-/tree/develop/showcase/angular-lts-minus-1-showcase"
 }
