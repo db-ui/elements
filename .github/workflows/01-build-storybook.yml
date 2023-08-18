@@ -24,7 +24,7 @@ jobs:
         uses: ./.github/actions/download-tar-artifact
         with:
           # It doesn't matter which framework we download for stencil
-          name: stencil-default-angular-lts-14
+          name: stencil-default-angular
           path: packages/db-ui-elements-stencil
 
       - name: ⬇ Download Showcase Angular LTS v.14 dist folder
