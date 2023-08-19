@@ -58,6 +58,7 @@ If you miss a component than [contribute](CONTRIBUTING.md), please.
 ## Framework showcases
 
 * [DB UI Elements with React (CRA)](showcase/react-showcase/README.md)
+* [DB UI Elements with Angular 15](showcase/angular-lts-showcase/README.md)
 * [DB UI Elements with Angular 14](showcase/angular-lts-minus-1-showcase/README.md)
 * [DB UI Elements with Vue](showcase/vue-showcase/README.md)
 
