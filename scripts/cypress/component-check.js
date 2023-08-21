@@ -32,7 +32,7 @@ try {
   const stencilComponents = fs.readdirSync(
     './packages/db-ui-elements-stencil/src/components'
   );
-  const cypressIntegrationsFilePaths = getAllFiles('./e2e/cypress/integration');
+  const cypressIntegrationsFilePaths = getAllFiles('./e2e/cypress/e2e');
 
   const noTestComponents = stencilComponents
     .filter(
@@ -50,7 +50,7 @@ try {
     console.log(
       `Cypress tests are missing for ${JSON.stringify(
         noTestComponents
-      )}. Please add them to ./e2e/cypress/integration or into the excludeComponents array inside ./scripts/cypress-component-check.js.`
+      )}. Please add them to ./e2e/cypress/e2e or into the excludeComponents array inside ./scripts/cypress-component-check.js.`
     );
     process.exit(1);
   }

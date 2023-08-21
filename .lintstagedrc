@@ -1,4 +1,5 @@
 {
-	"*.scss": "stylelint --fix",
-	"*.{js,scss,md}": "prettier --write"
+  "*.md": "markdownlint -c .markdown-lint.yml",
+  "*.{css,scss}": "stylelint --fix",
+  "*": "prettier --write --ignore-unknown"
 }
