@@ -2,7 +2,7 @@ context('showcase', () => {
   const showcases = require('../../fixtures/showcases.json');
 
   //showcases.forEach((showcase) => {
-  const showcase = 'angular';
+  const showcase = 'angular-lts-minus-1';
   it(`${showcase}: Test Tables`, () => {
     cy.showcaseGoto(showcase, 'Tables');
 

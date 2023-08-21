@@ -10,9 +10,6 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/db-ui-elements/db-ui-elements.js",
-  "eslintIgnore": [
-    "src/components/development/patternlab/**"
-  ],
   "files": [
     "dist/",
     "loader/"

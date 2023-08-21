@@ -8,7 +8,7 @@ import { isAreaCurrent, NAVIGATION_ITEMS } from './utils/navigation-item';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'angular-showcase';
+  title = 'angular-lts-minus-1-showcase';
   navigationItems = NAVIGATION_ITEMS;
   isAria = isAreaCurrent;
 
@@ -18,10 +18,10 @@ export class AppComponent implements OnInit {
   select: string;
   textarea: string;
 
-  checkboxControl = new FormControl();
-  radioControl = new FormControl();
-  selectControl = new FormControl();
-  textareaControl = new FormControl();
+  checkboxControl = new FormControl<boolean>(false, { nonNullable: false });
+  radioControl = new FormControl<string>('', { nonNullable: true });
+  selectControl = new FormControl<string>('', { nonNullable: false });
+  textareaControl = new FormControl<string>('', { nonNullable: false });
 
   radioButtons = ['radio-01', 'radio-02', 'radio-03'];
 
