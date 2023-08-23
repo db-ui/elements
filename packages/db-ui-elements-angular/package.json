@@ -44,7 +44,7 @@
     "@angular/platform-browser-dynamic": "^14.2.12",
     "@rollup/plugin-json": "6.0.0",
     "@rollup/plugin-node-resolve": "15.2.0",
-    "@rollup/plugin-commonjs": "25.0.3",
+    "@rollup/plugin-commonjs": "25.0.4",
     "@types/jest": "27.4.1",
     "@types/node": "20.5.0",
     "bs-logger": "0.2.6",
