@@ -60,7 +60,7 @@
     "find-versions-cli": "^4.0.0",
     "husky": "8.0.3",
     "iframe-resizer": "4.3.6",
-    "jest-config": "29.6.3",
+    "jest-config": "29.6.4",
     "lint-staged": "^14.0.1",
     "markdownlint-cli": "^0.35.0",
     "node-mv": "^0.1.3",
