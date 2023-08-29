@@ -28,7 +28,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@babel/core": "7.22.10",
+    "@babel/core": "7.22.11",
     "@babel/preset-env": "^7.22.10",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.22.11",
