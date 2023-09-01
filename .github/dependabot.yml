@@ -44,6 +44,8 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/animations'
         update-types: ['version-update:semver-major']
+      - dependency-name: '@angular-devkit/build-angular'
+        update-types: ['version-update:semver-major']
     pull-request-branch-name:
       separator: '-'
     # https://github.com/dependabot/dependabot-core/issues/5226#issuecomment-1179434437
