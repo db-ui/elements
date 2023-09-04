@@ -17,6 +17,9 @@ const getFrom = (framework) => {
   if (framework === 'angular-lts') {
     return /\/angular-lts-showcase/g;
   }
+  if (framework === 'angular') {
+    return /\/angular-showcase/g;
+  }
   if (framework === 'reactwind') {
     return /\/reactwind-showcase/g;
   }
