@@ -87,8 +87,5 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "homepage": "https://db-ui.github.io/elements/",
-  "engines": {
-    "npm": "^8.1.0"
-  }
+  "homepage": "https://db-ui.github.io/elements/"
 }
