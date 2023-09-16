@@ -2,9 +2,9 @@
 . "$(dirname "$0")/_/husky.sh"
 
 echo "### lint staged files ###"
-npx lint-staged
+npx lint-staged --no
 echo "### npm run lint ###"
-npx concurrently "node ./scripts/check-commit-mail.js" "node ./scripts/cypress/component-check.js" "node ./scripts/angular-module-component-check.js" "npm run lint:eslint" "npx validate-branch-name"
+npx concurrently --no "node ./scripts/check-commit-mail.js" "node ./scripts/cypress/component-check.js" "node ./scripts/angular-module-component-check.js" "npm run lint:eslint" "npx validate-branch-name"
 
 
 
