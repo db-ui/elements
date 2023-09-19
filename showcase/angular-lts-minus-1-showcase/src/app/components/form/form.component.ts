@@ -14,10 +14,10 @@ export class FormComponent implements OnInit {
   textarea: string;
   toggle: boolean;
 
-  checkboxControl = new FormControl();
-  radioControl = new FormControl();
-  selectControl = new FormControl();
-  textareaControl = new FormControl();
+  checkboxControl = new FormControl<boolean>(false, { nonNullable: false });
+  radioControl = new FormControl<string>('', { nonNullable: true });
+  selectControl = new FormControl<string>('', { nonNullable: false });
+  textareaControl = new FormControl<string>('', { nonNullable: false });
 
   radioButtons = ['Radio 01', 'Radio 02', 'Radio 03'];
 

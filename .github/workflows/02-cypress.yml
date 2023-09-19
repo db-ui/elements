@@ -28,7 +28,7 @@ jobs:
           ]
     steps:
       - name: ⬇ Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: ⬇ Download build
         uses: ./.github/actions/download-tar-artifact
@@ -41,7 +41,7 @@ jobs:
 
       - name: 🧪 Cypress run
         # Install NPM dependencies and run all Cypress tests
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
           working-directory: e2e
           start: npx http-server@14.1.1 out

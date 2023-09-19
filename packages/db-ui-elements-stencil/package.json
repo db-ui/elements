@@ -10,9 +10,6 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/db-ui-elements/db-ui-elements.js",
-  "eslintIgnore": [
-    "src/components/development/patternlab/**"
-  ],
   "files": [
     "dist/",
     "loader/"
@@ -36,8 +33,8 @@
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
     "@stencil-community/eslint-plugin": "0.5.0",
-    "@stencil/angular-output-target": "0.8.0",
-    "@stencil/core": "4.0.5",
+    "@stencil/angular-output-target": "0.8.2",
+    "@stencil/core": "4.2.1",
     "@stencil/react-output-target": "0.5.3",
     "@stencil/sass": "3.0.5",
     "@stencil/vue-output-target": "0.7.0",
@@ -45,10 +42,10 @@
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
     "jest-junit": "16.0.0",
-    "puppeteer": "^21.0.3"
+    "puppeteer": "^21.2.1"
   },
   "dependencies": {
-    "@db-ui/core": "^2.11.4"
+    "@db-ui/core": "^2.12.1"
   },
   "license": "Apache-2.0",
   "publishConfig": {

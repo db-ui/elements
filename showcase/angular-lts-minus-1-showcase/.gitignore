@@ -1,5 +1,11 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# angular .gitignore specific / https://github.com/angular/angular/blob/14.2.x/.gitignore
+.angular/cache
+dist/
+integration/bazel/bazel-*
+*.log
+
 # compiled output
 /dist
 /tmp
