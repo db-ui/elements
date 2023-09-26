@@ -30,7 +30,7 @@ context('showcase', () => {
 
       // 4. Select
       const option = 'Option 2';
-      cy.get('db-select').find('select').select(option);
+      cy.get('db-select').eq(0).find('select').select(option);
       checkFormChange(3, option);
 
       // 5. Textarea
