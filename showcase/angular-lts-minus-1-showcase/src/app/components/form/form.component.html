@@ -35,6 +35,15 @@
           <option>Option 2</option>
           <option>Option 3</option>
         </db-select>
+        <db-select
+          label="Selectbox"
+          name="select-name2"
+          (dbChange)="onFormChange($event)"
+        >
+          <option selected>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </db-select>
         <p>DbTextarea:</p>
         <db-textarea
           label="Textarea"
@@ -60,6 +69,8 @@
         <dd>{{ radio ? radio : 'No radio selected' }}</dd>
         <dt>select</dt>
         <dd>{{ select ? select : 'Not Selected' }}</dd>
+        <dt>select</dt>
+        <dd>{{ select2 ? select2 : 'Not Selected' }}</dd>
         <dt>textarea</dt>
         <dd>{{ textarea ? textarea : 'No Text set' }}</dd>
         <dt>toggle</dt>

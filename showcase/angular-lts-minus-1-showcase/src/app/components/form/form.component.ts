@@ -11,6 +11,7 @@ export class FormComponent implements OnInit {
   checkbox: boolean;
   radio: string;
   select: string;
+  select2: string;
   textarea: string;
   toggle: boolean;
 
@@ -44,4 +45,8 @@ export class FormComponent implements OnInit {
       })
     );
   }
+
+  onFormChange = (event: any) => {
+    this.select2 = event.target.value;
+  };
 }
