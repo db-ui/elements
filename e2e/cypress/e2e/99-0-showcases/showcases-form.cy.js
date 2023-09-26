@@ -41,11 +41,11 @@ context('showcase', () => {
         .type(textAreaValue)
         .blur()
         .should('have.value', textAreaValue);
-      checkFormChange(4, textAreaValue);
+      checkFormChange(5, textAreaValue);
 
       // 6. Toggle
       cy.get('db-toggle').click();
-      checkFormChange(5, 'true');
+      checkFormChange(6, 'true');
 
       // 7. Button
       const stub = cy.stub();
