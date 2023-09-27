@@ -11,7 +11,6 @@ export class FormComponent implements OnInit {
   checkbox: boolean;
   radio: string;
   select: string;
-  select2: string;
   textarea: string;
   toggle: boolean;
 
