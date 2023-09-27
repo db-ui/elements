@@ -47,6 +47,6 @@ export class FormComponent implements OnInit {
   }
 
   onFormChange = (event: any) => {
-    this.select2 = event.target.value;
+    this.select = event.target.value;
   };
 }

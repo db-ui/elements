@@ -30,7 +30,7 @@ context('showcase', () => {
 
       // 4. Select
       const option = 'Option 2';
-      cy.get('db-select').eq(0).find('select').select(option);
+      cy.get('db-select').find('select').select(option);
       checkFormChange(3, option);
 
       // 5. Textarea
@@ -41,11 +41,11 @@ context('showcase', () => {
         .type(textAreaValue)
         .blur()
         .should('have.value', textAreaValue);
-      checkFormChange(5, textAreaValue);
+      checkFormChange(4, textAreaValue);
 
       // 6. Toggle
       cy.get('db-toggle').click();
-      checkFormChange(6, 'true');
+      checkFormChange(5, 'true');
 
       // 7. Button
       const stub = cy.stub();
