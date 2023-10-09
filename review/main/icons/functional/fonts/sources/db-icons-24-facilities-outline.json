@@ -18,7 +18,7 @@
 				"id": 9,
 				"name": "db_ic_shower_24",
 				"prevSize": 32,
-				"code": 128703
+				"code": 922215
 			},
 			"setIdx": 0,
 			"setId": 1,
@@ -87,7 +87,7 @@
 				"id": 6,
 				"name": "db_ic_sink_24",
 				"prevSize": 32,
-				"code": 129532
+				"code": 922216
 			},
 			"setIdx": 0,
 			"setId": 1,
@@ -110,7 +110,7 @@
 				"id": 5,
 				"name": "db_ic_playground_24",
 				"prevSize": 32,
-				"code": 129528
+				"code": 922214
 			},
 			"setIdx": 0,
 			"setId": 1,
@@ -156,7 +156,7 @@
 				"id": 1,
 				"name": "ic-db_facilities_wc_24",
 				"prevSize": 32,
-				"code": 128699
+				"code": 922217
 			},
 			"setIdx": 0,
 			"setId": 1,
@@ -179,7 +179,7 @@
 				"id": 2,
 				"name": "ic-db_facilities_wc-men_24",
 				"prevSize": 32,
-				"code": 128697
+				"code": 922224
 			},
 			"setIdx": 0,
 			"setId": 1,
@@ -202,7 +202,7 @@
 				"id": 3,
 				"name": "ic-db_facilities_wc-woman_24",
 				"prevSize": 32,
-				"code": 128698
+				"code": 922226
 			},
 			"setIdx": 0,
 			"setId": 1,
@@ -225,7 +225,7 @@
 				"id": 4,
 				"name": "wc-sign",
 				"prevSize": 32,
-				"code": 128702
+				"code": 922225
 			},
 			"setIdx": 0,
 			"setId": 1,

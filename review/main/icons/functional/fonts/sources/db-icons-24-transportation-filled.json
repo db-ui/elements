@@ -64,7 +64,7 @@
 				"id": 1,
 				"name": "db_ic_bicycle_inverted_24",
 				"prevSize": 32,
-				"code": 128690
+				"code": 922169
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -363,7 +363,7 @@
 				"id": 14,
 				"name": "db_ic_local_train_inverted_24",
 				"prevSize": 32,
-				"code": 128648
+				"code": 922176
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -570,7 +570,7 @@
 				"id": 23,
 				"name": "db_ic_walking_inverted_24",
 				"prevSize": 32,
-				"code": 128694
+				"code": 922177
 			},
 			"setIdx": 0,
 			"setId": 0,
