@@ -43,7 +43,7 @@
     "@angular/platform-browser": "^14.2.12",
     "@angular/platform-browser-dynamic": "^14.2.12",
     "@rollup/plugin-json": "6.0.1",
-    "@rollup/plugin-node-resolve": "15.2.1",
+    "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-commonjs": "25.0.5",
     "@types/jest": "27.4.1",
     "@types/node": "20.8.4",
