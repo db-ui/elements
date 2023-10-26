@@ -64,7 +64,7 @@
 				"id": 1,
 				"name": "db_ic_multiple_passenger_24",
 				"prevSize": 32,
-				"code": 128109
+				"code": 922246
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -432,7 +432,7 @@
 				"id": 17,
 				"name": "ticket",
 				"prevSize": 32,
-				"code": 127915
+				"code": 922247
 			},
 			"setIdx": 0,
 			"setId": 0,

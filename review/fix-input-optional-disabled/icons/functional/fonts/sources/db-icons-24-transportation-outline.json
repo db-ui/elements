@@ -41,7 +41,7 @@
 				"id": 1,
 				"name": "db_ic_walking_24",
 				"prevSize": 32,
-				"code": 128694
+				"code": 922177
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -341,7 +341,7 @@
 				"id": 14,
 				"name": "db_ic_local_train_24",
 				"prevSize": 32,
-				"code": 128648
+				"code": 922176
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -410,7 +410,7 @@
 				"id": 17,
 				"name": "db_ic_ice_side_view_24",
 				"prevSize": 32,
-				"code": 128644
+				"code": 922248
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -686,7 +686,7 @@
 				"id": 29,
 				"name": "db_ic_bicycle_24",
 				"prevSize": 32,
-				"code": 128690
+				"code": 922169
 			},
 			"setIdx": 0,
 			"setId": 0,

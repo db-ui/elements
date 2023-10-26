@@ -87,7 +87,7 @@
 				"id": 0,
 				"name": "call-filled",
 				"prevSize": 32,
-				"code": 128222
+				"code": 922165
 			},
 			"setIdx": 0,
 			"setId": 1,
@@ -111,7 +111,7 @@
 				"id": 1,
 				"name": "chat-filled",
 				"prevSize": 32,
-				"code": 128172
+				"code": 922166
 			},
 			"setIdx": 0,
 			"setId": 1,

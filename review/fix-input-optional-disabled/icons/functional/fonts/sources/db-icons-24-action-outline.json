@@ -179,7 +179,7 @@
 				"id": 5,
 				"name": "db_ic_compass_24",
 				"prevSize": 32,
-				"code": 129517
+				"code": 922185
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -202,7 +202,7 @@
 				"id": 6,
 				"name": "account",
 				"prevSize": 32,
-				"code": 128578
+				"code": 922145
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -271,7 +271,7 @@
 				"id": 9,
 				"name": "db_ic_add_link_24",
 				"prevSize": 32,
-				"code": 128279
+				"code": 922178
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -294,7 +294,7 @@
 				"id": 10,
 				"name": "alarm",
 				"prevSize": 32,
-				"code": 9200
+				"code": 922179
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -340,7 +340,7 @@
 				"id": 12,
 				"name": "alert",
 				"prevSize": 32,
-				"code": 128276
+				"code": 922146
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -363,7 +363,7 @@
 				"id": 13,
 				"name": "alert-off",
 				"prevSize": 32,
-				"code": 128277
+				"code": 922179
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -386,7 +386,7 @@
 				"id": 14,
 				"name": "db_ic_attachment_24",
 				"prevSize": 32,
-				"code": 128206
+				"code": 922181
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -432,7 +432,7 @@
 				"id": 16,
 				"name": "db_ic_block_24",
 				"prevSize": 32,
-				"code": 10062
+				"code": 922147
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -455,7 +455,7 @@
 				"id": 17,
 				"name": "db_ic_bookmark_24",
 				"prevSize": 32,
-				"code": 128278
+				"code": 922148
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -478,7 +478,7 @@
 				"id": 18,
 				"name": "db_ic_bug_24",
 				"prevSize": 32,
-				"code": 128027
+				"code": 922182
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -524,7 +524,7 @@
 				"id": 20,
 				"name": "calendar",
 				"prevSize": 32,
-				"code": 128198
+				"code": 922183
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -547,7 +547,7 @@
 				"id": 21,
 				"name": "db_ic_camera_24",
 				"prevSize": 32,
-				"code": 128247
+				"code": 922149
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -570,7 +570,7 @@
 				"id": 22,
 				"name": "db_ic_cash_24",
 				"prevSize": 32,
-				"code": 128184
+				"code": 922184
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -593,7 +593,7 @@
 				"id": 23,
 				"name": "check-circle",
 				"prevSize": 32,
-				"code": 9989
+				"code": 922144
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -708,7 +708,7 @@
 				"id": 28,
 				"name": "credit-card",
 				"prevSize": 32,
-				"code": 128179
+				"code": 922150
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1007,7 +1007,7 @@
 				"id": 41,
 				"name": "db_ic_folder_24",
 				"prevSize": 32,
-				"code": 128193
+				"code": 922151
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1030,7 +1030,7 @@
 				"id": 42,
 				"name": "db_ic_folder_open_24",
 				"prevSize": 32,
-				"code": 128194
+				"code": 922152
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1076,7 +1076,7 @@
 				"id": 44,
 				"name": "giftcard",
 				"prevSize": 32,
-				"code": 127873
+				"code": 922192
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1191,7 +1191,7 @@
 				"id": 49,
 				"name": "db_ic_key_24",
 				"prevSize": 32,
-				"code": 128273
+				"code": 922193
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1237,7 +1237,7 @@
 				"id": 51,
 				"name": "db_ic_lightbulb_24",
 				"prevSize": 32,
-				"code": 128161
+				"code": 922194
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1260,7 +1260,7 @@
 				"id": 52,
 				"name": "ic-db_action_lock-close_24",
 				"prevSize": 32,
-				"code": 128274
+				"code": 922153
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1283,7 +1283,7 @@
 				"id": 53,
 				"name": "ic-db_action_lock-open_24",
 				"prevSize": 32,
-				"code": 128275
+				"code": 922160
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1329,7 +1329,7 @@
 				"id": 55,
 				"name": "db_ic_logbook_24",
 				"prevSize": 32,
-				"code": 128211
+				"code": 922195
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1375,7 +1375,7 @@
 				"id": 57,
 				"name": "db_ic_pin_24",
 				"prevSize": 32,
-				"code": 128204
+				"code": 922161
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1467,7 +1467,7 @@
 				"id": 61,
 				"name": "db_ic_save_24",
 				"prevSize": 32,
-				"code": 128190
+				"code": 922162
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1490,7 +1490,7 @@
 				"id": 62,
 				"name": "schedule",
 				"prevSize": 32,
-				"code": 128339
+				"code": 922163
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1513,7 +1513,7 @@
 				"id": 63,
 				"name": "search",
 				"prevSize": 32,
-				"code": 128269
+				"code": 922196
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1697,7 +1697,7 @@
 				"id": 71,
 				"name": "shopping-cart",
 				"prevSize": 32,
-				"code": 128722
+				"code": 922197
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1813,7 +1813,7 @@
 				"id": 76,
 				"name": "db_ic_thumb_up_24",
 				"prevSize": 32,
-				"code": 128077
+				"code": 922198
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1836,7 +1836,7 @@
 				"id": 77,
 				"name": "db_ic_thumb_up_down_24",
 				"prevSize": 32,
-				"code": 128078
+				"code": 922199
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -1951,7 +1951,7 @@
 				"id": 82,
 				"name": "website",
 				"prevSize": 32,
-				"code": 127760
+				"code": 922200
 			},
 			"setIdx": 0,
 			"setId": 0,

@@ -64,7 +64,7 @@
 				"id": 1,
 				"name": "db_ic_person_with_cane_20",
 				"prevSize": 32,
-				"code": 129455
+				"code": 922231
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -156,7 +156,7 @@
 				"id": 5,
 				"name": "db_ic_no_smoking_20",
 				"prevSize": 32,
-				"code": 128685
+				"code": 922230
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -179,7 +179,7 @@
 				"id": 6,
 				"name": "db_ic_night_20",
 				"prevSize": 32,
-				"code": 127762
+				"code": 922249
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -225,7 +225,7 @@
 				"id": 8,
 				"name": "db_ic_luggage_compartment_20",
 				"prevSize": 32,
-				"code": 128709
+				"code": 922228
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -271,7 +271,7 @@
 				"id": 10,
 				"name": "db_ic_environmental_mobility_check_20",
 				"prevSize": 32,
-				"code": 127811
+				"code": 922227
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -432,7 +432,7 @@
 				"id": 17,
 				"name": "luggage-rack",
 				"prevSize": 32,
-				"code": 129523
+				"code": 922229
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -478,7 +478,7 @@
 				"id": 19,
 				"name": "power-outlet",
 				"prevSize": 32,
-				"code": 128268
+				"code": 922232
 			},
 			"setIdx": 0,
 			"setId": 0,

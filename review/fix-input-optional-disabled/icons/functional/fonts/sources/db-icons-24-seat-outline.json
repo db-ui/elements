@@ -133,7 +133,7 @@
 				"id": 4,
 				"name": "ic-db_seat_childrens-compartment_24",
 				"prevSize": 32,
-				"code": 127868
+				"code": 922242
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -156,7 +156,7 @@
 				"id": 5,
 				"name": "ic-db_seat_parent-child-compartment_24",
 				"prevSize": 32,
-				"code": 128106
+				"code": 922244
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -179,7 +179,7 @@
 				"id": 6,
 				"name": "ic-db_seat_quiet-zone_24",
 				"prevSize": 32,
-				"code": 129323
+				"code": 922245
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -202,7 +202,7 @@
 				"id": 7,
 				"name": "aisle",
 				"prevSize": 32,
-				"code": 128186
+				"code": 922241
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -248,7 +248,7 @@
 				"id": 9,
 				"name": "handicapped",
 				"prevSize": 32,
-				"code": 9855
+				"code": 922243
 			},
 			"setIdx": 0,
 			"setId": 0,
