@@ -18,6 +18,10 @@ export class DbToggle {
    * Checked property
    */
   @Prop({ reflect: true }) checked: boolean;
+  /**
+   * The name attribute specifies a name for the included input element.
+   */
+  @Prop({ reflect: true }) name?: string;
 
   private handleChange(event) {
     this.dbChange.emit(event);
@@ -38,6 +42,7 @@ export class DbToggle {
           disabled={this.disabled}
           checked={this.checked}
           id={this.htmlid}
+          name={this.name}
           onChange={(event) => this.handleChange(event)}
         />
         <label class="elm-label" htmlFor={this.htmlid}>
