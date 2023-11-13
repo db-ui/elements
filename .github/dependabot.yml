@@ -56,6 +56,7 @@ updates:
       commitlint:
         patterns:
           - '@commitlint*'
+          - '@babel*'
 
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-lts-minus-1-showcase'
