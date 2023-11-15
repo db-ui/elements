@@ -133,8 +133,8 @@ export const config: Config = {
           dest: 'css/db-ui-core.vars.css'
         },
         {
-          src: '../../../node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js',
-          dest: 'js/iframeresizer.contentwindow.min.js'
+          src: '../../../node_modules/iframe-resizer/js/iframeResizer.contentWindow.js',
+          dest: 'js/iframeresizer.contentwindow.js'
         }
       ],
       serviceWorker: null // disable service workers
