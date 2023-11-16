@@ -28,7 +28,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@babel/core": "7.23.2",
+    "@babel/core": "7.23.3",
     "@babel/preset-env": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
@@ -59,7 +59,7 @@
     "eslint-plugin-vue": "^9.18.1",
     "find-versions-cli": "^4.0.0",
     "husky": "8.0.3",
-    "iframe-resizer": "4.3.7",
+    "iframe-resizer": "4.3.9",
     "jest-config": "29.7.0",
     "lint-staged": "^15.1.0",
     "markdownlint-cli": "^0.37.0",
