@@ -1,3 +1,4 @@
+import { dirname, join } from 'node:path';
 import type { StorybookConfig } from '@storybook/builder-vite';
 const { mergeConfig } = require('vite');
 
@@ -18,7 +19,8 @@ const config: StorybookConfig = {
         transcludeMarkdown: true
       }
     },
-    '@storybook/addon-controls'
+    getAbsolutePath('@storybook/addon-controls'),
+    getAbsolutePath('@storybook/addon-mdx-gfm')
   ],
   staticDirs: ['../packages/db-ui-elements-stencil/www'],
   features: {
@@ -30,13 +32,13 @@ const config: StorybookConfig = {
     plugins: ['istanbul']
   }),
   framework: {
-    name: '@storybook/web-components-vite',
+    name: getAbsolutePath('@storybook/web-components-vite'),
     options: {}
   },
   docs: {
-    docsPage: 'automatic'
+    autodocs: true
   },
-  core: { builder: '@storybook/builder-vite' },
+  core: {},
   async viteFinal(config) {
     // Merge custom configuration into the default config
     return mergeConfig(config, {
@@ -46,3 +48,7 @@ const config: StorybookConfig = {
 };
 
 export default config;
+
+function getAbsolutePath(value: string): any {
+  return dirname(require.resolve(join(value, 'package.json')));
+}
