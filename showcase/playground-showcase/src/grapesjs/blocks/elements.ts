@@ -133,11 +133,13 @@ export const DB_ICON = {
           label: 'Icon size', // The label you will see in Settings
           name: 'variant', // The name of the attribute/property to use on component
           options: [
+            { id: '16-outline', name: '16 / outline' },
             { id: '20-outline', name: '20 / outline' },
             { id: '24-outline', name: '24 / outline' },
             { id: '32-outline', name: '32 / outline' },
             { id: '48-outline', name: '48 / outline' },
             { id: '64-outline', name: '64 / outline' },
+            { id: '16-filled', name: '16 / filled' },
             { id: '20-filled', name: '20 / filled' },
             { id: '24-filled', name: '24 / filled' },
             { id: '32-filled', name: '32 / filled' },

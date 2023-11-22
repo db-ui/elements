@@ -95,6 +95,6 @@ Both Inputs in this example do the same:
 
 ### Example
 
-[Vue Showcase GitHub](https://github.com/db-ui/elements/-/tree/develop/showcase/vue-showcase)
+[Vue Showcase GitHub](https://github.com/db-ui/elements/tree/main/showcase/vue-showcase)
 
-[Vue Showcase App](https://github.com/db-ui/elements/vue-showcase/index.html)
+[Vue Showcase App](https://db-ui.github.io/elements/vue-showcase/)

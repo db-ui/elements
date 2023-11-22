@@ -17,13 +17,13 @@ jobs:
       tag: ${{ steps.extractTag.outputs.tag }}
     steps:
       - name: ⬇ Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: ↔ Extract tag name
         shell: bash
-        run: echo "##[set-output name=tag;]$(echo $(git describe --tag --abbrev=0 | cut -c 2-))"
+        run: echo "tag=$(git describe --tag --abbrev=0 | cut -c 2-)" >> $GITHUB_OUTPUT
         id: extractTag
 
       - name: 💀 Killing me softly

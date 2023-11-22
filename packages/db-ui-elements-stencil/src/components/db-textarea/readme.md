@@ -1,9 +1,6 @@
 # db-textarea
 
-
-
 {/* Auto Generated Below */}
-
 
 ## Properties
 

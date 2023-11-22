@@ -2,47 +2,93 @@ export const iconsetAction: string[] = [
   'account',
   'add',
   'add-circle',
+  'add-link',
   'alarm',
   'alarm-add',
   'alert',
-  'alert-on',
   'alert-off',
+  'attachment',
+  'augmented-reality',
+  'block',
+  'bookmark',
+  'bug',
+  'build',
   'calendar',
+  'camera',
+  'cash',
   'check-circle',
+  'cloud',
+  'cloud-download',
+  'cloud-upload',
+  'compass',
+  'copy',
   'credit-card',
+  'dashboard',
   'delete',
   'discount',
   'document',
+  'document-check',
   'done',
   'download',
+  'drag-and-drop',
   'edit',
+  'face-delighted',
+  'face-disappointed',
+  'face-neutral',
+  'face-sad',
+  'face-smiling',
   'filter',
+  'fingerprint',
+  'folder',
+  'folder-open',
   'generic-card',
   'giftcard',
+  'hearing',
+  'hearing-disabled',
   'heart',
-  'heart-on',
   'help',
+  'image',
   'info',
+  'key',
   'legal',
+  'lightbulb',
+  'lock-close',
+  'lock-open',
   'log-out',
+  'logbook',
   'minus',
+  'piggybank',
+  'pin',
   'print',
+  'push-button',
   'remove',
+  'resize',
+  'resize-handle-corner',
+  'save',
   'schedule',
   'search',
   'send',
+  'sepa',
   'settings',
   'share',
   'shopping-bag',
   'shopping-basket',
+  'shopping-basket-disabled',
   'shopping-cart',
+  'shopping-cart-disabled',
+  'sort-down',
+  'sort-up',
   'star',
-  'star-on',
   'swap-horizontal',
   'swap-vertical',
+  'thumb-up',
+  'thumb-up-down',
+  'translation',
+  'undo',
   'upload',
   'visibility',
   'visibility-off',
+  'voucher',
   'website',
   'zoom-in',
   'zoom-out'
@@ -50,11 +96,14 @@ export const iconsetAction: string[] = [
 
 export const iconsetAv: string[] = [
   'fast-backward-10',
+  'fast-backward',
   'fast-backward-30',
   'fast-backward-empty',
   'fast-forward-10',
+  'fast-forward',
   'fast-forward-30',
   'fast-forward-empty',
+  'microphone',
   'pause',
   'play',
   'skip-backward',
@@ -67,6 +116,8 @@ export const iconsetAv: string[] = [
   'volume-up'
 ];
 
+export const iconsetBrand: string[] = ['logo'];
+
 export const iconsetCommunication: string[] = [
   'call',
   'chat',
@@ -76,6 +127,9 @@ export const iconsetCommunication: string[] = [
   'mail',
   'mobile-off',
   'mobile-phone',
+  'question',
+  'receive-item',
+  'share-item',
   'wifi',
   'wifi-off'
 ];
@@ -83,22 +137,53 @@ export const iconsetCommunication: string[] = [
 export const iconsetCovid: string[] = ['mask'];
 
 export const iconsetFacilities: string[] = [
+  'playground',
+  'restricted-mobility-toilet',
+  'shower',
+  'shower-men',
+  'shower-women',
+  'sink',
   'wc',
   'wc-men',
   'wc-sign',
-  'wc-woman'
+  'wc-women'
 ];
 
 export const iconsetFeature: string[] = [
+  'air-condition',
+  'buggy',
+  'clothing-hanger',
+  'day',
+  'dog',
   'entry-aid',
+  'environmental-mobility-check',
+  'hydrogen',
+  'luggage-compartment',
   'luggage-rack',
+  'marketplace',
   'medical',
-  'power-outlet'
+  'night',
+  'no-smoking',
+  'person-with-cane',
+  'person-with-rollator',
+  'platform',
+  'power-outlet',
+  'reservation',
+  'standing-room',
+  'steppless-entry',
+  'support-dog'
 ];
 
-export const iconsetFood: string[] = ['coffee-cup', 'drink', 'restaurant'];
+export const iconsetFood: string[] = [
+  'breakfast',
+  'coffee-cup',
+  'drink',
+  'restaurant'
+];
 
-export const iconsetJournay: string[] = [
+export const iconsetIT: string[] = ['database'];
+
+export const iconsetJourney: string[] = [
   '1st-class',
   '2nd-class',
   'alternative-connection',
@@ -109,18 +194,30 @@ export const iconsetJournay: string[] = [
   'capacity-indicator-low',
   'destination',
   'intermediary-stop',
+  'mixed-class',
+  'monochrome-capacity-indicator-high',
+  'monochrome-capacity-indicator-low',
+  'monochrome-capacity-indicator-moderate',
   'round-trip',
   'single-trip',
   'start'
 ];
 
 export const iconsetMaps: string[] = [
+  'gps',
+  'gps-north',
   'home',
   'map',
-  'map-stop',
+  'navigation-straight',
+  'navigation-to-left',
+  'navigation-to-right',
+  'navigation-u-turn',
+  'parking',
   'place',
   'set-position',
-  'trainstation'
+  'station',
+  'stop-sign',
+  'train-station'
 ];
 
 export const iconsetNavigation: string[] = [
@@ -148,15 +245,22 @@ export const iconsetNavigation: string[] = [
 
 export const iconsetNotification: string[] = [
   'error',
-  'error-triangle',
   'notify',
-  'notify-cutoff'
+  'notify-cutoff',
+  'warning'
 ];
 
 export const iconsetSeat: string[] = [
   'aisle',
+  'aisle-not-available',
+  'bed',
+  'childrens-compartment',
+  'couchette',
   'elderly',
   'handicapped',
+  'parent-child-compartment',
+  'priority',
+  'quiet-zone',
   'table',
   'window'
 ];
@@ -165,40 +269,73 @@ export const iconsetTicket: string[] = [
   'bahnbonus',
   'bahnbonus-card',
   'bahncard',
+  'best-price',
   'commuter-ticket',
   'komfort-check-in',
   'komfort-check-in-check',
   'komfort-check-in-circle',
+  'multiple-cards',
+  'multiple-passenger',
   'my-travel',
   'outward-journey',
   'qr-code',
+  'qr-code-scan',
   'return-journey',
   'ticket',
   'ticket-discount',
   'ticket-multiple',
+  'ticket-subscription',
   'time-outward-journey',
   'time-return-journey',
-  'timetable'
+  'timetable',
+  'travel-insurance'
 ];
 
 export const iconsetTransportation: string[] = [
+  'airplane',
   'bicycle',
+  'bicycle-trailer',
+  'call-a-bike',
   'car',
   'car-sequence',
+  'carsharing',
+  'electric-locomotive',
+  'electric-scooter',
+  'ev-car',
+  'ferry',
+  'handcart',
+  'ice',
   'ice-side-view',
+  'intercity-train',
+  'local-bus',
+  'local-train',
+  'long-distance-bus',
+  'rail-and-fly',
+  'railroad-car',
+  's-bahn',
+  'scooter',
+  'sev',
+  'speedboat',
   'sprinter',
-  'walking'
+  'subway',
+  'taxi',
+  'train-and-car',
+  'tram',
+  'walking',
+  'walking-fast'
 ];
 
 export const iconset: string[] = iconsetAction
   .concat(
     iconsetAv,
+    iconsetBrand,
     iconsetCommunication,
     iconsetCovid,
     iconsetFacilities,
     iconsetFeature,
     iconsetFood,
-    iconsetJournay,
+    iconsetIT,
+    iconsetJourney,
     iconsetMaps,
     iconsetNavigation,
     iconsetNotification,

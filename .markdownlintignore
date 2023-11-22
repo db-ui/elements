@@ -1,2 +1,3 @@
 **/node_modules/**
 packages/db-ui-elements-stencil/src/components/**
+packages/db-ui-elements-stencil/www

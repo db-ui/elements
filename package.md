@@ -20,4 +20,4 @@
 * *husky*: hooks into commit and executes commitlint
 * *np*: supports the release process e.g. with interactive options and tests
 * *prettier*: formats code according eslint rules
-* *pretty-quick*: introduced by prettier
+* *lint-staged*: necessary for running prettier for staged files on commit

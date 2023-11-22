@@ -2,6 +2,7 @@ import {
   DbIcon,
   DbImage,
   DbLink,
+  DbLogo,
   DbProgress,
   DbTag,
   DbChip
@@ -17,6 +18,8 @@ function OtherElements() {
       <DbTag>default</DbTag>
       <DbTag variant="informative">informative</DbTag>
       <DbTag variant="success">success</DbTag>
+      <p>DbLogo:</p>
+      <DbLogo></DbLogo>
       <p>DbChip:</p>
       <DbChip datatype="filter" icon="account">
         default
@@ -40,7 +43,7 @@ function OtherElements() {
       <p>DbImage:</p>
       <DbImage
         alt="DB Image alternative text"
-        src="https://db-ui.github.io/core/samples/images/alexander-bagno-iILbjYtkyG0-unsplash.376x253.jpg"
+        src="https://db-ui.github.io/core/samples/images/maximilian--UZa949e8LE-unsplash.376x282.squoosh.mozjpeg.jpg"
         width="376"
         height="253"
       />

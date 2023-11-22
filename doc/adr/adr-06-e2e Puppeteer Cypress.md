@@ -10,7 +10,7 @@
 
 Es sollen weiterhin e2e Tests durchgeführt werden. Das aktuelle image für [Puppeteer](https://github.com/buildkite/docker-puppeteer#deprecated) wird nicht mehr unterstützt. Außerdem wird node 16 verwendet.
 Dadurch war es nicht mehr möglich in der CICD alle e2e Tests erfolgreich laufen zu lassen.
-Als Alternative wird [Cypress](https://www.cypress.io/) verwendet, da es einfacher zu benutzen ist, die Möglichkeit bietet Viedeos in der Pipeline zu generieren und zusätzlich noch mit node 16 supportet wird.
+Als Alternative wird [Cypress](https://www.cypress.io/) verwendet, da es einfacher zu benutzen ist, die Möglichkeit bietet, Videos in der Pipeline zu generieren und zusätzlich noch mit node 16 supportet wird.
 
 ## Problembeschreibung und Kontext
 
@@ -38,7 +38,7 @@ Cypress ist sehr einfach zu benutzen und bietet sehr viel Komfort out-of-the-box
 
 ## Konsequenzen
 
-Bei `stecil generate` sollten e2e Tests nicht ausgewählt werden. Dafür muss man manuell einen e2e Test im Ordner Cypress anlegen.
+Bei `stencil generate` sollten e2e Tests nicht ausgewählt werden. Dafür muss man manuell einen e2e Test im Ordner `cypress` anlegen.
 
 ## Links
 

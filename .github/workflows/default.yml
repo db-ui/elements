@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - 'main'
-      - 'v3'
 
 jobs:
   init:
@@ -55,10 +54,19 @@ jobs:
     needs: [install-cypress, build-storybook]
 
   checks-done:
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     steps:
       - name: 🎉 Checks done
-        run: echo "🎉 All Cypress tests were successful."
+        run: |
+          result="${{ needs.cypress.result }}"
+          if [[ $result == "success" ]]; then
+             echo "🎉 All Cypress tests were successful."
+            exit 0
+          else
+             echo "There have been problems with the Cypress tests."
+            exit 1
+          fi
     needs: [cypress]
 
   deploy:
