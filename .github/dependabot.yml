@@ -52,6 +52,12 @@ updates:
       separator: '-'
     # https://github.com/dependabot/dependabot-core/issues/5226#issuecomment-1179434437
     versioning-strategy: increase
+    groups:
+      commitlint:
+        patterns:
+          - '@commitlint*'
+          - '@babel*'
+
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-lts-showcase'
     open-pull-requests-limit: 10
@@ -100,6 +106,9 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/platform-browser-dynamic'
         update-types: ['version-update:semver-major']
+      # Angular 14 only works with zone.js 0.11.x
+      - dependency-name: 'zone.js'
+        update-types: ['version-update:semver-minor']
     pull-request-branch-name:
       separator: '-'
   - package-ecosystem: 'npm'

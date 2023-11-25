@@ -31,21 +31,21 @@
     "start": "npm run start-stencil"
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.0.2",
-    "@stencil-community/eslint-plugin": "0.5.0",
-    "@stencil/angular-output-target": "0.8.2",
-    "@stencil/core": "4.2.1",
+    "@faker-js/faker": "^8.3.1",
+    "@stencil-community/eslint-plugin": "0.7.0",
+    "@stencil/angular-output-target": "0.8.3",
+    "@stencil/core": "4.5.0",
     "@stencil/react-output-target": "0.5.3",
-    "@stencil/sass": "3.0.5",
+    "@stencil/sass": "3.0.7",
     "@stencil/vue-output-target": "0.7.0",
     "@types/jest": "27.4.1",
     "jest": "27.5.1",
     "jest-cli": "27.5.1",
     "jest-junit": "16.0.0",
-    "puppeteer": "^21.1.1"
+    "puppeteer": "^21.5.2"
   },
   "dependencies": {
-    "@db-ui/core": "^2.11.6"
+    "@db-ui/core": "^2.14.0"
   },
   "license": "Apache-2.0",
   "publishConfig": {
