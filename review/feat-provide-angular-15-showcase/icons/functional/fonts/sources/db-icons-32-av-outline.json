@@ -4,25 +4,71 @@
 		{
 			"icon": {
 				"paths": [
-					"M416 960c-17.673 0-32-14.327-32-32v0c0-16.416 14.4-32 32-32h64v-128l0.096-1.76c-144.731-16.617-256.087-138.423-256.096-286.239l-0-0.001c0-17.673 14.327-32 32-32s32 14.327 32 32v0c0 123.712 100.288 224 224 224s224-100.288 224-224v0c0-17.673 14.327-32 32-32s32 14.327 32 32v0c-0.007 147.808-111.346 269.608-254.731 286.115l-1.333 0.125 0.064 1.76v128h64c17.673 0 32 14.327 32 32v0c0 16.416-14.4 32-32 32zM512 64c86.048 0 156.352 74.88 160 160v256c0 88.366-71.634 160-160 160v0c-86.048 0-156.352-74.88-160-160v-256c0-88.366 71.634-160 160-160v0zM512 128c-51.136 0-93.088 45.6-96 96v256c0 53.019 42.981 96 96 96v0c51.136 0 93.088-45.6 96-96v-256c0-53.019-42.981-96-96-96v0z"
+					"M799.904 256c35.339 0.018 63.982 28.661 64 63.998l0 0.002v384c-0.030 35.341-28.687 63.979-64.032 63.979-13.565 0-26.144-4.218-36.499-11.414l0.21 0.138-242.208-166.976v114.272c-0.030 35.341-28.687 63.979-64.032 63.979-13.565 0-26.144-4.218-36.499-11.414l0.21 0.138-278.496-192c-16.82-11.699-27.692-30.932-27.692-52.704s10.872-41.005 27.482-52.566l0.21-0.138 278.496-192c10.138-7.040 22.706-11.246 36.256-11.246 35.342 0 63.999 28.618 64.064 63.944l0 0.006v114.272l242.208-166.976c10.88-7.488 23.584-11.296 36.32-11.296zM457.376 320l-278.496 192 278.496 192zM799.904 320l-278.528 192 278.528 192z"
 				],
 				"attrs": [{}],
 				"isMulticolor": false,
 				"isMulticolor2": false,
 				"grid": 0,
-				"tags": ["db_ic_microphone_32"]
+				"tags": ["db_ic_fast_backward_32"]
+			},
+			"attrs": [{}],
+			"properties": {
+				"order": 34,
+				"id": 18,
+				"name": "db_ic_fast_backward_32",
+				"prevSize": 32,
+				"code": 922262
+			},
+			"setIdx": 0,
+			"setId": 0,
+			"iconIdx": 0
+		},
+		{
+			"icon": {
+				"paths": [
+					"M566.496 256c12.736 0 25.44 3.808 36.32 11.296l278.496 192c16.82 11.699 27.692 30.932 27.692 52.704s-10.872 41.005-27.482 52.566l-0.21 0.138-278.496 192c-10.138 7.040-22.706 11.246-36.256 11.246-35.342 0-63.999-28.618-64.064-63.944l-0-0.006v-114.272l-242.176 166.976c-10.155 7.067-22.749 11.29-36.33 11.29-10.877 0-21.122-2.71-30.096-7.491l0.346 0.168c-20.513-10.946-34.237-32.206-34.24-56.672l-0-0v-384c0.030-35.341 28.687-63.979 64.032-63.979 13.565 0 26.144 4.218 36.499 11.414l-0.21-0.138 242.176 166.976v-114.272c0.018-35.339 28.661-63.982 63.998-64l0.002-0zM566.496 320v384l278.496-192zM224 320v384l278.496-192z"
+				],
+				"attrs": [{}],
+				"isMulticolor": false,
+				"isMulticolor2": false,
+				"grid": 0,
+				"tags": ["db_ic_fast_forward_32"]
+			},
+			"attrs": [{}],
+			"properties": {
+				"order": 35,
+				"id": 17,
+				"name": "db_ic_fast_forward_32",
+				"prevSize": 32,
+				"code": 922263
+			},
+			"setIdx": 0,
+			"setId": 0,
+			"iconIdx": 1
+		},
+		{
+			"icon": {
+				"paths": [
+					"M416 960c-17.673 0-32-14.327-32-32v0c0-16.416 14.4-32 32-32h64v-128l0.096-1.76c-144.731-16.617-256.087-138.423-256.096-286.239l-0-0.001c0-17.673 14.327-32 32-32s32 14.327 32 32v0c0 123.712 100.288 224 224 224s224-100.288 224-224v0c0-17.673 14.327-32 32-32s32 14.327 32 32v0c-0.007 147.808-111.346 269.608-254.731 286.115l-1.333 0.125 0.064 1.76v128h64c17.673 0 32 14.327 32 32v0c0 16.416-14.4 32-32 32zM512 64c86.048 0 156.352 74.88 160 160v256c0 88.366-71.634 160-160 160v0c-86.048 0-156.352-74.88-160-160v-256c0-88.366 71.634-160 160-160v0zM512 128c-51.136 0-93.088 45.6-96 96v256c0 53.019 42.981 96 96 96v0c51.136 0 93.088-45.6 96-96v-256c0-53.019-42.981-96-96-96v0z"
+				],
+				"attrs": [{}],
+				"isMulticolor": false,
+				"isMulticolor2": false,
+				"tags": ["db_ic_microphone_32"],
+				"grid": 0
 			},
 			"attrs": [{}],
 			"properties": {
 				"order": 95,
-				"id": 16,
+				"id": 0,
 				"name": "db_ic_microphone_32",
 				"prevSize": 32,
-				"code": 127908
+				"code": 922164
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 0
+			"setId": 0,
+			"iconIdx": 2
 		},
 		{
 			"icon": {
@@ -38,14 +84,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 34,
-				"id": 0,
+				"id": 1,
 				"name": "fast-backward-10",
 				"prevSize": 32,
 				"code": 921733
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 1
+			"setId": 0,
+			"iconIdx": 3
 		},
 		{
 			"icon": {
@@ -61,14 +107,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 35,
-				"id": 1,
+				"id": 2,
 				"name": "fast-backward-30",
 				"prevSize": 32,
 				"code": 921734
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 2
+			"setId": 0,
+			"iconIdx": 4
 		},
 		{
 			"icon": {
@@ -84,14 +130,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 36,
-				"id": 2,
+				"id": 3,
 				"name": "fast-backward-empty",
 				"prevSize": 32,
 				"code": 10554
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 3
+			"setId": 0,
+			"iconIdx": 5
 		},
 		{
 			"icon": {
@@ -107,14 +153,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 37,
-				"id": 3,
+				"id": 4,
 				"name": "fast-forward-10",
 				"prevSize": 32,
 				"code": 921735
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 4
+			"setId": 0,
+			"iconIdx": 6
 		},
 		{
 			"icon": {
@@ -130,14 +176,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 38,
-				"id": 4,
+				"id": 5,
 				"name": "fast-forward-30",
 				"prevSize": 32,
 				"code": 921736
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 5
+			"setId": 0,
+			"iconIdx": 7
 		},
 		{
 			"icon": {
@@ -153,14 +199,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 39,
-				"id": 5,
+				"id": 6,
 				"name": "fast-forward-empty",
 				"prevSize": 32,
 				"code": 10555
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 6
+			"setId": 0,
+			"iconIdx": 8
 		},
 		{
 			"icon": {
@@ -176,14 +222,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 40,
-				"id": 6,
+				"id": 7,
 				"name": "stop",
 				"prevSize": 32,
 				"code": 9633
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 7
+			"setId": 0,
+			"iconIdx": 9
 		},
 		{
 			"icon": {
@@ -199,14 +245,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 41,
-				"id": 7,
+				"id": 8,
 				"name": "pause",
 				"prevSize": 32,
 				"code": 9208
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 8
+			"setId": 0,
+			"iconIdx": 10
 		},
 		{
 			"icon": {
@@ -222,14 +268,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 42,
-				"id": 8,
+				"id": 9,
 				"name": "play",
 				"prevSize": 32,
 				"code": 9655
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 9
+			"setId": 0,
+			"iconIdx": 11
 		},
 		{
 			"icon": {
@@ -245,14 +291,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 43,
-				"id": 9,
+				"id": 10,
 				"name": "skip-backward",
 				"prevSize": 32,
 				"code": 9198
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 10
+			"setId": 0,
+			"iconIdx": 12
 		},
 		{
 			"icon": {
@@ -268,14 +314,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 44,
-				"id": 10,
+				"id": 11,
 				"name": "skip-forward",
 				"prevSize": 32,
 				"code": 9197
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 11
+			"setId": 0,
+			"iconIdx": 13
 		},
 		{
 			"icon": {
@@ -291,14 +337,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 45,
-				"id": 11,
+				"id": 12,
 				"name": "subtitles",
 				"prevSize": 32,
 				"code": 921745
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 12
+			"setId": 0,
+			"iconIdx": 14
 		},
 		{
 			"icon": {
@@ -315,14 +361,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 46,
-				"id": 12,
+				"id": 13,
 				"name": "volume-down",
 				"prevSize": 32,
-				"code": 128265
+				"code": 922201
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 13
+			"setId": 0,
+			"iconIdx": 15
 		},
 		{
 			"icon": {
@@ -338,14 +384,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 47,
-				"id": 13,
+				"id": 14,
 				"name": "volume-mute",
 				"prevSize": 32,
-				"code": 128264
+				"code": 922208
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 14
+			"setId": 0,
+			"iconIdx": 16
 		},
 		{
 			"icon": {
@@ -361,14 +407,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 48,
-				"id": 14,
+				"id": 15,
 				"name": "volume-off",
 				"prevSize": 32,
-				"code": 128263
+				"code": 922209
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 15
+			"setId": 0,
+			"iconIdx": 17
 		},
 		{
 			"icon": {
@@ -385,14 +431,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 49,
-				"id": 15,
+				"id": 16,
 				"name": "volume-up",
 				"prevSize": 32,
-				"code": 128266
+				"code": 922210
 			},
 			"setIdx": 0,
-			"setId": 1,
-			"iconIdx": 16
+			"setId": 0,
+			"iconIdx": 18
 		}
 	],
 	"height": 1024,

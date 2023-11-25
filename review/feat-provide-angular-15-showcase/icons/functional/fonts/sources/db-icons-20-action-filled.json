@@ -9,13 +9,13 @@
 				"attrs": [{}],
 				"isMulticolor": false,
 				"isMulticolor2": false,
-				"grid": 20,
-				"tags": ["db_ic_voucher_solid_20"]
+				"tags": ["db_ic_voucher_solid_20"],
+				"grid": 20
 			},
 			"attrs": [{}],
 			"properties": {
 				"order": 356,
-				"id": 34,
+				"id": 0,
 				"name": "db_ic_voucher_solid_20",
 				"prevSize": 32,
 				"code": 922132
@@ -38,7 +38,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 29,
-				"id": 0,
+				"id": 1,
 				"name": "db_ic_star_solid_20",
 				"prevSize": 32,
 				"code": 9734
@@ -61,7 +61,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 28,
-				"id": 1,
+				"id": 2,
 				"name": "db_ic_shopping_basket_solid_20",
 				"prevSize": 32,
 				"code": 921721
@@ -84,7 +84,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 27,
-				"id": 2,
+				"id": 3,
 				"name": "db_ic_shopping_basket_disabled_solid_20",
 				"prevSize": 32,
 				"code": 921941
@@ -107,7 +107,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 26,
-				"id": 3,
+				"id": 4,
 				"name": "db_ic_shopping_bag_solid_20",
 				"prevSize": 32,
 				"code": 128717
@@ -130,7 +130,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 36,
-				"id": 4,
+				"id": 5,
 				"name": "db_ic_sepa_solid_20",
 				"prevSize": 32,
 				"code": 921958
@@ -153,10 +153,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 25,
-				"id": 5,
+				"id": 6,
 				"name": "db_ic_schedule_solid_20",
 				"prevSize": 32,
-				"code": 128339
+				"code": 922163
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -176,10 +176,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 33,
-				"id": 6,
+				"id": 7,
 				"name": "db_ic_save_solid_20",
 				"prevSize": 32,
-				"code": 128190
+				"code": 922162
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -199,7 +199,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 35,
-				"id": 7,
+				"id": 8,
 				"name": "db_ic_resize_solid_20",
 				"prevSize": 32,
 				"code": 921957
@@ -222,7 +222,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 24,
-				"id": 8,
+				"id": 9,
 				"name": "db_ic_remove_solid_20",
 				"prevSize": 32,
 				"code": 8861
@@ -245,7 +245,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 23,
-				"id": 9,
+				"id": 10,
 				"name": "db_ic_print_solid_20",
 				"prevSize": 32,
 				"code": 128424
@@ -268,10 +268,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 32,
-				"id": 10,
+				"id": 11,
 				"name": "db_ic_pin_solid_20",
 				"prevSize": 32,
-				"code": 128204
+				"code": 922161
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -291,10 +291,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 22,
-				"id": 11,
+				"id": 12,
 				"name": "db_ic_lock_open_solid_20",
 				"prevSize": 32,
-				"code": 128275
+				"code": 922160
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -314,10 +314,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 21,
-				"id": 12,
+				"id": 13,
 				"name": "db_ic_lock_close_solid_20",
 				"prevSize": 32,
-				"code": 128274
+				"code": 922153
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -337,7 +337,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 20,
-				"id": 13,
+				"id": 14,
 				"name": "db_ic_info_solid_20",
 				"prevSize": 32,
 				"code": 128712
@@ -360,7 +360,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 19,
-				"id": 14,
+				"id": 15,
 				"name": "db_ic_image_solid_20",
 				"prevSize": 32,
 				"code": 128444
@@ -383,7 +383,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 18,
-				"id": 15,
+				"id": 16,
 				"name": "db_ic_help_solid_20",
 				"prevSize": 32,
 				"code": 63
@@ -406,7 +406,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 17,
-				"id": 16,
+				"id": 17,
 				"name": "db_ic_heart_solid_20",
 				"prevSize": 32,
 				"code": 9825
@@ -429,7 +429,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 16,
-				"id": 17,
+				"id": 18,
 				"name": "db_ic_generic_card_solid_20",
 				"prevSize": 32,
 				"code": 921712
@@ -452,10 +452,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 30,
-				"id": 18,
+				"id": 19,
 				"name": "db_ic_folder_solid_20",
 				"prevSize": 32,
-				"code": 128193
+				"code": 922151
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -475,10 +475,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 31,
-				"id": 19,
+				"id": 20,
 				"name": "db_ic_folder_open_solid_20",
 				"prevSize": 32,
-				"code": 128194
+				"code": 922152
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -498,7 +498,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 15,
-				"id": 20,
+				"id": 21,
 				"name": "db_ic_edit_solid_20",
 				"prevSize": 32,
 				"code": 9999
@@ -521,7 +521,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 14,
-				"id": 21,
+				"id": 22,
 				"name": "db_ic_discount_solid_20",
 				"prevSize": 32,
 				"code": 921702
@@ -544,7 +544,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 34,
-				"id": 22,
+				"id": 23,
 				"name": "db_ic_dashboard_solid_20",
 				"prevSize": 32,
 				"code": 921956
@@ -567,10 +567,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 12,
-				"id": 23,
+				"id": 24,
 				"name": "db_ic_credit_card_solid_20",
 				"prevSize": 32,
-				"code": 128179
+				"code": 922150
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -590,7 +590,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 11,
-				"id": 24,
+				"id": 25,
 				"name": "db_ic_copy_solid_20",
 				"prevSize": 32,
 				"code": 921940
@@ -613,7 +613,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 10,
-				"id": 25,
+				"id": 26,
 				"name": "db_ic_cloud_solid_20",
 				"prevSize": 32,
 				"code": 9729
@@ -636,10 +636,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 9,
-				"id": 26,
+				"id": 27,
 				"name": "db_ic_check_circle_solid_20",
 				"prevSize": 32,
-				"code": 9989
+				"code": 922144
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -659,10 +659,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 8,
-				"id": 27,
+				"id": 28,
 				"name": "db_ic_camera_solid_20",
 				"prevSize": 32,
-				"code": 128247
+				"code": 922149
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -682,7 +682,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 7,
-				"id": 28,
+				"id": 29,
 				"name": "db_ic_build_solid_20",
 				"prevSize": 32,
 				"code": 128736
@@ -705,10 +705,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 6,
-				"id": 29,
+				"id": 30,
 				"name": "db_ic_bookmark_solid_20",
 				"prevSize": 32,
-				"code": 128278
+				"code": 922148
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -728,10 +728,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 5,
-				"id": 30,
+				"id": 31,
 				"name": "db_ic_block_solid_20",
 				"prevSize": 32,
-				"code": 10062
+				"code": 922147
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -751,10 +751,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 4,
-				"id": 31,
+				"id": 32,
 				"name": "db_ic_alert_solid_20",
 				"prevSize": 32,
-				"code": 128276
+				"code": 922146
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -774,7 +774,7 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 3,
-				"id": 32,
+				"id": 33,
 				"name": "db_ic_add_circle_solid_20",
 				"prevSize": 32,
 				"code": 8853
@@ -797,10 +797,10 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 2,
-				"id": 33,
+				"id": 34,
 				"name": "db_ic_account_solid_20",
 				"prevSize": 32,
-				"code": 128578
+				"code": 922145
 			},
 			"setIdx": 0,
 			"setId": 0,
