@@ -29,7 +29,7 @@
         <db-select
           label="Selectbox"
           name="select-name"
-          [formControl]="selectControl"
+          (dbChange)="onFormChange($event)"
         >
           <option selected>Option 1</option>
           <option>Option 2</option>
