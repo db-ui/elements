@@ -1,0 +1,70 @@
+<div>
+  <div class="form-container">
+    <fieldset>
+      <form>
+        <p>DbInput:</p>
+        <db-input
+          label="Infield"
+          name="input-name"
+          [(ngModel)]="input"
+        ></db-input>
+        <p>DbCheckbox:</p>
+        <db-checkbox
+          label="Checkbox"
+          name="checkbox-name"
+          [formControl]="checkboxControl"
+        ></db-checkbox>
+        <p>DbRadio:</p>
+        <ol>
+          <li *ngFor="let radioButton of radioButtons; index as i">
+            <db-radio
+              [label]="radioButton"
+              name="radio-name"
+              [formControl]="radioControl"
+              [value]="radioButton"
+            ></db-radio>
+          </li>
+        </ol>
+        <p>DbSelect:</p>
+        <db-select
+          label="Selectbox"
+          name="select-name"
+          [formControl]="selectControl"
+        >
+          <option selected>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </db-select>
+        <p>DbTextarea:</p>
+        <db-textarea
+          label="Textarea"
+          name="textarea-name"
+          [formControl]="textareaControl"
+        ></db-textarea>
+        <p>DbToggle:</p>
+        <db-toggle [(ngModel)]="toggle"></db-toggle>
+      </form>
+    </fieldset>
+    <fieldset>
+      <p>DbButton:</p>
+      <db-button variant="primary" (click)="showValues()">
+        Hi from Showcase!
+      </db-button>
+      <h2>Output</h2>
+      <dl>
+        <dt>inputs value</dt>
+        <dd>{{ input ? input : 'No Input set' }}</dd>
+        <dt>checkbox</dt>
+        <dd>{{ checkbox ? 'yes' : 'no' }}</dd>
+        <dt>radio</dt>
+        <dd>{{ radio ? radio : 'No radio selected' }}</dd>
+        <dt>select</dt>
+        <dd>{{ select ? select : 'Not Selected' }}</dd>
+        <dt>textarea</dt>
+        <dd>{{ textarea ? textarea : 'No Text set' }}</dd>
+        <dt>toggle</dt>
+        <dd>{{ toggle?.toString() }}</dd>
+      </dl>
+    </fieldset>
+  </div>
+</div>
