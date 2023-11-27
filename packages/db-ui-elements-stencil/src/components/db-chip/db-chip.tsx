@@ -7,9 +7,10 @@ import { uuid } from '../../utils/utils';
 })
 export class DbChip {
   /**
-   *  Decides which datatype you want to use: filter (1-n); selection (1);
+   *  Decides which interactiontype you want to use: filter (1-n); selection (1);
    */
-  @Prop({ reflect: true }) datatype: 'filter' | 'selection' = 'selection';
+  @Prop({ reflect: true }) interactiontype: 'filter' | 'selection' =
+    'selection';
 
   /**
    * The disabled attribute can be set to keep a user from clicking on the chip.
@@ -66,9 +67,9 @@ export class DbChip {
       <Host>
         <input
           class="elm-chip"
-          type={this.datatype === 'filter' ? 'checkbox' : 'radio'}
+          type={this.interactiontype === 'filter' ? 'checkbox' : 'radio'}
           id={this.input_id}
-          data-type={this.datatype}
+          data-type={this.interactiontype}
           disabled={this.disabled}
           name={this.name}
           checked={this.selected}
