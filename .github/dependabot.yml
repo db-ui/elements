@@ -58,6 +58,7 @@ updates:
           - '@commitlint*'
           - '@babel*'
           - '@typescript-eslint*'
+          - '*storybook*'
 
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-lts-showcase'
