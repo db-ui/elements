@@ -24,6 +24,10 @@ react:
 vue:
   - packages/db-ui-elements-vue/**
 
+# Add 'angular-lts-showcase' label to any file changes for angular-lts-showcase
+angular-lts-showcase:
+  - showcase/angular-lts-showcase/**
+
 # Add 'angular-lts-minus-1-showcase' label to any file changes for angular-lts-minus-1-showcase
 angular-lts-minus-1-showcase:
   - showcase/angular-lts-minus-1-showcase/**
