@@ -23,9 +23,9 @@ import {
     <DbTag variant="informative">informative</DbTag>
     <DbTag variant="success">success</DbTag>
     <p>DbChip:</p>
-    <DbChip datatype="filter" icon="account"> default </DbChip>
+    <DbChip interactiontype="filter" icon="account"> default </DbChip>
     <DbChip
-      datatype="filter"
+      interactiontype="filter"
       iconafter="account"
       variant="informative"
       disabled
@@ -33,7 +33,7 @@ import {
       informative
     </DbChip>
     <DbChip
-      datatype="filter"
+      interactiontype="filter"
       icon="account"
       iconafter="account"
       variant="success"

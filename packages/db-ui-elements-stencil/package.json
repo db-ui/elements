@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.3.1",
-    "@stencil-community/eslint-plugin": "0.7.0",
+    "@stencil-community/eslint-plugin": "0.7.1",
     "@stencil/angular-output-target": "0.8.3",
     "@stencil/core": "4.5.0",
     "@stencil/react-output-target": "0.5.3",
@@ -45,7 +45,7 @@
     "puppeteer": "^21.5.2"
   },
   "dependencies": {
-    "@db-ui/core": "^2.14.0"
+    "@db-ui/core": "^2.14.1"
   },
   "license": "Apache-2.0",
   "publishConfig": {
