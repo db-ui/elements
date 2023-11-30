@@ -57,7 +57,7 @@ export class DbCheckbox {
   @Prop({ reflect: false }) indeterminate: boolean;
 
   /**
-   * The label-hidden attribute is a boolean attribute. When specified, the elements label visually hidden (it's important to still keep it displayed for accessibility reasons).
+   * The label-hidden attribute is a boolean attribute. When specified, the elements label gets visually hidden (it's important to still keep it displayed for accessibility reasons).
    */
   @Prop({ reflect: false }) labelHidden: boolean;
 
