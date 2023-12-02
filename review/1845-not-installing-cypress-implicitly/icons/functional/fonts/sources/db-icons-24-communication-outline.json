@@ -133,7 +133,7 @@
 				"id": 1,
 				"name": "call",
 				"prevSize": 32,
-				"code": 128222
+				"code": 922165
 			},
 			"setIdx": 0,
 			"setId": 1,
@@ -157,7 +157,7 @@
 				"id": 2,
 				"name": "chat",
 				"prevSize": 32,
-				"code": 128172
+				"code": 922166
 			},
 			"setIdx": 0,
 			"setId": 1,
@@ -250,7 +250,7 @@
 				"id": 7,
 				"name": "mobile-off",
 				"prevSize": 32,
-				"code": 128244
+				"code": 922212
 			},
 			"setIdx": 0,
 			"setId": 1,
@@ -273,7 +273,7 @@
 				"id": 8,
 				"name": "mobile-phone",
 				"prevSize": 32,
-				"code": 128241
+				"code": 922211
 			},
 			"setIdx": 0,
 			"setId": 1,

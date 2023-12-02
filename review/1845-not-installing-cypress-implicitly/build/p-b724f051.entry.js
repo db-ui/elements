@@ -1,2 +1,0 @@
-import{r as t,h as o,H as r}from"./p-7059dd27.js";const s=":host{margin-top:auto;margin-bottom:auto}";const a=class{constructor(o){t(this,o)}render(){return o(r,null,o("slot",null))}};a.style=s;export{a as db_meta};
-//# sourceMappingURL=p-b724f051.entry.js.map

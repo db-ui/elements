@@ -9,16 +9,16 @@
 				"attrs": [{}],
 				"isMulticolor": false,
 				"isMulticolor2": false,
-				"grid": 0,
-				"tags": ["db_ic_check_circle_solid_16"]
+				"tags": ["db_ic_check_circle_solid_16"],
+				"grid": 0
 			},
 			"attrs": [{}],
 			"properties": {
 				"order": 258,
-				"id": 2,
+				"id": 0,
 				"name": "db_ic_check_circle_solid_16",
 				"prevSize": 32,
-				"code": 9989
+				"code": 922144
 			},
 			"setIdx": 0,
 			"setId": 0,
@@ -32,8 +32,8 @@
 				"attrs": [{}],
 				"isMulticolor": false,
 				"isMulticolor2": false,
-				"grid": 0,
-				"tags": ["db_ic_help_solid_16"]
+				"tags": ["db_ic_help_solid_16"],
+				"grid": 0
 			},
 			"attrs": [{}],
 			"properties": {
@@ -55,13 +55,13 @@
 				"attrs": [{}],
 				"isMulticolor": false,
 				"isMulticolor2": false,
-				"grid": 0,
-				"tags": ["db_ic_info_solid_16"]
+				"tags": ["db_ic_info_solid_16"],
+				"grid": 0
 			},
 			"attrs": [{}],
 			"properties": {
 				"order": 256,
-				"id": 0,
+				"id": 2,
 				"name": "db_ic_info_solid_16",
 				"prevSize": 32,
 				"code": 128712
