@@ -5,7 +5,6 @@
     "streetsidesoftware.code-spell-checker",
     "html-validate.vscode-html-validate",
     "deque-systems.vscode-axe-linter",
-    "esbenp.prettier-vscode",
-    "unifiedjs.vscode-mdx"
+    "esbenp.prettier-vscode"
   ]
 }
