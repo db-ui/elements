@@ -15,7 +15,6 @@
 * *@storybook/addon-essentials*: introduced by storybook
 * *@storybook/addon-controls*: introduced by storybook
 * *@storybook/addon-links*: introduced by storybook
-* *@storybook/html*: introduced by storybook
 * *@storybook/web-components*: introduced by storybook
 * *concurrently*: enables parallel or sequential processing of commands
 * *husky*: hooks into commit and executes commitlint
