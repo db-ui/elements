@@ -22,7 +22,8 @@
     "lint:stylelint": "stylelint **/*.scss",
     "lint:eslint": "eslint . --ext .ts,.js --ignore-path .gitignore  --ignore-path .eslintignore && npm run lint --workspace=@db-ui/elements",
     "generate": "npm run generate --workspace=@db-ui/elements",
-    "clean": "git clean -dfx --exclude=.env"
+    "clean": "git clean -dfx --exclude=.env",
+    "postinstall": "node ./build/ci/postInstall.js"
   },
   "workspaces": [
     "packages/*"
