@@ -9,10 +9,10 @@ import Readme from './../readme.md?raw';
 The input element represents a one line plain text edit control for the element's value. Most of attributes are used in the same way as with a native input. You can try out on <a href="/story/db-input--live-demo">Input Live Demo</a> Page.
 
 <Canvas>
-  <db-input label="Semitransparent" name="input-name"></db-input>
-  <db-input label="White" name="input-name" variant="white"></db-input>
-  <db-input label="Solid" name="input-name" variant="solid"></db-input>
-  <db-input label="Outline" name="input-name" variant="outline"></db-input>
+  <db-input label="Semitransparent" Name="input-name"></db-input>
+  <db-input label="White" Name="input-name" variant="white"></db-input>
+  <db-input label="Solid" Name="input-name" variant="solid"></db-input>
+  <db-input label="Outline" Name="input-name" variant="outline"></db-input>
 </Canvas>
 
 <db-headline variant="2">disabled</db-headline>
@@ -20,7 +20,7 @@ The input element represents a one line plain text edit control for the element'
 Make inputs look inactive by adding the disabled boolean attribute to any &lt;db-input&gt; element.
 
 <Canvas>
-  <db-input label="Inputfield" name="input-name" disabled></db-input>
+  <db-input label="Inputfield" Name="input-name" disabled></db-input>
 </Canvas>
 
 <db-headline variant="2">description/ hint</db-headline>
@@ -30,7 +30,7 @@ Add a description below the &lt;db-input&gt; element.
 <Canvas>
   <db-input
     label="Inputfield"
-    name="input-name"
+    Name="input-name"
     description="A clue, a clue"
   ></db-input>
 </Canvas>
@@ -42,14 +42,14 @@ Shows validation on the &lt;db-input&gt; element, needs required attribute.
 <Canvas>
   <db-input
     label="Inputfield"
-    name="input-name"
+    Name="input-name"
     value="Valid"
     required
     minlength={3}
   ></db-input>
   <db-input
     label="Inputfield"
-    name="input-name"
+    Name="input-name"
     required
     minlength={3}
   ></db-input>
@@ -60,49 +60,49 @@ Shows validation on the &lt;db-input&gt; element, needs required attribute.
 <Canvas>
   <db-input
     label="Color"
-    name="input-name"
+    Name="input-name"
     type="color"
     description="Only colors are allowed"
   ></db-input>
   <db-input
     label="Email"
-    name="input-name"
+    Name="input-name"
     type="email"
     description="Only emails are allowed"
   ></db-input>
   <db-input
     label="Password"
-    name="input-name"
+    Name="input-name"
     type="password"
     description="Only passwords are allowed"
   ></db-input>
   <db-input
     label="Number"
-    name="input-name"
+    Name="input-name"
     type="number"
     description="Only numbers are allowed"
   ></db-input>
   <db-input
     label="Date"
-    name="input-name"
+    Name="input-name"
     type="date"
     description="Only dates are allowed"
   ></db-input>
   <db-input
     label="Month"
-    name="input-name"
+    Name="input-name"
     type="month"
     description="Only months are allowed"
   ></db-input>
   <db-input
     label="Week"
-    name="input-name"
+    Name="input-name"
     type="week"
     description="Only weeks are allowed"
   ></db-input>
   <db-input
     label="Time"
-    name="input-name"
+    Name="input-name"
     type="time"
     description="Only times are allowed"
   ></db-input>
@@ -113,7 +113,7 @@ Shows validation on the &lt;db-input&gt; element, needs required attribute.
 <Canvas>
   <db-input
     label="Inputfield"
-    name="input-name"
+    Name="input-name"
     type="search"
     placeholder="Search me"
   ></db-input>
@@ -124,7 +124,7 @@ Shows validation on the &lt;db-input&gt; element, needs required attribute.
 The list attribute connects the input with a set of options that represent predefined options in a datalist element used for the input field.
 
 <Canvas>
-  <db-input label="Inputfield" name="input-name" list="datalist">
+  <db-input label="Inputfield" Name="input-name" list="datalist">
     <option value="Value 1">Option 1</option>
     <option value="Value 2">Option 2</option>
     <option value="Value 3">Option 3</option>
