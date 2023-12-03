@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="03-Action/Toggle/Intro" />
 
@@ -35,4 +36,4 @@ import Readme from './../readme.md';
   </db-toggle>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

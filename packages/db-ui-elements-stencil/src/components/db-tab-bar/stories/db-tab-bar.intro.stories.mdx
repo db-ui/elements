@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="02-Navigation/Tab Bar/Intro" />
 
@@ -25,4 +26,4 @@ The `<db-tab-bar></db-tab-bar>` element represents a list of tabs showing differ
   </db-tab-bar>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

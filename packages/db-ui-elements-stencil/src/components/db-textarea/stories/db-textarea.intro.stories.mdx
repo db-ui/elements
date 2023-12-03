@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="05-Data-Input/Textarea/Intro" />
 
@@ -63,4 +64,4 @@ Make textareas look inactive by adding the disabled boolean attribute to any &lt
   ></db-textarea>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

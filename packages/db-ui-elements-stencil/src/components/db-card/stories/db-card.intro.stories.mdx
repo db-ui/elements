@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 import { styled } from '@storybook/theming';
 
 export const StyledCard = styled.div`
@@ -55,4 +56,4 @@ The `<db-card></db-card>` element represents a card with a title and a paragraph
 
 </StyledCard>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

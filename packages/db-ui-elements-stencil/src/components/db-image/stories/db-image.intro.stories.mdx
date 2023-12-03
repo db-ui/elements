@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 import dummy from './maximilian--UZa949e8LE-unsplash.376x282.squoosh.mozjpeg.jpg';
 import dummy2 from './maximilian--UZa949e8LE-unsplash.376x282.squoosh.webp';
 
@@ -100,4 +101,4 @@ import dummy2 from './maximilian--UZa949e8LE-unsplash.376x282.squoosh.webp';
   ></db-image>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

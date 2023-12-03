@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="05-Data-Input/Input/Intro" />
 
@@ -130,4 +131,4 @@ The list attribute connects the input with a set of options that represent prede
   </db-input>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

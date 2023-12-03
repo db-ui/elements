@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="05-Data-Input/Select/Intro" />
 
@@ -73,4 +74,4 @@ The HTML &lt;optgroup&gt; element creates a grouping of options within a select 
 </db-select>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="05-Data-Input/Radio/Intro" />
 
@@ -22,4 +23,4 @@ Make radios look inactive by adding the disabled boolean attribute to any &lt;db
   <db-radio label="Radio" name="radio-name" disabled></db-radio>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

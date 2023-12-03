@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 import mockData from './../../db-table/stories/mockData.ts';
 
@@ -39,4 +40,4 @@ The header and footer stick to the top/bottom and the main content will increase
 </Canvas>
 
 </StyledCanvas>
-<Readme />
+<Markdown>{Readme}</Markdown>

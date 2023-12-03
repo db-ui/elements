@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="04-Data-Display/Chip/Intro" />
 
@@ -59,4 +60,4 @@ import Readme from './../readme.md';
   </db-chip>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

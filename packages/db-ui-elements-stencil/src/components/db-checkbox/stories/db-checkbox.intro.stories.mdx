@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="05-Data-Input/Checkbox/Intro" />
 
@@ -31,4 +32,4 @@ Make checkbox look like in an indeterminate state by adding the 'indeterminate' 
 
 Alternatively, one can directly call `<db-checkbox>.setIndeterminate(boolean)` on the web component to set the state indeterminate state of the checkbox via JavaScript.
 
-<Readme />
+<Markdown>{Readme}</Markdown>
