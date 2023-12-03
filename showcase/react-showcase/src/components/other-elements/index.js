@@ -13,6 +13,7 @@ function OtherElements() {
     <div>
       <p>DbIcon:</p>
       <DbIcon icon="account" variant="32-outline" />
+      <DbIcon icon="check-circle"></DbIcon>
       <p>DbProgress:</p> <DbProgress value="60" max="100" />
       <p>DbTag:</p>
       <DbTag>default</DbTag>
