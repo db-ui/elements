@@ -48,8 +48,6 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/platform-browser'
         update-types: ['version-update:semver-major']
-      - dependency-name: 'storybook'
-        update-types: ['version-update:semver-major']
       - dependency-name: '@storybook/addon-actions'
         update-types: ['version-update:semver-major']
       - dependency-name: '@storybook/addon-controls'
