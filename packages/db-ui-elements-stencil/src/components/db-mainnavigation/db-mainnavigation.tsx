@@ -137,15 +137,13 @@ export class DbMainnavigation {
     return (
       <nav class="cmp-mainnavigation" id="mainnavigation">
         <input type="checkbox" id="toggle_mainnavigation" />
-        {this.siteName && (
-          <label
-            htmlFor="toggle_mainnavigation"
-            title="Toggle main navigation"
-            class="is-site-name"
-          >
-            {this.siteName}
-          </label>
-        )}
+        <label
+          htmlFor="toggle_mainnavigation"
+          title="Toggle main navigation"
+          class="is-site-name"
+        >
+          {this.siteName}
+        </label>
         {this.compData && <ul innerHTML={getCompDataHtml(this.compData)} />}
         {!this.compData && (
           <ul>
