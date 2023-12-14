@@ -71,7 +71,7 @@
     "stylelint": "^14.16.1",
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-standard-scss": "^6.1.0",
-    "typescript": "4.8.4",
+    "typescript": "4.9.5",
     "validate-branch-name": "^1.3.0",
     "xml": "1.0.1"
   },
