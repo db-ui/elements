@@ -11,3 +11,8 @@ We're getting these icons by the [DB Design System colleagues](https://dbsw.shar
     - replace `fill="#78be14"` by `fill="var(--db-icon-pulse-color, #78be14)"`
   - `id`-Attribute (generic `icon` id within all SVG files)
 - Afterwards the JSON files within the `source/_patterns/icons` path might need to get updated
+
+## Icon fonts
+
+- Use the source files out of the folder `assets/icons/functional/fonts/sources` via <https://icomoon.io/app/#/select> to generate the font files.
+- You'll need [`wawoff2`](https://www.npmjs.com/package/wawoff2) to generated `woff2` files out of the included `ttf` files.
