@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkangular_lts_showcase=self.webpackChunkangular_lts_showcase||[]).push([[700],{700:(u,a,t)=>{t.r(a),t.d(a,{db_meta:()=>n});var s=t(713);const n=class{constructor(o){(0,s.r)(this,o)}render(){return(0,s.h)(s.H,null,(0,s.h)("slot",null))}};n.style=":host{margin-top:auto;margin-bottom:auto}"}}]);
