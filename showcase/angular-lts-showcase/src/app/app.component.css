@@ -12,14 +12,16 @@ main {
   text-align: left;
   min-height: 90vh;
 }
+
 main form ol {
   list-style-type: none;
   padding-left: 0;
 }
+
 main form ol li {
   margin: 1rem 0;
 }
 
-dl dt:after {
+dl dt::after {
   content: ':';
 }
