@@ -76,7 +76,16 @@ updates:
       commitlint:
         patterns:
           - '@commitlint*'
+      babel:
+        patterns:
           - '@babel*'
+      typescript-eslint:
+        patterns:
+          - '@typescript-eslint*'
+      storybook:
+        patterns:
+          - '@storybook*'
+          - 'storybook'
 
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-lts-showcase'
