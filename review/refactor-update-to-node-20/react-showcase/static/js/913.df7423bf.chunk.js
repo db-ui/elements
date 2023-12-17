@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_showcase=self.webpackChunkreact_showcase||[]).push([[913],{2913:(t,s,e)=>{e.r(s),e.d(s,{db_meta:()=>a});var r=e(1304);const a=class{constructor(t){(0,r.r)(this,t)}render(){return(0,r.h)(r.H,null,(0,r.h)("slot",null))}};a.style=":host{margin-top:auto;margin-bottom:auto}"}}]);
+//# sourceMappingURL=913.df7423bf.chunk.js.map
