@@ -11,6 +11,7 @@ describe('db-mainnavigation', () => {
       <db-mainnavigation>
         <nav class="cmp-mainnavigation" id="mainnavigation">
          <input id="toggle_mainnavigation" type="checkbox">
+         <label class="is-site-name" htmlfor="toggle_mainnavigation" title="Toggle main navigation"></label>
          <ul></ul>
        </nav>
       </db-mainnavigation>
