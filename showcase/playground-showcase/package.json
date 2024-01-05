@@ -6,7 +6,7 @@
   "dependencies": {
     "@db-ui/react-elements": "file:./../../packages/db-ui-elements-react/",
     "ace-builds": "1.23.4",
-    "dompurify": "3.0.6",
+    "dompurify": "3.0.7",
     "grapesjs": "0.20.4",
     "grapesjs-preset-webpage": "1.0.3",
     "react": "17.0.2",
