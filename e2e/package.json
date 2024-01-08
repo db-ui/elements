@@ -2,9 +2,9 @@
   "name": "@db-ui/elements-e2e",
   "version": "0.0.0",
   "devDependencies": {
-    "@cypress/code-coverage": "^3.9.12",
-    "cypress": "^12.17.4",
-    "cypress-visual-regression": "1.7.0",
+    "@cypress/code-coverage": "^3.12.17",
+    "cypress": "^13.6.2",
+    "cypress-visual-regression": "3.0.0",
     "http-server": "14.1.1"
   }
 }
