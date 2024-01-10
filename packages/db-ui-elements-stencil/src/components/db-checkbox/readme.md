@@ -33,6 +33,12 @@
 
 Method that acceps a boolean and sets the indeterminate state of the checkbox accordingly.
 
+#### Parameters
+
+| Name   | Type      | Description |
+| ------ | --------- | ----------- |
+| `bool` | `boolean` |             |
+
 #### Returns
 
 Type: `Promise<void>`
