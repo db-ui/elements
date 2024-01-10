@@ -1,7 +1,7 @@
 // adapted from https://github.com/microsoft/vscode-jupyter/pull/7987
 const { EOL } = require('node:os');
 const path = require('node:path');
-const fs = require('fs-extra');
+const fs = require('node:fs');
 
 /**
  * Fix compilation issues in jsdom files.
