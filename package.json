@@ -29,12 +29,12 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@babel/core": "7.23.6",
-    "@babel/preset-env": "^7.23.6",
+    "@babel/core": "7.23.7",
+    "@babel/preset-env": "^7.23.8",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
-    "@commitlint/cli": "18.4.3",
-    "@commitlint/config-conventional": "18.4.3",
+    "@commitlint/cli": "18.4.4",
+    "@commitlint/config-conventional": "18.4.4",
     "@storybook/addon-actions": "6.5.16",
     "@storybook/addon-controls": "6.5.16",
     "@storybook/addon-docs": "6.5.16",
