@@ -86,6 +86,9 @@ updates:
         patterns:
           - '@storybook*'
           - 'storybook'
+      follow-redirects:
+        patterns:
+          - 'follow-redirects'
 
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-lts-showcase'
