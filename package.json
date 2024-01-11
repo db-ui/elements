@@ -23,7 +23,8 @@
     "lint:eslint": "eslint . --ext .ts,.js --ignore-path .gitignore  --ignore-path .eslintignore && npm run lint --workspace=@db-ui/elements",
     "generate": "npm run generate --workspace=@db-ui/elements",
     "clean": "git clean -dfx --exclude=.env",
-    "link:repositories": "cd ../db-ui-core && npm link && cd ../db-ui-elements && npm link @db-ui/core"
+    "link:repositories": "cd ../db-ui-core && npm link && cd ../db-ui-elements && npm link @db-ui/core",
+    "postinstall": "node ./scripts/postinstall.js"
   },
   "workspaces": [
     "packages/*"
