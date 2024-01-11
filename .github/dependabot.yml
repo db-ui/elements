@@ -89,6 +89,9 @@ updates:
       follow-redirects:
         patterns:
           - 'follow-redirects'
+      types-node:
+        patterns:
+          - '@types/node'
 
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-lts-showcase'
