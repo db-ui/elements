@@ -18,7 +18,6 @@ module.exports = {
       options: { transcludeMarkdown: true }
     },
     getAbsolutePath('@storybook/addon-controls'),
-    getAbsolutePath('@storybook/addon-mdx-gfm'),
     getAbsolutePath('@storybook/addon-mdx-gfm')
   ],
 
