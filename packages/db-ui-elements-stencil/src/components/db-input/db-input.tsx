@@ -138,7 +138,7 @@ export class DbInput {
   /**
    * The label-hidden attribute is a boolean attribute. When specified, the elements label gets visually hidden (it's important to still keep it displayed for accessibility reasons).
    */
-  @Prop({ reflect: false }) labelHidden: boolean;
+  @Prop({ reflect: true }) labelHidden: string;
 
   private handleChange(event) {
     this.dbChange.emit(event);
