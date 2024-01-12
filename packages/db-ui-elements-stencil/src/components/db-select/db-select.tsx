@@ -102,7 +102,7 @@ export class DbSelect {
         <label
           class="elm-label"
           htmlFor={this.input_id}
-          data-hidden-label={this.labelHidden}
+          data-label-hidden={this.labelHidden}
         >
           {this.label}
         </label>

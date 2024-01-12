@@ -185,7 +185,7 @@ export class DbInput {
           htmlFor={this.input_id}
           aria-hidden="true"
           id={this.input_id + '-label'}
-          data-hidden-label={this.labelHidden}
+          data-label-hidden={this.labelHidden}
         >
           {this.label}
         </label>
