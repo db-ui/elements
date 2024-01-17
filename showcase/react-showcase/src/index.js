@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
@@ -10,7 +10,10 @@ import Tables from './components/tables';
 import Navigation from './components/navigation';
 import TabBar from './components/tab-bar';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
     <HashRouter>
       <Routes>
@@ -25,6 +28,5 @@ ReactDOM.render(
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </HashRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
