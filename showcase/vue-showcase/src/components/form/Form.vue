@@ -15,7 +15,7 @@ const input = ref('');
 const checkbox = ref(false);
 const textarea = ref('');
 const select = ref('');
-const radio = ref('');
+const radio = ref(false);
 const toggle = ref(false);
 
 const logAll = () => {
