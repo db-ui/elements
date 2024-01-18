@@ -18,7 +18,7 @@
     "@types/dompurify": "^3.0.5",
     "cpr": "3.0.1",
     "react-scripts": "5.0.1",
-    "sass": "1.69.7"
+    "sass": "1.70.0"
   },
   "scripts": {
     "copy:ui-core": "cpr ../../node_modules/@db-ui/core/dist/fonts ./public/fonts -o && cpr ../../node_modules/@db-ui/core/dist/images ./public/images -o && cpr ../../node_modules/@db-ui/core/dist/js ./public/js -o",
