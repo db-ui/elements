@@ -85,7 +85,8 @@ export const LiveDemo = ({
   readonly,
   required,
   rows,
-  wrap
+  wrap,
+  labelHidden
 }) => {
   return `<db-textarea
         ${ariainvalid ? 'autocomplete=' + ariainvalid : ''}
@@ -103,5 +104,6 @@ export const LiveDemo = ({
         ${readonly ? 'readonly=' + readonly : ''}
         ${required ? 'required=' + required : ''}
         ${rows ? 'rows=' + rows : ''}
-        ${wrap ? 'wrap=' + wrap : ''}></db-textarea>`;
+        ${wrap ? 'wrap=' + wrap : ''}
+        ${labelHidden ? 'label-hidden=' + labelHidden : ''}></db-textarea>`;
 };

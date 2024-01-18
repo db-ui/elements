@@ -41,7 +41,8 @@ export const LiveDemo = ({
   label,
   name,
   required,
-  value
+  value,
+  labelHidden
 }) => {
   return `<db-radio
       ${autofocus ? 'autofocus=' + autofocus : ''}
@@ -50,5 +51,6 @@ export const LiveDemo = ({
       ${label ? 'label=' + label : ''}
       ${name ? 'name=' + name : ''}
       ${required ? 'required=' + required : ''}
-      ${value ? 'value=' + value : ''}></db-radio>`;
+      ${value ? 'value=' + value : ''}
+      ${labelHidden ? 'label-hidden=' + labelHidden : ''}></db-radio>`;
 };
