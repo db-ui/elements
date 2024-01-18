@@ -27,6 +27,9 @@ export default {
     },
     value: {
       control: 'text'
+    },
+    labelHidden: {
+      control: 'boolean'
     }
   }
 };

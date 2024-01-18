@@ -62,6 +62,9 @@ export default {
         type: 'select'
       },
       defaultValue: ''
+    },
+    labelHidden: {
+      control: 'boolean'
     }
   }
 };

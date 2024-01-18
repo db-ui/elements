@@ -34,6 +34,9 @@ export default {
     },
     size: {
       control: 'number'
+    },
+    labelHidden: {
+      control: 'boolean'
     }
   }
 };
