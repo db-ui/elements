@@ -8,7 +8,7 @@
     "@db-ui/react-elements": "file:./../../packages/db-ui-elements-react/",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-router-dom": "6.21.2"
+    "react-router-dom": "6.21.3"
   },
   "devDependencies": {
     "react-scripts": "5.0.1"
