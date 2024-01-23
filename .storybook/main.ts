@@ -1,4 +1,5 @@
-import { dirname, join } from 'path';
+import { dirname, join } from 'node:path';
+
 module.exports = {
   stories: [
     '../packages/db-ui-elements-stencil/src/**/*.stories.@(js|jsx|ts|tsx|mdx)'
