@@ -1,0 +1,1 @@
+import{r as o,h as t,H as r}from"./index.861788a6.js";const a=":host{margin-top:auto;margin-bottom:auto}",e=a,n=class{constructor(s){o(this,s)}render(){return t(r,null,t("slot",null))}};n.style=e;export{n as db_meta};
