@@ -13,7 +13,7 @@ context('db-chip', () => {
     cy.get('db-chip')
       .eq(1)
       .find('label')
-      .should('have.css', 'background-color', 'rgb(215 220 225)');
+      .should('have.css', 'background-color', 'rgb(215, 220, 225)');
     cy.get('db-chip').eq(2).click();
     cy.get('db-chip')
       .eq(2)
@@ -31,7 +31,7 @@ context('db-chip', () => {
     cy.get('db-chip')
       .eq(8)
       .find('label')
-      .should('have.css', 'background-color', 'rgb(215 220 225)');
+      .should('have.css', 'background-color', 'rgb(215, 220, 225)');
     cy.get('db-chip').eq(9).click();
     cy.get('db-chip')
       .eq(9)
