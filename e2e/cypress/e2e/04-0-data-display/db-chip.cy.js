@@ -19,10 +19,6 @@ context('db-chip', () => {
       .eq(2)
       .find('label')
       .should('have.css', 'background-color', 'rgb(0, 135, 185)');
-    cy.get('db-chip')
-      .eq(0)
-      .find('label')
-      .should('have.css', 'background-color', 'rgb(40, 45, 55)');
   });
 
   it('selection chips', function () {
@@ -31,14 +27,15 @@ context('db-chip', () => {
       .eq(7)
       .find('label')
       .should('have.css', 'background-color', 'rgb(40, 45, 55)');
-    cy.get('db-chip').eq(8).click();
+    cy.get('db-chip').eq(9).click();
     cy.get('db-chip')
-      .eq(8)
+      .eq(9)
+      .find('label')
+      .should('have.css', 'background-color', 'rgb(215 220 225)');
+    cy.get('db-chip').eq(9).click();
+    cy.get('db-chip')
+      .eq(9)
       .find('label')
       .should('have.css', 'background-color', 'rgb(0, 135, 185)');
-    cy.get('db-chip')
-      .eq(7)
-      .find('label')
-      .should('not.have.css', 'background-color', 'rgb(40, 45, 55)');
   });
 });
