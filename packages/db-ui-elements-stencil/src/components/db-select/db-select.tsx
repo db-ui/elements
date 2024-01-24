@@ -61,6 +61,11 @@ export class DbSelect {
     | 'solid'
     | 'outline' = 'semitransparent';
 
+  /**
+   * The label-hidden attribute is a boolean attribute. When specified, the elements label gets visually hidden (it's important to still keep it displayed for accessibility reasons).
+   */
+  @Prop({ reflect: true }) labelHidden: string;
+
   private handleChange(event) {
     this.value = event.target.value;
     this.dbChange.emit(event);
@@ -94,7 +99,11 @@ export class DbSelect {
           <slot />
         </select>
 
-        <label class="elm-label" htmlFor={this.input_id}>
+        <label
+          class="elm-label"
+          htmlFor={this.input_id}
+          data-label-hidden={this.labelHidden}
+        >
           {this.label}
         </label>
       </Host>
