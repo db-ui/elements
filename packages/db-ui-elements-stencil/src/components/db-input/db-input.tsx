@@ -135,6 +135,11 @@ export class DbInput {
     | 'solid'
     | 'outline' = 'semitransparent';
 
+  /**
+   * The label-hidden attribute is a boolean attribute. When specified, the elements label gets visually hidden (it's important to still keep it displayed for accessibility reasons).
+   */
+  @Prop({ reflect: true }) labelHidden: string;
+
   private handleChange(event) {
     this.dbChange.emit(event);
   }
@@ -180,6 +185,7 @@ export class DbInput {
           htmlFor={this.input_id}
           aria-hidden="true"
           id={this.input_id + '-label'}
+          data-label-hidden={this.labelHidden}
         >
           {this.label}
         </label>
