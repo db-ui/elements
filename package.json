@@ -2,7 +2,7 @@
   "name": "@db-ui/elements-monorepo",
   "version": "0.0.0",
   "scripts": {
-    "prepare": "cd showcase/react-showcase && npm i && cd ../angular-lts-minus-1-showcase && npm i && cd ../angular-lts-showcase && npm i && cd ../vue-showcase && npm i && cd ../playground-showcase && npm i && cd ../../ && husky install",
+    "prepare": "cd showcase/react-showcase && npm i && cd ../angular-lts-minus-1-showcase && npm i && cd ../angular-lts-showcase && npm i && cd ../vue-showcase && npm i && cd ../playground-showcase && npm i && cd ../../ && husky",
     "start": "concurrently  \"npm run build.watch.enterprise --workspace=@db-ui/elements\" \"npm run start:storybook\"",
     "start:storybook": "start-storybook -c .storybook -p 6006 --ci",
     "watch:showcase:react": "concurrently  \"npm run build.watch.local --workspace=@db-ui/elements\" \"npm run watch --workspace=@db-ui/react-elements\"",
@@ -60,7 +60,7 @@
     "eslint-plugin-storybook": "0.6.15",
     "eslint-plugin-vue": "^9.20.1",
     "find-versions-cli": "^4.0.0",
-    "husky": "8.0.3",
+    "husky": "9.0.2",
     "iframe-resizer": "4.3.9",
     "jest-config": "29.7.0",
     "lint-staged": "^15.2.0",
