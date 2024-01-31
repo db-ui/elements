@@ -46,6 +46,7 @@ export class DbChip {
    * Predefined variants to change background color and font color.
    */
   @Prop({ reflect: true }) variant:
+    | 'light'
     | 'informative'
     | 'success'
     | 'warning'

@@ -34,6 +34,9 @@ export default {
     },
     size: {
       control: 'number'
+    },
+    labelHidden: {
+      control: 'boolean'
     }
   }
 };
@@ -46,7 +49,8 @@ export const LiveDemo = ({
   multiple,
   name,
   required,
-  size
+  size,
+  labelHidden
 }) => {
   return `<db-select
   ${ariainvalid ? 'ariainvalid=' + ariainvalid : ''}
@@ -56,7 +60,8 @@ export const LiveDemo = ({
   ${multiple ? 'multiple=' + multiple : ''}
   ${name ? 'name=' + name : ''}
   ${required ? 'required=' + required : ''}
-  ${size ? 'size=' + size : ''}>
+  ${size ? 'size=' + size : ''}
+  ${labelHidden ? 'label-hidden=' + labelHidden : ''}>
     <option selected>Option 1</option>
     <option>Option 2</option>
     <option>Option 3</option>
