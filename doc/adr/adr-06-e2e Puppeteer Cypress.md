@@ -1,10 +1,10 @@
 # ADR-06 - E2E Testing Puppeteer vs Cypress
 
-|                |            |     |
-| -------------- | ---------- | --- |
-| **Datum**      | 2022-01-11 |
-| **Status**     |  entschieden          |
-| **Beteiligte** |  Nicolas Merget          |
+|                |                  |
+| -------------- | ---------------- |
+| **Datum**      | 2022-01-11       |
+| **Status**     |  entschieden     |
+| **Beteiligte** |  Nicolas Merget  |
 
 ## Entscheidung und Begründung
 

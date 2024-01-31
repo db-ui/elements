@@ -2,9 +2,9 @@
 
 |                |                                                        |     |
 | -------------- | ------------------------------------------------------ | --- |
-| **Datum**      | 2020-09-08                                             |
-| **Status**     | Evaluierung                                            |
-| **Beteiligte** | Maximilian Franzke, Robert Lukaschek, Waldemar Schäfer |
+| **Datum**      | 2020-09-08                                             |     |
+| **Status**     | Evaluierung                                            |     |
+| **Beteiligte** | Maximilian Franzke, Robert Lukaschek, Waldemar Schäfer |     |
 
 ## Entscheidung und Begründung
 

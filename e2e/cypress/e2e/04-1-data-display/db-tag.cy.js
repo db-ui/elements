@@ -9,6 +9,7 @@ context('db-tag', () => {
   it('tags should have the right colors', function () {
     const mostTags = [1, 2, 3, 4, 5];
     const tagsColors = [
+      'light',
       'informative',
       'success',
       'poi-essen-trinken',
