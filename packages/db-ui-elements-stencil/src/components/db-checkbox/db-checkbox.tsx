@@ -52,9 +52,14 @@ export class DbCheckbox {
   @Prop({ reflect: true }) value: string;
 
   /**
-   * The indeterminate attribute is a boolean attribute. When specified, the element is is displayed in an indeterminate state (neither checked, nor unchecked).
+   * The indeterminate attribute is a boolean attribute. When specified, the element is displayed in an indeterminate state (neither checked, nor unchecked).
    */
   @Prop({ reflect: false }) indeterminate: boolean;
+
+  /**
+   * The label-hidden attribute is a boolean attribute. When specified, the elements label gets visually hidden (it's important to still keep it displayed for accessibility reasons).
+   */
+  @Prop({ reflect: true }) labelHidden: string;
 
   /**
    * Method that acceps a boolean and sets the indeterminate state of the checkbox accordingly.
@@ -91,7 +96,11 @@ export class DbCheckbox {
           onChange={(event) => this.handleChange(event)}
         />
 
-        <label class="elm-label" htmlFor={this.input_id}>
+        <label
+          class="elm-label"
+          htmlFor={this.input_id}
+          data-label-hidden={this.labelHidden}
+        >
           {this.label}
         </label>
       </Host>
