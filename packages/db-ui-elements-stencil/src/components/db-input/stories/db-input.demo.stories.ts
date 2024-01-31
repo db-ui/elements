@@ -65,6 +65,9 @@ export default {
     },
     value: {
       control: 'text'
+    },
+    labelHidden: {
+      control: 'boolean'
     }
   }
 };
@@ -86,7 +89,8 @@ export const LiveDemo = ({
   readonly,
   required,
   size,
-  value
+  value,
+  labelHidden
 }) => {
   return `<db-input
         ${ariainvalid ? 'ariainvalid=' + ariainvalid : ''}
@@ -105,5 +109,6 @@ export const LiveDemo = ({
         ${readonly ? 'readonly=' + readonly : ''}
         ${required ? 'required=' + required : ''}
         ${size ? 'size=' + size : ''}
-        ${value ? 'value=' + value : ''}></db-input>`;
+        ${value ? 'value=' + value : ''}
+        ${labelHidden ? 'label-hidden=' + labelHidden : ''}></db-input>`;
 };

@@ -27,6 +27,9 @@ export default {
     },
     value: {
       control: 'text'
+    },
+    labelHidden: {
+      control: 'boolean'
     }
   }
 };
@@ -38,7 +41,8 @@ export const LiveDemo = ({
   label,
   name,
   required,
-  value
+  value,
+  labelHidden
 }) => {
   return `<db-checkbox
     ${autofocus ? 'autofocus=' + autofocus : ''}
@@ -47,5 +51,6 @@ export const LiveDemo = ({
     ${label ? 'label=' + label : ''}
     ${name ? 'name=' + name : ''}
     ${required ? 'required=' + required : ''}
-    ${value ? 'value=' + value : ''}></db-checkbox>`;
+    ${value ? 'value=' + value : ''}
+    ${labelHidden ? 'label-hidden=' + labelHidden : ''}></db-checkbox>`;
 };

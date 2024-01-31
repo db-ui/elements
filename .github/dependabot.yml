@@ -48,6 +48,26 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/platform-browser'
         update-types: ['version-update:semver-major']
+      - dependency-name: '@storybook/addon-actions'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@storybook/addon-controls'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@storybook/addon-docs'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@storybook/addon-essentials'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@storybook/addon-links'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@storybook/builder-webpack5'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@storybook/html'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@storybook/manager-webpack5'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@storybook/react'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@storybook/web-components'
+        update-types: ['version-update:semver-major']
     pull-request-branch-name:
       separator: '-'
     # https://github.com/dependabot/dependabot-core/issues/5226#issuecomment-1179434437
@@ -56,10 +76,22 @@ updates:
       commitlint:
         patterns:
           - '@commitlint*'
+      babel:
+        patterns:
           - '@babel*'
       typescript-eslint:
         patterns:
           - '@typescript-eslint*'
+      storybook:
+        patterns:
+          - '@storybook*'
+          - 'storybook'
+      follow-redirects:
+        patterns:
+          - 'follow-redirects'
+      types-node:
+        patterns:
+          - '@types/node'
 
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-lts-showcase'
@@ -109,7 +141,7 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/platform-browser-dynamic'
         update-types: ['version-update:semver-major']
-      # Angular 14 only works with zone.js 0.11.x
+      # Angular 15 only works with zone.js 0.13.x
       - dependency-name: 'zone.js'
         update-types: ['version-update:semver-minor']
     pull-request-branch-name:
