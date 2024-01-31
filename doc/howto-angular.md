@@ -32,6 +32,7 @@ export class AppModule {}
 
 | WARNING: Some components require fonts and/or icons to work properly |
 | --- |
+
 You can import fonts and icons with the provided css file from DB UI Core:
 
 ``@import "~@db-ui/core/dist/css/enterprise/db-ui-core.vars.css";``
