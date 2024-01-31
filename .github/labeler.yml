@@ -56,4 +56,5 @@ reactwind-showcase:
 
 # Add 'vue-showcase' label to any file changes for vue-showcase
 vue-showcase:
-  - showcase/vue-showcase/**
+  - changed-files:
+      - any-glob-to-any-file: "showcase/vue-showcase/**"
