@@ -52,22 +52,19 @@ jobs:
           spec: cypress/e2e/${{ matrix.containers }}/*.js
           ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
 
-      - name: 🛗 Upload Artifacts
+      - name: 🖼 Upload Screenshots
         uses: actions/upload-artifact@v4
-        # after the test run completes
-        # store videos and any screenshots
-        # NOTE: screenshots will be generated only if an E2E test failed
-        # thus we store screenshots only on failures
         if: failure()
         with:
           name: cypress-screenshots
-          path: e2e/cypress/screenshots
-      - uses: actions/upload-artifact@v4
-        # Test run video was always captured, so this action uses "always()" condition
+          path: e2e/cypress/screenshots/${{ matrix.containers }}
+
+      - name: 📹 Upload Videos
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: cypress-videos
-          path: e2e/cypress/videos
+          path: e2e/cypress/videos/${{ matrix.containers }}
 
       - name: 💀 Killing me softly
         uses: ./.github/actions/cancel-workflow
