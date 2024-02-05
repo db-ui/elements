@@ -1,7 +1,7 @@
 const execSync = require('child_process').execSync;
 
 const getOutputTargetWorkspace = (showcase) => {
-  if (showcase === 'angular') {
+  if (showcase.includes('angular')) {
     return 'ngx-elements';
   }
   if (showcase === 'playground') {

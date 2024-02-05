@@ -1,4 +1,5 @@
 const { defineConfig } = require('cypress');
+const { configureVisualRegression } = require('cypress-visual-regression');
 
 module.exports = defineConfig({
   chromeWebSecurity: false,
@@ -15,10 +16,9 @@ module.exports = defineConfig({
     ALWAYS_GENERATE_DIFF: false
   },
   e2e: {
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
+    screenshotsFolder: './cypress/snapshots/actual',
     setupNodeEvents(on, config) {
-      return require('./cypress/plugins/index.js')(on, config);
+      configureVisualRegression(on);
     },
     baseUrl: 'http://localhost:6006'
   }
