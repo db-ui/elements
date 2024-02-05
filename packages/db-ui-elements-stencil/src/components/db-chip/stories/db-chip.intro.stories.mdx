@@ -8,20 +8,21 @@ import Readme from './../readme.md';
 <db-headline>Filter Chips</db-headline>
 
 <Canvas>
-  <db-chip datatype="filter">default</db-chip>
-  <db-chip datatype="filter" variant="informative">
+  <db-chip interactiontype="filter">default</db-chip>
+  <db-chip interactiontype="filter" variant="light">light</db-chip>
+  <db-chip interactiontype="filter" variant="informative">
     informative
   </db-chip>
-  <db-chip datatype="filter" variant="success">
+  <db-chip interactiontype="filter" variant="success">
     success
   </db-chip>
-  <db-chip datatype="filter" variant="poi-essen-trinken">
+  <db-chip interactiontype="filter" variant="poi-essen-trinken">
     poi-essen-trinken
   </db-chip>
-  <db-chip datatype="filter" variant="poi-einkaufen" selected>
+  <db-chip interactiontype="filter" variant="poi-einkaufen" selected>
     poi-einkaufen
   </db-chip>
-  <db-chip datatype="filter" variant="track">
+  <db-chip interactiontype="filter" variant="track">
     track
   </db-chip>
 </Canvas>
@@ -30,6 +31,7 @@ import Readme from './../readme.md';
 
 <Canvas>
   <db-chip>default</db-chip>
+  <db-chip variant="light">light</db-chip>
   <db-chip variant="informative">informative</db-chip>
   <db-chip variant="success">success</db-chip>
   <db-chip variant="poi-essen-trinken" selected>poi-essen-trinken</db-chip>
@@ -40,9 +42,9 @@ import Readme from './../readme.md';
 <db-headline>Chips with icons</db-headline>
 
 <Canvas>
-  <db-chip datatype="filter" icon="account">icon</db-chip>
-  <db-chip datatype="filter" iconafter="account">iconafter</db-chip>
-  <db-chip datatype="filter" icon="account" iconafter="account">
+  <db-chip interactiontype="filter" icon="account">icon</db-chip>
+  <db-chip interactiontype="filter" iconafter="account">iconafter</db-chip>
+  <db-chip interactiontype="filter" icon="account" iconafter="account">
     icon + iconafter
   </db-chip>
 </Canvas>
@@ -50,11 +52,11 @@ import Readme from './../readme.md';
 <db-headline>Chips disabled</db-headline>
 
 <Canvas>
-  <db-chip datatype="filter">default</db-chip>
-  <db-chip datatype="filter" variant="informative" disabled>
+  <db-chip interactiontype="filter">default</db-chip>
+  <db-chip interactiontype="filter" variant="informative" disabled>
     informative
   </db-chip>
-  <db-chip datatype="filter" variant="success">
+  <db-chip interactiontype="filter" variant="success">
     success
   </db-chip>
 </Canvas>

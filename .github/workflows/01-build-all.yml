@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⬇ Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🔄 Init Cache
         uses: ./.github/actions/npm-cache
 
       - name: 👩‍🍳 Bake everything (StoryBook, Playground & Showcases)
         run: |
-          node scripts/build angular,react,vue,playground,reactwind withShowcase
+          node scripts/build angular-lts-minus-1,angular-lts,react,vue,playground,reactwind withShowcase
           npm run build:storybook
 
       - name: ⬆ Upload build

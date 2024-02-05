@@ -13,6 +13,7 @@ function OtherElements() {
     <div>
       <p>DbIcon:</p>
       <DbIcon icon="account" variant="32-outline" />
+      <DbIcon icon="check-circle"></DbIcon>
       <p>DbProgress:</p> <DbProgress value="60" max="100" />
       <p>DbTag:</p>
       <DbTag>default</DbTag>
@@ -21,11 +22,11 @@ function OtherElements() {
       <p>DbLogo:</p>
       <DbLogo></DbLogo>
       <p>DbChip:</p>
-      <DbChip datatype="filter" icon="account">
+      <DbChip interactiontype="filter" icon="account">
         default
       </DbChip>
       <DbChip
-        datatype="filter"
+        interactiontype="filter"
         iconafter="account"
         variant="informative"
         disabled
@@ -33,7 +34,7 @@ function OtherElements() {
         informative
       </DbChip>
       <DbChip
-        datatype="filter"
+        interactiontype="filter"
         icon="account"
         iconafter="account"
         variant="success"

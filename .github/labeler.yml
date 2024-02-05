@@ -1,45 +1,60 @@
 ---
 # Add 'repo' label to any root file changes
 repo:
-  - '*'
+  - changed-files:
+      - any-glob-to-any-file: '*'
 
 # Add 'cicd' label to any file changes inside .github dir
 cicd:
-  - .github/*
-  - .github/**/*
+  - changed-files:
+      - any-glob-to-any-file: ['.github/*', '.github/**/*']
 
 # Add 'stencil' label to any file changes for stencil
 stencil:
-  - packages/db-ui-elements-stencil/**
+  - changed-files:
+      - any-glob-to-any-file: 'packages/db-ui-elements-stencil/**'
 
 # Add 'angular' label to any file changes for angular-build-target
 angular:
-  - packages/db-ui-elements-angular/**
+  - changed-files:
+      - any-glob-to-any-file: 'packages/db-ui-elements-angular/**'
 
 # Add 'react' label to any file changes for angular-build-target
 react:
-  - packages/db-ui-elements-react/**
+  - changed-files:
+      - any-glob-to-any-file: 'packages/db-ui-elements-react/**'
 
 # Add 'vue' label to any file changes for angular-build-target
 vue:
-  - packages/db-ui-elements-vue/**
+  - changed-files:
+      - any-glob-to-any-file: 'packages/db-ui-elements-vue/**'
 
-# Add 'angular-showcase' label to any file changes for angular-showcase
-angular-showcase:
-  - showcase/angular-showcase/**
+# Add 'angular-lts-showcase' label to any file changes for angular-lts-showcase
+angular-lts-showcase:
+  - changed-files:
+      - any-glob-to-any-file: 'showcase/angular-lts-showcase/**'
+
+# Add 'angular-lts-minus-1-showcase' label to any file changes for angular-lts-minus-1-showcase
+angular-lts-minus-1-showcase:
+  - changed-files:
+      - any-glob-to-any-file: 'showcase/angular-lts-minus-1-showcase/**'
 
 # Add 'playground-showcase' label to any file changes for playground-showcase
 playground-showcase:
-  - showcase/playground-showcase/**
+  - changed-files:
+      - any-glob-to-any-file: 'showcase/playground-showcase/**'
 
 # Add 'react-showcase' label to any file changes for react-showcase
 react-showcase:
-  - showcase/react-showcase/**
+  - changed-files:
+      - any-glob-to-any-file: 'showcase/react-showcase/**'
 
 # Add 'reactwind-showcase' label to any file changes for reactwind-showcase
 reactwind-showcase:
-  - showcase/reactwind-showcase/**
+  - changed-files:
+      - any-glob-to-any-file: 'showcase/reactwind-showcase/**'
 
 # Add 'vue-showcase' label to any file changes for vue-showcase
 vue-showcase:
-  - showcase/vue-showcase/**
+  - changed-files:
+      - any-glob-to-any-file: 'showcase/vue-showcase/**'

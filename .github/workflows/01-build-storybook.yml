@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⬇ Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🔄 Init Cache
         uses: ./.github/actions/npm-cache
@@ -27,11 +27,17 @@ jobs:
           name: stencil-default-angular
           path: packages/db-ui-elements-stencil
 
-      - name: ⬇ Download Showcase angular dist folder
+      - name: ⬇ Download Showcase Angular LTS -1 dist folder
         uses: ./.github/actions/download-tar-artifact
         with:
-          name: showcase-angular
-          path: showcase/angular-showcase/dist
+          name: showcase-angular-lts-minus-1
+          path: showcase/angular-lts-minus-1-showcase/dist
+
+      - name: ⬇ Download Showcase Angular LTS dist folder
+        uses: ./.github/actions/download-tar-artifact
+        with:
+          name: showcase-angular-lts
+          path: showcase/angular-lts-showcase/dist
 
       - name: ⬇ Download Showcase playground dist folder
         uses: ./.github/actions/download-tar-artifact
@@ -61,7 +67,8 @@ jobs:
         env:
           VERSION: ${{ inputs.tag }}
         run: |
-          mv showcase/angular-showcase/dist/angular-showcase packages/db-ui-elements-stencil/www/angular-showcase
+          mv showcase/angular-lts-minus-1-showcase/dist/angular-lts-minus-1-showcase packages/db-ui-elements-stencil/www/angular-lts-minus-1-showcase
+          mv showcase/angular-lts-showcase/dist/angular-lts-showcase packages/db-ui-elements-stencil/www/angular-lts-showcase
           mv showcase/playground-showcase/dist/playground-showcase packages/db-ui-elements-stencil/www/playground-showcase
           mv showcase/react-showcase/dist/react-showcase packages/db-ui-elements-stencil/www/react-showcase
           mv showcase/reactwind-showcase/dist/reactwind-showcase packages/db-ui-elements-stencil/www/reactwind-showcase

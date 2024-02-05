@@ -13,15 +13,15 @@ context('db-toggle', () => {
       .check()
       .should('be.checked');
     cy.get('db-toggle> input')
-      .eq(2)
+      .eq(3)
       .should('be.checked')
       .uncheck()
       .should('not.be.checked');
   });
 
   it('Toggle should be disabled', function () {
-    cy.get('db-toggle > input').eq(1).should('be.disabled');
-    cy.get('db-toggle > input').eq(3).should('be.disabled');
+    cy.get('db-toggle > input').eq(2).should('be.disabled');
+    cy.get('db-toggle > input').eq(4).should('be.disabled');
   });
   // it('Datalist option should be correct', function () {
   //   cy.get('db-input > datalist > option')

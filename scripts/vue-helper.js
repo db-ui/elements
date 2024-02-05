@@ -8,10 +8,10 @@ const replace = require('replace-in-file');
 const vModelFix = {
   files: './src/vue-component-lib/utils.ts',
   from:
-    'vnode.el!.addEventListener(eventName.toLowerCase(), (e: Event) => {\n' +
+    'el.addEventListener(eventName.toLowerCase(), (e: Event) => {\n' +
     '            modelPropValue = (e?.target as any)[modelProp];',
   to:
-    ' vnode.el!.addEventListener(eventName, (e: any) => {\n' +
+    ' el.addEventListener(eventName, (e: any) => {\n' +
     '            if (\n' +
     '              e?.detail?.target?.checked &&\n' +
     '              e?.target?.textContent?.length > 0\n' +

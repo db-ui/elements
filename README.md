@@ -58,7 +58,8 @@ If you miss a component than [contribute](CONTRIBUTING.md), please.
 ## Framework showcases
 
 * [DB UI Elements with React (CRA)](showcase/react-showcase/README.md)
-* [DB UI Elements with Angular](showcase/angular-showcase/README.md)
+* [DB UI Elements with Angular 15](showcase/angular-lts-showcase/README.md)
+* [DB UI Elements with Angular 14](showcase/angular-lts-minus-1-showcase/README.md)
 * [DB UI Elements with Vue](showcase/vue-showcase/README.md)
 
 ## Deutsche Bahn brand
@@ -90,4 +91,4 @@ community a harassment-free experience for everyone – have a look at our [Cont
 
 ## License
 
-This project is licensed under [Apache-2.0](LICENSE), Copyright 2023 by DB Systel GmbH.
+This project is licensed under [Apache-2.0](LICENSE), Copyright 2024 by DB Systel GmbH.
