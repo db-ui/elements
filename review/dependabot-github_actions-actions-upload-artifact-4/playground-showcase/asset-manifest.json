@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.53d1df85.css",
-    "main.js": "./static/js/main.77085f6d.js",
+    "main.css": "./static/css/main.14ad5c5c.css",
+    "main.js": "./static/js/main.2197b6a3.js",
     "static/js/152.b69e4c7b.chunk.js": "./static/js/152.b69e4c7b.chunk.js",
     "static/js/906.397fabcc.chunk.js": "./static/js/906.397fabcc.chunk.js",
     "static/js/941.cc0013e0.chunk.js": "./static/js/941.cc0013e0.chunk.js",
@@ -39,7 +39,6 @@
     "static/js/899.c0647703.chunk.js": "./static/js/899.c0647703.chunk.js",
     "static/js/230.475a7d94.chunk.js": "./static/js/230.475a7d94.chunk.js",
     "static/js/258.5717f75e.chunk.js": "./static/js/258.5717f75e.chunk.js",
-    "static/media/main-fonts.svg?v=20": "./static/media/main-fonts.404be73e1ad40b1da282.svg",
     "static/media/dbscreenhead-black.woff?4r0080": "./static/media/dbscreenhead-black.6370ac1458455d720618.woff",
     "static/media/dbscreenhead-regular.woff?4r0080": "./static/media/dbscreenhead-regular.5e3f89df922ae2b82ea8.woff",
     "static/media/dbscreenhead-light.woff?4r0080": "./static/media/dbscreenhead-light.1e439c6864c3c6fa74e1.woff",
@@ -88,9 +87,7 @@
     "static/media/icons-24-outline-av.woff?4r2097": "./static/media/icons-24-outline-av.af616691b861456018b8.woff",
     "static/media/icons-20-outline-seat.woff?4r2097": "./static/media/icons-20-outline-seat.b5256248cb1ad72cff40.woff",
     "static/media/icons-24-outline-facilities.woff?4r2097": "./static/media/icons-24-outline-facilities.c59f417cb4a00964b77c.woff",
-    "static/media/main-fonts.eot?v=20": "./static/media/main-fonts.b8dc46886b7e216a02be.eot",
     "static/media/icons-20-outline-facilities.woff?4r2097": "./static/media/icons-20-outline-facilities.ab6acf279b7422bae3e1.woff",
-    "static/media/main-fonts.ttf?v=20": "./static/media/main-fonts.4d0a76596dbbbfbfe5ee.ttf",
     "static/media/icons-32-outline-feature.woff2?4r2097": "./static/media/icons-32-outline-feature.7c20a9c565a0026400a9.woff2",
     "static/media/icons-20-filled-transportation.woff2?4r2097": "./static/media/icons-20-filled-transportation.4a7cc0108411bc31aa1b.woff2",
     "static/media/icons-20-outline-av.woff?4r2097": "./static/media/icons-20-outline-av.ba3e8451da7ed0d2c34a.woff",
@@ -120,7 +117,6 @@
     "static/media/icons-24-outline-communication.woff2?4r2097": "./static/media/icons-24-outline-communication.3cd24e481351dd5501c0.woff2",
     "static/media/icons-24-outline-av.woff2?4r2097": "./static/media/icons-24-outline-av.a3f253114ce1b736dc6d.woff2",
     "static/media/icons-20-outline-seat.woff2?4r2097": "./static/media/icons-20-outline-seat.9d3a07daad28217b318e.woff2",
-    "static/media/main-fonts.woff?v=20": "./static/media/main-fonts.dbf9ed7d53cfa8f73da7.woff",
     "static/media/icons-20-outline-facilities.woff2?4r2097": "./static/media/icons-20-outline-facilities.eb7fdc966e705ece0a53.woff2",
     "static/media/icons-32-outline-av.woff2?4r2097": "./static/media/icons-32-outline-av.b828c22d6cd2044ab9dc.woff2",
     "static/media/icons-32-outline-communication.woff2?4r2097": "./static/media/icons-32-outline-communication.5c9164c80c139e814332.woff2",
@@ -232,8 +228,8 @@
     "static/media/icons-20-filled-it.woff2?4r2097": "./static/media/icons-20-filled-it.cb8a98de12df40cef292.woff2",
     "static/media/db_ic_search_24.svg": "./static/media/db_ic_search_24.6cdeda777d976416963d.svg",
     "static/media/db_ic_expand_more_20.svg": "./static/media/db_ic_expand_more_20.e023fa8dd5ba3b6dadc2.svg",
-    "main.53d1df85.css.map": "./static/css/main.53d1df85.css.map",
-    "main.77085f6d.js.map": "./static/js/main.77085f6d.js.map",
+    "main.14ad5c5c.css.map": "./static/css/main.14ad5c5c.css.map",
+    "main.2197b6a3.js.map": "./static/js/main.2197b6a3.js.map",
     "152.b69e4c7b.chunk.js.map": "./static/js/152.b69e4c7b.chunk.js.map",
     "906.397fabcc.chunk.js.map": "./static/js/906.397fabcc.chunk.js.map",
     "941.cc0013e0.chunk.js.map": "./static/js/941.cc0013e0.chunk.js.map",
@@ -273,7 +269,7 @@
     "258.5717f75e.chunk.js.map": "./static/js/258.5717f75e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.53d1df85.css",
-    "static/js/main.77085f6d.js"
+    "static/css/main.14ad5c5c.css",
+    "static/js/main.2197b6a3.js"
   ]
 }
