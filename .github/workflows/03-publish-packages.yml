@@ -32,7 +32,7 @@ jobs:
         uses: ./.github/actions/npm-cache
 
       - name: ⬇ Download Stencil ${{ matrix.themes }}
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           # As "stencil" package we use the artifact "stencil-default-angular" - others
           # would work as well this is just the first
@@ -40,19 +40,19 @@ jobs:
           path: packages/db-ui-elements-stencil
 
       - name: ⬇ Download Output Target Angular ${{ matrix.themes }}
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           name: output-target-${{ matrix.themes }}-angular
           path: packages/db-ui-elements-angular
 
       - name: ⬇ Download Output Target React ${{ matrix.themes }}
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           name: output-target-${{ matrix.themes }}-react
           path: packages/db-ui-elements-react
 
       - name: ⬇ Download Output Target Vue ${{ matrix.themes }}
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           name: output-target-${{ matrix.themes }}-vue
           path: packages/db-ui-elements-vue
@@ -82,25 +82,25 @@ jobs:
           GPR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: ⬆ Upload Package Artifact elements-${{ matrix.themes }}
-        uses: ./.github/actions/upload-tar-artifact
+        uses: actions/upload-artifact@v4
         with:
           name: package-${{ matrix.themes }}-elements
           path: db-ui-elements${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
 
       - name: ⬆ Upload Package Artifact ngx-elements-${{ matrix.themes }}
-        uses: ./.github/actions/upload-tar-artifact
+        uses: actions/upload-artifact@v4
         with:
           name: package-${{ matrix.themes }}-ngx-elements
           path: db-ui-ngx-elements${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
 
       - name: ⬆ Upload Package Artifact react-elements-${{ matrix.themes }}
-        uses: ./.github/actions/upload-tar-artifact
+        uses: actions/upload-artifact@v4
         with:
           name: package-${{ matrix.themes }}-react-elements
           path: db-ui-react-elements${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
 
       - name: ⬆ Upload Package Artifact v-elements-${{ matrix.themes }}
-        uses: ./.github/actions/upload-tar-artifact
+        uses: actions/upload-artifact@v4
         with:
           name: package-${{ matrix.themes }}-v-elements
           path: db-ui-v-elements${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
