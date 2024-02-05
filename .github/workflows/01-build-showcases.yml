@@ -44,13 +44,13 @@ jobs:
         id: download-params
 
       - name: ⬇ Download Stencil ${{ steps.download-params.outputs.theme }}
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           name: stencil-${{ steps.download-params.outputs.theme }}-${{ steps.download-params.outputs.framework }}
           path: packages/db-ui-elements-stencil
 
       - name: ⬇ Download Output Target ${{ steps.download-params.outputs.framework }}
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           name: output-target-${{ steps.download-params.outputs.theme }}-${{ steps.download-params.outputs.framework }}
           path: packages/db-ui-elements-${{ steps.download-params.outputs.framework }}
@@ -63,7 +63,7 @@ jobs:
           cp dist/${{ matrix.showcases }}-showcase/index.html dist/${{ matrix.showcases }}-showcase/404.html
 
       - name: ⬆ Upload Showcase ${{ matrix.showcases }} dist folder
-        uses: ./.github/actions/upload-tar-artifact
+        uses: actions/upload-artifact@v4
         with:
           name: showcase-${{ matrix.showcases }}
           path: showcase/${{ matrix.showcases }}-showcase/dist

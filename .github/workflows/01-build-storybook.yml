@@ -21,44 +21,44 @@ jobs:
         uses: ./.github/actions/npm-cache
 
       - name: ⬇ Download Stencil default
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           # It doesn't matter which framework we download for stencil
           name: stencil-default-angular
           path: packages/db-ui-elements-stencil
 
       - name: ⬇ Download Showcase Angular LTS -1 dist folder
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           name: showcase-angular-lts-minus-1
           path: showcase/angular-lts-minus-1-showcase/dist
 
       - name: ⬇ Download Showcase Angular LTS dist folder
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           name: showcase-angular-lts
           path: showcase/angular-lts-showcase/dist
 
       - name: ⬇ Download Showcase playground dist folder
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           name: showcase-playground
           path: showcase/playground-showcase/dist
 
       - name: ⬇ Download Showcase react dist folder
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           name: showcase-react
           path: showcase/react-showcase/dist
 
       - name: ⬇ Download Showcase reactwind dist folder
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           name: showcase-reactwind
           path: showcase/reactwind-showcase/dist
 
       - name: ⬇ Download Showcase vue dist folder
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           name: showcase-vue
           path: showcase/vue-showcase/dist
@@ -78,7 +78,7 @@ jobs:
           npm run build:storybook
 
       - name: ⬆ Upload build
-        uses: ./.github/actions/upload-tar-artifact
+        uses: actions/upload-artifact@v4
         with:
           name: build
           path: out
