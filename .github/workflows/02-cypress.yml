@@ -57,7 +57,7 @@ jobs:
         if: failure()
         with:
           name: cypress-screenshots-${{ matrix.containers }}
-          path: e2e/cypress/screenshots
+          path: e2e/cypress/snapshots/actual
 
       - name: 📹 Upload Videos
         uses: actions/upload-artifact@v4
@@ -65,9 +65,3 @@ jobs:
         with:
           name: cypress-videos-${{ matrix.containers }}
           path: e2e/cypress/videos
-
-      - name: 💀 Killing me softly
-        uses: ./.github/actions/cancel-workflow
-        if: failure()
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
