@@ -34,7 +34,7 @@
     "@faker-js/faker": "^8.4.0",
     "@stencil-community/eslint-plugin": "0.7.1",
     "@stencil/angular-output-target": "0.8.4",
-    "@stencil/core": "4.12.0",
+    "@stencil/core": "4.12.1",
     "@stencil/react-output-target": "0.5.3",
     "@stencil/sass": "3.0.9",
     "@stencil/vue-output-target": "0.8.7",
