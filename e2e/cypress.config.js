@@ -12,7 +12,8 @@ module.exports = defineConfig({
   video: true,
   videoCompression: false,
   env: {
-    ALWAYS_GENERATE_DIFF: false
+    ALWAYS_GENERATE_DIFF: false,
+    visualRegressionType: 'regression'
   },
   e2e: {
     screenshotsFolder: './cypress/snapshots/actual',
