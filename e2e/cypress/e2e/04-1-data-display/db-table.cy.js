@@ -1,8 +1,6 @@
 context('db-table', () => {
   beforeEach(() => {
-    cy.visit(
-      '/iframe.html?id=04-data-display-table-intro--page&viewMode=story'
-    );
+    cy.gotoStory('04-data-display', 'table');
   });
 
   it('db-table - snapshot', () => {

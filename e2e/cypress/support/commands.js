@@ -20,6 +20,12 @@ Cypress.Commands.add('snap', (test, threshold = 0.15, overwrite = true) => {
   }
 });
 
+Cypress.Commands.add('gotoStory', (category, component, isIntro = true) => {
+  cy.visit(
+    `/iframe.html?viewMode=docs&id=${category}-${component}${isIntro ? '-intro' : ''}--docs`
+  );
+});
+
 Cypress.Commands.add('showcaseGoto', (showcase, page) => {
   cy.visit(`/${showcase}-showcase/index.html`);
   if (page) {

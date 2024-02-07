@@ -9,10 +9,10 @@ import Readme from './../readme.md?raw';
 The input element represents a one line plain text edit control for the element's value. Most of attributes are used in the same way as with a native input. You can try out on <a href="/story/db-input--live-demo">Input Live Demo</a> Page.
 
 <Canvas>
-  <db-input label="Semitransparent" Name="input-name"></db-input>
-  <db-input label="White" Name="input-name" variant="white"></db-input>
-  <db-input label="Solid" Name="input-name" variant="solid"></db-input>
-  <db-input label="Outline" Name="input-name" variant="outline"></db-input>
+  <db-input label="Semitransparent"></db-input>
+  <db-input label="White" variant="white"></db-input>
+  <db-input label="Solid" variant="solid"></db-input>
+  <db-input label="Outline" variant="outline"></db-input>
 </Canvas>
 
 <db-headline variant="2">disabled</db-headline>
@@ -20,7 +20,7 @@ The input element represents a one line plain text edit control for the element'
 Make inputs look inactive by adding the disabled boolean attribute to any &lt;db-input&gt; element.
 
 <Canvas>
-  <db-input label="Inputfield" Name="input-name" disabled></db-input>
+  <db-input label="Inputfield" disabled></db-input>
 </Canvas>
 
 <db-headline variant="2">description/ hint</db-headline>
@@ -28,11 +28,7 @@ Make inputs look inactive by adding the disabled boolean attribute to any &lt;db
 Add a description below the &lt;db-input&gt; element.
 
 <Canvas>
-  <db-input
-    label="Inputfield"
-    Name="input-name"
-    description="A clue, a clue"
-  ></db-input>
+  <db-input label="Inputfield" description="A clue, a clue"></db-input>
 </Canvas>
 
 <db-headline variant="2">validation</db-headline>
@@ -40,19 +36,8 @@ Add a description below the &lt;db-input&gt; element.
 Shows validation on the &lt;db-input&gt; element, needs required attribute.
 
 <Canvas>
-  <db-input
-    label="Inputfield"
-    Name="input-name"
-    value="Valid"
-    required
-    minlength={3}
-  ></db-input>
-  <db-input
-    label="Inputfield"
-    Name="input-name"
-    required
-    minlength={3}
-  ></db-input>
+  <db-input label="Inputfield" value="Valid" required minlength={3}></db-input>
+  <db-input label="Inputfield" required minlength={3}></db-input>
 </Canvas>
 
 <db-headline variant="2">Other types</db-headline>
@@ -60,49 +45,41 @@ Shows validation on the &lt;db-input&gt; element, needs required attribute.
 <Canvas>
   <db-input
     label="Color"
-    Name="input-name"
     type="color"
     description="Only colors are allowed"
   ></db-input>
   <db-input
     label="Email"
-    Name="input-name"
     type="email"
     description="Only emails are allowed"
   ></db-input>
   <db-input
     label="Password"
-    Name="input-name"
     type="password"
     description="Only passwords are allowed"
   ></db-input>
   <db-input
     label="Number"
-    Name="input-name"
     type="number"
     description="Only numbers are allowed"
   ></db-input>
   <db-input
     label="Date"
-    Name="input-name"
     type="date"
     description="Only dates are allowed"
   ></db-input>
   <db-input
     label="Month"
-    Name="input-name"
     type="month"
     description="Only months are allowed"
   ></db-input>
   <db-input
     label="Week"
-    Name="input-name"
     type="week"
     description="Only weeks are allowed"
   ></db-input>
   <db-input
     label="Time"
-    Name="input-name"
     type="time"
     description="Only times are allowed"
   ></db-input>
@@ -111,12 +88,7 @@ Shows validation on the &lt;db-input&gt; element, needs required attribute.
 <db-headline variant="2">Search</db-headline>
 
 <Canvas>
-  <db-input
-    label="Inputfield"
-    Name="input-name"
-    type="search"
-    placeholder="Search me"
-  ></db-input>
+  <db-input label="Inputfield" type="search" placeholder="Search me"></db-input>
 </Canvas>
 
 <db-headline variant="2">list</db-headline>
@@ -124,7 +96,7 @@ Shows validation on the &lt;db-input&gt; element, needs required attribute.
 The list attribute connects the input with a set of options that represent predefined options in a datalist element used for the input field.
 
 <Canvas>
-  <db-input label="Inputfield" Name="input-name" list="datalist">
+  <db-input label="Inputfield" list="datalist">
     <option value="Value 1">Option 1</option>
     <option value="Value 2">Option 2</option>
     <option value="Value 3">Option 3</option>
@@ -134,12 +106,15 @@ The list attribute connects the input with a set of options that represent prede
 <db-headline variant="2">visually hide the label</db-headline>
 
 > A label for a form control helps everyone better understand its purpose. In some cases, the purpose may be clear enough from the context when the content is rendered visually. The label can be hidden visually, though it still needs to be provided within the code to support other forms of presentation and interaction, such as for screen reader and speech input users.
-source: <https://www.w3.org/WAI/tutorials/forms/labels/#hiding-label-text>
+>
+> <a href="https://www.w3.org/WAI/tutorials/forms/labels/#hiding-label-text">
+>   source
+> </a>
 
 You could set the attribute `label-hidden="true"` for the rare case that you would want to visually hide the textual label for a input element.
 
 <Canvas>
-<db-input label="Semitransparent" name="input-name" label-hidden="true"></db-input>
+  <db-input label="Semitransparent" label-hidden="true"></db-input>
 </Canvas>
 
 <Markdown>{Readme}</Markdown>

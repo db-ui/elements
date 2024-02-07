@@ -1,6 +1,6 @@
 context('db-link', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=02-navigation-link-intro--page&viewMode=story');
+    cy.gotoStory('02-navigation', 'link');
   });
 
   it('db-link - snapshot', () => {
@@ -13,15 +13,13 @@ context('db-link', () => {
     cy.get('db-link')
       .eq(2)
       .find('a')
-      .contains('internal')
-      .invoke('attr', 'target')
-      .should('eq', '_self');
+      .should('have.attr', 'target', '_self')
+      .contains('internal');
 
     cy.get('db-link')
       .eq(3)
       .find('a')
-      .contains('external')
-      .invoke('attr', 'target')
-      .should('eq', '_blank');
+      .should('have.attr', 'target', '_blank')
+      .contains('external');
   });
 });

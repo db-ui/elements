@@ -1,8 +1,6 @@
 context('db-tab-bar', () => {
   beforeEach(() => {
-    cy.visit(
-      '/iframe.html?id=02-navigation-tab-bar-intro--page&viewMode=story'
-    );
+    cy.gotoStory('02-navigation', 'tab-bar');
   });
 
   it('db-tab-bar - snapshot', () => {

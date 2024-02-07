@@ -1,6 +1,6 @@
 context('db-header', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=02-navigation-header-intro--page&viewMode=story');
+    cy.gotoStory('02-navigation', 'header');
   });
 
   it('db-header - snapshot', () => {

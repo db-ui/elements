@@ -9,14 +9,13 @@ import Readme from './../readme.md?raw';
 The textarea element represents a multiline plain text edit control. Most of attributes are used in the same way as with a native textarea. You can try out on <a href="/story/db-textarea--live-demo">Textarea Live Demo</a> Page.
 
 <Canvas>
-  <db-textarea label="Semitransparent" Name="textarea-name"></db-textarea>
-  <db-textarea label="White" Name="textarea-name" variant="white"></db-textarea>
+  <db-textarea label="Semitransparent"></db-textarea>
+  <db-textarea label="White" variant="white"></db-textarea>
   <db-textarea
     label="Outline"
-    Name="textarea-name"
     variant="outline"
   ></db-textarea>
-  <db-textarea label="Solid" Name="textarea-name" variant="solid"></db-textarea>
+  <db-textarea label="Solid" variant="solid"></db-textarea>
 </Canvas>
 
 <db-headline>disabled</db-headline>
@@ -24,7 +23,7 @@ The textarea element represents a multiline plain text edit control. Most of att
 Make textareas look inactive by adding the disabled boolean attribute to any &lt;db-textarea&gt; element.
 
 <Canvas>
-  <db-textarea label="Textarea" Name="textarea-name" disabled></db-textarea>
+  <db-textarea label="Textarea"disabled></db-textarea>
 </Canvas>
 
 <db-headline>maxLength</db-headline>
@@ -32,7 +31,6 @@ Make textareas look inactive by adding the disabled boolean attribute to any &lt
 <Canvas>
   <db-textarea
     label="Textarea"
-    Name="textarea-name"
     maxlength="200"
   ></db-textarea>
 </Canvas>
@@ -42,7 +40,6 @@ Make textareas look inactive by adding the disabled boolean attribute to any &lt
 <Canvas>
   <db-textarea
     label="Textarea"
-    Name="textarea-name"
     maxlength="200"
     description="I am a hint"
   >
@@ -53,12 +50,11 @@ Make textareas look inactive by adding the disabled boolean attribute to any &lt
 <db-headline>Validation, needs required as attribute</db-headline>
 
 <Canvas>
-  <db-textarea label="Textarea" Name="textarea-name" minlength="5" required>
+  <db-textarea label="Textarea" minlength="5" required>
     I'm a filler
   </db-textarea>
   <db-textarea
     label="Textarea"
-    Name="textarea-name"
     minlength="20"
     required
   ></db-textarea>
@@ -67,12 +63,12 @@ Make textareas look inactive by adding the disabled boolean attribute to any &lt
 <db-headline variant="2">visually hide the label</db-headline>
 
 > A label for a form control helps everyone better understand its purpose. In some cases, the purpose may be clear enough from the context when the content is rendered visually. The label can be hidden visually, though it still needs to be provided within the code to support other forms of presentation and interaction, such as for screen reader and speech input users.
-source: <https://www.w3.org/WAI/tutorials/forms/labels/#hiding-label-text>
+> <a href="https://www.w3.org/WAI/tutorials/forms/labels/#hiding-label-text">source</a>
 
 You could set the attribute `label-hidden="true"` for the rare case that you would want to visually hide the textual label for a textarea element.
 
 <Canvas>
-<db-textarea label="Semitransparent" name="textarea-name" label-hidden="true"></db-textarea>
+<db-textarea label="Semitransparent" label-hidden="true"></db-textarea>
 </Canvas>
 
 <Markdown>{Readme}</Markdown>

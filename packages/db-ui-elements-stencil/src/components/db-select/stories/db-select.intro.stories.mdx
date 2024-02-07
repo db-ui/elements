@@ -1,4 +1,4 @@
-import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+import { Canvas, Markdown, Meta } from '@storybook/addon-docs';
 
 import Readme from './../readme.md?raw';
 
@@ -9,26 +9,26 @@ import Readme from './../readme.md?raw';
 The `<db-select></db-select>` element represents a control for selecting amongst a set of options. Most of attributes are used in the same way as with a native select. You can try out on <a href="/story/db-select--live-demo">Select Playground</a> Page.
 
 <Canvas>
-<db-select label="Semitransparent" Name="select-name-semitransparent">
-  <option selected>Option 1</option>
-  <option>Option 2</option>
-  <option>Option 3</option>
-</db-select>
-<db-select label="White" Name="select-name" variant="white">
-  <option selected>Option 1</option>
-  <option>Option 2</option>
-  <option>Option 3</option>
-</db-select>
-<db-select label="Solid" Name="select-name-solid" variant="solid">
-  <option selected>Option 1</option>
-  <option>Option 2</option>
-  <option>Option 3</option>
-</db-select>
-<db-select label="Outline" Name="select-name-outline" variant="outline">
-  <option selected>Option 1</option>
-  <option>Option 2</option>
-  <option>Option 3</option>
-</db-select>
+  <db-select label="Semitransparent">
+    <option selected>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </db-select>
+  <db-select label="White" variant="white">
+    <option selected>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </db-select>
+  <db-select label="Solid" variant="solid">
+    <option selected>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </db-select>
+  <db-select label="Outline" variant="outline">
+    <option selected>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </db-select>
 </Canvas>
 
 <db-headline variant="2">disabled</db-headline>
@@ -36,57 +36,57 @@ The `<db-select></db-select>` element represents a control for selecting amongst
 Make select look inactive by adding the disabled boolean attribute to any &lt;select&gt; element.
 
 <Canvas>
-<db-select label="Selectbox" Name="select-name" disabled>
-  <option selected>Option 1</option>
-  <option>Option 2</option>
-  <option>Option 3</option>
-</db-select>
+  <db-select label="Selectbox" disabled>
+    <option selected>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </db-select>
 </Canvas>
 
-{/*<db-headline variant="2">multiple</db-headline>
+<db-headline variant="2">multiple</db-headline>
 
 If the multiple attribute is present, then the select element represents a control for selecting zero or more options from the list of options. If the attribute is absent, then the select element represents a control for selecting a single option from the list of options.
 
 <Canvas>
-<db-select label="Selectbox" Name="select-name" multiple>
-  <option selected>Option 1</option>
-  <option>Option 2</option>
-  <option>Option 3</option>
-</db-select>
-</Canvas>*/}
+  <db-select label="Selectbox" multiple>
+    <option selected>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </db-select>
+</Canvas>
 
 <db-headline variant="2">select with &lt;optgroup&gt;</db-headline>
 
 The HTML &lt;optgroup&gt; element creates a grouping of options within a select element.
 
 <Canvas>
-<db-select label="Selectbox" Name="select-name">
-  <optgroup label="Group 1">
-    <option selected>Option 1.1</option>
-    <option>Option 1.2</option>
-    <option>Option 1.3</option>
-  </optgroup>
-  <optgroup label="Group 1">
-    <option selected>Option 2.1</option>
-    <option>Option 2.2</option>
-    <option>Option 2.3</option>
-  </optgroup>
-</db-select>
+  <db-select label="Selectbox">
+    <optgroup label="Group 1">
+      <option selected>Option 1.1</option>
+      <option>Option 1.2</option>
+      <option>Option 1.3</option>
+    </optgroup>
+    <optgroup label="Group 1">
+      <option selected>Option 2.1</option>
+      <option>Option 2.2</option>
+      <option>Option 2.3</option>
+    </optgroup>
+  </db-select>
 </Canvas>
 
 <db-headline variant="2">visually hide the label</db-headline>
 
 > A label for a form control helps everyone better understand its purpose. In some cases, the purpose may be clear enough from the context when the content is rendered visually. The label can be hidden visually, though it still needs to be provided within the code to support other forms of presentation and interaction, such as for screen reader and speech input users.
-source: <https://www.w3.org/WAI/tutorials/forms/labels/#hiding-label-text>
+> <a href="https://www.w3.org/WAI/tutorials/forms/labels/#hiding-label-text">source</a>
 
 You could set the attribute `label-hidden="true"` for the rare case that you would want to visually hide the textual label for a select element.
 
-<Canvas>
-<db-select label="Semitransparent" name="select-name-semitransparent" label-hidden="true">
-  <option selected>Option 1</option>
-  <option>Option 2</option>
-  <option>Option 3</option>
-</db-select>
+<Canvas name="XXX">
+  <db-select label="Semitransparent" label-hidden="true">
+    <option selected>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </db-select>
 </Canvas>
 
 <Markdown>{Readme}</Markdown>
