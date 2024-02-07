@@ -1,24 +1,36 @@
 const { defineConfig } = require('cypress');
+const { configureVisualRegression } = require('cypress-visual-regression');
+const { unlinkSync } = require('node:fs');
 
 module.exports = defineConfig({
   chromeWebSecurity: false,
-  reporter: 'junit',
-  reporterOptions: {
-    mochaFile: './cypress/results/output-[hash].xml'
-  },
   experimentalStudio: true,
   viewportWidth: 1920,
   viewportHeight: 1200,
   screenshotsFolder: './cypress/snapshots/actual',
   trashAssetsBeforeRuns: true,
+  video: true,
+  videoCompression: false,
   env: {
-    ALWAYS_GENERATE_DIFF: false
+    ALWAYS_GENERATE_DIFF: false,
+    visualRegressionType: 'regression'
   },
   e2e: {
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
+    screenshotsFolder: './cypress/snapshots/actual',
     setupNodeEvents(on, config) {
-      return require('./cypress/plugins/index.js')(on, config);
+      configureVisualRegression(on);
+      on('after:spec', (spec, results) => {
+        if (results && results.video) {
+          // Do we have failures for any retry attempts?
+          const failures = results.tests.some((test) =>
+            test.attempts.some((attempt) => attempt.state === 'failed')
+          );
+          if (!failures) {
+            // delete the video if the spec passed and no tests retried
+            unlinkSync(results.video);
+          }
+        }
+      });
     },
     baseUrl: 'http://localhost:6006'
   }

@@ -46,8 +46,7 @@ const vueComponentModels: ComponentModelConfig[] = [
   {
     elements: ['db-pagination'],
     event: 'dbChange',
-    targetAttr: 'currentpage',
-    externalEvent: 'postDbChange'
+    targetAttr: 'currentpage'
   }
 ];
 

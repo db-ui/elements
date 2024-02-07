@@ -13,7 +13,8 @@
     "jsx": "react",
     "jsxFactory": "h",
     "esModuleInterop": true,
-    "allowJs": true
+    "allowJs": true,
+    "skipLibCheck": true
   },
   "include": ["src", "types/jsx.d.ts"],
   "exclude": ["node_modules", "src/components/development/patternlab"]

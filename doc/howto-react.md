@@ -20,7 +20,8 @@ import { DbButton } from "@db-ui/react-elements-enterprise";
 
 | WARNING: Some components require fonts and/or icons to work properly |
 | --- |
- You can import fonts and icons with the provided css file from DB UI Core:
+
+You can import fonts and icons with the provided css file from DB UI Core:
 
 ``import "@db-ui/core/dist/css/db-ui-core.vars.css"``
 

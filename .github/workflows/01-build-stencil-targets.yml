@@ -42,13 +42,13 @@ jobs:
         id: path
 
       - name: ⬆ Upload Stencil ${{ matrix.themes }}
-        uses: ./.github/actions/upload-tar-artifact
+        uses: actions/upload-artifact@v4
         with:
           name: stencil-${{ matrix.themes }}-${{ steps.path.outputs.framework }}
           path: packages/db-ui-elements-stencil
 
       - name: ⬆ Upload Output Target ${{ steps.path.outputs.framework }}
-        uses: ./.github/actions/upload-tar-artifact
+        uses: actions/upload-artifact@v4
         with:
           name: output-target-${{ matrix.themes }}-${{ steps.path.outputs.framework }}
           path: packages/db-ui-elements-${{ steps.path.outputs.framework }}
