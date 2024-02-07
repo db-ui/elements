@@ -17,7 +17,7 @@ function App() {
     <>
       <DbPage>
         <DbHeader slot="header">
-          <DbBrand src={`${process.env.PUBLIC_URL}/db_logo.svg`} href="/">
+          <DbBrand src="/db_logo.svg" href="/">
             DB UI Elements in React Showcase
           </DbBrand>
           <DbMainnavigation>

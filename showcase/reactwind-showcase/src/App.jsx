@@ -16,9 +16,7 @@ export default function App() {
     <div className="flex flex-col h-full w-full">
       <DbPage className="h-full">
         <DbHeader slot="header">
-          <DbBrand src={`${process.env.PUBLIC_URL}/images/db_logo.svg`}>
-            DB-UI Elements
-          </DbBrand>
+          <DbBrand src="/images/db_logo.svg">DB-UI Elements</DbBrand>
         </DbHeader>
 
         <div className="flex w-full flex-col p-0.5 md:p-0">

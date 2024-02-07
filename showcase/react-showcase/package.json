@@ -4,6 +4,7 @@
   "private": true,
   "homepage": ".",
   "license": "Apache-2.0",
+  "type": "module",
   "dependencies": {
     "@db-ui/react-elements": "file:./../../packages/db-ui-elements-react/",
     "react": "18.2.0",
@@ -11,13 +12,13 @@
     "react-router-dom": "6.22.0"
   },
   "devDependencies": {
-    "react-scripts": "5.0.1"
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.12"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "echo 🤷‍♂️",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "eslintConfig": {
     "extends": [
