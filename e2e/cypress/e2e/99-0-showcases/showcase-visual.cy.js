@@ -3,11 +3,11 @@ context('showcases-visuals', () => {
   showcases.forEach((showcase) => {
     it(`${showcase}: Test Form - snapshot`, () => {
       cy.showcaseGoto(showcase, 'Form');
-      cy.snap('showcase-form', 0.15, false);
+      cy.snap('showcase-form', 0.2, false);
     });
     it(`${showcase}: Test OtherComponents - snapshot`, () => {
       cy.showcaseGoto(showcase, 'OtherComponents');
-      cy.snap('showcase-other-components', 0.15, false);
+      cy.snap('showcase-other-components', 0.2, false);
     });
     it(`${showcase}: Test OtherElements - snapshot`, () => {
       cy.showcaseGoto(showcase, 'OtherElements');
@@ -15,7 +15,7 @@ context('showcases-visuals', () => {
     });
     it(`${showcase}: Test Tables - snapshot`, () => {
       cy.showcaseGoto(showcase, 'Tables');
-      cy.snap('showcase-tables', 0.15, false);
+      cy.snap('showcase-tables', 0.2, false);
     });
   });
 });

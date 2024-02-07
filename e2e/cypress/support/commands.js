@@ -1,6 +1,7 @@
-const compareSnapshotCommand = require('cypress-visual-regression/dist/command');
-
-compareSnapshotCommand();
+const {
+  addCompareSnapshotCommand
+} = require('cypress-visual-regression/dist/command');
+addCompareSnapshotCommand();
 
 Cypress.Commands.add('snap', (test, threshold = 0.15, overwrite = true) => {
   // wait till all components are loaded and styles applied
