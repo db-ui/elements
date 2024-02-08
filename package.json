@@ -2,7 +2,6 @@
   "name": "@db-ui/elements-monorepo",
   "version": "0.0.0",
   "scripts": {
-    "prepare": "cd showcase/react-showcase && npm i && cd ../angular-lts-minus-1-showcase && npm i && cd ../angular-lts-showcase && npm i && cd ../vue-showcase && npm i && cd ../playground-showcase && npm i && cd ../../ && husky",
     "start": "concurrently  \"npm run build.watch.enterprise --workspace=@db-ui/elements\" \"npm run start:storybook\"",
     "start:storybook": "npm run start --workspace=@db-ui/elements-storybook",
     "watch:showcase:react": "concurrently  \"npm run build.watch.local --workspace=@db-ui/elements\" \"npm run watch --workspace=@db-ui/react-elements\"",
@@ -22,11 +21,11 @@
     "lint:eslint": "eslint . --ext .ts,.js --ignore-path .gitignore  --ignore-path .eslintignore && npm run lint --workspace=@db-ui/elements",
     "generate": "npm run generate --workspace=@db-ui/elements",
     "clean": "git clean -dfx --exclude=.env",
-    "link:repositories": "cd ../db-ui-core && npm link && cd ../db-ui-elements && npm link @db-ui/core",
-    "postinstall": "node ./scripts/postinstall.js"
+    "link:repositories": "cd ../db-ui-core && npm link && cd ../db-ui-elements && npm link @db-ui/core"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "showcase/*"
   ],
   "devDependencies": {
     "@commitlint/cli": "18.6.0",
@@ -58,7 +57,7 @@
     "stylelint": "^14.16.1",
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-standard-scss": "^6.1.0",
-    "typescript": "4.9.5",
+    "typescript": "5.3.3",
     "validate-branch-name": "^1.3.0",
     "xml": "1.0.1"
   },

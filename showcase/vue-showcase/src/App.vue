@@ -6,9 +6,8 @@ import {
   DbPage,
   DbMainnavigation,
   DbLink
-} from '@db-ui/v-elements-enterprise/dist/components';
+} from '@db-ui/v-elements/dist/components';
 import { navigationItems } from '@/navigationItems';
-import TabBar from '@/components/tab-bar/TabBar.vue';
 </script>
 
 <template>

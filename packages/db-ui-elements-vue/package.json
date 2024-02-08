@@ -17,14 +17,11 @@
     "stencil:workaround": "node ../../scripts/vue-helper.js",
     "pretest": "npm run stencil:workaround",
     "prebuild": "npm run stencil:workaround",
-    "test": "jest",
     "build": "npm run clean && npm run tsc",
     "build:prod": "npm run clean && npm run tsc:prod",
     "clean": "rimraf dist",
     "tsc": "tsc -p .",
-    "tsc:prod": "tsc -p . --sourceMap false",
-    "lint": "echo \"Warning: no lint specified\" && exit 0",
-    "validate": "npm i && npm run lint && npm run test && npm run build"
+    "tsc:prod": "tsc -p . --sourceMap false"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -33,29 +30,9 @@
     "dist/"
   ],
   "devDependencies": {
-    "@types/jest": "29.5.12",
-    "@vue/test-utils": "2.0.0-rc.18",
-    "jest": "29.7.0",
     "rimraf": "5.0.5",
     "rollup": "4.9.6",
     "rollup-plugin-node-resolve": "5.2.0",
-    "vue": "3.4.15"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "setupFilesAfterEnv": [
-      "<rootDir>/setupTests.ts"
-    ],
-    "testPathIgnorePatterns": [
-      "node_modules",
-      "dist"
-    ],
-    "globals": {
-      "ts-jest": {
-        "diagnostics": {
-          "warnOnly": true
-        }
-      }
-    }
+    "vue": "3.4.16"
   }
 }

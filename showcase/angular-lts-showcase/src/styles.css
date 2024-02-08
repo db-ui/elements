@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@db-ui/core/dist/css/db-ui-core.vars.css';
+@import '@db-ui/core/dist/css/db-ui-core.vars.css';
 
 table {
   width: 100%;

@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import {
-  DbSidenavi,
-  DbLink
-} from '@db-ui/v-elements-enterprise/dist/components';
+import { DbSidenavi, DbLink } from '@db-ui/v-elements/dist/components';
 
 import { navigationItems } from '@/navigationItems';
 </script>

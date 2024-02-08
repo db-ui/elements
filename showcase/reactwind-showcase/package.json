@@ -6,12 +6,8 @@
   "license": "Apache-2.0",
   "type": "module",
   "dependencies": {
-    "@db-ui/base": "file:./../../node_modules/@db-ui/base/",
-    "@db-ui/react-elements": "file:./../../packages/db-ui-elements-react/",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
-  },
-  "devDependencies": {
+    "react-dom": "18.2.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.17",
     "postcss": "^8.4.34",

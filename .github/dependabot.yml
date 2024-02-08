@@ -79,6 +79,9 @@ updates:
       babel:
         patterns:
           - '@babel*'
+      react:
+        patterns:
+          - 'react*'
       typescript-eslint:
         patterns:
           - '@typescript-eslint*'
@@ -144,56 +147,5 @@ updates:
       # Angular 15 only works with zone.js 0.13.x
       - dependency-name: 'zone.js'
         update-types: ['version-update:semver-minor']
-    pull-request-branch-name:
-      separator: '-'
-  - package-ecosystem: 'npm'
-    directory: '/showcase/playground-showcase'
-    open-pull-requests-limit: 10
-    schedule:
-      interval: 'daily'
-      time: '04:00'
-      timezone: 'Europe/Berlin'
-    ignore:
-      - dependency-name: 'react'
-        update-types: ['version-update:semver-major']
-      - dependency-name: 'react-dom'
-        update-types: ['version-update:semver-major']
-    pull-request-branch-name:
-      separator: '-'
-  - package-ecosystem: 'npm'
-    directory: '/showcase/react-showcase'
-    open-pull-requests-limit: 10
-    schedule:
-      interval: 'daily'
-      time: '04:00'
-      timezone: 'Europe/Berlin'
-    ignore:
-      - dependency-name: 'react'
-        update-types: ['version-update:semver-major']
-      - dependency-name: 'react-dom'
-        update-types: ['version-update:semver-major']
-    pull-request-branch-name:
-      separator: '-'
-  - package-ecosystem: 'npm'
-    directory: '/showcase/reactwind-showcase'
-    open-pull-requests-limit: 10
-    schedule:
-      interval: 'daily'
-      time: '04:00'
-      timezone: 'Europe/Berlin'
-    ignore:
-      - dependency-name: 'react'
-        update-types: ['version-update:semver-major']
-      - dependency-name: 'react-dom'
-        update-types: ['version-update:semver-major']
-    pull-request-branch-name:
-      separator: '-'
-  - package-ecosystem: 'npm'
-    directory: '/showcase/vue-showcase'
-    open-pull-requests-limit: 10
-    schedule:
-      interval: 'daily'
-      time: '04:00'
-      timezone: 'Europe/Berlin'
     pull-request-branch-name:
       separator: '-'

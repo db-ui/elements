@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DbTabBar, DbTab } from '@db-ui/v-elements-enterprise/dist/components';
+import { DbTabBar, DbTab } from '@db-ui/v-elements/dist/components';
 
 import Form from '../form/Form.vue';
 import Navigation from '../navigation/Navigation.vue';

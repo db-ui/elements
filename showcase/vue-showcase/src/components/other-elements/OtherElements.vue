@@ -7,7 +7,7 @@ import {
   DbLink,
   DbLogo,
   DbChip
-} from '@db-ui/v-elements-enterprise/dist/components';
+} from '@db-ui/v-elements/dist/components';
 </script>
 
 <template>
