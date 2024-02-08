@@ -81,7 +81,11 @@ updates:
           - '@babel*'
       react:
         patterns:
-          - 'react*'
+          - "react"
+          - "react-dom"
+        update-types:
+          - "minor"
+          - "patch"
       typescript-eslint:
         patterns:
           - '@typescript-eslint*'
@@ -95,6 +99,14 @@ updates:
       types-node:
         patterns:
           - '@types/node'
+      angular:
+        patterns:
+          - "@angular*"
+          - "@angular-devkit*"
+          - "ng-packagr"
+        update-types:
+          - "minor"
+          - "patch"
 
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-lts-showcase'
