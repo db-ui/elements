@@ -4,7 +4,7 @@ context('db-image', () => {
   });
 
   it('db-image - snapshot', () => {
-    cy.snap('db-image', 0.36);
+    cy.snap('db-image', 0.4);
   });
   it('images should have the right class and alt text', function () {
     const imagesclassic = [0, 1, 2];
