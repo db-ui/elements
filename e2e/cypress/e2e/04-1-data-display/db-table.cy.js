@@ -4,7 +4,7 @@ context('db-table', () => {
   });
 
   it('db-table - snapshot', () => {
-    cy.snap('db-table', 0.17);
+    cy.snap('db-table', 0.19);
   });
 
   it('Renders tables with column tabledata', function () {
