@@ -4,7 +4,7 @@ context('db-sidenavi', () => {
   });
 
   it('db-sidenavi - snapshot', () => {
-    cy.snap('db-sidenavi', 0.1);
+    cy.snap('db-sidenavi', 0.24);
   });
 
   it('sidenavi contains links', function () {

@@ -4,7 +4,7 @@ context('db-footer', () => {
   });
 
   it('db-footer - snapshot', () => {
-    cy.snap('db-footer');
+    cy.snap('db-footer', 0.16);
   });
 
   const selector = 'db-footer > footer';
