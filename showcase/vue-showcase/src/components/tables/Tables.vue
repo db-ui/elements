@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import {
-  DbTable,
-  DbPagination
-} from '@db-ui/v-elements-enterprise/dist/components';
+import { DbTable, DbPagination } from '@db-ui/v-elements/dist/components';
 
 import { columnExampleData } from '@/mockData';
 import { ref } from 'vue';

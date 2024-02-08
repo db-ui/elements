@@ -7,7 +7,7 @@ export default {
   }
 };
 
-export const React_CRA_build = () => {
+export const React_Vite_build = () => {
   return `<div class="iframe-container">
       <iframe src="react-showcase/index.html" height="100%" width="100%" />
     </div>`;

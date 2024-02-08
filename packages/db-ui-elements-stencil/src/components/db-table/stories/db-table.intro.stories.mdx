@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 import mockData, {fullColumnMockData, rowMockData, brokenMockData} from './mockData.ts'
 
 
@@ -418,3 +419,5 @@ const brokenMockData = JSON.stringify({
   tabledata={brokenMockData}>
 </db-table>
 </Canvas>
+
+<Markdown>{Readme}</Markdown>

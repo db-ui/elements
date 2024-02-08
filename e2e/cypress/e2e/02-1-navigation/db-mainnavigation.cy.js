@@ -1,8 +1,6 @@
 context('db-mainnavigation', () => {
   beforeEach(() => {
-    cy.visit(
-      '/iframe.html?id=02-navigation-main-navigation-intro--page&viewMode=story'
-    );
+    cy.gotoStory('02-navigation', 'main-navigation');
   });
 
   it('db-mainnavigation - snapshot', () => {

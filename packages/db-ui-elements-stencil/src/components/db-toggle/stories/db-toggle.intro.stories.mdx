@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="03-Action/Toggle/Intro" />
 
@@ -12,7 +13,7 @@ import Readme from './../readme.md';
 </Canvas>
 
 <Canvas>
-  <db-toggle name="unique-name">Toggle with a unique `name`-attribute</db-toggle>
+  <db-toggle Name="unique-name">Toggle with a unique `name`-attribute</db-toggle>
 </Canvas>
 
 <db-headline>The toggle component with text. </db-headline>
@@ -35,4 +36,4 @@ import Readme from './../readme.md';
   </db-toggle>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

@@ -1,6 +1,6 @@
 context('db-chip', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=04-data-display-chip-intro--page&viewMode=story');
+    cy.gotoStory('04-data-display', 'chip');
   });
 
   it('filter chips', function () {

@@ -1,8 +1,6 @@
 context('db-checkbox', () => {
   beforeEach(() => {
-    cy.visit(
-      '/iframe.html?id=05-data-input-checkbox-intro--page&viewMode=story'
-    );
+    cy.gotoStory('05-data-input', 'checkbox');
   });
   it('db-checkbox - snapshot', () => {
     cy.snap('db-checkbox', 0.18);

@@ -1,6 +1,6 @@
 context('welcome-page', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=00-intro-welcome--page&viewMode=story');
+    cy.gotoStory('00-intro', 'welcome', false);
   });
 
   const contain = (cardsIndex, index, item) => {

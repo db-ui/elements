@@ -1,12 +1,10 @@
 context('db-sidenavi', () => {
   beforeEach(() => {
-    cy.visit(
-      '/iframe.html?id=02-navigation-sidenavi-intro--page&viewMode=story'
-    );
+    cy.gotoStory('02-navigation', 'sidenavi');
   });
 
   it('db-sidenavi - snapshot', () => {
-    cy.snap('db-sidenavi', 0.1);
+    cy.snap('db-sidenavi', 0.24);
   });
 
   it('sidenavi contains links', function () {

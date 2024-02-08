@@ -1,6 +1,6 @@
 context('db-logo', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=04-data-display-logo-intro--page&viewMode=story');
+    cy.gotoStory('04-data-display', 'logo');
   });
 
   it('db-logo - snapshot', () => {

@@ -1,6 +1,6 @@
 context('db-progress', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=06-feedback-progress-intro--page&viewMode=story');
+    cy.gotoStory('06-feedback', 'progress');
   });
 
   it('db-progress - snapshot', () => {

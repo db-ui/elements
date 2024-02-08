@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 import { mockData, mockDataSub } from './mockData.ts';
 
 import { styled } from '@storybook/theming';
@@ -175,4 +176,4 @@ export type DbMainnavigationDataType = {
 
 </StyledCanvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

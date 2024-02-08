@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="02-Navigation/Pagination/Intro" />
 
@@ -117,4 +118,4 @@ framework of choice or via plain Javascript.
   <db-pagination currentpage="2" pages="3" count="3"></db-pagination>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

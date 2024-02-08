@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="04-Data-Display/Logo/Intro" />
 
@@ -13,4 +14,4 @@ import Readme from './../readme.md';
   <db-logo></db-logo>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

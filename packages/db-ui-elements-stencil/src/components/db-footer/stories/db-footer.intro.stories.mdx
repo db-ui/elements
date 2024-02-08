@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="02-Navigation/Footer/Intro" />
 
@@ -17,4 +18,4 @@ import Readme from './../readme.md';
   <db-footer>Custom Footer</db-footer>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

@@ -1,8 +1,6 @@
 context('db-language-switcher', () => {
   beforeEach(() => {
-    cy.visit(
-      '/iframe.html?id=07-utility-language-switcher-intro--page&viewMode=story'
-    );
+    cy.gotoStory('07-utility', 'language-switcher');
   });
 
   it('db-language-switcher - snapshot', () => {

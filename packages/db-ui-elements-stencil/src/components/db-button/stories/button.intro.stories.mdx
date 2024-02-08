@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="03-Action/Button/Intro" />
 
@@ -54,4 +55,4 @@ If you'd only like to display the icon without any text, you could set the attri
 </Canvas>
 
 
-<Readme />
+<Markdown>{Readme}</Markdown>

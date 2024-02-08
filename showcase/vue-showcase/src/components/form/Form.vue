@@ -7,7 +7,7 @@ import {
   DbSelect,
   DbTextarea,
   DbToggle
-} from '@db-ui/v-elements-enterprise/dist/components';
+} from '@db-ui/v-elements/dist/components';
 
 import { ref } from 'vue';
 
