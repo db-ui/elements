@@ -67,6 +67,21 @@ Only `<button>` and `<a>` HTML tags work as items content.
   <db-overflow-menu data={mockData()} />
 </Canvas>
 
+<db-headline variant="2">overflow-menu with individual icon</db-headline>
+
+If you'd like to define an [individual icon](https://db-ui.github.io/core/patterns/base-icons/index.html) for the button that toggles the `overflow-menu`, you could define it via the `icon`-attribute.
+
+<Canvas>
+  <db-overflow-menu icon="add">
+    <li>
+      <db-button title="Title text">Modify</db-button>
+    </li>
+    <li>
+      <db-button title="Title text">Delete</db-button>
+    </li>
+  </db-overflow-menu>
+</Canvas>
+
 
 The data should be an object passed in with JSON.stringify()
 

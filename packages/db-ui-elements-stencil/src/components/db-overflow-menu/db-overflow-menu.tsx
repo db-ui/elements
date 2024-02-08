@@ -22,6 +22,11 @@ export class DbOverflowMenu {
    */
   @Prop({ reflect: true }) summary = '';
 
+  /**
+   * Define an icon by it's identifier (like e.g. _download_, compare to [DB UI Icons](https://db-ui.github.io/core/patterns/base-icons/index.html)) to get displayed in front of the elements content.
+   */
+  @Prop({ reflect: true }) icon?: string;
+
   private compData: DbLinkType[];
 
   private hasItemsWrapper: boolean;
@@ -56,7 +61,9 @@ export class DbOverflowMenu {
         class="cmp-overflow-menu"
         data-horizontal-position={this.opposite && 'opposite'}
       >
-        <summary>{this.summary}</summary>
+        <summary>
+          {this.icon ? <db-icon icon={this.icon} /> : this.summary}
+        </summary>
         {this.compData && (
           <menu type="toolbar" innerHTML={getDefaultLinkData(this.compData)} />
         )}
