@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "storybook dev -c .storybook -p 6006 --ci",
-    "build": "storybook build -c .storybook -o ../out"
+    "build": "storybook build -c .storybook -o ../../out"
   },
   "devDependencies": {
     "@storybook/addon-actions": "7.6.3",
