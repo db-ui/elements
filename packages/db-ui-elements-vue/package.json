@@ -31,8 +31,8 @@
   ],
   "devDependencies": {
     "rimraf": "5.0.5",
-    "rollup": "4.9.6",
+    "rollup": "4.10.0",
     "rollup-plugin-node-resolve": "5.2.0",
-    "vue": "3.4.16"
+    "vue": "3.4.18"
   }
 }

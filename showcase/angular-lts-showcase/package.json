@@ -28,7 +28,7 @@
     "@types/jest": "28.1.8",
     "domhandler": "^5.0.3",
     "injection-js": "2.4.0",
-    "typescript": "5.1.6"
+    "typescript": "5.3.3"
   },
   "jest": {
     "preset": "jest-preset-angular",
