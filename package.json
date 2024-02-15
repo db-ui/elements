@@ -2,6 +2,7 @@
   "name": "@db-ui/elements-monorepo",
   "version": "0.0.0",
   "scripts": {
+    "prepare": "husky",
     "start": "concurrently  \"npm run build.watch.enterprise --workspace=@db-ui/elements\" \"npm run start:storybook\"",
     "start:storybook": "npm run start --workspace=@db-ui/elements-storybook",
     "watch:showcase:react": "concurrently  \"npm run build.watch.local --workspace=@db-ui/elements\" \"npm run watch --workspace=@db-ui/react-elements\"",
