@@ -7,14 +7,14 @@
     "build": "storybook build -c .storybook -o ../../out"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "7.6.15",
-    "@storybook/addon-controls": "7.6.15",
-    "@storybook/addon-docs": "7.6.15",
-    "@storybook/addon-essentials": "7.6.15",
-    "@storybook/addon-links": "7.6.15",
-    "@storybook/web-components": "^7.6.15",
-    "@storybook/web-components-vite": "^7.6.15",
-    "storybook": "^7.6.15"
+    "@storybook/addon-actions": "7.6.16",
+    "@storybook/addon-controls": "7.6.16",
+    "@storybook/addon-docs": "7.6.16",
+    "@storybook/addon-essentials": "7.6.16",
+    "@storybook/addon-links": "7.6.16",
+    "@storybook/web-components": "^7.6.16",
+    "@storybook/web-components-vite": "^7.6.16",
+    "storybook": "^7.6.16"
   },
   "repository": {
     "type": "git",
