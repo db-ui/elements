@@ -24,7 +24,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "16.2.10",
     "@angular/cli": "15.2.10",
-    "@angular/compiler-cli": "16.2.12",
+    "@angular/compiler-cli": "17.2.1",
     "@types/jest": "28.1.8",
     "domhandler": "^5.0.3",
     "injection-js": "2.4.0",
