@@ -33,9 +33,6 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: 'jest'
         update-types: ['version-update:semver-major']
-      # This is currenly relevant for the Angular LTS -1 showcase
-      - dependency-name: 'typescript'
-        update-types: ['version-update:semver-major']
       # Especially as we're using multiple major versions of Angular, we want to update the major version by ourselves
       - dependency-name: '@angular/core'
         update-types: ['version-update:semver-major']
