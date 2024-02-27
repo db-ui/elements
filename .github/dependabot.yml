@@ -24,6 +24,10 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/compiler-cli'
         update-types: ['version-update:semver-major']
+      - dependency-name: '@angular-devkit/build-angular'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/router'
+        update-types: ['version-update:semver-major']
       - dependency-name: 'jest-cli'
         update-types: ['version-update:semver-major']
       # Stencil only supports jest version 27 at the moment
