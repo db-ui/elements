@@ -70,9 +70,6 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@storybook/web-components'
         update-types: ['version-update:semver-major']
-      # We need this because of Angular 15
-      - dependency-name: 'typescript'
-        update-types: ['version-update:semver-minor']
     pull-request-branch-name:
       separator: '-'
     # https://github.com/dependabot/dependabot-core/issues/5226#issuecomment-1179434437
