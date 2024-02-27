@@ -142,21 +142,18 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular-devkit/build-angular'
         update-types: ['version-update:semver-major']
-      # This is currenly relevant for the Angular LTS -1 showcase
-      - dependency-name: 'typescript'
-        update-types: ['version-update:semver-major']
     pull-request-branch-name:
       separator: '-'
     groups:
       angular:
         patterns:
-          - "@angular*"
-          - "@angular-devkit*"
-          - "ng-packagr"
+          - '@angular*'
+          - '@angular-devkit*'
+          - 'ng-packagr'
         update-types:
-          - "minor"
-          - "patch"
-      
+          - 'minor'
+          - 'patch'
+
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-lts-minus-1-showcase'
     open-pull-requests-limit: 10
@@ -192,9 +189,9 @@ updates:
     groups:
       angular:
         patterns:
-          - "@angular*"
-          - "@angular-devkit*"
-          - "ng-packagr"
+          - '@angular*'
+          - '@angular-devkit*'
+          - 'ng-packagr'
         update-types:
-          - "minor"
-          - "patch"
+          - 'minor'
+          - 'patch'
