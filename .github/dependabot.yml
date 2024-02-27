@@ -127,6 +127,10 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/core'
         update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/compiler-cli'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/router'
+        update-types: ['version-update:semver-major']
       - dependency-name: '@angular/compiler'
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/common'
@@ -155,6 +159,10 @@ updates:
       - dependency-name: '@angular/core'
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/compiler'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/compiler-cli'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/router'
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/common'
         update-types: ['version-update:semver-major']
