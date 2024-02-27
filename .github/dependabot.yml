@@ -29,6 +29,7 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: 'jest'
         update-types: ['version-update:semver-major']
+      # This is currenly relevent for the Angular LTS -1 showcase
       - dependency-name: 'typescript'
         update-types: ['version-update:semver-major']
       # Especially as we're using multiple major versions of Angular, we want to update the major version by ourselves
@@ -81,11 +82,11 @@ updates:
           - '@babel*'
       react:
         patterns:
-          - "react"
-          - "react-dom"
+          - 'react'
+          - 'react-dom'
         update-types:
-          - "minor"
-          - "patch"
+          - 'minor'
+          - 'patch'
       typescript-eslint:
         patterns:
           - '@typescript-eslint*'
@@ -101,12 +102,12 @@ updates:
           - '@types/node'
       angular:
         patterns:
-          - "@angular*"
-          - "@angular-devkit*"
-          - "ng-packagr"
+          - '@angular*'
+          - '@angular-devkit*'
+          - 'ng-packagr'
         update-types:
-          - "minor"
-          - "patch"
+          - 'minor'
+          - 'patch'
 
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-lts-showcase'
@@ -131,6 +132,10 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/platform-browser-dynamic'
         update-types: ['version-update:semver-major']
+      # This is currenly relevent for the Angular LTS -1 showcase
+      - dependency-name: 'typescript'
+        update-types: ['version-update:semver-major']
+
     pull-request-branch-name:
       separator: '-'
   - package-ecosystem: 'npm'
