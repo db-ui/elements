@@ -22,6 +22,10 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/cli'
         update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/compiler-cli'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/router'
+        update-types: ['version-update:semver-major']
       - dependency-name: 'jest-cli'
         update-types: ['version-update:semver-major']
       # Stencil only supports jest version 27 at the moment
@@ -124,6 +128,10 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/core'
         update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/compiler-cli'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/router'
+        update-types: ['version-update:semver-major']
       - dependency-name: '@angular/compiler'
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/common'
@@ -132,12 +140,23 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/platform-browser-dynamic'
         update-types: ['version-update:semver-major']
+      - dependency-name: '@angular-devkit/build-angular'
+        update-types: ['version-update:semver-major']
       # This is currenly relevant for the Angular LTS -1 showcase
       - dependency-name: 'typescript'
         update-types: ['version-update:semver-major']
-
     pull-request-branch-name:
       separator: '-'
+    groups:
+      angular:
+        patterns:
+          - "@angular*"
+          - "@angular-devkit*"
+          - "ng-packagr"
+        update-types:
+          - "minor"
+          - "patch"
+      
   - package-ecosystem: 'npm'
     directory: '/showcase/angular-lts-minus-1-showcase'
     open-pull-requests-limit: 10
@@ -155,6 +174,10 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/compiler'
         update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/compiler-cli'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular/router'
+        update-types: ['version-update:semver-major']
       - dependency-name: '@angular/common'
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/forms'
@@ -166,3 +189,12 @@ updates:
         update-types: ['version-update:semver-minor']
     pull-request-branch-name:
       separator: '-'
+    groups:
+      angular:
+        patterns:
+          - "@angular*"
+          - "@angular-devkit*"
+          - "ng-packagr"
+        update-types:
+          - "minor"
+          - "patch"
