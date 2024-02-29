@@ -22,13 +22,13 @@
     "zone.js": "0.13.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "16.2.10",
-    "@angular/cli": "15.2.10",
+    "@angular-devkit/build-angular": "16.2.12",
+    "@angular/cli": "16.2.12",
     "@angular/compiler-cli": "16.2.12",
     "@types/jest": "28.1.8",
     "domhandler": "^5.0.3",
     "injection-js": "2.4.0",
-    "typescript": "5.3.3"
+    "typescript": "5.1.6"
   },
   "jest": {
     "preset": "jest-preset-angular",
