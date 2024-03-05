@@ -10,7 +10,7 @@
     "react-dom": "18.2.0",
     "react-router-dom": "6.22.2",
     "@vitejs/plugin-react": "^4.2.1",
-    "vite": "^5.1.4"
+    "vite": "^5.1.5"
   },
   "scripts": {
     "start": "vite",
