@@ -15,4 +15,5 @@ We're getting these icons by the [DB Design System colleagues](https://dbsw.shar
 ## Icon fonts
 
 - Use the source files out of the folder `assets/icons/functional/fonts/sources` via <https://icomoon.io/app/#/select> to generate the font files.
-- You'll need [`wawoff2`](https://www.npmjs.com/package/wawoff2) to generated `woff2` files out of the included `ttf` files.
+- You'll need [`wawoff2`](https://www.npmjs.com/package/wawoff2) to generated `woff2` files out of the included `ttf` files; e.g. install it globally and run the following command afterwards within the icomoon folder:
+  `woff2_compress.js icomoon.ttf icons-20-outline-transportation.woff2`
