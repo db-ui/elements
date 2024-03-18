@@ -178,6 +178,8 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/platform-browser-dynamic'
         update-types: ['version-update:semver-major']
+      - dependency-name: '@angular-devkit/build-angular'
+        update-types: ['version-update:semver-major']
       # Angular 15 only works with zone.js 0.13.x
       - dependency-name: 'zone.js'
         update-types: ['version-update:semver-minor']
