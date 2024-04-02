@@ -5,7 +5,7 @@
   "homepage": ".",
   "type": "module",
   "dependencies": {
-    "ace-builds": "1.32.8",
+    "ace-builds": "1.32.9",
     "dompurify": "3.0.11",
     "grapesjs": "0.21.9",
     "grapesjs-preset-webpage": "1.0.3",
