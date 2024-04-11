@@ -169,7 +169,7 @@ export class DbTextarea {
           <output
             htmlFor={this.input_id}
             id={`${this.input_id}-result`}
-            anchor={this.input_id}
+            // anchor={this.input_id}
           >
             {`${this.valueSize} / ${this.maxlength}`}
           </output>
