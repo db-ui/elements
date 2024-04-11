@@ -1,4 +1,4 @@
-import { Component, Event, h, Host, Prop } from '@stencil/core';
+import { Component, Event, h, Host, Prop, State } from '@stencil/core';
 import { uuid } from '../../utils/utils';
 
 @Component({
@@ -7,6 +7,8 @@ import { uuid } from '../../utils/utils';
   scoped: true
 })
 export class DbInput {
+  @State() valueSize = 0;
+
   /**
    * The ariainvalid attribute is used to indicate that the value entered into an input field does not conform to the format expected by the application.
    */
@@ -178,6 +180,11 @@ export class DbInput {
           aria-labelledby={this.input_id + '-label'}
           data-variant={this.variant}
           onChange={(event) => this.handleChange(event)}
+          onInput={(event) => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            this.valueSize = event.target.value.length;
+          }}
         />
 
         <label
@@ -189,6 +196,11 @@ export class DbInput {
         >
           {this.label}
         </label>
+        {this.maxlength && (
+          <output htmlFor={this.input_id} id={`${this.input_id}-result`}>
+            {`${this.valueSize} / ${this.maxlength}`}
+          </output>
+        )}
         {this.description && (
           <p id={this.input_id + '-hint'} class="description">
             {this.description}
