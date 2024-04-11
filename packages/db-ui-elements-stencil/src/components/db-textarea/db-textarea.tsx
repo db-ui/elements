@@ -166,7 +166,11 @@ export class DbTextarea {
           <slot />
         </textarea>
         {this.maxlength && (
-          <output htmlFor={this.input_id} id={`${this.input_id}-result`}>
+          <output
+            htmlFor={this.input_id}
+            id={`${this.input_id}-result`}
+            anchor={this.input_id}
+          >
             {`${this.valueSize} / ${this.maxlength}`}
           </output>
         )}

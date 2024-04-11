@@ -5,7 +5,3 @@
   // Overwriting the referenced SVG icon as this is going to get inlined and the path would be relative to the pages URL instead of the CSS, which would break
   --db-ic-search-24: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAV9JREFUSEu1le0xBEEURc9GgAjIABkQATIgAyEIQQaIABkQARlYESAC6qjXVV1T3f22dme7an5Nzzv3vq9ZsOWz2HJ8RoBL4Aw4AXaBb+AFeAIeVhXWAhwAj8DRIMg7cAEsM9AUYPC3UPwDXAMG89HFOXAD7Iej03jX5UwBBjoEXiOYaZkeQfeRPu8fj1zUAHN+B6hcJ63gJZYQg+vkKoBNTg2weBZ1+EEVpQh6DrcpQMU7YVl12dHFV1zqdmP94je73CCm39SA4mAvyX/h2MZ23GfULE3RujWw4xzGFFCK5vDYelkXfcRsrNxFKihz4EpwUntz4KSreqjegK1JFmI36cSptQ0FmXOH8DaUF0FOc9dtbxdZD4P1jsptU+8oqAvJtqm7x+Hz2C26ck34CDCVQ8im/4MUsilAZ0PIHIAhZC7AFGJtLPzwl5ktu9b7ki7b9n+653SQrop1FKff/AH2BVIZMfA02AAAAABJRU5ErkJggg==');
 }
-
-output {
-  float: right;
-}
