@@ -197,11 +197,7 @@ export class DbInput {
           {this.label}
         </label>
         {this.maxlength && (
-          <output
-            htmlFor={this.input_id}
-            id={`${this.input_id}-result`}
-            // anchor={this.input_id}
-          >
+          <output htmlFor={this.input_id} id={`${this.input_id}-result`}>
             {`${this.valueSize} / ${this.maxlength}`}
           </output>
         )}

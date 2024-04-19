@@ -1,2 +1,7 @@
 @import '../general';
 @import 'textarea';
+
+.elm-textarea + output:not(:has(+ .description)) {
+  float: right;
+  position: initial;
+}
