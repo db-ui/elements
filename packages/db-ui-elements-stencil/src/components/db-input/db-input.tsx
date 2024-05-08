@@ -181,8 +181,6 @@ export class DbInput {
           data-variant={this.variant}
           onChange={(event) => this.handleChange(event)}
           onInput={(event) => {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
             this.valueSize = event.target.value.length;
           }}
         />
