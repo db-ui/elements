@@ -181,7 +181,7 @@ export class DbInput {
           data-variant={this.variant}
           onChange={(event) => this.handleChange(event)}
           onInput={(event) => {
-            this.valueSize = event.target.value.length;
+            this.valueSize = (event.target as HTMLInputElement).value.length;
           }}
         />
 
