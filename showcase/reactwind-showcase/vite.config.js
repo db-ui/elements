@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(() => {
   return {
-    base: `/reactwind-showcase/`,
+    base: '',
     build: {
       outDir: 'dist/reactwind-showcase'
     },
