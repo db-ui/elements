@@ -15,7 +15,7 @@
     "@vitejs/plugin-vue": "5.0.4",
     "@vue/tsconfig": "0.5.1",
     "vite": "^5.1.7",
-    "vue-tsc": "1.8.27"
+    "vue-tsc": "2.0.19"
   },
   "resolutions": {
     "esbuild": "0.15.18"
