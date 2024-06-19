@@ -60,18 +60,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-lts-showcase:build"
+            "buildTarget": "angular-lts-showcase:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-lts-showcase:build:production"
+              "buildTarget": "angular-lts-showcase:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-lts-showcase:build"
+            "buildTarget": "angular-lts-showcase:build"
           }
         },
         "lint": {
