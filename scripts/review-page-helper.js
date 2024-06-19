@@ -12,7 +12,7 @@ const getFrom = (framework) => {
     return /\/vue-showcase/g;
   }
   if (framework === 'angular-lts-minus-1') {
-    return /\/angular-lts-minus-1-showcase/g;
+    return /\/angular-lts-showcase/g;
   }
   if (framework === 'angular-lts') {
     return /\/angular-active-showcase/g;
@@ -44,11 +44,11 @@ const run = async () => {
     if (framework === 'angular') {
       await replace({
         files: [
-          './public/angular-lts-minus-1-showcase/index.html',
-          './public/angular-lts-minus-1-showcase/styles.css'
+          './public/angular-lts-showcase/index.html',
+          './public/angular-lts-showcase/styles.css'
         ],
         from: /url\(/g,
-        to: 'url(/angular-lts-minus-1-showcase/'
+        to: 'url(/angular-lts-showcase/'
       });
       await replace({
         files: [
