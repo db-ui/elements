@@ -9,6 +9,6 @@ export default {
 
 export const Angular_NG_lts_build = () => {
   return `<div class="iframe-container">
-      <iframe src="angular-lts-showcase/index.html" height="100vh" width="100%" />
+      <iframe src="angular-active-showcase/index.html" height="100vh" width="100%" />
     </div>`;
 };

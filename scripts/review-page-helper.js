@@ -15,7 +15,7 @@ const getFrom = (framework) => {
     return /\/angular-lts-minus-1-showcase/g;
   }
   if (framework === 'angular-lts') {
-    return /\/angular-lts-showcase/g;
+    return /\/angular-active-showcase/g;
   }
   if (framework === 'angular') {
     return /\/angular-showcase/g;
@@ -52,11 +52,11 @@ const run = async () => {
       });
       await replace({
         files: [
-          './public/angular-lts-showcase/index.html',
-          './public/angular-lts-showcase/styles.css'
+          './public/angular-active-showcase/index.html',
+          './public/angular-active-showcase/styles.css'
         ],
         from: /url\(/g,
-        to: 'url(/angular-lts-showcase/'
+        to: 'url(/angular-active-showcase/'
       });
     }
     await replace({

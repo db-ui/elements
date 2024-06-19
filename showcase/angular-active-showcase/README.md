@@ -5,7 +5,7 @@
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5. We're also [hosting the build on GitHub pages](https://db-ui.github.io/elements/angular-lts-showcase/#/).
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5. We're also [hosting the build on GitHub pages](https://db-ui.github.io/elements/angular-active-showcase/#/).
 
 ## Development server
 

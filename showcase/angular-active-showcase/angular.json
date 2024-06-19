@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-lts-showcase": {
+    "angular-active-showcase": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-lts-showcase",
+            "outputPath": "dist/angular-active-showcase",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -60,18 +60,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "angular-lts-showcase:build"
+            "buildTarget": "angular-active-showcase:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "angular-lts-showcase:build:production"
+              "buildTarget": "angular-active-showcase:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular-lts-showcase:build"
+            "buildTarget": "angular-active-showcase:build"
           }
         },
         "lint": {
@@ -89,11 +89,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-lts-showcase:serve"
+            "devServerTarget": "angular-active-showcase:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-lts-showcase:serve:production"
+              "devServerTarget": "angular-active-showcase:serve:production"
             }
           }
         }
