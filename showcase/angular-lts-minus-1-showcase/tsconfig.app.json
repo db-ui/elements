@@ -9,6 +9,6 @@
       "@db-ui/*": ["../../packages/db-ui-elements-angular/dist/lib/*"]
     }
   },
-  "files": ["src/main.ts", "src/polyfills.ts"],
+  "files": ["src/main.ts"],
   "include": ["src/**/*.d.ts"]
 }
