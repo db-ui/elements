@@ -43,7 +43,7 @@
     "@angular/platform-browser-dynamic": "^17.3.11",
     "@rollup/plugin-json": "6.1.0",
     "@rollup/plugin-node-resolve": "15.2.3",
-    "@rollup/plugin-commonjs": "25.0.7",
+    "@rollup/plugin-commonjs": "26.0.1",
     "bs-logger": "0.2.6",
     "injection-js": "2.4.0",
     "ng-packagr": "17.3.0",
