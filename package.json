@@ -34,7 +34,7 @@
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "concurrently": "8.2.2",
-    "conventional-changelog-cli": "^4.1.0",
+    "conventional-changelog-cli": "^5.0.0",
     "cpr": "3.0.1",
     "dotenv": "^16.4.5",
     "eslint": "8.57.0",
