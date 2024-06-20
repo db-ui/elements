@@ -1,8 +1,6 @@
 context('db-metanavigation', () => {
   beforeEach(() => {
-    cy.visit(
-      '/iframe.html?id=02-navigation-meta-navigation-intro--page&viewMode=story'
-    );
+    cy.gotoStory('02-navigation', 'meta-navigation');
   });
 
   it('db-metanavigation - snapshot', () => {

@@ -1,6 +1,6 @@
 context('welcome-page', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=00-intro-welcome--page&viewMode=story');
+    cy.gotoStory('00-intro', 'welcome', false);
   });
 
   const contain = (cardsIndex, index, item) => {
@@ -13,19 +13,19 @@ context('welcome-page', () => {
   };
 
   it('Check for Card: Getting Started', function () {
-    contain(0, 0, 'getting-started--page');
+    contain(0, 0, 'getting-started--docs');
   });
   it('Check for Card: Angular Framework', function () {
-    contain(1, 0, 'frameworks-angular--page');
+    contain(1, 0, 'frameworks-angular--docs');
   });
   it('Check for Card: Javascript Framework', function () {
-    contain(1, 1, 'frameworks-javascript--page');
+    contain(1, 1, 'frameworks-javascript--docs');
   });
   it('Check for Card: React Framework', function () {
-    contain(1, 2, 'frameworks-react--page');
+    contain(1, 2, 'frameworks-react--docs');
   });
   it('Check for Card: Vue Framework', function () {
-    contain(1, 3, 'frameworks-vue--page');
+    contain(1, 3, 'frameworks-vue--docs');
   });
   it('Check for Card: Angular Showcase', function () {
     contain(2, 0, 'showcases--angular-ng-build');

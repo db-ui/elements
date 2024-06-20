@@ -1,6 +1,6 @@
 context('db-tag', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=04-data-display-tag-intro--page&viewMode=story');
+    cy.gotoStory('04-data-display', 'tag');
   });
 
   it('db-tag - snapshot', () => {
@@ -9,6 +9,7 @@ context('db-tag', () => {
   it('tags should have the right colors', function () {
     const mostTags = [1, 2, 3, 4, 5];
     const tagsColors = [
+      'light',
       'informative',
       'success',
       'poi-essen-trinken',

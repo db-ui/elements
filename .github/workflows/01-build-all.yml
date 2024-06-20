@@ -21,7 +21,7 @@ jobs:
           npm run build:storybook
 
       - name: ⬆ Upload build
-        uses: ./.github/actions/upload-tar-artifact
+        uses: actions/upload-artifact@v4
         with:
           name: build
           path: out

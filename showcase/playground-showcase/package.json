@@ -3,22 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
+  "type": "module",
   "dependencies": {
-    "@db-ui/react-elements": "file:./../../packages/db-ui-elements-react/",
-    "ace-builds": "1.23.4",
-    "dompurify": "3.0.8",
-    "grapesjs": "0.20.4",
+    "ace-builds": "1.32.9",
+    "dompurify": "3.1.5",
+    "grapesjs": "0.21.9",
     "grapesjs-preset-webpage": "1.0.3",
-    "react": "18.2.0",
+    "react": "18.3.1",
     "react-ace": "10.1.0",
-    "react-dom": "18.2.0",
-    "react-router-dom": "6.21.2"
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.23.1"
   },
   "devDependencies": {
     "@types/dompurify": "^3.0.5",
+    "@vitejs/plugin-react": "^4.2.1",
     "cpr": "3.0.1",
-    "react-scripts": "5.0.1",
-    "sass": "1.69.7"
+    "sass": "1.74.1",
+    "vite": "^5.3.1"
   },
   "scripts": {
     "copy:ui-core": "cpr ../../node_modules/@db-ui/core/dist/fonts ./public/fonts -o && cpr ../../node_modules/@db-ui/core/dist/images ./public/images -o && cpr ../../node_modules/@db-ui/core/dist/js ./public/js -o",
@@ -26,10 +27,9 @@
     "copy:css": "cpr ../../node_modules/@db-ui/core/dist/css/enterprise/db-ui-core.css ./public/enterprise/db-ui-core.css -o && cpr ../../node_modules/@db-ui/core/dist/css/enterprise/db-ui-core.vars.css ./public/enterprise/db-ui-core.vars.css -o && cpr ./src/grapesjs/css/grapes.css ./public/grapes.css -o",
     "prestart": "npm run css:db-page && npm run copy:css && npm run copy:ui-core",
     "prebuild": "npm run prestart",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "eslintConfig": {
     "extends": [

@@ -32,6 +32,7 @@ export class AppModule {}
 
 | WARNING: Some components require fonts and/or icons to work properly |
 | --- |
+
 You can import fonts and icons with the provided css file from DB UI Core:
 
 ``@import "~@db-ui/core/dist/css/enterprise/db-ui-core.vars.css";``
@@ -127,8 +128,8 @@ There are 3 ways to use Events in Angular:
 
 ### Example
 
-[Angular v.15 Showcase GitHub](https://github.com/db-ui/elements/tree/main/showcase/angular-lts-showcase)
-[Angular v.15 Showcase App](https://db-ui.github.io/elements/angular-lts-showcase/)
+[Angular v.16 Showcase GitHub](https://github.com/db-ui/elements/tree/main/showcase/angular-lts-showcase)
+[Angular v.16 Showcase App](https://db-ui.github.io/elements/angular-lts-showcase/)
 
-[Angular v.14 Showcase GitHub](https://github.com/db-ui/elements/tree/main/showcase/angular-lts-minus-1-showcase)
-[Angular v.14 Showcase App](https://db-ui.github.io/elements/angular-lts-minus-1-showcase/)
+[Angular v.15 Showcase GitHub](https://github.com/db-ui/elements/tree/main/showcase/angular-lts-minus-1-showcase)
+[Angular v.15 Showcase App](https://db-ui.github.io/elements/angular-lts-minus-1-showcase/)

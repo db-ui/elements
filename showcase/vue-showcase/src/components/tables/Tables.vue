@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import {
-  DbTable,
-  DbPagination
-} from '@db-ui/v-elements-enterprise/dist/components';
+import { DbTable, DbPagination } from '@db-ui/v-elements/dist/components';
 
 import { columnExampleData } from '@/mockData';
 import { ref } from 'vue';
 
-const pagination = ref('2');
+const pagination = ref(2);
 const columnExampleDataString = JSON.stringify(columnExampleData);
 </script>
 

@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="02-Navigation/Brand/Intro" />
 
@@ -46,4 +47,4 @@ The `<db-brand></db-brand>` element represents the Deutsche Bahn logo inside the
   </db-brand>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

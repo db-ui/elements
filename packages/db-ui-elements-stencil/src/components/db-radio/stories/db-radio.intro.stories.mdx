@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="05-Data-Input/Radio/Intro" />
 
@@ -7,11 +8,11 @@ import Readme from './../readme.md';
 
 The `<db-radio></db-radio>` represents a control that, when used in conjunction with other input elements, forms a radio button group in which only one control can have its checkedness state set to true. If the element's checkedness state is true, the control represents the selected control in the group, and if it is false, it indicates a control in the group that is not selected.
 
-Most of attributes are used in the same way as with a native radio. You can try out on <a href="/story/db-radio--live-demo">Radio Live Demo</a> Page.
+Most attributes are used in the same way as with a native radio. You can try out on <a href="/story/db-radio--live-demo">Radio Live Demo</a> Page.
 
 <Canvas>
-  <db-radio label="Radio-01" name="radio-name" value="radio-01"></db-radio>
-  <db-radio label="Radio-02" name="radio-name" value="radio-02"></db-radio>
+  <db-radio label="Radio-01" value="radio-01"></db-radio>
+  <db-radio label="Radio-02" value="radio-02"></db-radio>
 </Canvas>
 
 <db-headline variant="2">disabled</db-headline>
@@ -19,7 +20,18 @@ Most of attributes are used in the same way as with a native radio. You can try 
 Make radios look inactive by adding the disabled boolean attribute to any &lt;db-radio&gt; element.
 
 <Canvas>
-  <db-radio label="Radio" name="radio-name" disabled></db-radio>
+  <db-radio label="Radio" disabled></db-radio>
 </Canvas>
 
-<Readme />
+<db-headline variant="2">visually hide the label</db-headline>
+
+> A label for a form control helps everyone better understand its purpose. In some cases, the purpose may be clear enough from the context when the content is rendered visually. The label can be hidden visually, though it still needs to be provided within the code to support other forms of presentation and interaction, such as for screen reader and speech input users.
+> <a href="https://www.w3.org/WAI/tutorials/forms/labels/#hiding-label-text">source</a>
+
+You could set the attribute `label-hidden="true"` for the rare case that you would want to visually hide the textual label for a radio element.
+
+<Canvas>
+  <db-radio label="Radio-01" value="radio-01" label-hidden="true"></db-radio>
+</Canvas>
+
+<Markdown>{Readme}</Markdown>

@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="04-Data-Display/Tag/Intro" />
 
@@ -11,6 +12,7 @@ The default `<db-tag></db-tag>` without any values will render a black tag you c
 
 <Canvas>
   <db-tag>default</db-tag>
+  <db-tag variant="light">light</db-tag>
   <db-tag variant="informative">informative</db-tag>
   <db-tag variant="success">success</db-tag>
   <db-tag variant="poi-essen-trinken">poi-essen-trinken</db-tag>
@@ -35,4 +37,4 @@ The default `<db-tag></db-tag>` without any values will render a black tag you c
   </db-tag>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

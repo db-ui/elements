@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="04-Data-Display/Accordion/Intro" />
 
@@ -44,4 +45,4 @@ import Readme from './../readme.md';
   </db-accordion>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

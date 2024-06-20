@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="02-Navigation/Link/Intro" />
 
@@ -48,4 +49,4 @@ The target attribute specifies the browsing context and gives different visual e
   </db-link>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

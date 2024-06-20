@@ -1,0 +1,28 @@
+{
+  "name": "@db-ui/elements-storybook",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "storybook dev -c .storybook -p 6006 --ci",
+    "build": "storybook build -c .storybook -o ../../out"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "7.6.17",
+    "@storybook/addon-controls": "7.6.17",
+    "@storybook/addon-docs": "7.6.17",
+    "@storybook/addon-essentials": "7.6.17",
+    "@storybook/addon-links": "7.6.17",
+    "@storybook/web-components": "^7.6.17",
+    "@storybook/web-components-vite": "^7.6.17",
+    "storybook": "^7.6.17"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/db-ui/elements.git"
+  },
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "homepage": "https://db-ui.github.io/elements/"
+}

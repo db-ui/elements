@@ -1,6 +1,6 @@
 context('db-cards', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=01-layout-cards-intro--page&viewMode=story');
+    cy.gotoStory('01-layout', 'cards');
   });
 
   it('db-cards - snapshot', () => {

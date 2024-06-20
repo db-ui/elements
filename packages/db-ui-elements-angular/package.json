@@ -18,8 +18,7 @@
     "pretest": "npm run stencil:workaround",
     "prebuild": "npm run stencil:workaround",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "jest"
+    "build": "ng build"
   },
   "module": "dist/fesm5.js",
   "main": "dist/fesm5.js",
@@ -45,29 +44,9 @@
     "@rollup/plugin-json": "6.1.0",
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-commonjs": "25.0.7",
-    "@types/jest": "29.5.11",
-    "@types/node": "20.11.4",
     "bs-logger": "0.2.6",
-    "dependency-graph": "1.0.0",
     "injection-js": "2.4.0",
-    "is-reference": "3.0.2",
-    "jest": "29.7.0",
-    "jest-preset-angular": "14.0.0",
-    "lodash.memoize": "4.1.2",
     "ng-packagr": "15.2.2",
-    "zone.js": "~0.13.3"
-  },
-  "jest": {
-    "preset": "jest-preset-angular",
-    "setupFilesAfterEnv": [
-      "<rootDir>/projects/lib/src/setupJest.ts"
-    ],
-    "testPathIgnorePatterns": [
-      "node_modules",
-      "/dist"
-    ],
-    "moduleDirectories": [
-      "node_modules"
-    ]
+    "zone.js": "~0.13.0"
   }
 }

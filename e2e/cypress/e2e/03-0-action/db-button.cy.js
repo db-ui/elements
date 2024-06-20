@@ -1,6 +1,6 @@
 context('db-button', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=03-action-button-intro--page&viewMode=story');
+    cy.gotoStory('03-action', 'button');
   });
 
   const selector = 'db-button > button';

@@ -1,8 +1,6 @@
 context('db-accordion', () => {
   beforeEach(() => {
-    cy.visit(
-      '/iframe.html?id=04-data-display-accordion-intro--page&viewMode=story'
-    );
+    cy.gotoStory('04-data-display', 'accordion');
   });
   it('db-accordion - snapshot', () => {
     cy.snap('db-accordion');

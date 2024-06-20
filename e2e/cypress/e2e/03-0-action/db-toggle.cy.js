@@ -1,6 +1,6 @@
 context('db-toggle', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=03-action-toggle-intro--page&viewMode=story');
+    cy.gotoStory('03-action', 'toggle');
   });
 
   it('db-toggle - snapshot', () => {

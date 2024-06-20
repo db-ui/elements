@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="06-Feedback/Progress/Intro" />
 
@@ -31,4 +32,4 @@ import Readme from './../readme.md';
   <db-progress value="60" max="100" percentagesign=" ❤️"></db-progress>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

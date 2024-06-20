@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 import { mockDataWebsites } from './../../db-link/stories/mockData.ts';
 
@@ -52,4 +53,4 @@ export type DbLinkType = {
 };
 ```
 
-<Readme />
+<Markdown>{Readme}</Markdown>

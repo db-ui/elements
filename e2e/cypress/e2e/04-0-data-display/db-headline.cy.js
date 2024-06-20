@@ -1,8 +1,6 @@
 context('db-headline', () => {
   beforeEach(() => {
-    cy.visit(
-      '/iframe.html?id=04-data-display-headline-intro--page&viewMode=story'
-    );
+    cy.gotoStory('04-data-display', 'headline');
   });
   it('db-headline - snapshot', () => {
     cy.snap('db-headline');

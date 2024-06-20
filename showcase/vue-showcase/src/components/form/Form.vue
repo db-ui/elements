@@ -7,7 +7,7 @@ import {
   DbSelect,
   DbTextarea,
   DbToggle
-} from '@db-ui/v-elements-enterprise/dist/components';
+} from '@db-ui/v-elements/dist/components';
 
 import { ref } from 'vue';
 
@@ -15,7 +15,7 @@ const input = ref('');
 const checkbox = ref(false);
 const textarea = ref('');
 const select = ref('');
-const radio = ref(false);
+const radio = ref('');
 const toggle = ref(false);
 
 const logAll = () => {

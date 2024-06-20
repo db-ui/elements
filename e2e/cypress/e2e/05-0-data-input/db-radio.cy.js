@@ -1,6 +1,6 @@
 context('db-radio', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=05-data-input-radio-intro--page&viewMode=story');
+    cy.gotoStory('05-data-input', 'radio');
   });
 
   it('db-radio - snapshot', () => {

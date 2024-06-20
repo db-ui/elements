@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="99-Development/Github Version Switcher" />
 
@@ -14,4 +15,4 @@ This component is only for the github pages to switch between versions/branches.
   ></github-version-switcher>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

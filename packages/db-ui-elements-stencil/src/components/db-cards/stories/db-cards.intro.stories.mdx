@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 <Meta title="01-Layout/Cards/Intro" />
 
@@ -34,4 +35,4 @@ The `<db-cards></db-cards>` element represents a grid layout for cards.
   </db-cards>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

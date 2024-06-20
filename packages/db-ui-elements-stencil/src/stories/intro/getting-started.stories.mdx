@@ -1,21 +1,21 @@
-import { Meta } from '@storybook/addon-docs';
-import Start from '../../../../../doc/howto-start.md';
-import License from '../../../../../doc/license.md';
-import Update from '../../../../../doc/howto-update.md';
+import { Meta, Markdown } from '@storybook/addon-docs';
+import Start from '../../../../../doc/howto-start.md?raw';
+import License from '../../../../../doc/license.md?raw';
+import Update from '../../../../../doc/howto-update.md?raw';
 
 <Meta title="00-Intro/Getting Started" />
 
-<Start />
+<Markdown>{Start}</Markdown>
 
 ### 3. Integrate in your app
 
 There are some different ways to import required files for each framework:
 
-[<db-button variant="secondary-outline">Angular</db-button>](/story/00-intro-frameworks-angular--page)
-[<db-button variant="secondary-outline">JavaScript</db-button>](/story/00-intro-frameworks-javascript--page)
-[<db-button variant="secondary-outline">React</db-button>](/story/00-intro-frameworks-react--page)
-[<db-button variant="secondary-outline">Vue</db-button>](/story/00-intro-frameworks-vue--page)
+[<db-button variant="secondary-outline">Angular</db-button>](/story/00-intro-frameworks-angular--docs)
+[<db-button variant="secondary-outline">JavaScript</db-button>](/story/00-intro-frameworks-javascript--docs)
+[<db-button variant="secondary-outline">React</db-button>](/story/00-intro-frameworks-react--docs)
+[<db-button variant="secondary-outline">Vue</db-button>](/story/00-intro-frameworks-vue--docs)
 
-<Update />
+<Markdown>{Update}</Markdown>
 
-<License />
+<Markdown>{License}</Markdown>

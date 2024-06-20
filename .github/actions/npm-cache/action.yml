@@ -20,7 +20,7 @@ runs:
     - name: Setup node equally to our local development version
       # pick the Node version to use and install it
       # https://github.com/actions/setup-node
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 20
 
@@ -30,7 +30,7 @@ runs:
         node --version
         npm --version
 
-    - uses: actions/cache@v3
+    - uses: actions/cache@v4
       id: 'cache'
       with:
         path: ${{ inputs.nodeModulesPath }}

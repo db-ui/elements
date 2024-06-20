@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: ⬇ Download build
-        uses: ./.github/actions/download-tar-artifact
+        uses: actions/download-artifact@v4
         with:
           name: build
           path: out
@@ -52,25 +52,16 @@ jobs:
           spec: cypress/e2e/${{ matrix.containers }}/*.js
           ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
 
-      - name: 🛗 Upload Artifacts
-        uses: actions/upload-artifact@v3
-        # after the test run completes
-        # store videos and any screenshots
-        # NOTE: screenshots will be generated only if an E2E test failed
-        # thus we store screenshots only on failures
+      - name: 🖼 Upload Screenshots
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots
-          path: e2e/cypress/screenshots
-      - uses: actions/upload-artifact@v3
-        # Test run video was always captured, so this action uses "always()" condition
+          name: cypress-screenshots-${{ matrix.containers }}
+          path: e2e/cypress/snapshots/actual
+
+      - name: 📹 Upload Videos
+        uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: cypress-videos
+          name: cypress-videos-${{ matrix.containers }}
           path: e2e/cypress/videos
-
-      - name: 💀 Killing me softly
-        uses: ./.github/actions/cancel-workflow
-        if: failure()
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}

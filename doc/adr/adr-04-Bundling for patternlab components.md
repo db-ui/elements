@@ -1,9 +1,9 @@
 # ADR-04 - Bundling für Pattern Lab Komponenten
 
-|                |            |     |
-| -------------- | ---------- | --- |
-| **Datum**      | 2020-11-11 |
-| **Status**     | Entschieden      |
+|                |                                                        |
+| -------------- | ------------------------------------------------------ |
+| **Datum**      | 2020-11-11                                             |
+| **Status**     | Entschieden                                            |
 | **Beteiligte** | Waldemar Schäfer, Maximilian Franzke, Robert Lukaschek |
 
 ## Entscheidung und Begründung

@@ -1,5 +1,6 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import Readme from './../readme.md';
+import { Meta, Canvas, Markdown } from '@storybook/addon-docs';
+
+import Readme from './../readme.md?raw';
 
 
 <Meta title="06-Feedback/Notification/Intro" />
@@ -178,4 +179,4 @@ Hovering
   </db-notifications>
 </Canvas>
 
-<Readme />
+<Markdown>{Readme}</Markdown>

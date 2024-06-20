@@ -1,6 +1,6 @@
 context('db-input', () => {
   beforeEach(() => {
-    cy.visit('/iframe.html?id=05-data-input-input-intro--page&viewMode=story');
+    cy.gotoStory('05-data-input', 'input');
   });
 
   it('db-input - snapshot', () => {

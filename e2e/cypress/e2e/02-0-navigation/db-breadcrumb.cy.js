@@ -1,8 +1,6 @@
 context('db-breadcrumb', () => {
   beforeEach(() => {
-    cy.visit(
-      '/iframe.html?id=02-navigation-breadcrumb-intro--page&viewMode=story'
-    );
+    cy.gotoStory('02-navigation', 'breadcrumb');
   });
 
   it('db-breadcrumb - snapshot', () => {
