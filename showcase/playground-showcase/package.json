@@ -7,7 +7,7 @@
   "dependencies": {
     "ace-builds": "1.32.9",
     "dompurify": "3.1.5",
-    "grapesjs": "0.21.9",
+    "grapesjs": "0.21.10",
     "grapesjs-preset-webpage": "1.0.3",
     "react": "18.3.1",
     "react-ace": "10.1.0",
