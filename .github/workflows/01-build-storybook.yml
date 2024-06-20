@@ -27,17 +27,17 @@ jobs:
           name: stencil-default-angular
           path: packages/db-ui-elements-stencil
 
-      - name: ⬇ Download Showcase Angular LTS -1 dist folder
+      - name: ⬇ Download Showcase Angular active dist folder
         uses: actions/download-artifact@v4
         with:
-          name: showcase-angular-lts-minus-1
-          path: showcase/angular-lts-showcase/dist
+          name: showcase-angular-active
+          path: showcase/angular-active-showcase/dist
 
       - name: ⬇ Download Showcase Angular LTS dist folder
         uses: actions/download-artifact@v4
         with:
           name: showcase-angular-lts
-          path: showcase/angular-active-showcase/dist
+          path: showcase/angular-lts-showcase/dist
 
       - name: ⬇ Download Showcase playground dist folder
         uses: actions/download-artifact@v4

@@ -11,11 +11,11 @@ const getFrom = (framework) => {
   if (framework === 'vue') {
     return /\/vue-showcase/g;
   }
-  if (framework === 'angular-lts-minus-1') {
-    return /\/angular-lts-showcase/g;
+  if (framework === 'angular-active') {
+    return /\/angular-active-showcase/g;
   }
   if (framework === 'angular-lts') {
-    return /\/angular-active-showcase/g;
+    return /\/angular-lts-showcase/g;
   }
   if (framework === 'angular') {
     return /\/angular-showcase/g;
