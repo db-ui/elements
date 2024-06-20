@@ -7,22 +7,24 @@ const replace = require('replace-in-file');
 
 const vModelFix = {
   files: './src/vue-component-lib/utils.ts',
-  from:
-    'el.addEventListener(eventName.toLowerCase(), (e: Event) => {\n' +
-    '            modelPropValue = (e?.target as any)[modelProp];',
-  to:
-    ' el.addEventListener(eventName, (e: any) => {\n' +
+  from: [
+    'el.addEventListener(eventName.toLowerCase(), (e: Event) => {',
+    'modelPropValue = (e?.target as any)[modelProp];'
+  ],
+  to: [
+    'el.addEventListener(eventName, (e: any) => {',
     '            if (\n' +
-    '              e?.detail?.target?.checked &&\n' +
-    '              e?.target?.textContent?.length > 0\n' +
-    '            ) {\n' +
-    '              modelPropValue = e?.target?.textContent;\n' +
-    '            } else if (e?.target.tagName.toLowerCase() === "db-pagination") {\n' +
-    '              modelPropValue = e?.detail?.target.innerText\n;' +
-    '            }\n' +
-    '            else {\n' +
-    '              modelPropValue = e?.detail?.target[modelProp];\n' +
-    '            }'
+      '              e?.detail?.target?.checked &&\n' +
+      '              e?.target?.textContent?.length > 0\n' +
+      '            ) {\n' +
+      '              modelPropValue = e?.target?.textContent;\n' +
+      '            } else if (e?.target.tagName.toLowerCase() === "db-pagination") {\n' +
+      '              modelPropValue = e?.detail?.target.innerText\n;' +
+      '            }\n' +
+      '            else {\n' +
+      '              modelPropValue = e?.detail?.target[modelProp];\n' +
+      '            }'
+  ]
 };
 
 const run = async () => {
