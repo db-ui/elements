@@ -16,7 +16,8 @@
     "no-console": "error",
     "react/react-in-jsx-scope": 0,
     "react/jsx-no-bind": 0,
-    "react/no-unknown-property": "off"
+    "react/no-unknown-property": "off",
+    "@stencil-community/reserved-member-names": "warn"
   },
   "settings": {
     //fix: https://github.com/ionic-team/stencil-eslint/issues/16
