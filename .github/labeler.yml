@@ -29,15 +29,15 @@ vue:
   - changed-files:
       - any-glob-to-any-file: 'packages/db-ui-elements-vue/**'
 
+# Add 'angular-active-showcase' label to any file changes for angular-active-showcase
+angular-active-showcase:
+  - changed-files:
+      - any-glob-to-any-file: 'showcase/angular-active-showcase/**'
+
 # Add 'angular-lts-showcase' label to any file changes for angular-lts-showcase
 angular-lts-showcase:
   - changed-files:
       - any-glob-to-any-file: 'showcase/angular-lts-showcase/**'
-
-# Add 'angular-lts-minus-1-showcase' label to any file changes for angular-lts-minus-1-showcase
-angular-lts-minus-1-showcase:
-  - changed-files:
-      - any-glob-to-any-file: 'showcase/angular-lts-minus-1-showcase/**'
 
 # Add 'playground-showcase' label to any file changes for playground-showcase
 playground-showcase:

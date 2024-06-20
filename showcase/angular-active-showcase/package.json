@@ -1,0 +1,42 @@
+{
+  "name": "angular-active-showcase",
+  "version": "0.0.0",
+  "license": "Apache-2.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --base-href ./"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "18.0.3",
+    "@angular/common": "18.0.3",
+    "@angular/compiler": "18.0.3",
+    "@angular/core": "18.0.3",
+    "@angular/forms": "18.0.3",
+    "@angular/platform-browser": "18.0.3",
+    "@angular/platform-browser-dynamic": "18.0.3",
+    "@angular/router": "18.0.3",
+    "rxjs": "7.8.1",
+    "tslib": "2.6.3",
+    "zone.js": "0.14.7"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "18.0.4",
+    "@angular/cli": "18.0.4",
+    "@angular/compiler-cli": "18.0.3",
+    "domhandler": "^5.0.3",
+    "injection-js": "2.4.0",
+    "typescript": "5.4.5"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupJest.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "/dist"
+    ]
+  },
+  "homepage": "https://github.com/db-ui/elements/-/tree/develop/showcase/angular-active-showcase"
+}
