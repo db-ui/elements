@@ -8,7 +8,7 @@ import { isAreaCurrent, NAVIGATION_ITEMS } from './utils/navigation-item';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'angular-lts-minus-1-showcase';
+  title = 'angular-active-showcase';
   navigationItems = NAVIGATION_ITEMS;
   isAria = isAreaCurrent;
 
