@@ -33,7 +33,7 @@ describe('db-input', () => {
     expect(page.root).toEqualHtml(`
       <db-input ariainvalid="_ariainvalid_" ariarequired="true" autocomplete="on" autofocus dirname="_dirname_" disabled input_id="_input_id_" label="_label_" list="_list_" maxlength="2" minlength="5" name="_name_" pattern="_pattern_" placeholder="_placeholder_" readonly required size="2" type='text' value="_value_" variant='semitransparent'>
         <input aria-invalid="_ariainvalid_" aria-required="true" type="text" class="elm-input" id="_input_id_" autocomplete="on" autofocus data-dirname="_dirname_" disabled list="_list_" maxlength="2" minlength="5" name="_name_" pattern="_pattern_" placeholder="_placeholder_" readonly required size="2" value="_value_" aria-labelledby="_input_id_-label" data-variant='semitransparent' />
-        <label class="elm-label" htmlFor="_input_id_" aria-hidden="true" id="_input_id_-label">_label_</label>
+        <label class="elm-label" htmlFor="_input_id_" aria-hidden="true" id="_input_id_-label">_label_</label><output htmlfor="_input_id_" id="_input_id_-result">0 / 2</output>
         <datalist id="_list_">
           <option>_option1_</option>
           <option>_option2_</option>
