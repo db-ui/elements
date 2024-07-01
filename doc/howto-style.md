@@ -4,7 +4,7 @@
 
 This is a guide to how styling works for DB UI Elements.
 
-At the Deutsche Bahn there is a [standard for UI/UX](https://marketingportal.extranet.deutschebahn.com/marketingportal/Design-Anwendungen/DB-UX-Design-System/Design-fuer-Apps-Web/UI-Komponenten).
+At the Deutsche Bahn there is a [standard for UI/UX](https://marketingportal.extranet.deutschebahn.com/marketingportal/Design-Anwendungen/db-ux-design-system/version-2/Components).
 Every tenant (like: Fernverkehr, Regio, Enterprise) can variate the style at predefined parts.
 
 DB UI Elements is intended to provide components for all Deutsche Bahn tenants.
