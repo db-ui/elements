@@ -32,6 +32,7 @@ jobs:
         run: |
           if echo ${{ matrix.targets }} | grep -c "ngx-elements"
           then
+            cat ./packages/db-ui-elements-angular/dist/lib/package.json
             echo "framework=angular" >> $GITHUB_OUTPUT
           elif echo ${{ matrix.targets }} | grep -c "react-elements"
           then
