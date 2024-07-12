@@ -48,7 +48,7 @@ export class DbSidenavi {
       this.compData = parseData(this.data);
     } else {
       addIconVariantToAllDbLinksRecursive(this.host, '32-outline');
-      this._children = Array.from(this.host.children);
+      this._children = Array.from(this.host?.children);
       if (this.children.find((child) => child.tagName.toLowerCase() === 'li')) {
         this.hasItemsWrapper = true;
       } else {
@@ -64,7 +64,7 @@ export class DbSidenavi {
         {!this.compData && (
           <ol>
             {!this.hasItemsWrapper &&
-              this._children.map((child, index) => (
+              this._children?.map((child, index) => (
                 <li
                   key={`sidenavi-item-${index}`}
                   innerHTML={child.outerHTML}

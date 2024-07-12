@@ -16,23 +16,25 @@
   <db-button variant="primary" (click)="notification = true">
     Open Notification!
   </db-button>
-  <db-notifications *ngIf="notification" variant="hovering">
-    <db-notification type="success">
-      <db-icon
-        icon="account"
-        slot="prenotification"
-        variant="20-outline"
-      ></db-icon>
-      success: Lorem ipsum dolor sit amet, consectetur adipisicing elit
-      <db-icon
-        icon="close"
-        slot="postnotification"
-        variant="20-outline"
-        (keypress)="notification = false"
-        (click)="notification = false"
-        tabindex="0"
-        role="button"
-      ></db-icon>
-    </db-notification>
-  </db-notifications>
+  @if (notification) {
+    <db-notifications variant="hovering">
+      <db-notification type="success">
+        <db-icon
+          icon="account"
+          slot="prenotification"
+          variant="20-outline"
+        ></db-icon>
+        success: Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        <db-icon
+          icon="close"
+          slot="postnotification"
+          variant="20-outline"
+          (keypress)="notification = false"
+          (click)="notification = false"
+          tabindex="0"
+          role="button"
+        ></db-icon>
+      </db-notification>
+    </db-notifications>
+  }
 </div>

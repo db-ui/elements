@@ -156,7 +156,7 @@ export class DbTable {
   }
 
   private isRowData(tableData) {
-    return !!Array.isArray(tableData.rows);
+    return !!Array.isArray(tableData?.rows);
   }
 
   render() {

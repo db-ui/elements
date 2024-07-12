@@ -10,7 +10,7 @@ import { OtherElementsComponent } from './components/other-elements/other-elemen
 import { TabBarComponent } from './components/tab-bar/tab-bar.component';
 import { TablesComponent } from './components/tables/tables.component';
 import { AppRoutingModule } from './app.routing.module';
-import { DBUIElementsModule } from '../../../../packages/db-ui-elements-angular/projects/lib/src';
+import { DbButton } from '../../../../packages/db-ui-elements-angular/projects/lib/src';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { DBUIElementsModule } from '../../../../packages/db-ui-elements-angular/
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
-    DBUIElementsModule
+    DbButton
   ],
   providers: [],
   bootstrap: [AppComponent]

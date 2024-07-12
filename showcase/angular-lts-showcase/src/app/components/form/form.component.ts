@@ -1,18 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  DbButton,
+  DbInput,
+  DbCheckbox,
+  DbRadio,
+  DbTextarea,
+  DbSelect,
+  DbToggle,
+  DbSidenavi
+} from '../../../../../../packages/db-ui-elements-angular/projects/lib/src';
+import { NAVIGATION_ITEMS } from '../../utils/navigation-item';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
+  standalone: true,
+  imports: [
+    DbButton,
+    DbSelect,
+    DbInput,
+    DbRadio,
+    DbCheckbox,
+    DbTextarea,
+    DbToggle,
+    FormsModule,
+    ReactiveFormsModule,
+    DbSidenavi
+  ]
 })
 export class FormComponent implements OnInit {
-  input: string;
-  checkbox: boolean;
-  radio: string;
-  select: string;
-  textarea: string;
-  toggle: boolean;
+  input: string = '';
+  checkbox: boolean | null = false;
+  radio: string = '';
+  select: string | null = '';
+  textarea: string | null = '';
+  toggle: boolean = false;
 
   checkboxControl = new FormControl<boolean>(false, { nonNullable: false });
   radioControl = new FormControl<string>('', { nonNullable: true });
@@ -44,4 +68,6 @@ export class FormComponent implements OnInit {
       })
     );
   }
+
+  protected readonly navigationItems = NAVIGATION_ITEMS;
 }

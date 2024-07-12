@@ -5,7 +5,8 @@ import { isAreaCurrent, NAVIGATION_ITEMS } from './utils/navigation-item';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  standalone: true
 })
 export class AppComponent implements OnInit {
   title = 'angular-active-showcase';

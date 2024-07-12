@@ -1,22 +1,50 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { isAreaCurrent, NAVIGATION_ITEMS } from './utils/navigation-item';
+import {
+  DbButton,
+  DbCheckbox,
+  DbPage,
+  DbLink,
+  DbHeader,
+  DbMainnavigation,
+  DbFooter,
+  DbBrand
+} from '../../../../packages/db-ui-elements-angular/projects/lib/src';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+
+  imports: [
+    ReactiveFormsModule,
+    FormsModule,
+    DbButton,
+    DbCheckbox,
+    DbPage,
+    DbLink,
+    DbHeader,
+    DbMainnavigation,
+    DbFooter,
+    DbBrand,
+    RouterOutlet,
+    RouterLink
+  ]
 })
 export class AppComponent implements OnInit {
   title = 'angular-lts-showcase';
   navigationItems = NAVIGATION_ITEMS;
   isAria = isAreaCurrent;
 
-  input: string;
-  checkbox: boolean;
-  radio: string;
-  select: string;
-  textarea: string;
+  input: string = '';
+  checkbox: boolean | null = false;
+  radio: string = '';
+  select: string | null = '';
+  textarea: string | null = '';
+  toggle: boolean = false;
 
   checkboxControl = new FormControl<boolean>(false, { nonNullable: false });
   radioControl = new FormControl<string>('', { nonNullable: true });
