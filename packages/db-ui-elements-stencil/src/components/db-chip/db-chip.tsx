@@ -77,8 +77,6 @@ export class DbChip {
         />
         <label
           htmlFor={this.input_id}
-          role="button"
-          aria-hidden="true"
           data-variant={this.variant}
         >
           {this.icon ? <db-icon variant="20-outline" icon={this.icon} /> : null}
