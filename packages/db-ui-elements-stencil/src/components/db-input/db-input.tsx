@@ -91,12 +91,12 @@ export class DbInput {
   /**
    * The min attribute specifies the minimum value that is sufficient for this input.
    */
-  @Prop({ reflect: true }) min?: number;
+  @Prop({ reflect: true }) min?: number | string;
 
   /**
    * The max attribute specifies the maximum value that is sufficient for this input.
    */
-  @Prop({ reflect: true }) max?: number;
+  @Prop({ reflect: true }) max?: number | string;
 
   /**
    * The placeholder attribute represents a short hint (a word or short phrase) intended to aid the user with data entry.
