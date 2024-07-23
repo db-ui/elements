@@ -27,7 +27,7 @@
     "@angular/compiler-cli": "18.1.0",
     "domhandler": "^5.0.3",
     "injection-js": "2.4.0",
-    "typescript": "5.4.5"
+    "typescript": "5.5.4"
   },
   "jest": {
     "preset": "jest-preset-angular",
