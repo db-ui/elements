@@ -45,7 +45,7 @@
     "puppeteer": "^22.12.1"
   },
   "dependencies": {
-    "@db-ui/core": "^2.21.0"
+    "@db-ui/core": "^2.22.0"
   },
   "license": "Apache-2.0",
   "publishConfig": {
