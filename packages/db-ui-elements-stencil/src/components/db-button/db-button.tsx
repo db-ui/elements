@@ -81,6 +81,11 @@ export class DbButton {
   @Prop({ reflect: true }) value?: string;
 
   /**
+   * The width attribute let's you overwrite the standard display of the button width.
+   */
+  @Prop({ reflect: true }) width?: 'auto' | 'full';
+
+  /**
    * The variant attribute specifies a visual expression of button.
    */
   @Prop({ reflect: true }) variant:
@@ -113,6 +118,7 @@ export class DbButton {
         type={this.type}
         value={this.value}
         data-size={this.size}
+        data-width={this.width}
       >
         {this.icon ? <db-icon icon={this.icon} /> : null}
         <slot />
