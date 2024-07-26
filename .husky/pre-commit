@@ -1,11 +1,6 @@
+echo "### npm run general lintings ###"
+concurrently "node ./scripts/check-commit-mail.js" "node ./scripts/cypress/component-check.js" "node ./scripts/angular-module-component-check.js" "npx validate-branch-name"
 echo "### lint staged files ###"
-npx --no -- lint-staged
-echo "### npm run lint ###"
-npx --no -- concurrently "node ./scripts/check-commit-mail.js" "node ./scripts/cypress/component-check.js" "node ./scripts/angular-module-component-check.js" "npm run lint:eslint" "npx validate-branch-name"
-
-
-
-
-
-
-
+lint-staged
+prettier $(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g') --write --ignore-unknown
+git update-index --again
