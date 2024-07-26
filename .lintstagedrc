@@ -1,5 +1,5 @@
 {
   "*.md": "markdownlint -c .markdown-lint.yml",
   "*.{css,scss}": "stylelint --fix",
-  "*": "prettier --write --ignore-unknown"
+  "*.{js,ts,tsx}": "eslint --fix "
 }
