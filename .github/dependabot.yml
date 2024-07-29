@@ -70,6 +70,8 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@storybook/web-components'
         update-types: ['version-update:semver-major']
+      - dependency-name: '@storybook/web-components-vite'
+        update-types: ['version-update:semver-major']
     pull-request-branch-name:
       separator: '-'
     # https://github.com/dependabot/dependabot-core/issues/5226#issuecomment-1179434437
