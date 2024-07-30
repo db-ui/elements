@@ -1,4 +1,5 @@
-import { Component, Host, Prop, State, Event } from '@stencil/core';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { Component, Host, h, Prop, State, Event } from '@stencil/core';
 import { uuid } from '../../utils/utils';
 
 @Component({
