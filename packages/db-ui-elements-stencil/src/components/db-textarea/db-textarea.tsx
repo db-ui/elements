@@ -131,7 +131,7 @@ export class DbTextarea {
   @Event() dbChange;
 
   componentDidRender() {
-    this.valueSize = this.textareaElement.value.length;
+    this.valueSize = this.textareaElement?.value?.length || 0;
   }
 
   render() {
