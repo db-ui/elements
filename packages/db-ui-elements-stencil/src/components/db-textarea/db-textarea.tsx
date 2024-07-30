@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, State, Event } from '@stencil/core';
+import { Component, Host, Prop, State, Event } from '@stencil/core';
 import { uuid } from '../../utils/utils';
 
 @Component({
@@ -8,6 +8,8 @@ import { uuid } from '../../utils/utils';
 })
 export class DbTextarea {
   @State() valueSize = 0;
+
+  private textareaElement!: HTMLTextAreaElement;
 
   /**
    * The ariainvalid attribute is used to indicate that the value entered into an input field does not conform to the format expected by the application.
@@ -127,6 +129,10 @@ export class DbTextarea {
    */
   @Event() dbChange;
 
+  componentDidRender() {
+    this.valueSize = this.textareaElement.value.length;
+  }
+
   render() {
     return (
       <Host>
@@ -156,6 +162,7 @@ export class DbTextarea {
           rows={this.rows}
           wrap={this.wrap}
           data-variant={this.variant}
+          ref={(el) => (this.textareaElement = el as HTMLTextAreaElement)}
           onInput={(event) => {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
