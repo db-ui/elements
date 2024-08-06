@@ -26,6 +26,7 @@
 | `type`           | `type`           | The type attribute specifies the type of button.                                                                                                                                                   | `"button" \| "reset" \| "submit"`                                                              | `'submit'`  |
 | `value`          | `value`          | The value attribute specifies an initial value for the button.                                                                                                                                     | `string`                                                                                       | `undefined` |
 | `variant`        | `variant`        | The variant attribute specifies a visual expression of button.                                                                                                                                     | `"brand-primary" \| "primary" \| "secondary-outline" \| "secondary-solid" \| "tertiary-plain"` | `undefined` |
+| `width`          | `width`          | The width attribute let's you overwrite the standard display of the button width.                                                                                                                  | `"auto" \| "full"`                                                                             | `undefined` |
 
 
 ## Dependencies

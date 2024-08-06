@@ -5,7 +5,7 @@
   "homepage": ".",
   "type": "module",
   "dependencies": {
-    "ace-builds": "1.35.2",
+    "ace-builds": "1.35.4",
     "dompurify": "3.1.6",
     "grapesjs": "0.21.12",
     "grapesjs-preset-webpage": "1.0.3",
@@ -19,7 +19,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "cpr": "3.0.1",
     "sass": "1.77.8",
-    "vite": "^5.3.3"
+    "vite": "^5.3.4"
   },
   "scripts": {
     "copy:ui-core": "cpr ../../node_modules/@db-ui/core/dist/fonts ./public/fonts -o && cpr ../../node_modules/@db-ui/core/dist/images ./public/images -o && cpr ../../node_modules/@db-ui/core/dist/js ./public/js -o",

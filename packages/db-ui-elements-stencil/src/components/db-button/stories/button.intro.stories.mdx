@@ -46,6 +46,14 @@ You could set the icons position – either before or after the text – by usin
   <db-button variant="secondary-outline" icon="download">Secondary Outline</db-button> <db-button variant="secondary-outline" iconafter="download">Secondary Outline</db-button>
 </Canvas>
 
+<db-headline variant="2">width</db-headline>
+
+Regularly, our buttons shouldn't increase to it's horizontally available space, but only the one determined by it's included textual content. Use `width` property with the value of `full` to overwrite this definition.
+
+<Canvas>
+  <db-button variant="brand-primary">(Default) Auto width</db-button><span style={{display: "inline-block", width: "500px"}}><db-button variant="brand-primary" width="full">Width full</db-button></span>
+</Canvas>
+
 <db-headline variant="2">icononly (only use with care)</db-headline>
 
 If you'd only like to display the icon without any text, you could set the attribute `icononly` on the button component. But please keep in mind that a visual text ensures clarity on the subject of this button as well enables use cases like controlling the page by voice (accessibility).
