@@ -195,5 +195,6 @@ export const config: Config = {
   ],
   extras: {
     enableImportInjection: true
-  }
+  },
+  buildEs5: true
 };
