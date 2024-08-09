@@ -122,6 +122,7 @@ export const parseData = (item: string | object | unknown) => {
     }
     if (typeof item === 'object') return item;
     if (item instanceof Array) return item;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return false;
   }
