@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Component, Host, h, Prop } from '@stencil/core';
 import { uuid } from '../../utils/utils';
 
@@ -75,12 +76,7 @@ export class DbChip {
           name={this.name}
           checked={this.selected}
         />
-        <label
-          htmlFor={this.input_id}
-          role="button"
-          aria-hidden="true"
-          data-variant={this.variant}
-        >
+        <label htmlFor={this.input_id} data-variant={this.variant}>
           {this.icon ? <db-icon variant="20-outline" icon={this.icon} /> : null}
           <slot />
           {this.iconafter ? (
