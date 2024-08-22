@@ -31,7 +31,7 @@ context('welcome-page', () => {
     contain(2, 0, 'showcases--angular-ng-build');
   });
   it('Check for Card: React Showcase', function () {
-    contain(2, 1, 'showcases--react-cra-build');
+    contain(2, 1, 'showcases--react-vite-build');
   });
   it('Check for Card: Reactwind Showcase', function () {
     contain(2, 2, 'showcases--react-and-tailwind');
