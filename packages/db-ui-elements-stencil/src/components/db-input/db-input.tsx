@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Component, Event, h, Host, Prop, State } from '@stencil/core';
 import { uuid } from '../../utils/utils';
 
@@ -8,6 +9,8 @@ import { uuid } from '../../utils/utils';
 })
 export class DbInput {
   @State() valueSize = 0;
+
+  private inputElement!: HTMLInputElement;
 
   /**
    * The ariainvalid attribute is used to indicate that the value entered into an input field does not conform to the format expected by the application.
@@ -151,6 +154,10 @@ export class DbInput {
    */
   @Event() dbChange;
 
+  componentDidRender() {
+    this.valueSize = this.inputElement?.value?.length || 0;
+  }
+
   render() {
     return (
       <Host>
@@ -183,6 +190,7 @@ export class DbInput {
           onInput={(event) => {
             this.valueSize = (event.target as HTMLInputElement).value.length;
           }}
+          ref={(el) => (this.inputElement = el as HTMLInputElement)}
         />
 
         <label
