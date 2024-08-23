@@ -6,9 +6,11 @@
   pointer-events: none;
 }
 
-// Enabling to hide text next to the icon
+// Enabling to hide text next to the icon (the DB UI Core selector is differently, as we're using the DBIcon component here internally)
 button.is-icon-text-replace {
   @include is-icon-text-replace();
+
+  aspect-ratio: 1;
 }
 
 db-icon {
