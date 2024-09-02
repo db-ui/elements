@@ -43,7 +43,7 @@
     "eslint-plugin-storybook": "0.8.0",
     "eslint-plugin-vue": "^9.24.0",
     "find-versions-cli": "^5.0.0",
-    "husky": "9.1.2",
+    "husky": "9.1.5",
     "iframe-resizer": "4.4.5",
     "jest-config": "29.7.0",
     "lint-staged": "^15.2.2",
