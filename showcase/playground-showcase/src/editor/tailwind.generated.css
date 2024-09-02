@@ -329,7 +329,7 @@ legend {
 ol,
 ul,
 menu {
-  list-style: none;
+  list-style-type: '';
   margin: 0;
   padding: 0;
 }

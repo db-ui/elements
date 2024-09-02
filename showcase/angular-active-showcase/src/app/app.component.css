@@ -14,7 +14,7 @@ main {
 }
 
 main form ol {
-  list-style-type: none;
+  list-style-type: '';
   padding-left: 0;
 }
 
