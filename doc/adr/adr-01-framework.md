@@ -13,7 +13,7 @@ Es geht darum, dies möglichst effizient zu tun.
 Folgende Optionen haben wir uns angeschaut:
 
 - StencilJS (<https://stenciljs.com/>)
-- Vanila JS
+- Vanilla JS
 - Polymer (<https://www.polymer-project.org/>)
 - lit-element (<https://lit-element.polymer-project.org>)
 
