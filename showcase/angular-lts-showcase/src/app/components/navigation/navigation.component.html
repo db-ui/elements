@@ -1,12 +1,10 @@
 <div>
   <p>DbSidenavi:</p>
   <db-sidenavi>
-    <db-link
-      *ngFor="let item of navigationItems; index as i"
-      [attr.current]="isAria(i)"
-      [attr.icon]="item.icon"
-    >
-      <a [routerLink]="item.link">{{ item.label }}</a>
-    </db-link>
+    @for (item of navigationItems; track item; let i = $index) {
+      <db-link [attr.current]="isAria(i)" [attr.icon]="item.icon">
+        <a [routerLink]="item.link">{{ item.label }}</a>
+      </db-link>
+    }
   </db-sidenavi>
 </div>

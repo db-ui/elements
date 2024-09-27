@@ -77,11 +77,16 @@ export const config: Config = {
   taskQueue: 'async',
   hashFileNames: isNotWatching(),
   outputTargets: [
+    {
+      type: 'dist-custom-elements',
+      customElementsExportBehavior: 'single-export-module'
+    },
     angularOutputTarget({
-      componentCorePackage: '@db-ui/elements',
+      componentCorePackage: '@db-ui/elements/dist',
       directivesProxyFile:
         '../db-ui-elements-angular/projects/lib/src/components.ts',
-      valueAccessorConfigs: angularValueAccessorBindings
+      valueAccessorConfigs: angularValueAccessorBindings,
+      outputType: 'standalone'
     }),
     reactOutputTarget({
       componentCorePackage: '@db-ui/elements',

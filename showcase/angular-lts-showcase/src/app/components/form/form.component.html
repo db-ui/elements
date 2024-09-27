@@ -16,14 +16,20 @@
         ></db-checkbox>
         <p>DbRadio:</p>
         <ol>
-          <li *ngFor="let radioButton of radioButtons; index as i">
-            <db-radio
-              [label]="radioButton"
-              name="radio-name"
-              [formControl]="radioControl"
-              [value]="radioButton"
-            ></db-radio>
-          </li>
+          @for (
+            radioButton of radioButtons;
+            track radioButton;
+            let i = $index
+          ) {
+            <li>
+              <db-radio
+                [label]="radioButton"
+                name="radio-name"
+                [formControl]="radioControl"
+                [value]="radioButton"
+              ></db-radio>
+            </li>
+          }
         </ol>
         <p>DbSelect:</p>
         <db-select

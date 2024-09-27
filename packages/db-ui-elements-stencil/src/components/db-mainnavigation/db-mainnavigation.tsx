@@ -99,6 +99,33 @@ const addAreaPopupsRecursive = (children: Element[]) => {
   styleUrl: 'db-mainnavigation.scss'
 })
 export class DbMainnavigation {
+  get onlyLinks(): DbMainnavigationItemType[] {
+    return this._onlyLinks;
+  }
+
+  set onlyLinks(value: DbMainnavigationItemType[]) {
+    this._onlyLinks = value;
+  }
+  get hasItemsWrapper(): boolean {
+    return this._hasItemsWrapper;
+  }
+
+  set hasItemsWrapper(value: boolean) {
+    this._hasItemsWrapper = value;
+  }
+  get compData(): DbMainnavigationDataType[] {
+    return this._compData;
+  }
+
+  set compData(value: DbMainnavigationDataType[]) {
+    this._compData = value;
+  }
+  set children(value: Element[]) {
+    this._children = value;
+  }
+  get children(): Element[] {
+    return this._children;
+  }
   /**
    * The site-name attribute can be set to have the site name for small screens.
    */
@@ -109,24 +136,26 @@ export class DbMainnavigation {
    */
   @Prop({ reflect: true }) data?: string;
 
-  private hasItemsWrapper: boolean;
+  private _hasItemsWrapper: boolean;
 
-  private compData: DbMainnavigationDataType[];
+  private _compData: DbMainnavigationDataType[];
 
-  private children: Element[];
-  private onlyLinks: DbMainnavigationItemType[];
+  private _children: Element[];
+  private _onlyLinks: DbMainnavigationItemType[];
 
   @Element() host: HTMLDbMainnavigationElement;
 
   componentWillLoad() {
     if (this.data) {
-      this.compData = parseData(this.data);
-    } else {
-      this.children = Array.from(this.host.children);
-      this.onlyLinks = setupOnlyDbLinkNavigation(this.children);
-      if (this.children.find((child) => child.tagName.toLowerCase() === 'li')) {
-        this.hasItemsWrapper = true;
-        addAreaPopupsRecursive(this.children);
+      this._compData = parseData(this.data);
+    } else if (this.host) {
+      this._children = Array.from(this.host.children);
+      this._onlyLinks = setupOnlyDbLinkNavigation(this._children);
+      if (
+        this._children.find((child) => child.tagName.toLowerCase() === 'li')
+      ) {
+        this._hasItemsWrapper = true;
+        addAreaPopupsRecursive(this._children);
       } else {
         this.host.innerHTML = '';
       }
@@ -144,19 +173,19 @@ export class DbMainnavigation {
         >
           {this.siteName}
         </label>
-        {this.compData && <ul innerHTML={getCompDataHtml(this.compData)} />}
-        {!this.compData && (
+        {this._compData && <ul innerHTML={getCompDataHtml(this._compData)} />}
+        {!this._compData && (
           <ul>
-            {this.onlyLinks && getJsxLinks(this.onlyLinks)}
-            {!this.hasItemsWrapper &&
-              !this.onlyLinks &&
-              this.children.map((child, index) => (
+            {this._onlyLinks && getJsxLinks(this._onlyLinks)}
+            {!this._hasItemsWrapper &&
+              !this._onlyLinks &&
+              this._children?.map((child, index) => (
                 <li
                   key={`cmp-mainnavigation-item-${index}`}
                   innerHTML={child.outerHTML}
                 />
               ))}
-            {this.hasItemsWrapper && <slot />}
+            {this._hasItemsWrapper && <slot />}
           </ul>
         )}
       </nav>
