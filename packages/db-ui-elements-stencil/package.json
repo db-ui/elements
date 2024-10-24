@@ -35,7 +35,7 @@
     "@stencil-community/eslint-plugin": "0.8.0",
     "@stencil/angular-output-target": "0.8.4",
     "@stencil/core": "4.20.0",
-    "@stencil/react-output-target": "0.5.3",
+    "@stencil/react-output-target": "0.7.3",
     "@stencil/sass": "3.0.12",
     "@stencil/vue-output-target": "0.8.9",
     "@types/jest": "28.1.8",
