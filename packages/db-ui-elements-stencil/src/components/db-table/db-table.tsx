@@ -3,8 +3,7 @@ import { TableDataType } from './type';
 
 @Component({
   tag: 'db-table',
-  styleUrl: 'db-table.scss',
-  scoped: true
+  styleUrl: 'db-table.scss'
 })
 export class DbTable {
   private errorTableData: TableDataType = {

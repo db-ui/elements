@@ -4,8 +4,7 @@ import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-input',
-  styleUrl: 'db-input.scss',
-  scoped: true
+  styleUrl: 'db-input.scss'
 })
 export class DbInput {
   @State() valueSize = 0;
