@@ -68,3 +68,7 @@ packages/db-ui-elements-react/src/react-component-lib/utils/index.tsx
 packages/db-ui-elements-stencil/src/components.d.ts
 packages/db-ui-elements-vue/src/components.ts
 packages/db-ui-elements-vue/src/vue-component-lib/utils.ts
+/packages/db-ui-elements-react/src/react-component-lib/utils/case.ts
+/packages/db-ui-elements-react/src/react-component-lib/utils/dev.ts
+/packages/db-ui-elements-react/src/react-component-lib/index.ts
+/packages/db-ui-elements-react/src/react-component-lib/interfaces.ts

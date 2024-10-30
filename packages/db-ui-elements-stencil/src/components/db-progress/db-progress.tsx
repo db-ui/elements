@@ -3,8 +3,7 @@ import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-progress',
-  styleUrl: 'db-progress.scss',
-  scoped: true
+  styleUrl: 'db-progress.scss'
 })
 export class DbProgress {
   /**

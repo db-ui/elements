@@ -3,8 +3,7 @@ import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-radio',
-  styleUrl: 'db-radio.scss',
-  scoped: true
+  styleUrl: 'db-radio.scss'
 })
 export class DbRadio {
   /**

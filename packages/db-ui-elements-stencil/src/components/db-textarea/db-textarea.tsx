@@ -4,8 +4,7 @@ import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-textarea',
-  styleUrl: 'db-textarea.scss',
-  scoped: true
+  styleUrl: 'db-textarea.scss'
 })
 export class DbTextarea {
   @State() valueSize = 0;

@@ -10,13 +10,13 @@
     "grapesjs": "0.21.12",
     "grapesjs-preset-webpage": "1.0.3",
     "react": "18.3.1",
-    "react-ace": "11.0.1",
+    "react-ace": "12.0.0",
     "react-dom": "18.3.1",
     "react-router-dom": "6.26.1"
   },
   "devDependencies": {
     "@types/dompurify": "^3.0.5",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^4.3.3",
     "cpr": "3.0.1",
     "sass": "1.77.8",
     "vite": "^5.4.6"

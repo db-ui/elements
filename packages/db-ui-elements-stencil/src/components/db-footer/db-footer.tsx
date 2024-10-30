@@ -2,8 +2,7 @@ import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'db-footer',
-  styleUrl: 'db-footer.scss',
-  scoped: true
+  styleUrl: 'db-footer.scss'
 })
 export class DbFooter {
   /**

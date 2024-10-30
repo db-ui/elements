@@ -3,8 +3,7 @@ import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-image',
-  styleUrl: 'db-image.scss',
-  scoped: true
+  styleUrl: 'db-image.scss'
 })
 export class DbImage {
   /**

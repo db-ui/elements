@@ -3,8 +3,7 @@ import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-select',
-  styleUrl: 'db-select.scss',
-  scoped: true
+  styleUrl: 'db-select.scss'
 })
 export class DbSelect {
   /**

@@ -3,8 +3,7 @@ import { TableDataType } from './type';
 
 @Component({
   tag: 'db-table',
-  styleUrl: 'db-table.scss',
-  scoped: true
+  styleUrl: 'db-table.scss'
 })
 export class DbTable {
   private errorTableData: TableDataType = {
@@ -133,6 +132,7 @@ export class DbTable {
         return JSON.parse(item);
       }
       if (typeof item === 'object') return item;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       return this.errorTableData;
     }
