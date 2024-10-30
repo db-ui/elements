@@ -14,6 +14,9 @@
     "access": "public"
   },
   "scripts": {
+    "stencil:workaround": "node ../../scripts/react-helper.js",
+    "pretest": "npm run stencil:workaround",
+    "prebuild": "npm run stencil:workaround",
     "build": "npm run clean && npm run tsc",
     "build:prod": "npm run clean && npm run tsc:prod",
     "clean": "rimraf dist",
