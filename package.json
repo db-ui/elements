@@ -39,7 +39,7 @@
     "dotenv": "^16.4.5",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-react": "^7.34.4",
+    "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-storybook": "0.8.0",
     "eslint-plugin-vue": "^9.24.0",
     "find-versions-cli": "^5.0.0",
