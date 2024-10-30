@@ -6,10 +6,10 @@
   "license": "Apache-2.0",
   "type": "module",
   "dependencies": {
+    "@vitejs/plugin-react": "^4.3.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-router-dom": "6.26.1",
-    "@vitejs/plugin-react": "^4.2.1",
     "vite": "^5.4.6"
   },
   "scripts": {

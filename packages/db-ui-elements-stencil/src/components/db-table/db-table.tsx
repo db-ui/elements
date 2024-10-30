@@ -133,6 +133,7 @@ export class DbTable {
         return JSON.parse(item);
       }
       if (typeof item === 'object') return item;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       return this.errorTableData;
     }

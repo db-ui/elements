@@ -42,6 +42,7 @@ export const listCustomProperties = async () =>
  */
 export const domReady = () => {
   return new Promise((resolve, reject) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     document.readyState || reject("Can't resolve document readystate");
     if (document.readyState === 'complete') {
       resolve(document);
@@ -122,6 +123,7 @@ export const parseData = (item: string | object | unknown) => {
     }
     if (typeof item === 'object') return item;
     if (item instanceof Array) return item;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return false;
   }
