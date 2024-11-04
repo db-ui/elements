@@ -12,13 +12,13 @@
     "react": "18.3.1",
     "react-ace": "12.0.0",
     "react-dom": "18.3.1",
-    "react-router-dom": "6.26.1"
+    "react-router-dom": "6.27.0"
   },
   "devDependencies": {
     "@types/dompurify": "^3.0.5",
     "@vitejs/plugin-react": "^4.3.3",
     "cpr": "3.0.1",
-    "sass": "1.77.8",
+    "sass": "1.80.5",
     "vite": "^5.4.6"
   },
   "scripts": {
