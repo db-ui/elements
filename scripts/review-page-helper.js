@@ -11,9 +11,6 @@ const getFrom = (framework) => {
   if (framework === 'vue') {
     return /\/vue-showcase/g;
   }
-  if (framework === 'angular-active') {
-    return /\/angular-showcase/g;
-  }
   if (framework === 'angular') {
     return /\/angular-showcase/g;
   }

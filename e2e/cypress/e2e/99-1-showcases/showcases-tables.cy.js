@@ -1,5 +1,5 @@
 context('showcase', () => {
-  const showcases = ['angular-active', 'angular-lts'];
+  const showcases = ['angular'];
 
   showcases.forEach((showcase) => {
     it(`${showcase}: Test Tables`, () => {
