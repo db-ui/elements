@@ -41,7 +41,7 @@
     "@angular-devkit/build-angular": "18.2.11",
     "@angular/cli": "18.2.11",
     "@angular/compiler-cli": "18.2.10",
-    "@rollup/plugin-commonjs": "26.0.1",
+    "@rollup/plugin-commonjs": "28.0.1",
     "@rollup/plugin-json": "6.1.0",
     "@rollup/plugin-node-resolve": "15.2.3",
     "bs-logger": "0.2.6",
