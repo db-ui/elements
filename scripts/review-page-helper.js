@@ -11,12 +11,6 @@ const getFrom = (framework) => {
   if (framework === 'vue') {
     return /\/vue-showcase/g;
   }
-  if (framework === 'angular-active') {
-    return /\/angular-active-showcase/g;
-  }
-  if (framework === 'angular-lts') {
-    return /\/angular-lts-showcase/g;
-  }
   if (framework === 'angular') {
     return /\/angular-showcase/g;
   }
@@ -44,19 +38,11 @@ const run = async () => {
     if (framework === 'angular') {
       await replace({
         files: [
-          './public/angular-lts-showcase/index.html',
-          './public/angular-lts-showcase/styles.css'
+          './public/angular-showcase/index.html',
+          './public/angular-showcase/styles.css'
         ],
         from: /url\(/g,
-        to: 'url(/angular-lts-showcase/'
-      });
-      await replace({
-        files: [
-          './public/angular-active-showcase/index.html',
-          './public/angular-active-showcase/styles.css'
-        ],
-        from: /url\(/g,
-        to: 'url(/angular-active-showcase/'
+        to: 'url(/angular-showcase/'
       });
     }
     await replace({
