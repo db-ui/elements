@@ -43,7 +43,7 @@
     "@angular/compiler-cli": "18.2.10",
     "@rollup/plugin-commonjs": "28.0.1",
     "@rollup/plugin-json": "6.1.0",
-    "@rollup/plugin-node-resolve": "15.2.3",
+    "@rollup/plugin-node-resolve": "15.3.0",
     "bs-logger": "0.2.6",
     "injection-js": "2.4.0",
     "ng-packagr": "18.2.1",
