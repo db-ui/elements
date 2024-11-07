@@ -18,6 +18,12 @@ updates:
       time: '04:00'
       timezone: 'Europe/Berlin'
     ignore:
+      # We ignore output targets they would introduce breaking changes
+      - dependency-name: '@stencil/react-output-target'
+      - dependency-name: '@stencil/angular-output-target'
+      - dependency-name: '@stencil/vue-output-target'
+      - dependency-name: 'eslint'
+        update-types: ['version-update:semver-major']
       - dependency-name: 'ng-packagr'
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/cli'
