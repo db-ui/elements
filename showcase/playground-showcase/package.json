@@ -6,7 +6,7 @@
   "type": "module",
   "dependencies": {
     "ace-builds": "1.36.5",
-    "dompurify": "3.2.0",
+    "dompurify": "3.2.1",
     "grapesjs": "0.21.12",
     "grapesjs-preset-webpage": "1.0.3",
     "react": "18.3.1",
@@ -15,7 +15,7 @@
     "react-router-dom": "6.28.0"
   },
   "devDependencies": {
-    "@types/dompurify": "^3.0.5",
+    "@types/dompurify": "^3.2.0",
     "@vitejs/plugin-react": "^4.3.3",
     "cpr": "3.0.1",
     "sass": "1.81.0",
