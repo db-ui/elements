@@ -2,5 +2,5 @@ echo "### npm run general lintings ###"
 concurrently "node ./scripts/check-commit-mail.js" "node ./scripts/cypress/component-check.js" "node ./scripts/angular-module-component-check.js" "npx validate-branch-name"
 echo "### lint staged files ###"
 lint-staged
-lint-staged --config .config/.lintstagedrc-prettier.json
+lint-staged --config .config/.lintstagedrc-prettier.js
 git update-index --again
