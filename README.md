@@ -5,6 +5,11 @@
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
 
+> [!IMPORTANT]
+> We've released the new stable version of the [DB UX Design System v3](https://github.com/db-ux-design-system/core-web), which is the successor of this generation of DB Design Systems.
+> Especially for new projects, we strongly recommend building on [DB UX Design System v3](https://github.com/db-ux-design-system/core-web).
+> The new version has some great benefits and optimisations, especially in terms of accessibility testing, further and better framework support and ongoing development.
+
 DB UI Elements is a library, that provides style conform UI components for Deutsche Bahn web
 frontends. It's designed to work with any web framework — or even without one.
 
