@@ -101,6 +101,7 @@ updates:
       typescript-eslint:
         patterns:
           - '@typescript-eslint*'
+          - "typescript-eslint"
       storybook:
         patterns:
           - '@storybook*'
