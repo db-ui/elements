@@ -2,8 +2,8 @@
  * This script is for development it will generate enums for components using illustration e.g. db-card.
  */
 
-const fs = require('node:fs');
-const replace = require('replace-in-file');
+import fs from 'node:fs';
+import replace from 'replace-in-file';
 
 try {
   const illustrations = fs
