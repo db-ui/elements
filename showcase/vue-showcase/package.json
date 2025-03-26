@@ -14,7 +14,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "5.1.5",
     "@vue/tsconfig": "0.5.1",
-    "vite": "^5.4.12",
+    "vite": "^5.4.15",
     "vue-tsc": "2.1.10"
   },
   "resolutions": {
