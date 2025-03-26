@@ -3,14 +3,14 @@
  */
 
 import fs from 'node:fs';
-import replace from 'replace-in-file';
+import { replaceInFile } from 'replace-in-file';
 
 try {
   const illustrations = fs
     .readdirSync('./node_modules/@db-ui/core/dist/icons/illustrative')
     .map((ill) => ill.replace('db_ic_il_', '').replace('.svg', ''));
 
-  await replace({
+  await replaceInFile({
     files:
       './packages/db-ui-elements-stencil/src/components/db-card/db-card.tsx',
     from: '@Prop({ reflect: true }) illustration:',
@@ -19,7 +19,7 @@ try {
       .join('|')};`
   });
 
-  await replace({
+  await replaceInFile({
     files:
       './packages/db-ui-elements-stencil/src/components/db-card/db-card.tsx',
     from: 'illustrationPaths = {};',
