@@ -2,7 +2,7 @@
  * This script is a workaround for GitHub pages review.
  */
 
-const replace = require('replace-in-file');
+import { replaceInFile } from 'replace-in-file';
 
 const getFrom = (framework) => {
   if (framework === 'react') {
@@ -36,7 +36,7 @@ const run = async () => {
   }
   try {
     if (framework === 'angular') {
-      await replace({
+      await replaceInFile({
         files: [
           './public/angular-showcase/index.html',
           './public/angular-showcase/styles.css'
@@ -45,7 +45,7 @@ const run = async () => {
         to: 'url(/angular-showcase/'
       });
     }
-    await replace({
+    await replaceInFile({
       files: [
         `./public/${framework}-showcase/*.*`,
         `./public/${framework}-showcase/**/*.*`

@@ -14,7 +14,7 @@
     "access": "public"
   },
   "scripts": {
-    "stencil:workaround": "node ../../scripts/react-helper.js",
+    "stencil:workaround": "node ../../scripts/react-helper.mjs",
     "pretest": "npm run stencil:workaround",
     "prebuild": "npm run stencil:workaround",
     "build": "npm run clean && npm run tsc",
