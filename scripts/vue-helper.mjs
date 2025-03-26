@@ -3,7 +3,7 @@
  * It fixes some issues made by code generation from stencil.
  */
 
-const replace = require('replace-in-file');
+import { replaceInFile } from 'replace-in-file';
 
 const vModelFix = {
   files: './src/vue-component-lib/utils.ts',
@@ -29,7 +29,7 @@ const vModelFix = {
 
 const run = async () => {
   try {
-    const modelFix = await replace(vModelFix);
+    const modelFix = await replaceInFile(vModelFix);
     modelFix.forEach((changes) => {
       if (!changes.hasChanged) {
         console.warn(
