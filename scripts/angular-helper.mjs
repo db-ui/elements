@@ -3,8 +3,8 @@
  * It fixes some issues made by code generation from stencil.
  */
 
-const replace = require('replace-in-file');
-const fs = require('fs');
+import { existsSync, readFileSync } from 'node:fs';
+import { replaceInFile } from 'replace-in-file';
 
 const registerOnChange = {
   files: './projects/lib/src/number-value-accessor.ts',
@@ -68,25 +68,24 @@ const directive = {
 
 const shouldOverride = (path) => {
   return (
-    fs.existsSync(path) &&
-    !fs.readFileSync(path).toString().includes('override')
+    existsSync(path) && !readFileSync(path).toString().includes('override')
   );
 };
 
 const run = async () => {
   try {
     if (shouldOverride('./projects/lib/src/boolean-value-accessor.ts')) {
-      await replace(writeValue);
-      await replace(eventDetail);
+      await replaceInFile(writeValue);
+      await replaceInFile(eventDetail);
     }
     if (shouldOverride('./projects/lib/src/text-value-accessor.ts')) {
-      await replace(textAccessorHostListener);
-      await replace(textAccessorImport);
+      await replaceInFile(textAccessorHostListener);
+      await replaceInFile(textAccessorImport);
     }
     if (shouldOverride('./projects/lib/src/number-value-accessor.ts')) {
-      await replace(registerOnChange);
+      await replaceInFile(registerOnChange);
     }
-    await replace(directive);
+    await replaceInFile(directive);
   } catch (error) {
     console.error('Error occurred:', error);
   }

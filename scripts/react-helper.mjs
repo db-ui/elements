@@ -3,16 +3,16 @@
  * It fixes some issues made by code generation from stencil.
  */
 
-const replace = require('replace-in-file');
+import { replaceInFile } from 'replace-in-file';
 
 const run = async () => {
   try {
-    const modelFix = await replace({
+    const modelFix = await replaceInFile({
       files: './src/react-component-lib/createOverlayComponent.tsx',
       from: 'return <Overlay',
       to: '//@ts-ignore\nreturn <Overlay'
     });
-    await replace({
+    await replaceInFile({
       files: './src/react-component-lib/utils/index.tsx',
       from: 'return React.forwardRef',
       to: '//@ts-ignore\nreturn React.forwardRef'
