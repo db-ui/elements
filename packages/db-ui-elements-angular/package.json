@@ -14,7 +14,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "stencil:workaround": "node ../../scripts/angular-helper.js",
+    "stencil:workaround": "node ../../scripts/angular-helper.mjs",
     "pretest": "npm run stencil:workaround",
     "prebuild": "npm run stencil:workaround",
     "start": "ng serve",
@@ -29,7 +29,6 @@
     "tslib": "^2.8.1"
   },
   "devDependencies": {
-
     "@angular/animations": "18.2.13",
     "@angular/common": "18.2.13",
     "@angular/compiler": "18.2.13",
