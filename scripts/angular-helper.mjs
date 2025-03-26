@@ -3,8 +3,8 @@
  * It fixes some issues made by code generation from stencil.
  */
 
-import { replaceInFile } from 'replace-in-file';
 import { existsSync, readFileSync } from 'node:fs';
+import { replaceInFile } from 'replace-in-file';
 
 const registerOnChange = {
   files: './projects/lib/src/number-value-accessor.ts',
