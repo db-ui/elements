@@ -4,7 +4,7 @@
  */
 
 const replace = require('replace-in-file');
-const fs = require('fs');
+const fs = require('node:fs');
 
 const registerOnChange = {
   files: './projects/lib/src/number-value-accessor.ts',
