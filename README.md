@@ -1,4 +1,3 @@
-
 # Welcome to DB UI Elements
 
 ![Apache 2.0 license badge](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
