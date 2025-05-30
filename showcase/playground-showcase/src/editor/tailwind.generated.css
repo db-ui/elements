@@ -11,12 +11,16 @@
 ::before,
 ::after {
   box-sizing: border-box;
+
   /* 1 */
   border-width: 0;
+
   /* 2 */
   border-style: solid;
+
   /* 2 */
-  border-color: currentColor;
+  border-color: currentcolor;
+
   /* 2 */
 }
 
@@ -34,13 +38,20 @@
 
 html {
   line-height: 1.5;
+
   /* 1 */
+  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
   /* 2 */
+
   /* 3 */
   tab-size: 4;
+
   /* 3 */
   font-family: 'DB Screen Sans Regular', Helvetica, Arial, sans-serif;
+
   /* 4 */
 }
 
@@ -51,8 +62,10 @@ html {
 
 body {
   margin: 0;
+
   /* 1 */
   line-height: inherit;
+
   /* 2 */
 }
 
@@ -64,10 +77,13 @@ body {
 
 hr {
   height: 0;
+
   /* 1 */
   color: inherit;
+
   /* 2 */
   border-top-width: 1px;
+
   /* 3 */
 }
 
@@ -76,6 +92,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
 abbr:where([title]) {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
 }
@@ -121,10 +138,13 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+
   /* 1 */
   font-size: 1em;
+
   /* 2 */
 }
 
@@ -164,10 +184,13 @@ sup {
 
 table {
   text-indent: 0;
+
   /* 1 */
   border-color: inherit;
+
   /* 2 */
   border-collapse: collapse;
+
   /* 3 */
 }
 
@@ -183,18 +206,25 @@ optgroup,
 select,
 textarea {
   font-family: inherit;
+
   /* 1 */
   font-size: 100%;
+
   /* 1 */
   font-weight: inherit;
+
   /* 1 */
   line-height: inherit;
+
   /* 1 */
   color: inherit;
+
   /* 1 */
   margin: 0;
+
   /* 2 */
   padding: 0;
+
   /* 3 */
 }
 
@@ -216,11 +246,16 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-appearance: button;
+  appearance: auto;
+
   /* 1 */
   background-color: transparent;
+
   /* 2 */
   background-image: none;
+
   /* 2 */
 }
 
@@ -263,9 +298,13 @@ Correct the cursor style of increment and decrement buttons in Safari.
 */
 
 [type='search'] {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-appearance: textfield;
+  appearance: textfield;
+
   /* 1 */
   outline-offset: -2px;
+
   /* 2 */
 }
 
@@ -274,7 +313,9 @@ Remove the inner padding in Chrome and Safari on macOS.
 */
 
 ::-webkit-search-decoration {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-appearance: none;
+  appearance: none;
 }
 
 /*
@@ -283,9 +324,13 @@ Remove the inner padding in Chrome and Safari on macOS.
 */
 
 ::-webkit-file-upload-button {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-appearance: button;
+  appearance: auto;
+
   /* 1 */
   font: inherit;
+
   /* 2 */
 }
 
@@ -347,19 +392,25 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
+/* stylelint-disable selector-no-vendor-prefix */
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   opacity: 1;
+
   /* 1 */
   color: #9ca3af;
+
   /* 2 */
 }
+/* stylelint-enable selector-no-vendor-prefix */
 
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
+
   /* 1 */
   color: #9ca3af;
+
   /* 2 */
 }
 
@@ -395,8 +446,10 @@ iframe,
 embed,
 object {
   display: block;
+
   /* 1 */
   vertical-align: middle;
+
   /* 2 */
 }
 
@@ -429,7 +482,7 @@ h4 {
   font-weight: bold;
 }
 
-*,
+/* stylelint-disable no-duplicate-selectors */
 ::before,
 ::after {
   --tw-border-spacing-x: 0;
@@ -453,7 +506,7 @@ h4 {
   --tw-ring-inset: ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-color: rgb(59 130 246 / 50%);
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
@@ -477,7 +530,9 @@ h4 {
   --tw-backdrop-saturate: ;
   --tw-backdrop-sepia: ;
 }
+/* stylelint-enable no-duplicate-selectors */
 
+/* stylelint-disable-next-line selector-no-vendor-prefix */
 ::-webkit-backdrop {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -500,7 +555,7 @@ h4 {
   --tw-ring-inset: ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-color: rgb(59 130 246 / 50%);
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
@@ -547,7 +602,7 @@ h4 {
   --tw-ring-inset: ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-color: rgb(59 130 246 / 50%);
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
@@ -572,6 +627,7 @@ h4 {
   --tw-backdrop-sepia: ;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .mb-0\.5 {
   margin-bottom: 8px;
 }
@@ -596,6 +652,7 @@ h4 {
   flex-direction: column;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .gap-0\.5 {
   gap: 8px;
 }
@@ -608,6 +665,7 @@ h4 {
   border-width: 1px;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .p-0\.5 {
   padding: 8px;
 }
@@ -618,33 +676,40 @@ h4 {
 
 .text-cyan-600 {
   --tw-text-opacity: 1;
+
   color: rgb(0 135 185 / var(--tw-text-opacity));
 }
 
 .text-red-600 {
   --tw-text-opacity: 1;
+
   color: rgb(197 0 20 / var(--tw-text-opacity));
 }
 
 .text-green-600 {
   --tw-text-opacity: 1;
+
   color: rgb(42 114 48 / var(--tw-text-opacity));
 }
 
 .text-orange-600 {
   --tw-text-opacity: 1;
+
   color: rgb(215 123 0 / var(--tw-text-opacity));
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
+  /* stylelint-disable-next-line selector-class-pattern */
   .md\:grid {
     display: grid;
   }
 
+  /* stylelint-disable-next-line selector-class-pattern */
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  /* stylelint-disable-next-line selector-class-pattern */
   .md\:p-0 {
     padding: 0;
   }
