@@ -1,9 +1,9 @@
 /* src/index.css */
 
 /* stylelint-disable scss/at-rule-no-unknown */
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
-@tailwind base;
 /* stylelint-enable scss/at-rule-no-unknown */
 
 @layer base {
