@@ -37,16 +37,16 @@
     "@angular/platform-browser": "18.2.13",
     "@angular/platform-browser-dynamic": "18.2.13",
     "@angular/router": "18.2.13",
-    "@angular-devkit/build-angular": "18.2.16",
-    "@angular/cli": "18.2.16",
+    "@angular-devkit/build-angular": "18.2.19",
+    "@angular/cli": "18.2.19",
     "@angular/compiler-cli": "18.2.13",
-    "@rollup/plugin-commonjs": "28.0.1",
+    "@rollup/plugin-commonjs": "28.0.3",
     "@rollup/plugin-json": "6.1.0",
     "@rollup/plugin-node-resolve": "15.3.0",
     "bs-logger": "0.2.6",
     "injection-js": "2.4.0",
     "ng-packagr": "18.2.1",
     "rimraf": "6.0.1",
-    "zone.js": "~0.15.0"
+    "zone.js": "~0.15.1"
   }
 }
