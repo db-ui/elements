@@ -24,6 +24,8 @@ jobs:
       fail-fast: false
       matrix:
         themes: [default, enterprise]
+    permissions:
+      id-token: write
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v4

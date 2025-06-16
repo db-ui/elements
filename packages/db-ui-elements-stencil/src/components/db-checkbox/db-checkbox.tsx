@@ -3,8 +3,7 @@ import { uuid } from '../../utils/utils';
 
 @Component({
   tag: 'db-checkbox',
-  styleUrl: 'db-checkbox.scss',
-  scoped: true
+  styleUrl: 'db-checkbox.scss'
 })
 export class DbCheckbox {
   /**

@@ -8,14 +8,14 @@
     "preview": "vite preview --port 5050"
   },
   "dependencies": {
-    "vue": "3.4.32",
-    "vue-router": "4.4.0"
+    "vue": "3.5.16",
+    "vue-router": "4.4.5"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "5.0.5",
+    "@vitejs/plugin-vue": "5.2.4",
     "@vue/tsconfig": "0.5.1",
-    "vite": "^5.3.4",
-    "vue-tsc": "2.0.26"
+    "vite": "^5.4.19",
+    "vue-tsc": "2.1.10"
   },
   "resolutions": {
     "esbuild": "0.15.18"

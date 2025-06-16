@@ -22,7 +22,7 @@ runs:
       # https://github.com/actions/setup-node
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version-file: '.nvmrc'
 
     - name: Display node and npm version
       shell: bash

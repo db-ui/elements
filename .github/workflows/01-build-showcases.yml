@@ -11,8 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        showcases:
-          [angular-active, angular-lts, playground, react, reactwind, vue]
+        showcases: [angular, playground, react, reactwind, vue]
     steps:
       - name: ⬇ Checkout repo
         uses: actions/checkout@v4
@@ -22,10 +21,7 @@ jobs:
 
       - name: ↔ Get download params for showcase
         run: |
-          if echo ${{ matrix.showcases }} | grep -c "angular-active"
-          then
-            echo "framework=angular" >> $GITHUB_OUTPUT
-          elif echo ${{ matrix.showcases }} | grep -c "angular-lts"
+          if echo ${{ matrix.showcases }} | grep -c "angular"
           then
             echo "framework=angular" >> $GITHUB_OUTPUT
           elif echo ${{ matrix.showcases }} | grep -c "playground"
