@@ -17,7 +17,14 @@
     "react/react-in-jsx-scope": 0,
     "react/jsx-no-bind": 0,
     "react/no-unknown-property": "off",
-    "@stencil-community/reserved-member-names": "warn"
+    "@stencil-community/reserved-member-names": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      // ignore function "h" import: "Import { h } is required In order to render JSX in Stencil apps, the h() function must be imported from @stencil/core"
+      {
+        "varsIgnorePattern": "^h$"
+      }
+    ]
   },
   "settings": {
     //fix: https://github.com/ionic-team/stencil-eslint/issues/16
