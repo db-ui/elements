@@ -87,7 +87,7 @@ updates:
     groups:
       patch-dependencies:
         update-types:
-          - "patch"
+          - 'patch'
       commitlint:
         patterns:
           - '@commitlint*'
@@ -103,7 +103,7 @@ updates:
       typescript-eslint:
         patterns:
           - '@typescript-eslint*'
-          - "typescript-eslint"
+          - 'typescript-eslint'
       storybook:
         patterns:
           - '@storybook*'
