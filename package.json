@@ -73,5 +73,6 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "homepage": "https://db-ui.github.io/elements/"
+  "homepage": "https://db-ui.github.io/elements/",
+  "packageManager": "npm@10.9.2"
 }
