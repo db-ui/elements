@@ -19,12 +19,8 @@ const snippet3 = `
 
 const snippet4 = `
 <db-mainnavigation>
-  <db-link href="#" rel="index" aria-current="page">
-    Startseite
-  </db-link>
-  <db-link href="#" rel="offers">
-    Aufträge
-  </db-link>
+  <db-link href="#" rel="index" aria-current="page">Startseite</db-link>
+  <db-link href="#" rel="offers">Aufträge</db-link>
 </db-mainnavigation>
 
 <db-headline variant="1">Headline 1</db-headline>

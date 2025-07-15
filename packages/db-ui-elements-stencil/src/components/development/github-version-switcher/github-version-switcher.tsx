@@ -73,7 +73,7 @@ export class GithubVersionSwitcher {
       if (foundGroup) {
         foundGroup.branches.push(branch);
       } else {
-        this.groups.at(-1).branches.push(branch);
+        this.groups[3].branches.push(branch);
       }
     });
     this.setCurrentBranch(branchNames);

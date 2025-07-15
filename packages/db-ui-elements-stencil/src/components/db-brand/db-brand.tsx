@@ -44,12 +44,12 @@ export class DbBrand {
           rel={this.anchorRelation}
         >
           <img src={this.src} alt={this.alt} class="elm-image is-logo" />
-          {this.siteNameLink && (
-            <span class="is-site-name">
-              <slot />
-            </span>
-          )}
         </a>
+        {this.siteNameLink && (
+          <span class="is-site-name">
+            <slot />
+          </span>
+        )}
         {!this.siteNameLink && (
           <span class="is-site-name">
             <slot />
