@@ -4,25 +4,71 @@
 		{
 			"icon": {
 				"paths": [
+					"M769.126 153.6c84.831 0 153.6 68.769 153.6 153.6v0 258.918c0 84.831-68.769 153.6-153.6 153.6v0h-513.126c-84.831 0-153.6-68.769-153.6-153.6v0-258.918c0-84.831 68.769-153.6 153.6-153.6v0zM769.126 256h-513.126c-28.277 0-51.2 22.923-51.2 51.2v0 258.918c0 28.277 22.923 51.2 51.2 51.2v0h513.126c28.277 0 51.2-22.923 51.2-51.2v0-258.918c0-28.277-22.923-51.2-51.2-51.2v0zM447.078 313.856c3.994 0 7.578 1.126 11.213 3.584l157.645 91.136c8.906 6.229 14.676 16.411 14.746 27.944l0 0.011c-0.023 11.556-5.808 21.755-14.634 27.882l-0.112 0.074-158.054 91.494c-3.226 2.221-7.218 3.547-11.52 3.547-11.28 0-20.43-9.119-20.48-20.387l-0-0.005v-204.134c0-11.622 10.035-21.197 21.197-21.197zM203.11 870.707c0-28.277 22.923-51.2 51.2-51.2v0h516.506c28.277 0 51.2 22.923 51.2 51.2s-22.923 51.2-51.2 51.2v0h-516.506c-28.277 0-51.2-22.923-51.2-51.2v0z"
+				],
+				"attrs": [{}],
+				"isMulticolor": false,
+				"isMulticolor2": false,
+				"tags": ["db_ic_iceportal_20"],
+				"grid": 0
+			},
+			"attrs": [{}],
+			"properties": {
+				"order": 6,
+				"id": 0,
+				"name": "db_ic_iceportal_20",
+				"prevSize": 32,
+				"code": 922384
+			},
+			"setIdx": 0,
+			"setId": 0,
+			"iconIdx": 0
+		},
+		{
+			"icon": {
+				"paths": [
+					"M769.126 153.6c84.831 0 153.6 68.769 153.6 153.6v0 258.918c0 84.831-68.769 153.6-153.6 153.6v0h-513.126c-84.831 0-153.6-68.769-153.6-153.6v0-258.918c0-84.831 68.769-153.6 153.6-153.6v0zM769.126 256h-513.126c-28.277 0-51.2 22.923-51.2 51.2v0 258.918c0 28.277 22.923 51.2 51.2 51.2v0h513.126c28.277 0 51.2-22.923 51.2-51.2v0-258.918c0-28.277-22.923-51.2-51.2-51.2v0zM447.078 313.856c3.994 0 7.578 1.126 11.213 3.584l157.645 91.136c8.906 6.229 14.676 16.411 14.746 27.944l0 0.011c-0.023 11.556-5.808 21.755-14.634 27.882l-0.112 0.074-158.054 91.494c-3.226 2.221-7.218 3.547-11.52 3.547-11.28 0-20.43-9.119-20.48-20.387l-0-0.005v-204.134c0-11.622 10.035-21.197 21.197-21.197zM203.11 870.707c0-28.277 22.923-51.2 51.2-51.2v0h516.506c28.277 0 51.2 22.923 51.2 51.2s-22.923 51.2-51.2 51.2v0h-516.506c-28.277 0-51.2-22.923-51.2-51.2v0z"
+				],
+				"attrs": [{}],
+				"isMulticolor": false,
+				"isMulticolor2": false,
+				"tags": ["db_ic_regioguide_20"],
+				"grid": 0
+			},
+			"attrs": [{}],
+			"properties": {
+				"order": 5,
+				"id": 1,
+				"name": "db_ic_regioguide_20",
+				"prevSize": 32,
+				"code": 922385
+			},
+			"setIdx": 0,
+			"setId": 0,
+			"iconIdx": 1
+		},
+		{
+			"icon": {
+				"paths": [
 					"M716.8 409.6c-28.277 0-51.2 22.923-51.2 51.2v0 332.8c0 14.138-11.462 25.6-25.6 25.6s-25.6-11.462-25.6-25.6v0-128c-0.094-28.262-23.027-51.136-51.302-51.136-8.241 0-16.027 1.943-22.927 5.396l0.296-0.134c-11.469 5.632-48.128 20.275-79.667 20.275s-68.198-14.643-79.514-20.224c-6.669-3.392-14.543-5.379-22.881-5.379-9.97 0-19.276 2.841-27.153 7.758l0.216-0.126c-14.648 9.202-24.247 25.263-24.269 43.568l-0 0.003v128c0 14.138-11.462 25.6-25.6 25.6s-25.6-11.462-25.6-25.6v0-281.6h307.2c25.302-0.012 46.311-18.375 50.44-42.5l0.043-0.303 34.867-209.050 32.051 32.051c5.632 5.581 12.493 9.83 20.019 12.339l114.074 38.042c-17.050 60.416-77.619 66.714-97.894 67.021zM886.579 258.662l-142.131-47.411-93.85-93.85c-9.243-9.271-22.027-15.007-36.151-15.007-5.598 0-10.985 0.901-16.024 2.566l0.361-0.103c-18.147 5.912-31.636 21.226-34.825 40.045l-0.042 0.301-44.083 264.397h-305.92c-2.918-4.608-9.114-18.176-9.114-51.2 0-28.277-22.923-51.2-51.2-51.2s-51.2 22.923-51.2 51.2v0c0 77.517 25.6 115.814 51.2 134.81v300.39c0 70.605 57.446 128 128 128s128-57.395 128-128v-56.883c15.393 3.199 33.083 5.031 51.2 5.031s35.807-1.831 52.894-5.319l-1.694 0.289v56.883c0 70.605 57.446 128 128 128s128-57.395 128-128v-288.051c73.984-18.278 153.6-77.21 153.6-198.349 0-0.021 0-0.047 0-0.072 0-22.461-14.506-41.533-34.661-48.36l-0.36-0.106z"
 				],
 				"attrs": [{}],
 				"isMulticolor": false,
 				"isMulticolor2": false,
-				"grid": 0,
-				"tags": ["db_ic_dog_20"]
+				"tags": ["db_ic_dog_20"],
+				"grid": 0
 			},
 			"attrs": [{}],
 			"properties": {
 				"order": 59,
-				"id": 21,
+				"id": 2,
 				"name": "db_ic_dog_20",
 				"prevSize": 32,
 				"code": 922265
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 0
+			"iconIdx": 2
 		},
 		{
 			"icon": {
@@ -38,14 +84,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 248,
-				"id": 0,
+				"id": 3,
 				"name": "db_ic_steppless_entry_20",
 				"prevSize": 32,
 				"code": 922135
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 1
+			"iconIdx": 3
 		},
 		{
 			"icon": {
@@ -61,14 +107,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 249,
-				"id": 1,
+				"id": 4,
 				"name": "db_ic_support_dog_20",
 				"prevSize": 32,
 				"code": 922133
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 2
+			"iconIdx": 4
 		},
 		{
 			"icon": {
@@ -84,14 +130,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 370,
-				"id": 2,
+				"id": 5,
 				"name": "db_ic_person_with_cane_20",
 				"prevSize": 32,
 				"code": 922231
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 3
+			"iconIdx": 5
 		},
 		{
 			"icon": {
@@ -107,14 +153,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 369,
-				"id": 3,
+				"id": 6,
 				"name": "db_ic_person_with_rollator_20",
 				"prevSize": 32,
 				"code": 921992
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 4
+			"iconIdx": 6
 		},
 		{
 			"icon": {
@@ -130,14 +176,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 144,
-				"id": 4,
+				"id": 7,
 				"name": "db_ic_reservation_20",
 				"prevSize": 32,
 				"code": 921977
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 5
+			"iconIdx": 7
 		},
 		{
 			"icon": {
@@ -153,14 +199,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 143,
-				"id": 5,
+				"id": 8,
 				"name": "db_ic_platform_20",
 				"prevSize": 32,
 				"code": 128740
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 6
+			"iconIdx": 8
 		},
 		{
 			"icon": {
@@ -176,14 +222,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 142,
-				"id": 6,
+				"id": 9,
 				"name": "db_ic_no_smoking_20",
 				"prevSize": 32,
 				"code": 922230
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 7
+			"iconIdx": 9
 		},
 		{
 			"icon": {
@@ -199,14 +245,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 141,
-				"id": 7,
+				"id": 10,
 				"name": "db_ic_night_20",
 				"prevSize": 32,
 				"code": 922249
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 8
+			"iconIdx": 10
 		},
 		{
 			"icon": {
@@ -222,14 +268,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 140,
-				"id": 8,
+				"id": 11,
 				"name": "db_ic_marketplace_20",
 				"prevSize": 32,
 				"code": 921976
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 9
+			"iconIdx": 11
 		},
 		{
 			"icon": {
@@ -245,14 +291,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 139,
-				"id": 9,
+				"id": 12,
 				"name": "db_ic_luggage_compartment_20",
 				"prevSize": 32,
 				"code": 922228
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 10
+			"iconIdx": 12
 		},
 		{
 			"icon": {
@@ -268,14 +314,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 138,
-				"id": 10,
+				"id": 13,
 				"name": "db_ic_hydrogen_20",
 				"prevSize": 32,
 				"code": 921975
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 11
+			"iconIdx": 13
 		},
 		{
 			"icon": {
@@ -291,14 +337,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 137,
-				"id": 11,
+				"id": 14,
 				"name": "db_ic_environmental_mobility_check_20",
 				"prevSize": 32,
 				"code": 922227
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 12
+			"iconIdx": 14
 		},
 		{
 			"icon": {
@@ -314,14 +360,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 136,
-				"id": 12,
+				"id": 15,
 				"name": "db_ic_day_20",
 				"prevSize": 32,
 				"code": 9728
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 13
+			"iconIdx": 15
 		},
 		{
 			"icon": {
@@ -337,14 +383,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 135,
-				"id": 13,
+				"id": 16,
 				"name": "db_ic_clothing_hanger_20",
 				"prevSize": 32,
 				"code": 921984
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 14
+			"iconIdx": 16
 		},
 		{
 			"icon": {
@@ -360,14 +406,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 4,
-				"id": 14,
+				"id": 17,
 				"name": "ic-db_feature_air-condition_20",
 				"prevSize": 32,
 				"code": 10052
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 15
+			"iconIdx": 17
 		},
 		{
 			"icon": {
@@ -383,14 +429,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 5,
-				"id": 15,
+				"id": 18,
 				"name": "ic-db_feature_standing-room_20",
 				"prevSize": 32,
 				"code": 921952
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 16
+			"iconIdx": 18
 		},
 		{
 			"icon": {
@@ -406,14 +452,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 6,
-				"id": 16,
+				"id": 19,
 				"name": "ic-db_buggy_20",
 				"prevSize": 32,
 				"code": 921939
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 17
+			"iconIdx": 19
 		},
 		{
 			"icon": {
@@ -429,14 +475,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 7,
-				"id": 17,
+				"id": 20,
 				"name": "entry-aid",
 				"prevSize": 32,
 				"code": 921936
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 18
+			"iconIdx": 20
 		},
 		{
 			"icon": {
@@ -452,14 +498,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 8,
-				"id": 18,
+				"id": 21,
 				"name": "luggage-rack",
 				"prevSize": 32,
 				"code": 922229
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 19
+			"iconIdx": 21
 		},
 		{
 			"icon": {
@@ -475,14 +521,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 9,
-				"id": 19,
+				"id": 22,
 				"name": "medical",
 				"prevSize": 32,
 				"code": 10010
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 20
+			"iconIdx": 22
 		},
 		{
 			"icon": {
@@ -498,14 +544,14 @@
 			"attrs": [{}],
 			"properties": {
 				"order": 10,
-				"id": 20,
+				"id": 23,
 				"name": "power-outlet",
 				"prevSize": 32,
 				"code": 922232
 			},
 			"setIdx": 0,
 			"setId": 0,
-			"iconIdx": 21
+			"iconIdx": 23
 		}
 	],
 	"height": 1024,

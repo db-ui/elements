@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 DB Systel GmbH
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # How to create and provide the technical icon files
 
 We're getting these icons by the [DB Design System colleagues](https://dbsw.sharepoint.com/:f:/r/teams/CXM.Teams-DDSTeam/Shared%20Documents/DDS%20Team/01--Design-System/04--Foundations/07--Icons/04--Exchange-Icons?csf=1&web=1&e=hzdDGu) and process the following changes:
