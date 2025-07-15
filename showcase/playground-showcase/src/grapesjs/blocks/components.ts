@@ -10,12 +10,8 @@ export const DB_META_NAVIGATION = {
     content: {
       type: 'db-metanavigation',
       tagName: 'db-metanavigation',
-      content: `<db-link icon="settings" href="#">
-      Einstellungen
-    </db-link>
-    <db-link icon="chat" icononly href="#">
-      Nachrichten
-    </db-link>`
+      content: `<db-link icon="settings" href="#">Einstellungen</db-link>
+    <db-link icon="chat" icononly href="#">Nachrichten</db-link>`
     }
   }
 };
