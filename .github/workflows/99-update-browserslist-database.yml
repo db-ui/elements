@@ -27,7 +27,7 @@ jobs:
       - name: Update Browserslist database
         run: npx update-browserslist-db@latest
 
-      - name: Set commiter email
+      - name: Set committer email
         run: echo "COMMIT_MAIL=41898282+github-actions[bot]@users.noreply.github.com" >> .env
 
       - name: Create Pull Request
