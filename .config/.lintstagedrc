@@ -1,5 +1,5 @@
 {
-  "*.md": "markdownlint -c .markdown-lint.yml",
+  "*.md": "markdownlint -c .markdown-lint.yml --fix",
   "*.{css,scss}": "stylelint --fix",
   "*.{js,ts,tsx}": "eslint --fix "
 }
