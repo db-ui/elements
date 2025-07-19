@@ -31,7 +31,7 @@
     "start": "npm run start-stencil"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.2.0",
+    "@faker-js/faker": "^9.9.0",
     "@stencil/eslint-plugin": "1.1.0",
     "@stencil/angular-output-target": "0.8.4",
     "@stencil/core": "4.20.0",
