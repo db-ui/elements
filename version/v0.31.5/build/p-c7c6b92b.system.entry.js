@@ -1,2 +1,0 @@
-System.register(["./p-3ff3891d.system.js"],(function(t){"use strict";var e,n,r;return{setters:[function(t){e=t.r;n=t.h;r=t.H}],execute:function(){var c=":host{margin-top:auto;margin-bottom:auto}";var f=c;var o=t("db_meta",function(){function t(t){e(this,t)}t.prototype.render=function(){return n(r,{key:"330ff736ae2b915b6c546d554bed1f081198fc09"},n("slot",{key:"5b9868da492482c392c153777671469a92efdc1b"}))};return t}());o.style=f}}}));
-//# sourceMappingURL=p-c7c6b92b.system.entry.js.map
