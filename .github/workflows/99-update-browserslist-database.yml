@@ -27,11 +27,10 @@ jobs:
       - name: Update Browserslist database
         run: npx update-browserslist-db@latest
 
-      - name: Set committer email
-        run: echo "COMMIT_MAIL=41898282+github-actions[bot]@users.noreply.github.com" >> .env
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
+        env:
+          HUSKY: 0 # Disable Husky hooks in CI
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'chore: update Browserslist database'
