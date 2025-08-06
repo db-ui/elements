@@ -40,13 +40,13 @@ jobs:
         id: download-params
 
       - name: ⬇ Download Stencil ${{ steps.download-params.outputs.theme }}
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: stencil-${{ steps.download-params.outputs.theme }}-${{ steps.download-params.outputs.framework }}
           path: packages/db-ui-elements-stencil
 
       - name: ⬇ Download Output Target ${{ steps.download-params.outputs.framework }}
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: output-target-${{ steps.download-params.outputs.theme }}-${{ steps.download-params.outputs.framework }}
           path: packages/db-ui-elements-${{ steps.download-params.outputs.framework }}
