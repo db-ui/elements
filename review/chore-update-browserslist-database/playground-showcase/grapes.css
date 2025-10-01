@@ -1,0 +1,17 @@
+.gjs-one-bg {
+  background-color: #fdfdfd !important;
+}
+
+.gjs-no-app {
+  height: auto !important;
+}
+
+.grapes-container {
+  flex-direction: column;
+  height: 100vh;
+  display: flex;
+}
+
+db-page {
+  height: 100%;
+}
