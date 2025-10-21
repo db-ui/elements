@@ -19,7 +19,7 @@
     "@vitejs/plugin-react": "^4.3.3",
     "cpr": "3.0.1",
     "sass": "1.81.0",
-    "vite": "^5.4.20"
+    "vite": "^5.4.21"
   },
   "scripts": {
     "copy:ui-core": "cpr ../../node_modules/@db-ui/core/dist/fonts ./public/fonts -o && cpr ../../node_modules/@db-ui/core/dist/images ./public/images -o && cpr ../../node_modules/@db-ui/core/dist/js ./public/js -o",
