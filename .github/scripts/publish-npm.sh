@@ -51,7 +51,6 @@ do
     echo "🔑 Authenticated with GITHUB"
   elif [[ $REGISTRY == 'NPM' ]]; then
     npm config set @db-ui:registry https://registry.npmjs.org/
-    npm set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
     echo "🔑 Authenticated with NPM"
   else
     echo "Could not authenticate with $REGISTRY"
