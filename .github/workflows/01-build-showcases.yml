@@ -59,7 +59,7 @@ jobs:
           cp dist/${{ matrix.showcases }}-showcase/index.html dist/${{ matrix.showcases }}-showcase/404.html
 
       - name: ⬆ Upload Showcase ${{ matrix.showcases }} dist folder
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: showcase-${{ matrix.showcases }}
           path: showcase/${{ matrix.showcases }}-showcase/dist

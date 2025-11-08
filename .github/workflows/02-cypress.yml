@@ -53,14 +53,14 @@ jobs:
           ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
 
       - name: 🖼 Upload Screenshots
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: failure()
         with:
           name: cypress-screenshots-${{ matrix.containers }}
           path: e2e/cypress/snapshots/actual
 
       - name: 📹 Upload Videos
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: always()
         with:
           name: cypress-videos-${{ matrix.containers }}
