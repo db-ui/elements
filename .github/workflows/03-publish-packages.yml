@@ -28,7 +28,7 @@ jobs:
       id-token: write
     steps:
       - name: ⬇ Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 🔄 Init Cache
         uses: ./.github/actions/npm-cache
@@ -83,25 +83,25 @@ jobs:
           GPR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: ⬆ Upload Package Artifact elements-${{ matrix.themes }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: package-${{ matrix.themes }}-elements
           path: db-ui-elements${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
 
       - name: ⬆ Upload Package Artifact ngx-elements-${{ matrix.themes }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: package-${{ matrix.themes }}-ngx-elements
           path: db-ui-ngx-elements${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
 
       - name: ⬆ Upload Package Artifact react-elements-${{ matrix.themes }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: package-${{ matrix.themes }}-react-elements
           path: db-ui-react-elements${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
 
       - name: ⬆ Upload Package Artifact v-elements-${{ matrix.themes }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: package-${{ matrix.themes }}-v-elements
           path: db-ui-v-elements${{ steps.getPkgTheme.outputs.pkgTheme }}-${{ inputs.version }}.tgz
