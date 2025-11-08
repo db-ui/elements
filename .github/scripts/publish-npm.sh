@@ -57,8 +57,8 @@ do
     exit 1
   fi
   # https://docs.npmjs.com/generating-provenance-statements#example-github-actions-workflow
-  npm publish --tag "$TAG" db-ui-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --provenance
-  npm publish --tag "$TAG" db-ui-ngx-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --provenance
-  npm publish --tag "$TAG" db-ui-react-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --provenance
-  npm publish --tag "$TAG" db-ui-v-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --provenance
+  npm publish --tag "$TAG" db-ui-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz
+  npm publish --tag "$TAG" db-ui-ngx-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz
+  npm publish --tag "$TAG" db-ui-react-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz
+  npm publish --tag "$TAG" db-ui-v-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz
 done
