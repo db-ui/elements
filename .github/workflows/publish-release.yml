@@ -53,6 +53,8 @@ jobs:
     uses: ./.github/workflows/03-publish-packages.yml
     needs: [cypress, get-publish-version]
     secrets: inherit
+    permissions:
+      id-token: write  # Required for OIDC
     with:
       release: ${{ needs.get-publish-version.outputs.release }}
       preRelease: ${{ needs.get-publish-version.outputs.preRelease }}

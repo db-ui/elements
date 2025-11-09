@@ -80,7 +80,6 @@ jobs:
           VALID_SEMVER_VERSION: ${{ inputs.version }}
           DBUI_THEME: ${{ matrix.themes }}
           PACKAGE_ENDING: ${{ steps.getPkgTheme.outputs.pkgTheme }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GPR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: ⬆ Upload Package Artifact elements-${{ matrix.themes }}

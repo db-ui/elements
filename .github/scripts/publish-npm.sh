@@ -51,15 +51,14 @@ do
     echo "🔑 Authenticated with GITHUB"
   elif [[ $REGISTRY == 'NPM' ]]; then
     npm config set @db-ui:registry https://registry.npmjs.org/
-    npm set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
     echo "🔑 Authenticated with NPM"
   else
     echo "Could not authenticate with $REGISTRY"
     exit 1
   fi
   # https://docs.npmjs.com/generating-provenance-statements#example-github-actions-workflow
-  npm publish --tag "$TAG" db-ui-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --provenance
-  npm publish --tag "$TAG" db-ui-ngx-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --provenance
-  npm publish --tag "$TAG" db-ui-react-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --provenance
-  npm publish --tag "$TAG" db-ui-v-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz --provenance
+  npm publish --tag "$TAG" db-ui-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz
+  npm publish --tag "$TAG" db-ui-ngx-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz
+  npm publish --tag "$TAG" db-ui-react-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz
+  npm publish --tag "$TAG" db-ui-v-elements"$PACKAGE_ENDING"-"$VALID_SEMVER_VERSION".tgz
 done
