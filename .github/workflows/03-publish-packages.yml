@@ -34,7 +34,7 @@ jobs:
         uses: ./.github/actions/npm-cache
 
       - name: ⬇ Download Stencil ${{ matrix.themes }}
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           # As "stencil" package we use the artifact "stencil-default-angular" - others
           # would work as well this is just the first
@@ -42,19 +42,19 @@ jobs:
           path: packages/db-ui-elements-stencil
 
       - name: ⬇ Download Output Target Angular ${{ matrix.themes }}
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: output-target-${{ matrix.themes }}-angular
           path: packages/db-ui-elements-angular
 
       - name: ⬇ Download Output Target React ${{ matrix.themes }}
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: output-target-${{ matrix.themes }}-react
           path: packages/db-ui-elements-react
 
       - name: ⬇ Download Output Target Vue ${{ matrix.themes }}
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: output-target-${{ matrix.themes }}-vue
           path: packages/db-ui-elements-vue

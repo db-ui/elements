@@ -25,7 +25,7 @@ jobs:
         uses: ./.github/actions/npm-cache
 
       - name: ⬇ Download build
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: build
           path: out
