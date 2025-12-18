@@ -14,7 +14,7 @@
     "@storybook/addon-links": "7.6.20",
     "@storybook/web-components": "^7.6.20",
     "@storybook/web-components-vite": "^7.6.20",
-    "storybook": "^7.6.20"
+    "storybook": "^7.6.21"
   },
   "repository": {
     "type": "git",
