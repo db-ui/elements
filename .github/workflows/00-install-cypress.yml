@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: 💻 Install dependencies
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           working-directory: e2e
           runTests: false
