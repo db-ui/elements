@@ -18,7 +18,7 @@ export class DbFooter {
   render() {
     return (
       <footer class={`rea-footer ${this.border ? 'has-border' : ''}`}>
-        {this.copyright ? <span>Copyright 2023 DB Systel</span> : null}
+        <span>Copyright 2023 DB Systel</span>
         <slot />
       </footer>
     );
