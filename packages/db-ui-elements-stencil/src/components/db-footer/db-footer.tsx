@@ -15,14 +15,10 @@ export class DbFooter {
    */
   @Prop({ reflect: false }) copyright?: boolean = false;
 
-  private getCopyRight(): string {
-    return `Copyright ${new Date().getFullYear()} DB Systel`;
-  }
-
   render() {
     return (
       <footer class={`rea-footer ${this.border ? 'has-border' : ''}`}>
-        {this.copyright ? <span>{this.getCopyRight()}</span> : null}
+        {this.copyright ? <span>Copyright 2023 DB Systel</span> : null}
         <slot />
       </footer>
     );
