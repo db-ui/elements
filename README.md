@@ -1,4 +1,4 @@
-test # Welcome to DB UI Elements
+# Welcome to DB UI Elements
 
 ![Apache 2.0 license badge](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
