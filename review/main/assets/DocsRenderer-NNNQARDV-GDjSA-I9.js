@@ -1,1 +1,0 @@
-import{D as i,d as s}from"./chunk-HLWAVYOI-Dpq47VA4.js";import"./iframe-C2sxNleA.js";import"../sb-preview/runtime.js";import"./doctrine-DcUutl77.js";import"./index-DrFu-skq.js";export{i as DocsRenderer,s as defaultComponents};
