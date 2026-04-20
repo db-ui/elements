@@ -21,38 +21,38 @@ jobs:
         uses: ./.github/actions/npm-cache
 
       - name: ⬇ Download Stencil default
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           # It doesn't matter which framework we download for stencil
           name: stencil-default-angular
           path: packages/db-ui-elements-stencil
 
       - name: ⬇ Download Showcase Angular dist folder
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: showcase-angular
           path: showcase/angular-showcase/dist
 
       - name: ⬇ Download Showcase playground dist folder
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: showcase-playground
           path: showcase/playground-showcase/dist
 
       - name: ⬇ Download Showcase react dist folder
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: showcase-react
           path: showcase/react-showcase/dist
 
       - name: ⬇ Download Showcase reactwind dist folder
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: showcase-reactwind
           path: showcase/reactwind-showcase/dist
 
       - name: ⬇ Download Showcase vue dist folder
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: showcase-vue
           path: showcase/vue-showcase/dist
