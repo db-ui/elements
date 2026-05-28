@@ -2,7 +2,7 @@
   "name": "@db-ui/elements-e2e",
   "version": "0.0.0",
   "devDependencies": {
-    "cypress": "^13.6.4",
+    "cypress": "^15.16.0",
     "cypress-visual-regression": "5.0.0",
     "http-server": "14.1.1"
   }
