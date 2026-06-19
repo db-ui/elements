@@ -79,8 +79,11 @@ export const config: Config = {
   outputTargets: [
     angularOutputTarget({
       componentCorePackage: '@db-ui/elements',
+      outputType: 'component',
       directivesProxyFile:
         '../db-ui-elements-angular/projects/lib/src/components.ts',
+      directivesArrayFile:
+        '../db-ui-elements-angular/projects/lib/src/stencil-generated/index.ts',
       valueAccessorConfigs: angularValueAccessorBindings
     }),
     reactOutputTarget({

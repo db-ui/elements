@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
+  standalone: false,
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']

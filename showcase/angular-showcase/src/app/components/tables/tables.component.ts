@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { columnExampleData } from './mockData';
 
 @Component({
+  standalone: false,
   selector: 'app-tables',
   templateUrl: './tables.component.html'
 })

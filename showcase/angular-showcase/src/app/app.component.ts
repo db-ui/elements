@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { isAreaCurrent, NAVIGATION_ITEMS } from './utils/navigation-item';
 
 @Component({
+  standalone: false,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

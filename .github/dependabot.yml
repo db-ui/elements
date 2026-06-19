@@ -52,7 +52,7 @@ updates:
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/animations'
         update-types: ['version-update:semver-major']
-      - dependency-name: '@angular-devkit/build-angular'
+      - dependency-name: '@angular/build'
         update-types: ['version-update:semver-major']
       - dependency-name: '@angular/platform-browser'
         update-types: ['version-update:semver-major']
