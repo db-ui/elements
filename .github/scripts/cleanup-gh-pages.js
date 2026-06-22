@@ -5,11 +5,15 @@ const FS = require('fs');
 
 const TAG = 'cleanup-gh-pages:';
 
+// Directories that should never be removed by cleanup
+const PROTECTED_DIRS = ['main'];
+
 const removeOldFromPath = (isTag, data) => {
   const path = `public/${isTag ? 'version' : 'review'}`;
   if (FS.existsSync(path) && data?.length > 0) {
+    const dataNames = data.map((item) => item.name);
     const dirsToDelete = FS.readdirSync(path).filter(
-      (file) => !data.find((branch) => branch.name === file)
+      (file) => !PROTECTED_DIRS.includes(file) && !dataNames.includes(file)
     );
     if (dirsToDelete?.length > 0) {
       console.log(
@@ -35,18 +39,20 @@ const removeOldFromPath = (isTag, data) => {
 
 module.exports = async ({ github, context }) => {
   const { repo, owner } = context.repo;
-  const branches = await github.rest.repos.listBranches({
+
+  // Use pagination to fetch all branches and tags
+  const branches = await github.paginate(github.rest.repos.listBranches, {
     owner,
-    repo
+    repo,
+    per_page: 100
   });
-  const tags = await github.rest.repos.listTags({
+  const tags = await github.paginate(github.rest.repos.listTags, {
     owner,
-    repo
+    repo,
+    per_page: 100
   });
 
   return {
-    deploy:
-      removeOldFromPath(false, branches.data) ||
-      removeOldFromPath(true, tags.data)
+    deploy: removeOldFromPath(false, branches) || removeOldFromPath(true, tags)
   };
 };

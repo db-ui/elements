@@ -32,6 +32,7 @@ jobs:
             return await script({github, context})
 
       - name: 🥅 Deploy to GH-Pages
+        if: fromJSON(steps.cleanup.outputs.result).deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
