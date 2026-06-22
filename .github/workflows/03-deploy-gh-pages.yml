@@ -50,14 +50,14 @@ jobs:
         id: extract
 
       - name: 📛 Get repo name
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         id: repo-name
         with:
           result-encoding: string
           script: return context?.payload?.repository?.name
 
       - name: 🎩 Get owner name
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         id: owner-name
         with:
           result-encoding: string
