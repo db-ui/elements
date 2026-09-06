@@ -40,7 +40,7 @@ The style is provided by [DB UI Core](https://github.com/db-ui/core)
 
 Currently we support following tenants:
 
-* Regular (DB UX Design System v2)
+* Regular (DB UX Design System – Generation 2)
 * Enterprise
 
 Other tenants can be added -> please contact us
