@@ -1,0 +1,2 @@
+const a=()=>{var r;return((r=window.crypto)===null||r===void 0?void 0:r.randomUUID())||Math.random().toString()},o=r=>r?r.map(n=>`<li><db-link href="${n.href}" target="${n.target}">${n.label}</db-link></li>`).join(`
+`):"",e=(r,n)=>{r.children&&Array.from(r.children).forEach(t=>{t.tagName.toLowerCase()==="db-link"&&t.setAttribute("icon-variant",n),t.children&&e(t,n)})},i=r=>{try{if(typeof r=="string")return JSON.parse(r);if(typeof r=="object"||r instanceof Array)return r}catch{return!1}};export{e as a,o as g,i as p,a as u};
