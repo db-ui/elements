@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: ↔ Create Pull Request
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         id: create-pr
         with:
           result-encoding: string
